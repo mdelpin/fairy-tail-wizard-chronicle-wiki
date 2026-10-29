@@ -36,3 +36,6 @@ article.curated-directory + .page-listing { display: none; }
   .page > #quartz-body > .center { min-width: 0; }
   .character-details { max-width: 100%; }
 }
+@media (max-width: 600px) {
+  .explorer-content { max-width: calc(100vw - 2rem); }
+}

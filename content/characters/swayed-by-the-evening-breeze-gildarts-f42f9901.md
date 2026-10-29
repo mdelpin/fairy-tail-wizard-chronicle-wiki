@@ -29,7 +29,7 @@ title: "Swayed by the Evening Breeze Gildarts"
 ### 🗡️ Special Skill – Sake Through the Night
 <p>Every 7 sec, inflicts &#91;High&#93; Evasion Decrease, &#91;High&#93; Critical Defense Decrease, and &#91;High&#93; Critical Resistance Decrease on all enemies for 7 sec.</p>
 
-### 💥 Ultimate – Moon-Shattering Impact 
+### 💥 Ultimate – Moon-Shattering Impact
 <p>Every 10 sec, deals damage equal to 900% of ATK to targets within range. Increases damge by 10% for each debuff/status effect on all enemies (up to 500%). After the attack hits, has a 30% chance to inflict Bind and &#91;Top&#93; Paralysis on each target for 7 sec.</p>
 
 ## Effect applications
