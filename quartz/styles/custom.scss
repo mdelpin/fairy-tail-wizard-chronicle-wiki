@@ -1,3 +1,38 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+/* Character portraits remain compact; metadata shares the row on desktop. */
+.character-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.character-summary .character-portrait {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  margin: 0;
+  border-radius: 8px;
+}
+.character-details {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.character-details > :first-child { margin-top: 0; }
+@media (max-width: 600px) {
+  .character-summary { flex-direction: column; }
+}
+
+/* Curated directories replace the automatic listing. */
+article.curated-directory + .page-listing { display: none; }
+
+/* Publication dates do not describe game-data freshness. */
+.content-meta { display: none; }
+
+@media (max-width: 600px) {
+  .page > #quartz-body > .center { min-width: 0; }
+  .character-details { max-width: 100%; }
+}
