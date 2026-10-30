@@ -6,7 +6,7 @@ configuration:
   enablePopovers: true
   analytics: null
   locale: en-US
-  baseUrl: mdelpin.github.io/wizard-chronicles-wiki
+  baseUrl: mdelpin.github.io/fairy-tail-wizard-chronicle-wiki
   ignorePatterns:
     - private
     - templates
