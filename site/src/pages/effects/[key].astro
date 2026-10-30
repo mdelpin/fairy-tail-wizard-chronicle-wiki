@@ -73,6 +73,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
       </div>
     </section>
 
+    <div>
     <div class="filters" aria-label="Filter wizards">
       {tiersPresent.length > 1 && (
         <div class="row" role="group" aria-label="Tier">
@@ -171,6 +172,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
         </div>
       </section>
     )}
+  </div>
   </div>
 </Base>
 

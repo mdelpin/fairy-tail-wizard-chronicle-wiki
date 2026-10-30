@@ -37,8 +37,10 @@ const sameIdentity = units.filter((u) => u.identity && u.identity === unit.ident
 const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
 ---
 <Base title={unit.name} section="characters" description={`${unit.name}: ${unit.attribute} ${unit.role} wizard in FAIRY TAIL Wizard Chronicle — skills, effects and signature lacrima.`}>
-  <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb">
+  <div class="wrap" data-pagefind-body data-pagefind-meta={`title:${unit.name}`}>
+    <span hidden data-pagefind-filter="Type">Wizard</span><span hidden data-pagefind-filter="Attribute">{unit.attribute}</span><span hidden data-pagefind-filter="Role">{unit.role}</span>
+    {portraits.has(unit.id) && <span hidden data-pagefind-meta={`image:${url(`portraits/${unit.id}.webp`)}`}></span>}
+    <nav class="crumbs" data-pagefind-ignore aria-label="Breadcrumb">
       <a href={url('characters/')}>Wizard Roster</a><span aria-hidden="true">/</span>
       <a href={url(`characters/?attr=${unit.attribute}`)}>{unit.attribute}</a><span aria-hidden="true">/</span>
       <span>{unit.name}</span>
@@ -60,7 +62,7 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
           <span class="badge">Role · {unit.role}</span>
           {skills[0]?.attackRange && <span class="badge">Normal attack · {skills[0].attackRange}</span>}
         </div>
-        <div class="glance">
+        <div class="glance" data-pagefind-ignore>
           {inflicts.size > 0 && (
             <div><span class="lbl">Inflicts</span><div class="chips">
               {[...inflicts].map(([label, key]) => <a class="tag bad" href={url(`effects/${key}/`)}>{label}</a>)}
@@ -89,13 +91,13 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
           return (
             <article class="skill">
               <div class="skill-head">
-                <span class={`kind kind-${s.kind}`}>{s.kind}</span>
-                <h3>{s.name ?? s.kind}</h3>
-                <span class="muted unlock">{UNLOCK[s.kind]}</span>
+                <span class={`kind kind-${s.kind}`} data-pagefind-ignore>{s.kind}</span>
+                <h3 id={`skill-${s.kind.toLowerCase()}`}>{s.name ?? s.kind}</h3>
+                <span class="muted unlock" data-pagefind-ignore>{UNLOCK[s.kind]}</span>
               </div>
               {s.gameText?.Lv3 && <p class="text">{s.gameText.Lv3}</p>}
               {r.length > 0 && (
-                <div class="table-wrap">
+                <div class="table-wrap" data-pagefind-ignore>
                   <table class="fx">
                     <thead><tr><th scope="col">Effect</th><th scope="col">Target</th><th scope="col">Trigger</th><th scope="col">Chance</th><th scope="col">Duration</th><th scope="col">Value</th></tr></thead>
                     <tbody>
@@ -118,7 +120,7 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
                   </table>
                 </div>
               )}
-              {!s.gameText?.Lv1 && <p class="levels muted">Lv.1 and Lv.2 not recorded yet.</p>}
+              {!s.gameText?.Lv1 && <p class="levels muted" data-pagefind-ignore>Lv.1 and Lv.2 not recorded yet.</p>}
             </article>
           );
         })}

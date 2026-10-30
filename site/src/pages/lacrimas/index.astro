@@ -6,7 +6,8 @@ const signature = lacrimas.filter((l) => l.kind === 'signature');
 const generic = lacrimas.filter((l) => l.kind === 'generic');
 ---
 <Base title="Lacrimas" section="lacrimas" description="Every signature and stat lacrima in FAIRY TAIL Wizard Chronicle with its game text.">
-  <div class="wrap">
+  <div class="wrap" data-pagefind-body>
+    <span hidden data-pagefind-filter="Type">Lacrima</span>
     <div class="head">
       <svg width="40" height="52" viewBox="0 0 40 52" aria-hidden="true">
         <path d="M20 4 32 18 20 48 8 18z" fill="#E8B3A5" stroke="#8A5A35" stroke-width="1.4" />
@@ -22,8 +23,8 @@ const generic = lacrimas.filter((l) => l.kind === 'generic');
           {(list as typeof lacrimas).map((l) => {
             const owner = l.signatureFor ? unitById.get(l.signatureFor) : undefined;
             return (
-              <li id={l.id} class="item">
-                <span class="heading nm">{l.name}</span>
+              <li class="item">
+                <h3 id={l.id} class="heading nm">{l.name}</h3>
                 {owner && <a class="owner" href={url(`characters/${owner.id}/`)}>{owner.name}</a>}
                 {l.gameText && <p>{l.gameText}</p>}
               </li>
@@ -40,8 +41,9 @@ const generic = lacrimas.filter((l) => l.kind === 'generic');
   .head h1 { font-size: 42px; line-height: 1; }
   .head p { margin: 4px 0 0; }
   .list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
-  .item { padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--brass); display: flex; flex-direction: column; gap: 6px; scroll-margin-top: 16px; }
-  .item:target { box-shadow: 0 0 0 3px var(--crimson); }
+  .item { padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--brass); display: flex; flex-direction: column; gap: 6px; }
+  .nm { scroll-margin-top: 16px; }
+  .item:has(.nm:target) { box-shadow: 0 0 0 3px var(--crimson); }
   .nm { font-size: 18px; }
   .owner { font-size: 13px; font-weight: 600; }
   .item p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }

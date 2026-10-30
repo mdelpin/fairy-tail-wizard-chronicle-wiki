@@ -1,0 +1,113 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pennant from '../../components/Pennant.astro';
+import { url, buildFinderIndex } from '../../lib/data';
+const bundle = url('pagefind/');
+// Effect names get a direct shortcut: full-text ranking favours wizard pages that repeat the word.
+const idx = buildFinderIndex();
+const fx = [...idx.meta.values()].map((m) => ({ label: m.label, href: url(`effects/${m.key}/`), color: m.color, icon: m.icon, n: new Set((idx.applies.get(m.key) ?? []).map((x) => x.unit.id)).size }));
+---
+<Base title="Search" section="search" description="Search every wizard, skill, effect and lacrima in FAIRY TAIL Wizard Chronicle.">
+  <link href={`${bundle}pagefind-ui.css`} rel="stylesheet" />
+  <div class="wrap">
+    <div class="head">
+      <Pennant width={34} star />
+      <div>
+        <h1>Search</h1>
+        <p class="muted">Wizards, skill text, effects and lacrimas. Try “Bleed”, “Technique-type ally” or “Zodiac”.</p>
+      </div>
+    </div>
+    <div class="panel box">
+      <div id="fx-hits" hidden></div>
+      <div id="search"></div>
+      <noscript><p>Search needs JavaScript. You can still browse the <a href={url('characters/')}>Wizard Roster</a> or the <a href={url('effects/')}>Effect Finder</a>.</p></noscript>
+      <p id="unavailable" class="muted" hidden>The search index isn’t built yet. It is created by <code>npm run build</code>, so search works in <code>npm run preview</code> and on the live site, not in <code>npm run dev</code>.</p>
+    </div>
+  </div>
+  <script is:inline define:vars={{ bundle, fx }}>
+    const box = document.getElementById('fx-hits');
+    const norm = (t) => t.toLowerCase().replace(/↑/g, ' up ').replace(/↓/g, ' down ').replace(/\b(increase|buff)\b/g, 'up').replace(/\b(decrease|debuff)\b/g, 'down').replace(/[^a-z0-9]+/g, ' ').trim();
+    function showEffects(q) {
+      const n = norm(q);
+      const hits = n.length < 3 ? [] : fx.filter((e) => norm(e.label).includes(n) || (n.includes(norm(e.label)) && norm(e.label).length >= 4)).slice(0, 4);
+      box.hidden = hits.length === 0;
+      box.replaceChildren(...hits.map((e) => {
+        const a = document.createElement('a');
+        a.className = 'fx-hit'; a.href = e.href; a.style.setProperty('--c', e.color);
+        a.innerHTML = '<span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF3E0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path></path></svg></span><span class="tx"><span class="k">Effect</span><strong></strong><span class="n"></span></span><span class="go" aria-hidden="true">→</span>';
+        a.querySelector('path').setAttribute('d', e.icon);
+        a.querySelector('strong').textContent = e.label;
+        a.querySelector('.n').textContent = e.n + (e.n === 1 ? ' wizard applies it' : ' wizards apply it');
+        return a;
+      }));
+    }
+    const s = document.createElement('script');
+    s.src = bundle + 'pagefind-ui.js';
+    s.onerror = () => { document.getElementById('unavailable').hidden = false; };
+    s.onload = () => {
+      const ui = new PagefindUI({
+        element: '#search', bundlePath: bundle, showSubResults: true, showImages: true, excerptLength: 24,
+        resetStyles: false, autofocus: true,
+        translations: { placeholder: 'Search wizards, skills, effects…', zero_results: 'Nothing found for [SEARCH_TERM]' },
+      });
+      // Effect shortcuts sit between the search box and the results.
+      document.querySelector('#search .pagefind-ui__drawer')?.insertAdjacentElement('beforebegin', box);
+      const q = new URLSearchParams(location.search).get('q');
+      if (q) { ui.triggerSearch(q); showEffects(q); }
+      // Keep ?q= in the address bar so a search can be shared or refreshed.
+      document.querySelector('#search').addEventListener('input', (e) => {
+        if (!(e.target instanceof HTMLInputElement)) return;
+        const v = e.target.value.trim();
+        showEffects(v);
+        history.replaceState(null, '', location.pathname + (v ? '?q=' + encodeURIComponent(v) : ''));
+      });
+      document.querySelector('#search').addEventListener('click', (e) => {
+        if (e.target instanceof Element && e.target.closest('.pagefind-ui__search-clear')) { showEffects(''); history.replaceState(null, '', location.pathname); }
+      });
+    };
+    document.head.appendChild(s);
+  </script>
+</Base>
+
+<style is:global>
+  #search {
+    --pagefind-ui-scale: .9;
+    --pagefind-ui-primary: var(--crimson);
+    --pagefind-ui-text: var(--ink);
+    --pagefind-ui-background: #fff;
+    --pagefind-ui-border: var(--line);
+    --pagefind-ui-tag: #F3E8D3;
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 14px;
+    --pagefind-ui-image-border-radius: 12px;
+    --pagefind-ui-image-box-ratio: 1 / 1;
+    --pagefind-ui-font: var(--body);
+  }
+  #search .pagefind-ui__search-input { border-radius: 999px; font-weight: 500; }
+  #search .pagefind-ui__result-title { font-family: var(--heading); font-weight: 400; font-size: 20px; }
+  #search .pagefind-ui__result-link { color: var(--ink); }
+  #search .pagefind-ui__result-nested .pagefind-ui__result-link { color: var(--crimson); font-family: var(--body); font-size: 15px; font-weight: 600; }
+  #search mark { background: #F6DCD7; color: var(--crimson-dark); border-radius: 3px; padding: 0 2px; }
+  #search .pagefind-ui__filter-name { font-weight: 700; color: var(--timber); }
+  #search .pagefind-ui__search-clear { background: transparent; color: var(--crimson); font-weight: 600; }
+  #search .pagefind-ui__filter-panel { border-color: var(--line); }
+  #search .pagefind-ui__filter-block { border-color: var(--line); }
+  #search .pagefind-ui__result { border-color: var(--line); }
+  #search .pagefind-ui__button { border-radius: 999px; background: var(--crimson); color: var(--cream); border-color: #EBD9B4; }
+</style>
+
+<style>
+  .head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .head h1 { font-size: 42px; line-height: 1; }
+  .head p { margin: 4px 0 0; }
+  .box { padding: 22px; }
+  #fx-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin: 16px 0 4px; }
+  #fx-hits :global(.fx-hit) { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 14px; background: color-mix(in srgb, var(--c) 78%, #2a0f08); border: 2px solid var(--brass); color: #FFF3E0; text-decoration: none; box-shadow: 0 3px 0 rgba(40,10,6,.4); }
+  #fx-hits :global(.fx-hit:hover) { transform: translateY(-1px); color: #fff; }
+  #fx-hits :global(.ic) { flex: none; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,.25); border: 2px solid var(--brass); display: flex; align-items: center; justify-content: center; }
+  #fx-hits :global(.tx) { flex: 1; display: flex; flex-direction: column; line-height: 1.2; }
+  #fx-hits :global(.k) { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #F3D27A; }
+  #fx-hits :global(strong) { font-family: var(--heading); font-weight: 400; font-size: 19px; }
+  #fx-hits :global(.n) { font-size: 12px; color: #F6DFC8; }
+  #fx-hits :global(.go) { font-size: 20px; color: #F3D27A; }
+</style>
