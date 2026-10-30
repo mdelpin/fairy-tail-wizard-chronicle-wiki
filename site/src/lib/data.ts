@@ -23,7 +23,10 @@ export interface Application {
 export interface Skill {
   kind: 'Normal' | 'Special' | 'Ultimate'; name: string | null; attackRange: string | null;
   gameText: Record<string, string>; applications: string[];
+  /** Where the Lv.1–2 text came from: 'madochro.wiki.gg' (credited) or 'In game'. */
+  levelTextSource?: string | null;
 }
+export const WIKI_CREDIT = { name: 'madochro.wiki.gg', href: 'https://madochro.wiki.gg/', license: 'CC BY-SA 4.0', licenseHref: 'https://creativecommons.org/licenses/by-sa/4.0/' };
 export interface Unit {
   id: string; name: string; identity: string | null; collection: string | null; rarity: string | null;
   attribute: Attribute; role: string | null; portrait: string | null; signatureLacrima: string | null;

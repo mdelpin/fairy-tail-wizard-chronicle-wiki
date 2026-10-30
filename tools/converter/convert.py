@@ -290,6 +290,8 @@ def main(root, skills_dir, out, slugs_path=None):
             "kind": f.get("kind"), "name": clean(f.get("skillName")), "unit": unit_title,
             "attackRange": clean(f.get("attackRange")),
             "gameText": texts, "levelTable": table, "_apps": apps,
+            # where the Lv.1-2 text came from: 'madochro.wiki.gg' (credited on the site) or 'In game'
+            "levelTextSource": clean(f.get("levelTextSource")),
         }
     for stem, r in EA.items():
         if stem not in used_apps:

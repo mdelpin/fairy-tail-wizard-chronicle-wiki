@@ -15,6 +15,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deal 100% ATK damage to the target. On hit, there is a 30% chance to grant yourself [High] Critical Rate Increase for 3s.",
+     "Lv2": "Deal 120% ATK damage to the target. On hit, there is a 30% chance to grant yourself [High] Critical Rate Increase for 3s.",
      "Lv3": "Deal 150% ATK damage to the target. On hit, there is a 30% chance to grant yourself [High] Critical Rate Increase for 3s."
     },
     "levelTable": [
@@ -46,13 +48,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-critical-rate-increase-self-30-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Mid Stance",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 5s, grant yourself [Top] Critical Damage Increase and [Top] Accuracy Increase for 3s.",
+     "Lv2": "Every 5s, grant yourself [Top] Critical Damage Increase and [Top] Accuracy Increase for 4s.",
      "Lv3": "Every 5s, grant yourself [Top] Critical Damage Increase and [Top] Accuracy Increase for 5s."
     },
     "levelTable": [
@@ -84,13 +89,16 @@
     "applications": [
      "top-critical-damage-increase-self-every-5-sec-5-sec",
      "top-accuracy-increase-self-every-5-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "All-In Strike",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 8s, deal 600% ATK damage to all enemies. On hit, each target has a 50% chance to be inflicted for 3s with [Top] Paralysis and [Top] Critical Defense Decrease.",
+     "Lv2": "Every 8s, deal 700% ATK damage to all enemies. On hit, each target has a 50% chance to be inflicted for 4s with [Top] Paralysis and [Top] Critical Defense Decrease.",
      "Lv3": "Every 8s, deal 800% ATK damage to all enemies. On hit, each target has a 50% chance to be inflicted for 5s with [Top] Paralysis and [Top] Critical Defense Decrease."
     },
     "levelTable": [
@@ -135,7 +143,8 @@
      "damage-all-enemies-every-8-sec-800-of-own-atk",
      "top-paralysis-each-target-hit-every-8-sec-50-5-sec",
      "top-critical-defense-decrease-each-target-hit-every-8-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -155,6 +164,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deal 100% ATK damage to the target. On hit, there is a 20% chance to inflict Bind on the target for 2s.",
+     "Lv2": "Deal 120% ATK damage to the target. On hit, there is a 20% chance to inflict Bind on the target for 2s.",
      "Lv3": "Deal 150% ATK damage to the target. On hit, there is a 20% chance to inflict Bind on the target for 2s."
     },
     "levelTable": [
@@ -186,13 +197,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "bind-single-enemy-20-2-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "After-School Review Meeting",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, if enemies within the target area are Bound, inflict each enemy for 3s with [Top] DEF Decrease, [Top] Critical Defense Decrease, [Top] Evasion Decrease, and Heal Block.",
+     "Lv2": "After a normal skill hits, if enemies within the target area are Bound, inflict each enemy for 4s with [Top] DEF Decrease, [Top] Critical Defense Decrease, [Top] Evasion Decrease, and Heal Block.",
      "Lv3": "After a normal skill hits, if enemies within the target area are Bound, inflict each enemy for 5s with [Top] DEF Decrease, [Top] Critical Defense Decrease, [Top] Evasion Decrease, and Heal Block."
     },
     "levelTable": [
@@ -250,13 +264,16 @@
      "top-critical-defense-decrease-enemies-in-target-area-bind-5-sec",
      "top-evasion-decrease-enemies-in-target-area-bind-5-sec",
      "heal-block-enemies-in-target-area-bind-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Blackboard Master",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10s, deal 650% ATK damage to targets within range. On hit, inflict [Top] Critical Resistance Decrease on the target for 3s, and each target has a 40% chance to be inflicted with Bind for 3s.",
+     "Lv2": "Every 10s, deal 750% ATK damage to targets within range. On hit, inflict [Top] Critical Resistance Decrease on the target for 4s, and each target has a 40% chance to be inflicted with Bind for 4s.",
      "Lv3": "Every 10s, deal 850% ATK damage to targets within range. On hit, inflcit [Top] Critical Resistance Decrease on the target for 5s, and each target has a 40% chance to be inflicted with Bind for 5s."
     },
     "levelTable": [
@@ -301,7 +318,8 @@
      "damage-enemies-in-range-every-10-sec-850-of-own-atk",
      "top-critical-resistance-decrease-each-target-hit-every-10-sec-5-sec",
      "bind-each-target-hit-every-10-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -321,6 +339,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -339,13 +359,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "The Power of the Sorcerer King",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to grant each ally for 3 sec [Top] Critical Damage Increase.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to grant each ally for 4 sec [Top] Critical Damage Increase.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant each ally for 5 sec [Top] Critical Damage Increase."
     },
     "levelTable": [
@@ -364,13 +387,16 @@
     ],
     "applications": [
      "top-critical-damage-increase-all-allies-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Ars Magia",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 500% of ATK to enemies within the target area. After the attack hits, there is a 20% chance to inflict on each target for 3 sec Bind.",
+     "Lv2": "Every 11 sec, deal damage equal to 600% of ATK to enemies within the target area. After the attack hits, there is a 20% chance to inflict on each target for 4 sec Bind.",
      "Lv3": "Every 11 sec, deal damage equal to 700% of ATK to enemies within the target area. After the attack hits, there is a 20% chance to inflict on each target for 5 sec Bind."
     },
     "levelTable": [
@@ -402,7 +428,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-700-of-own-atk",
      "bind-each-target-hit-every-11-sec-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -422,6 +449,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 100% of ATK to the target. After the attack hits, restores HP of the ally with the lowest HP by 130% of own ATK.",
+     "Lv2": "Deals damage equal to 120% of ATK to the target. After the attack hits, restores HP of the ally with the lowest HP by 130% of own ATK.",
      "Lv3": "Deals damage equal to 150% of ATK to the target. After the attack hits, restores HP of the ally with the lowest HP by 130% of own ATK."
     },
     "levelTable": [
@@ -453,13 +482,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "heal-lowest-hp-ally-130-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Peaceful Sunset",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, has a 30% chance to grant all allies for 3 sec. [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase, and advances the Special Skill Gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, has a 30% chance to grant all allies for 4 sec. [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase, and advances the Special Skill Gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, has a 30% chance to grant all allies for 5 sec, [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase, and advances the Special Skill Gauge by 0.7 sec."
     },
     "levelTable": [
@@ -517,13 +549,16 @@
      "top-atk-increase-all-allies-30-5-sec",
      "top-accuracy-increase-all-allies-30-5-sec",
      "advance-special-skill-gauge-all-allies-30-0-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Lightning Dragon's Rest",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec., restores all allies' HP by 750% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 3 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 3 sec.",
+     "Lv2": "Every 11 sec., restores all allies' HP by 850% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 4 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 4 sec.",
      "Lv3": "Every 11 sec, restores all allies HP by 750% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continous Heal and [Top] DEF Increase for 5 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 5 sec."
     },
     "levelTable": [
@@ -607,7 +642,8 @@
      "remove-all-debuffs-all-allies-every-11-sec",
      "high-critical-rate-increase-mind-allies-every-11-sec-5-sec",
      "high-atk-increase-mind-allies-every-11-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -627,6 +663,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 100% of ATK to the target. After the attack hits, has a 30% chance to grant self [High] DEF Increase, [High] Critical Resistance Increase, and [High] Critical DEF Increase for 3 sec.",
+     "Lv2": "Deals damage equal to 120% of ATK to the target. After the attack hits, has a 30% chance to grant self [High] DEF Increase, [High] Critical Resistance Increase, and [High] Critical DEF Increase for 3 sec.",
      "Lv3": "Deals damage equal to 150% of ATK to the target. After the attack hits, has a 30% chance to grant self [High] DEF Increase, [High] Critical Resistance Increase, and [High] Critical DEF Increase for 3 sec."
     },
     "levelTable": [
@@ -684,13 +722,16 @@
      "high-def-increase-self-30-3-sec",
      "high-critical-resistance-increase-self-30-3-sec",
      "high-critical-defense-increase-self-30-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Summer Heat Charge",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a Critical Hit occurs, grants all STR allies for 3 sec. [Top] DEF Increase, [Top] Critical DEF Increase, and [Top] Critical Resistance Increase.",
+     "Lv2": "When a Critical Hit occurs, grants all STR allies for 4 sec. [Top] DEF Increase, [Top] Critical DEF Increase, and [Top] Critical Resistance Increase.",
      "Lv3": "When a Critical Hit occurs, grants all STR allies for 5 sec: [Top] DEF Increase, [Top] Critical DEF Increase, and [Top] Critical Resistance Increase."
     },
     "levelTable": [
@@ -735,13 +776,16 @@
      "top-def-increase-brave-allies-critical-hit-5-sec",
      "top-critical-defense-increase-brave-allies-critical-hit-5-sec",
      "top-critical-resistance-increase-brave-allies-critical-hit-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Fire Dragon's Grand Water Bullet",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec., deals damage equal to 650% of ATK to enemies within range. After the attack hits, has a 40% chance to inflict Silence and [Top] ATK Decrease, [Top] Critical Damage Decrease, and [Top] Critical Rate Decrease on each target for 3 sec.",
+     "Lv2": "Every 9 sec., deals damage equal to 750% of ATK to enemies within range. After the attack hits, has a 40% chance to inflict Silence and [Top] ATK Decrease, [Top] Critical Damage Decrease, and [Top] Critical Rate Decrease on each target for 4 sec.",
      "Lv3": "Every 9 sec, deals damage equal to 850% of ATK to enemies within range. After the attack hits, has a 40% chance to inflict Silence and [Top] ATK Decrease, [Top] Critical Damage Decrease, and [Top] Critical Rate Decrease on each target for 5 sec."
     },
     "levelTable": [
@@ -812,7 +856,8 @@
      "top-atk-decrease-each-target-hit-every-9-sec-40-5-sec",
      "top-critical-damage-decrease-each-target-hit-every-9-sec-40-5-sec",
      "top-critical-rate-decrease-each-target-hit-every-9-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -832,6 +877,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 120% of ATK to the target. On critical hit, grants allies with INT attribute for 3s: [Top] Critical Rate Increase and [High] Accuracy Increase.",
+     "Lv2": "Deals damage equal to 140% of ATK to the target. On critical hit, grants allies with INT attribute for 3s: [Top] Critical Rate Increase and [High] Accuracy Increase.",
      "Lv3": "Deals damage equal to 170% of ATK to the target. On critical hit, grants allies with INT attributes for 3s: [Top] Critical Rate Increase and [High] Accuracy Increase."
     },
     "levelTable": [
@@ -876,13 +923,16 @@
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "top-critical-rate-increase-mind-allies-3-sec",
      "high-accuracy-increase-mind-allies-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Guide of the Star Spirits",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 5s, grants allies with INT attribute for 3s: [Top] ATK Increase, [Top] DEF Increase, and [Top] Critical Rate Increase.",
+     "Lv2": "Every 5s, grants allies with INT attribute for 4s: [Top] ATK Increase, [Top] DEF Increase, and [Top] Critical Rate Increase.",
      "Lv3": "Every 5s, grants allies with INT attribute for 5s: [Top] ATK Increase, [Top] DEF Increase, and [Top] Critical Rate Increase."
     },
     "levelTable": [
@@ -927,13 +977,16 @@
      "top-atk-increase-mind-allies-every-5-sec-5-sec",
      "top-def-increase-mind-allies-every-5-sec-5-sec",
      "top-critical-rate-increase-mind-allies-every-5-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Star Whip",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 700% of ATK to targets within range every 9s. After the attack hits, has a 50% chance to apply to each target for 3s: [Top] Paralysis and [Top] Critical Resistance Decrease.",
+     "Lv2": "Deals damage equal to 800% of ATK to targets within range every 9s. After the attack hits, has a 50% chance to apply to each target for 4s: [Top] Paralysis and [Top] Critical Resistance Decrease.",
      "Lv3": "Deals damage equal to 900% of ATK to targets within range every 9s. After the attack hits, has a 50% chance to apply to each target for 5s: [Top] Paralysis and [Top] Critical Resistance Decrease."
     },
     "levelTable": [
@@ -978,7 +1031,8 @@
      "damage-enemies-in-range-every-9-sec-900-of-own-atk",
      "top-paralysis-each-target-hit-every-9-sec-50-5-sec",
      "top-critical-resistance-decrease-each-target-hit-every-9-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -998,6 +1052,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 120% of ATK to the target. After the attack hits, has a 30% chance to inflict on the target for 3s: [High] Burn.",
+     "Lv2": "Deals damage equal to 140% of ATK to the target. After the attack hits, has a 30% chance to inflict on the target for 3s: [High] Burn.",
      "Lv3": "Deals damage equal to 170% of ATK to the target. After the attack hits, has a 30% chance to inflict on the target for 3s: [High] Burn."
     },
     "levelTable": [
@@ -1029,13 +1085,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-burn-single-enemy-30-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Fire Dragon Slayer",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, has a 30% chance to grant self for 3s: [Top] ATK Increase, [Top] Critical Damage Increase, and [Top] Shield.",
+     "Lv2": "After a normal skill hits, has a 30% chance to grant self for 4s: [Top] ATK Increase, [Top] Critical Damage Increase, and [Top] Shield.",
      "Lv3": "After a normal skill hits, has a 30% chance to grant self for 5s: [Top] ATK Increase, [Top] Critical Damage Increase, and [Top] Shield."
     },
     "levelTable": [
@@ -1080,13 +1139,16 @@
      "top-atk-increase-self-30-5-sec",
      "top-critical-damage-increase-self-30-5-sec",
      "top-shield-self-30-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Roar of the Fire Dragon",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 700% of ATK to targets within range every 10s. If the target is afflicted with Burn after the attack hits, applies to each target for 3s: [Top] ATK Decrease and [Top] Critical Damage Decrease.",
+     "Lv2": "Deals damage equal to 800% of ATK to targets within range every 10s. If the target is afflicted with Burn after the attack hits, applies to each target for 4s: [Top] ATK Decrease and [Top] Critical Damage Decrease.",
      "Lv3": "Deals damage equal to 900% of ATK to targets within range every 10s. If the target is afflicted with Burn after the attack hits, applies to each target for 5s: [Top] ATK Decrease and [Top] Critical Damage Decrease."
     },
     "levelTable": [
@@ -1131,7 +1193,8 @@
      "damage-enemies-in-range-every-10-sec-900-of-own-atk",
      "top-atk-decrease-each-target-hit-every-10-sec-burning-target-5-sec",
      "top-critical-damage-decrease-each-target-hit-every-10-sec-burning-target-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -1151,6 +1214,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target. After hitting, heals the ally with the lowest HP for 100% of your ATK.",
+     "Lv2": "Deals 100% ATK damage to the target. After hitting, heals the ally with the lowest HP for 120% of your ATK.",
      "Lv3": "Deals 120% ATK damage to the target. After hitting, heals the ally with the lowest HP for 140% of your ATK."
     },
     "levelTable": [
@@ -1182,13 +1247,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk",
      "heal-lowest-hp-ally-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Command T Expansion",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, for 3 sec, grant all Tech-type allies [High] Critical Rate Increase and [High] Accuracy Increase.",
+     "Lv2": "When a critical hit occurs, for 4 sec, grant all Tech-type allies [High] Critical Rate Increase and [High] Accuracy Increase.",
      "Lv3": "When a criticla hit occurs, for 5 sec, grant all Tech-type allies [High] Critical Rate Increase and [High] Accuracy Increase."
     },
     "levelTable": [
@@ -1220,13 +1288,16 @@
     "applications": [
      "high-critical-rate-increase-technique-allies-critical-hit-5-sec",
      "high-accuracy-increase-technique-allies-critical-hit-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Command T Shrink",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, restore HP to the ally with the lowest HP equal to 1050% of your ATK. Then remove all debuffs applied to all allies.",
+     "Lv2": "Every 10 sec, restore HP to the ally with the lowest HP equal to 1150% of your ATK. Then remove all debuffs applied to all allies.",
      "Lv3": "Every 10 sec, restore HP to the ally with the lowest HP equal to 1250% of your ATK. Then remove all debuffs applied to all allies."
     },
     "levelTable": [
@@ -1258,7 +1329,8 @@
     "applications": [
      "remove-all-debuffs-all-allies-every-10-sec",
      "heal-lowest-hp-ally-every-10-sec-1250-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -1278,6 +1350,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deal damage equal to 100% of ATK to the target. After the attack hits, there is a 20% chance to apply to the target for 3 seconds [High] Critical Rate Decrease.",
+     "Lv2": "Deal damage equal to 120% of ATK to the target. After the attack hits, there is a 20% chance to apply to the target for 3 seconds [High] Critical Rate Decrease.",
      "Lv3": "Deal damage equal to 150% of ATK to the target. After the attack hits, there is a 20% chance to apply to the target for 3 seconds [High] Critical Rate Decrease."
     },
     "levelTable": [
@@ -1309,13 +1383,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-critical-rate-decrease-single-enemy-20-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Bunny Trap",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 7 seconds, for 3 seconds, all enemies are inflicted with [High] Critical Defense Decrease and [High] Critical Resistance Decrease.",
+     "Lv2": "Every 7 seconds, for 4 seconds, all enemies are inflicted with [High] Critical Defense Decrease and [High] Critical Resistance Decrease.",
      "Lv3": "Every 7 seconds, for 5 seconds, all enemies are inflicted with [High] Critical Defense Decrease and [High] Critical Resistance Decrease."
     },
     "levelTable": [
@@ -1347,13 +1424,16 @@
     "applications": [
      "high-critical-defense-decrease-all-enemies-every-7-sec-5-sec",
      "high-critical-resistance-decrease-all-enemies-every-7-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Dessert Shuffle",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 seconds, deal damage equal to 550% of ATK to all enemies. After the attack hits, there is a 40% chance per target to apply, for 3 seconds, [Top] Critical Damage Decrease and [Top] ATK Decrease.",
+     "Lv2": "Every 10 seconds, deal damage equal to 650% of ATK to all enemies. After the attack hits, there is a 40% chance per target to apply, for 4 seconds, [Top] Critical Damage Decrease and [Top] ATK Decrease.",
      "Lv3": "Every 10 seconds, deal damage equal to 750% of ATK to all enemies. After the attack hits, there is a 40% chance per target to apply, for 5 seconds, [Top] Critical Damage Decrease and [Top] ATK Decrease."
     },
     "levelTable": [
@@ -1398,7 +1478,8 @@
      "damage-all-enemies-every-10-sec-750-of-own-atk",
      "top-critical-damage-decrease-each-target-hit-every-10-sec",
      "top-atk-decrease-each-target-hit-every-10-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -1418,6 +1499,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deal damage equal to 110% of ATK to the target. After the attack hits, there is a 20% chance to grant yourself, for 3 seconds, [High] ATK Increase.",
+     "Lv2": "Deal damage equal to 130% of ATK to the target. After the attack hits, there is a 20% chance to grant yourself, for 3 seconds, [High] ATK Increase.",
      "Lv3": "Deal damage equal to 160% of ATK to the target. After the attack hits, there is a 20% chance to grant yourself, for 3 seconds [High] ATK Increase."
     },
     "levelTable": [
@@ -1449,13 +1532,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-atk-increase-self-20-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Bunny Enchant",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to grant all Heart-element allies, for 3 seconds, [Top] ATK Increase and [Top] DEF Increase, and advance the current Ultimate Skill Gauge by 0.5 seconds.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to grant all Heart-element allies, for 4 seconds, [Top] ATK Increase and [Top] DEF Increase, and advance the current Ultimate Skill Gauge by 0.6 seconds.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant all Heart-element allies, for 5 seconds, [Top] ATK Increase and [Top] DEF Increase, and advance the current Ultimate Skill Gauge by 0.7 seconds."
     },
     "levelTable": [
@@ -1499,13 +1585,16 @@
     "applications": [
      "top-atk-increase-heart-allies-20-5-sec",
      "top-def-increase-heart-allies-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Lucky Rapid Rain",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 seconds, deal damage equal to 650% of ATK to enemies within the target area. After the attack hits, there is a 50% chance per target to apply, for 3 seconds, Silence.",
+     "Lv2": "Every 10 seconds, deal damage equal to 750% of ATK to enemies within the target area. After the attack hits, there is a 50% chance per target to apply, for 4 seconds, Silence.",
      "Lv3": "Every 10 seconds, deal damage equal to 850% of ATK to enemies within the target area. After the attack hits, there is a 50% chance per target to apply, for 5 seconds, Silence."
     },
     "levelTable": [
@@ -1537,7 +1626,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-850-of-own-atk",
      "silence-each-target-hit-every-10-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -1557,6 +1647,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -1575,13 +1667,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "The heavy drinker of Fairy Tail",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to grant yourself for 3 sec [Top] Critical Damage Increase.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to grant yourself for 4 sec [Top] Critical Damage Increase.",
      "Lv3": "After a Normal Skill hits, there is a 20% chance to grant yourself for 5 sec [Top] Critical Damage Increase."
     },
     "levelTable": [
@@ -1600,13 +1695,16 @@
     ],
     "applications": [
      "top-critical-damage-increase-self-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Fairy Glitter",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 550% of ATK to enemies within the target area.",
+     "Lv2": "Every 9 sec, deal damage equal to 650% of ATK to enemies within the target area.",
      "Lv3": "Every 9 sec, deal damage equal to 750% of ATK to enemies within the target area."
     },
     "levelTable": [
@@ -1625,7 +1723,8 @@
     ],
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-750-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -1824,6 +1923,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deal 100% ATK damage to the target. After the attack hits, there is a 20% chance to apply to the target for 3 seconds, [High] Evasion Decrease.",
+     "Lv2": "Deal 120% ATK damage to the target. After the attack hits, there is a 20% chance to apply to the target for 3 seconds, [High] Evasion Decrease.",
      "Lv3": "Deal 150% ATK damage to the target. After the attack hits, there is a 20% chance to apply to the target for 3 seconds, [High] Evasion Decrease"
     },
     "levelTable": [
@@ -1855,13 +1956,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-evasion-decrease-single-enemy-20-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Dark Gear",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, if the target is Blind, rewind the target s Ultimate Skill Gauge by 0.5s.",
+     "Lv2": "After a normal skill hits, if the target is Blind, rewind the target s Ultimate Skill Gauge by 0.6s.",
      "Lv3": "After a normal skill hits, if the target is Blind, rewind the target's Ultimate Skill Gauge by 0.7s"
     },
     "levelTable": [
@@ -1880,13 +1984,16 @@
     ],
     "applications": [
      "push-back-ultimate-skill-gauge-single-enemy-blind-0-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Dragon Sync Photon Shooter",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 500% of ATK to all enemies every 10 seconds. After the attack hits, has a 40% chance per target to inflict Blind for 3 seconds.",
+     "Lv2": "Deals damage equal to 600% of ATK to all enemies every 10 seconds. After the attack hits, has a 40% chance per target to inflict Blind for 4 seconds.",
      "Lv3": "Deals damage equal to 700% of ATK to all enemies every 10 seconds. After the attack hits, has a 40% chance per target to inflict Blind for 5 seconds."
     },
     "levelTable": [
@@ -1918,7 +2025,8 @@
     "applications": [
      "damage-all-enemies-every-10-sec-700-of-own-atk",
      "blind-each-target-hit-every-10-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -1938,6 +2046,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deal 110% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase.",
+     "Lv2": "Deal 130% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase.",
      "Lv3": "Deal 160% ATK damage to the target. Aftet the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase."
     },
     "levelTable": [
@@ -1969,13 +2079,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-critical-rate-increase-self-20-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Luminous Gear",
     "attackRange": null,
     "gameText": {
+     "Lv1": "While this unit is on the field, grants all Tech-type allies [Mid] Critical Damage Increase and [Mid] Accuracy Increase.",
+     "Lv2": "While this unit is on the field, grants all Tech-type allies [High] Critical Damage Increase and [High] Accuracy Increase.",
      "Lv3": "While this unit is on the field, grants all Tech-type allies [Top] Critical Damage Increase and [Top] Accuracy Increase."
     },
     "levelTable": [
@@ -2007,13 +2120,16 @@
     "applications": [
      "top-critical-damage-increase-technique-allies-while-unit-is-on-the-field",
      "top-accuracy-increase-technique-allies-while-unit-is-on-the-field"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Dragon Sync Photon Slash",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 650% of ATK to enemies within the target area every 11 seconds. After the attack hits, grants self for 3 seconds: [Top] Shield and [Top] ATK Increase.",
+     "Lv2": "Deals damage equal to 750% of ATK to enemies within the target area every 11 seconds. After the attack hits, grants self for 4 seconds: [Top] Shield and [Top] ATK Increase.",
      "Lv3": "Deals damage equal to 850% of ATK to enemies within the target area every 11 seconds. After the attack hits, grants self for 5 seconds: [Top] Shield and [Top] ATK Increase."
     },
     "levelTable": [
@@ -2058,7 +2174,8 @@
      "damage-enemies-in-target-area-every-11-sec-850-of-own-atk",
      "top-shield-self-every-11-sec-5-sec",
      "top-atk-increase-self-every-11-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -2078,6 +2195,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target. After hitting, 20% chance to inflict 1s of Bind.",
+     "Lv2": "Deals 120% ATK damage to the target. After hitting, 20% chance to inflict 1s of Bind.",
      "Lv3": "Deals 150% ATK damage to the target. After hitting, 20% chance to inflict 1s of Bind."
     },
     "levelTable": [
@@ -2109,13 +2228,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "bind-single-enemy-20-1-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Deadly Predation",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to deal damage equal to 100% of ATK to all enemies. After the attack hits, there is a 50% chance to inflict for 3 sec [Top] Bleed on each target.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to deal damage equal to 150% of ATK to all enemies. After the attack hits, there is a 50% chance to inflict for 4 sec [Top] Bleed on each target.",
      "Lv3": "After a normal skill hits, there is a 20% chance to deal damage equal to 200% of ATK to all enemies. After the attack hits, there is a 50% chance to inflict for 5 sec [Top] Bleed on each target."
     },
     "levelTable": [
@@ -2147,13 +2269,16 @@
     "applications": [
      "damage-all-enemies-normal-skill-hit-20-200-of-own-atk",
      "top-bleed-each-target-hit-special-skill-hit-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Repent",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 650% of ATK to enemies within the target area. After the attack hits, if the target is in  Bleed  status, inflict on the target for 3 sec [Top] DEF Decrease,  [Top] Critical Defense Decrease, [Top] Evasion Decrease and Bind.",
+     "Lv2": "Every 11 sec, deal damage equal to 750% of ATK to enemies within the target area. After the attack hits, if the target is in  Bleed  status, inflict on the target for 4 sec [Top] DEF Decrease,  [Top] Critical Defense Decrease, [Top] Evasion Decrease and Bind.",
      "Lv3": "Every 11 sec, deal damage equal to 850% of ATK to enemies within the target area. After the attack hits, if the target is in Bleed status, inflict on the target for 5 sec [Top] DEF Decrease, [Top] Critical Defense Decrease, [Top] Evasion Decrease and Bind."
     },
     "levelTable": [
@@ -2224,7 +2349,8 @@
      "top-def-decrease-each-target-hit-every-11-sec-bleed-5-sec",
      "top-evasion-decrease-each-target-hit-every-11-sec-bleed-5-sec",
      "bind-each-target-hit-every-11-sec-bleed-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -2244,6 +2370,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 100% of ATK to the target. After the attack hits, there is a 20% chance to inflict Silence on the target for 2 sec.",
+     "Lv2": "Deals damage equal to 120% of ATK to the target. After the attack hits, there is a 20% chance to inflict Silence on the target for 2 sec.",
      "Lv3": "Deals damage equal to 150% of ATK to the target. After the attack hits, there is a 20% chance to inflict Silence on the target for 2 sec."
     },
     "levelTable": [
@@ -2262,13 +2390,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Egg Diminish",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, if enemies within the target area are affected by Silence, there is a 3 sec effect applied to each enemy: [Top] Critical Resistance Decrease, [Top] Critical Defense Decrease, and Heal Block.",
+     "Lv2": "After a normal skill hits, if enemies within the target area are affected by Silence, there is a 4 sec effect applied to each enemy: [Top] Critical Resistance Decrease, [Top] Critical Defense Decrease, and Heal Block.",
      "Lv3": "After a normal skill hits, if enemies within the target area are affected by Silence, there is a 5 sec effect applied to each enemy: [Top] Critical Resistance Decrease, [Top] Critical Defense Decrease, and Heal Block."
     },
     "levelTable": [
@@ -2313,13 +2444,16 @@
      "top-critical-resistance-decrease-enemies-in-target-area-silence-5-sec",
      "top-critical-defense-decrease-enemies-in-target-area-silence-5-sec",
      "heal-block-enemies-in-target-area-silence-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Command of T Ultra Expand",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 600% of ATK to all enemies every 9 sec. After the attack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 3 sec.",
+     "Lv2": "Deals damage equal to 700% of ATK to all enemies every 9 sec. After the attack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 4 sec.",
      "Lv3": "Deals damage equal to 800% of ATK to all enemies every 9 sec. After the atttack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 5 sec."
     },
     "levelTable": [
@@ -2364,7 +2498,8 @@
      "damage-all-enemies-every-9-sec-800-of-own-atk",
      "silence-each-target-hit-every-9-sec-40-5-sec",
      "top-atk-decrease-each-target-hit-every-9-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -2384,6 +2519,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 90% of ATK to the target. After the attack hits, restores HP of the ally with the lowest HP by 120% of the caster s ATK.",
+     "Lv2": "Deals damage equal to 100% of ATK to the target. After the attack hits, restores HP of the ally with the lowest HP by 140% of the caster s ATK.",
      "Lv3": "Deals damage equal to 120% of ATK to the target. After the attack hits, restores HP of the ally with the lowest HP by 160% of the caster's ATK."
     },
     "levelTable": [
@@ -2415,13 +2552,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk",
      "heal-lowest-hp-ally-160-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Spring Enchant",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 3 sec, and advance the current Special Skill Gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 4 sec, and advance the current Special Skill Gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 5 sec, and advance the current Special Skill Gauge by 0.7 sec."
     },
     "levelTable": [
@@ -2466,13 +2606,16 @@
      "top-def-increase-all-allies-30-5-sec",
      "action-block-barrier-all-allies-30-5-sec",
      "advance-special-skill-gauge-all-allies-30-0-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Resurrection Egg",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, restores HP of all allies by 750% of the caster s ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Defense Increase to targets for 3 sec and removes all debuffs from all allies.",
+     "Lv2": "Every 11 sec, restores HP of all allies by 850% of the caster s ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Defense Increase to targets for 4 sec and removes all debuffs from all allies.",
      "Lv3": "Every 11 sec, restores HP of all allies by 950% of the caster's ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Defense Increase to targets for 5 sec and removes all debuffs from all allies."
     },
     "levelTable": [
@@ -2530,7 +2673,8 @@
      "top-continuous-heal-all-allies-every-11-sec-5-sec",
      "top-critical-defense-increase-all-allies-every-11-sec-5-sec",
      "remove-all-debuffs-all-allies-every-11-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -2550,6 +2694,8 @@
     "name": "Normal Attack",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals 95% ATK damage to the target.",
+     "Lv2": "Deals 110% ATK damage to the target.",
      "Lv3": "Deal 130% ATK damage to the target."
     },
     "levelTable": [
@@ -2568,13 +2714,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "He's a Real Man!!",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, for 2 sec, taunt enemies around the target with Taunt, and grant yourself for 2 sec [High] DEF Increase.",
+     "Lv2": "When a critical hit occurs, for 3 sec, taunt enemies around the target with Taunt, and grant yourself for 3 sec [High] DEF Increase.",
      "Lv3": "When a critical hit occurs, for 4 sec, taunt enemies around the target with Taunt, and grant yourself for 4 sec [High] DEF Increase."
     },
     "levelTable": [
@@ -2606,13 +2755,16 @@
     "applications": [
      "taunt-enemies-around-target-4-sec",
      "high-def-increase-self-4-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Beast Arm Black Bull",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 800% of ATK to the target. After the attack hits, grant yourself for 3 sec [High] DEF Increase.",
+     "Lv2": "Every 9 sec, deal damage equal to 900% of ATK to the target. After the attack hits, grant yourself for 4 sec [High] DEF Increase.",
      "Lv3": "Every 9 sec, deal damage equal to 1000% of ATK to the target. After the attack hits, grant yourself for 5 sec [High] DEF Increase."
     },
     "levelTable": [
@@ -2644,7 +2796,8 @@
     "applications": [
      "damage-single-enemy-every-9-sec-1000-of-own-atk",
      "high-def-increase-self-every-9-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -2856,6 +3009,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 120% ATK damage to the target. After the attack hits, there is a 30% chance to grant yourself for 3s [High] ATK Increase.",
+     "Lv2": "Deals 140% ATK damage to the target. After the attack hits, there is a 30% chance to grant yourself for 3s [High] ATK Increase.",
      "Lv3": "Deals 170% ATK damage to the target. After the attack hits, there is a 30% chance to grant yourself for 3s [High] ATK Increase."
     },
     "levelTable": [
@@ -2887,13 +3042,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-atk-increase-self-30-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Titania's Command",
     "attackRange": null,
     "gameText": {
+     "Lv1": "While you are on the field, all allies with Heart attribute gain [Top] ATK Increase, [High] Critical Damage Increase, [High] Accuracy Increase, and [High] DEF Decrease.",
+     "Lv2": "While you are on the field, all allies with Heart attribute gain [Top] ATK Increase, [Top] Critical Damage Increase, [High] Accuracy Increase, and [High] DEF Decrease.",
      "Lv3": "While you are on the field, all allies with Heart attribute gain [Top] ATK Increase, [Top] Critical Damage Increase, [Top] Accuracy Increase, and [High] DEF Decrease."
     },
     "levelTable": [
@@ -2951,13 +3109,16 @@
      "top-critical-damage-increase-heart-allies-while-on-the-field",
      "top-accuracy-increase-heart-allies-while-on-the-field",
      "high-def-increase-heart-allies-while-on-the-field"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Demon Blade Benizakura Flash",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals 700% ATK damage to targets within range every 10s. After the attack hits, there is a 50% chance to apply for 3s to each target: [Top] Bleed and Silence.",
+     "Lv2": "Deals 800% ATK damage to targets within range every 10s. After the attack hits, there is a 50% chance to apply for 4s to each target: [Top] Bleed and Silence.",
      "Lv3": "Deals 900% ATK damage to targets within range every 10s. After the attack hits, there is a 50% chance to apply for 5s to each target: [Top] Bleed and Silence."
     },
     "levelTable": [
@@ -3002,7 +3163,8 @@
      "damage-enemies-in-range-every-10-sec-900-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-50-5-sec",
      "silence-each-target-hit-every-10-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -3022,6 +3184,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 95% ATK damage to the target.",
+     "Lv2": "Deals 110% ATK damage to the target.",
      "Lv3": "Deals 130% ATK damage to the target."
     },
     "levelTable": [
@@ -3040,13 +3204,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Heavenly Wheel: Five Pointed Star",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, deal damage equal to 200% of ATK to the target. After the attack hits, for 3 sec, inflict Taunt on enemies within the target s area and grant yourself [Top] DEF Increase.",
+     "Lv2": "When a critical hit occurs, deal damage equal to 250% of ATK to the target. After the attack hits, for 4 sec, inflict Taunt on enemies within the target s area and grant yourself [Top] DEF Increase.",
      "Lv3": "When a critical hit occurs, deal damage equal to 300% of ATK to the target. After the attack hits, for 5 sec, inflict Taunt on enemies within the target's area and grant yourself [Top] DEF Increase."
     },
     "levelTable": [
@@ -3091,13 +3258,16 @@
      "damage-single-enemy-critical-hit-300-of-own-atk",
      "taunt-enemies-in-target-area-5-sec",
      "top-def-increase-self-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Tenrin: Blades of Chaos",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 seconds, deal damage equal to 400% of ATK to the target. After the attack hits, deal additional damage to the target equal to 50% of your lost HP. Then grant yourself for 5 sec [Top] Critical Rate Increase.",
+     "Lv2": "Every 10 seconds, deal damage equal to 500% of ATK to the target. After the attack hits, deal additional damage to the target equal to 60% of your lost HP. Then grant yourself for 6 sec [Top] Critical Rate Increase.",
      "Lv3": "Every 10 sec, deal damage equal to 600% of ATK to the target. After the attack hits, deal additional damage to the target equal to 70% of your lost HP. Then grant yourself for 7 sec [Top] Critical Rate Increase."
     },
     "levelTable": [
@@ -3141,7 +3311,8 @@
     "applications": [
      "damage-single-enemy-every-10-sec-600-of-own-atk",
      "top-critical-rate-increase-self-every-10-sec-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -3161,6 +3332,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 95% ATK damage to the target. After the attack hits, has a 30% chance to grant self for 3 seconds: [High] DEF Increase and [High] Critical Defense Increase.",
+     "Lv2": "Deals 110% ATK damage to the target. After the attack hits, has a 30% chance to grant self for 3 seconds: [High] DEF Increase and [High] Critical Defense Increase.",
      "Lv3": "Deals 130% ATK damage to the target. After the attack hits, has a 30% chance to grant self for 3 seconds: [High] DEF Increase and [High] Critical Defense Increase."
     },
     "levelTable": [
@@ -3205,13 +3378,16 @@
      "damage-single-enemy-normal-attack-130-of-own-atk",
      "high-def-increase-self-30-3-sec",
      "high-critical-defense-increase-self-30-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Spear Mage",
     "attackRange": null,
     "gameText": {
+     "Lv1": "While on the field, grants all Heart allies: [Top] DEF Increase and [Mid] Critical Resistance Increase.",
+     "Lv2": "While on the field, grants all Heart allies: [Top] DEF Increase and [High] Critical Resistance Increase.",
      "Lv3": "While on the field, grants all Heart allies: [Top] DEF Increase and [Top] Critical Resistance Increase."
     },
     "levelTable": [
@@ -3243,13 +3419,16 @@
     "applications": [
      "top-def-increase-heart-allies-while-on-the-field",
      "top-critical-resistance-increase-heart-allies-while-on-battlefield"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Saint Spear, Ravelt",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals 650% ATK damage to enemies within range every 9 seconds. After the attack hits, grants self for 5 seconds: [Top] Shield, [Top] ATK Increase, and [Top] DEF Increase. Additionally, has a 50% chance to grant each ally for 3 seconds: [Top] ATK Increase and [Top] Shield.",
+     "Lv2": "Deals 750% ATK damage to enemies within range every 9 seconds. After the attack hits, grants self for 6 seconds: [Top] Shield, [Top] ATK Increase, and [Top] DEF Increase. Additionally, has a 50% chance to grant each ally for 4 seconds: [Top] ATK Increase and [Top] Shield.",
      "Lv3": "Deals 850% ATK damage to enemies within range every 9 seconds. After the attack hits,  grants self for 7 seconds: [Top] Shield, [Top] ATK Increase, and [Top] DEF Increase. Additionally, has a 50% chance to grant each ally for 5 seconds: [Top] ATK Increase and [Top] Shield."
     },
     "levelTable": [
@@ -3333,7 +3512,8 @@
      "top-def-increase-self-every-9-sec-7-sec",
      "top-shield-all-allies-every-9-sec-50-5-sec",
      "top-atk-increase-all-allies-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -3889,6 +4069,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 100% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Bleed to the target for 3 seconds.",
+     "Lv2": "Deals damage equal to 120% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Bleed to the target for 3 seconds.",
      "Lv3": "Deals damage equal to 150% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Bleed to the target for 3 seconds."
     },
     "levelTable": [
@@ -3921,13 +4103,16 @@
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-bleed-single-enemy-20-3-sec",
      "top-bleed-each-target-hit-every-10-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Armor of Good Fortune - Replacement",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 30% chance to advance HEART allies  stored Ultimate Skill Gauge by 0.5 seconds.",
+     "Lv2": "After a normal skill hits, there is a 30% chance to advance HEART allies  stored Ultimate Skill Gauge by 0.6 seconds.",
      "Lv3": "After a normal skill hits, there is a 30% chance to advance HEART allies stored Ultimate SKill Gauge by 0.7 seconds."
     },
     "levelTable": [
@@ -3946,13 +4131,16 @@
     ],
     "applications": [
      "advance-ultimate-skill-gauge-heart-allies-30-0-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Change Outfit: Hagoita Dance",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 650% of ATK to enemies with the target area every 10 seconds. After an attack hits, applies [Top] Bleed to the target for 3 seconds.",
+     "Lv2": "Deals damage equal to 750% of ATK to enemies with the target area every 10 seconds. After an attack hits, applies [Top] Bleed to the target for 4 seconds.",
      "Lv3": "Deals damage equal to 850% of ATK to enemies within the target area every 10 seconds. After an attack hits, applies [Top] Bleed to the target for 5 seconds."
     },
     "levelTable": [
@@ -3983,7 +4171,8 @@
     ],
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-850-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4003,6 +4192,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 95% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Paralysis to the target for 3 seconds.",
+     "Lv2": "Deals damage equal to 110% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Paralysis to the target for 3 seconds",
      "Lv3": "Deals damage equal to 130% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Paralysis to the target for 3 seconds."
     },
     "levelTable": [
@@ -4034,13 +4225,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk",
      "high-paralysis-single-enemy-20-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Thunder on New Year's Eve",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to grant [Top] Shield to INT allies for 3 seconds.",
+     "Lv2": "When a normal skill hits and the target is in  Burn  state, advance your current Ultimate Skill gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant [Top] Shield to INT allies for 5 seconds."
     },
     "levelTable": [
@@ -4059,13 +4253,16 @@
     ],
     "applications": [
      "top-shield-mind-allies-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "New Year Welcome - Thunderhawk Formation",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 500% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 3 seconds [Top] Paralysis and [Top] Accuracy Increase.",
+     "Lv2": "Deals damage equal to 600% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 4 seconds [Top] Paralysis and [Top] Accuracy Increase.",
      "Lv3": "Delas damage equal to 700% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance,  applies to each target for 5 seconds [Top] Paralysis and [Top] Accuracy Increase."
     },
     "levelTable": [
@@ -4110,7 +4307,8 @@
      "damage-all-enemies-every-9-sec-700-of-own-atk",
      "top-paralysis-each-target-hit-every-9-sec-40-5-sec",
      "top-accuracy-decrease-each-target-hit-every-9-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4130,6 +4328,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 90% ATK damage to the target.",
+     "Lv2": "Deals 100% ATK damage to the target.",
      "Lv3": "Deals 120% ATK damage to the target."
     },
     "levelTable": [
@@ -4148,13 +4348,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Spellcasting Magic (Attack Down)",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to inflict on the target for 3 sec [High] ATK Decrease.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to inflict on the target for 4 sec [High] ATK Decrease.",
      "Lv3": "After a normal skill hits, there is a 20% chance to inflict on the target for 5 sec [High] ATK Decrease."
     },
     "levelTable": [
@@ -4173,13 +4376,16 @@
     ],
     "applications": [
      "high-atk-decrease-single-enemy-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Script Magic (Skill Seal)",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 400% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 3 sec Silence.",
+     "Lv2": "Every 9 sec, deal damage equal to 500% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 4 sec Silence.",
      "Lv3": "Every 9 sec, deal damage equal to 600% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 5 sec Silence."
     },
     "levelTable": [
@@ -4211,7 +4417,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-600-of-own-atk",
      "silence-each-target-hit-every-9-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4231,6 +4438,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 95% ATK damage to the target. If the target is Bleeding after hitting, deals an additional 50% ATK damage.",
+     "Lv2": "Deals 110% ATK damage to the target. If the target is Bleeding after hitting, deals an additional 60% ATK damage.",
      "Lv3": "Deals 130% ATK damage to the target. If the target is Bleeding after hitting, deals an additional 70% ATK damage."
     },
     "levelTable": [
@@ -4249,13 +4458,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Devil's Abyss",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 5 sec, for 3 sec, grant yourself [Top] DEF Increase and [Top] Critical Defense Increase.",
+     "Lv2": "Every 5 sec, for 4 sec, grant yourself [Top] DEF Increase and [Top] Critical Defense Increase.",
      "Lv3": "Every 5 sec, for 5 sec, grant yourself [Top] DEF Increase and [Top] Critical Defense Increase."
     },
     "levelTable": [
@@ -4287,13 +4499,16 @@
     "applications": [
      "top-def-increase-self-every-5-sec-5-sec",
      "top-critical-defense-increase-self-every-5-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Iron Dragon Spear: Onishin",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 800% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 3 sec [Top] Bleed.",
+     "Lv2": "Every 9 sec, deal damage equal to 900% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 4 sec [Top] Bleed.",
      "Lv3": "Every 9 sec, deal damage equal to 1000% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 5 sec [Top] Bleed."
     },
     "levelTable": [
@@ -4325,7 +4540,8 @@
     "applications": [
      "damage-single-enemy-every-9-sec-1000-of-own-atk",
      "top-bleed-single-enemy-every-9-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4345,6 +4561,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATk damage to the target."
     },
     "levelTable": [
@@ -4363,13 +4581,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "All Crash",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, deal damage equal to 150% of ATK to enemies within the target s area. After the attack hits, for 3 sec, inflict [High] DEF Decrease and, [High] Critical Resistance Decrease on the target.",
+     "Lv2": "When a critical hit occurs, deal damage equal to 200% of ATK to enemies within the target s area. After the attack hits, for 4 sec, inflict [High] DEF Decrease and, [High] Critical Resistance Decrease on the target.",
      "Lv3": "When a criticla hit occurs, deal damage equal to 250% of ATK to enemies within the target's area. After the attack hits, for 5 sec, inflict [High] DEF Decrease and, [High] Critical Resistance Decrease on the target."
     },
     "levelTable": [
@@ -4414,13 +4635,16 @@
      "damage-enemies-in-target-area-critical-hit-250-of-own-atk",
      "high-def-decrease-single-enemy-5-sec",
      "high-critical-resistance-decrease-single-enemy-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Divine Justice: Zetten",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 850% of ATK to the target. After the attack hits, grant yourself for 4 sec [Top] ATK Increase.",
+     "Lv2": "Every 9 sec, deal damage equal to 950% of ATK to the target. After the attack hits, grant yourself for 5 sec [Top] ATK Increase.",
      "Lv3": "Every 9 sec, deal damage equal to 1050% of ATK to the target. After the attack hits, grant yourself for 6 sec [Top] ATK Increase."
     },
     "levelTable": [
@@ -4452,7 +4676,8 @@
     "applications": [
      "damage-single-enemy-every-9-sec-1050-of-own-atk",
      "top-atk-increase-self-every-9-sec-6-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4472,6 +4697,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target. After hitting, 15% chance to inflict 2s of [High] Freeze.",
+     "Lv2": "Deals 120% ATK damage to the target. After hitting, 15% chance to inflict 2s of [High] Freeze.",
      "Lv3": "Deals 150% ATK damage to the target. After hitting, 15% chance to inflict 2s of [High] Freeze."
     },
     "levelTable": [
@@ -4503,13 +4730,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-freeze-single-enemy-15-2-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Ice Demon Zero Sword",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to deal 200% damage to the target. If the attack hits when the target is in  Freeze  state, deal an additional 200% of ATK as damage.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to deal 250% damage to the target. If the attack hits when the target is in  Freeze  state, deal an additional 250% of ATK as damage.",
      "Lv3": "After a normal skill hits, there is a 20% chance to deal 300% damage to the target. If the attack hits when the target is in Freeze state, deal an additional 300% of ATK as damage."
     },
     "levelTable": [
@@ -4541,13 +4771,16 @@
     "applications": [
      "damage-single-enemy-normal-skill-hit-20-300-of-own-atk",
      "additional-damage-single-enemy-freeze-300-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Ice Demon: Zero Break Fist",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 900% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 3 sec, [Top] Freeze.",
+     "Lv2": "Every 11 sec, deal damage equal to 1000% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 4 sec, [Top] Freeze.",
      "Lv3": "Every 11 sec, deal damage equal to 1100% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 5 sec, [Top] Freeze."
     },
     "levelTable": [
@@ -4579,7 +4812,8 @@
     "applications": [
      "damage-single-enemy-every-11-sec-1100-of-own-atk",
      "top-freeze-single-enemy-every-11-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4599,6 +4833,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -4617,13 +4853,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Ice Shaping Mage",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, inflict on the target for 3 sec [Top] DEF Decrease.",
+     "Lv2": "When a critical hit occurs, inflict on the target for 4 sec [Top] DEF Decrease.",
      "Lv3": "When a critical hit occurs, inflict on the target for 5 sec [Top] DEF Decrease."
     },
     "levelTable": [
@@ -4642,13 +4881,16 @@
     ],
     "applications": [
      "top-def-decrease-single-enemy-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Ice Make: War God Lance (Gungnir)",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 850% of ATK to the target. After the attack hits, there is a 40% chance to inflict on the target for 3 sec, [Top] Freeze.",
+     "Lv2": "Every 11 sec, deal damage equal to 950% of ATK to the target. After the attack hits, there is a 40% chance to inflict on the target for 4 sec, [Top] Freeze.",
      "Lv3": "Every 11 sec, deal damage equal to 1050% of ATK to the target. After the attack hits, there is a 40% chance to inflict on the target for 5 sec, [Top] Freeze."
     },
     "levelTable": [
@@ -4680,7 +4922,8 @@
     "applications": [
      "damage-single-enemy-every-11-sec-1050-of-own-atk",
      "top-freeze-single-enemy-every-11-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4700,6 +4943,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -4718,13 +4963,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "The Devil's Abyss",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 5 sec, for 3 sec, grant yourself [Top] ATK Increase and [Top] DEF Increase.",
+     "Lv2": "Every 5 sec, for 4 sec, grant yourself [Top] ATK Increase and [Top] DEF Increase.",
      "Lv3": "Every 5 sec, for 5 sec, grant yourself [Top] ATK Increase and [Top] DEF Increase."
     },
     "levelTable": [
@@ -4756,13 +5004,16 @@
     "applications": [
      "top-atk-increase-self-every-5-sec-5-sec",
      "top-def-increase-self-every-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Amaterasu Type-100",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 600% of ATK to enemies within the target area.",
+     "Lv2": "Every 9 sec, deal damage equal to 700% of ATK to enemies within the target area.",
      "Lv3": "Every 9 sec, deal damage equal to 800% of ATK to enemies within the target area."
     },
     "levelTable": [
@@ -4781,7 +5032,8 @@
     ],
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-800-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4801,6 +5053,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [High] Critical Rate Increase.",
+     "Lv2": "Deals 120% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [High] Critical Rate Increase.",
      "Lv3": "Deals 150% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [High] Critical Rate Increase."
     },
     "levelTable": [
@@ -4832,13 +5086,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-critical-rate-increase-self-20-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Aurora Shining on Christmas Eve",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to inflict on the target for 2 sec [Top] ATK Decrease and [Top] DEF Decrease.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to inflict on the target for 3 sec [Top] ATK Decrease and [Top] DEF Decrease.",
      "Lv3": "After a normal skill hits, there is a 20% chance to inflict on the target for 4 sec [Top] ATK Decrease and [Top] DEF Decrease."
     },
     "levelTable": [
@@ -4870,13 +5127,16 @@
     "applications": [
      "top-atk-decrease-single-enemy-20-4-sec",
      "top-def-decrease-single-enemy-20-4-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "No I Splash",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 600% of ATK to enemies within the target area. After the attack hits, there is a 30% chance to inflict on each target for 3 sec, Bind.",
+     "Lv2": "Every 11 sec, deal damage equal to 700% of ATK to enemies within the target area. After the attack hits, there is a 30% chance to inflict on each target for 4 sec, Bind.",
      "Lv3": "Every 11 sec, deal damage equal to 800% of ATK to enemies within the target area. After the attack hits, there is a 30% chance to inflict on each target for 5 sec, Bind."
     },
     "levelTable": [
@@ -4908,7 +5168,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-800-of-own-atk",
      "bindeach-target-hit-every-11-sec-30-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -4928,6 +5189,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target. After hitting, 20% chance to inflict 3s of [High] Burn.",
+     "Lv2": "Deals 120% ATK damage to the target. After hitting, 20% chance to inflict 3s of [High] Burn.",
      "Lv3": "Deals 150% ATK damage to the target. After hitting, 20% chance to inflict 3s of [High] Burn."
     },
     "levelTable": [
@@ -4959,13 +5222,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-burn-single-enemy-20-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Holy Prayer",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a normal skill hits and the target is in  Burn  state, advance your current Ultimate Skill gauge by 0.5 sec.",
+     "Lv2": "When a normal skill hits and the target is in  Burn  state, advance your current Ultimate Skill gauge by 0.6 sec.",
      "Lv3": "When a normal skill hits and the target is in Burn state, advance your current Ultimate Skill gauge by 0.7 sec."
     },
     "levelTable": [
@@ -4982,13 +5248,16 @@
       "notes": null
      }
     ],
-    "applications": []
+    "applications": [],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Take Over: Santa Soul",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 900% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 3 sec, [Top] Burn.",
+     "Lv2": "Every 9 sec, deal damage equal to 1000% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 4 sec, [Top] Burn.",
      "Lv3": "Every 9 sec, deal damage equal to 1100% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 5 sec, [Top] Burn."
     },
     "levelTable": [
@@ -5020,7 +5289,8 @@
     "applications": [
      "damage-single-enemy-every-9-sec-1100-of-own-atk",
      "top-burn-single-enemy-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -5193,6 +5463,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 90% ATK damage to the target.",
+     "Lv2": "Deals 100% ATK damage to the target.",
      "Lv3": "Deals 120% ATK damage to the target."
     },
     "levelTable": [
@@ -5211,13 +5483,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "The Scent of Attack",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, for 2 sec, grant all Brv-type allies [High] ATK Increase and [High] Accuracy Increase.",
+     "Lv2": "When a critical hit occurs, for 3 sec, grant all Brv-type allies [High] ATK Increase and [High] Accuracy Increase.",
      "Lv3": "When a critical hit occurs, for 4 sec, grant all Brv-type allies [High] ATK Increase and [High] Accuracy Increase."
     },
     "levelTable": [
@@ -5249,13 +5524,16 @@
     "applications": [
      "high-atk-increase-brave-allies-4-sec",
      "high-accuracy-increase-brave-allies-4-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Ichiya Virus",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 450% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 3 sec, Heal Block and [High] Paralysis.",
+     "Lv2": "Every 10 sec, deal damage equal to 550% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 4 sec, Heal Block and [High] Paralysis.",
      "Lv3": "Every 10 sec, deal damage equal to 650% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 5 sec, Heal Block and [High] Paralysis."
     },
     "levelTable": [
@@ -5300,7 +5578,8 @@
      "damage-enemies-in-target-area-every-10-sec-650-of-own-atk",
      "heal-block-each-target-hit-50-every-10-sec",
      "high-paralysis-each-target-hit-every-10-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -5473,6 +5752,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -5491,13 +5772,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "High Level Assistance Specialist",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, for 5 sec, grant all Brv-type allies [Top] ATK Increase and [Top] Critical Rate Increase.",
+     "Lv2": "When a critical hit occurs, for 6 sec, grant all Brv-type allies [Top] ATK Increase and [Top] Critical Rate Increase.",
      "Lv3": "When a critical hit occurs, for 7 sec, grant all Brv-type allies [Top] ATK Increase and [Top] Critical Rate Increase"
     },
     "levelTable": [
@@ -5529,13 +5813,16 @@
     "applications": [
      "top-atk-increase-brave-allies-7-sec",
      "top-critical-rate-increase-brave-allies-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Meteor Drop",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 500% of ATK to all enemies. After the attack hits, inflict on the target for 3 sec [Top] Critical Defense Decrease. There is a 30% chance to inflict on each target for 3 sec [High] Burn.",
+     "Lv2": "Every 9 sec, deal damage equal to 600% of ATK to all enemies. After the attack hits, inflict on the target for 4 sec [Top] Critical Defense Decrease. There is a 30% chance to inflict on each target for 4 sec [High] Burn.",
      "Lv3": "Every 9 sec, deal damage equal to 700% of ATK to all enemies. After the attack hits,  inflicts on the target for 5 sec [Top] Critical Defense Decrease. There is a 30% chance to inflict on each target for 5 sec [High] Burn."
     },
     "levelTable": [
@@ -5580,7 +5867,8 @@
      "damage-all-enemies-every-9-sec-700-of-own-atk",
      "top-critical-defense-decrease-each-target-hit-every-9-sec-5-sec",
      "high-burn-each-target-hit-every-9-sec-30-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -5766,6 +6054,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 95% ATK damage to the target.",
+     "Lv2": "Deals 110% ATK damage to the target.",
      "Lv3": "Deals 130% ATK damage to the target."
     },
     "levelTable": [
@@ -5784,13 +6074,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Impenetrable",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 5 sec, for 3 sec, grant yourself [Top] DEF Increase and [High] Critical Defense Increase.",
+     "Lv2": "Every 5 sec, for 4 sec, grant yourself [Top] DEF Increase and [High] Critical Defense Increase.",
      "Lv3": "Every 5 sec, for 5 sec, grant yourself [Top] DEF Increase and [High] Critical Defense Increase."
     },
     "levelTable": [
@@ -5822,13 +6115,16 @@
     "applications": [
      "top-def-increase-self-every-5-sec-5-sec",
      "high-critical-defense-increase-self-every-5-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Earth Magic: Rumbling Fuji",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 500% of ATK to enemies within the target area.",
+     "Lv2": "Every 9 sec, deal damage equal to 600% of ATK to enemies within the target area.",
      "Lv3": "Every 9 sec, deal damage equal to 700% of ATK to enemies within the target area."
     },
     "levelTable": [
@@ -5847,7 +6143,8 @@
     ],
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-700-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -6059,6 +6356,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [Mid] Critical Rate Increase.",
+     "Lv2": "Deals 120% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [Mid] Critical Rate Increase.",
      "Lv3": "Delas 140% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [Mid] Critical Rate Increase."
     },
     "levelTable": [
@@ -6090,13 +6389,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk",
      "mid-critical-rate-increase-self-20-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Water Stream Rising Haze",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, deal damage equal to 150  of ATK to the target. After the attack hits, for 5 sec, grant yourself [Top] Evasion Increase.",
+     "Lv2": "When a critical hit occurs, deal damage equal to 200  of ATK to the target. After the attack hits, for 6 sec, grant yourself [Top] Evasion Increase.",
      "Lv3": "When a critical hit occurs, deal damage equal to 250% of ATK to the target. After the attack hits, for 7 sec, grant yourself [Top] Evasion Increase."
     },
     "levelTable": [
@@ -6128,13 +6430,16 @@
     "applications": [
      "damage-single-enemy-critical-hit-250-of-own-atk",
      "top-evasion-increase-self-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Water Stream Typhoon",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 900% of ATK to the target. After the attack hits, push back the target s filled Ultimate Skill gauge by 1 sec.",
+     "Lv2": "Every 9 sec, deal damage equal to 1000% of ATK to the target. After the attack hits, push back the target s filled Ultimate Skill gauge by 2 sec.",
      "Lv3": "Every 9 sec, deal damage equal to 1100% of ATK to the target. After the attack hits, push back the target's filled Ultimate Skill gauge by 3 sec."
     },
     "levelTable": [
@@ -6166,7 +6471,8 @@
     "applications": [
      "damage-single-enemy-every-9-sec-1100-of-own-atk",
      "push-back-ultimate-skill-gauge-single-enemy-every-9-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -6186,6 +6492,8 @@
     "name": "Normal Attack",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -6204,13 +6512,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Strong Type",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, deal damage equal to 200% of ATK to the target. After the attack hits, advance your current Ultimate Skill Gauge by 0.5 sec.",
+     "Lv2": "When a critical hit occurs, deal damage equal to 250% of ATK to the target. After the attack hits, advance your current Ultimate Skill Gauge by 0.6 sec.",
      "Lv3": "When a critical hit occurs, deal damage equal to 300% of ATK to the target. After the attack hits, advance your current Ultimate Skill Gauge by 0.7 sec."
     },
     "levelTable": [
@@ -6242,13 +6553,16 @@
     "applications": [
      "damage-single-enemy-critical-hit-300-of-own-atk",
      "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-critical-hit-0-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Stance of Slash",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 8 sec, deal damage equal to 900% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 3 sec [Top] Bleed, and grant yourself for 5 sec [Top] ATK Increase and [High] Critical Rate Increase.",
+     "Lv2": "Every 8 sec, deal damage equal to 1000% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 4 sec [Top] Bleed, and grant yourself for 6 sec [Top] ATK Increase and [High] Critical Rate Increase.",
      "Lv3": "Every 8 sec, deal damage equal to 1100% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 5 sec [Top] Bleed, and grant yourself for 7 sec [Top] ATK Increase and [High] Critical Rate Increase."
     },
     "levelTable": [
@@ -6306,7 +6620,8 @@
      "top-bleed-single-enemy-every-8-sec-50-5-sec",
      "top-atk-increase-self-every-8-sec-7-sec",
      "high-critical-rate-increase-self-every-8-sec-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -6326,6 +6641,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 90% ATK damage to the target.",
+     "Lv2": "Deals 100% ATK damage to the target.",
      "Lv3": "Deals 120% ATK damage to the target."
     },
     "levelTable": [
@@ -6344,13 +6661,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Appetite",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to inflict on the target for 3 sec [High] ATK Decrease.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to inflict on the target for 4 sec [High] ATK Decrease.",
      "Lv3": "After a normal skill hits, there is a 20% chance to inflict on the target for 5 sec [High] ATK Decrease."
     },
     "levelTable": [
@@ -6369,13 +6689,16 @@
     ],
     "applications": [
      "high-atk-decrease-single-enemy-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "R.I.P",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 450% of ATK to enemies within the target area. After the attack hits, there is a 40% chance to inflict on each target for 3 sec Bind.",
+     "Lv2": "Every 11 sec, deal damage equal to 550% of ATK to enemies within the target area. After the attack hits, there is a 40% chance to inflict on each target for 4 sec Bind.",
      "Lv3": "Every 11 sec, deal damage equal to 650% of ATK to enemies within the target area. After the attack hits, there is a 40% chance to inflict on each target for 5 sec Bind."
     },
     "levelTable": [
@@ -6407,7 +6730,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-650-of-own-atk",
      "bind-each-target-hit-every-11-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -6580,6 +6904,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage tot he target."
     },
     "levelTable": [
@@ -6598,13 +6924,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Thunder Dragon’s Jaw",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, deal damage equal to 150% of ATK to the target. If the attack hits and the target is in a  Paralysis  state, deal additional damage equal to 150% of ATK.",
+     "Lv2": "When a critical hit occurs, deal damage equal to 200% of ATK to the target. If the attack hits and the target is in a  Paralysis  state, deal additional damage equal to 200% of ATK.",
      "Lv3": "When a critical hit occurs, deal damage equal to 250% of ATK to the target. If the attack hits and the target is in a Paralysis state, deal additional damage equal to 250% of ATK."
     },
     "levelTable": [
@@ -6636,13 +6965,16 @@
     "applications": [
      "damage-single-enemy-critical-hit-250-of-own-atk",
      "additional-damage-single-enemy-paralysis-250-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Raging Bolt",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to all enemies. After the attack hits, there is a 30% chance to inflict on each target for 5 sec [Top] Paralysis.",
+     "Lv2": "Every 10 sec, deal damage equal to 600% of ATK to all enemies. After the attack hits, there is a 30% chance to inflict on each target for 6 sec [Top] Paralysis.",
      "Lv3": "Every 10 sec, deal damage equal to 700% of ATK to all enemies. After the attack hits, there is a 30% chance to inflict on each target for 7 sec [Top] Paralysis."
     },
     "levelTable": [
@@ -6674,7 +7006,8 @@
     "applications": [
      "damage-all-enemies-every-10-sec-700-of-own-atk",
      "top-paralysis-each-target-hit-every-10-sec-30-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -6694,6 +7027,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 90% ATK damage to the target.",
+     "Lv2": "Deals 100% ATK damage to the target.",
      "Lv3": "Deals 120% ATK damage to the target."
     },
     "levelTable": [
@@ -6712,13 +7047,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "IRON",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, for 3 sec, grant Int-type allies [High] DEF Increase and [High] Critical Resistance Increase.",
+     "Lv2": "When a critical hit occurs, for 4 sec, grant Int-type allies [High] DEF Increase and [High] Critical Resistance Increase.",
      "Lv3": "When a critical hit occurs, for 5 sec, grant Int-type allies [High] DEF Increase and [High] Critical Resistance Increase."
     },
     "levelTable": [
@@ -6750,13 +7088,16 @@
     "applications": [
      "high-def-increase-mind-allies-3-sec",
      "high-critical-resistance-increase-mind-allies-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "3D Text (STONE)",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 650% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 3 sec, Bind.",
+     "Lv2": "Every 11 sec, deal damage equal to 750% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 4 sec, Bind.",
      "Lv3": "Every 11 sec, deal damage equal to 850% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 5 sec, Bind."
     },
     "levelTable": [
@@ -6788,7 +7129,8 @@
     "applications": [
      "damage-single-enemy-every-11-sec-850-of-own-atk",
      "bind-single-enemy-every-11-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -7101,6 +7443,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 90% ATK damage to the target.",
+     "Lv2": "Deals 100% ATK damage to the target.",
      "Lv3": "Deals 120% ATK damage to the target."
     },
     "levelTable": [
@@ -7119,13 +7463,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Guide of the Star Spirits",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to grant yourself for 3 sec [Top] Evasion Increase.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to grant yourself for 4 sec [Top] Evasion Increase.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant yourself for 5 sec [Top] Evasion Increase."
     },
     "levelTable": [
@@ -7144,13 +7491,16 @@
     ],
     "applications": [
      "top-evasion-increase-self-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Star Whip",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 400% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 5 sec, [Top] ATK Decrease.",
+     "Lv2": "Every 10 sec, deal damage equal to 500% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 6 sec, [Top] ATK Decrease.",
      "Lv3": "Every 10 sec, deal damage equal to 600% of ATK to enemies within the target area. After the attack hits, there is a 50% chance to inflict on each target for 7 sec, [Top] ATK Decrease."
     },
     "levelTable": [
@@ -7182,7 +7532,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-600-of-own-atk",
      "top-atk-decrease-each-target-hit-every-10-sec-50-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -7202,6 +7553,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -7220,13 +7573,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "The Power of Zero Emperor",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, if the target is in a  Freeze  state, push back the target s accumulated Ultimate Skill Gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, if the target is in a  Freeze  state, push back the target s accumulated Ultimate Skill Gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, if the target is in a Freeze state, push back the target's accumulated Ultimate Skill Gauge by 0.7 sec."
     },
     "levelTable": [
@@ -7245,13 +7601,16 @@
     ],
     "applications": [
      "push-back-ultimate-skill-gauge-single-enemy-freeze-0-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Ice Blade: Swan Wing",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 500% of ATK to enemies within the target area. After the attack hits, there is a 20% chance to inflict on each target for 2 sec [High] Freeze.",
+     "Lv2": "Every 11 sec, deal damage equal to 600% of ATK to enemies within the target area. After the attack hits, there is a 20% chance to inflict on each target for 3 sec [High] Freeze.",
      "Lv3": "Every 11 sec, deal damage equal to 700% of ATK to enemies within the target area. After the attack hits, there is a 20% chance to inflict on each target for 4 sec [High] Freeze."
     },
     "levelTable": [
@@ -7283,7 +7642,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-700-of-own-atk",
      "high-freeze-each-target-hit-20-2-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -7303,6 +7663,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 95% ATK damage to the target.",
+     "Lv2": "Deals 110% ATK damage to the target.",
      "Lv3": "Deals 130% ATK damage to the target."
     },
     "levelTable": [
@@ -7321,13 +7683,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Unyielding Spirit",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 7 sec, for 3 sec, grant Technique attribute allies [Top] DEF Increase and [Top] Critical Resistance Increase.",
+     "Lv2": "Every 7 sec, for 4 sec, grant Technique attribute allies [Top] DEF Increase and [Top] Critical Resistance Increase.",
      "Lv3": "Every 7 sec, for 5 sec, grant Technique attribute allies [Top] DEF Increase and [Top] Critical Resistance Increase."
     },
     "levelTable": [
@@ -7359,13 +7724,16 @@
     "applications": [
      "top-def-increase-technique-allies-every-7-sec-5-sec",
      "top-critical-resistance-increase-technique-allies-every-7-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Giant",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 15 sec, transform into a giant for 5 sec. While transformed, you are in an Invincible state. When activated, inflict on all enemies for 5 sec Taunt.",
+     "Lv2": "Every 15 sec, transform into a giant for 6 sec. While transformed, you are in an Invincible state. When activated, inflict on all enemies for 6 sec Taunt.",
      "Lv3": "Every 15 sec, transform into a giant for 7 sec. While transformed, you are in an Invincible state. When activated, inflict on all enemies for 7 sec Taunt."
     },
     "levelTable": [
@@ -7410,7 +7778,8 @@
      "invincible-self-while-giant-7-sec",
      "taunt-all-enemies-giant-activation-7-sec",
      "giant-self"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -7430,6 +7799,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -7448,13 +7819,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "The Power of the Absolute Devil",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, if the target is in  Bleed  state, push back the target s current Ultimate Skill gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, if the target is in  Bleed  state, push back the target s current Ultimate Skill gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, if the target is in Bleed state, push back the target's current Ultimate Skill gauge by 0.7 sec"
     },
     "levelTable": [
@@ -7471,13 +7845,16 @@
       "notes": null
      }
     ],
-    "applications": []
+    "applications": [],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Thorn",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 900% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 3 sec, [Top] Bleed.",
+     "Lv2": "Every 10 sec, deal damage equal to 1000% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 4 sec, [Top] Bleed.",
      "Lv3": "Every 10 sec, deal damage equal to 1100% of ATK to the target. After the attack hits, there is a 50% chance to inflict on the target for 5 sec, [Top] Bleed."
     },
     "levelTable": [
@@ -7509,7 +7886,8 @@
     "applications": [
      "damage-single-enemy-every-10-sec-1100-of-own-atk",
      "top-bleed-single-enemy-every-10-sec-50-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -7747,6 +8125,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 90% of ATK to the target. After the attack hits, restores HP to the ally with the lowest HP equal to 110% of your ATK.",
+     "Lv2": "Deals damage equal to 100% of ATK to the target. After the attack hits, restores HP to the ally with the lowest HP equal to 130% of your ATK.",
      "Lv3": "Deals damage equal to 120% of ATK to the target. After the attack hits, restores HP to the ally with the lowest HP equal to 150% of your ATK."
     },
     "levelTable": [
@@ -7765,13 +8145,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "A Fairy's Wish",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to grant all allies for 3 seconds Action Block Barrier, [Top] ATK Increase, and [Top] Accuracy Increase.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to grant all allies for 4 seconds Action Block Barrier, [Top] ATK Increase, and [Top] Accuracy Increase.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant all allies for 5 seconds Action Block Barrier, [Top] ATK Increase, and [Top] Accuracy Increase."
     },
     "levelTable": [
@@ -7816,13 +8199,16 @@
      "action-block-barrier-all-allies-20-5-sec",
      "top-atk-increase-all-allies-20-5-sec",
      "top-accuracy-increase-all-allies-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Fairy Sphere",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 seconds, restores HP to all allies equal to 700% of your ATK. Also grants the target for 5 seconds [Top] Continuous Heal and [Top] DEF Increase. Additionally, removes all debuffs from all allies.",
+     "Lv2": "Every 10 seconds, restores HP to all allies equal to 800% of your ATK. Also grants the target for 6 seconds [Top] Continuous Heal and [Top] DEF Increase. Additionally, removes all debuffs from all allies.",
      "Lv3": "Every 10 seconds, restores HP to all allies equal to 900% of your ATK. Also grants the target for 7 seconds [Top] Continuous Heal and [Top] DEF Increase. Additionally, removes all debuffs from all allies."
     },
     "levelTable": [
@@ -7880,7 +8266,8 @@
      "top-def-increase-all-allies-every-10-sec-7-sec",
      "heal-all-allies-every-10-sec-900-of-own-atk",
      "remove-all-debuffs-all-allies-every-10-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -7900,6 +8287,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target. After hitting, heals the ally with the lowest HP for 100% of your ATK.",
+     "Lv2": "Deals 100% ATK damage to the target. After hitting, heals the ally with the lowest HP for 120% of your ATK.",
      "Lv3": "Deals 120% ATK damage to the target. After hitting, heals the ally with the lowest HP for 140% of your ATK."
     },
     "levelTable": [
@@ -7918,13 +8307,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Magilty Sense — Aggressive Sense",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, for 3 sec, grant Heart-type allies [High] ATK Increase.",
+     "Lv2": "When a critical hit occurs, for 4 sec, grant Heart-type allies [High] ATK Increase.",
      "Lv3": "When a critical hit occurs, for 5 sec, grant Heart-type allies [High] ATK increase."
     },
     "levelTable": [
@@ -7943,13 +8335,16 @@
     ],
     "applications": [
      "high-atk-increase-heart-allies-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Magilty Sense — Life Sense",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, restore HP to all allies equal to 600% of your attack.",
+     "Lv2": "Every 10 sec, restore HP to all allies equal to 700% of your attack.",
      "Lv3": "Every 10 sec, restore HP to all allies equal to 800% of your ATK."
     },
     "levelTable": [
@@ -7968,7 +8363,8 @@
     ],
     "applications": [
      "heal-all-allies-every-10-sec-800-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -8141,6 +8537,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 110% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Heal Block on the target for 3 sec.",
+     "Lv2": "Deals damage equal to 130% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Heal Block on the target for 3 sec.",
      "Lv3": "Deals damage equal to 160% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Heal Block on the target for 3 sec."
     },
     "levelTable": [
@@ -8185,13 +8583,16 @@
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-paralysis-single-enemy-30-3-sec",
      "heal-block-single-enemy-30-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Midsummer Mirage",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, if an enemy within the target area is afflicted with Paralysis, Silence, or Bleed, inflicts [Top] DEF Decrease and [Top] Critical Resistance Decrease on each affected enemy for 3 sec.",
+     "Lv2": "After a normal skill hits, if an enemy within the target area is afflicted with Paralysis, Silence, or Bleed, inflicts [Top] DEF Decrease and [Top] Critical Resistance Decrease on each affected enemy for 4 sec.",
      "Lv3": "After a normal skill hits, if an enemy within the target area is afflcted with Paralysis,  Silence, or Bleeed, inflicts [Top] DEF Decrease and [Top] Crititcal Resistance Decrease on each affected enemy for 5 sec."
     },
     "levelTable": [
@@ -8223,13 +8624,16 @@
     "applications": [
      "top-def-decrease-enemies-in-target-area-paralysis-silence-or-bleed-5-sec",
      "top-critical-resistance-decrease-enemies-in-target-area-paralysis-silence-or-bleed-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Summer Splash!",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deals damage equal to 650% of ATK to enemies within range. After the attack hits, has a 30% chance to inflict Bind, [High] Critical Defense Decrease, and [High] Evasion Decrease on the target for 5 sec.",
+     "Lv2": "Every 10 sec, deals damage equal to 750% of ATK to enemies within range. After the attack hits, has a 30% chance to inflict Bind, [High] Critical Defense Decrease, and [High] Evasion Decrease on the target for 6 sec.",
      "Lv3": "Every 10 sec, deals damage equal to 850% of ATK to enemies within range. After the attack hits, has a 30% chance to inflict Bind, [High] Critical Defense Decrease, and [High] Evasion Decrease on the target for 7 sec."
     },
     "levelTable": [
@@ -8287,7 +8691,8 @@
      "bind-each-target-hit-every-10-sec-30-7-sec",
      "high-critical-defense-decrease-each-target-hit-every-10-sec",
      "high-evasion-decrease-each-target-hit-every-10-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -8486,6 +8891,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -8504,13 +8911,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Spatial Magic — Explosion",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, deal damage equal to 150% of ATK to the target. After the attack hits, for 3 sec, inflict on the target [High] Burn.",
+     "Lv2": "When a critical hit occurs, deal damage equal to 200% of ATK to the target. After the attack hits, for 4 sec, inflict on the target [High] Burn.",
      "Lv3": "When a criticla hit occurs, deal damage equal to 250% of ATK to the target. After the attack hits, for 5 sec, inflict on the target [High] Burn."
     },
     "levelTable": [
@@ -8542,13 +8952,16 @@
     "applications": [
      "damage-single-enemy-critical-hit-250-of-own-atk",
      "high-burn-single-enemy-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Jagd Rigora",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 500% of ATK to enemies within the target area. If the target is in a  Burn  state after the attack hits, deal additional damage equal to 200% of ATK.",
+     "Lv2": "Every 9 sec, deal damage equal to 600% of ATK to enemies within the target area. If the target is in a  Burn  state after the attack hits, deal additional damage equal to 300% of ATK.",
      "Lv3": "Every 9 sec, deal damage equal to 700% of ATK to enemies within the target area. If the target is in a Burn state after the attack hits, deal additional damage equal to 400% of ATK."
     },
     "levelTable": [
@@ -8580,7 +8993,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-700-of-own-atk",
      "additional-damage-each-target-hit-every-9-sec-burn-400-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -8766,6 +9180,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target. After hitting, heals the ally with the lowest HP for 100% of your ATK.",
+     "Lv2": "Deals 100% ATK damage to the target. After hitting, heals the ally with the lowest HP for 120% of your ATK.",
      "Lv3": "Deals 120% ATK damage to the target. After hitting, heals the ally with the lowest HP for 140% of your ATK."
     },
     "levelTable": [
@@ -8797,13 +9213,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk",
      "heal-lowest-hp-ally-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Top Model of Weekly Sorcerer",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to inflict on the target for 2 sec, Silence.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to inflict on the target for 3 sec, Silence.",
      "Lv3": "After a normal skill hits, there is a 20% chance to inflict on the target for 4 sec, Silence."
     },
     "levelTable": [
@@ -8822,13 +9241,16 @@
     ],
     "applications": [
      "silence-single-enemy-20-4-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Fairy Tail's Poster Girl",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, restore HP to the ally with the lowest HP equal to 650% of your ATK, and grant that ally for 3 sec [Top] Continuous Heal. Then remove all debuffs applied to all allies.",
+     "Lv2": "Every 10 sec, restore HP to the ally with the lowest HP equal to 750% of your ATK, and grant that ally for 4 sec [Top] Continuous Heal. Then remove all debuffs applied to all allies.",
      "Lv3": "Every 10 sec, restore HP to the ally with the lowest HP equal to 850% of your ATK, and grant that ally for 5 sec [Top] Continuous Heal. Then remove all debuffs applied to all allies."
     },
     "levelTable": [
@@ -8873,7 +9295,8 @@
      "heal-lowest-hp-ally-every-10-sec-850-of-own-atk",
      "top-continuous-heal-lowest-hp-ally-5-sec",
      "remove-all-debuffs-all-allies-every-10-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -9085,6 +9508,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 100% of ATK to the target. After the attack hits, has a 30% chance to apply the following to the target for 4 seconds: [High] Burn.",
+     "Lv2": "Deals damage equal to 120% of ATK to the target. After the attack hits, has a 30% chance to apply the following to the target for 4 seconds: [High] Burn.",
      "Lv3": "Deals damage equal to 150% of ATK to the target. After the attack hits, has a 30% chance to apply the following to the target for 4 seconds: [High] Burn."
     },
     "levelTable": [
@@ -9116,13 +9541,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-burn-single-enemy-30-4-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Teachings of Qigong",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a Critical hit occurs, applies the following to all Heart-type allies for 3 seconds: [Top] ATK Increase, [Top] Critical Rate Increase.",
+     "Lv2": "When a Critical hit occurs, applies the following to all Heart-type allies for 4 seconds: [Top] ATK Increase, [Top] Critical Rate Increase.",
      "Lv3": "When a critical hit occurs, applies the following to all Heart-type allies for 5 seconds: [Top] ATK Increase, [Top] Critical Rate Increase."
     },
     "levelTable": [
@@ -9154,13 +9582,16 @@
     "applications": [
      "top-atk-increase-heart-allies-critical-hit-5-sec",
      "top-critical-rate-increase-heart-allies-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Yin-Yang Conversion",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 650% of ATK to targets within range every 9 seconds. After the attack hits, has a 40% chance per target to apply the following for 3 seconds: [Top] Paralysis, [Top] Evasion Decrease.",
+     "Lv2": "Deals damage equal to 750% of ATK to targets within range every 9 seconds. After the attack hits, has a 40% chance per target to apply the following for 4 seconds: [Top] Paralysis, [Top] Evasion Decrease.",
      "Lv3": "Deals damage equal to 850% of ATK to targets within range every 9 seconds. After the attack hits, has a 40% chance per target to apply the following for 5 seconds: [Top] Paralysis, [Top] Evasion Decrease."
     },
     "levelTable": [
@@ -9205,7 +9636,8 @@
      "damage-enemies-in-range-every-9-sec-850-of-own-atk",
      "top-paralysis-each-target-hit-every-9-sec-40-5-sec",
      "top-evasion-decrease-each-target-hit-every-9-sec-40-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -9225,6 +9657,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -9243,13 +9677,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Sleep Magic",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 10% chance to inflict on the target for 2 sec Bind.",
+     "Lv2": "After a normal skill hits, there is a 10% chance to inflict on the target for 3 sec Bind.",
      "Lv3": "After a normal skill hits, there is a 10% chance to inflict on the target for 4 sec Bind."
     },
     "levelTable": [
@@ -9268,13 +9705,16 @@
     ],
     "applications": [
      "bind-single-enemy-10-4-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Fivefold Magic Circle: Kagura",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 650% of ATK to enemies within the target area.",
+     "Lv2": "Every 9 sec, deal damage equal to 750% of ATK to enemies within the target area.",
      "Lv3": "Every 9 sec, deal damage equal to 850% of ATK to enemies within the target area."
     },
     "levelTable": [
@@ -9293,7 +9733,8 @@
     ],
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-850-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -9784,6 +10225,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -9802,13 +10245,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Fire Dragon Slayer",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 5 sec, grant yourself for 3 sec [Top] Critical Rate Increase.",
+     "Lv2": "Every 5 sec, grant yourself for 4 sec [Top] Critical Rate Increase.",
      "Lv3": "Every 5 sec, grant yourself for 5 sec [Top] Critical Rate Increase."
     },
     "levelTable": [
@@ -9827,13 +10273,16 @@
     ],
     "applications": [
      "top-critical-rate-increase-self-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Fire Dragon Wing Attack",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to enemies within the target area. After the attack hits, there is a 30% chance to inflict on each target for 3 sec, [Top] Burn.",
+     "Lv2": "Every 10 sec, deal damage equal to 600% of ATK to enemies within the target area. After the attack hits, there is a 30% chance to inflict on each target for 4 sec, [Top] Burn.",
      "Lv3": "Every 10 sec, deal damage equal to 700% of ATK to enemies within the target area. After the attack hits, there is a 30% chance to inflict on each target for 5 sec, [Top] Burn."
     },
     "levelTable": [
@@ -9865,7 +10314,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-700-of-own-atk",
      "top-burn-each-target-hit-every-10-sec-30-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -11781,6 +12231,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -11799,13 +12251,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Shadow Drive",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to grant yourself for 3 sec [Top] Evasion Increase.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to grant yourself for 4 sec [Top] Evasion Increase.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant yourself for 5 sec [Top] Evasion Increase."
     },
     "levelTable": [
@@ -11824,13 +12279,16 @@
     ],
     "applications": [
      "top-evasion-increase-self-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Shadow Dragon Flash Swallow",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 550% of ATK to enemies within the target area.",
+     "Lv2": "Every 10 sec, deal damage equal to 650% of ATK to enemies within the target area.",
      "Lv3": "Every 10 sec, deal damage equal to 750% of ATK to enemies within the target area."
     },
     "levelTable": [
@@ -11849,7 +12307,8 @@
     ],
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-750-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -12035,6 +12494,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -12053,13 +12514,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Protection of the Heavenly Gods",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 6 sec, heal your own HP by 100% of ATK.",
+     "Lv2": "Every 6 sec, heal your own HP by 150% of ATK.",
      "Lv3": "Every 6 sec, heal your own HP by 200% of ATK."
     },
     "levelTable": [
@@ -12078,13 +12542,16 @@
     ],
     "applications": [
      "heal-self-every-6-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Thunder Roar of the Heavenly God",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 550% of ATK to enemies within the target area.",
+     "Lv2": "Every 9 sec, deal damage equal to 650% of ATK to enemies within the target area.",
      "Lv3": "Every 9 sec, deal damage equal to 750% of ATK to enemies within the target area."
     },
     "levelTable": [
@@ -12103,7 +12570,8 @@
     ],
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-750-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -12123,6 +12591,8 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -12141,13 +12611,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Absolute Zero",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 10% chance to inflict on the target for 2 sec, [High] Freeze.",
+     "Lv2": "After a normal skill hits, there is a 10% chance to inflict on the target for 3 sec, [High] Freeze.",
      "Lv3": "After a normal skill hits, there is a 10% chance to inflict on the target for 4 sec, [High] Freeze."
     },
     "levelTable": [
@@ -12166,13 +12639,16 @@
     ],
     "applications": [
      "high-freeze-single-enemy-10-4-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Rage of the Ice Demon",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to enemies within the target area. If the target is in a  Freeze  state after the attack hits, deal additional damage equal to 250% of ATK.",
+     "Lv2": "Every 10 sec, deal damage equal to 600% of ATK to enemies within the target area. If the target is in a  Freeze  state after the attack hits, deal additional damage equal to 350% of ATK.",
      "Lv3": "Every 10 sec, deal damage equal to 700% of ATK to enemies within the target area. If the target is in a Freeze state after the attack hits, deal additional damage equal to 450% of ATK."
     },
     "levelTable": [
@@ -12204,7 +12680,8 @@
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-700-of-own-atk",
      "additional-damage-each-target-hit-every-10-sec-freeze-450-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -12696,6 +13173,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% ATK damage to the target.",
+     "Lv2": "Deals 120% ATK damage to the target.",
      "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
@@ -12714,13 +13193,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "White Drive",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 20% chance to grant yourself for 3 sec [Top] Critical Rate Increase.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to grant yourself for 4 sec [Top] Critical Rate Increase.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant yourself for 5 sec [Top] Critical Rate Increase."
     },
     "levelTable": [
@@ -12739,13 +13221,16 @@
     ],
     "applications": [
      "top-critical-rate-increase-self-20-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Holy Nova",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 550% of ATK to enemies within the target area.",
+     "Lv2": "Every 9 sec, deal damage equal to 650% of ATK to enemies within the target area.",
      "Lv3": "Every 9 sec, deal damage equal to 700% of ATK to enemies within the target area."
     },
     "levelTable": [
@@ -12764,7 +13249,8 @@
     ],
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-700-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -12936,6 +13422,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 110% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Healing Block on the target for 3 sec.",
+     "Lv2": "Deals damage equal to 130% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Healing Block on the target for 3 sec.",
      "Lv3": "Deals damage equal to 130% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Healing Block on the target for 3 sec."
     },
     "levelTable": [
@@ -12980,13 +13468,16 @@
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-paralysis-single-enemy-30-3-sec",
      "heal-block-single-enemy-30-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Sake Through the Night",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 7 sec, inflicts [High] Evasion Decrease, [High] Critical Defense Decrease, and [High] Critical Resistance Decrease on all enemies for 5 sec.",
+     "Lv2": "Every 7 sec, inflicts [High] Evasion Decrease, [High] Critical Defense Decrease, and [High] Critical Resistance Decrease on all enemies for 6 sec.",
      "Lv3": "Every 7 sec, inflicts [High] Evasion Decrease, [High] Critical Defense Decrease, and [High] Critical Resistance Decrease on all enemies for 7 sec."
     },
     "levelTable": [
@@ -13031,13 +13522,16 @@
      "high-evasion-decrease-all-enemies-every-7-sec-7-sec",
      "high-critical-defense-decrease-all-enemies-every-7-sec-7-sec",
      "high-critical-resistance-decrease-all-enemies-every-7-sec-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Moon-Shattering Impact",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deals damage equal to 700% of ATK to targets within range. Increases damage by 10% for each debuff/status effect on all enemies (up to 500%). After the attack hits, has a 30% chance to inflict Bind and [Top] Paralysis on each target for 5 sec.",
+     "Lv2": "Every 10 sec, deals damage equal to 800% of ATK to targets within range. Increases damage by 10% for each debuff/status effect on all enemies (up to 500%). After the attack hits, has a 30% chance to inflict Bind and [Top] Paralysis on each target for 6 sec.",
      "Lv3": "Every 10 sec, deals damage equal to 900% of ATK to targets within range. Increases damge by 10% for each debuff/status effect on all enemies (up to 500%). After the attack hits, has a 30% chance to inflict Bind and [Top] Paralysis on each target for 7 sec."
     },
     "levelTable": [
@@ -13082,7 +13576,8 @@
      "damage-enemies-in-range-every-10-sec-900-of-own-atk",
      "bind-each-target-hit-every-10-sec-30-7-sec",
      "top-paralysis-each-target-hit-every-10-sec-30-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -13102,6 +13597,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 120% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Evasion Decrease and [High] Burn on the target for 3 sec.",
+     "Lv2": "Deals damage equal to 140% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Evasion Decrease and [High] Burn on the target for 3 sec.",
      "Lv3": "Deals damage equal to 170% of ATK to the target, After the attack hits, has a 30% chance to inflict [High] Evasion Decrease and [High] Burn on the target for 3 sec."
     },
     "levelTable": [
@@ -13146,13 +13643,16 @@
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-evasion-decrease-single-enemy-30-3-sec",
      "high-burn-single-enemy-30-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Moonlit Radiance",
     "attackRange": null,
     "gameText": {
+     "Lv1": "When a critical hit occurs, grants all Heart-type allies [Top] DEF Increase, [Top] Critical Defense Increase, and [High] Continuous Recovery for 3 sec.",
+     "Lv2": "When a critical hit occurs, grants all Heart-type allies [Top] DEF Increase, [Top] Critical Defense Increase, and [High] Continuous Recovery for 4 sec.",
      "Lv3": "When a critical hit occurs, grants all Heart-type allies [Top] DEF Increase, [Top] Critical Defense Increase, and [High] Continuous Recovery for 5 sec."
     },
     "levelTable": [
@@ -13197,13 +13697,16 @@
      "top-def-increase-heart-allies-critical-hit-5-sec",
      "top-critical-defense-increase-heart-allies-critical-hit-5-sec",
      "high-continuous-heal-heart-allies-critical-hit-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Moonlit Guidance",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, deals damage equal to 750% of ATK to enemies within the target area. After the attack hits, grants all allies [Top] ATK Increase and [Top] Shield for 3 sec. Extends the duration of these additional effects by 0.5 sec for each Heart-type ally (max 3.5 sec). Also advances the current Ultimate Skill Gauge by 0.5 sec.",
+     "Lv2": "Every 10 sec, deals damage equal to 850% of ATK to enemies within the target area. After the attack hits, grants all allies [Top] ATK Increase and [Top] Shield for 4 sec. Extends the duration of these additional effects by 0.5 sec for each Heart-type ally (max 3.5 sec). Also advances the current Ultimate Skill Gauge by 0.6 sec.",
      "Lv3": "Every 10 sec, deals damage equal to 950% of ATK to enemies within the target area. After the attack hits, grants all allies [Top] ATK Increase and [Top] Shield for 5 sec. Extends the duration of these additional effects by 0.5 sec fro each Heart-type ally (max 3.5 sec). Also advances the current Ultimate Skill Gauge by 0.7 sec."
     },
     "levelTable": [
@@ -13261,7 +13764,8 @@
      "top-atk-increase-all-allies-every-10-sec-5-sec-extended-per-heart-ally",
      "top-shield-all-allies-every-10-sec-5-sec",
      "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-every-10-sec-0-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -13790,6 +14294,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals damage equal to 100% of ATK to the target. After the attack hits, has a 10% chance to inflict Silence on the target for 3 seconds.",
+     "Lv2": "Deals damage equal to 120% of ATK to the target. After the attack hits, has a 10% chance to inflict Silence on the target for 3 seconds.",
      "Lv3": "Deals Damage equal to 150% of ATK to the target. After the attack hits, has a 10% chance to inflict Silence on the target for 3 seconds."
     },
     "levelTable": [
@@ -13821,13 +14327,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "silence-single-enemy-10-3-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Sweet and Dangerous Love Letter",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, if the target is affected by Silence, grants for 3 seconds: [Top] DEF Decrease and [Top] Critical Defense Decrease.",
+     "Lv2": "After a normal skill hits, if the target is affected by Silence, grants for 4 seconds: [Top] DEF Decrease and [Top] Critical Defense Decrease.",
      "Lv3": "After a normal skill hits, if the target is affected by Silence, grants for 5 seconds: [Top] DEF Decrease and [Top] Critical Defense Decrease."
     },
     "levelTable": [
@@ -13859,13 +14368,16 @@
     "applications": [
      "top-def-decrease-single-enemy-silence-5-sec",
      "top-critical-defense-decrease-single-enemy-silence-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "3D Text -Sweet-",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits, there is a 50% chance for 3 sec to inflict Silence and rewind the target s accumulated Ultimate Skill gauge by 0.5 sec.",
+     "Lv2": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits, there is a 50% chance for 3 sec to inflict Silence and rewind the target s accumulated Ultimate Skill gauge by 0.6 sec.",
      "Lv3": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits,  there is a 50% chance for 3 sec to inflict Silence and rewind the targets accumulated Ultimate Skill gauge by 0.7 seconds."
     },
     "levelTable": [
@@ -13910,7 +14422,8 @@
      "damage-enemies-in-target-area-every-9-sec-650-of-own-atk",
      "silence-each-target-hit-every-9-sec-50-3-sec",
      "push-back-ultimate-skill-gauge-each-target-hit-every-9-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -14773,6 +15286,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target. After hitting, heals the ally with the lowest HP for 100% of your ATK.",
+     "Lv2": "Deals 100% ATK damage to the target. After hitting, heals the ally with the lowest HP for 120% of your ATK.",
      "Lv3": "Deals 120% ATK damage to the target.  After hitting, heals the ally with the lowest HP for 140% of your ATK."
     },
     "levelTable": [
@@ -14791,13 +15306,16 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Knights of God",
     "attackRange": null,
     "gameText": {
+     "Lv1": "After a normal skill hits, there is a 10% chance to grant all allies for 5 sec [Top] ATK Increase and [Top] Critical Rate Increase, and advance the currently accumulated Ultimate Skill gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, there is a 10% chance to grant all allies for 6 sec [Top] ATK Increase and [Top] Critical Rate Increase, and advance the currently accumulated Ultimate Skill gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, there is a 10% chance to grant allies for 7 sec [Top] ATK Increase and [Top] Critical Rate Increase, and advance the currently accumulated Ultimate SKill Gauge by 0.7 sec."
     },
     "levelTable": [
@@ -14841,13 +15359,16 @@
     "applications": [
      "top-atk-increase-all-allies-10-7-sec",
      "top-critical-rate-increase-all-allies-10-7-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Sky Heal",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 10 sec, restore HP of all allies equal to 600% of own ATK. Then for 5 sec, grant them Blessing of the Sky Dragon.",
+     "Lv2": "Every 10 sec, restore HP of all allies equal to 700% of own ATK. Then for 6 sec, grant them Blessing of the Sky Dragon.",
      "Lv3": "Every 10 sec, restore HP of all allies equal to 800% of own ATK. Then for 7 sec, grant them Blessing of the Sky Dragon"
     },
     "levelTable": [
@@ -14879,7 +15400,8 @@
     "applications": [
      "heal-all-allies-every-10-sec-800-of-own-atk",
      "blessing-of-the-sky-dragon-all-allies"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  },
@@ -15039,6 +15561,8 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
+     "Lv1": "Deals 100% of ATK as damage to the target. After an attack hits, has a 10% chance to inflict [High] Freeze on the target for 2 seconds.",
+     "Lv2": "Deals 120% of ATK as damage to the target. After an attack hits, has a 10% chance to inflict [High] Freeze on the target for 2 seconds.",
      "Lv3": "Deals 150% of ATK as damage to the target. After an attack hits, has a 10% chance to inflict [High] Freeze on the target for 2 seconds."
     },
     "levelTable": [
@@ -15070,13 +15594,16 @@
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-freeze-single-enemy-10-2-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Special",
     "name": "Oath of Silver",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Grants yourself [Top] ATK Increase and [Top] Accuracy Increase for 3 seconds every 5 seconds.",
+     "Lv2": "Grants yourself [Top] ATK Increase and [Top] Accuracy Increase for 4 seconds every 5 seconds.",
      "Lv3": "Grants yourself [Top] ATK Increase and [Top] Accuracy Increase for 5 seconds every 5 seconds."
     },
     "levelTable": [
@@ -15108,13 +15635,16 @@
     "applications": [
      "top-atk-increase-self-every-5-sec-5-sec",
      "top-accuracy-increase-self-every-5-sec-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    },
    {
     "kind": "Ultimate",
     "name": "Ice Make: White Gift",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals 550% of ATK as damage to all enemies every 11 sec. After an attack hits, has a 30% chance per target to inflict [Top] Freeze and [Top] DEF Decrease for 3 seconds.",
+     "Lv2": "Deals 650% of ATK as damage to all enemies every 11 sec. After an attack hits, has a 30% chance per target to inflict [Top] Freeze and [Top] DEF Decrease for 4 seconds.",
      "Lv3": "Deals 750% of ATK as damage to all enemies every 11 seconds. After an attack hits, has a 30% chance per target to inflict [Top] Freeze and [Top] DEF Decrease for 5 seconds."
     },
     "levelTable": [
@@ -15159,7 +15689,8 @@
      "damage-all-enemies-every-11-sec-750-of-own-atk",
      "top-freeze-each-target-hit-every-11-sec-30-5-sec",
      "top-def-decrease-each-target-hit-every-11-sec-30-5-sec"
-    ]
+    ],
+    "levelTextSource": "madochro.wiki.gg"
    }
   ]
  }
