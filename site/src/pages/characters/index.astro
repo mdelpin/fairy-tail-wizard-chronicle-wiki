@@ -19,6 +19,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
       <input id="f-q" type="search" placeholder="Filter by name or identity — e.g. “Natsu”" />
       <div class="row" role="group" aria-label="Attribute">
         <span class="lbl">Attribute</span>
+        <button type="button" class="pill" data-filter="attr" data-value="" aria-pressed="true">All</button>
         {ATTR_ORDER.map((a) => (
           <button type="button" class="pill" data-filter="attr" data-value={a} aria-pressed="false" style={`--c:${ATTR[a].color}`}>
             <Kanji attr={a} size={22} />{a}
@@ -27,6 +28,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
       </div>
       <div class="row" role="group" aria-label="Role">
         <span class="lbl">Role</span>
+        <button type="button" class="pill" data-filter="role" data-value="" aria-pressed="true">All</button>
         {ROLES.map((r) => <button type="button" class="pill" data-filter="role" data-value={r} aria-pressed="false">{r}</button>)}
       </div>
     </div>
@@ -68,7 +70,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
         (!state.attr || li.dataset.attr === state.attr) && (!state.role || li.dataset.role === state.role);
       li.hidden = !ok; if (ok) n++;
     }
-    for (const p of pills) p.setAttribute('aria-pressed', String(state[p.dataset.filter!] === p.dataset.value));
+    for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0;
     // Say what is narrowing the list, and keep the address bar in step with the page.
@@ -86,7 +88,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
     q.value = ''; state.attr = null; state.role = null; apply(); q.focus();
   });
   for (const p of pills) p.addEventListener('click', () => {
-    const k = p.dataset.filter!; state[k] = state[k] === p.dataset.value ? null : p.dataset.value!; apply();
+    state[p.dataset.filter!] = p.dataset.value || null; apply();
   });
   q.addEventListener('input', apply);
   apply();

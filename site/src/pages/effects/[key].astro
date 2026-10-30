@@ -77,18 +77,21 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
       {tiersPresent.length > 1 && (
         <div class="row" role="group" aria-label="Tier">
           <span class="lbl">Tier</span>
+          <button type="button" class="pill" data-filter="tier" data-value="" aria-pressed="true">All</button>
           {TIER_ORDER.filter((t) => tiersPresent.includes(t)).map((t) => <button type="button" class="pill" data-filter="tier" data-value={t} aria-pressed="false">{t}</button>)}
         </div>
       )}
       {attrsPresent.length > 1 && (
         <div class="row" role="group" aria-label="Attribute">
           <span class="lbl">Attribute</span>
+          <button type="button" class="pill" data-filter="attr" data-value="" aria-pressed="true">All</button>
           {attrsPresent.map((x) => <button type="button" class="pill" data-filter="attr" data-value={x} aria-pressed="false"><Kanji attr={x} size={22} />{x}</button>)}
         </div>
       )}
       {rolesPresent.length > 1 && (
         <div class="row" role="group" aria-label="Role">
           <span class="lbl">Role</span>
+          <button type="button" class="pill" data-filter="role" data-value="" aria-pressed="true">All</button>
           {rolesPresent.map((x) => <button type="button" class="pill" data-filter="role" data-value={x} aria-pressed="false">{x}</button>)}
         </div>
       )}
@@ -176,7 +179,6 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   const pills = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill')];
   const params = new URLSearchParams(location.search);
   const state: Record<string, string | null> = { tier: params.get('tier'), attr: params.get('attr'), role: params.get('role') };
-  for (const k of Object.keys(state)) if (state[k] && !pills.some((p) => p.dataset.filter === k && p.dataset.value === state[k])) state[k] = null;
   function apply() {
     let n = 0;
     document.querySelectorAll<HTMLElement>('.card').forEach((card) => {
@@ -186,7 +188,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
       card.hidden = !ok; if (ok) n++;
     });
     document.querySelectorAll<HTMLElement>('.lac').forEach((l) => { l.hidden = !!state.tier && l.dataset.tier !== state.tier; });
-    for (const p of pills) p.setAttribute('aria-pressed', String(state[p.dataset.filter!] === p.dataset.value));
+    for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0;
     const active = [state.tier && state.tier + ' tier', state.attr, state.role].filter(Boolean);
@@ -198,7 +200,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
   }
   for (const p of pills) p.addEventListener('click', () => {
-    const k = p.dataset.filter!; state[k] = state[k] === p.dataset.value ? null : p.dataset.value!; apply();
+    state[p.dataset.filter!] = p.dataset.value || null; apply();
   });
   document.getElementById('clear')!.addEventListener('click', () => { state.tier = state.attr = state.role = null; apply(); });
   apply();
