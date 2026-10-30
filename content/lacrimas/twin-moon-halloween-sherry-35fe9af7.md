@@ -31,5 +31,6 @@ title: "✨ Twin Moon Halloween Sherry"
 | Family | Accuracy |
 | Target | All Allies |
 | Activation | While on the Field |
+| Value | 10 Percent |
 
 Unspecified values remain unknown. Text is transcribed from game records; localization and entry errors may remain.

@@ -28,5 +28,6 @@ title: "✨ Mystogan Lacrima"
 | Activation | Normal Skill Hit |
 | Chance | 20% |
 | Duration | 3 sec |
+| Value | 10 Percent |
 
 Unspecified values remain unknown. Text is transcribed from game records; localization and entry errors may remain.

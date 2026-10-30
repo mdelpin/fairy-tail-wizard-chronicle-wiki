@@ -26,5 +26,6 @@ title: "✨ Sherria Lacrima"
 | Target | Self |
 | Activation | Every 5 sec |
 | Duration | 3 sec |
+| Value | 10 Percent |
 
 Unspecified values remain unknown. Text is transcribed from game records; localization and entry errors may remain.
