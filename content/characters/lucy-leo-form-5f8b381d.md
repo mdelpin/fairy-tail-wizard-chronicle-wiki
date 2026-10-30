@@ -3,7 +3,7 @@ title: "Lucy -Leo Form-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/6ec3ca2773cced3fc83e.png" alt="Lucy -Leo Form-" width="240">
+<img class="character-portrait" src="../assets/6ec3ca2773cced3fc83e.png" alt="Lucy -Leo Form-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

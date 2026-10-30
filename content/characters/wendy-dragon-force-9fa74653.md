@@ -3,7 +3,7 @@ title: "Wendy -Dragon Force-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/fe20c834b95d9916685f.png" alt="Wendy -Dragon Force-" width="240">
+<img class="character-portrait" src="../assets/fe20c834b95d9916685f.png" alt="Wendy -Dragon Force-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

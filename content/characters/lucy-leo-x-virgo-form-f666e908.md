@@ -3,7 +3,7 @@ title: "Lucy -Leo x Virgo Form-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/da70098f47063be8394f.png" alt="Lucy -Leo x Virgo Form-" width="240">
+<img class="character-portrait" src="../assets/da70098f47063be8394f.png" alt="Lucy -Leo x Virgo Form-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

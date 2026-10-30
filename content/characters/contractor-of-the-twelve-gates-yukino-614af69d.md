@@ -3,7 +3,7 @@ title: "Contractor of the Twelve Gates Yukino"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/5f08675cceb4a675a5d8.png" alt="Contractor of the Twelve Gates Yukino" width="240">
+<img class="character-portrait" src="../assets/5f08675cceb4a675a5d8.png" alt="Contractor of the Twelve Gates Yukino" width="320">
 <div class="character-details">
 
 **Rarity:** UR

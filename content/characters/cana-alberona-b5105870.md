@@ -3,7 +3,7 @@ title: "Cana Alberona"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/6da39da6df36a6a89e93.png" alt="Cana Alberona" width="240">
+<img class="character-portrait" src="../assets/6da39da6df36a6a89e93.png" alt="Cana Alberona" width="320">
 <div class="character-details">
 
 **Rarity:** UR

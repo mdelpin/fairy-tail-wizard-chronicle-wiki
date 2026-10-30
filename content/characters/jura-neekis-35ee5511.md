@@ -3,7 +3,7 @@ title: "Jura Neekis"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/be445ff953f795b0715c.png" alt="Jura Neekis" width="240">
+<img class="character-portrait" src="../assets/be445ff953f795b0715c.png" alt="Jura Neekis" width="320">
 <div class="character-details">
 
 **Rarity:** UR

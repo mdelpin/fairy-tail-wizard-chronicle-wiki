@@ -3,7 +3,7 @@ title: "Block Lucy"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/c7597e3d697b179766f3.png" alt="Block Lucy" width="240">
+<img class="character-portrait" src="../assets/c7597e3d697b179766f3.png" alt="Block Lucy" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Midsummer Sorcerer Mirajane"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/ca5fc7967a6505b968ad.png" alt="Midsummer Sorcerer Mirajane" width="240">
+<img class="character-portrait" src="../assets/ca5fc7967a6505b968ad.png" alt="Midsummer Sorcerer Mirajane" width="320">
 <div class="character-details">
 
 **Rarity:** UR

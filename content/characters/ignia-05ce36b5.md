@@ -3,7 +3,7 @@ title: "Ignia"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/517fbf6fe245b7316039.png" alt="Ignia" width="240">
+<img class="character-portrait" src="../assets/517fbf6fe245b7316039.png" alt="Ignia" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Natsu Dragion"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/a6457581c9d8119f3947.png" alt="Natsu Dragion" width="240">
+<img class="character-portrait" src="../assets/a6457581c9d8119f3947.png" alt="Natsu Dragion" width="320">
 <div class="character-details">
 
 **Rarity:** UR

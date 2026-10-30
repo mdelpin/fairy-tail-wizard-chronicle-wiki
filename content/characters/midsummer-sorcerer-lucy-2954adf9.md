@@ -3,7 +3,7 @@ title: "Midsummer Sorcerer Lucy"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d050639e4456a193ccad.png" alt="Midsummer Sorcerer Lucy" width="240">
+<img class="character-portrait" src="../assets/d050639e4456a193ccad.png" alt="Midsummer Sorcerer Lucy" width="320">
 <div class="character-details">
 
 **Rarity:** UR

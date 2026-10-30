@@ -3,7 +3,7 @@ title: "Starry Night Reunion Zeref"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/82ec124961831c97d128.png" alt="Starry Night Reunion Zeref" width="240">
+<img class="character-portrait" src="../assets/82ec124961831c97d128.png" alt="Starry Night Reunion Zeref" width="320">
 <div class="character-details">
 
 **Rarity:** UR

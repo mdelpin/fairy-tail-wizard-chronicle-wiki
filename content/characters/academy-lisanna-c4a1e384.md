@@ -3,7 +3,7 @@ title: "Academy Lisanna"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/9903c77da9a72bbebe49.png" alt="Academy Lisanna" width="240">
+<img class="character-portrait" src="../assets/9903c77da9a72bbebe49.png" alt="Academy Lisanna" width="320">
 <div class="character-details">
 
 **Rarity:** UR

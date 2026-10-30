@@ -3,7 +3,7 @@ title: "Suzaku"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/e872522d6e465c033ca5.png" alt="Suzaku" width="240">
+<img class="character-portrait" src="../assets/e872522d6e465c033ca5.png" alt="Suzaku" width="320">
 <div class="character-details">
 
 **Rarity:** UR

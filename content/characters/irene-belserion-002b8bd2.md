@@ -3,7 +3,7 @@ title: "Irene Belserion"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/1212f4adfde0919399a7.png" alt="Irene Belserion" width="240">
+<img class="character-portrait" src="../assets/1212f4adfde0919399a7.png" alt="Irene Belserion" width="320">
 <div class="character-details">
 
 **Rarity:** UR

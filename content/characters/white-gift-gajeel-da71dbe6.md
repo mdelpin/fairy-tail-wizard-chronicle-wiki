@@ -3,7 +3,7 @@ title: "White Gift Gajeel"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/9386f879a73bfaa55599.png" alt="White Gift Gajeel" width="240">
+<img class="character-portrait" src="../assets/9386f879a73bfaa55599.png" alt="White Gift Gajeel" width="320">
 <div class="character-details">
 
 **Rarity:** UR

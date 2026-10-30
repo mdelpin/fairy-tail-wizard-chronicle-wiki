@@ -3,7 +3,7 @@ title: "Erza -Heaven's Wheel Armor-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/710306b035ab5f91b332.png" alt="Erza -Heaven&#x27;s Wheel Armor-" width="240">
+<img class="character-portrait" src="../assets/710306b035ab5f91b332.png" alt="Erza -Heaven&#x27;s Wheel Armor-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

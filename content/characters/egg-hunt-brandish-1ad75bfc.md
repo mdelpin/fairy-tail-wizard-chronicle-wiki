@@ -3,7 +3,7 @@ title: "Egg Hunt Brandish"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/267a8939b4f719cb1997.png" alt="Egg Hunt Brandish" width="240">
+<img class="character-portrait" src="../assets/267a8939b4f719cb1997.png" alt="Egg Hunt Brandish" width="320">
 <div class="character-details">
 
 **Rarity:** UR

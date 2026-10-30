@@ -3,7 +3,7 @@ title: "Emperor Spriggan Zeref"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/84a65650d2bfecdd2ed3.png" alt="Emperor Spriggan Zeref" width="240">
+<img class="character-portrait" src="../assets/84a65650d2bfecdd2ed3.png" alt="Emperor Spriggan Zeref" width="320">
 <div class="character-details">
 
 **Rarity:** UR

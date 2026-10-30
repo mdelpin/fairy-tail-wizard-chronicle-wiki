@@ -3,7 +3,7 @@ title: "Mavis Vermillion"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/3f16411a69506aea5520.png" alt="Mavis Vermillion" width="240">
+<img class="character-portrait" src="../assets/3f16411a69506aea5520.png" alt="Mavis Vermillion" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Juvia -Element 4-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d0f67b7cb4130d540168.png" alt="Juvia -Element 4-" width="240">
+<img class="character-portrait" src="../assets/d0f67b7cb4130d540168.png" alt="Juvia -Element 4-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Larcade Dragneel"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/81a77a652f4bec7e3662.png" alt="Larcade Dragneel" width="240">
+<img class="character-portrait" src="../assets/81a77a652f4bec7e3662.png" alt="Larcade Dragneel" width="320">
 <div class="character-details">
 
 **Rarity:** UR

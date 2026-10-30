@@ -3,7 +3,7 @@ title: "Mard Geer"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d63f753852a4ffeea78c.png" alt="Mard Geer" width="240">
+<img class="character-portrait" src="../assets/d63f753852a4ffeea78c.png" alt="Mard Geer" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Sweet Gift Juvia"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/bb84b38a833c6f6d015e.png" alt="Sweet Gift Juvia" width="240">
+<img class="character-portrait" src="../assets/bb84b38a833c6f6d015e.png" alt="Sweet Gift Juvia" width="320">
 <div class="character-details">
 
 **Rarity:** UR

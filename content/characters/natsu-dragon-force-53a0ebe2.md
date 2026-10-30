@@ -3,7 +3,7 @@ title: "Natsu -Dragon Force-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/42218cdf8b28027b7ede.png" alt="Natsu -Dragon Force-" width="240">
+<img class="character-portrait" src="../assets/42218cdf8b28027b7ede.png" alt="Natsu -Dragon Force-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Rock'n Magic Juvia"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/ddcaf67bf232c6fb4192.png" alt="Rock&#x27;n Magic Juvia" width="240">
+<img class="character-portrait" src="../assets/ddcaf67bf232c6fb4192.png" alt="Rock&#x27;n Magic Juvia" width="320">
 <div class="character-details">
 
 **Rarity:** UR

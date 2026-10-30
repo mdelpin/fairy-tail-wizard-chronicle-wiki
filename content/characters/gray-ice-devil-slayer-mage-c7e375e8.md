@@ -3,7 +3,7 @@ title: "Gray -Ice Devil Slayer Mage-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/21f6373dbcb44c7a37b8.png" alt="Gray -Ice Devil Slayer Mage-" width="240">
+<img class="character-portrait" src="../assets/21f6373dbcb44c7a37b8.png" alt="Gray -Ice Devil Slayer Mage-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

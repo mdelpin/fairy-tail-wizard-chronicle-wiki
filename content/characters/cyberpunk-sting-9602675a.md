@@ -3,7 +3,7 @@ title: "Cyberpunk Sting"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d5da9058bd5b6060a21e.png" alt="Cyberpunk Sting" width="240">
+<img class="character-portrait" src="../assets/d5da9058bd5b6060a21e.png" alt="Cyberpunk Sting" width="320">
 <div class="character-details">
 
 **Rarity:** UR

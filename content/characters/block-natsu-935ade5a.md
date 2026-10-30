@@ -3,7 +3,7 @@ title: "Block Natsu"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/551a0d3e68836d09a47d.png" alt="Block Natsu" width="240">
+<img class="character-portrait" src="../assets/551a0d3e68836d09a47d.png" alt="Block Natsu" width="320">
 <div class="character-details">
 
 **Rarity:** UR

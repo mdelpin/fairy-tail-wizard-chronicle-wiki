@@ -3,7 +3,7 @@ title: "Twin Moon Halloween Sherry"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/7300643b34513c3e993e.png" alt="Twin Moon Halloween Sherry" width="240">
+<img class="character-portrait" src="../assets/7300643b34513c3e993e.png" alt="Twin Moon Halloween Sherry" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Meredy -Grimoire Heart-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/c20a66390b03d6673d59.png" alt="Meredy -Grimoire Heart-" width="240">
+<img class="character-portrait" src="../assets/c20a66390b03d6673d59.png" alt="Meredy -Grimoire Heart-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

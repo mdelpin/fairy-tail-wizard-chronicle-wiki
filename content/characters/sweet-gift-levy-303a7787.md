@@ -3,7 +3,7 @@ title: "Sweet Gift Levy"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/686f1a132bdec477f826.png" alt="Sweet Gift Levy" width="240">
+<img class="character-portrait" src="../assets/686f1a132bdec477f826.png" alt="Sweet Gift Levy" width="320">
 <div class="character-details">
 
 **Rarity:** UR

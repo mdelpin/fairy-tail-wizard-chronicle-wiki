@@ -3,7 +3,7 @@ title: "Mirajane Strauss"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/5315ad22eb05f954e01d.png" alt="Mirajane Strauss" width="240">
+<img class="character-portrait" src="../assets/5315ad22eb05f954e01d.png" alt="Mirajane Strauss" width="320">
 <div class="character-details">
 
 **Rarity:** UR

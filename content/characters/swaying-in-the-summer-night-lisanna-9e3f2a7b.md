@@ -3,7 +3,7 @@ title: "Swaying in the Summer Night Lisanna"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d28a479a26703a607156.png" alt="Swaying in the Summer Night Lisanna" width="240">
+<img class="character-portrait" src="../assets/d28a479a26703a607156.png" alt="Swaying in the Summer Night Lisanna" width="320">
 <div class="character-details">
 
 **Rarity:** UR

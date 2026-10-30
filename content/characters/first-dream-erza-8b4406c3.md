@@ -3,7 +3,7 @@ title: "First Dream Erza"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/11cd26f00a2ca13a40dd.png" alt="First Dream Erza" width="240">
+<img class="character-portrait" src="../assets/11cd26f00a2ca13a40dd.png" alt="First Dream Erza" width="320">
 <div class="character-details">
 
 **Rarity:** UR

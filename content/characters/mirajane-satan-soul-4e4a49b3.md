@@ -3,7 +3,7 @@ title: "Mirajane -Satan Soul-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/7b29372914661a63b58e.png" alt="Mirajane -Satan Soul-" width="240">
+<img class="character-portrait" src="../assets/7b29372914661a63b58e.png" alt="Mirajane -Satan Soul-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

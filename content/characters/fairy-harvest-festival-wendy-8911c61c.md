@@ -3,7 +3,7 @@ title: "Fairy Harvest Festival Wendy"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/98679447bab24b487bcf.png" alt="Fairy Harvest Festival Wendy" width="240">
+<img class="character-portrait" src="../assets/98679447bab24b487bcf.png" alt="Fairy Harvest Festival Wendy" width="320">
 <div class="character-details">
 
 **Rarity:** UR

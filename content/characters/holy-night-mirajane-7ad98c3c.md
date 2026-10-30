@@ -3,7 +3,7 @@ title: "Holy Night Mirajane"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/2ca6284be357a162a7f7.png" alt="Holy Night Mirajane" width="240">
+<img class="character-portrait" src="../assets/2ca6284be357a162a7f7.png" alt="Holy Night Mirajane" width="320">
 <div class="character-details">
 
 **Rarity:** UR

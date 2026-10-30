@@ -3,7 +3,7 @@ title: "Noir Gildarts"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/1aad951ffaae3feabb30.png" alt="Noir Gildarts" width="240">
+<img class="character-portrait" src="../assets/1aad951ffaae3feabb30.png" alt="Noir Gildarts" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Moonlit Reverie Mavis"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/53c0ec97e89b8ed7bc72.png" alt="Moonlit Reverie Mavis" width="240">
+<img class="character-portrait" src="../assets/53c0ec97e89b8ed7bc72.png" alt="Moonlit Reverie Mavis" width="320">
 <div class="character-details">
 
 **Rarity:** UR

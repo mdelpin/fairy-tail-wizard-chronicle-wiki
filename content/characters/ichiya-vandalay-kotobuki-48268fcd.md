@@ -3,7 +3,7 @@ title: "Ichiya Vandalay Kotobuki"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/c6a2fbe7a521d72d394e.png" alt="Ichiya Vandalay Kotobuki" width="240">
+<img class="character-portrait" src="../assets/c6a2fbe7a521d72d394e.png" alt="Ichiya Vandalay Kotobuki" width="320">
 <div class="character-details">
 
 **Rarity:** UR

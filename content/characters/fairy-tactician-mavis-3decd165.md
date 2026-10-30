@@ -3,7 +3,7 @@ title: "Fairy Tactician Mavis"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/a113a709d0fd3f0d80a0.png" alt="Fairy Tactician Mavis" width="240">
+<img class="character-portrait" src="../assets/a113a709d0fd3f0d80a0.png" alt="Fairy Tactician Mavis" width="320">
 <div class="character-details">
 
 **Rarity:** UR

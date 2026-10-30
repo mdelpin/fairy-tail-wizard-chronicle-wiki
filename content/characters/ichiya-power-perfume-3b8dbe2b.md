@@ -3,7 +3,7 @@ title: "Ichiya -Power Perfume-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/638cc6e0429611725072.png" alt="Ichiya -Power Perfume-" width="240">
+<img class="character-portrait" src="../assets/638cc6e0429611725072.png" alt="Ichiya -Power Perfume-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

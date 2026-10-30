@@ -3,7 +3,7 @@ title: "Silver Fullbuster"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/da74b7903c5155020c83.png" alt="Silver Fullbuster" width="240">
+<img class="character-portrait" src="../assets/da74b7903c5155020c83.png" alt="Silver Fullbuster" width="320">
 <div class="character-details">
 
 **Rarity:** UR

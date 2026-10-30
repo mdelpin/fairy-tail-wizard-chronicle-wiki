@@ -3,7 +3,7 @@ title: "Erza -Demon Blade Benizakura-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/fe9d4fedb912e5d2ca8f.png" alt="Erza -Demon Blade Benizakura-" width="240">
+<img class="character-portrait" src="../assets/fe9d4fedb912e5d2ca8f.png" alt="Erza -Demon Blade Benizakura-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

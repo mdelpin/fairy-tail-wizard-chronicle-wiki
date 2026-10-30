@@ -3,7 +3,7 @@ title: "Swaying in the Summer Night Cana"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/9a8ced721bab03d2544b.png" alt="Swaying in the Summer Night Cana" width="240">
+<img class="character-portrait" src="../assets/9a8ced721bab03d2544b.png" alt="Swaying in the Summer Night Cana" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Bunny Yukino"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/6280b98fa3c843addba7.png" alt="Bunny Yukino" width="240">
+<img class="character-portrait" src="../assets/6280b98fa3c843addba7.png" alt="Bunny Yukino" width="320">
 <div class="character-details">
 
 **Rarity:** UR

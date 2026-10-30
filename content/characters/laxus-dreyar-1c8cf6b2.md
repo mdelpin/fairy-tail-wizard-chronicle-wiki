@@ -3,7 +3,7 @@ title: "Laxus Dreyar"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/f77265965b0d78cd2efe.png" alt="Laxus Dreyar" width="240">
+<img class="character-portrait" src="../assets/f77265965b0d78cd2efe.png" alt="Laxus Dreyar" width="320">
 <div class="character-details">
 
 **Rarity:** UR

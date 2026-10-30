@@ -3,7 +3,7 @@ title: "Pure White Oath Jellal"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/abc0d218585dfb36259b.png" alt="Pure White Oath Jellal" width="240">
+<img class="character-portrait" src="../assets/abc0d218585dfb36259b.png" alt="Pure White Oath Jellal" width="320">
 <div class="character-details">
 
 **Rarity:** UR

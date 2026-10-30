@@ -3,7 +3,7 @@ title: "Starry Night Reunion Mavis"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/1ff06df75403048006f1.png" alt="Starry Night Reunion Mavis" width="240">
+<img class="character-portrait" src="../assets/1ff06df75403048006f1.png" alt="Starry Night Reunion Mavis" width="320">
 <div class="character-details">
 
 **Rarity:** UR

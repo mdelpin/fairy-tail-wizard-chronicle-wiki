@@ -3,7 +3,7 @@ title: "Gajeel Redfox"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/da90c34267484409ede7.png" alt="Gajeel Redfox" width="240">
+<img class="character-portrait" src="../assets/da90c34267484409ede7.png" alt="Gajeel Redfox" width="320">
 <div class="character-details">
 
 **Rarity:** UR

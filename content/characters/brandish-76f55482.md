@@ -3,7 +3,7 @@ title: "Brandish"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/e9e1a25da8c49e86fef0.png" alt="Brandish" width="240">
+<img class="character-portrait" src="../assets/e9e1a25da8c49e86fef0.png" alt="Brandish" width="320">
 <div class="character-details">
 
 **Rarity:** UR

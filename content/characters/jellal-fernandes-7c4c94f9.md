@@ -3,7 +3,7 @@ title: "Jellal Fernandes"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/191335b9e90d7ed989b9.png" alt="Jellal Fernandes" width="240">
+<img class="character-portrait" src="../assets/191335b9e90d7ed989b9.png" alt="Jellal Fernandes" width="320">
 <div class="character-details">
 
 **Rarity:** UR

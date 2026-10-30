@@ -3,7 +3,7 @@ title: "Selene"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/52a275b0388edd657b0c.png" alt="Selene" width="240">
+<img class="character-portrait" src="../assets/52a275b0388edd657b0c.png" alt="Selene" width="320">
 <div class="character-details">
 
 **Rarity:** UR

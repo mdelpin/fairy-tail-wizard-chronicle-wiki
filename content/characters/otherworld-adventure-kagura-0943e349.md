@@ -3,7 +3,7 @@ title: "Otherworld Adventure Kagura"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/f6187c4561c2c9a638dd.png" alt="Otherworld Adventure Kagura" width="240">
+<img class="character-portrait" src="../assets/f6187c4561c2c9a638dd.png" alt="Otherworld Adventure Kagura" width="320">
 <div class="character-details">
 
 **Rarity:** UR

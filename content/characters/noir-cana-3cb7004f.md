@@ -3,7 +3,7 @@ title: "Noir Cana"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/57a8c5c6a3fbf11fdf1d.png" alt="Noir Cana" width="240">
+<img class="character-portrait" src="../assets/57a8c5c6a3fbf11fdf1d.png" alt="Noir Cana" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Elfman Strauss"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/a868eb85e23a5aa7ee9b.png" alt="Elfman Strauss" width="240">
+<img class="character-portrait" src="../assets/a868eb85e23a5aa7ee9b.png" alt="Elfman Strauss" width="320">
 <div class="character-details">
 
 **Rarity:** UR

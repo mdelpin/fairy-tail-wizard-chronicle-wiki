@@ -3,7 +3,7 @@ title: "Pure White Oath Erza"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d2536489d5fe31be9c53.png" alt="Pure White Oath Erza" width="240">
+<img class="character-portrait" src="../assets/d2536489d5fe31be9c53.png" alt="Pure White Oath Erza" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Lyon Vastia"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/4a8c867ef3ca01ba0c86.png" alt="Lyon Vastia" width="240">
+<img class="character-portrait" src="../assets/4a8c867ef3ca01ba0c86.png" alt="Lyon Vastia" width="320">
 <div class="character-details">
 
 **Rarity:** UR

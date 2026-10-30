@@ -3,7 +3,7 @@ title: "Ultear -Grimoire Heart-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d16661bccbf255dd93e4.png" alt="Ultear -Grimoire Heart-" width="240">
+<img class="character-portrait" src="../assets/d16661bccbf255dd93e4.png" alt="Ultear -Grimoire Heart-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

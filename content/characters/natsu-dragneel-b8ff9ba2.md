@@ -3,7 +3,7 @@ title: "Natsu Dragneel"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/7ec09534ca0a3fa1e703.png" alt="Natsu Dragneel" width="240">
+<img class="character-portrait" src="../assets/7ec09534ca0a3fa1e703.png" alt="Natsu Dragneel" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Swayed by the Evening Breeze Mystogan"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/a9b3f321f89ff5822712.png" alt="Swayed by the Evening Breeze Mystogan" width="240">
+<img class="character-portrait" src="../assets/a9b3f321f89ff5822712.png" alt="Swayed by the Evening Breeze Mystogan" width="320">
 <div class="character-details">
 
 **Rarity:** UR

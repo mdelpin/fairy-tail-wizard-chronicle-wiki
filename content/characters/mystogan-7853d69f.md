@@ -3,7 +3,7 @@ title: "Mystogan"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/33e71891f4080b56ca2e.png" alt="Mystogan" width="240">
+<img class="character-portrait" src="../assets/33e71891f4080b56ca2e.png" alt="Mystogan" width="320">
 <div class="character-details">
 
 **Rarity:** UR

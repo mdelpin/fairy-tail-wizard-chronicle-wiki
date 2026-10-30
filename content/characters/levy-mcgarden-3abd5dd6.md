@@ -3,7 +3,7 @@ title: "Levy McGarden"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/7196837b2370e86c35bf.png" alt="Levy McGarden" width="240">
+<img class="character-portrait" src="../assets/7196837b2370e86c35bf.png" alt="Levy McGarden" width="320">
 <div class="character-details">
 
 **Rarity:** UR

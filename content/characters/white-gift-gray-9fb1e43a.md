@@ -3,7 +3,7 @@ title: "White Gift Gray"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/5807ecffe3bc7a9d9b8e.png" alt="White Gift Gray" width="240">
+<img class="character-portrait" src="../assets/5807ecffe3bc7a9d9b8e.png" alt="White Gift Gray" width="320">
 <div class="character-details">
 
 **Rarity:** UR

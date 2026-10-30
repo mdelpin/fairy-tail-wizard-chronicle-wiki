@@ -3,7 +3,7 @@ title: "Kagura Mikazuchi"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/40161715617470ed3507.png" alt="Kagura Mikazuchi" width="240">
+<img class="character-portrait" src="../assets/40161715617470ed3507.png" alt="Kagura Mikazuchi" width="320">
 <div class="character-details">
 
 **Rarity:** UR

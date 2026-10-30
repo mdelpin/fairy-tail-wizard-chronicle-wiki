@@ -3,7 +3,7 @@ title: "Blazing Beach Vacation Laxus"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/e5eea1d366530a04e82c.png" alt="Blazing Beach Vacation Laxus" width="240">
+<img class="character-portrait" src="../assets/e5eea1d366530a04e82c.png" alt="Blazing Beach Vacation Laxus" width="320">
 <div class="character-details">
 
 **Rarity:** UR

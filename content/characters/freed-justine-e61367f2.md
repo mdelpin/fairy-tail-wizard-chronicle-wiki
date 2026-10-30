@@ -3,7 +3,7 @@ title: "Freed Justine"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d0d3121a26df29883191.png" alt="Freed Justine" width="240">
+<img class="character-portrait" src="../assets/d0d3121a26df29883191.png" alt="Freed Justine" width="320">
 <div class="character-details">
 
 **Rarity:** UR

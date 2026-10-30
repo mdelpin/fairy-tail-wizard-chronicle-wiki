@@ -3,7 +3,7 @@ title: "Hades"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/c826d7a16c3df1b476ca.png" alt="Hades" width="240">
+<img class="character-portrait" src="../assets/c826d7a16c3df1b476ca.png" alt="Hades" width="320">
 <div class="character-details">
 
 **Rarity:** UR

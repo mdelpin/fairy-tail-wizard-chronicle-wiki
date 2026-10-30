@@ -3,7 +3,7 @@ title: "Sting Eucliffe"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/6e51c2cff002e45fe18a.png" alt="Sting Eucliffe" width="240">
+<img class="character-portrait" src="../assets/6e51c2cff002e45fe18a.png" alt="Sting Eucliffe" width="320">
 <div class="character-details">
 
 **Rarity:** UR

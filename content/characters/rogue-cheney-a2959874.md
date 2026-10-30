@@ -3,7 +3,7 @@ title: "Rogue Cheney"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/f460d405222f328a7aa0.png" alt="Rogue Cheney" width="240">
+<img class="character-portrait" src="../assets/f460d405222f328a7aa0.png" alt="Rogue Cheney" width="320">
 <div class="character-details">
 
 **Rarity:** UR

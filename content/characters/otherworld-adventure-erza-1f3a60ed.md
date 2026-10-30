@@ -3,7 +3,7 @@ title: "Otherworld Adventure Erza"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/fb04d25c332144baa76a.png" alt="Otherworld Adventure Erza" width="240">
+<img class="character-portrait" src="../assets/fb04d25c332144baa76a.png" alt="Otherworld Adventure Erza" width="320">
 <div class="character-details">
 
 **Rarity:** UR

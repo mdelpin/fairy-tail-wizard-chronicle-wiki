@@ -3,7 +3,7 @@ title: "Blazing Beach Vacation Natsu"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/da22b8626dbaabf80bc5.png" alt="Blazing Beach Vacation Natsu" width="240">
+<img class="character-portrait" src="../assets/da22b8626dbaabf80bc5.png" alt="Blazing Beach Vacation Natsu" width="320">
 <div class="character-details">
 
 **Rarity:** UR

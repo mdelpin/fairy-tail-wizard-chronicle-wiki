@@ -3,7 +3,7 @@ title: "First Dream Laxus"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/36ec735674b22db0b5cc.png" alt="First Dream Laxus" width="240">
+<img class="character-portrait" src="../assets/36ec735674b22db0b5cc.png" alt="First Dream Laxus" width="320">
 <div class="character-details">
 
 **Rarity:** UR

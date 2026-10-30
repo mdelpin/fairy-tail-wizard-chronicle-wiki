@@ -3,7 +3,7 @@ title: "Wendy -Bakeneko-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/592e6e20cca28cb3534b.png" alt="Wendy -Bakeneko-" width="240">
+<img class="character-portrait" src="../assets/592e6e20cca28cb3534b.png" alt="Wendy -Bakeneko-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

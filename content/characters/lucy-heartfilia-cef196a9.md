@@ -3,7 +3,7 @@ title: "Lucy Heartfilia"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/51b3ab7959fcddb12eaf.png" alt="Lucy Heartfilia" width="240">
+<img class="character-portrait" src="../assets/51b3ab7959fcddb12eaf.png" alt="Lucy Heartfilia" width="320">
 <div class="character-details">
 
 **Rarity:** UR

@@ -3,7 +3,7 @@ title: "Makarov Dreyar"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/e45884e7d4969b569e0e.png" alt="Makarov Dreyar" width="240">
+<img class="character-portrait" src="../assets/e45884e7d4969b569e0e.png" alt="Makarov Dreyar" width="320">
 <div class="character-details">
 
 **Rarity:** UR

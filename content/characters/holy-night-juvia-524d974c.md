@@ -3,7 +3,7 @@ title: "Holy Night Juvia"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/145cd765de1e91f15436.png" alt="Holy Night Juvia" width="240">
+<img class="character-portrait" src="../assets/145cd765de1e91f15436.png" alt="Holy Night Juvia" width="320">
 <div class="character-details">
 
 **Rarity:** UR

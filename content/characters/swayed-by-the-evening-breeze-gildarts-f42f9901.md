@@ -3,7 +3,7 @@ title: "Swayed by the Evening Breeze Gildarts"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/3f1c16b1b7ec013dbfd0.png" alt="Swayed by the Evening Breeze Gildarts" width="240">
+<img class="character-portrait" src="../assets/3f1c16b1b7ec013dbfd0.png" alt="Swayed by the Evening Breeze Gildarts" width="320">
 <div class="character-details">
 
 **Rarity:** UR

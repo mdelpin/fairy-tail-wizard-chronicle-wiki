@@ -3,7 +3,7 @@ title: "Laxus - Red Lightning Dragon Mode-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/08e6a41742acd4fe46a2.png" alt="Laxus - Red Lightning Dragon Mode-" width="240">
+<img class="character-portrait" src="../assets/08e6a41742acd4fe46a2.png" alt="Laxus - Red Lightning Dragon Mode-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

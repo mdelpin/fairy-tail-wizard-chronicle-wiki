@@ -3,7 +3,7 @@ title: "August"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/034edaf7d6c0266f284c.png" alt="August" width="240">
+<img class="character-portrait" src="../assets/034edaf7d6c0266f284c.png" alt="August" width="320">
 <div class="character-details">
 
 **Rarity:** UR

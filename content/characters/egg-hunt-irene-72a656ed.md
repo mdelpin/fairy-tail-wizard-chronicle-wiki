@@ -3,7 +3,7 @@ title: "Egg Hunt Irene"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/1714343824a2c7358e22.png" alt="Egg Hunt Irene" width="240">
+<img class="character-portrait" src="../assets/1714343824a2c7358e22.png" alt="Egg Hunt Irene" width="320">
 <div class="character-details">
 
 **Rarity:** UR

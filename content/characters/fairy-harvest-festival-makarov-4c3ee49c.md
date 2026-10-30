@@ -3,7 +3,7 @@ title: "Fairy Harvest Festival Makarov"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/20ebe14694b1b5144faa.png" alt="Fairy Harvest Festival Makarov" width="240">
+<img class="character-portrait" src="../assets/20ebe14694b1b5144faa.png" alt="Fairy Harvest Festival Makarov" width="320">
 <div class="character-details">
 
 **Rarity:** UR

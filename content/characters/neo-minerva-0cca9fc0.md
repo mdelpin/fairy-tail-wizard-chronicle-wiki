@@ -3,7 +3,7 @@ title: "Neo Minerva"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/848b1226270f88ee2d24.png" alt="Neo Minerva" width="240">
+<img class="character-portrait" src="../assets/848b1226270f88ee2d24.png" alt="Neo Minerva" width="320">
 <div class="character-details">
 
 **Rarity:** UR

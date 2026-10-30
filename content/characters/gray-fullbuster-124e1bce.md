@@ -3,7 +3,7 @@ title: "Gray Fullbuster"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/ae7cadf03e97ef754fcc.png" alt="Gray Fullbuster" width="240">
+<img class="character-portrait" src="../assets/ae7cadf03e97ef754fcc.png" alt="Gray Fullbuster" width="320">
 <div class="character-details">
 
 **Rarity:** UR

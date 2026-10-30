@@ -3,7 +3,7 @@ title: "Moonlit Reverie Levy"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/aad5883f09e32184e3fb.png" alt="Moonlit Reverie Levy" width="240">
+<img class="character-portrait" src="../assets/aad5883f09e32184e3fb.png" alt="Moonlit Reverie Levy" width="320">
 <div class="character-details">
 
 **Rarity:** UR

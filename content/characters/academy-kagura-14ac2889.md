@@ -3,7 +3,7 @@ title: "Academy Kagura"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/754fbd3d2bc152289272.png" alt="Academy Kagura" width="240">
+<img class="character-portrait" src="../assets/754fbd3d2bc152289272.png" alt="Academy Kagura" width="320">
 <div class="character-details">
 
 **Rarity:** UR

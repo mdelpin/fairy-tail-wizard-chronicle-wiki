@@ -3,7 +3,7 @@ title: "Wendy Marvell"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/b87242b1140a5bd78ae2.png" alt="Wendy Marvell" width="240">
+<img class="character-portrait" src="../assets/b87242b1140a5bd78ae2.png" alt="Wendy Marvell" width="320">
 <div class="character-details">
 
 **Rarity:** UR

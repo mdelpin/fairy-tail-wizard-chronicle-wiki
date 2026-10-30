@@ -3,7 +3,7 @@ title: "Minerva Orland"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/a6d7cc82195771c5242c.png" alt="Minerva Orland" width="240">
+<img class="character-portrait" src="../assets/a6d7cc82195771c5242c.png" alt="Minerva Orland" width="320">
 <div class="character-details">
 
 **Rarity:** UR

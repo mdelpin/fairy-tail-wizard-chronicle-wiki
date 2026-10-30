@@ -3,7 +3,7 @@ title: "Sherria Blendy"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/933e468460b002d26249.png" alt="Sherria Blendy" width="240">
+<img class="character-portrait" src="../assets/933e468460b002d26249.png" alt="Sherria Blendy" width="320">
 <div class="character-details">
 
 **Rarity:** UR

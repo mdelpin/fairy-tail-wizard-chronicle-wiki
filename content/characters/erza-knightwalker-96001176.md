@@ -3,7 +3,7 @@ title: "Erza Knightwalker"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/e88a24f4d03bf8d2d491.png" alt="Erza Knightwalker" width="240">
+<img class="character-portrait" src="../assets/e88a24f4d03bf8d2d491.png" alt="Erza Knightwalker" width="320">
 <div class="character-details">
 
 **Rarity:** UR

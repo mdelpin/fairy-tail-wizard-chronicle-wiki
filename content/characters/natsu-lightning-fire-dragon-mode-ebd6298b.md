@@ -3,7 +3,7 @@ title: "Natsu -Lightning Fire Dragon Mode-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/d7c6284c22e3e762c029.png" alt="Natsu -Lightning Fire Dragon Mode-" width="240">
+<img class="character-portrait" src="../assets/d7c6284c22e3e762c029.png" alt="Natsu -Lightning Fire Dragon Mode-" width="320">
 <div class="character-details">
 
 **Rarity:** UR

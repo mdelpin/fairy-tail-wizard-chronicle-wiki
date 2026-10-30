@@ -2,15 +2,16 @@
 
 // put your custom CSS here!
 
-/* Character portraits remain compact; metadata shares the row on desktop. */
+/* Show readable portraits alongside metadata when space permits. */
 .character-summary {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 1.5rem;
   margin: 1.5rem 0;
 }
 .character-summary .character-portrait {
-  width: 240px;
+  width: 320px;
   max-width: 100%;
   height: auto;
   flex-shrink: 0;

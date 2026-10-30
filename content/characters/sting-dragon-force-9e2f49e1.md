@@ -3,7 +3,7 @@ title: "Sting -Dragon Force-"
 ---
 
 <div class="character-summary">
-<img class="character-portrait" src="../assets/ad6d7fb9f85723d036bf.png" alt="Sting -Dragon Force-" width="240">
+<img class="character-portrait" src="../assets/ad6d7fb9f85723d036bf.png" alt="Sting -Dragon Force-" width="320">
 <div class="character-details">
 
 **Rarity:** UR
