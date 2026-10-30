@@ -39,7 +39,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
               {portraits.has(u.id)
                 ? <img src={url(`portraits/${u.id}.webp`)} alt="" loading="lazy" width="320" height="320" />
                 : <span class="ph heading">{initials(u.name)}</span>}
-              <span class="ur">{u.rarity}</span>
+              <span class={`ur rarity rarity-${u.rarity}`}>{u.rarity}</span>
             </span>
             <span class="body">
               <span class="heading name">{u.name}</span>
@@ -96,7 +96,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
   .art { position: relative; aspect-ratio: 1; background: rgba(var(--t), .13); display: flex; align-items: center; justify-content: center; }
   .art img { width: 100%; height: 100%; object-fit: cover; }
   .ph { font-size: 44px; color: var(--c); opacity: .6; }
-  .ur { position: absolute; left: 10px; top: 10px; padding: 3px 9px; border-radius: 999px; background: var(--brass); color: var(--ink); font: 700 11px var(--mono); }
+  .ur { position: absolute; left: 10px; top: 10px; }
   .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; }
   .name { font-size: 17px; line-height: 1.2; }
   .meta { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }

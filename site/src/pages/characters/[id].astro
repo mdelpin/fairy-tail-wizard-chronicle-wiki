@@ -50,7 +50,7 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
         {portraits.has(unit.id)
           ? <img src={url(`portraits/${unit.id}.webp`)} alt={unit.name} width="340" height="340" />
           : <span class="heading ph">{initials(unit.name)}</span>}
-        <span class="ur">{unit.rarity}</span>
+        <span class={`ur rarity rarity-${unit.rarity}`}>{unit.rarity}</span>
       </div>
       <div class="info">
         <span class="muted">{[unit.identity, unit.collection].filter(Boolean).join(' · ')}</span>
@@ -151,7 +151,7 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
   .portrait { position: relative; flex: 0 0 300px; aspect-ratio: 1; max-width: 100%; border-radius: 16px; overflow: hidden; background: rgba(var(--t), .14); border: 3px solid var(--brass); box-shadow: 0 0 0 5px var(--panel), 0 0 0 7px var(--c); display: flex; align-items: center; justify-content: center; }
   .portrait img { width: 100%; height: 100%; object-fit: cover; }
   .ph { font-size: 64px; color: var(--c); opacity: .6; }
-  .ur { position: absolute; left: 0; top: 16px; padding: 6px 14px 6px 12px; background: var(--brass); color: var(--ink); font: 700 14px var(--mono); border-radius: 0 999px 999px 0; }
+  .ur { position: absolute; left: 12px; top: 12px; padding: 6px 14px; font-size: 14px; }
   .info { position: relative; flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
   .info h1 { font-size: clamp(30px, 4vw, 44px); line-height: 1.05; }
   .badges { display: flex; flex-wrap: wrap; gap: 10px; }
