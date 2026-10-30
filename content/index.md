@@ -20,4 +20,4 @@ This reference contains game data, without development priorities or strategy ra
 
 Skill text is an endgame reference where supplied. Normal Lv.3 unlocks at 7★, Special Lv.3 at 9★, and Ultimate Lv.3 at 11★. Unknown values are left unspecified. Localization and transcription errors may remain; source text is provided for comparison.
 
-Source export: Capacities (2026-10-29 19-34-29).zip
+Source export: Capacities (2026-10-29 20-56-22).zip

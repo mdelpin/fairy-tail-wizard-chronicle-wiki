@@ -14,6 +14,7 @@ title: "✨ Parallel World Wendy Lacrima"
 ### Mid Bleed
 | Property | Value |
 | --- | --- |
+| Family | Bleed |
 | Target | All Enemies |
 | Activation | While on the Field |
 ### Mid ATK Decrease

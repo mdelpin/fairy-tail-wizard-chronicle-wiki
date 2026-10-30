@@ -9,7 +9,7 @@ title: "Critical Defense Up I"
 
 ## Effect applications
 
-### Critical Defense Up !
+### Critical Defense Up I
 | Property | Value |
 | --- | --- |
 | Family | Critical Defense |
