@@ -1,0 +1,187 @@
+---
+import Base from '../../layouts/Base.astro';
+import MagicCircle from '../../components/MagicCircle.astro';
+import Pennant from '../../components/Pennant.astro';
+import Kanji from '../../components/Kanji.astro';
+import {
+  units, applications, effects, lacrimaById, ATTR, KIND_ORDER, url, portraits, initials,
+  baseName, valueText, familyKey, type Unit, type Effect,
+} from '../../lib/data';
+
+export function getStaticPaths() {
+  return units.map((u) => ({ params: { id: u.id }, props: { unit: u } }));
+}
+const { unit } = Astro.props as { unit: Unit };
+const a = ATTR[unit.attribute];
+const skills = unit.skills.slice().sort((x, y) => KIND_ORDER.indexOf(x.kind) - KIND_ORDER.indexOf(y.kind));
+const UNLOCK: Record<string, string> = { Normal: 'Lv.3 at 7★', Special: 'Lv.3 at 9★', Ultimate: 'Lv.3 at 11★' };
+
+const rows = (ids: string[]) => ids.map((id) => {
+  const app = applications.get(id)!;
+  const e = app.effect ? effects.get(app.effect) : undefined;
+  return { app, e, fk: e ? familyKey(e) : null };
+}).filter((r) => r.app);
+
+// "At a glance": what this unit inflicts, grants, and needs on its target
+const inflicts = new Map<string, string>(), grants = new Map<string, string>(), needs = new Set<string>();
+for (const s of skills) for (const { app, e, fk } of rows(s.applications)) {
+  if (e && fk) {
+    const harmful = e.polarity === 'Harmful' || /Enem|Target Hit|Attacker/.test(app.target ?? '');
+    (harmful ? inflicts : grants).set(fk.label, fk.key);
+  }
+  for (const f of app.requires?.families ?? []) needs.add(f);
+}
+const ownSupplies = [...needs].filter((f) => inflicts.has(f));
+const sig = unit.signatureLacrima ? lacrimaById.get(unit.signatureLacrima) : undefined;
+const sameIdentity = units.filter((u) => u.identity && u.identity === unit.identity && u.id !== unit.id);
+const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
+---
+<Base title={unit.name} section="characters" description={`${unit.name}: ${unit.attribute} ${unit.role} wizard in FAIRY TAIL Wizard Chronicle — skills, effects and signature lacrima.`}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={url('characters/')}>Wizard Roster</a><span aria-hidden="true">/</span>
+      <a href={url(`characters/?attr=${unit.attribute}`)}>{unit.attribute}</a><span aria-hidden="true">/</span>
+      <span>{unit.name}</span>
+    </nav>
+
+    <section class="panel hero">
+      <MagicCircle size={520} style="right:-90px;top:-90px" />
+      <div class="portrait" style={`--c:${a.color};--t:${a.tint}`}>
+        {portraits.has(unit.id)
+          ? <img src={url(`portraits/${unit.id}.webp`)} alt={unit.name} width="340" height="340" />
+          : <span class="heading ph">{initials(unit.name)}</span>}
+        <span class="ur">{unit.rarity}</span>
+      </div>
+      <div class="info">
+        <span class="muted">{[unit.identity, unit.collection].filter(Boolean).join(' · ')}</span>
+        <h1>{unit.name}</h1>
+        <div class="badges">
+          <span class="badge"><Kanji attr={unit.attribute} size={30} /><span style={`color:${a.text};font-weight:600`}>{unit.attribute}</span></span>
+          <span class="badge">Role · {unit.role}</span>
+          {skills[0]?.attackRange && <span class="badge">Normal attack · {skills[0].attackRange}</span>}
+        </div>
+        <div class="glance">
+          {inflicts.size > 0 && (
+            <div><span class="lbl">Inflicts</span><div class="chips">
+              {[...inflicts].map(([label, key]) => <a class="tag bad" href={url(`effects/${key}/`)}>{label}</a>)}
+            </div></div>
+          )}
+          {grants.size > 0 && (
+            <div><span class="lbl">Grants</span><div class="chips">
+              {[...grants].map(([label, key]) => <a class="tag good" href={url(`effects/${key}/`)}>{label}</a>)}
+            </div></div>
+          )}
+          {needs.size > 0 && (
+            <div><span class="lbl">Needs on target</span><div class="chips">
+              <span class="tag need">{[...needs].join(' or ')}</span>
+              {ownSupplies.length > 0 && <span class="own">✓ own kit applies {ownSupplies.join(', ')}</span>}
+            </div></div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <div class="cols">
+      <div class="skills">
+        <div class="section-title"><Pennant /><h2>Skills</h2></div>
+        {skills.map((s) => {
+          const r = rows(s.applications);
+          return (
+            <article class="skill">
+              <div class="skill-head">
+                <span class={`kind kind-${s.kind}`}>{s.kind}</span>
+                <h3>{s.name ?? s.kind}</h3>
+                <span class="muted unlock">{UNLOCK[s.kind]}</span>
+              </div>
+              {s.gameText?.Lv3 && <p class="text">{s.gameText.Lv3}</p>}
+              {r.length > 0 && (
+                <div class="table-wrap">
+                  <table class="fx">
+                    <thead><tr><th scope="col">Effect</th><th scope="col">Target</th><th scope="col">Trigger</th><th scope="col">Chance</th><th scope="col">Duration</th><th scope="col">Value</th></tr></thead>
+                    <tbody>
+                      {r.map(({ app, e, fk }) => (
+                        <tr>
+                          <td>
+                            <span class={`tier tier-${e?.tier ?? 'none'}`}>{e?.tier ?? '—'}</span>{' '}
+                            {fk ? <a href={url(`effects/${fk.key}/`)}><strong>{effectLabel(e)}</strong></a> : <strong>{effectLabel(e)}</strong>}
+                            {app.requires && <div class="cond">if target has {app.requires.families.join(' or ')}</div>}
+                            {app.condition && <div class="cond">{app.condition}</div>}
+                          </td>
+                          <td>{app.target ?? '—'}</td>
+                          <td>{app.trigger?.raw ?? '—'}</td>
+                          <td class="num">{app.chance != null ? Math.round(app.chance * 100) + '%' : '—'}</td>
+                          <td class="num">{app.durationSeconds != null ? app.durationSeconds + 's' : '—'}</td>
+                          <td class="num">{valueText(app, e)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              {!s.gameText?.Lv1 && <p class="levels muted">Lv.1 and Lv.2 not recorded yet.</p>}
+            </article>
+          );
+        })}
+      </div>
+
+      <aside class="side">
+        {sig && (
+          <div class="lacrima">
+            <span class="lbl gold">Signature lacrima</span>
+            <a class="heading" href={url(`lacrimas/#${sig.id}`)}>{sig.name}</a>
+            {sig.gameText && <p>{sig.gameText}</p>}
+          </div>
+        )}
+        {sameIdentity.length > 0 && (
+          <div class="pinboard">
+            <span class="heading">Same identity</span>
+            {sameIdentity.map((u, i) => (
+              <a class="pin" href={url(`characters/${u.id}/`)} style={`transform:rotate(${i % 2 ? 0.5 : -0.6}deg)`}>{u.name}</a>
+            ))}
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+  .hero { display: flex; flex-wrap: wrap; gap: 32px; padding: 30px; }
+  .portrait { position: relative; flex: 0 0 300px; aspect-ratio: 1; max-width: 100%; border-radius: 16px; overflow: hidden; background: rgba(var(--t), .14); border: 3px solid var(--brass); box-shadow: 0 0 0 5px var(--panel), 0 0 0 7px var(--c); display: flex; align-items: center; justify-content: center; }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; }
+  .ph { font-size: 64px; color: var(--c); opacity: .6; }
+  .ur { position: absolute; left: 0; top: 16px; padding: 6px 14px 6px 12px; background: var(--brass); color: var(--ink); font: 700 14px var(--mono); border-radius: 0 999px 999px 0; }
+  .info { position: relative; flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+  .info h1 { font-size: clamp(30px, 4vw, 44px); line-height: 1.05; }
+  .badges { display: flex; flex-wrap: wrap; gap: 10px; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: #fff; border: 2px solid var(--line); font-size: 14px; }
+  .badge:has(.kanji) { padding-left: 4px; }
+  .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .glance > div { padding: 14px 16px; border-radius: 14px; background: #fff; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+  .lbl { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 500; text-decoration: none; }
+  .tag.bad { background: #F6DCD7; color: #8A1F25; } .tag.good { background: #DCEBDD; color: #245C33; }
+  .tag.need { border: 1px dashed #A88C6A; color: var(--ink); }
+  .own { font-size: 12px; font-weight: 600; color: #245C33; }
+  .cols { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+  .skills { flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+  .skills .section-title { margin: 36px 0 0; }
+  .skill { background: #fff; border: 2px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 3px 0 var(--brass); }
+  .skill-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 20px 22px 0; }
+  .skill-head h3 { font-size: 22px; }
+  .unlock { margin-left: auto; font-size: 13px; }
+  .text { margin: 12px 22px 16px; font-size: 15px; line-height: 1.65; color: #3A2A1F; }
+  .cond { margin-top: 4px; font-size: 12px; color: var(--muted); }
+  .levels { margin: 0; padding: 10px 22px; border-top: 1px solid #EFE3CC; background: #FBF4E7; font-size: 13px; }
+  .side { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px; margin-top: 36px; }
+  .lacrima { padding: 22px; border-radius: 18px; background: var(--timber); color: #E6D6B8; display: flex; flex-direction: column; gap: 10px; }
+  .lacrima a { color: var(--cream); font-size: 19px; }
+  .lacrima p { margin: 0; font-size: 14px; line-height: 1.6; }
+  .gold { color: #E6C77A; }
+  .pinboard { padding: 22px; border-radius: 18px; background: var(--ember); border: 3px solid var(--brass); display: flex; flex-direction: column; gap: 10px; }
+  .pinboard .heading { color: #FFF3E0; font-size: 18px; }
+  .pin { padding: 10px 12px; border-radius: 6px; background: #FFFBF2; color: var(--ink); font-size: 14px; box-shadow: 0 2px 0 rgba(40,10,6,.4); }
+  @media (max-width: 600px) { .hero { padding: 20px; } .portrait { flex-basis: 100%; } }
+</style>

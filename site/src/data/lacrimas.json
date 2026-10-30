@@ -1,0 +1,1212 @@
+[
+ {
+  "id": "accuracy-up-i",
+  "name": "Accuracy Up I",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Accuracy + 3",
+  "applications": [
+   "accuracy-up-3-self"
+  ]
+ },
+ {
+  "id": "accuracy-up-ii",
+  "name": "Accuracy Up II",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Accuracy + 5",
+  "applications": [
+   "accuracy-5-self"
+  ]
+ },
+ {
+  "id": "critical-damage-up-i",
+  "name": "Critical Damage Up I",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Critical Damage +30",
+  "applications": [
+   "critical-damage-30-self"
+  ]
+ },
+ {
+  "id": "critical-damage-up-ii",
+  "name": "Critical Damage Up II",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Critical Damage + 50",
+  "applications": [
+   "critical-damage-50-self"
+  ]
+ },
+ {
+  "id": "critical-defense-up-i",
+  "name": "Critical Defense Up I",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Critical Defense + 30",
+  "applications": [
+   "critical-defense-30-self"
+  ]
+ },
+ {
+  "id": "critical-defense-up-ii",
+  "name": "Critical Defense Up II",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Critical Defense + 50",
+  "applications": [
+   "critical-defense-50-self"
+  ]
+ },
+ {
+  "id": "critical-rate-up-i",
+  "name": "Critical Rate Up I",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Critical Rate +3",
+  "applications": [
+   "critical-rate-3-self"
+  ]
+ },
+ {
+  "id": "critical-rate-up-ii",
+  "name": "Critical Rate Up II",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Critical Rate +5",
+  "applications": [
+   "critical-rate-5-self"
+  ]
+ },
+ {
+  "id": "critical-resistance-up-i",
+  "name": "Critical Resistance Up I",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Critical Resistance +3",
+  "applications": [
+   "critical-resistance-3-self"
+  ]
+ },
+ {
+  "id": "critical-resistance-up-ii",
+  "name": "Critical Resistance Up II",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Critical Resistance +5",
+  "applications": [
+   "critical-resistance-5-self"
+  ]
+ },
+ {
+  "id": "evasion-rate-up-i",
+  "name": "Evasion Rate Up I",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Evasion Rate +3",
+  "applications": [
+   "evasion-rate-3-self"
+  ]
+ },
+ {
+  "id": "evasion-rate-up-ii",
+  "name": "Evasion Rate Up II",
+  "kind": "generic",
+  "signatureFor": null,
+  "gameText": "Evasion Rate +5",
+  "applications": [
+   "evasion-rate-5-self"
+  ]
+ },
+ {
+  "id": "academy-kagura-lacrima",
+  "name": "Academy Kagura Lacrima",
+  "kind": "signature",
+  "signatureFor": "academy-kagura",
+  "gameText": "At the start of battle, grant yourself [Top] Shield for 4 sec.",
+  "applications": [
+   "top-shield-self-start-of-battle-4-sec"
+  ]
+ },
+ {
+  "id": "academy-lisanna-lacrima",
+  "name": "Academy Lisanna Lacrima",
+  "kind": "signature",
+  "signatureFor": "academy-lisanna",
+  "gameText": "When defeated, inflicts Bind on all enemies for 3 sec.",
+  "applications": [
+   "bind-all-enemies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "august-lacrima",
+  "name": "August Lacrima",
+  "kind": "signature",
+  "signatureFor": "august",
+  "gameText": "After the battle starts, grants self for 5 sec, [Top] ATK Up and  [Top] Critical Damage Up.",
+  "applications": [
+   "top-atk-increase-self-start-of-battle-5-sec",
+   "top-critical-damage-increase-self-start-of-battle-5-sec"
+  ]
+ },
+ {
+  "id": "blazing-beach-vacation-laxus-lacrima",
+  "name": "Blazing Beach Vacation Laxus Lacrima",
+  "kind": "signature",
+  "signatureFor": "blazing-beach-vacation-laxus",
+  "gameText": "While this unit is on the field, grants all allies Medium DEF Increase and Medium Critical Resistance Increase.",
+  "applications": [
+   "mid-def-increase-all-allies-while-on-the-field",
+   "mid-critical-resistance-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "blazing-beach-vacation-natsu-lacrima",
+  "name": "Blazing Beach Vacation Natsu Lacrima",
+  "kind": "signature",
+  "signatureFor": "blazing-beach-vacation-natsu",
+  "gameText": "When defeated inflicts all enemies with [Top] ATK Decrease and Silence for 3 sec.",
+  "applications": [
+   "top-atk-decrease-all-enemies-when-defeated-3-sec",
+   "silence-all-enemies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "block-lucy-lacrima",
+  "name": "Block Lucy Lacrima",
+  "kind": "signature",
+  "signatureFor": "block-lucy",
+  "gameText": "After a normal skill hits, if the target is affected with Paralysis, applies: [Top] DEF Decrease and [Top] Critical Defense Decrease.",
+  "applications": [
+   "top-def-decrease-single-enemy-paralysis",
+   "top-critical-defense-decrease-single-enemy-paralysis"
+  ]
+ },
+ {
+  "id": "block-natsu-lacrima",
+  "name": "Block Natsu Lacrima",
+  "kind": "signature",
+  "signatureFor": "block-natsu",
+  "gameText": "When defeated, inflicts all enemies for 3s with: [Top] Burn and [Top] Critical Damage Decrease",
+  "applications": [
+   "top-burn-all-enemies-when-defeated-3-sec",
+   "top-critical-damage-decrease-all-enemies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "brandish-lacrima",
+  "name": "Brandish Lacrima",
+  "kind": "signature",
+  "signatureFor": "brandish",
+  "gameText": "Every 7 sec, for 3 sec, grants all allies [Mid] Regen",
+  "applications": [
+   "mid-regen-all-allies-every-7-sec-3-sec"
+  ]
+ },
+ {
+  "id": "bunny-lucy-lacrima",
+  "name": "Bunny Lucy Lacrima",
+  "kind": "signature",
+  "signatureFor": "bunny-lucy",
+  "gameText": "When you are present in the field, apply to all enemies [Mid] DEF Decrease",
+  "applications": [
+   "mid-def-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "bunny-yukino-lacrima",
+  "name": "Bunny Yukino Lacrima",
+  "kind": "signature",
+  "signatureFor": "bunny-yukino",
+  "gameText": "When you are incapacitated, apply to all enemies for 3 seconds Silence",
+  "applications": [
+   "silence-all-enemies-when-incapacitated-3-sec"
+  ]
+ },
+ {
+  "id": "cana-lacrima",
+  "name": "Cana Lacrima",
+  "kind": "signature",
+  "signatureFor": "cana-alberona",
+  "gameText": "Every 5 sec, for 3 sec grants self [Top] ATK Up",
+  "applications": [
+   "top-atk-increase-self-every-5-sec-3-sec"
+  ]
+ },
+ {
+  "id": "contractor-of-the-twelve-gates-yukino-lacrima",
+  "name": "Contractor of the Twelve Gates Yukino Lacrima",
+  "kind": "signature",
+  "signatureFor": "contractor-of-the-twelve-gates-yukino",
+  "gameText": "While on the field, grants all allies [Mid] ATK Increase and [Mid] Critical Rate Increase",
+  "applications": [
+   "mid-atk-increase-all-allies-while-on-the-field",
+   "mid-critical-rate-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "cyberpunk-rogue-lacrima",
+  "name": "Cyberpunk Rogue Lacrima",
+  "kind": "signature",
+  "signatureFor": "cyberpunk-rogue",
+  "gameText": "After a normal skill hits, there is a 10% chance to inflict the target for 3 seconds with Blind.",
+  "applications": [
+   "blind-single-enemy-10-3-sec"
+  ]
+ },
+ {
+  "id": "cyberpunk-sting-lacrima",
+  "name": "Cyberpunk Sting Lacrima",
+  "kind": "signature",
+  "signatureFor": "cyberpunk-sting",
+  "gameText": "When defeated, grant all allies for 3 seconds [Top] ATK Increase and [High] Shield",
+  "applications": [
+   "high-shield-all-allies-when-defeated-3-sec",
+   "top-atk-increase-all-allies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "dark-mage-zeref-lacrima",
+  "name": "Dark Mage Zeref Lacrima",
+  "kind": "signature",
+  "signatureFor": "dark-mage-zeref",
+  "gameText": "When you are attacked, inflict on the attacker for 3 sec, [Top] Bleed.",
+  "applications": [
+   "top-bleed-attacker-when-attacked-3-sec"
+  ]
+ },
+ {
+  "id": "egg-hunt-brandish-lacrima",
+  "name": "Egg Hunt Brandish Lacrima",
+  "kind": "signature",
+  "signatureFor": "egg-hunt-brandish",
+  "gameText": "When defeated, inflicts Silence and Heal Block on all enemies for 2 sec.",
+  "applications": [
+   "silence-all-enemies-when-defeated-20-2-sec",
+   "heal-block-all-enemies-when-defeated-2-sec"
+  ]
+ },
+ {
+  "id": "egg-hunt-irene-lacrima",
+  "name": "Egg Hunt Irene Lacrima",
+  "kind": "signature",
+  "signatureFor": "egg-hunt-irene",
+  "gameText": "After a normal skill hits, there is a 20% chance to grant all allies [High] Continuous Heal for 3 sec.",
+  "applications": [
+   "high-continuous-heal-all-allies-20-3-sec"
+  ]
+ },
+ {
+  "id": "elfman-lacrima",
+  "name": "Elfman Lacrima",
+  "kind": "signature",
+  "signatureFor": "elfman-strauss",
+  "gameText": "When a normal skill hits (20% chance), grant yourself [High] Shield for 3 sec",
+  "applications": [
+   "high-shield-self-20-3-sec"
+  ]
+ },
+ {
+  "id": "emperor-spriggan-zeref-lacrima",
+  "name": "Emperor Spriggan Zeref Lacrima",
+  "kind": "signature",
+  "signatureFor": "emperor-spriggan-zeref",
+  "gameText": "When taking an attack, has a 30% chance to inflict [Low] Burn, [Low] Paralysis, and [Mid] ATK Decrease on the attacker for 2 sec.",
+  "applications": [
+   "low-burn-attacker-when-attacked-30-2-sec",
+   "low-paralysis-attacker-when-attacked-30-2-sec",
+   "mid-atk-decrease-attacker-when-attacked-30-2-sec"
+  ]
+ },
+ {
+  "id": "erza-demon-blade-benizakura-lacrima",
+  "name": "Erza -Demon Blade Benizakura- Lacrima",
+  "kind": "signature",
+  "signatureFor": "erza-demon-blade-benizakura",
+  "gameText": "When you are defeated, grant all allies for 3s [Top] ATK Increase and [Top] Critical Damage Increase",
+  "applications": [
+   "top-atk-increase-all-allies-when-defeated-3-sec",
+   "top-critical-damage-increase-all-allies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "erza-heaven-s-wheel-armor",
+  "name": "Erza -Heaven's Wheel Armor-",
+  "kind": "signature",
+  "signatureFor": "erza-heaven-s-wheel-armor",
+  "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, Silence and [Mid] Critical RES Down",
+  "applications": [
+   "silence-single-enemy-20-3-sec",
+   "mid-critical-resistance-decrease-single-enemy-20-3-sec"
+  ]
+ },
+ {
+  "id": "erza-knightwalker-lacrima",
+  "name": "Erza Knightwalker Lacrima",
+  "kind": "signature",
+  "signatureFor": "erza-knightwalker",
+  "gameText": "When receiving an attack, has a 20% chance to grant each ally for 3 seconds: [Top] Shield.",
+  "applications": [
+   "top-shield-all-allies-when-attacked-20-3-sec"
+  ]
+ },
+ {
+  "id": "fairy-harvest-festival-makarov-lacrima",
+  "name": "Fairy Harvest Festival Makarov Lacrima",
+  "kind": "signature",
+  "signatureFor": "fairy-harvest-festival-makarov",
+  "gameText": "While on the field, grants all allies [Mid] ATK Increase and [Mid] DEF Increase, [Mid] Continuous Healing",
+  "applications": [
+   "mid-atk-increase-all-allies-while-on-the-field",
+   "mid-def-increase-all-allies-while-on-the-field",
+   "mid-continuous-heal-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "fairy-tactician-mavis-lacrima",
+  "name": "Fairy Tactician Mavis Lacrima",
+  "kind": "signature",
+  "signatureFor": "fairy-tactician-mavis",
+  "gameText": "Every 5 sec, inflicts [High] ATK Decrease and [High] DEF Decrease,  [High] Bleed on all enemies for 3 sec.",
+  "applications": [
+   "high-atk-decrease-all-enemies-every-5-sec-3-sec",
+   "high-def-decrease-all-enemies-every-5-sec-3-sec",
+   "high-bleed-all-enemies-every-5-sec-3-sec"
+  ]
+ },
+ {
+  "id": "fairy-tail-harvest-festival-wendy-lacrima",
+  "name": "Fairy Tail Harvest Festival Wendy Lacrima",
+  "kind": "signature",
+  "signatureFor": "fairy-harvest-festival-wendy",
+  "gameText": "At the start of the battle, inflicts [Mid] Burn and Heal Block on all enemies for 5 sec.",
+  "applications": [
+   "mid-burn-all-enemies-start-of-battle-5-sec",
+   "heal-block-all-enemies-start-of-battle-5-sec"
+  ]
+ },
+ {
+  "id": "first-dream-erza-lacrima",
+  "name": "First Dream Erza Lacrima",
+  "kind": "signature",
+  "signatureFor": "first-dream-erza",
+  "gameText": "Every 5 sec, grants yourself for 3 seconds [Top] ATK Increase and [Top] Critical Damage Increase",
+  "applications": [
+   "top-atk-increase-self-every-5-sec-3-sec",
+   "top-critical-damage-increase-self-every-5-sec-3-sec"
+  ]
+ },
+ {
+  "id": "first-dream-laxus-lacrima",
+  "name": "First Dream Laxus Lacrima",
+  "kind": "signature",
+  "signatureFor": "first-dream-laxus",
+  "gameText": "When you are attacked, there is a 30% chance to apply [Top] Paralysis to the target for 2 seconds.",
+  "applications": [
+   "top-paralysis-attacker-when-attacked-30-2-sec"
+  ]
+ },
+ {
+  "id": "freed-lacrima",
+  "name": "Freed Lacrima",
+  "kind": "signature",
+  "signatureFor": "freed-justine",
+  "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, [Top] DEF Down.",
+  "applications": [
+   "top-def-decrease-single-enemy-20-3-sec"
+  ]
+ },
+ {
+  "id": "gajeel-lacrima",
+  "name": "Gajeel Lacrima",
+  "kind": "signature",
+  "signatureFor": "gajeel-redfox",
+  "gameText": "When defeated, grants all allies Top ATK Up for 3 sec.",
+  "applications": [
+   "top-atk-increase-all-allies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "gildarts-lacrima",
+  "name": "Gildarts Lacrima",
+  "kind": "signature",
+  "signatureFor": "gildarts-clive",
+  "gameText": "Every 5 sec, for 3 sec, grants self [Mid] Critical Rate Up and [Mid] Critical Damage Up",
+  "applications": [
+   "mid-critical-rate-increase-self-every-5-sec-3-sec",
+   "mid-critical-damage-increase-self-every-5-sec-3-sec"
+  ]
+ },
+ {
+  "id": "gray-ice-devil-slayer-mage-lacrima",
+  "name": "Gray -Ice Devil Slayer Mage- Lacrima",
+  "kind": "signature",
+  "signatureFor": "gray-ice-devil-slayer-mage",
+  "gameText": "When defeated, inflicts on all enemies for 3 sec, [Top] Freeze",
+  "applications": [
+   "top-freeze-all-enemies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "gray-lacrima",
+  "name": "Gray Lacrima",
+  "kind": "signature",
+  "signatureFor": "gray-fullbuster",
+  "gameText": "After a normal skill hits, has a 10% chance to inflict on the target for 2 sec,  [Mid] Freeze and [Mid] ATK Down",
+  "applications": [
+   "mid-freeze-single-enemy-10-2-sec",
+   "mid-atk-decrease-single-enemy-10-2-sec"
+  ]
+ },
+ {
+  "id": "hades-lacrima",
+  "name": "Hades Lacrima",
+  "kind": "signature",
+  "signatureFor": "hades",
+  "gameText": "When you are attacked, has a 10% chance to inflict on the attacker for 2 sec, Bind.",
+  "applications": [
+   "bind-attacker-10-2-sec"
+  ]
+ },
+ {
+  "id": "holy-night-juvia-lacrima",
+  "name": "Holy Night Juvia Lacrima",
+  "kind": "signature",
+  "signatureFor": "holy-night-juvia",
+  "gameText": "While you are on the field, inflicts on all enemies [Mid] ATK Down",
+  "applications": [
+   "mid-atk-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "holy-night-mirajane-lacrima",
+  "name": "Holy Night Mirajane Lacrima",
+  "kind": "signature",
+  "signatureFor": "holy-night-mirajane",
+  "gameText": "At the start of battle, inflicts on all enemies for 3 sec, [Top] Burn",
+  "applications": [
+   "top-burn-all-enemies-start-of-battle-3-sec"
+  ]
+ },
+ {
+  "id": "ichiya-power-perfume-lacrima",
+  "name": "Ichiya -Power Perfume- Lacrima",
+  "kind": "signature",
+  "signatureFor": "ichiya-power-perfume",
+  "gameText": "At the start of battle, grants self for 3 seconds: [Top] DEF increase, [Top] Critical Defense Increase.",
+  "applications": [
+   "top-def-increase-self-start-of-battle-3-sec",
+   "top-critical-defense-increase-self-start-of-battle-3-sec"
+  ]
+ },
+ {
+  "id": "ichiya-lacrima",
+  "name": "Ichiya Lacrima",
+  "kind": "signature",
+  "signatureFor": "ichiya-vandalay-kotobuki",
+  "gameText": "After a normal skill hits, has a 20% chance to remove all debuffs from all allies",
+  "applications": [
+   "remove-all-debuffs-all-allies-20"
+  ]
+ },
+ {
+  "id": "ignia-lacrima",
+  "name": "Ignia Lacrima",
+  "kind": "signature",
+  "signatureFor": "ignia",
+  "gameText": "When incapacitated, inflicts [Top] Burn on all enemies for 2 sec.",
+  "applications": [
+   "top-burn-all-enemies-when-incapacitated-2-sec"
+  ]
+ },
+ {
+  "id": "irene-lacrima",
+  "name": "Irene Lacrima",
+  "kind": "signature",
+  "signatureFor": "irene-belserion",
+  "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, [Top] Burn",
+  "applications": [
+   "top-burn-single-enemy-20-3-sec"
+  ]
+ },
+ {
+  "id": "jellal-lacrima",
+  "name": "Jellal Lacrima",
+  "kind": "signature",
+  "signatureFor": "jellal-fernandes",
+  "gameText": "At the start of battle, applies [Top] Paralysis to all enemies for 3 seconds.",
+  "applications": [
+   "top-paralysis-all-enemies-start-of-battle-3-sec"
+  ]
+ },
+ {
+  "id": "jura-lacrima",
+  "name": "Jura Lacrima",
+  "kind": "signature",
+  "signatureFor": "jura-neekis",
+  "gameText": "After a normal skill hits, has a 10% chance to grant all allies for 3 sec, [Mid] Shield.",
+  "applications": [
+   "mid-shield-all-allies-10-3-sec"
+  ]
+ },
+ {
+  "id": "juvia-element-4-lacrima",
+  "name": "Juvia -Element 4- Lacrima",
+  "kind": "signature",
+  "signatureFor": "juvia-element-4",
+  "gameText": "At the start of battle, inflicts [High] Burn and [High] DEF Decrease on all enemies for 6 sec.",
+  "applications": [
+   "high-burn-all-enemies-start-of-battle-6-sec",
+   "high-def-decrease-all-enemies-start-of-battle-6-sec"
+  ]
+ },
+ {
+  "id": "juvia-lacrima",
+  "name": "Juvia Lacrima",
+  "kind": "signature",
+  "signatureFor": "juvia-lockser",
+  "gameText": "Every 5 sec, for 3 sec, grants self [Top] Critical Rate Up",
+  "applications": [
+   "top-critical-rate-increase-self-every-5-sec-3-sec"
+  ]
+ },
+ {
+  "id": "kagura-lacrima",
+  "name": "Kagura Lacrima",
+  "kind": "signature",
+  "signatureFor": "kagura-mikazuchi",
+  "gameText": "When a normal skill hits (20% chance), advance your current Ultimate Skill gauge by 0.5 sec",
+  "applications": [
+   "advance-ultimate-skill-gauge-self-20-0-5-sec"
+  ]
+ },
+ {
+  "id": "laxus-red-lightning-dragon-mode-lacrima",
+  "name": "Laxus - Red Lightning Dragon Mode- Lacrima",
+  "kind": "signature",
+  "signatureFor": "laxus-red-lightning-dragon-mode",
+  "gameText": "When defeated, inflcits [Top] Bleed on all enemies for 3 seconds.",
+  "applications": [
+   "top-bleed-all-enemies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "laxus-lacrima",
+  "name": "Laxus Lacrima",
+  "kind": "signature",
+  "signatureFor": "laxus-dreyar",
+  "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, [Top] Paralysis",
+  "applications": [
+   "top-paralysis-single-enemy-20-3-sec"
+  ]
+ },
+ {
+  "id": "levy-lacrima",
+  "name": "Levy Lacrima",
+  "kind": "signature",
+  "signatureFor": "levy-mcgarden",
+  "gameText": "After a Normal Skill hits, has a 10% chance to inflict Bind on the target for 3 sec.",
+  "applications": [
+   "bind-single-enemy-10-3-sec"
+  ]
+ },
+ {
+  "id": "lucy-leo-form-lacrima",
+  "name": "Lucy -Leo Form- Lacrima",
+  "kind": "signature",
+  "signatureFor": "lucy-leo-form",
+  "gameText": "While you are on the field, grants all allies [Mid] DEF Up.",
+  "applications": [
+   "mid-def-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "lucy-leo-x-virgo-form-lacrima",
+  "name": "Lucy -Leo x Virgo Form- Lacrima",
+  "kind": "signature",
+  "signatureFor": "lucy-leo-x-virgo-form",
+  "gameText": "At the start of battle, grants all allies for 3 sec [High] Shield and [High] Critical Damage Increase",
+  "applications": [
+   "high-shield-all-allies-start-of-battle-3-sec",
+   "high-critical-damage-increase-all-allies-start-of-battle-3-sec"
+  ]
+ },
+ {
+  "id": "lucy-lacrima",
+  "name": "Lucy Lacrima",
+  "kind": "signature",
+  "signatureFor": "lucy-heartfilia",
+  "gameText": "After a Normal Skill hits, has a 20% chance to inflict Silence and Top DEF Down on the target for 3 sec. The Top tier applies to DEF Down; Silence is untiered.",
+  "applications": [
+   "top-def-decrease-single-enemy-20-3-sec",
+   "silence-single-enemy-20-3-sec"
+  ]
+ },
+ {
+  "id": "lyon-lacrima",
+  "name": "Lyon Lacrima",
+  "kind": "signature",
+  "signatureFor": "lyon-vastia",
+  "gameText": "After a normal skill hits, has a 10% chance to inflict on the target for 2 sec, [High] Freeze",
+  "applications": [
+   "high-freeze-single-enemy-10-2-sec-2"
+  ]
+ },
+ {
+  "id": "makarov-lacrima",
+  "name": "Makarov Lacrima",
+  "kind": "signature",
+  "signatureFor": "makarov-dreyar",
+  "gameText": "At the start of battle, grants self for 5 sec, [Top] Shield",
+  "applications": [
+   "top-shield-self-start-of-battle-5-sec"
+  ]
+ },
+ {
+  "id": "mard-lacrima",
+  "name": "Mard Lacrima",
+  "kind": "signature",
+  "signatureFor": "mard-geer",
+  "gameText": "After a Normal Skill hits, has a 20% chance to inflict Top Bleed on the target for 3 sec.",
+  "applications": [
+   "top-bleed-single-enemy-20-3-sec"
+  ]
+ },
+ {
+  "id": "master-enchant-irene-lacrima",
+  "name": "Master Enchant Irene Lacrima",
+  "kind": "signature",
+  "signatureFor": "master-enchant-irene",
+  "gameText": "While on the field, inflicts [Mid] Burn and [Mid] DEF Decrease, [Mid] ATK Decrease on all enemies",
+  "applications": [
+   "mid-burn-all-enemies-while-on-the-field",
+   "mid-def-decrease-all-enemies-while-on-the-field",
+   "mid-atk-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "mavis-lacrima",
+  "name": "Mavis Lacrima",
+  "kind": "signature",
+  "signatureFor": "mavis-vermillion",
+  "gameText": "While Mavis is on the field, grants all allies Low Continuous Heal and Mid Critical Defense Increase.",
+  "applications": [
+   "low-continuous-heal-all-allies-while-on-the-field",
+   "mid-critical-defense-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "meredy-grimoire-heart-lacrima",
+  "name": "Meredy -Grimoire Heart- Lacrima",
+  "kind": "signature",
+  "signatureFor": "meredy-grimoire-heart",
+  "gameText": "While on the field, inflicts [Mid] DEF Decrease and [Mid] Evasion Decrease on all enemies",
+  "applications": [
+   "mid-def-decrease-all-enemies-while-on-the-field",
+   "mid-evasion-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "meredy-lacrima",
+  "name": "Meredy Lacrima",
+  "kind": "signature",
+  "signatureFor": "meredy",
+  "gameText": "After the battle starts, grants all allies Mid ATK Up for 3 sec.",
+  "applications": [
+   "mid-atk-increase-all-allies-start-of-battle-3-sec"
+  ]
+ },
+ {
+  "id": "midsummer-sorcerer-lucy-lacrima",
+  "name": "Midsummer Sorcerer Lucy Lacrima",
+  "kind": "signature",
+  "signatureFor": "midsummer-sorcerer-lucy",
+  "gameText": "At the start of battle, inflicts [High] Bleed and [High] Critical Rate Decrease on all anemies for 5 sec.",
+  "applications": [
+   "high-bleed-all-enemies-start-of-battle-5-sec",
+   "high-critical-rate-decrease-all-enemies-start-of-battle-5-sec"
+  ]
+ },
+ {
+  "id": "midsummer-sorcerer-mirajane-lacrima",
+  "name": "Midsummer Sorcerer Mirajane Lacrima",
+  "kind": "signature",
+  "signatureFor": "midsummer-sorcerer-mirajane",
+  "gameText": "While on the battlefield, grants all allies [Low] Continuous Heal and [Mid] DEF Increase",
+  "applications": [
+   "low-continuous-heal-all-allies-while-on-the-field",
+   "mid-def-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "minerva-lacrima",
+  "name": "Minerva Lacrima",
+  "kind": "signature",
+  "signatureFor": "minerva-orland",
+  "gameText": "When a critical hit occurs, grants self Top Critical Rate Up for 3 sec. Trigger is recorded in notes because Critical Hit is not currently an available Lacrima trigger option.",
+  "applications": [
+   "top-critical-rate-increase-self-3-sec-2"
+  ]
+ },
+ {
+  "id": "mirajane-satan-soul-lacrima",
+  "name": "Mirajane -Satan Soul- Lacrima",
+  "kind": "signature",
+  "signatureFor": "mirajane-satan-soul",
+  "gameText": "When the user is attacked, there is a 20% chance to apply Silence to the target for 2 sec",
+  "applications": [
+   "silence-attacker-20-2-sec"
+  ]
+ },
+ {
+  "id": "mirajane-lacrima",
+  "name": "Mirajane Lacrima",
+  "kind": "signature",
+  "signatureFor": "mirajane-strauss",
+  "gameText": "When a normal skill hits (20%) chance, restore your HP by 300% of your ATK.",
+  "applications": [
+   "heal-self-20-300-of-own-atk"
+  ]
+ },
+ {
+  "id": "moonlit-reverie-levy-lacrima",
+  "name": "Moonlit Reverie Levy Lacrima",
+  "kind": "signature",
+  "signatureFor": "moonlit-reverie-levy",
+  "gameText": "While on the field, applies the following to all allies: [Mid] ATK Increase, [Mid] Critical Damage Increase.",
+  "applications": [
+   "mid-atk-increase-all-allies-while-on-the-field",
+   "mid-critical-damage-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "moonlit-reverie-mavis",
+  "name": "Moonlit Reverie Mavis",
+  "kind": "signature",
+  "signatureFor": "moonlit-reverie-mavis",
+  "gameText": "When defeated, applies the following to all enemies for 2 seconds: [High] Burn, [High] Paralysis",
+  "applications": [
+   "high-burn-all-enemies-when-defeated-2-sec",
+   "high-paralysis-all-enemies-when-defeated-2-sec"
+  ]
+ },
+ {
+  "id": "mystogan-lacrima",
+  "name": "Mystogan Lacrima",
+  "kind": "signature",
+  "signatureFor": "mystogan",
+  "gameText": "After a Normal Skill hits, has a 20% chance to grant self Mid ATK Up and Mid Accuracy Up for 3 sec.",
+  "applications": [
+   "mid-atk-increase-self-20-3-sec",
+   "mid-accuracy-increase-self-20-3-sec"
+  ]
+ },
+ {
+  "id": "natsu-dragon-force-lacrima",
+  "name": "Natsu -Dragon Force- Lacrima",
+  "kind": "signature",
+  "signatureFor": "natsu-dragon-force",
+  "gameText": "When you are attacked, has a 30% chance to inflict on the attacker for 3 sec, [Top] Burn",
+  "applications": [
+   "top-burn-attacker-when-attacked-30-3-sec"
+  ]
+ },
+ {
+  "id": "natsu-lightning-fire-dragon-mode-lacrima",
+  "name": "Natsu -Lightning Fire Dragon Mode- Lacrima",
+  "kind": "signature",
+  "signatureFor": "natsu-lightning-fire-dragon-mode",
+  "gameText": "When taking damage, has a 20% chance to apply the following to the attacker for 2 sec: [High] Burn, [High] Paralysis",
+  "applications": [
+   "high-burn-attacker-20-2-sec",
+   "high-paralysis-attacker-20-2-sec"
+  ]
+ },
+ {
+  "id": "natsu-dragion-lacrima",
+  "name": "Natsu Dragion Lacrima",
+  "kind": "signature",
+  "signatureFor": "natsu-dragion",
+  "gameText": "If the target is afflicted with Burn after a normal skill hits, reduces the target's accumulated Special Skill gauge by 0.5 seconds.",
+  "applications": [
+   "push-back-special-skill-gauge-single-enemy-burn-0-5-sec"
+  ]
+ },
+ {
+  "id": "natsu-lacrima",
+  "name": "Natsu Lacrima",
+  "kind": "signature",
+  "signatureFor": "natsu-dragneel",
+  "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, [Mid] Burn and [Mid] DEF Down",
+  "applications": [
+   "mid-burn-single-enemy-20-3-sec",
+   "mid-def-decrease-single-enemy-20-3-sec"
+  ]
+ },
+ {
+  "id": "neo-minerva-lacrima",
+  "name": "Neo Minerva Lacrima",
+  "kind": "signature",
+  "signatureFor": "neo-minerva",
+  "gameText": "When taking an attack, has a 30% chance to inflict [Top] ATK Decrease and [High] Burn on the attacker for 3 sec.",
+  "applications": [
+   "top-atk-decrease-attacker-when-attacked-30-3-sec",
+   "high-burn-attacker-when-attacked-30-3-sec"
+  ]
+ },
+ {
+  "id": "noir-cana-lacrima",
+  "name": "Noir Cana Lacrima",
+  "kind": "signature",
+  "signatureFor": "noir-cana",
+  "gameText": "Every 5 sec, grants all allies for 3 sec: [Mid] Critical Damage Increase",
+  "applications": [
+   "mid-critical-damage-increase-all-allies-every-5-sec-3-sec"
+  ]
+ },
+ {
+  "id": "noir-gildarts-lacrima",
+  "name": "Noir Gildarts Lacrima",
+  "kind": "signature",
+  "signatureFor": "noir-gildarts",
+  "gameText": "When defeated, grants all allies for 3 sec: [Top] DEF Increase and [Top] Critical Defense Increase",
+  "applications": [
+   "top-def-decrease-all-allies-when-defeated-3-sec",
+   "top-critical-defense-increase-all-allies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "otherworld-adventure-erza-lacrima",
+  "name": "Otherworld Adventure Erza Lacrima",
+  "kind": "signature",
+  "signatureFor": "otherworld-adventure-erza",
+  "gameText": "While on the field, inflicts [Mid] Burn and [Low] Accuracy Decrease on all enemies.",
+  "applications": [
+   "mid-burn-all-enemies-while-on-the-field",
+   "low-accuracy-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "otherworld-adventure-kagura-lacrima",
+  "name": "Otherworld Adventure Kagura Lacrima",
+  "kind": "signature",
+  "signatureFor": "otherworld-adventure-kagura",
+  "gameText": "At the start of battle, grants all allies [Top] Shield and [High] Critical Rate Increase for 4 sec",
+  "applications": [
+   "top-shield-all-allies-start-of-battle-4-sec",
+   "high-critical-rate-increase-all-allies-start-of-battle-4-sec"
+  ]
+ },
+ {
+  "id": "parallel-world-mystogan-lacrima",
+  "name": "Parallel World Mystogan Lacrima",
+  "kind": "signature",
+  "signatureFor": "parallel-world-mystogan",
+  "gameText": "When taking an attack, has a 30% chance to inflict Silence and [Mid] ATK Decrease, [Mid] Critical Rate Decrease on the attacker for 2 sec",
+  "applications": [
+   "silence-attacker-30-2-sec",
+   "mid-atk-decrease-attacker-when-attacked-30-2-sec",
+   "mid-critical-rate-decrease-attacker-when-attacked-30-2-sec"
+  ]
+ },
+ {
+  "id": "parallel-world-wendy-lacrima",
+  "name": "Parallel World Wendy Lacrima",
+  "kind": "signature",
+  "signatureFor": "parallel-world-wendy",
+  "gameText": "While on the field, inflicts [Mid] Bleed and [Mid] ATK Decrease, [Mid] DEF Decrease on all enemies.",
+  "applications": [
+   "mid-bleed-all-enemies-while-on-the-field",
+   "mid-atk-decrease-all-enemies-while-on-the-field",
+   "mid-def-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "pure-white-oath-erza-lacrima",
+  "name": "Pure White Oath Erza Lacrima",
+  "kind": "signature",
+  "signatureFor": "pure-white-oath-erza",
+  "gameText": "When defeated, inflicts all enemies with for 3 sec, [High] Paralysis and [High] DEF Decrease.",
+  "applications": [
+   "high-paralysis-all-enemies-when-defeated-3-sec",
+   "high-def-decrease-all-enemies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "pure-white-oath-jellal-lacrima",
+  "name": "Pure White Oath Jellal Lacrima",
+  "kind": "signature",
+  "signatureFor": "pure-white-oath-jellal",
+  "gameText": "While on the battlefield, inflicts all enemies with [Mid] Critical Rate Decrease and [Mid] Critical Resistance Decrease",
+  "applications": [
+   "mid-critical-rate-decrease-all-enemies-while-on-the-field",
+   "mid-critical-resistance-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "rock-n-magic-juvia-lacrima",
+  "name": "Rock'n Magic Juvia Lacrima",
+  "kind": "signature",
+  "signatureFor": "rock-n-magic-juvia",
+  "gameText": "When taking an attack, has a 30% chance to inflict [Top] ATK Decrease and [Top] Critical Damage Decrease on the attacker for 3 sec.",
+  "applications": [
+   "top-atk-decrease-attacker-when-attacked-30-3-sec",
+   "top-critical-damage-decrease-attacker-when-attacked-30-3-sec"
+  ]
+ },
+ {
+  "id": "rock-n-magic-lucy-lacrima",
+  "name": "Rock'n Magic Lucy Lacrima",
+  "kind": "signature",
+  "signatureFor": "rock-n-magic-lucy",
+  "gameText": "At the start of battle, inflicts [Mid] Paralysis, [High] ATK Decrease, [High] Critical Rate Decrease on all enemies for 5 sec",
+  "applications": [
+   "mid-paralysis-all-enemies-start-of-battle-5-sec",
+   "high-atk-decrease-all-enemies-start-of-battle-5-sec",
+   "high-critical-rate-decrease-all-enemies-start-of-battle-5-sec"
+  ]
+ },
+ {
+  "id": "rogue-lacrima",
+  "name": "Rogue Lacrima",
+  "kind": "signature",
+  "signatureFor": "rogue-cheney",
+  "gameText": "After a normal skill hits, has a 20% chance to grant self for 3 sec, [Top] ATK Up.",
+  "applications": [
+   "top-atk-increase-self-20-3-sec"
+  ]
+ },
+ {
+  "id": "selene-lacrima",
+  "name": "Selene Lacrima",
+  "kind": "signature",
+  "signatureFor": "selene",
+  "gameText": "While on the battlefield, grants all allies [Mid] DEF Increase, and [Mid] Critical Defense Increase.",
+  "applications": [
+   "mid-def-increase-all-allies-while-on-the-field",
+   "mid-critical-defense-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "sherria-lacrima",
+  "name": "Sherria Lacrima",
+  "kind": "signature",
+  "signatureFor": "sherria-blendy",
+  "gameText": "Every 5 sec, grant yourself for 3 sec [Mid] ATK Up and [Mid] Accuracy Up",
+  "applications": [
+   "mid-atk-increase-self-every-5-sec-3-sec",
+   "mid-accuracy-increase-self-every-5-sec-3-sec"
+  ]
+ },
+ {
+  "id": "silver-lacrima",
+  "name": "Silver Lacrima",
+  "kind": "signature",
+  "signatureFor": "silver-fullbuster",
+  "gameText": "When attacked, has a 10% chance to inflict Top Freeze on the attacker for 2 sec.",
+  "applications": [
+   "top-freeze-attacker-when-attacked-10-2-sec"
+  ]
+ },
+ {
+  "id": "starry-night-reunion-zeref-lacrima",
+  "name": "Starry Night Reunion Zeref Lacrima",
+  "kind": "signature",
+  "signatureFor": "starry-night-reunion-zeref",
+  "gameText": "When defeated, inflicts Blind on all enemies for 3 sec",
+  "applications": [
+   "blind-all-enemies-when-defeated-3-sec"
+  ]
+ },
+ {
+  "id": "starry-reunion-mavis-lacrima",
+  "name": "Starry Reunion Mavis Lacrima",
+  "kind": "signature",
+  "signatureFor": "starry-night-reunion-mavis",
+  "gameText": "While this character is on the field, grants all allies [Mid] ATK Increase and [Mid] Accuracy Increase.",
+  "applications": [
+   "mid-atk-increase-all-allies-while-on-the-field",
+   "mid-accuracy-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "sting-dragon-force-lacrima",
+  "name": "Sting -Dragon Force- Lacrima",
+  "kind": "signature",
+  "signatureFor": "sting-dragon-force",
+  "gameText": "At the start of battle, inflicts [High] Bleed and Heal Block on all enemies for 5 sec",
+  "applications": [
+   "high-bleed-all-enemies-start-of-battle-5-sec",
+   "heal-block-all-enemies-start-of-battle-5-sec"
+  ]
+ },
+ {
+  "id": "sting-lacrima",
+  "name": "Sting Lacrima",
+  "kind": "signature",
+  "signatureFor": "sting-eucliffe",
+  "gameText": "After a normal skill hits, has a 20% chance to grant self for 3 sec, Top Critical Damage Up",
+  "applications": [
+   "top-critical-damage-increase-self-20-3-sec"
+  ]
+ },
+ {
+  "id": "suzaku-lacrima",
+  "name": "Suzaku Lacrima",
+  "kind": "signature",
+  "signatureFor": "suzaku",
+  "gameText": "When attacked, has a 20% chance to inflict [High] Bleed and Silence on the target for 2 sec.",
+  "applications": [
+   "high-bleed-attacker-20-2-sec",
+   "silence-attacker-20-2-sec"
+  ]
+ },
+ {
+  "id": "swayed-by-the-evening-breeze-gildarts-lacrima",
+  "name": "Swayed by the Evening Breeze Gildarts Lacrima",
+  "kind": "signature",
+  "signatureFor": "swayed-by-the-evening-breeze-gildarts",
+  "gameText": "While on the field, inflicts [High] DEF Decrease and [Low] Accuracy Decrease on all enemies.",
+  "applications": [
+   "high-def-decrease-all-enemies-while-on-the-field-2",
+   "low-accuracy-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "swayed-by-the-evening-breeze-mystogan-lacrima",
+  "name": "Swayed by the Evening Breeze Mystogan Lacrima",
+  "kind": "signature",
+  "signatureFor": "swayed-by-the-evening-breeze-mystogan",
+  "gameText": "While on the field, grants all allies [Mid] ATK Increase and [Mid] Accuracy Increase.",
+  "applications": [
+   "mid-atk-increase-all-allies-while-on-the-field",
+   "mid-accuracy-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "swaying-in-the-summer-night-cana-lacrima",
+  "name": "Swaying in the Summer Night Cana Lacrima",
+  "kind": "signature",
+  "signatureFor": "swaying-in-the-summer-night-cana",
+  "gameText": "Every 5 sec, inflicts all enemies with Silence and [Mid] ATK Down.",
+  "applications": [
+   "silence-all-enemies-every-5-sec",
+   "mid-atk-decrease-all-enemies-every-5-sec"
+  ]
+ },
+ {
+  "id": "swaying-in-the-summer-night-lisanna-lacrima",
+  "name": "Swaying in the Summer Night Lisanna Lacrima",
+  "kind": "signature",
+  "signatureFor": "swaying-in-the-summer-night-lisanna",
+  "gameText": "[Mid] ATK Decrease for 2 sec",
+  "applications": []
+ },
+ {
+  "id": "sweet-gift-juvia-lacrima",
+  "name": "Sweet Gift Juvia Lacrima",
+  "kind": "signature",
+  "signatureFor": "sweet-gift-juvia",
+  "gameText": "After a normal skill hits, has a 20% chance to grant all allies for 3 seconds: [Mid] Shield",
+  "applications": [
+   "mid-shield-all-allies-20-3-sec"
+  ]
+ },
+ {
+  "id": "sweet-gift-levy-lacrima",
+  "name": "Sweet Gift Levy Lacrima",
+  "kind": "signature",
+  "signatureFor": "sweet-gift-levy",
+  "gameText": "When you are attacked, has a 30% chance to inflict Silence on the attacker for 2 sec.",
+  "applications": [
+   "silence-attacker-30-2-sec"
+  ]
+ },
+ {
+  "id": "twin-moon-halloween-sherria-lacrima",
+  "name": "Twin Moon Halloween Sherria Lacrima",
+  "kind": "signature",
+  "signatureFor": "twin-moon-halloween-sherria",
+  "gameText": "At the start of battle, grants all allies [High] Shield and [Mid] Critical Resistance Increase for 5 sec.",
+  "applications": [
+   "high-shield-all-allies-start-of-battle-5-sec",
+   "mid-critical-resistance-increase-all-allies-start-of-battle-5-sec"
+  ]
+ },
+ {
+  "id": "twin-moon-halloween-sherry",
+  "name": "Twin Moon Halloween Sherry",
+  "kind": "signature",
+  "signatureFor": "twin-moon-halloween-sherry",
+  "gameText": "While on the field, grants all allies [High] Critical Rate Increase and [Mid] ATK Increase, [Mid] Accuracy Increase.",
+  "applications": [
+   "high-critical-rate-increase-all-allies-while-on-the-field",
+   "mid-atk-increase-all-allies-while-on-the-field",
+   "mid-accuracy-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "ultear-grimoire-heart-lacrima",
+  "name": "Ultear -Grimoire Heart- Lacrima",
+  "kind": "signature",
+  "signatureFor": "ultear-grimoire-heart",
+  "gameText": "When attacked,  has a 30% chance to inflict [High] Freeze and [High] Def Decrease on the attacker for 2 sec.",
+  "applications": [
+   "high-freeze-attacker-when-attacked-30-2-sec",
+   "high-def-decrease-attacker-when-attacked-30-2-sec"
+  ]
+ },
+ {
+  "id": "wendy-bakeneko-lacrima",
+  "name": "Wendy -Bakeneko- Lacrima",
+  "kind": "signature",
+  "signatureFor": "wendy-bakeneko",
+  "gameText": "While on the battlefield, inflict [Mid] ATK Decrease and [Mid] Critical Damage Decrease on all enemies.",
+  "applications": [
+   "mid-atk-decrease-all-enemies-while-on-the-field",
+   "mid-critical-damage-decrease-all-enemies-while-on-the-field",
+   "mid-atk-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "wendy-dragon-force-lacrima",
+  "name": "Wendy -Dragon Force- Lacrima",
+  "kind": "signature",
+  "signatureFor": "wendy-dragon-force",
+  "gameText": "When you are attacked, there is a a20% chance to apply to the attacker for 2 sec Heal Block",
+  "applications": [
+   "heal-block-attacker-20-2-sec"
+  ]
+ },
+ {
+  "id": "wendy-lacrima",
+  "name": "Wendy Lacrima",
+  "kind": "signature",
+  "signatureFor": "wendy-marvell",
+  "gameText": "At the start of battle, grants all allies Mid Evasion Up for 5 sec.",
+  "applications": [
+   "mid-evasion-increase-all-allies-start-of-battle-5-sec"
+  ]
+ },
+ {
+  "id": "white-gift-gajeel-lacrima",
+  "name": "White Gift Gajeel Lacrima",
+  "kind": "signature",
+  "signatureFor": "white-gift-gajeel",
+  "gameText": "While you are on the field, inflicts [Mid] Critical Damage Decrease on all enemies.",
+  "applications": [
+   "mid-critical-damage-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "white-gift-gray-lacrima",
+  "name": "White Gift Gray Lacrima",
+  "kind": "signature",
+  "signatureFor": "white-gift-gray",
+  "gameText": "After a normal skill hits, if the target is inflicted with Freeze, reduces the target's charged Special Skill Gauge by 0.5 seconds.",
+  "applications": [
+   "push-back-special-skill-gauge-single-enemy-freeze-0-5-sec"
+  ]
+ }
+]

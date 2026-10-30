@@ -1,0 +1,1594 @@
+[
+ {
+  "id": "30-damage-reflection-shield",
+  "name": "30% Damage Reflection Shield",
+  "family": "Damage Reflection",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Damage Reflection",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Reflects 30% of damage taken back to the attacker for the duration",
+  "counteredBy": []
+ },
+ {
+  "id": "accuracy-up-i",
+  "name": "Accuracy Up I",
+  "family": "Accuracy",
+  "direction": "Up",
+  "tier": "Up I",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 3,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Accuracy +3",
+  "counteredBy": []
+ },
+ {
+  "id": "accuracy-up-ii",
+  "name": "Accuracy Up II",
+  "family": "Accuracy",
+  "direction": "Up",
+  "tier": "Up II",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Accuracy +5",
+  "counteredBy": []
+ },
+ {
+  "id": "action-block-barrier",
+  "name": "Action Block Barrier",
+  "family": "Action Block Barrier",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Barrier / Control Immunity",
+  "value": null,
+  "secondary": null,
+  "gameText": "Negates action block effects (Bind, Freeze)",
+  "counteredBy": []
+ },
+ {
+  "id": "action-impairment-barrier",
+  "name": "Action Impairment Barrier",
+  "family": null,
+  "direction": null,
+  "tier": null,
+  "polarity": null,
+  "mechanic": null,
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "additional-damage",
+  "name": "Additional Damage",
+  "family": "Damage",
+  "direction": null,
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Damage",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "advance-special-skill-gauge",
+  "name": "Advance Special Skill Gauge",
+  "family": "Special Skill Gauge",
+  "direction": "Up",
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Gauge Control",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "advance-ultimate-skill-gauge",
+  "name": "Advance Ultimate Skill Gauge",
+  "family": "Ultimate Skill Gauge",
+  "direction": "Up",
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Gauge Control",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "bind",
+  "name": "Bind",
+  "family": "Bind",
+  "direction": null,
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Control",
+  "value": null,
+  "secondary": null,
+  "gameText": "Cannot act during the effect",
+  "counteredBy": []
+ },
+ {
+  "id": "blessing-of-the-sky-dragon",
+  "name": "Blessing of the Sky Dragon",
+  "family": "Heal",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Continuous Heal",
+  "value": {
+   "amount": 150,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": null,
+  "gameText": "Recovers 150% of ATK per sec",
+  "counteredBy": []
+ },
+ {
+  "id": "blind",
+  "name": "Blind",
+  "family": "Blind",
+  "direction": null,
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Accuracy Suppression",
+  "value": null,
+  "secondary": null,
+  "gameText": "Accuracy is halved during the effect",
+  "counteredBy": []
+ },
+ {
+  "id": "cleanse",
+  "name": "Cleanse",
+  "family": "Cleanse",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Cleanse",
+  "value": null,
+  "secondary": null,
+  "gameText": "Removes all debuffs",
+  "counteredBy": []
+ },
+ {
+  "id": "critical-damage-up-ii",
+  "name": "Critical Damage Up II",
+  "family": "Critical Damage",
+  "direction": "Up",
+  "tier": "Up II",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 50,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Crit Damage +50",
+  "counteredBy": []
+ },
+ {
+  "id": "critical-defense-up-i",
+  "name": "Critical Defense Up I",
+  "family": "Critical Defense",
+  "direction": "Up",
+  "tier": "Up I",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Crit Defense +30",
+  "counteredBy": []
+ },
+ {
+  "id": "critical-defense-up-ii",
+  "name": "Critical Defense Up II",
+  "family": "Critical Defense",
+  "direction": "Up",
+  "tier": "Up II",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 50,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Crit Defense [[Date/2026-07-14 02:00]]",
+  "counteredBy": []
+ },
+ {
+  "id": "critical-rate-up-i",
+  "name": "Critical Rate Up I",
+  "family": "Critical Rate",
+  "direction": "Up",
+  "tier": "Up I",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 3,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Crit Rate +3",
+  "counteredBy": []
+ },
+ {
+  "id": "critical-rate-up-ii",
+  "name": "Critical Rate Up II",
+  "family": "Critical Rate",
+  "direction": "Up",
+  "tier": "Up II",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Crit Rate [[Date/2026-07-12 05:00]]",
+  "counteredBy": []
+ },
+ {
+  "id": "critical-resistance-up-i",
+  "name": "Critical Resistance Up I",
+  "family": "Critical Resistance",
+  "direction": "Up",
+  "tier": "Up I",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 3,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Evasion Rate +3",
+  "counteredBy": []
+ },
+ {
+  "id": "critical-resistance-up-ii",
+  "name": "Critical Resistance Up II",
+  "family": "Critical Resistance",
+  "direction": "Up",
+  "tier": "Up II",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Crit Resist +5",
+  "counteredBy": []
+ },
+ {
+  "id": "critical-shield",
+  "name": "Critical Shield",
+  "family": "Critical Shield",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Critical Shield",
+  "value": null,
+  "secondary": null,
+  "gameText": "Prevents critical hits for the duration.",
+  "counteredBy": []
+ },
+ {
+  "id": "crtical-damage-up-i",
+  "name": "Crtical Damage Up I",
+  "family": "Critical Damage",
+  "direction": "Up",
+  "tier": "Up I",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage +30",
+  "counteredBy": []
+ },
+ {
+  "id": "damage",
+  "name": "Damage",
+  "family": "Damage",
+  "direction": null,
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Damage",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "evasion-rate-up-i",
+  "name": "Evasion Rate Up I",
+  "family": "Evasion",
+  "direction": "Up",
+  "tier": "Up I",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 3,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Evasion Rate +3",
+  "counteredBy": []
+ },
+ {
+  "id": "evasion-rate-up-ii",
+  "name": "Evasion Rate Up II",
+  "family": "Evasion",
+  "direction": "Up",
+  "tier": "Up II",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Evasion Rate +5",
+  "counteredBy": []
+ },
+ {
+  "id": "giant",
+  "name": "Giant",
+  "family": "Transformation",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Transformation",
+  "value": null,
+  "secondary": null,
+  "gameText": "Transform into a giant.",
+  "counteredBy": []
+ },
+ {
+  "id": "heal",
+  "name": "Heal",
+  "family": "Heal",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Healing",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "heal-block",
+  "name": "Heal Block",
+  "family": "Heal Block",
+  "direction": null,
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Healing Prevention",
+  "value": null,
+  "secondary": null,
+  "gameText": "Cannot be healed during the effect",
+  "counteredBy": [
+   "remove-all-debuffs"
+  ]
+ },
+ {
+  "id": "high-atk-decrease",
+  "name": "High ATK Decrease",
+  "family": "ATK",
+  "direction": "Down",
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 25,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "ATK decreases by 25%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-atk-increase",
+  "name": "High ATK Increase",
+  "family": "ATK",
+  "direction": "Up",
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 25,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "​ATK increases by 25%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-accuracy-increase",
+  "name": "High Accuracy Increase",
+  "family": "Accuracy",
+  "direction": "Up",
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Accuracy increases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-bleed",
+  "name": "High Bleed",
+  "family": "Bleed",
+  "direction": null,
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 35,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": null,
+  "gameText": "HP -35% ATK per sec",
+  "counteredBy": []
+ },
+ {
+  "id": "high-burn",
+  "name": "High Burn",
+  "family": "Burn",
+  "direction": null,
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 25,
+   "unit": "Percentage of Source ATK per second"
+  },
+  "secondary": {
+   "stat": "ATK",
+   "direction": "Down",
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "gameText": "HP -25% ATK per sec + ATK -15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-continuous-heal",
+  "name": "High Continuous Heal",
+  "family": "Heal",
+  "direction": null,
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Continuous Heal",
+  "value": {
+   "amount": 100,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": null,
+  "gameText": "Recovers 100% of ATK per sec",
+  "counteredBy": []
+ },
+ {
+  "id": "high-critical-damage-increase",
+  "name": "High Critical Damage Increase",
+  "family": "Critical Damage",
+  "direction": "Up",
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 40,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage increases by 40%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-critical-defense-decrease",
+  "name": "High Critical Defense Decrease",
+  "family": "Critical Defense",
+  "direction": "Down",
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 40,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Defense decreases by 40%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-critical-defense-increase",
+  "name": "High Critical Defense Increase",
+  "family": "Critical Defense",
+  "direction": "Up",
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 40,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Defense increases by 40%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-critical-rate-decrease",
+  "name": "High Critical Rate Decrease",
+  "family": "Critical Rate",
+  "direction": "Down",
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Rate decreases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-critical-rate-increase",
+  "name": "High Critical Rate Increase",
+  "family": "Critical Rate",
+  "direction": "Up",
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Rate increases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-critical-resistance-decrease",
+  "name": "High Critical Resistance Decrease",
+  "family": "Critical Resistance",
+  "direction": "Down",
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Resistance decreases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-critical-resistance-increase",
+  "name": "High Critical Resistance Increase",
+  "family": "Critical Resistance",
+  "direction": "Up",
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "[High] Critical Resistance Increases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-def-decrease",
+  "name": "High DEF Decrease",
+  "family": "DEF",
+  "direction": "Down",
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 25,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "DEF Decrease by 25%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-def-increase",
+  "name": "High DEF Increase",
+  "family": "DEF",
+  "direction": "Up",
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 25,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "DEF Increases by 25%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-evasion-decrease",
+  "name": "High Evasion Decrease",
+  "family": "Evasion",
+  "direction": "Down",
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Evasion decreases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-evasion-increase",
+  "name": "High Evasion Increase",
+  "family": "Evasion",
+  "direction": "Up",
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Evasion increases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-freeze",
+  "name": "High Freeze",
+  "family": "Freeze",
+  "direction": null,
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Control",
+  "value": null,
+  "secondary": {
+   "stat": "Critical Defense",
+   "direction": "Down",
+   "amount": 25,
+   "unit": "Percent"
+  },
+  "gameText": "Cannot act →Critical DEF -25%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-paralysis",
+  "name": "High Paralysis",
+  "family": "Paralysis",
+  "direction": null,
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 25,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": {
+   "stat": "DEF",
+   "direction": "Down",
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "gameText": "HP -25% ATK per sec + DEF -15%",
+  "counteredBy": []
+ },
+ {
+  "id": "high-shield",
+  "name": "High Shield",
+  "family": "Shield",
+  "direction": null,
+  "tier": "High",
+  "polarity": "Beneficial",
+  "mechanic": "Shield",
+  "value": {
+   "amount": 20,
+   "unit": "Percent of Max HP"
+  },
+  "secondary": null,
+  "gameText": "Negates damage equal to 20% of max HP during the effect.",
+  "counteredBy": []
+ },
+ {
+  "id": "invincible",
+  "name": "Invincible",
+  "family": "Invincible",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Damage Immunity",
+  "value": null,
+  "secondary": null,
+  "gameText": "Becomes invincible during the effect duration.",
+  "counteredBy": []
+ },
+ {
+  "id": "low-accuracy-decrease",
+  "name": "Low Accuracy Decrease",
+  "family": "Accuracy",
+  "direction": "Down",
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Accuracy decreases by 5%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-burn",
+  "name": "Low Burn",
+  "family": "Burn",
+  "direction": "Down",
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 15,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": {
+   "stat": "ATK",
+   "direction": "Down",
+   "amount": 5,
+   "unit": "Percent"
+  },
+  "gameText": "HP -15% ATK per sec + ATK -5%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-continuous-heal",
+  "name": "Low Continuous Heal",
+  "family": "Heal",
+  "direction": null,
+  "tier": "Low",
+  "polarity": "Beneficial",
+  "mechanic": "Continuous Heal",
+  "value": {
+   "amount": 50,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": null,
+  "gameText": "Recovers 50% of ATK per sec",
+  "counteredBy": []
+ },
+ {
+  "id": "low-paralysis",
+  "name": "Low Paralysis",
+  "family": "Paralysis",
+  "direction": null,
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 15,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": {
+   "stat": "DEF",
+   "direction": "Down",
+   "amount": 5,
+   "unit": "Percent"
+  },
+  "gameText": "HP -15% ATK per sec + DEF -5%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-atk-decrease",
+  "name": "Mid ATK Decrease",
+  "family": "ATK",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "ATK decreases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-atk-increase",
+  "name": "Mid ATK Increase",
+  "family": "ATK",
+  "direction": "Up",
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "ATK increases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-accuracy-increase",
+  "name": "Mid Accuracy Increase",
+  "family": "Accuracy",
+  "direction": "Up",
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Accuracy Increases by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-bleed",
+  "name": "Mid Bleed",
+  "family": "Bleed",
+  "direction": null,
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": null,
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "mid-burn",
+  "name": "Mid Burn",
+  "family": "Burn",
+  "direction": null,
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 20,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": {
+   "stat": "ATK",
+   "direction": "Down",
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "gameText": "HP -20% ATK per sec + ATK -10%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-continuous-heal",
+  "name": "Mid Continuous Heal",
+  "family": "Heal",
+  "direction": null,
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Continuous Heal",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "mid-critical-damage-decrease",
+  "name": "Mid Critical Damage Decrease",
+  "family": "Critical Damage",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage decreases by 30%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-critical-damage-increase",
+  "name": "Mid Critical Damage Increase",
+  "family": "Critical Damage",
+  "direction": "Up",
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage increases by 30%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-critical-defense-increase",
+  "name": "Mid Critical Defense Increase",
+  "family": "Critical Defense",
+  "direction": "Up",
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Defense increases by 30%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-critical-rate-decrease",
+  "name": "Mid Critical Rate Decrease",
+  "family": "Critical Rate",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Rate decreases by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-critical-rate-increase",
+  "name": "Mid Critical Rate Increase",
+  "family": "Critical Rate",
+  "direction": "Up",
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Rate increases by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-critical-resistance-decrease",
+  "name": "Mid Critical Resistance Decrease",
+  "family": "Critical Resistance",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Resistance decrease by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-critical-resistance-increase",
+  "name": "Mid Critical Resistance Increase",
+  "family": "Critical Resistance",
+  "direction": "Up",
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Resistance increase by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-def-decrease",
+  "name": "Mid DEF Decrease",
+  "family": "DEF",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "DEF decreases by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-def-increase",
+  "name": "Mid DEF Increase",
+  "family": "DEF",
+  "direction": "Up",
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "DEF Increase by 15%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-evasion-decrease",
+  "name": "Mid Evasion Decrease",
+  "family": "Evasion",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Evasion decrease by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-evasion-increase",
+  "name": "Mid Evasion Increase",
+  "family": "Evasion",
+  "direction": "Up",
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "mid-freeze",
+  "name": "Mid Freeze",
+  "family": "Freeze",
+  "direction": null,
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Control",
+  "value": null,
+  "secondary": {
+   "stat": "DEF",
+   "direction": "Down",
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "gameText": "Cannot act + Critical DEF -20%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-paralysis",
+  "name": "Mid Paralysis",
+  "family": "Paralysis",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": {
+   "stat": "DEF",
+   "direction": "Down",
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "gameText": "HP -20% ATK per sec + DEF -10%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-regen",
+  "name": "Mid Regen",
+  "family": "Heal",
+  "direction": null,
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Healing",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "mid-shield",
+  "name": "Mid Shield",
+  "family": "Shield",
+  "direction": null,
+  "tier": "Mid",
+  "polarity": "Beneficial",
+  "mechanic": "Shield",
+  "value": {
+   "amount": 15,
+   "unit": "Percent of Max HP"
+  },
+  "secondary": null,
+  "gameText": "Negates damage equal to 15% of max HP during the effect",
+  "counteredBy": []
+ },
+ {
+  "id": "push-back-special-skill-gauge",
+  "name": "Push Back Special Skill Gauge",
+  "family": "Special Skill Gauge",
+  "direction": "Down",
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Gauge Control",
+  "value": null,
+  "secondary": null,
+  "gameText": "Reduces the target's Special Skill Gauge",
+  "counteredBy": []
+ },
+ {
+  "id": "push-back-ultimate-skill-gauge",
+  "name": "Push Back Ultimate Skill Gauge",
+  "family": "Ultimate Skill Gauge",
+  "direction": "Down",
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Gauge Control",
+  "value": null,
+  "secondary": null,
+  "gameText": "Push back current Utlimate SKill Gauge",
+  "counteredBy": []
+ },
+ {
+  "id": "remove-all-debuffs",
+  "name": "Remove All Debuffs",
+  "family": "Cleanse",
+  "direction": null,
+  "tier": null,
+  "polarity": "Beneficial",
+  "mechanic": "Cleanse",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "removes-all-buffs",
+  "name": "Removes All Buffs",
+  "family": "Cleanse",
+  "direction": null,
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Cleanse",
+  "value": null,
+  "secondary": null,
+  "gameText": null,
+  "counteredBy": []
+ },
+ {
+  "id": "silence",
+  "name": "Silence",
+  "family": "Silence",
+  "direction": null,
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Control",
+  "value": null,
+  "secondary": null,
+  "gameText": "Ultimate skill gauge stops during the effect",
+  "counteredBy": []
+ },
+ {
+  "id": "taunt",
+  "name": "Taunt",
+  "family": "Taunt",
+  "direction": null,
+  "tier": null,
+  "polarity": "Harmful",
+  "mechanic": "Control",
+  "value": null,
+  "secondary": null,
+  "gameText": "During the effect, forcibly norma-attacks the source of Taunt",
+  "counteredBy": []
+ },
+ {
+  "id": "top-atk-decrease",
+  "name": "Top ATK Decrease",
+  "family": "ATK",
+  "direction": "Down",
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "ATK decreases by 30%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-atk-increase",
+  "name": "Top ATK Increase",
+  "family": "ATK",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "ATK Increases by 30%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-accuracy-decrease",
+  "name": "Top Accuracy Decrease",
+  "family": "Accuracy",
+  "direction": "Down",
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Accuracy Decreases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-accuracy-increase",
+  "name": "Top Accuracy Increase",
+  "family": "Accuracy",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Accuracy increases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-bleed",
+  "name": "Top Bleed",
+  "family": "Bleed",
+  "direction": null,
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 40,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": null,
+  "gameText": "HP -40% ATK per sec",
+  "counteredBy": []
+ },
+ {
+  "id": "top-burn",
+  "name": "Top Burn",
+  "family": "Burn",
+  "direction": null,
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 30,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": {
+   "stat": "ATK",
+   "direction": "Down",
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "gameText": "HP -30% ATK per sec + ATK -20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-continuous-heal",
+  "name": "Top Continuous Heal",
+  "family": "Heal",
+  "direction": null,
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Continuous Heal",
+  "value": {
+   "amount": 120,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": null,
+  "gameText": "Recovers 120% of ATK per sec",
+  "counteredBy": []
+ },
+ {
+  "id": "top-critical-damage-decrease",
+  "name": "Top Critical Damage Decrease",
+  "family": "Critical Damage",
+  "direction": "Down",
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 50,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage decreases by 50%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-critical-damage-increase",
+  "name": "Top Critical Damage Increase",
+  "family": "Critical Damage",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 50,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage Increases by 50%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-critical-defense-decrease",
+  "name": "Top Critical Defense Decrease",
+  "family": "Critical Defense",
+  "direction": "Down",
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 50,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Defense Decreases by 50%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-critical-defense-increase",
+  "name": "Top Critical Defense Increase",
+  "family": "Critical Defense",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 50,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Defense Increases by 50%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-critical-rate-decrease",
+  "name": "Top Critical Rate Decrease",
+  "family": "Critical Rate",
+  "direction": "Down",
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Rate decreases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-critical-rate-increase",
+  "name": "Top Critical Rate Increase",
+  "family": "Critical Rate",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Rate Increases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-critical-resistance-decrease",
+  "name": "Top Critical Resistance Decrease",
+  "family": "Critical Resistance",
+  "direction": "Down",
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Resistance decreases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-critical-resistance-increase",
+  "name": "Top Critical Resistance Increase",
+  "family": "Critical Resistance",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Resistance increases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-def-decrease",
+  "name": "Top DEF Decrease",
+  "family": "DEF",
+  "direction": "Down",
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "DEF decreases by 30%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-def-increase",
+  "name": "Top DEF Increase",
+  "family": "DEF",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "DEF Increases by 30%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-evasion-decrease",
+  "name": "Top Evasion Decrease",
+  "family": "Evasion",
+  "direction": "Down",
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Evasion decreases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-evasion-increase",
+  "name": "Top Evasion Increase",
+  "family": "Evasion",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Evasion increases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-freeze",
+  "name": "Top Freeze",
+  "family": "Freeze",
+  "direction": null,
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Control",
+  "value": null,
+  "secondary": {
+   "stat": "Critical Defense",
+   "direction": "Down",
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "gameText": "Cannot act + Critical DEF -30%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-paralysis",
+  "name": "Top Paralysis",
+  "family": "Paralysis",
+  "direction": null,
+  "tier": "Top",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 30,
+   "unit": "Percent of ATK per sec"
+  },
+  "secondary": {
+   "stat": "DEF",
+   "direction": "Down",
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "gameText": "HP -30% ATK per sec + DEF -20%",
+  "counteredBy": []
+ },
+ {
+  "id": "top-shield",
+  "name": "Top Shield",
+  "family": "Shield",
+  "direction": "Up",
+  "tier": "Top",
+  "polarity": "Beneficial",
+  "mechanic": "Shield",
+  "value": {
+   "amount": 25,
+   "unit": "Percent of Max HP"
+  },
+  "secondary": null,
+  "gameText": "Negates damage equal to 25% of max HP during the effect",
+  "counteredBy": []
+ }
+]
