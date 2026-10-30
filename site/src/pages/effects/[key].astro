@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import MagicCircle from '../../components/MagicCircle.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
-  buildFinderIndex, effects, ATTR, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
+  buildFinderIndex, effects, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
   type FamilyMeta, type Match, type LacrimaMatch, type Unit, type Skill, type Application,
 } from '../../lib/data';
 
@@ -32,6 +32,8 @@ const ladder = [...effects.values()]
   .sort((a, b) => tierRank(a.tier) - tierRank(b.tier));
 const tiersPresent = [...new Set(applies.map((x) => x.effect.tier).filter(Boolean))] as string[];
 const sample = ladder[0];
+const attrsPresent = ATTR_ORDER.filter((x) => cards.some((c) => c.unit.attribute === x));
+const rolesPresent = ROLES.filter((x) => cards.some((c) => c.unit.role === x));
 
 const facts = (a: Application) => [a.target, a.durationSeconds != null ? `${a.durationSeconds} sec` : null, a.chance != null ? `${Math.round(a.chance * 100)}%` : null].filter(Boolean).join(' · ');
 // Highlight "[Tier] Name" mentions of this effect in game text
@@ -71,20 +73,34 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
       </div>
     </section>
 
-    {tiersPresent.length > 1 && (
-      <div class="tierbar" role="group" aria-label="Filter by tier">
-        <span class="lbl">Tier</span>
-        <button type="button" class="pill" data-tier="" aria-pressed="true">All</button>
-        {TIER_ORDER.filter((t) => tiersPresent.includes(t)).map((t) => <button type="button" class="pill" data-tier={t} aria-pressed="false">{t}</button>)}
-      </div>
-    )}
+    <div class="filters" aria-label="Filter wizards">
+      {tiersPresent.length > 1 && (
+        <div class="row" role="group" aria-label="Tier">
+          <span class="lbl">Tier</span>
+          {TIER_ORDER.filter((t) => tiersPresent.includes(t)).map((t) => <button type="button" class="pill" data-filter="tier" data-value={t} aria-pressed="false">{t}</button>)}
+        </div>
+      )}
+      {attrsPresent.length > 1 && (
+        <div class="row" role="group" aria-label="Attribute">
+          <span class="lbl">Attribute</span>
+          {attrsPresent.map((x) => <button type="button" class="pill" data-filter="attr" data-value={x} aria-pressed="false"><Kanji attr={x} size={22} />{x}</button>)}
+        </div>
+      )}
+      {rolesPresent.length > 1 && (
+        <div class="row" role="group" aria-label="Role">
+          <span class="lbl">Role</span>
+          {rolesPresent.map((x) => <button type="button" class="pill" data-filter="role" data-value={x} aria-pressed="false">{x}</button>)}
+        </div>
+      )}
+      <p class="status"><span id="shown">{cards.length}</span> of {cards.length} wizards<span id="active" hidden> · <span id="active-list"></span> · <button type="button" id="clear" class="clear">Clear filters</button></span></p>
+    </div>
     <p class="hint">Matches use Lv.3 values. Earlier levels are shown where they’ve been recorded.</p>
 
     <div class="results">
       {cards.map(({ unit, rows }) => {
         const a = ATTR[unit.attribute];
         return (
-          <article class="card" data-tiers={rows.map((r) => r.effect.tier ?? '').join(' ')} style={`--c:${a.color};--t:${a.tint}`}>
+          <article class="card" data-attr={unit.attribute} data-role={unit.role} data-tiers={rows.map((r) => r.effect.tier ?? '').join(' ')} style={`--c:${a.color};--t:${a.tint}`}>
             <div class="card-head">
               <span class="av">
                 {portraits.has(unit.id) ? <img src={url(`portraits/${unit.id}.webp`)} alt="" loading="lazy" width="60" height="60" /> : <span class="heading">{initials(unit.name)}</span>}
@@ -112,8 +128,10 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
       })}
     </div>
 
+    <p id="none" class="muted" hidden>No wizards match these filters.</p>
+
     {lac.length > 0 && (
-      <section>
+      <section id="lacrimas">
         <div class="section-title"><h2>Lacrimas that apply it</h2></div>
         <div class="lac-list">
           {[...new Map(lac.map((l) => [l.lacrima.id, l])).values()].map(({ lacrima, effect, app }) => (
@@ -154,17 +172,36 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
 </Base>
 
 <script>
-  const pills = [...document.querySelectorAll<HTMLButtonElement>('.tierbar .pill')];
-  pills.forEach((p) => p.addEventListener('click', () => {
-    const t = p.dataset.tier!;
-    pills.forEach((q) => q.setAttribute('aria-pressed', String(q === p)));
+  // Tier narrows skills and lacrimas; attribute and role narrow wizards. All three combine.
+  const pills = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill')];
+  const params = new URLSearchParams(location.search);
+  const state: Record<string, string | null> = { tier: params.get('tier'), attr: params.get('attr'), role: params.get('role') };
+  for (const k of Object.keys(state)) if (state[k] && !pills.some((p) => p.dataset.filter === k && p.dataset.value === state[k])) state[k] = null;
+  function apply() {
+    let n = 0;
     document.querySelectorAll<HTMLElement>('.card').forEach((card) => {
       let any = false;
-      card.querySelectorAll<HTMLElement>('.hit').forEach((h) => { const ok = !t || h.dataset.tier === t; h.hidden = !ok; any ||= ok; });
-      card.hidden = !any;
+      card.querySelectorAll<HTMLElement>('.hit').forEach((h) => { const ok = !state.tier || h.dataset.tier === state.tier; h.hidden = !ok; any ||= ok; });
+      const ok = any && (!state.attr || card.dataset.attr === state.attr) && (!state.role || card.dataset.role === state.role);
+      card.hidden = !ok; if (ok) n++;
     });
-    document.querySelectorAll<HTMLElement>('.lac').forEach((l) => { l.hidden = !!t && l.dataset.tier !== t; });
-  }));
+    document.querySelectorAll<HTMLElement>('.lac').forEach((l) => { l.hidden = !!state.tier && l.dataset.tier !== state.tier; });
+    for (const p of pills) p.setAttribute('aria-pressed', String(state[p.dataset.filter!] === p.dataset.value));
+    document.getElementById('shown')!.textContent = String(n);
+    document.getElementById('none')!.hidden = n > 0;
+    const active = [state.tier && state.tier + ' tier', state.attr, state.role].filter(Boolean);
+    document.getElementById('active')!.hidden = active.length === 0;
+    document.getElementById('active-list')!.textContent = active.join(' · ');
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(state)) if (v) p.set(k, v);
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+  for (const p of pills) p.addEventListener('click', () => {
+    const k = p.dataset.filter!; state[k] = state[k] === p.dataset.value ? null : p.dataset.value!; apply();
+  });
+  document.getElementById('clear')!.addEventListener('click', () => { state.tier = state.attr = state.role = null; apply(); });
+  apply();
 </script>
 
 <style>
@@ -184,9 +221,15 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .rung-Top { background: #FFF3E0; border: 2px solid var(--brass); }
   .rung .t { font: 700 12px var(--mono); text-transform: uppercase; color: var(--ember); }
   .rung .v { font-size: 13px; line-height: 1.35; }
-  .tierbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 22px 0 0; }
-  .lbl { font-size: 13px; font-weight: 700; color: var(--timber); margin-right: 4px; }
-  .pill { min-height: 38px; padding: 0 16px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+  .filters { display: flex; flex-direction: column; gap: 10px; margin: 22px 0 0; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .lbl { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); }
+  .status { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
+  #active-list { color: var(--ink); font-weight: 600; }
+  .clear { padding: 0; border: 0; background: none; color: var(--crimson); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+  #none { margin-top: 18px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 16px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+  .pill:has(.kanji) { padding-left: 8px; }
   .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
   .hint { margin: 14px 0 0; padding: 10px 16px; border-radius: 12px; background: #FFFBF2; border: 1px dashed var(--brass); font-size: 13px; color: var(--muted); }
   .results { display: flex; flex-direction: column; gap: 18px; margin-top: 18px; }
