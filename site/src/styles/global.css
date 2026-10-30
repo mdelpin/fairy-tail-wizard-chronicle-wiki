@@ -67,10 +67,10 @@ a.chip:hover { border-color: var(--brass); text-decoration: none; }
 .tier-Low, .tier-none { background: #EFE5D3; color: var(--muted); }
 /* Rarity tags follow the game: UR is iridescent, SR gold. */
 .rarity { display: inline-block; padding: 4px 11px; border-radius: 999px; font: 700 12px var(--mono); letter-spacing: .04em; color: var(--ink); border: 1px solid rgba(255,255,255,.7); box-shadow: 0 1px 2px rgba(40,10,6,.35); }
-.rarity-UR { background: linear-gradient(120deg, #FFB3C7 0%, #FFE29A 22%, #B8F2C9 44%, #A9DCFF 66%, #D2B8FF 88%, #FFB3C7 100%); color: #2B1D14; }
+.rarity-UR { background: linear-gradient(120deg, #FFB8DA 0%, #E2B8FF 35%, #A8D8FF 70%, #B8FFF4 100%); color: #2B1D14; }
 .rarity-SR { background: linear-gradient(160deg, #F6DD8C, #C9A24A 60%, #A9832F); color: #2B1D14; }
-.rarity-R { background: linear-gradient(160deg, #EEF1F4, #B9C0C8); color: #2B1D14; }
-.rarity-N { background: linear-gradient(160deg, #E3C2A0, #A9744A); color: #2B1D14; }
+.rarity-R { background: linear-gradient(160deg, #B9CDE3, #6F8DB0 60%, #4E6A8C); color: #FFFFFF; }
+.rarity-N { background: linear-gradient(160deg, #8C9096, #54585E 60%, #3A3D42); color: #FFFFFF; }
 .kind { padding: 3px 10px; border-radius: 999px; color: var(--cream); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .kind-Normal { background: #7A5A3A; } .kind-Special { background: #2F5D8A; } .kind-Ultimate { background: var(--crimson); }
 .mark { background: #F6DCD7; color: var(--crimson-dark); border-radius: 4px; padding: 0 3px; font-weight: 600; }

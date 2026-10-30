@@ -10,7 +10,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
       <Pennant width={34} star />
       <div>
         <h1>Wizard Roster</h1>
-        <p class="muted"><span id="shown">{units.length}</span> of {units.length} UR wizards</p>
+        <p class="muted"><span id="shown">{units.length}</span> of {units.length} UR wizards<span id="active" hidden> · <span id="active-list"></span> · <button type="button" id="clear" class="clear">Clear filters</button></span></p>
       </div>
     </div>
 
@@ -71,7 +71,20 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
     for (const p of pills) p.setAttribute('aria-pressed', String(state[p.dataset.filter!] === p.dataset.value));
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0;
+    // Say what is narrowing the list, and keep the address bar in step with the page.
+    const active = [text && `“${q.value.trim()}”`, state.attr, state.role].filter(Boolean);
+    document.getElementById('active')!.hidden = active.length === 0;
+    document.getElementById('active-list')!.textContent = active.join(' · ');
+    const p = new URLSearchParams();
+    if (q.value.trim()) p.set('q', q.value.trim());
+    if (state.attr) p.set('attr', state.attr);
+    if (state.role) p.set('role', state.role);
+    const s = p.toString();
+    history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
   }
+  document.getElementById('clear')!.addEventListener('click', () => {
+    q.value = ''; state.attr = null; state.role = null; apply(); q.focus();
+  });
   for (const p of pills) p.addEventListener('click', () => {
     const k = p.dataset.filter!; state[k] = state[k] === p.dataset.value ? null : p.dataset.value!; apply();
   });
@@ -83,6 +96,9 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
   .head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
   .head h1 { font-size: 42px; line-height: 1; }
   .head p { margin: 4px 0 0; }
+  #active-list { color: var(--ink); font-weight: 600; }
+  .clear { padding: 0; border: 0; background: none; color: var(--crimson); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+  .clear:hover { color: var(--crimson-dark); }
   .filters { padding: 18px; border-width: 2px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 3px 0 var(--brass-dark); }
   .filters input { height: 46px; padding: 0 18px; border-radius: 999px; border: 2px solid var(--line); background: #fff; }
   .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
