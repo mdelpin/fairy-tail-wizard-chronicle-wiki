@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Pennant from '../components/Pennant.astro';
-import { url } from '../lib/data';
+import { url, WIKI_CREDIT } from '../lib/data';
 interface Props { title: string; description?: string; section?: 'characters' | 'lacrimas' | 'effects' | 'search' | 'home'; }
 const { title, description = 'Unofficial reference for FAIRY TAIL Wizard Chronicle: wizards, skills, lacrimas and every effect they apply.', section = 'home' } = Astro.props;
 // Absolute URLs for link previews (Discord, social sites) and search engines.
@@ -59,6 +59,7 @@ const fullTitle = section === 'home' ? 'Fairy Tail Wizard Chronicle — Unoffici
   <footer class="site-footer">
     <div class="wrap">
       <span>Unofficial fan reference. Not affiliated with GOODROID or the FAIRY TAIL rights holders.</span>
+      <span>Lv.1–2 skill text for many wizards from <a href={WIKI_CREDIT.href}>{WIKI_CREDIT.name}</a> (<a href={WIKI_CREDIT.licenseHref}>{WIKI_CREDIT.license}</a>), with thanks.</span>
       <span>Game data only — no tier lists or strategy rankings.</span>
     </div>
   </footer>

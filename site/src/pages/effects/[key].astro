@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import MagicCircle from '../../components/MagicCircle.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
-  buildFinderIndex, effects, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
+  buildFinderIndex, effects, WIKI_CREDIT, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
   type FamilyMeta, type Match, type LacrimaMatch, type Unit, type Skill, type Application,
 } from '../../lib/data';
 
@@ -123,7 +123,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
                   <p class="lv"><span class="lvl">Lv.3</span><span>{segs(skill.gameText.Lv3).map((x) => x.hit ? <mark class="mark">{x.s}</mark> : x.s)}</span></p>
                 )}
                 {skill.gameText?.Lv1
-                  ? <details><summary>Show Lv.1–2</summary>{['Lv1', 'Lv2'].map((k) => skill.gameText[k] && <p class="lv"><span class="lvl">{k.replace('Lv', 'Lv.')}</span><span>{skill.gameText[k]}</span></p>)}</details>
+                  ? <details><summary>Show Lv.1–2</summary>{['Lv1', 'Lv2'].map((k) => skill.gameText[k] && <p class="lv"><span class="lvl">{k.replace('Lv', 'Lv.')}</span><span>{skill.gameText[k]}</span></p>)}{skill.levelTextSource === WIKI_CREDIT.name && <p class="credit">Lv.1–2 text from <a href={WIKI_CREDIT.href}>{WIKI_CREDIT.name}</a>, <a href={WIKI_CREDIT.licenseHref}>{WIKI_CREDIT.license}</a>.</p>}</details>
                   : <p class="nolv">Lv.1 and Lv.2 not recorded yet.</p>}
               </div>
             ))}
@@ -253,6 +253,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .lv { margin: 0; display: flex; gap: 12px; font-size: 15px; line-height: 1.65; }
   .lvl { flex: none; width: 38px; font: 700 12px/1.9 var(--mono); color: var(--crimson); }
   .nolv { margin: 0 0 0 50px; font-size: 13px; color: var(--muted); }
+  .credit { margin: 6px 0 0 50px; font-size: 12px; color: var(--muted); }
   details summary { cursor: pointer; font-size: 13px; color: var(--timber); margin-left: 50px; }
   .lac-list { display: flex; flex-direction: column; gap: 10px; }
   .lac { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
