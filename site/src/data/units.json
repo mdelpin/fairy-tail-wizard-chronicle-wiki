@@ -274,7 +274,7 @@
     "gameText": {
      "Lv1": "Every 10s, deal 650% ATK damage to targets within range. On hit, inflict [Top] Critical Resistance Decrease on the target for 3s, and each target has a 40% chance to be inflicted with Bind for 3s.",
      "Lv2": "Every 10s, deal 750% ATK damage to targets within range. On hit, inflict [Top] Critical Resistance Decrease on the target for 4s, and each target has a 40% chance to be inflicted with Bind for 4s.",
-     "Lv3": "Every 10s, deal 850% ATK damage to targets within range. On hit, inflcit [Top] Critical Resistance Decrease on the target for 5s, and each target has a 40% chance to be inflicted with Bind for 5s."
+     "Lv3": "Every 10s, deal 850% ATK damage to targets within range. On hit, inflict [Top] Critical Resistance Decrease on the target for 5s, and each target has a 40% chance to be inflicted with Bind for 5s."
     },
     "levelTable": [
      {
@@ -559,7 +559,7 @@
     "gameText": {
      "Lv1": "Every 11 sec., restores all allies' HP by 750% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 3 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 3 sec.",
      "Lv2": "Every 11 sec., restores all allies' HP by 850% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 4 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 4 sec.",
-     "Lv3": "Every 11 sec, restores all allies HP by 750% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continous Heal and [Top] DEF Increase for 5 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 5 sec."
+     "Lv3": "Every 11 sec, restores all allies HP by 750% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 5 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 5 sec."
     },
     "levelTable": [
      {
@@ -1257,7 +1257,7 @@
     "gameText": {
      "Lv1": "When a critical hit occurs, for 3 sec, grant all Tech-type allies [High] Critical Rate Increase and [High] Accuracy Increase.",
      "Lv2": "When a critical hit occurs, for 4 sec, grant all Tech-type allies [High] Critical Rate Increase and [High] Accuracy Increase.",
-     "Lv3": "When a criticla hit occurs, for 5 sec, grant all Tech-type allies [High] Critical Rate Increase and [High] Accuracy Increase."
+     "Lv3": "When a critical hit occurs, for 5 sec, grant all Tech-type allies [High] Critical Rate Increase and [High] Accuracy Increase."
     },
     "levelTable": [
      {
@@ -2048,7 +2048,7 @@
     "gameText": {
      "Lv1": "Deal 110% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase.",
      "Lv2": "Deal 130% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase.",
-     "Lv3": "Deal 160% ATK damage to the target. Aftet the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase."
+     "Lv3": "Deal 160% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase."
     },
     "levelTable": [
      {
@@ -2277,8 +2277,8 @@
     "name": "Repent",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Every 11 sec, deal damage equal to 650% of ATK to enemies within the target area. After the attack hits, if the target is in  Bleed  status, inflict on the target for 3 sec [Top] DEF Decrease,  [Top] Critical Defense Decrease, [Top] Evasion Decrease and Bind.",
-     "Lv2": "Every 11 sec, deal damage equal to 750% of ATK to enemies within the target area. After the attack hits, if the target is in  Bleed  status, inflict on the target for 4 sec [Top] DEF Decrease,  [Top] Critical Defense Decrease, [Top] Evasion Decrease and Bind.",
+     "Lv1": "Every 11 sec, deal damage equal to 650% of ATK to enemies within the target area. After the attack hits, if the target is in Bleed status, inflict on the target for 3 sec [Top] DEF Decrease, [Top] Critical Defense Decrease, [Top] Evasion Decrease and Bind.",
+     "Lv2": "Every 11 sec, deal damage equal to 750% of ATK to enemies within the target area. After the attack hits, if the target is in Bleed status, inflict on the target for 4 sec [Top] DEF Decrease, [Top] Critical Defense Decrease, [Top] Evasion Decrease and Bind.",
      "Lv3": "Every 11 sec, deal damage equal to 850% of ATK to enemies within the target area. After the attack hits, if the target is in Bleed status, inflict on the target for 5 sec [Top] DEF Decrease, [Top] Critical Defense Decrease, [Top] Evasion Decrease and Bind."
     },
     "levelTable": [
@@ -2454,7 +2454,7 @@
     "gameText": {
      "Lv1": "Deals damage equal to 600% of ATK to all enemies every 9 sec. After the attack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 3 sec.",
      "Lv2": "Deals damage equal to 700% of ATK to all enemies every 9 sec. After the attack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 4 sec.",
-     "Lv3": "Deals damage equal to 800% of ATK to all enemies every 9 sec. After the atttack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 5 sec."
+     "Lv3": "Deals damage equal to 800% of ATK to all enemies every 9 sec. After the attack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 5 sec."
     },
     "levelTable": [
      {
@@ -2691,8 +2691,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack",
-    "attackRange": null,
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 95% ATK damage to the target.",
      "Lv2": "Deals 110% ATK damage to the target.",
@@ -3429,7 +3429,7 @@
     "gameText": {
      "Lv1": "Deals 650% ATK damage to enemies within range every 9 seconds. After the attack hits, grants self for 5 seconds: [Top] Shield, [Top] ATK Increase, and [Top] DEF Increase. Additionally, has a 50% chance to grant each ally for 3 seconds: [Top] ATK Increase and [Top] Shield.",
      "Lv2": "Deals 750% ATK damage to enemies within range every 9 seconds. After the attack hits, grants self for 6 seconds: [Top] Shield, [Top] ATK Increase, and [Top] DEF Increase. Additionally, has a 50% chance to grant each ally for 4 seconds: [Top] ATK Increase and [Top] Shield.",
-     "Lv3": "Deals 850% ATK damage to enemies within range every 9 seconds. After the attack hits,  grants self for 7 seconds: [Top] Shield, [Top] ATK Increase, and [Top] DEF Increase. Additionally, has a 50% chance to grant each ally for 5 seconds: [Top] ATK Increase and [Top] Shield."
+     "Lv3": "Deals 850% ATK damage to enemies within range every 9 seconds. After the attack hits, grants self for 7 seconds: [Top] Shield, [Top] ATK Increase, and [Top] DEF Increase. Additionally, has a 50% chance to grant each ally for 5 seconds: [Top] ATK Increase and [Top] Shield."
     },
     "levelTable": [
      {
@@ -4111,9 +4111,9 @@
     "name": "Armor of Good Fortune - Replacement",
     "attackRange": null,
     "gameText": {
-     "Lv1": "After a normal skill hits, there is a 30% chance to advance HEART allies  stored Ultimate Skill Gauge by 0.5 seconds.",
-     "Lv2": "After a normal skill hits, there is a 30% chance to advance HEART allies  stored Ultimate Skill Gauge by 0.6 seconds.",
-     "Lv3": "After a normal skill hits, there is a 30% chance to advance HEART allies stored Ultimate SKill Gauge by 0.7 seconds."
+     "Lv1": "After a normal skill hits, there is a 30% chance to advance HEART allies stored Ultimate Skill Gauge by 0.5 seconds.",
+     "Lv2": "After a normal skill hits, there is a 30% chance to advance HEART allies stored Ultimate Skill Gauge by 0.6 seconds.",
+     "Lv3": "After a normal skill hits, there is a 30% chance to advance HEART allies stored Ultimate Skill Gauge by 0.7 seconds."
     },
     "levelTable": [
      {
@@ -4234,7 +4234,7 @@
     "attackRange": null,
     "gameText": {
      "Lv1": "After a normal skill hits, there is a 20% chance to grant [Top] Shield to INT allies for 3 seconds.",
-     "Lv2": "When a normal skill hits and the target is in  Burn  state, advance your current Ultimate Skill gauge by 0.6 sec.",
+     "Lv2": "When a normal skill hits and the target is in Burn state, advance your current Ultimate Skill gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant [Top] Shield to INT allies for 5 seconds."
     },
     "levelTable": [
@@ -4263,7 +4263,7 @@
     "gameText": {
      "Lv1": "Deals damage equal to 500% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 3 seconds [Top] Paralysis and [Top] Accuracy Increase.",
      "Lv2": "Deals damage equal to 600% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 4 seconds [Top] Paralysis and [Top] Accuracy Increase.",
-     "Lv3": "Delas damage equal to 700% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance,  applies to each target for 5 seconds [Top] Paralysis and [Top] Accuracy Increase."
+     "Lv3": "Deals damage equal to 700% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 5 seconds [Top] Paralysis and [Top] Accuracy Increase."
     },
     "levelTable": [
      {
@@ -4563,7 +4563,7 @@
     "gameText": {
      "Lv1": "Deals 100% ATK damage to the target.",
      "Lv2": "Deals 120% ATK damage to the target.",
-     "Lv3": "Deals 140% ATk damage to the target."
+     "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
      {
@@ -4591,7 +4591,7 @@
     "gameText": {
      "Lv1": "When a critical hit occurs, deal damage equal to 150% of ATK to enemies within the target s area. After the attack hits, for 3 sec, inflict [High] DEF Decrease and, [High] Critical Resistance Decrease on the target.",
      "Lv2": "When a critical hit occurs, deal damage equal to 200% of ATK to enemies within the target s area. After the attack hits, for 4 sec, inflict [High] DEF Decrease and, [High] Critical Resistance Decrease on the target.",
-     "Lv3": "When a criticla hit occurs, deal damage equal to 250% of ATK to enemies within the target's area. After the attack hits, for 5 sec, inflict [High] DEF Decrease and, [High] Critical Resistance Decrease on the target."
+     "Lv3": "When a critical hit occurs, deal damage equal to 250% of ATK to enemies within the target's area. After the attack hits, for 5 sec, inflict [High] DEF Decrease and, [High] Critical Resistance Decrease on the target."
     },
     "levelTable": [
      {
@@ -4738,8 +4738,8 @@
     "name": "Ice Demon Zero Sword",
     "attackRange": null,
     "gameText": {
-     "Lv1": "After a normal skill hits, there is a 20% chance to deal 200% damage to the target. If the attack hits when the target is in  Freeze  state, deal an additional 200% of ATK as damage.",
-     "Lv2": "After a normal skill hits, there is a 20% chance to deal 250% damage to the target. If the attack hits when the target is in  Freeze  state, deal an additional 250% of ATK as damage.",
+     "Lv1": "After a normal skill hits, there is a 20% chance to deal 200% damage to the target. If the attack hits when the target is in Freeze state, deal an additional 200% of ATK as damage.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to deal 250% damage to the target. If the attack hits when the target is in Freeze state, deal an additional 250% of ATK as damage.",
      "Lv3": "After a normal skill hits, there is a 20% chance to deal 300% damage to the target. If the attack hits when the target is in Freeze state, deal an additional 300% of ATK as damage."
     },
     "levelTable": [
@@ -5230,8 +5230,8 @@
     "name": "Holy Prayer",
     "attackRange": null,
     "gameText": {
-     "Lv1": "When a normal skill hits and the target is in  Burn  state, advance your current Ultimate Skill gauge by 0.5 sec.",
-     "Lv2": "When a normal skill hits and the target is in  Burn  state, advance your current Ultimate Skill gauge by 0.6 sec.",
+     "Lv1": "When a normal skill hits and the target is in Burn state, advance your current Ultimate Skill gauge by 0.5 sec.",
+     "Lv2": "When a normal skill hits and the target is in Burn state, advance your current Ultimate Skill gauge by 0.6 sec.",
      "Lv3": "When a normal skill hits and the target is in Burn state, advance your current Ultimate Skill gauge by 0.7 sec."
     },
     "levelTable": [
@@ -5688,7 +5688,7 @@
     "name": "Raging Inferno",
     "attackRange": null,
     "gameText": {
-     "Lv3": "Deals damage equal to 1000% of ATK to all enemies every 9 sec. After hitting, inflicts [Top] Burn and  [Top] Critical Resistance Decrease on each target for 6 sec."
+     "Lv3": "Deals damage equal to 1000% of ATK to all enemies every 9 sec. After hitting, inflicts [Top] Burn and [Top] Critical Resistance Decrease on each target for 6 sec."
     },
     "levelTable": [
      {
@@ -5823,7 +5823,7 @@
     "gameText": {
      "Lv1": "Every 9 sec, deal damage equal to 500% of ATK to all enemies. After the attack hits, inflict on the target for 3 sec [Top] Critical Defense Decrease. There is a 30% chance to inflict on each target for 3 sec [High] Burn.",
      "Lv2": "Every 9 sec, deal damage equal to 600% of ATK to all enemies. After the attack hits, inflict on the target for 4 sec [Top] Critical Defense Decrease. There is a 30% chance to inflict on each target for 4 sec [High] Burn.",
-     "Lv3": "Every 9 sec, deal damage equal to 700% of ATK to all enemies. After the attack hits,  inflicts on the target for 5 sec [Top] Critical Defense Decrease. There is a 30% chance to inflict on each target for 5 sec [High] Burn."
+     "Lv3": "Every 9 sec, deal damage equal to 700% of ATK to all enemies. After the attack hits, inflicts on the target for 5 sec [Top] Critical Defense Decrease. There is a 30% chance to inflict on each target for 5 sec [High] Burn."
     },
     "levelTable": [
      {
@@ -5977,7 +5977,7 @@
     "name": "Seven-Star Sword",
     "attackRange": null,
     "gameText": {
-     "Lv3": "Deals damage equal to 750% of ATK to all enemies every 10 seconds. After an attack hits, if the target is afflicted with Paralysis, for 5 seconds, grants the target [Top] Evasion Decrease and [Top] Crititcal Defense Increase, Heal Block."
+     "Lv3": "Deals damage equal to 750% of ATK to all enemies every 10 seconds. After an attack hits, if the target is afflicted with Paralysis, for 5 seconds, grants the target [Top] Evasion Decrease and [Top] Critical Defense Increase, Heal Block."
     },
     "levelTable": [
      {
@@ -6266,7 +6266,7 @@
     "name": "Water Lock",
     "attackRange": null,
     "gameText": {
-     "Lv3": "Deals damage equal to 900% of ATK to enemies within the target area every 10 sec. Damage increases by 50% for each Brave ally (up to 350%). If the target is afflicted with Silence or Burn after the attack hits, inflicts the following effects on each target for 7 sec: [Top] DEF Decrease,  [Top] Critical Resistance Decrease, [Top] Critical Defense Decrease, and Heal Block."
+     "Lv3": "Deals damage equal to 900% of ATK to enemies within the target area every 10 sec. Damage increases by 50% for each Brave ally (up to 350%). If the target is afflicted with Silence or Burn after the attack hits, inflicts the following effects on each target for 7 sec: [Top] DEF Decrease, [Top] Critical Resistance Decrease, [Top] Critical Defense Decrease, and Heal Block."
     },
     "levelTable": [
      {
@@ -6358,7 +6358,7 @@
     "gameText": {
      "Lv1": "Deals 100% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [Mid] Critical Rate Increase.",
      "Lv2": "Deals 120% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [Mid] Critical Rate Increase.",
-     "Lv3": "Delas 140% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [Mid] Critical Rate Increase."
+     "Lv3": "Deals 140% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [Mid] Critical Rate Increase."
     },
     "levelTable": [
      {
@@ -6397,8 +6397,8 @@
     "name": "Water Stream Rising Haze",
     "attackRange": null,
     "gameText": {
-     "Lv1": "When a critical hit occurs, deal damage equal to 150  of ATK to the target. After the attack hits, for 5 sec, grant yourself [Top] Evasion Increase.",
-     "Lv2": "When a critical hit occurs, deal damage equal to 200  of ATK to the target. After the attack hits, for 6 sec, grant yourself [Top] Evasion Increase.",
+     "Lv1": "When a critical hit occurs, deal damage equal to 150 of ATK to the target. After the attack hits, for 5 sec, grant yourself [Top] Evasion Increase.",
+     "Lv2": "When a critical hit occurs, deal damage equal to 200 of ATK to the target. After the attack hits, for 6 sec, grant yourself [Top] Evasion Increase.",
      "Lv3": "When a critical hit occurs, deal damage equal to 250% of ATK to the target. After the attack hits, for 7 sec, grant yourself [Top] Evasion Increase."
     },
     "levelTable": [
@@ -6489,8 +6489,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack",
-    "attackRange": null,
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 100% ATK damage to the target.",
      "Lv2": "Deals 120% ATK damage to the target.",
@@ -6906,7 +6906,7 @@
     "gameText": {
      "Lv1": "Deals 100% ATK damage to the target.",
      "Lv2": "Deals 120% ATK damage to the target.",
-     "Lv3": "Deals 140% ATK damage tot he target."
+     "Lv3": "Deals 140% ATK damage to the target."
     },
     "levelTable": [
      {
@@ -6932,8 +6932,8 @@
     "name": "Thunder Dragon’s Jaw",
     "attackRange": null,
     "gameText": {
-     "Lv1": "When a critical hit occurs, deal damage equal to 150% of ATK to the target. If the attack hits and the target is in a  Paralysis  state, deal additional damage equal to 150% of ATK.",
-     "Lv2": "When a critical hit occurs, deal damage equal to 200% of ATK to the target. If the attack hits and the target is in a  Paralysis  state, deal additional damage equal to 200% of ATK.",
+     "Lv1": "When a critical hit occurs, deal damage equal to 150% of ATK to the target. If the attack hits and the target is in a Paralysis state, deal additional damage equal to 150% of ATK.",
+     "Lv2": "When a critical hit occurs, deal damage equal to 200% of ATK to the target. If the attack hits and the target is in a Paralysis state, deal additional damage equal to 200% of ATK.",
      "Lv3": "When a critical hit occurs, deal damage equal to 250% of ATK to the target. If the attack hits and the target is in a Paralysis state, deal additional damage equal to 250% of ATK."
     },
     "levelTable": [
@@ -7581,8 +7581,8 @@
     "name": "The Power of Zero Emperor",
     "attackRange": null,
     "gameText": {
-     "Lv1": "After a normal skill hits, if the target is in a  Freeze  state, push back the target s accumulated Ultimate Skill Gauge by 0.5 sec.",
-     "Lv2": "After a normal skill hits, if the target is in a  Freeze  state, push back the target s accumulated Ultimate Skill Gauge by 0.6 sec.",
+     "Lv1": "After a normal skill hits, if the target is in a Freeze state, push back the target s accumulated Ultimate Skill Gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, if the target is in a Freeze state, push back the target s accumulated Ultimate Skill Gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, if the target is in a Freeze state, push back the target's accumulated Ultimate Skill Gauge by 0.7 sec."
     },
     "levelTable": [
@@ -7827,8 +7827,8 @@
     "name": "The Power of the Absolute Devil",
     "attackRange": null,
     "gameText": {
-     "Lv1": "After a normal skill hits, if the target is in  Bleed  state, push back the target s current Ultimate Skill gauge by 0.5 sec.",
-     "Lv2": "After a normal skill hits, if the target is in  Bleed  state, push back the target s current Ultimate Skill gauge by 0.6 sec.",
+     "Lv1": "After a normal skill hits, if the target is in Bleed state, push back the target s current Ultimate Skill gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, if the target is in Bleed state, push back the target s current Ultimate Skill gauge by 0.6 sec.",
      "Lv3": "After a normal skill hits, if the target is in Bleed state, push back the target's current Ultimate Skill gauge by 0.7 sec"
     },
     "levelTable": [
@@ -8593,7 +8593,7 @@
     "gameText": {
      "Lv1": "After a normal skill hits, if an enemy within the target area is afflicted with Paralysis, Silence, or Bleed, inflicts [Top] DEF Decrease and [Top] Critical Resistance Decrease on each affected enemy for 3 sec.",
      "Lv2": "After a normal skill hits, if an enemy within the target area is afflicted with Paralysis, Silence, or Bleed, inflicts [Top] DEF Decrease and [Top] Critical Resistance Decrease on each affected enemy for 4 sec.",
-     "Lv3": "After a normal skill hits, if an enemy within the target area is afflcted with Paralysis,  Silence, or Bleeed, inflicts [Top] DEF Decrease and [Top] Crititcal Resistance Decrease on each affected enemy for 5 sec."
+     "Lv3": "After a normal skill hits, if an enemy within the target area is afflicted with Paralysis, Silence, or Bleed, inflicts [Top] DEF Decrease and [Top] Critical Resistance Decrease on each affected enemy for 5 sec."
     },
     "levelTable": [
      {
@@ -8921,7 +8921,7 @@
     "gameText": {
      "Lv1": "When a critical hit occurs, deal damage equal to 150% of ATK to the target. After the attack hits, for 3 sec, inflict on the target [High] Burn.",
      "Lv2": "When a critical hit occurs, deal damage equal to 200% of ATK to the target. After the attack hits, for 4 sec, inflict on the target [High] Burn.",
-     "Lv3": "When a criticla hit occurs, deal damage equal to 250% of ATK to the target. After the attack hits, for 5 sec, inflict on the target [High] Burn."
+     "Lv3": "When a critical hit occurs, deal damage equal to 250% of ATK to the target. After the attack hits, for 5 sec, inflict on the target [High] Burn."
     },
     "levelTable": [
      {
@@ -8960,8 +8960,8 @@
     "name": "Jagd Rigora",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Every 9 sec, deal damage equal to 500% of ATK to enemies within the target area. If the target is in a  Burn  state after the attack hits, deal additional damage equal to 200% of ATK.",
-     "Lv2": "Every 9 sec, deal damage equal to 600% of ATK to enemies within the target area. If the target is in a  Burn  state after the attack hits, deal additional damage equal to 300% of ATK.",
+     "Lv1": "Every 9 sec, deal damage equal to 500% of ATK to enemies within the target area. If the target is in a Burn state after the attack hits, deal additional damage equal to 200% of ATK.",
+     "Lv2": "Every 9 sec, deal damage equal to 600% of ATK to enemies within the target area. If the target is in a Burn state after the attack hits, deal additional damage equal to 300% of ATK.",
      "Lv3": "Every 9 sec, deal damage equal to 700% of ATK to enemies within the target area. If the target is in a Burn state after the attack hits, deal additional damage equal to 400% of ATK."
     },
     "levelTable": [
@@ -10386,7 +10386,7 @@
     "name": "Merciless Demon",
     "attackRange": null,
     "gameText": {
-     "Lv3": "When HP falls 50% or below, once only, grants self 30% Damage Reflection Shield and [Top] DEF Increase,  [Top] ATK Increase for 5 sec, and restores HP by 1500% of ATK."
+     "Lv3": "When HP falls 50% or below, once only, grants self 30% Damage Reflection Shield and [Top] DEF Increase, [Top] ATK Increase for 5 sec, and restores HP by 1500% of ATK."
     },
     "levelTable": [
      {
@@ -10831,7 +10831,7 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
-     "Lv3": "Deals damage equal to 160% of ATK to the target. After the attack hits, has a 30% chance to  inflict [Top] Critical Resistance Decrease and [Top] Critical Rate Decrease on the target for 3 sec."
+     "Lv3": "Deals damage equal to 160% of ATK to the target. After the attack hits, has a 30% chance to inflict [Top] Critical Resistance Decrease and [Top] Critical Rate Decrease on the target for 3 sec."
     },
     "levelTable": [
      {
@@ -12154,7 +12154,7 @@
     "name": "Star the Rock",
     "attackRange": null,
     "gameText": {
-     "Lv3": "Every 10 sec, deals 950% ATK damage to targets within range. After the attack hits,  has a 40% chance for each target to inflict [Top] Critical DEF Decrease and [High] Burn, [High] Freeze for 5 sec. Extends the duration of these additional effects by 0.5 sec for each Courage-type ally (up to 3.5 sec)."
+     "Lv3": "Every 10 sec, deals 950% ATK damage to targets within range. After the attack hits, has a 40% chance for each target to inflict [Top] Critical DEF Decrease and [High] Burn, [High] Freeze for 5 sec. Extends the duration of these additional effects by 0.5 sec for each Courage-type ally (up to 3.5 sec)."
     },
     "levelTable": [
      {
@@ -12647,8 +12647,8 @@
     "name": "Rage of the Ice Demon",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to enemies within the target area. If the target is in a  Freeze  state after the attack hits, deal additional damage equal to 250% of ATK.",
-     "Lv2": "Every 10 sec, deal damage equal to 600% of ATK to enemies within the target area. If the target is in a  Freeze  state after the attack hits, deal additional damage equal to 350% of ATK.",
+     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to enemies within the target area. If the target is in a Freeze state after the attack hits, deal additional damage equal to 250% of ATK.",
+     "Lv2": "Every 10 sec, deal damage equal to 600% of ATK to enemies within the target area. If the target is in a Freeze state after the attack hits, deal additional damage equal to 350% of ATK.",
      "Lv3": "Every 10 sec, deal damage equal to 700% of ATK to enemies within the target area. If the target is in a Freeze state after the attack hits, deal additional damage equal to 450% of ATK."
     },
     "levelTable": [
@@ -13532,7 +13532,7 @@
     "gameText": {
      "Lv1": "Every 10 sec, deals damage equal to 700% of ATK to targets within range. Increases damage by 10% for each debuff/status effect on all enemies (up to 500%). After the attack hits, has a 30% chance to inflict Bind and [Top] Paralysis on each target for 5 sec.",
      "Lv2": "Every 10 sec, deals damage equal to 800% of ATK to targets within range. Increases damage by 10% for each debuff/status effect on all enemies (up to 500%). After the attack hits, has a 30% chance to inflict Bind and [Top] Paralysis on each target for 6 sec.",
-     "Lv3": "Every 10 sec, deals damage equal to 900% of ATK to targets within range. Increases damge by 10% for each debuff/status effect on all enemies (up to 500%). After the attack hits, has a 30% chance to inflict Bind and [Top] Paralysis on each target for 7 sec."
+     "Lv3": "Every 10 sec, deals damage equal to 900% of ATK to targets within range. Increases damage by 10% for each debuff/status effect on all enemies (up to 500%). After the attack hits, has a 30% chance to inflict Bind and [Top] Paralysis on each target for 7 sec."
     },
     "levelTable": [
      {
@@ -13707,7 +13707,7 @@
     "gameText": {
      "Lv1": "Every 10 sec, deals damage equal to 750% of ATK to enemies within the target area. After the attack hits, grants all allies [Top] ATK Increase and [Top] Shield for 3 sec. Extends the duration of these additional effects by 0.5 sec for each Heart-type ally (max 3.5 sec). Also advances the current Ultimate Skill Gauge by 0.5 sec.",
      "Lv2": "Every 10 sec, deals damage equal to 850% of ATK to enemies within the target area. After the attack hits, grants all allies [Top] ATK Increase and [Top] Shield for 4 sec. Extends the duration of these additional effects by 0.5 sec for each Heart-type ally (max 3.5 sec). Also advances the current Ultimate Skill Gauge by 0.6 sec.",
-     "Lv3": "Every 10 sec, deals damage equal to 950% of ATK to enemies within the target area. After the attack hits, grants all allies [Top] ATK Increase and [Top] Shield for 5 sec. Extends the duration of these additional effects by 0.5 sec fro each Heart-type ally (max 3.5 sec). Also advances the current Ultimate Skill Gauge by 0.7 sec."
+     "Lv3": "Every 10 sec, deals damage equal to 950% of ATK to enemies within the target area. After the attack hits, grants all allies [Top] ATK Increase and [Top] Shield for 5 sec. Extends the duration of these additional effects by 0.5 sec for each Heart-type ally (max 3.5 sec). Also advances the current Ultimate Skill Gauge by 0.7 sec."
     },
     "levelTable": [
      {
@@ -14378,7 +14378,7 @@
     "gameText": {
      "Lv1": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits, there is a 50% chance for 3 sec to inflict Silence and rewind the target s accumulated Ultimate Skill gauge by 0.5 sec.",
      "Lv2": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits, there is a 50% chance for 3 sec to inflict Silence and rewind the target s accumulated Ultimate Skill gauge by 0.6 sec.",
-     "Lv3": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits,  there is a 50% chance for 3 sec to inflict Silence and rewind the targets accumulated Ultimate Skill gauge by 0.7 seconds."
+     "Lv3": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits, there is a 50% chance for 3 sec to inflict Silence and rewind the targets accumulated Ultimate Skill gauge by 0.7 seconds."
     },
     "levelTable": [
      {
@@ -15288,7 +15288,7 @@
     "gameText": {
      "Lv1": "Deals 80% ATK damage to the target. After hitting, heals the ally with the lowest HP for 100% of your ATK.",
      "Lv2": "Deals 100% ATK damage to the target. After hitting, heals the ally with the lowest HP for 120% of your ATK.",
-     "Lv3": "Deals 120% ATK damage to the target.  After hitting, heals the ally with the lowest HP for 140% of your ATK."
+     "Lv3": "Deals 120% ATK damage to the target. After hitting, heals the ally with the lowest HP for 140% of your ATK."
     },
     "levelTable": [
      {
@@ -15316,7 +15316,7 @@
     "gameText": {
      "Lv1": "After a normal skill hits, there is a 10% chance to grant all allies for 5 sec [Top] ATK Increase and [Top] Critical Rate Increase, and advance the currently accumulated Ultimate Skill gauge by 0.5 sec.",
      "Lv2": "After a normal skill hits, there is a 10% chance to grant all allies for 6 sec [Top] ATK Increase and [Top] Critical Rate Increase, and advance the currently accumulated Ultimate Skill gauge by 0.6 sec.",
-     "Lv3": "After a normal skill hits, there is a 10% chance to grant allies for 7 sec [Top] ATK Increase and [Top] Critical Rate Increase, and advance the currently accumulated Ultimate SKill Gauge by 0.7 sec."
+     "Lv3": "After a normal skill hits, there is a 10% chance to grant allies for 7 sec [Top] ATK Increase and [Top] Critical Rate Increase, and advance the currently accumulated Ultimate Skill Gauge by 0.7 sec."
     },
     "levelTable": [
      {
@@ -15497,7 +15497,7 @@
     "name": "Black Rose of the Iron Dragon",
     "attackRange": null,
     "gameText": {
-     "Lv3": "Deals 850% of ATK as damage to enemies within range every 10 seconds. After an attack hits, has a 50% chance per target to inflict [Top] Bleed for 5 seconds and reduce the target's charged Special SKill Gauge by 0.7 seconds."
+     "Lv3": "Deals 850% of ATK as damage to enemies within range every 10 seconds. After an attack hits, has a 50% chance per target to inflict [Top] Bleed for 5 seconds and reduce the target's charged Special Skill Gauge by 0.7 seconds."
     },
     "levelTable": [
      {
