@@ -6,4 +6,6 @@ export default defineConfig({
   base: '/fairy-tail-wizard-chronicle-wiki',
   trailingSlash: 'always',
   build: { format: 'directory' },
+  // Astro 7 defaults to 'jsx', which drops whitespace between elements and glues words together.
+  compressHTML: true,
 });
