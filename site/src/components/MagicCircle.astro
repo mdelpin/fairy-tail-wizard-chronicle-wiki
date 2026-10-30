@@ -1,0 +1,17 @@
+---
+// Original decorative magic circle (not a spell from the series).
+interface Props { size?: number; color?: string; style?: string; }
+const { size = 480, color = '#C9A24A', style = '' } = Astro.props;
+---
+<svg class="magic-circle" viewBox="0 0 400 400" width={size} height={size} aria-hidden="true" style={style}>
+  <g fill="none" stroke={color} stroke-width="1.6">
+    <circle cx="200" cy="200" r="190" /><circle cx="200" cy="200" r="176" />
+    <circle cx="200" cy="200" r="150" stroke-dasharray="3 7" />
+    <circle cx="200" cy="200" r="118" /><circle cx="200" cy="200" r="70" />
+    <path d="M200 82 302 259H98z" /><path d="M200 318 98 141h204z" />
+    <path d="M200 10v20M200 370v20M10 200h20M370 200h20M66 66l14 14M320 320l14 14M334 66l-14 14M80 320l-14 14" />
+    <circle cx="200" cy="82" r="7" /><circle cx="302" cy="259" r="7" /><circle cx="98" cy="259" r="7" />
+    <circle cx="200" cy="318" r="7" /><circle cx="98" cy="141" r="7" /><circle cx="302" cy="141" r="7" />
+    <path d="M188 160l12-14 12 14M188 240l12 14 12-14M160 188l-14 12 14 12M240 188l14 12-14 12" />
+  </g>
+</svg>

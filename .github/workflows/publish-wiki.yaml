@@ -11,18 +11,22 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: site/.nvmrc
           cache: npm
+          cache-dependency-path: site/package-lock.json
       - run: npm ci
-      - run: npx quartz plugin install --from-config
-      - run: npx quartz build
+      # Astro build, then the Pagefind search index (see site/package.json)
+      - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: site/dist
   deploy:
     needs: build
     runs-on: ubuntu-latest

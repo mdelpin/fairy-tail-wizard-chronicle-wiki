@@ -1,0 +1,121 @@
+---
+import Base from '../../layouts/Base.astro';
+import Kanji from '../../components/Kanji.astro';
+import Pennant from '../../components/Pennant.astro';
+import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../lib/data';
+---
+<Base title="Wizard Roster" section="characters" description="All UR wizards in FAIRY TAIL Wizard Chronicle, filterable by attribute and role.">
+  <div class="wrap">
+    <div class="head">
+      <Pennant width={34} star />
+      <div>
+        <h1>Wizard Roster</h1>
+        <p class="muted"><span id="shown">{units.length}</span> of {units.length} UR wizards<span id="active" hidden> · <span id="active-list"></span> · <button type="button" id="clear" class="clear">Clear filters</button></span></p>
+      </div>
+    </div>
+
+    <div class="filters panel">
+      <label class="sr-only" for="f-q">Filter by name</label>
+      <input id="f-q" type="search" placeholder="Filter by name or identity — e.g. “Natsu”" />
+      <div class="row" role="group" aria-label="Attribute">
+        <span class="lbl">Attribute</span>
+        <button type="button" class="pill" data-filter="attr" data-value="" aria-pressed="true">All</button>
+        {ATTR_ORDER.map((a) => (
+          <button type="button" class="pill" data-filter="attr" data-value={a} aria-pressed="false" style={`--c:${ATTR[a].color}`}>
+            <Kanji attr={a} size={22} />{a}
+          </button>
+        ))}
+      </div>
+      <div class="row" role="group" aria-label="Role">
+        <span class="lbl">Role</span>
+        <button type="button" class="pill" data-filter="role" data-value="" aria-pressed="true">All</button>
+        {ROLES.map((r) => <button type="button" class="pill" data-filter="role" data-value={r} aria-pressed="false">{r}</button>)}
+      </div>
+    </div>
+
+    <ul class="cards" id="cards">
+      {units.map((u) => (
+        <li data-name={`${u.name} ${u.identity ?? ''}`.toLowerCase()} data-attr={u.attribute} data-role={u.role}>
+          <a class="card" href={url(`characters/${u.id}/`)} style={`--c:${ATTR[u.attribute].color};--t:${ATTR[u.attribute].tint}`}>
+            <span class="art">
+              {portraits.has(u.id)
+                ? <img src={url(`portraits/${u.id}.webp`)} alt="" loading="lazy" width="320" height="320" />
+                : <span class="ph heading">{initials(u.name)}</span>}
+              <span class={`ur rarity rarity-${u.rarity}`}>{u.rarity}</span>
+            </span>
+            <span class="body">
+              <span class="heading name">{u.name}</span>
+              <span class="meta"><Kanji attr={u.attribute} size={20} />{u.attribute} · {u.role}</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p id="none" class="muted" hidden>No wizards match these filters.</p>
+  </div>
+</Base>
+
+<script>
+  const q = document.getElementById('f-q') as HTMLInputElement;
+  const items = [...document.querySelectorAll<HTMLLIElement>('#cards li')];
+  const pills = [...document.querySelectorAll<HTMLButtonElement>('.pill')];
+  const params = new URLSearchParams(location.search);
+  const state: Record<string, string | null> = { attr: params.get('attr'), role: params.get('role') };
+  q.value = params.get('q') ?? '';
+  function apply() {
+    const text = q.value.trim().toLowerCase();
+    let n = 0;
+    for (const li of items) {
+      const ok = (!text || li.dataset.name!.includes(text)) &&
+        (!state.attr || li.dataset.attr === state.attr) && (!state.role || li.dataset.role === state.role);
+      li.hidden = !ok; if (ok) n++;
+    }
+    for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
+    document.getElementById('shown')!.textContent = String(n);
+    document.getElementById('none')!.hidden = n > 0;
+    // Say what is narrowing the list, and keep the address bar in step with the page.
+    const active = [text && `“${q.value.trim()}”`, state.attr, state.role].filter(Boolean);
+    document.getElementById('active')!.hidden = active.length === 0;
+    document.getElementById('active-list')!.textContent = active.join(' · ');
+    const p = new URLSearchParams();
+    if (q.value.trim()) p.set('q', q.value.trim());
+    if (state.attr) p.set('attr', state.attr);
+    if (state.role) p.set('role', state.role);
+    const s = p.toString();
+    history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
+  }
+  document.getElementById('clear')!.addEventListener('click', () => {
+    q.value = ''; state.attr = null; state.role = null; apply(); q.focus();
+  });
+  for (const p of pills) p.addEventListener('click', () => {
+    state[p.dataset.filter!] = p.dataset.value || null; apply();
+  });
+  q.addEventListener('input', apply);
+  apply();
+</script>
+
+<style>
+  .head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .head h1 { font-size: 42px; line-height: 1; }
+  .head p { margin: 4px 0 0; }
+  #active-list { color: var(--ink); font-weight: 600; }
+  .clear { padding: 0; border: 0; background: none; color: var(--crimson); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+  .clear:hover { color: var(--crimson-dark); }
+  .filters { padding: 18px; border-width: 2px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 3px 0 var(--brass-dark); }
+  .filters input { height: 46px; padding: 0 18px; border-radius: 999px; border: 2px solid var(--line); background: #fff; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .lbl { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); }
+  .pill { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 14px 0 8px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+  .pill:not(:has(.kanji)) { padding-left: 14px; }
+  .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
+  .cards { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 18px; }
+  .card { display: flex; flex-direction: column; height: 100%; border-radius: 16px; overflow: hidden; background: #fff; border: 2px solid var(--line); border-top: 6px solid var(--c); color: var(--ink); text-decoration: none; box-shadow: 0 3px 0 var(--brass); }
+  .card:hover { text-decoration: none; transform: translateY(-2px); }
+  .art { position: relative; aspect-ratio: 1; background: rgba(var(--t), .13); display: flex; align-items: center; justify-content: center; }
+  .art img { width: 100%; height: 100%; object-fit: cover; }
+  .ph { font-size: 44px; color: var(--c); opacity: .6; }
+  .ur { position: absolute; left: 10px; top: 10px; }
+  .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; }
+  .name { font-size: 17px; line-height: 1.2; }
+  .meta { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+</style>

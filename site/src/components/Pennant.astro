@@ -1,0 +1,8 @@
+---
+interface Props { width?: number; star?: boolean; }
+const { width = 22, star = false } = Astro.props;
+---
+<svg width={width} height={Math.round(width * 76 / 60)} viewBox="0 0 60 76" aria-hidden="true">
+  <path d="M2 2h56v70l-28-12L2 72z" fill="#A3242B" stroke={star ? '#C9A24A' : 'none'} stroke-width="3" />
+  {star && <path d="M30 18l4.5 10.5L46 30l-9 7.5 3 11.5-10-6.5-10 6.5 3-11.5-9-7.5 11.5-1.5z" fill="#C9A24A" />}
+</svg>

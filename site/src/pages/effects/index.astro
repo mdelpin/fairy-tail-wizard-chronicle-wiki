@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+import MagicCircle from '../../components/MagicCircle.astro';
+import Pennant from '../../components/Pennant.astro';
+import { buildFinderIndex, GROUPS, url } from '../../lib/data';
+
+const { meta, applies, needs, fromLacrimas } = buildFinderIndex();
+const unitCount = (k: string) => new Set((applies.get(k) ?? []).map((m) => m.unit.id)).size;
+const needCount = (k: string) => new Set((needs.get(k) ?? []).map((m) => m.unit.id)).size;
+const lacCount = (k: string) => new Set((fromLacrimas.get(k) ?? []).map((m) => m.lacrima.id)).size;
+const groups = GROUPS.map(([title, blurb]) => ({
+  title, blurb,
+  items: [...meta.values()].filter((m) => m.group === title).sort((a, b) => unitCount(b.key) - unitCount(a.key) || a.label.localeCompare(b.label)),
+})).filter((g) => g.items.length);
+---
+<Base title="Effect Finder" section="effects" description="Find every wizard and lacrima that applies an effect — or whose skills need it on the target.">
+  <div class="wrap">
+    <section class="panel intro">
+      <MagicCircle size={480} style="right:-80px;top:50%;transform:translateY(-50%)" />
+      <div class="intro-body">
+        <div class="title"><Pennant width={34} star /><h1>Effect Finder</h1></div>
+        <p>Pick an effect to see every wizard and lacrima that <strong>applies</strong> it — or whose skills <strong>need</strong> it on the target first.</p>
+        <label class="sr-only" for="eq">Find an effect</label>
+        <input id="eq" type="search" placeholder="Type an effect — Burn, Shield, Accuracy…" autocomplete="off" />
+      </div>
+    </section>
+
+    {groups.map((g) => (
+      <section class="group" data-group>
+        <div class="section-title"><h2>{g.title}</h2><p>{g.blurb}</p></div>
+        <div class="tiles">
+          {g.items.map((m) => (
+            <a class="tile" href={url(`effects/${m.key}/`)} data-label={m.label.toLowerCase()} style={`--c:${m.color}`}>
+              <span class="medal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8EC" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={m.icon} /></svg></span>
+              <span class="txt">
+                <span class="heading nm">{m.label}</span>
+                <span class="small">{unitCount(m.key)} wizards{lacCount(m.key) ? ` · ${lacCount(m.key)} lacrimas` : ''}</span>
+                {needCount(m.key) > 0 && <span class="need">needed by {needCount(m.key)}</span>}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <div class="note explain">
+      <strong class="heading">What does “needed by” mean?</strong>
+      <span>Some skills only trigger extra effects when the target already has Burn, Paralysis or Bleed. Those wizards are listed under <em>needs</em>, so you can find who sets up a combo and who pays it off.</span>
+    </div>
+  </div>
+</Base>
+
+<script>
+  const input = document.getElementById('eq') as HTMLInputElement;
+  input.addEventListener('input', () => {
+    const t = input.value.trim().toLowerCase();
+    document.querySelectorAll<HTMLElement>('[data-group]').forEach((g) => {
+      let any = false;
+      g.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
+        const ok = !t || tile.dataset.label!.includes(t); tile.hidden = !ok; any ||= ok;
+      });
+      g.hidden = !any;
+    });
+  });
+</script>
+
+<style>
+  .intro { padding: 38px 40px; }
+  .intro-body { position: relative; max-width: 760px; display: flex; flex-direction: column; gap: 14px; }
+  .title { display: flex; align-items: center; gap: 14px; }
+  .title h1 { font-size: 46px; line-height: 1; }
+  .intro p { margin: 0; font-size: 17px; color: var(--ink-2); }
+  .intro input { height: 56px; padding: 0 22px; border-radius: 999px; border: 2px solid var(--brass); background: #fff; font-size: 17px; }
+  .section-title { flex-wrap: wrap; align-items: baseline; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+  .tile { display: flex; align-items: flex-start; gap: 14px; padding: 18px; border-radius: 18px; background: #fff; border: 2px solid var(--line); border-top: 6px solid var(--c); box-shadow: 0 3px 0 var(--brass); color: var(--ink); text-decoration: none; }
+  .tile:hover { text-decoration: none; transform: translateY(-2px); }
+  .medal { flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--c); border: 3px solid #F3D27A; box-shadow: 0 0 0 2px var(--c); display: flex; align-items: center; justify-content: center; }
+  .txt { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .nm { font-size: 19px; }
+  .small { font-size: 13px; color: var(--ink-2); }
+  .need { align-self: flex-start; padding: 2px 9px; border-radius: 999px; background: #FBEBD5; border: 1px solid #E3C79C; color: #6E3A12; font-size: 12px; font-weight: 600; }
+  .explain { margin-top: 44px; max-width: 560px; transform: rotate(-.6deg); display: flex; flex-direction: column; gap: 6px; }
+  @media (max-width: 600px) { .intro { padding: 26px 20px; } }
+</style>

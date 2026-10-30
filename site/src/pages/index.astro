@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import MagicCircle from '../components/MagicCircle.astro';
+import Pennant from '../components/Pennant.astro';
+import Kanji from '../components/Kanji.astro';
+import { units, lacrimas, ATTR, ATTR_ORDER, ROLES, url, buildFinderIndex } from '../lib/data';
+
+const byAttr = Object.fromEntries(ATTR_ORDER.map((a) => [a, units.filter((u) => u.attribute === a).length]));
+const byRole = ROLES.map((r) => [r, units.filter((u) => u.role === r).length] as const).sort((a, b) => b[1] - a[1]);
+const signature = lacrimas.filter((l) => l.kind === 'signature').length;
+const { meta } = buildFinderIndex();
+const quick = ['burn', 'paralysis', 'bleed', 'heal-block', 'shield', 'cleanse'].filter((k) => meta.has(k));
+---
+<Base title="Home" section="home">
+  <div class="wrap">
+    <section class="panel hero">
+      <MagicCircle size={620} style="right:-130px;top:50%;transform:translateY(-50%)" />
+      <div class="hero-body">
+        <span class="eyebrow">Unofficial game reference</span>
+        <h1>Every wizard, every lacrima, every effect — written down.</h1>
+        <p>Character kits, signature lacrimas and every effect they apply, transcribed from the game and searchable down to the trigger.</p>
+        <form class="hero-search" action={url('characters/')} method="get" role="search">
+          <label class="sr-only" for="hero-q">Search wizards</label>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6A5341" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg>
+          <input id="hero-q" name="q" type="search" placeholder="Search a wizard — try “Erza” or “Natsu”" />
+          <button class="btn" type="submit">Search</button>
+        </form>
+        <div class="quick">
+          <span class="muted">Jump to an effect:</span>
+          {quick.map((k) => <a class="chip" href={url(`effects/${k}/`)}>{meta.get(k)!.label}</a>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="grid sections" aria-label="Sections">
+      <a class="section-card" href={url('characters/')} style="border-top:5px solid var(--crimson)">
+        <span class="heading big">Wizard Roster <span class="count">{units.length}</span></span>
+        <span>Every UR wizard’s kit: attribute, role, all three skills and the effects each one applies.</span>
+        <span class="go">Meet the roster →</span>
+      </a>
+      <a class="section-card dark" href={url('lacrimas/')}>
+        <span class="heading big">Lacrimas <span class="count">{lacrimas.length}</span></span>
+        <span>{signature} signature lacrimas linked to their wizards, plus {lacrimas.length - signature} stat lacrimas.</span>
+        <span class="go">Open the vault →</span>
+      </a>
+      <a class="section-card" href={url('effects/')} style="border-top:5px solid var(--brass)">
+        <span class="heading big">Effect Finder <span class="count">{meta.size} effects</span></span>
+        <span>Who <strong>applies</strong> Burn, and who <strong>needs</strong> it? Filter by effect and tier.</span>
+        <span class="go">Start searching →</span>
+      </a>
+    </section>
+
+    <div class="section-title"><Pennant /><h2>Browse by attribute</h2></div>
+    <div class="grid attrs">
+      {ATTR_ORDER.map((a) => (
+        <a class="attr-tile" href={url(`characters/?attr=${a}`)}>
+          <Kanji attr={a} size={48} />
+          <span><span class="heading" style={`font-size:20px;color:${ATTR[a].text}`}>{a}</span><br /><span class="muted" style="font-size:13px">{byAttr[a]} wizards</span></span>
+        </a>
+      ))}
+    </div>
+    <div class="roles">
+      <span class="muted">By role:</span>
+      {byRole.map(([r, n]) => <a class="chip" href={url(`characters/?role=${r}`)}>{r} <span class="count">{n}</span></a>)}
+    </div>
+
+    <div class="grid lower">
+      <section class="board">
+        <h2>Request board</h2>
+        <div class="grid notes">
+          <div class="note" style="transform:rotate(-1deg)"><span class="muted small">Now</span><strong>All {units.length} UR wizards</strong><span class="small">Kits, skills and effects at Lv.3.</span></div>
+          <div class="note" style="transform:rotate(-.5deg)"><span class="muted small">Coming up</span><strong>SR, R and N wizards</strong><span class="small">Not covered yet.</span></div>
+        </div>
+      </section>
+      <section class="reading">
+        <h2>Reading the data</h2>
+        <p>Skill text and effects show Lv.3 values. Each skill reaches Lv.3 at:</p>
+        <div class="grid stars">
+          <div><span class="small muted">Normal</span><strong>7★</strong></div>
+          <div><span class="small muted">Special</span><strong>9★</strong></div>
+          <div><span class="small muted">Ultimate</span><strong>11★</strong></div>
+        </div>
+        <p class="small">The game names attributes inconsistently: Brave also appears as Valor or Courage, Mind as Wisdom, Technique as Skill.</p>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .hero { padding: 52px 44px; }
+  .hero-body { position: relative; max-width: 720px; display: flex; flex-direction: column; gap: 18px; }
+  .eyebrow { align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: #EAD9B8; color: var(--timber); font-size: 13px; font-weight: 600; }
+  .hero h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.05; }
+  .hero p { margin: 0; font-size: 18px; color: var(--muted); }
+  .hero-search { display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 6px 6px 6px 22px; border-radius: 999px; background: #fff; border: 2px solid var(--brass); }
+  .hero-search input { flex: 1; min-width: 0; border: 0; background: transparent; font-size: 17px; outline: none; color: var(--ink); }
+  .quick, .roles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .roles { margin-top: 14px; }
+  .sections { margin-top: 28px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .section-card { display: flex; flex-direction: column; gap: 10px; padding: 26px; border-radius: 20px; background: #fff; border: 1px solid var(--line); color: var(--ink); text-decoration: none; box-shadow: 0 3px 0 var(--brass); }
+  .section-card:hover { text-decoration: none; transform: translateY(-2px); }
+  .section-card.dark { background: var(--timber); color: #E6D6B8; border: 0; }
+  .section-card.dark .big { color: var(--cream); } .section-card.dark .go { color: #F3D27A; } .section-card.dark .count { color: #E6C77A; }
+  .big { font-size: 26px; } .count { font: 500 14px var(--mono); color: var(--muted); }
+  .go { font-weight: 600; color: var(--crimson); font-size: 14px; }
+  .attrs { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .attr-tile { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 18px; background: #fff; border: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+  .attr-tile:hover { text-decoration: none; border-color: var(--brass); }
+  .lower { margin-top: 48px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: start; }
+  .board { padding: 28px; border-radius: 20px; background: var(--ember); border: 4px solid var(--brass); box-shadow: inset 0 0 0 3px #6E1F17, 0 4px 0 #6E1F17; }
+  .board h2 { color: #FFF3E0; font-size: 26px; margin-bottom: 18px; }
+  .notes { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
+  .note { display: flex; flex-direction: column; gap: 6px; }
+  .reading { padding: 28px; border-radius: 20px; background: #fff; border: 1px solid var(--line); }
+  .reading h2 { font-size: 24px; }
+  .stars { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .stars div { padding: 12px; border-radius: 12px; background: #F3E8D3; display: flex; flex-direction: column; }
+  .stars strong { font: 700 16px var(--mono); color: var(--timber); }
+  .small { font-size: 13px; }
+  @media (max-width: 600px) { .hero { padding: 32px 20px; } }
+</style>
