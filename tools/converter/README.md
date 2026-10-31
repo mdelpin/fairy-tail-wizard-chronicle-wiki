@@ -27,6 +27,9 @@ Only the JSON the converter writes is committed.
   Character page.
 - With a `public` folder as the last argument, banner art is written to `public/banner-art/<unit id>.webp`
   (old files are removed when art is unlinked).
+- Wizards without a portrait in `public/portraits/` get one made from their Cover Image (640px WebP).
+  Existing portraits are never replaced, so hand-edited ones (e.g. Cyberpunk Rogue's backdrop) are safe.
+  To redo a portrait from Capacities, delete its file and run the converter again.
 
 ## Checks worth reading in the report
 

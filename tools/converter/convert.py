@@ -468,6 +468,22 @@ def main(root, out, slugs_path=None, public_dir=None):
                 continue
             Image.open(src).convert("RGB").save(os.path.join(dest, f"{uid}.webp"), "WEBP", quality=82, method=6)
 
+        # portraits: only for wizards that don't have one yet; hand-made portraits are never replaced
+        pdest = os.path.join(public_dir, "portraits")
+        os.makedirs(pdest, exist_ok=True)
+        for u in units:
+            out_p = os.path.join(pdest, f"{u['id']}.webp")
+            if os.path.exists(out_p) or not u["portrait"]:
+                continue
+            src = os.path.join(media, u["portrait"])
+            if not os.path.exists(src):
+                issue("Portraits", f"'{u['id']}': cover image '{u['portrait']}' is not in the export")
+                continue
+            im = Image.open(src).convert("RGB")
+            im.thumbnail((640, 640))
+            im.save(out_p, "WEBP", quality=80, method=6)
+            issue("Portraits added (new wizards; check they look right)", u["id"])
+
     # ---------- vocabulary checks
     near_duplicates([u["identity"] for u in units], "identity")
     near_duplicates([e["name"] for e in effects], "Effect title")
