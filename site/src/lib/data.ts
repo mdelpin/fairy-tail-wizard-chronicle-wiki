@@ -24,6 +24,8 @@ export interface Application {
 export interface Skill {
   kind: 'Normal' | 'Special' | 'Ultimate'; name: string | null; attackRange: string | null;
   gameText: Record<string, string>; applications: string[];
+  /** Game icon number (public/icons/skill/NN.webp), when recorded. */
+  icon?: number | null;
   /** Where the Lv.1–2 text came from: 'madochro.wiki.gg' (credited) or 'In game'. */
   levelTextSource?: string | null;
 }
@@ -101,6 +103,11 @@ export const normalIcon = (u: Unit) => {
   const range = u.skills.find((s) => s.kind === 'Normal')?.attackRange;
   if (range !== 'Melee' && range !== 'Ranged') return null;
   return url(`icons/skill/0${NORMAL_ICON[u.attribute] + (range === 'Ranged' ? 4 : 0)}.webp`);
+};
+/** A skill's icon: the recorded one, or for Normal skills the attribute × range rule. */
+export const skillIcon = (u: Unit, s: Skill) => {
+  if (s.icon) return url(`icons/skill/${String(s.icon).padStart(2, '0')}.webp`);
+  return s.kind === 'Normal' ? normalIcon(u) : null;
 };
 export const KIND_ORDER = ['Normal', 'Special', 'Ultimate'];
 

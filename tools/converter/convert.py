@@ -142,9 +142,9 @@ def iso_day(v):
 def main(root, out, slugs_path=None, public_dir=None):
     os.makedirs(out, exist_ok=True)
     data = load(root)
-    C, S, E, EA, L, LEA, B, BA = (data[k] for k in ["Characters", "Skills", "Effects", "EffectApplications",
-                                                     "Lacrimas", "LacrimaEffectApplications", "Banners",
-                                                     "BannerArts"])
+    C, S, E, EA, L, LEA, B, BA, SI = (data[k] for k in ["Characters", "Skills", "Effects", "EffectApplications",
+                                                         "Lacrimas", "LacrimaEffectApplications", "Banners",
+                                                         "BannerArts", "SkillIcons"])
     idx = {k: title_index(v) for k, v in data.items()}
 
     # address table: reuse existing slugs, mint new ones, flag collisions
@@ -307,10 +307,22 @@ def main(root, out, slugs_path=None, public_dir=None):
                 used_apps.add(stem)
         title = norm_title(f.get("title"))
         texts, table = parse_levels(body, title)
+        icon = None
+        icons = ref(f.get("skillIcons"), "SkillIcons", f"Skill '{title}'", "skillIcons", many=True)
+        if len(icons) > 1:
+            issue("Skill icons", f"Skill '{title}' has {len(icons)} icons; the first is used")
+        if icons:
+            n = SI[icons[0]]["fm"].get("number")
+            if isinstance(n, (int, float)) and 1 <= n <= 44:
+                icon = int(n)
+            else:
+                issue("Skill icons", f"Skill Icon '{icons[0]}' has no valid Number (1–44)")
         skill_by_title[title] = {
             "kind": f.get("kind"), "name": clean(f.get("skillName")), "unit": unit_title,
             "attackRange": clean(f.get("attackRange")),
             "gameText": texts, "levelTable": table, "_apps": apps,
+            # game icon number (public/icons/skill/NN.webp); Normal skills fall back to attribute × range on the site
+            "icon": icon,
             # where the Lv.1-2 text came from: 'madochro.wiki.gg' (credited on the site) or 'In game'
             "levelTextSource": clean(f.get("levelTextSource")),
         }

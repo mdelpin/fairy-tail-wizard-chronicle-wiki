@@ -5,7 +5,7 @@ import Pennant from '../../components/Pennant.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
   units, applications, effects, lacrimaById, ATTR, KIND_ORDER, url, portraits, initials,
-  baseName, valueText, familyKey, WIKI_CREDIT, bannerById, bannerDates, DATE_NOTE, roleIcon, normalIcon,
+  baseName, valueText, familyKey, WIKI_CREDIT, bannerById, bannerDates, DATE_NOTE, roleIcon, normalIcon, skillIcon,
   type Unit, type Effect,
 } from '../../lib/data';
 
@@ -96,7 +96,7 @@ const nIcon = normalIcon(unit);
           return (
             <article class="skill">
               <div class="skill-head">
-                {s.kind === 'Normal' && nIcon && <img class="skill-ic" src={nIcon} alt="" width="40" height="40" />}
+                {skillIcon(unit, s) && <img class="skill-ic" src={skillIcon(unit, s)} alt="" width="40" height="40" />}
                 <span class={`kind kind-${s.kind}`} data-pagefind-ignore>{s.kind}</span>
                 <h3 id={`skill-${s.kind.toLowerCase()}`}>{s.name ?? s.kind}</h3>
                 <span class="muted unlock" data-pagefind-ignore>{UNLOCK[s.kind]}</span>
