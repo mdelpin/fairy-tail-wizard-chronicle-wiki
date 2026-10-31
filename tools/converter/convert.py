@@ -325,6 +325,8 @@ def main(root, out, slugs_path=None, public_dir=None):
             "icon": icon,
             # where the Lv.1-2 text came from: 'madochro.wiki.gg' (credited on the site) or 'In game'
             "levelTextSource": clean(f.get("levelTextSource")),
+            # editor's note (not game text), e.g. a suspected error in the game's numbers
+            "notes": clean(f.get("notes")),
         }
     for stem, r in EA.items():
         if stem not in used_apps:

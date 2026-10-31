@@ -103,6 +103,7 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
                 <span class="muted unlock" data-pagefind-ignore>{UNLOCK[s.kind]}</span>
               </div>
               {s.gameText?.Lv3 && <p class="text">{s.gameText.Lv3}</p>}
+              {s.notes && <p class="snote"><span class="nl">Note</span>{s.notes}</p>}
               {r.length > 0 && (
                 <div class="table-wrap" data-pagefind-ignore>
                   <table class="fx">
@@ -202,6 +203,8 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
   .skill-head h3 { font-size: 22px; }
   .unlock { margin-left: auto; font-size: 13px; }
   .text { margin: 12px 22px 16px; font-size: 15px; line-height: 1.65; color: #3A2A1F; }
+  .snote { margin: -6px 22px 16px; padding: 8px 12px; border-radius: 8px; background: #FBF4E7; border-left: 3px solid var(--brass); font-size: 13px; line-height: 1.55; color: #3A2A1F; }
+  .snote .nl { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--timber); }
   .cond { margin-top: 4px; font-size: 12px; color: var(--muted); }
   .levels { margin: 0; padding: 10px 22px; border-top: 1px solid #EFE3CC; background: #FBF4E7; font-size: 13px; }
   details.levels summary { cursor: pointer; font-weight: 600; color: var(--timber); }

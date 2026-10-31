@@ -24,6 +24,8 @@ export interface Application {
 export interface Skill {
   kind: 'Normal' | 'Special' | 'Ultimate'; name: string | null; attackRange: string | null;
   gameText: Record<string, string>; applications: string[];
+  /** Editor's note (not game text). */
+  notes?: string | null;
   /** Game icon number (public/icons/skill/NN.webp), when recorded. */
   icon?: number | null;
   /** Where the Lv.1–2 text came from: 'madochro.wiki.gg' (credited) or 'In game'. */
