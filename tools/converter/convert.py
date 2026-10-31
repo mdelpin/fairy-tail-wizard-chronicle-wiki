@@ -1,13 +1,13 @@
 """Prototype converter: Capacities export -> published JSON + validation report.
 
-usage: python3 convert.py <export/Personal> <skills_dir> <out_dir> [slugs.json]
+usage: python3 convert.py <export space dir> <out_dir> [slugs.json] [public_dir]
 
-Only the folders in common.GAME_FOLDERS (plus the Skill files) are read, and only the
-fields named in the PUBLISH maps below are copied. Everything else is never touched.
+Only the object types in common.GAME_FOLDERS are read (an allowlist), and only the fields named
+below are copied. Page text is published for Skills only. With public_dir, banner art images are
+written to <public_dir>/banner-art/<unit id>.webp.
 """
 import collections
 import difflib
-import glob
 import json
 import os
 import re
@@ -16,11 +16,13 @@ import unicodedata
 import urllib.parse
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import links, load, norm_title, read, resolve, title_index  # noqa: E402
+from common import links, load, norm_title, resolve, title_index  # noqa: E402
 
 # Fields that must never appear in published output (checked at the end as a guard)
 PERSONAL = {"ownedUnit", "currentStars", "lacrimasEquipped", "equippedBy",
             "primaryTeamContribution", "secondaryTeamContribution", "teamSynergy"}
+
+KINDS = ["Normal", "Special", "Ultimate"]
 
 issues = collections.defaultdict(list)  # category -> [message]
 
@@ -130,17 +132,36 @@ def near_duplicates(values, label):
                 seen.add((a, b))
 
 
-def main(root, skills_dir, out, slugs_path=None):
+def iso_day(v):
+    """Capacities writes day dates as '2026-10-30T00:00:00.000Z'; the wiki stores the JST day."""
+    if not v:
+        return None
+    return str(v)[:10]
+
+
+def main(root, out, slugs_path=None, public_dir=None):
     os.makedirs(out, exist_ok=True)
     data = load(root)
-    C, E, EA, L, LEA = (data[k] for k in ["Characters", "Effects", "EffectApplications", "Lacrimas",
-                                          "LacrimaEffectApplications"])
+    C, S, E, EA, L, LEA, B, BA = (data[k] for k in ["Characters", "Skills", "Effects", "EffectApplications",
+                                                     "Lacrimas", "LacrimaEffectApplications", "Banners",
+                                                     "BannerArts"])
     idx = {k: title_index(v) for k, v in data.items()}
 
     # address table: reuse existing slugs, mint new ones, flag collisions
     slugs = {}
     if slugs_path and os.path.exists(slugs_path):
         slugs = json.load(open(slugs_path, encoding="utf-8"))
+    # forget addresses of records that no longer exist (renamed or deleted), so their old
+    # addresses don't force '-2' suffixes on the records that replace them
+    live = {"unit": set(C), "effect": set(E), "lacrima": set(L), "banner": set(B),
+            "application": {f"unit:{s}" for s in EA} | {f"lacrima:{s}" for s in LEA}}
+    for kind, keys in live.items():
+        gone = [k for k in slugs.get(kind, {}) if k not in keys]
+        for k in gone:
+            del slugs[kind][k]
+        if gone and kind != "application":
+            issue("Addresses retired (record renamed or deleted; old links to these pages stop working)",
+                  f"{kind}: {len(gone)}")
     used = collections.defaultdict(dict)
     for kind in slugs:
         for key, sl in slugs[kind].items():
@@ -263,11 +284,11 @@ def main(root, skills_dir, out, slugs_path=None):
     for stem, r in sorted(LEA.items()):
         application(stem, r["fm"], "lacrima", "LacrimaEffectApplication")
 
-    # ---------- skills (from Skill files; later these come from the export)
+    # ---------- skills
     skill_by_title = {}
     used_apps = set()
-    for p in sorted(glob.glob(os.path.join(skills_dir, "*.md"))):
-        f, body = read(p)
+    for stem, r in sorted(S.items()):
+        f, body = r["fm"], r["body"] or ""
         u = links(f.get("unit"))
         unit_title = u[0][0] if u else None
         apps = []
@@ -298,6 +319,26 @@ def main(root, skills_dir, out, slugs_path=None):
             issue("Effect applications no skill links to",
                   f"'{norm_title(r['fm'].get('title'))}' (characters: "
                   f"{', '.join(x[0] for x in links(r['fm'].get('character'))) or 'none'})")
+
+    # ---------- banners (slugs first: units and banners point at each other)
+    ban_slug = {}
+    for stem, r in sorted(B.items()):
+        ban_slug[stem] = slug_for("banner", stem, clean(r["fm"].get("title")) or stem)
+
+    # banner art: each BannerArt names one unit (bannerUnit) and one image
+    art_by_unit = collections.defaultdict(list)  # character stem -> [(art stem, image file)]
+    for stem, r in sorted(BA.items()):
+        f = r["fm"]
+        where = f"BannerArt '{clean(f.get('title')) or stem}'"
+        unit = ref(f.get("bannerUnit"), "Characters", where, "bannerUnit", required=True)
+        img = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("bannerArt") or ""))
+        if not img:
+            issue("Missing required values", f"{where}: bannerArt has no image")
+        if unit and img:
+            art_by_unit[unit].append((stem, urllib.parse.unquote(img.group(1))))
+    for unit, arts in art_by_unit.items():
+        if len(arts) > 1:
+            issue("Banner art", f"Character '{unit}' has {len(arts)} banner arts; the first is used")
 
     # ---------- units
     units = []
@@ -333,12 +374,23 @@ def main(root, skills_dir, out, slugs_path=None):
             s.pop("unit")
             sk.append(s)
         kinds = sorted(s["kind"] or "?" for s in sk)
-        if kinds != ["Normal", "Special", "Ultimate"]:
+        if kinds != KINDS:
             issue("Skill links", f"{where}: needs exactly one Normal, Special and Ultimate skill; has {kinds or 'none'}")
         img = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("coverImage") or ""))
+        debut = ref(f.get("debutBanner"), "Banners", where, "debutBanner", many=True)
+        if len(debut) > 1:
+            issue("Debut banners", f"{where} has {len(debut)} Debut Banners (should be one): "
+                  + ", ".join(debut))
+        arts = art_by_unit.get(stem, [])
+        collection = clean(f.get("collection"))
         units.append({
             "id": unit_slug[stem], "name": t, "identity": clean(f.get("identity")),
-            "collection": clean(f.get("collection")), "rarity": clean(f.get("rarity")),
+            "collection": collection, "rarity": clean(f.get("rarity")),
+            # the game spreads New Forms over several "New Form" collections when one fills up
+            "newForm": bool(collection and collection.lower().startswith("new form")),
+            "debutBanner": ban_slug.get(debut[0]) if debut else None,
+            "bannerArt": f"{unit_slug[stem]}.webp" if arts else None,
+            "_artFile": arts[0][1] if arts else None,
             "attribute": attr_name(f.get("attribute")), "role": clean(f.get("class")),
             "portrait": urllib.parse.unquote(img.group(1)) if img else None,
             "signatureLacrima": None,  # filled after lacrimas get slugs
@@ -372,6 +424,48 @@ def main(root, skills_dir, out, slugs_path=None):
         sig = u.pop("_sig")
         u["signatureLacrima"] = lac_slug.get(sig) if sig else None
 
+    # ---------- banners
+    banners = []
+    debut_of = {u["id"]: u["debutBanner"] for u in units}
+    for stem, r in sorted(B.items()):
+        f = r["fm"]
+        t = clean(f.get("title")) or stem
+        where = f"Banner '{t}'"
+        chars = ref(f.get("characters"), "Characters", where, "characters", many=True)
+        ids = [unit_slug[c] for c in chars if c in unit_slug]
+        for uid in ids:
+            if debut_of.get(uid) != ban_slug[stem]:
+                issue("Debut banners", f"{where} lists '{uid}', whose Debut Banner is '{debut_of.get(uid)}'")
+        start, end = iso_day(f.get("startDate")), iso_day(f.get("endDate"))
+        source = clean(f.get("dateSource"))
+        if source and not start and not end:
+            source = None  # a source label with no date says nothing
+        if start and end and end < start:
+            issue("Values out of range", f"{where}: ends ({end}) before it starts ({start})")
+        banners.append({"id": ban_slug[stem], "name": t, "type": clean(f.get("bannerType")),
+                        "start": start, "end": end, "dateSource": source, "units": ids})
+    banners.sort(key=lambda b: (b["start"] or "9999", b["name"]))
+
+    # banner art images -> public/banner-art/<unit id>.webp
+    art_files = {u["id"]: u.pop("_artFile") for u in units}
+    if public_dir:
+        from PIL import Image
+        media = os.path.join(root, "Images", "Media")
+        dest = os.path.join(public_dir, "banner-art")
+        os.makedirs(dest, exist_ok=True)
+        wanted = {f"{uid}.webp" for uid, fn in art_files.items() if fn}
+        for old in os.listdir(dest):
+            if old not in wanted:
+                os.remove(os.path.join(dest, old))
+        for uid, fn in art_files.items():
+            if not fn:
+                continue
+            src = os.path.join(media, fn)
+            if not os.path.exists(src):
+                issue("Banner art", f"'{uid}': image file '{fn}' is not in the export")
+                continue
+            Image.open(src).convert("RGB").save(os.path.join(dest, f"{uid}.webp"), "WEBP", quality=82, method=6)
+
     # ---------- vocabulary checks
     near_duplicates([u["identity"] for u in units], "identity")
     near_duplicates([e["name"] for e in effects], "Effect title")
@@ -386,7 +480,8 @@ def main(root, skills_dir, out, slugs_path=None):
         issue("Typos", f"activationInterval '{raw}': {n} records")
 
     # ---------- write
-    payload = {"effects": effects, "applications": applications, "units": units, "lacrimas": lacrimas}
+    payload = {"effects": effects, "applications": applications, "units": units, "lacrimas": lacrimas,
+               "banners": banners}
     for k, v in payload.items():
         with open(os.path.join(out, f"{k}.json"), "w", encoding="utf-8") as fh:
             json.dump(v, fh, ensure_ascii=False, indent=1)
@@ -394,15 +489,23 @@ def main(root, skills_dir, out, slugs_path=None):
         json.dump(slugs, fh, ensure_ascii=False, indent=1, sort_keys=True)
 
     # guard: nothing personal leaked
-    blob = json.dumps(payload)
+    blob = json.dumps(payload, ensure_ascii=False)
     leaked = [k for k in PERSONAL if f'"{k}"' in blob]
     assert not leaked, f"personal fields leaked: {leaked}"
+    # guard: no sentence from a Character page body (personal strategy notes) reached the output
+    for stem, r in C.items():
+        for line in (r.get("_private_body") or "").splitlines():
+            line = re.sub(r"^[>#*\-\s]+", "", line).strip()
+            if len(line) >= 40 and line in blob:
+                raise AssertionError(f"text from Character page '{stem}' leaked into the output: {line[:60]}…")
 
     with open(os.path.join(out, "validation-report.md"), "w", encoding="utf-8") as fh:
         total = sum(len(v) for v in issues.values())
         fh.write("# Validation report\n\n")
         fh.write(f"{len(units)} units, {len(lacrimas)} lacrimas, {len(effects)} effects, "
-                 f"{len(applications)} effect applications. {total} issues in {len(issues)} categories.\n\n")
+                 f"{len(applications)} effect applications, {len(banners)} banners, "
+                 f"{sum(1 for u in units if u['bannerArt'])} banner arts. "
+                 f"{total} issues in {len(issues)} categories.\n\n")
         for cat in sorted(issues, key=lambda c: -len(issues[c])):
             fh.write(f"## {cat} ({len(issues[cat])})\n\n")
             for m in sorted(set(issues[cat])):

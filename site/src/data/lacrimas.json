@@ -157,8 +157,8 @@
   "signatureFor": "blazing-beach-vacation-laxus",
   "gameText": "While this unit is on the field, grants all allies Medium DEF Increase and Medium Critical Resistance Increase.",
   "applications": [
-   "mid-def-increase-all-allies-while-on-the-field",
-   "mid-critical-resistance-increase-all-allies-while-on-the-field"
+   "mid-critical-resistance-increase-all-allies-while-on-the-field",
+   "mid-def-increase-all-allies-while-on-the-field"
   ]
  },
  {
@@ -168,8 +168,8 @@
   "signatureFor": "blazing-beach-vacation-natsu",
   "gameText": "When defeated inflicts all enemies with [Top] ATK Decrease and Silence for 3 sec.",
   "applications": [
-   "top-atk-decrease-all-enemies-when-defeated-3-sec",
-   "silence-all-enemies-when-defeated-3-sec"
+   "silence-all-enemies-when-defeated-3-sec",
+   "top-atk-decrease-all-enemies-when-defeated-3-sec"
   ]
  },
  {
@@ -179,8 +179,8 @@
   "signatureFor": "block-lucy",
   "gameText": "After a normal skill hits, if the target is affected with Paralysis, applies: [Top] DEF Decrease and [Top] Critical Defense Decrease.",
   "applications": [
-   "top-def-decrease-single-enemy-paralysis",
-   "top-critical-defense-decrease-single-enemy-paralysis"
+   "top-critical-defense-decrease-single-enemy-paralysis",
+   "top-def-decrease-single-enemy-paralysis"
   ]
  },
  {
@@ -283,8 +283,8 @@
   "signatureFor": "egg-hunt-brandish",
   "gameText": "When defeated, inflicts Silence and Heal Block on all enemies for 2 sec.",
   "applications": [
-   "silence-all-enemies-when-defeated-20-2-sec",
-   "heal-block-all-enemies-when-defeated-2-sec"
+   "heal-block-all-enemies-when-defeated-2-sec",
+   "silence-all-enemies-when-defeated-20-2-sec"
   ]
  },
  {
@@ -331,14 +331,14 @@
   ]
  },
  {
-  "id": "erza-heaven-s-wheel-armor",
-  "name": "Erza -Heaven's Wheel Armor-",
+  "id": "erza-heaven-s-wheel-armor-lacrima",
+  "name": "Erza -Heaven's Wheel Armor- Lacrima",
   "kind": "signature",
   "signatureFor": "erza-heaven-s-wheel-armor",
   "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, Silence and [Mid] Critical RES Down",
   "applications": [
-   "silence-single-enemy-20-3-sec",
-   "mid-critical-resistance-decrease-single-enemy-20-3-sec"
+   "mid-critical-resistance-decrease-single-enemy-20-3-sec",
+   "silence-single-enemy-20-3-sec"
   ]
  },
  {
@@ -359,8 +359,19 @@
   "gameText": "While on the field, grants all allies [Mid] ATK Increase and [Mid] DEF Increase, [Mid] Continuous Healing",
   "applications": [
    "mid-atk-increase-all-allies-while-on-the-field",
-   "mid-def-increase-all-allies-while-on-the-field",
-   "mid-continuous-heal-all-allies-while-on-the-field"
+   "mid-continuous-heal-all-allies-while-on-the-field",
+   "mid-def-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "fairy-harvest-festival-wendy-lacrima",
+  "name": "Fairy Harvest Festival Wendy Lacrima",
+  "kind": "signature",
+  "signatureFor": "fairy-harvest-festival-wendy",
+  "gameText": "At the start of the battle, inflicts [Mid] Burn and Heal Block on all enemies for 5 sec.",
+  "applications": [
+   "heal-block-all-enemies-start-of-battle-5-sec",
+   "mid-burn-all-enemies-start-of-battle-5-sec"
   ]
  },
  {
@@ -371,19 +382,8 @@
   "gameText": "Every 5 sec, inflicts [High] ATK Decrease and [High] DEF Decrease,  [High] Bleed on all enemies for 3 sec.",
   "applications": [
    "high-atk-decrease-all-enemies-every-5-sec-3-sec",
-   "high-def-decrease-all-enemies-every-5-sec-3-sec",
-   "high-bleed-all-enemies-every-5-sec-3-sec"
-  ]
- },
- {
-  "id": "fairy-tail-harvest-festival-wendy-lacrima",
-  "name": "Fairy Tail Harvest Festival Wendy Lacrima",
-  "kind": "signature",
-  "signatureFor": "fairy-harvest-festival-wendy",
-  "gameText": "At the start of the battle, inflicts [Mid] Burn and Heal Block on all enemies for 5 sec.",
-  "applications": [
-   "mid-burn-all-enemies-start-of-battle-5-sec",
-   "heal-block-all-enemies-start-of-battle-5-sec"
+   "high-bleed-all-enemies-every-5-sec-3-sec",
+   "high-def-decrease-all-enemies-every-5-sec-3-sec"
   ]
  },
  {
@@ -434,8 +434,8 @@
   "signatureFor": "gildarts-clive",
   "gameText": "Every 5 sec, for 3 sec, grants self [Mid] Critical Rate Up and [Mid] Critical Damage Up",
   "applications": [
-   "mid-critical-rate-increase-self-every-5-sec-3-sec",
-   "mid-critical-damage-increase-self-every-5-sec-3-sec"
+   "mid-critical-damage-increase-self-every-5-sec-3-sec",
+   "mid-critical-rate-increase-self-every-5-sec-3-sec"
   ]
  },
  {
@@ -455,8 +455,8 @@
   "signatureFor": "gray-fullbuster",
   "gameText": "After a normal skill hits, has a 10% chance to inflict on the target for 2 sec,  [Mid] Freeze and [Mid] ATK Down",
   "applications": [
-   "mid-freeze-single-enemy-10-2-sec",
-   "mid-atk-decrease-single-enemy-10-2-sec"
+   "mid-atk-decrease-single-enemy-10-2-sec",
+   "mid-freeze-single-enemy-10-2-sec"
   ]
  },
  {
@@ -496,8 +496,8 @@
   "signatureFor": "ichiya-power-perfume",
   "gameText": "At the start of battle, grants self for 3 seconds: [Top] DEF increase, [Top] Critical Defense Increase.",
   "applications": [
-   "top-def-increase-self-start-of-battle-3-sec",
-   "top-critical-defense-increase-self-start-of-battle-3-sec"
+   "top-critical-defense-increase-self-start-of-battle-3-sec",
+   "top-def-increase-self-start-of-battle-3-sec"
   ]
  },
  {
@@ -583,10 +583,10 @@
  },
  {
   "id": "laxus-red-lightning-dragon-mode-lacrima",
-  "name": "Laxus - Red Lightning Dragon Mode- Lacrima",
+  "name": "Laxus -Red Lightning Dragon Mode- Lacrima",
   "kind": "signature",
   "signatureFor": "laxus-red-lightning-dragon-mode",
-  "gameText": "When defeated, inflcits [Top] Bleed on all enemies for 3 seconds.",
+  "gameText": "When defeated, inflicts [Top] Bleed on all enemies for 3 seconds.",
   "applications": [
    "top-bleed-all-enemies-when-defeated-3-sec"
   ]
@@ -628,8 +628,8 @@
   "signatureFor": "lucy-leo-x-virgo-form",
   "gameText": "At the start of battle, grants all allies for 3 sec [High] Shield and [High] Critical Damage Increase",
   "applications": [
-   "high-shield-all-allies-start-of-battle-3-sec",
-   "high-critical-damage-increase-all-allies-start-of-battle-3-sec"
+   "high-critical-damage-increase-all-allies-start-of-battle-3-sec",
+   "high-shield-all-allies-start-of-battle-3-sec"
   ]
  },
  {
@@ -639,8 +639,8 @@
   "signatureFor": "lucy-heartfilia",
   "gameText": "After a Normal Skill hits, has a 20% chance to inflict Silence and Top DEF Down on the target for 3 sec. The Top tier applies to DEF Down; Silence is untiered.",
   "applications": [
-   "top-def-decrease-single-enemy-20-3-sec",
-   "silence-single-enemy-20-3-sec"
+   "silence-single-enemy-20-3-sec",
+   "top-def-decrease-single-enemy-20-3-sec"
   ]
  },
  {
@@ -680,9 +680,9 @@
   "signatureFor": "master-enchant-irene",
   "gameText": "While on the field, inflicts [Mid] Burn and [Mid] DEF Decrease, [Mid] ATK Decrease on all enemies",
   "applications": [
+   "mid-atk-decrease-all-enemies-while-on-the-field",
    "mid-burn-all-enemies-while-on-the-field",
-   "mid-def-decrease-all-enemies-while-on-the-field",
-   "mid-atk-decrease-all-enemies-while-on-the-field"
+   "mid-def-decrease-all-enemies-while-on-the-field"
   ]
  },
  {
@@ -781,8 +781,8 @@
   ]
  },
  {
-  "id": "moonlit-reverie-mavis",
-  "name": "Moonlit Reverie Mavis",
+  "id": "moonlit-reverie-mavis-lacrima",
+  "name": "Moonlit Reverie Mavis Lacrima",
   "kind": "signature",
   "signatureFor": "moonlit-reverie-mavis",
   "gameText": "When defeated, applies the following to all enemies for 2 seconds: [High] Burn, [High] Paralysis",
@@ -851,8 +851,8 @@
   "signatureFor": "neo-minerva",
   "gameText": "When taking an attack, has a 30% chance to inflict [Top] ATK Decrease and [High] Burn on the attacker for 3 sec.",
   "applications": [
-   "top-atk-decrease-attacker-when-attacked-30-3-sec",
-   "high-burn-attacker-when-attacked-30-3-sec"
+   "high-burn-attacker-when-attacked-30-3-sec",
+   "top-atk-decrease-attacker-when-attacked-30-3-sec"
   ]
  },
  {
@@ -872,8 +872,8 @@
   "signatureFor": "noir-gildarts",
   "gameText": "When defeated, grants all allies for 3 sec: [Top] DEF Increase and [Top] Critical Defense Increase",
   "applications": [
-   "top-def-decrease-all-allies-when-defeated-3-sec",
-   "top-critical-defense-increase-all-allies-when-defeated-3-sec"
+   "top-critical-defense-increase-all-allies-when-defeated-3-sec",
+   "top-def-decrease-all-allies-when-defeated-3-sec"
   ]
  },
  {
@@ -883,8 +883,8 @@
   "signatureFor": "otherworld-adventure-erza",
   "gameText": "While on the field, inflicts [Mid] Burn and [Low] Accuracy Decrease on all enemies.",
   "applications": [
-   "mid-burn-all-enemies-while-on-the-field",
-   "low-accuracy-decrease-all-enemies-while-on-the-field"
+   "low-accuracy-decrease-all-enemies-while-on-the-field",
+   "mid-burn-all-enemies-while-on-the-field"
   ]
  },
  {
@@ -894,8 +894,8 @@
   "signatureFor": "otherworld-adventure-kagura",
   "gameText": "At the start of battle, grants all allies [Top] Shield and [High] Critical Rate Increase for 4 sec",
   "applications": [
-   "top-shield-all-allies-start-of-battle-4-sec",
-   "high-critical-rate-increase-all-allies-start-of-battle-4-sec"
+   "high-critical-rate-increase-all-allies-start-of-battle-4-sec",
+   "top-shield-all-allies-start-of-battle-4-sec"
   ]
  },
  {
@@ -905,9 +905,9 @@
   "signatureFor": "parallel-world-mystogan",
   "gameText": "When taking an attack, has a 30% chance to inflict Silence and [Mid] ATK Decrease, [Mid] Critical Rate Decrease on the attacker for 2 sec",
   "applications": [
-   "silence-attacker-30-2-sec",
    "mid-atk-decrease-attacker-when-attacked-30-2-sec",
-   "mid-critical-rate-decrease-attacker-when-attacked-30-2-sec"
+   "mid-critical-rate-decrease-attacker-when-attacked-30-2-sec",
+   "silence-attacker-30-2-sec"
   ]
  },
  {
@@ -917,8 +917,8 @@
   "signatureFor": "parallel-world-wendy",
   "gameText": "While on the field, inflicts [Mid] Bleed and [Mid] ATK Decrease, [Mid] DEF Decrease on all enemies.",
   "applications": [
-   "mid-bleed-all-enemies-while-on-the-field",
    "mid-atk-decrease-all-enemies-while-on-the-field",
+   "mid-bleed-all-enemies-while-on-the-field",
    "mid-def-decrease-all-enemies-while-on-the-field"
   ]
  },
@@ -929,8 +929,8 @@
   "signatureFor": "pure-white-oath-erza",
   "gameText": "When defeated, inflicts all enemies with for 3 sec, [High] Paralysis and [High] DEF Decrease.",
   "applications": [
-   "high-paralysis-all-enemies-when-defeated-3-sec",
-   "high-def-decrease-all-enemies-when-defeated-3-sec"
+   "high-def-decrease-all-enemies-when-defeated-3-sec",
+   "high-paralysis-all-enemies-when-defeated-3-sec"
   ]
  },
  {
@@ -962,9 +962,9 @@
   "signatureFor": "rock-n-magic-lucy",
   "gameText": "At the start of battle, inflicts [Mid] Paralysis, [High] ATK Decrease, [High] Critical Rate Decrease on all enemies for 5 sec",
   "applications": [
-   "mid-paralysis-all-enemies-start-of-battle-5-sec",
    "high-atk-decrease-all-enemies-start-of-battle-5-sec",
-   "high-critical-rate-decrease-all-enemies-start-of-battle-5-sec"
+   "high-critical-rate-decrease-all-enemies-start-of-battle-5-sec",
+   "mid-paralysis-all-enemies-start-of-battle-5-sec"
   ]
  },
  {
@@ -984,8 +984,8 @@
   "signatureFor": "selene",
   "gameText": "While on the battlefield, grants all allies [Mid] DEF Increase, and [Mid] Critical Defense Increase.",
   "applications": [
-   "mid-def-increase-all-allies-while-on-the-field",
-   "mid-critical-defense-increase-all-allies-while-on-the-field"
+   "mid-critical-defense-increase-all-allies-while-on-the-field",
+   "mid-def-increase-all-allies-while-on-the-field"
   ]
  },
  {
@@ -1010,6 +1010,17 @@
   ]
  },
  {
+  "id": "starry-night-reunion-mavis-lacrima",
+  "name": "Starry Night Reunion Mavis Lacrima",
+  "kind": "signature",
+  "signatureFor": "starry-night-reunion-mavis",
+  "gameText": "While this character is on the field, grants all allies [Mid] ATK Increase and [Mid] Accuracy Increase.",
+  "applications": [
+   "mid-atk-increase-all-allies-while-on-the-field",
+   "mid-accuracy-increase-all-allies-while-on-the-field"
+  ]
+ },
+ {
   "id": "starry-night-reunion-zeref-lacrima",
   "name": "Starry Night Reunion Zeref Lacrima",
   "kind": "signature",
@@ -1020,25 +1031,14 @@
   ]
  },
  {
-  "id": "starry-reunion-mavis-lacrima",
-  "name": "Starry Reunion Mavis Lacrima",
-  "kind": "signature",
-  "signatureFor": "starry-night-reunion-mavis",
-  "gameText": "While this character is on the field, grants all allies [Mid] ATK Increase and [Mid] Accuracy Increase.",
-  "applications": [
-   "mid-atk-increase-all-allies-while-on-the-field",
-   "mid-accuracy-increase-all-allies-while-on-the-field"
-  ]
- },
- {
   "id": "sting-dragon-force-lacrima",
   "name": "Sting -Dragon Force- Lacrima",
   "kind": "signature",
   "signatureFor": "sting-dragon-force",
   "gameText": "At the start of battle, inflicts [High] Bleed and Heal Block on all enemies for 5 sec",
   "applications": [
-   "high-bleed-all-enemies-start-of-battle-5-sec",
-   "heal-block-all-enemies-start-of-battle-5-sec"
+   "heal-block-all-enemies-start-of-battle-5-sec",
+   "high-bleed-all-enemies-start-of-battle-5-sec"
   ]
  },
  {
@@ -1091,8 +1091,8 @@
   "signatureFor": "swaying-in-the-summer-night-cana",
   "gameText": "Every 5 sec, inflicts all enemies with Silence and [Mid] ATK Down.",
   "applications": [
-   "silence-all-enemies-every-5-sec",
-   "mid-atk-decrease-all-enemies-every-5-sec"
+   "mid-atk-decrease-all-enemies-every-5-sec",
+   "silence-all-enemies-every-5-sec"
   ]
  },
  {
@@ -1135,8 +1135,8 @@
   ]
  },
  {
-  "id": "twin-moon-halloween-sherry",
-  "name": "Twin Moon Halloween Sherry",
+  "id": "twin-moon-halloween-sherry-lacrima",
+  "name": "Twin Moon Halloween Sherry Lacrima",
   "kind": "signature",
   "signatureFor": "twin-moon-halloween-sherry",
   "gameText": "While on the field, grants all allies [High] Critical Rate Increase and [Mid] ATK Increase, [Mid] Accuracy Increase.",
@@ -1153,8 +1153,8 @@
   "signatureFor": "ultear-grimoire-heart",
   "gameText": "When attacked,  has a 30% chance to inflict [High] Freeze and [High] Def Decrease on the attacker for 2 sec.",
   "applications": [
-   "high-freeze-attacker-when-attacked-30-2-sec",
-   "high-def-decrease-attacker-when-attacked-30-2-sec"
+   "high-def-decrease-attacker-when-attacked-30-2-sec",
+   "high-freeze-attacker-when-attacked-30-2-sec"
   ]
  },
  {
@@ -1165,8 +1165,7 @@
   "gameText": "While on the battlefield, inflict [Mid] ATK Decrease and [Mid] Critical Damage Decrease on all enemies.",
   "applications": [
    "mid-atk-decrease-all-enemies-while-on-the-field",
-   "mid-critical-damage-decrease-all-enemies-while-on-the-field",
-   "mid-atk-decrease-all-enemies-while-on-the-field"
+   "mid-critical-damage-decrease-all-enemies-while-on-the-field"
   ]
  },
  {

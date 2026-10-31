@@ -168,6 +168,22 @@
   "counteredBy": []
  },
  {
+  "id": "critical-damage-up-i",
+  "name": "Critical Damage Up I",
+  "family": "Critical Damage",
+  "direction": "Up",
+  "tier": "Up I",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Flat Value"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage +30",
+  "counteredBy": []
+ },
+ {
   "id": "critical-damage-up-ii",
   "name": "Critical Damage Up II",
   "family": "Critical Damage",
@@ -212,7 +228,7 @@
    "unit": "Flat Value"
   },
   "secondary": null,
-  "gameText": "Crit Defense [[Date/2026-07-14 02:00]]",
+  "gameText": "Crit Defense +50",
   "counteredBy": []
  },
  {
@@ -244,7 +260,7 @@
    "unit": "Flat Value"
   },
   "secondary": null,
-  "gameText": "Crit Rate [[Date/2026-07-12 05:00]]",
+  "gameText": "Crit Rate +5",
   "counteredBy": []
  },
  {
@@ -290,22 +306,6 @@
   "value": null,
   "secondary": null,
   "gameText": "Prevents critical hits for the duration.",
-  "counteredBy": []
- },
- {
-  "id": "crtical-damage-up-i",
-  "name": "Crtical Damage Up I",
-  "family": "Critical Damage",
-  "direction": "Up",
-  "tier": "Up I",
-  "polarity": "Beneficial",
-  "mechanic": "Stat Modifier",
-  "value": {
-   "amount": 30,
-   "unit": "Flat Value"
-  },
-  "secondary": null,
-  "gameText": "Critical Damage +30",
   "counteredBy": []
  },
  {
@@ -390,9 +390,7 @@
   "value": null,
   "secondary": null,
   "gameText": "Cannot be healed during the effect",
-  "counteredBy": [
-   "remove-all-debuffs"
-  ]
+  "counteredBy": []
  },
  {
   "id": "high-atk-decrease",

@@ -1,29 +1,27 @@
 # Validation report
 
-104 units, 115 lacrimas, 101 effects, 697 effect applications. 29 issues in 5 categories.
+104 units, 115 lacrimas, 101 effects, 697 effect applications, 42 banners, 13 banner arts. 26 issues in 5 categories.
 
-## Effect applications no skill links to (16)
+## Effect applications no skill links to (14)
 
 - 'Additional Damage → Single Enemy – Bleed / 70% of Own ATK' (characters: Gajeel Redfox)
 - 'Advance Ultimate Skill Gauge → All Allies – 10% / 0.7 sec' (characters: Wendy Marvell)
 - 'Advance Ultimate Skill Gauge → Current Ultimate Skill Gauge – 20% / 0.7 sec' (characters: Bunny Yukino)
-- 'Advance Ultimate Skill Gauge → Self – Target Burning / 0.7 sec' (characters: Holy Night Mirajane)
+- 'Damage Reflection Shield → Self – HP ≤ 50% / Once Only / 30% / 5 sec' (characters: Neo Minerva)
 - 'Heal → Self – HP ≤ 50% / Once Only / 1500% of Own ATK' (characters: Neo Minerva)
 - 'Push Back Ultimate Skill Gauge → Single Enemy – 30% / 0.9 sec' (characters: Otherworld Adventure Kagura)
-- 'Push Back Ultimate Skill Gauge → Single Enemy – Bleed / 0.7 sec' (characters: Mard Geer)
 - 'Top Critical Damage Increase → Self – Constant' (characters: Suzaku)
 - 'Top Critical Defense Decrease → Enemies in Target Area – Bleed or Silence / 5 sec' (characters: Swaying in the Summer Night Cana)
 - 'Top Critical Defense Decrease → Enemies in Target Range – Burn or Paralysis / 5 sec' (characters: Fairy Harvest Festival Wendy)
 - 'Top Critical Defense Decrease → Single Enemy – 30% / 3 sec' (characters: Parallel World Wendy)
 - 'Top Critical Defense Decrease → Single Enemy – 30% / 5 sec' (characters: Otherworld Adventure Kagura)
 - 'Top Critical Defense Increase → All Allies – While on the Field' (characters: Rock'n Magic Juvia)
-- 'Top DEF Decrease → Enemies in Target Area – 4 sec / Bleed or Silence' (characters: none)
 - 'Top Evasion Decrease → Enemies in Target Area – Paralysis, Burn, or Bleed / 5 sec' (characters: Otherworld Adventure Erza)
 - 'Top Evasion Decrease → Single Enemy – 30% / 3 sec' (characters: Parallel World Wendy)
 
 ## Missing required values (7)
 
-- Character 'Cyberpunk Rogue': coverImage is empty
+- BannerArt 'Swaying in the Summer Night Lisanna – Debut Banner': bannerUnit is empty
 - Character 'Master Enchant Irene': collection is empty
 - Character 'Master Enchant Irene': coverImage is empty
 - Character 'Parallel World Mystogan': coverImage is empty
@@ -31,18 +29,17 @@
 - Effect 'Action Impairment Barrier': effectFamily is empty
 - Lacrima '✨ Swaying in the Summer Night Lisanna Lacrima': lacrimaEffectApplications is empty
 
-## Near-duplicate values (typo or inconsistent spelling?) (3)
+## Addresses retired (record renamed or deleted; old links to these pages stop working) (2)
 
-- Effect title: 'Critical Damage Up II' vs 'Crtical Damage Up I'
+- effect: 1
+- lacrima: 6
+
+## Near-duplicate values (typo or inconsistent spelling?) (2)
+
 - Effect title: 'Remove All Debuffs' vs 'Removes All Buffs'
 - valueUnit: 'Percent of Own ATK' vs 'Percent of own ATK'
 
-## Titles containing a non-breaking space (handled by the converter; worth cleaning eventually) (2)
+## Debut banners (1)
 
-- EffectApplications: 31 titles
-- LacrimaEffectApplications: 19 titles
-
-## Orphans (1)
-
-- EffectApplication 'Top DEF Decrease → Enemies in Target Area – 4 sec / Bleed or Silence' is linked to no character
+- Banner 'Rock'n Magic' lists 'rock-n-magic-juvia', whose Debut Banner is 'None'
 

@@ -5,6 +5,9 @@
   "identity": "Kagura Mikazuchi",
   "collection": "MadoChro Academy",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "madochro-academy",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Academy Kagura.png",
@@ -45,11 +48,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-critical-rate-increase-self-30-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -86,11 +89,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-critical-damage-increase-self-every-5-sec-5-sec",
      "top-accuracy-increase-self-every-5-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -139,12 +142,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-every-8-sec-800-of-own-atk",
      "top-paralysis-each-target-hit-every-8-sec-50-5-sec",
      "top-critical-defense-decrease-each-target-hit-every-8-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -154,6 +157,9 @@
   "identity": "Lisanna Strauss",
   "collection": "MadoChro Academy",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "madochro-academy",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Academy Lisanna.png",
@@ -194,11 +200,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "bind-single-enemy-20-2-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -259,13 +265,13 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-decrease-enemies-in-target-area-bind-5-sec",
      "top-critical-defense-decrease-enemies-in-target-area-bind-5-sec",
      "top-evasion-decrease-enemies-in-target-area-bind-5-sec",
      "heal-block-enemies-in-target-area-bind-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -314,12 +320,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-10-sec-850-of-own-atk",
      "top-critical-resistance-decrease-each-target-hit-every-10-sec-5-sec",
      "bind-each-target-hit-every-10-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -329,6 +335,9 @@
   "identity": "August",
   "collection": "Spriggan 12",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "August.png",
@@ -357,10 +366,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -385,10 +394,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-critical-damage-increase-all-allies-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -425,11 +434,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-700-of-own-atk",
      "bind-each-target-hit-every-11-sec-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -439,6 +448,9 @@
   "identity": "Laxus Dreyar",
   "collection": "Blazing Beach Vacation",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "blazing-beach-vacation",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Blazing Beach Vacation Laxus.png",
@@ -479,11 +491,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "heal-lowest-hp-ally-130-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -544,13 +556,13 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-shield-all-allies-30-5-sec",
      "top-atk-increase-all-allies-30-5-sec",
      "top-accuracy-increase-all-allies-30-5-sec",
      "advance-special-skill-gauge-all-allies-30-0-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -635,6 +647,7 @@
       "notes": "INT allies in tooltip"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "heal-all-allies-every-11-sec-750-of-own-atk-scales-per-mind-ally",
      "top-continuous-heal-all-allies-every-11-sec-5-sec",
@@ -642,8 +655,7 @@
      "remove-all-debuffs-all-allies-every-11-sec",
      "high-critical-rate-increase-mind-allies-every-11-sec-5-sec",
      "high-atk-increase-mind-allies-every-11-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -653,6 +665,9 @@
   "identity": "Natsu Dragneel",
   "collection": "Blazing Beach Vacation",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "blazing-beach-vacation",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Blazing Beach Vacation Natsu.png",
@@ -717,13 +732,13 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-def-increase-self-30-3-sec",
      "high-critical-resistance-increase-self-30-3-sec",
      "high-critical-defense-increase-self-30-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -772,12 +787,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-increase-brave-allies-critical-hit-5-sec",
      "top-critical-defense-increase-brave-allies-critical-hit-5-sec",
      "top-critical-resistance-increase-brave-allies-critical-hit-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -850,14 +865,14 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-9-sec-850-of-own-atk",
      "silence-each-target-hit-every-9-sec-40-5-sec",
      "top-atk-decrease-each-target-hit-every-9-sec-40-5-sec",
      "top-critical-damage-decrease-each-target-hit-every-9-sec-40-5-sec",
      "top-critical-rate-decrease-each-target-hit-every-9-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -867,6 +882,9 @@
   "identity": "Lucy Heartfilia",
   "collection": "Block Chronicle",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "block-chronicle",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Block Lucy.png",
@@ -919,12 +937,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "top-critical-rate-increase-mind-allies-3-sec",
      "high-accuracy-increase-mind-allies-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -973,12 +991,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-mind-allies-every-5-sec-5-sec",
      "top-def-increase-mind-allies-every-5-sec-5-sec",
      "top-critical-rate-increase-mind-allies-every-5-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -1027,12 +1045,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-9-sec-900-of-own-atk",
      "top-paralysis-each-target-hit-every-9-sec-50-5-sec",
      "top-critical-resistance-decrease-each-target-hit-every-9-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -1042,6 +1060,9 @@
   "identity": "Natsu Dragneel",
   "collection": "Block Chronicle",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "block-chronicle",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Block Natsu.png",
@@ -1082,11 +1103,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-burn-single-enemy-30-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -1135,12 +1156,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-self-30-5-sec",
      "top-critical-damage-increase-self-30-5-sec",
      "top-shield-self-30-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -1189,12 +1210,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-10-sec-900-of-own-atk",
      "top-atk-decrease-each-target-hit-every-10-sec-burning-target-5-sec",
      "top-critical-damage-decrease-each-target-hit-every-10-sec-burning-target-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -1204,6 +1225,9 @@
   "identity": "Brandish",
   "collection": "Spriggan 12",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Brandish.png",
@@ -1244,11 +1268,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk",
      "heal-lowest-hp-ally-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -1285,11 +1309,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-critical-rate-increase-technique-allies-critical-hit-5-sec",
      "high-accuracy-increase-technique-allies-critical-hit-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -1326,11 +1350,11 @@
       "notes": "Cleanse"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "remove-all-debuffs-all-allies-every-10-sec",
      "heal-lowest-hp-ally-every-10-sec-1250-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -1340,9 +1364,12 @@
   "identity": "Lucy Heartfilia",
   "collection": "Victory Bunny",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "victory-bunny",
+  "bannerArt": "bunny-lucy.webp",
   "attribute": "Brave",
   "role": "Disrupt",
-  "portrait": "Screenshot 2026-07-14 at 100430 PM.png",
+  "portrait": "Bunny Lucy.png",
   "signatureLacrima": "bunny-lucy-lacrima",
   "skills": [
    {
@@ -1380,11 +1407,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-critical-rate-decrease-single-enemy-20-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -1421,11 +1448,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-critical-defense-decrease-all-enemies-every-7-sec-5-sec",
      "high-critical-resistance-decrease-all-enemies-every-7-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -1474,12 +1501,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-every-10-sec-750-of-own-atk",
      "top-critical-damage-decrease-each-target-hit-every-10-sec",
      "top-atk-decrease-each-target-hit-every-10-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -1489,6 +1516,9 @@
   "identity": "Yukino Aguria",
   "collection": "Victory Bunny",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "victory-bunny",
+  "bannerArt": "bunny-yukino.webp",
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Bunny Yukino.png",
@@ -1529,11 +1559,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-atk-increase-self-20-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -1582,11 +1612,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-heart-allies-20-5-sec",
      "top-def-increase-heart-allies-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -1623,11 +1653,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-850-of-own-atk",
      "silence-each-target-hit-every-10-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -1637,6 +1667,9 @@
   "identity": "Cana Alberona",
   "collection": "Fairy Tail II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Cana Alberona.png",
@@ -1665,10 +1698,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -1693,10 +1726,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-critical-damage-increase-self-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -1721,10 +1754,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-750-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -1734,6 +1767,9 @@
   "identity": "Yukino Aguria",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Contractor of the Twelve Gate Keys Yukino.png",
@@ -1784,6 +1820,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-180-of-own-atk",
      "high-atk-increase-technique-allies-critical-hit-3-sec",
@@ -1835,6 +1872,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "heal-block-single-enemy-30-5-sec",
      "top-critical-resistance-decrease-single-enemy-30-5-sec",
@@ -1898,6 +1936,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-1000-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-40-5-sec",
@@ -1913,9 +1952,12 @@
   "identity": "Rogue Cheney",
   "collection": "Cyberpunk",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "cyberpunk",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
-  "portrait": null,
+  "portrait": "Cyberpunk Rogue.png",
   "signatureLacrima": "cyberpunk-rogue-lacrima",
   "skills": [
    {
@@ -1953,11 +1995,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-evasion-decrease-single-enemy-20-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -1982,10 +2024,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "push-back-ultimate-skill-gauge-single-enemy-blind-0-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -2022,11 +2064,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-every-10-sec-700-of-own-atk",
      "blind-each-target-hit-every-10-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -2036,6 +2078,9 @@
   "identity": "Sting Eucliffe",
   "collection": "Cyberpunk",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "cyberpunk",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Cyberpunk Sting.png",
@@ -2076,11 +2121,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-critical-rate-increase-self-20-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -2117,11 +2162,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-critical-damage-increase-technique-allies-while-unit-is-on-the-field",
      "top-accuracy-increase-technique-allies-while-unit-is-on-the-field"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -2170,12 +2215,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-850-of-own-atk",
      "top-shield-self-every-11-sec-5-sec",
      "top-atk-increase-self-every-11-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -2185,6 +2230,9 @@
   "identity": "Zeref Dragneel",
   "collection": "Love and Curse",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "pickup-dark-mage-zeref",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Disrupt",
   "portrait": "Dark Mage Zeref.png",
@@ -2225,11 +2273,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "bind-single-enemy-20-1-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -2266,11 +2314,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-normal-skill-hit-20-200-of-own-atk",
      "top-bleed-each-target-hit-special-skill-hit-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -2343,14 +2391,14 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-850-of-own-atk",
      "top-critical-defense-decrease-each-target-hit-every-11-sec-bleed-5-sec",
      "top-def-decrease-each-target-hit-every-11-sec-bleed-5-sec",
      "top-evasion-decrease-each-target-hit-every-11-sec-bleed-5-sec",
      "bind-each-target-hit-every-11-sec-bleed-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -2360,6 +2408,9 @@
   "identity": "Brandish",
   "collection": "Egg Hunt Wizard",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "egg-hunt-wizard",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Egg Hunt Brandish.png",
@@ -2388,10 +2439,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -2440,12 +2491,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-critical-resistance-decrease-enemies-in-target-area-silence-5-sec",
      "top-critical-defense-decrease-enemies-in-target-area-silence-5-sec",
      "heal-block-enemies-in-target-area-silence-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -2494,12 +2545,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-every-9-sec-800-of-own-atk",
      "silence-each-target-hit-every-9-sec-40-5-sec",
      "top-atk-decrease-each-target-hit-every-9-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -2509,6 +2560,9 @@
   "identity": "Irene Belserion",
   "collection": "Egg Hunt Wizard",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "egg-hunt-wizard",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Egg Hunt Irene.png",
@@ -2549,11 +2603,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk",
      "heal-lowest-hp-ally-160-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -2602,12 +2656,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-increase-all-allies-30-5-sec",
      "action-block-barrier-all-allies-30-5-sec",
      "advance-special-skill-gauge-all-allies-30-0-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -2668,13 +2722,13 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "heal-all-allies-every-11-sec-950-of-own-atk",
      "top-continuous-heal-all-allies-every-11-sec-5-sec",
      "top-critical-defense-increase-all-allies-every-11-sec-5-sec",
      "remove-all-debuffs-all-allies-every-11-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -2684,6 +2738,9 @@
   "identity": "Elfman Strauss",
   "collection": "Fairy Tail II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Elfman Strauss.png",
@@ -2712,10 +2769,10 @@
       "notes": "Melee"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -2752,11 +2809,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "taunt-enemies-around-target-4-sec",
      "high-def-increase-self-4-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -2793,11 +2850,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-9-sec-1000-of-own-atk",
      "high-def-increase-self-every-9-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -2807,6 +2864,9 @@
   "identity": "Zeref Dragneel",
   "collection": "Spriggan 12",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "madofes-sep-2026",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Emperor Spriggan Zeref.png",
@@ -2857,6 +2917,7 @@
       "notes": "Shared proc with DEF Increase"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "heal-self-30-600-of-own-atk",
@@ -2920,6 +2981,7 @@
       "notes": "Requires Burn, Paralysis, Silence or Blind"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-normal-skill-hit-30-400-of-own-atk",
      "additional-damage-each-target-hit-special-skill-hit-burn-paralysis-silence-or-blind-400-atk",
@@ -2984,6 +3046,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-8-sec-1050-of-own-atk",
      "blind-each-target-hit-every-8-sec-5-sec",
@@ -2999,6 +3062,9 @@
   "identity": "Erza Scarlet",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Erza -Demon Blade Benizakura-.png",
@@ -3039,11 +3105,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-atk-increase-self-30-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -3104,13 +3170,13 @@
       "notes": "Typo in Game Text, reads Decrease."
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-heart-allies-while-on-the-field",
      "top-critical-damage-increase-heart-allies-while-on-the-field",
      "top-accuracy-increase-heart-allies-while-on-the-field",
      "high-def-increase-heart-allies-while-on-the-field"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -3159,12 +3225,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-10-sec-900-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-50-5-sec",
      "silence-each-target-hit-every-10-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -3174,10 +3240,13 @@
   "identity": "Erza Scarlet",
   "collection": "Fairy Tail",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "pickup-erza-heaven-s-wheel-armor",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Defense",
   "portrait": "Erza-Heaven's Wheel Armor.png",
-  "signatureLacrima": "erza-heaven-s-wheel-armor",
+  "signatureLacrima": "erza-heaven-s-wheel-armor-lacrima",
   "skills": [
    {
     "kind": "Normal",
@@ -3202,10 +3271,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -3254,12 +3323,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-critical-hit-300-of-own-atk",
      "taunt-enemies-in-target-area-5-sec",
      "top-def-increase-self-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -3308,11 +3377,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-10-sec-600-of-own-atk",
      "top-critical-rate-increase-self-every-10-sec-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -3322,6 +3391,9 @@
   "identity": "Erza Knightwalker",
   "collection": "Parallel World",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "parallel-world",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Defense",
   "portrait": "Erza Knightwalker.png",
@@ -3374,12 +3446,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk",
      "high-def-increase-self-30-3-sec",
      "high-critical-defense-increase-self-30-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -3416,11 +3488,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-increase-heart-allies-while-on-the-field",
      "top-critical-resistance-increase-heart-allies-while-on-battlefield"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -3505,6 +3577,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-9-sec-850-of-own-atk",
      "top-shield-self-every-9-sec-7-sec",
@@ -3512,8 +3585,7 @@
      "top-def-increase-self-every-9-sec-7-sec",
      "top-shield-all-allies-every-9-sec-50-5-sec",
      "top-atk-increase-all-allies-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -3523,6 +3595,9 @@
   "identity": "Makarov Dreyar",
   "collection": "Fairy Harvest Festival",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "fairy-harvest-festival",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Fairy Harvest Festival Makarov.png",
@@ -3561,6 +3636,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "heal-lowest-hp-ally-150-of-own-atk"
@@ -3611,6 +3687,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-increase-all-allies-every-7-sec-5-sec",
      "top-critical-damage-increase-all-allies-every-7-sec-5-sec",
@@ -3686,6 +3763,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "heal-all-allies-every-11-sec-1000-of-own-atk-scales-per-heart-ally",
      "top-shield-all-allies-every-11-sec-5-sec",
@@ -3702,10 +3780,13 @@
   "identity": "Wendy Marvell",
   "collection": "Fairy Harvest Festival",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "fairy-harvest-festival",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Fairy Tail Harvest Wendy.png",
-  "signatureLacrima": "fairy-tail-harvest-festival-wendy-lacrima",
+  "signatureLacrima": "fairy-harvest-festival-wendy-lacrima",
   "skills": [
    {
     "kind": "Normal",
@@ -3752,6 +3833,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-paralysis-single-enemy-30-3-sec",
@@ -3803,6 +3885,7 @@
       "notes": "IF affected by Paralysis or Burn"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-range-burn-or-paralysis-5-sec",
      "high-burn-enemies-in-target-range-burn-or-paralysis-5-sec"
@@ -3853,6 +3936,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-950-of-own-atk",
      "top-critical-resistance-decrease-each-target-hit-every-10-sec-40-5-sec",
@@ -3867,6 +3951,9 @@
   "identity": "Mavis Vermillion",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "madofes-oct-2026",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Fairy Tactician Mavis.png",
@@ -3917,6 +4004,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-180-of-own-atk",
      "high-atk-increase-mind-allies-critical-hit-3-sec",
@@ -3968,6 +4056,7 @@
       "notes": "Requires Burn, Paralysis or Bleed at hit"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-normal-skill-hit-20-450-of-own-atk",
      "additional-damage-each-target-hit-special-skill-hit-burn-paralysis-or-bleed-450-atk",
@@ -4043,6 +4132,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-1000-of-own-atk",
      "silence-each-target-hit-every-10-sec-5-sec",
@@ -4059,6 +4149,9 @@
   "identity": "Erza Scarlet",
   "collection": "New Year! First Dream",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "new-year-first-dream",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "First Dream Erza.png",
@@ -4099,12 +4192,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-bleed-single-enemy-20-3-sec",
      "top-bleed-each-target-hit-every-10-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -4129,10 +4222,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "advance-ultimate-skill-gauge-heart-allies-30-0-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -4169,10 +4262,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-850-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -4182,6 +4275,9 @@
   "identity": "Laxus Dreyar",
   "collection": "New Year! First Dream",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "new-year-first-dream",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "First Dream Laxus.png",
@@ -4222,11 +4318,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk",
      "high-paralysis-single-enemy-20-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -4251,10 +4347,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-shield-mind-allies-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -4303,12 +4399,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-every-9-sec-700-of-own-atk",
      "top-paralysis-each-target-hit-every-9-sec-40-5-sec",
      "top-accuracy-decrease-each-target-hit-every-9-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -4318,6 +4414,9 @@
   "identity": "Freed Justine",
   "collection": "Fairy Tail III",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Disrupt",
   "portrait": "Freed Justine.png",
@@ -4346,10 +4445,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -4374,10 +4473,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-atk-decrease-single-enemy-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -4414,11 +4513,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-600-of-own-atk",
      "silence-each-target-hit-every-9-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -4428,6 +4527,9 @@
   "identity": "Gajeel Redfox",
   "collection": "Fairy Tail II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Defense",
   "portrait": "Gajeel Redfox.png",
@@ -4456,10 +4558,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -4496,11 +4598,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-increase-self-every-5-sec-5-sec",
      "top-critical-defense-increase-self-every-5-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -4537,11 +4639,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-9-sec-1000-of-own-atk",
      "top-bleed-single-enemy-every-9-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -4551,6 +4653,9 @@
   "identity": "Gildarts Clive",
   "collection": "S-Class Mage",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Gildarts.png",
@@ -4579,10 +4684,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -4631,12 +4736,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-critical-hit-250-of-own-atk",
      "high-def-decrease-single-enemy-5-sec",
      "high-critical-resistance-decrease-single-enemy-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -4673,11 +4778,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-9-sec-1050-of-own-atk",
      "top-atk-increase-self-every-9-sec-6-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -4687,6 +4792,9 @@
   "identity": "Gray Fullbuster",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "pickup-gray-ice-devil-slayer-mage",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Gray -Ice Devil Slayer Mage-.png",
@@ -4727,11 +4835,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-freeze-single-enemy-15-2-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -4768,11 +4876,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-skill-hit-20-300-of-own-atk",
      "additional-damage-single-enemy-freeze-300-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -4809,11 +4917,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-11-sec-1100-of-own-atk",
      "top-freeze-single-enemy-every-11-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -4823,6 +4931,9 @@
   "identity": "Gray Fullbuster",
   "collection": "Fairy Tail",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Gray Fullbuster.png",
@@ -4851,10 +4962,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -4879,10 +4990,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-decrease-single-enemy-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -4919,11 +5030,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-11-sec-1050-of-own-atk",
      "top-freeze-single-enemy-every-11-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -4933,6 +5044,9 @@
   "identity": "Hades",
   "collection": "Grimoire Heart",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Hades.png",
@@ -4961,10 +5075,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -5001,11 +5115,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-self-every-5-sec-5-sec",
      "top-def-increase-self-every-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -5030,10 +5144,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-800-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -5043,6 +5157,9 @@
   "identity": "Juvia Lockser",
   "collection": "Holy Night Festival",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "holy-night-festival",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Holy Night Juvia.png",
@@ -5083,11 +5200,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-critical-rate-increase-self-20-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -5124,11 +5241,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-decrease-single-enemy-20-4-sec",
      "top-def-decrease-single-enemy-20-4-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -5165,11 +5282,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-800-of-own-atk",
      "bindeach-target-hit-every-11-sec-30-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -5179,6 +5296,9 @@
   "identity": "Mirajane Strauss",
   "collection": "Holy Night Festival",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "holy-night-festival",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Holy Night Mirajane.png",
@@ -5219,11 +5339,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-burn-single-enemy-20-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -5248,8 +5368,10 @@
       "notes": null
      }
     ],
-    "applications": [],
-    "levelTextSource": "madochro.wiki.gg"
+    "levelTextSource": "madochro.wiki.gg",
+    "applications": [
+     "advance-ultimate-skill-gauge-self-target-burning-0-7-sec"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -5286,11 +5408,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-9-sec-1100-of-own-atk",
      "top-burn-single-enemy-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -5300,6 +5422,9 @@
   "identity": "Ichiya",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "madofes-apr-2026",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Ichiya -Power Perfume-.png",
@@ -5338,6 +5463,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk"
     ]
@@ -5375,6 +5501,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-accuracy-increase-brave-allies-30-6-sec",
      "top-critical-damage-increase-brave-allies-30-6-sec"
@@ -5437,6 +5564,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-950-of-own-atk",
      "high-atk-increase-all-allies-3-sec",
@@ -5453,6 +5581,9 @@
   "identity": "Ichiya",
   "collection": "Blue Pegasus",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Ichiya Vandalay Kotobuki.png",
@@ -5481,10 +5612,10 @@
       "notes": "Ranged"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -5521,11 +5652,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-atk-increase-brave-allies-4-sec",
      "high-accuracy-increase-brave-allies-4-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -5574,12 +5705,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-650-of-own-atk",
      "heal-block-each-target-hit-50-every-10-sec",
      "high-paralysis-each-target-hit-every-10-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -5589,6 +5720,9 @@
   "identity": "Ignia",
   "collection": "Fabled Quest I",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "fabled-quest-i",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Ignia.png",
@@ -5627,6 +5761,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "top-burn-single-enemy-30-3-sec"
@@ -5677,6 +5812,7 @@
       "notes": "Applies alongside the other debuffs"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-decrease-enemies-in-target-area-burn-5-sec",
      "top-critical-rate-decrease-enemies-in-target-area-burn-5-sec",
@@ -5728,6 +5864,7 @@
       "notes": "Applies alongside Burn"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-9-sec-1000-of-own-atk",
      "top-burn-each-target-hit-every-9-sec-6-sec",
@@ -5742,6 +5879,9 @@
   "identity": "Irene Belserion",
   "collection": "Spriggan 12",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Irene Belserion.png",
@@ -5770,10 +5910,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -5810,11 +5950,11 @@
       "notes": "Activates alongside the ATK increase"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-brave-allies-7-sec",
      "top-critical-rate-increase-brave-allies-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -5863,12 +6003,12 @@
       "notes": "Chance is rolled separately for each target."
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-every-9-sec-700-of-own-atk",
      "top-critical-defense-decrease-each-target-hit-every-9-sec-5-sec",
      "high-burn-each-target-hit-every-9-sec-30-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -5878,6 +6018,9 @@
   "identity": "Jellal Fernandes",
   "collection": "Crime Sorciere",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "madofes-jellal-fernandes",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Jellal Fernandes.png",
@@ -5928,6 +6071,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-atk-increase-mind-allies-critical-hit-3-sec",
@@ -5967,6 +6111,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-skill-hit-20-400-of-own-atk",
      "top-paralysis-single-enemy-5-sec"
@@ -6029,6 +6174,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-750-of-own-atk",
      "top-evasion-increase-self-paralysis-5-sec",
@@ -6044,6 +6190,9 @@
   "identity": "Jura Neekis",
   "collection": "Lamia Scale",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "Jura Neekis.png",
@@ -6072,10 +6221,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -6112,11 +6261,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-increase-self-every-5-sec-5-sec",
      "high-critical-defense-increase-self-every-5-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -6141,10 +6290,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-700-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -6154,6 +6303,9 @@
   "identity": "Juvia Lockser",
   "collection": "Phantom Lord",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "madofes-aug-2026",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Juvia -Element 4-.png",
@@ -6204,6 +6356,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "top-atk-decrease-single-enemy-30-3-sec",
@@ -6255,6 +6408,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-skill-hit-30-450-of-own-atk",
      "top-burn-single-enemy-special-skill-hit-5-sec",
@@ -6330,6 +6484,7 @@
       "notes": "Applies if target is affected with Silence or Burn"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-900-of-own-atk",
      "top-def-decrease-each-target-hit-every-10-sec-silence-or-burn-7-sec",
@@ -6346,6 +6501,9 @@
   "identity": "Juvia Lockser",
   "collection": "Fairy Tail II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Juvia Lockser.png",
@@ -6386,11 +6544,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk",
      "mid-critical-rate-increase-self-20-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -6427,11 +6585,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-critical-hit-250-of-own-atk",
      "top-evasion-increase-self-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -6468,11 +6626,11 @@
       "notes": "Delays enemy Ultimate"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-9-sec-1100-of-own-atk",
      "push-back-ultimate-skill-gauge-single-enemy-every-9-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -6482,6 +6640,9 @@
   "identity": "Kagura Mikazuchi",
   "collection": "Mermaid Heel",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Kagura Mikazuchi.png",
@@ -6510,10 +6671,10 @@
       "notes": "Melee"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -6550,11 +6711,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-critical-hit-300-of-own-atk",
      "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-critical-hit-0-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -6615,13 +6776,13 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-8-sec-1100-of-own-atk",
      "top-bleed-single-enemy-every-8-sec-50-5-sec",
      "top-atk-increase-self-every-8-sec-7-sec",
      "high-critical-rate-increase-self-every-8-sec-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -6631,6 +6792,9 @@
   "identity": "Larcade Dragneel",
   "collection": "Spriggan 12",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Larcade Dragneel.png",
@@ -6659,10 +6823,10 @@
       "notes": "Ranged"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -6687,10 +6851,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-atk-decrease-single-enemy-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -6727,20 +6891,23 @@
       "notes": "Rolled separately for each target"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-650-of-own-atk",
      "bind-each-target-hit-every-11-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
  {
   "id": "laxus-red-lightning-dragon-mode",
-  "name": "Laxus - Red Lightning Dragon Mode-",
+  "name": "Laxus -Red Lightning Dragon Mode-",
   "identity": "Laxus Dreyar",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "madofes-feb-2026",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Laxus-Red Lighthing Dragon Mode.png",
@@ -6779,6 +6946,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "top-critical-damage-increase-technique-allies-3-sec"
@@ -6817,6 +6985,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-skill-hit-20-350-of-own-atk",
      "additional-damage-single-enemy-bleed-20-350-of-own-atk"
@@ -6879,6 +7048,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-900-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-50-5-sec",
@@ -6894,6 +7064,9 @@
   "identity": "Laxus Dreyar",
   "collection": "Fairy Tail III",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Laxus Dreyar.png",
@@ -6922,10 +7095,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -6962,11 +7135,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-critical-hit-250-of-own-atk",
      "additional-damage-single-enemy-paralysis-250-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -7003,11 +7176,11 @@
       "notes": "Chance is rolled separately for each enemy"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-every-10-sec-700-of-own-atk",
      "top-paralysis-each-target-hit-every-10-sec-30-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -7017,6 +7190,9 @@
   "identity": "Levy McGarden",
   "collection": "Fairy Tail II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Levy McGarden.png",
@@ -7045,10 +7221,10 @@
       "notes": "Ranged"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -7085,11 +7261,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-def-increase-mind-allies-3-sec",
      "high-critical-resistance-increase-mind-allies-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -7126,11 +7302,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-11-sec-850-of-own-atk",
      "bind-single-enemy-every-11-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -7140,6 +7316,9 @@
   "identity": "Lucy Heartfilia",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "pickup-lucy-leo-form",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Lucy -Leo Form-.png",
@@ -7166,6 +7345,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk"
     ]
@@ -7203,6 +7383,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-increase-all-allies-while-on-the-field",
      "top-critical-rate-increase-all-allies-while-on-the-field"
@@ -7241,6 +7422,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-850-of-own-atk",
      "blind-each-target-hit-every-11-sec-50-5-sec"
@@ -7254,9 +7436,12 @@
   "identity": "Lucy Heartfilia",
   "collection": "Fabled Quest I",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "fabled-quest-i",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
-  "portrait": "Screenshot 2026-07-15 at 123335 AM.png",
+  "portrait": "Lucy -Leo x Virgo Form-.png",
   "signatureLacrima": "lucy-leo-x-virgo-form-lacrima",
   "skills": [
    {
@@ -7304,6 +7489,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-180-of-own-atk",
      "high-atk-increase-self-30-3-sec",
@@ -7355,6 +7541,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-critical-damage-increase-technique-allies-every-5-sec-5-sec",
      "top-critical-rate-increase-technique-allies-every-5-sec-5-sec",
@@ -7418,6 +7605,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-950-of-own-atk",
      "bind-each-target-hit-every-10-sec-30-5-sec",
@@ -7433,9 +7621,12 @@
   "identity": "Lucy Heartfilia",
   "collection": "Fairy Tail",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Disrupt",
-  "portrait": "Lucy Heartfilia.png",
+  "portrait": "Lucy Heartfilia-SR.png",
   "signatureLacrima": "lucy-lacrima",
   "skills": [
    {
@@ -7461,10 +7652,10 @@
       "notes": "Ranged"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -7489,10 +7680,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-evasion-increase-self-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -7529,11 +7720,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-600-of-own-atk",
      "top-atk-decrease-each-target-hit-every-10-sec-50-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -7543,6 +7734,9 @@
   "identity": "Lyon Vastia",
   "collection": "Lamia Scale",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Lyon Vastia.png",
@@ -7571,10 +7765,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -7599,10 +7793,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "push-back-ultimate-skill-gauge-single-enemy-freeze-0-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -7639,11 +7833,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-700-of-own-atk",
      "high-freeze-each-target-hit-20-2-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -7653,6 +7847,9 @@
   "identity": "Makarov Dreyar",
   "collection": "Fairy Tail II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Defense",
   "portrait": "Makarov Dreyar.png",
@@ -7681,10 +7878,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -7721,11 +7918,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-increase-technique-allies-every-7-sec-5-sec",
      "top-critical-resistance-increase-technique-allies-every-7-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -7774,12 +7971,12 @@
       "notes": "Forces normal attacks against Makarov"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "invincible-self-while-giant-7-sec",
      "taunt-all-enemies-giant-activation-7-sec",
      "giant-self"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -7789,6 +7986,9 @@
   "identity": "Mard Geer",
   "collection": "Tartaros",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Mard Geer.png",
@@ -7817,19 +8017,19 @@
       "notes": "Ranged"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
     "name": "The Power of the Absolute Devil",
     "attackRange": null,
     "gameText": {
-     "Lv1": "After a normal skill hits, if the target is in Bleed state, push back the target s current Ultimate Skill gauge by 0.5 sec.",
-     "Lv2": "After a normal skill hits, if the target is in Bleed state, push back the target s current Ultimate Skill gauge by 0.6 sec.",
-     "Lv3": "After a normal skill hits, if the target is in Bleed state, push back the target's current Ultimate Skill gauge by 0.7 sec"
+     "Lv1": "After a normal skill hits, if the target is in Bleed state, push back the target's current Ultimate Skill gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, if the target is in Bleed state, push back the target's current Ultimate Skill gauge by 0.6 sec.",
+     "Lv3": "After a normal skill hits, if the target is in Bleed state, push back the target's current Ultimate Skill gauge by 0.7 sec."
     },
     "levelTable": [
      {
@@ -7845,8 +8045,10 @@
       "notes": null
      }
     ],
-    "applications": [],
-    "levelTextSource": "madochro.wiki.gg"
+    "levelTextSource": "madochro.wiki.gg",
+    "applications": [
+     "push-back-ultimate-skill-gauge-single-enemy-bleed-0-7-sec"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -7883,11 +8085,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-every-10-sec-1100-of-own-atk",
      "top-bleed-single-enemy-every-10-sec-50-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -7897,6 +8099,9 @@
   "identity": "Irene Belserion",
   "collection": null,
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "madofes-nov-2026",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": null,
@@ -7947,6 +8152,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-180-of-own-atk",
      "high-critical-rate-increase-technique-allies-critical-hit-3-sec",
@@ -8022,6 +8228,7 @@
       "notes": "Target affected by Burn, Silence or Bleed at attack hit"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-normal-skill-hit-30-450-of-own-atk",
      "additional-damage-each-target-hit-special-skill-hit-burn-silence-or-bleed-450-atk",
@@ -8099,6 +8306,7 @@
       "notes": "Extends duration of effects by 0.5 sec per Technique ally (up to 3 sec)"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-9-sec-1000-of-own-atk",
      "top-atk-increase-all-allies-every-9-sec-5-sec-extended-per-technique-ally",
@@ -8115,6 +8323,9 @@
   "identity": "Mavis Vermillion",
   "collection": "Love and Curse",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "pickup-mavis-vermillion",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Mavis Vermillion.png",
@@ -8143,10 +8354,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -8195,12 +8406,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "action-block-barrier-all-allies-20-5-sec",
      "top-atk-increase-all-allies-20-5-sec",
      "top-accuracy-increase-all-allies-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -8261,13 +8472,13 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-continuous-heal-all-allies-every-10-sec-7-sec",
      "top-def-increase-all-allies-every-10-sec-7-sec",
      "heal-all-allies-every-10-sec-900-of-own-atk",
      "remove-all-debuffs-all-allies-every-10-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -8277,6 +8488,9 @@
   "identity": "Meredy",
   "collection": "Crime Sorciere",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Meredy.png",
@@ -8305,10 +8519,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -8333,10 +8547,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-atk-increase-heart-allies-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -8361,10 +8575,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "heal-all-allies-every-10-sec-800-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -8374,6 +8588,9 @@
   "identity": "Meredy",
   "collection": "Grimoire Heart",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Meredy -Grimoire Heart-.png",
@@ -8424,6 +8641,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "mid-atk-decrease-single-enemy-30-3-sec",
@@ -8463,6 +8681,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "high-def-decrease-all-enemies-every-7-sec-for-7-sec",
      "high-critical-defense-decrease-all-enemies-every-7-sec-7-sec"
@@ -8513,6 +8732,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-850-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-7-sec",
@@ -8527,6 +8747,9 @@
   "identity": "Lucy Heartfilia",
   "collection": "Midsummer Sorcerer",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "midsummer-sorcerer",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Midsummer Sorcerer Lucy.png",
@@ -8579,12 +8802,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-paralysis-single-enemy-30-3-sec",
      "heal-block-single-enemy-30-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -8621,11 +8844,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-decrease-enemies-in-target-area-paralysis-silence-or-bleed-5-sec",
      "top-critical-resistance-decrease-enemies-in-target-area-paralysis-silence-or-bleed-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -8686,13 +8909,13 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-10-sec-850-of-own-atk",
      "bind-each-target-hit-every-10-sec-30-7-sec",
      "high-critical-defense-decrease-each-target-hit-every-10-sec",
      "high-evasion-decrease-each-target-hit-every-10-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -8702,6 +8925,9 @@
   "identity": "Mirajane Strauss",
   "collection": "Midsummer Sorcerer",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "midsummer-sorcerer",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Midsummer Sorcerer Mirajane.png",
@@ -8764,6 +8990,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "top-atk-increase-self-3-sec",
@@ -8816,6 +9043,7 @@
       "notes": "Same shared proc and duration"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-critical-damage-increase-all-allies-30-5-sec",
      "top-accuracy-increase-all-allies-30-5-sec-duration-scales-per-technique-ally",
@@ -8867,6 +9095,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-9-sec-1000-of-own-atk",
      "high-burn-each-target-hit-every-9-sec-5-sec",
@@ -8881,6 +9110,9 @@
   "identity": "Minerva Orland",
   "collection": "Sabertooth",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Minerva Orland.png",
@@ -8909,10 +9141,10 @@
       "notes": "Ranged"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -8949,11 +9181,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-critical-hit-250-of-own-atk",
      "high-burn-single-enemy-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -8990,11 +9222,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-700-of-own-atk",
      "additional-damage-each-target-hit-every-9-sec-burn-400-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -9004,9 +9236,12 @@
   "identity": "Mirajane Strauss",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "madofes-mirajane-satan-soul",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Ranged",
-  "portrait": "Screenshot 2026-07-14 at 112337 PM.png",
+  "portrait": "Mirajane -Satan Soul-.png",
   "signatureLacrima": "mirajane-satan-soul-lacrima",
   "skills": [
    {
@@ -9054,6 +9289,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-critical-damage-increase-heart-allies-3-sec",
@@ -9093,6 +9329,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-normal-skill-hit-20-250-of-own-atk",
      "silence-each-target-hit-50-5-sec"
@@ -9155,6 +9392,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-900-of-own-atk",
      "top-atk-decrease-each-target-hit-every-10-sec-silence-5-sec",
@@ -9170,6 +9408,9 @@
   "identity": "Mirajane Strauss",
   "collection": "Fairy Tail II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Heal",
   "portrait": "Mirajane Strauss.png",
@@ -9210,11 +9451,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk",
      "heal-lowest-hp-ally-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -9239,10 +9480,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "silence-single-enemy-20-4-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -9291,12 +9532,12 @@
       "notes": "Cleanses the entire team"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "heal-lowest-hp-ally-every-10-sec-850-of-own-atk",
      "top-continuous-heal-lowest-hp-ally-5-sec",
      "remove-all-debuffs-all-allies-every-10-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -9306,9 +9547,12 @@
   "identity": "Levy McGarden",
   "collection": "Moonlit Reverie",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "moonlit-reverie",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Heal",
-  "portrait": "Screenshot 2026-07-15 at 122918 AM.png",
+  "portrait": "Moonlit Reverie Levy.png",
   "signatureLacrima": "moonlit-reverie-levy-lacrima",
   "skills": [
    {
@@ -9344,6 +9588,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk",
      "heal-lowest-hp-ally-160-of-own-atk"
@@ -9394,6 +9639,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-critical-resistance-increase-all-allies-30-5-sec",
      "top-continuous-heal-all-allies-30-5-sec",
@@ -9481,6 +9727,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "heal-all-allies-every-11-sec-950-of-own-atk",
      "top-shield-all-allies-every-11-sec-5-sec",
@@ -9498,10 +9745,13 @@
   "identity": "Mavis Vermillion",
   "collection": "Moonlit Reverie",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "moonlit-reverie",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Moonlit Reverie Mavis.png",
-  "signatureLacrima": "moonlit-reverie-mavis",
+  "signatureLacrima": "moonlit-reverie-mavis-lacrima",
   "skills": [
    {
     "kind": "Normal",
@@ -9538,11 +9788,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-burn-single-enemy-30-4-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -9579,11 +9829,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-heart-allies-critical-hit-5-sec",
      "top-critical-rate-increase-heart-allies-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -9632,12 +9882,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-9-sec-850-of-own-atk",
      "top-paralysis-each-target-hit-every-9-sec-40-5-sec",
      "top-evasion-decrease-each-target-hit-every-9-sec-40-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -9647,6 +9897,9 @@
   "identity": "Mystogan",
   "collection": "S-Class Mage",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Mystogan.png",
@@ -9675,10 +9928,10 @@
       "notes": "Ranged"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -9703,10 +9956,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "bind-single-enemy-10-4-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -9731,10 +9984,10 @@
       "notes": "Area damage"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-850-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -9744,6 +9997,9 @@
   "identity": "Natsu Dragneel",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "pickup-natsu-dragon-force",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Natsu-Dragon Force.png",
@@ -9782,6 +10038,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-burn-single-enemy-20-3-sec"
@@ -9820,6 +10077,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "additional-damage-enemies-in-target-area-burn-300-of-own-atk"
     ]
@@ -9857,6 +10115,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-every-8-sec-850-of-own-atk",
      "top-burn-each-target-hit-every-8-sec-10-sec"
@@ -9870,6 +10129,9 @@
   "identity": "Natsu Dragneel",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "madofes-may-2026",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Natsu-Lightning Fire Dragon Mode-.png",
@@ -9920,6 +10182,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-atk-increase-heart-allies-3-sec",
@@ -9971,6 +10234,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-skill-hit-30-400-of-own-atk",
      "top-burn-single-enemy-5-sec",
@@ -10034,6 +10298,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-850-of-own-atk",
      "top-critical-defense-decrease-each-target-hit-every-10-sec-burn-or-paralysis-5-sec",
@@ -10049,6 +10314,9 @@
   "identity": "Natsu Dragion",
   "collection": "Parallel World",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "parallel-world",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Natsu Dragion.png",
@@ -10087,6 +10355,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-atk-increase-self-30-3-sec"
@@ -10149,6 +10418,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-increase-self-on-enemy-defeated-7-sec",
      "top-critical-damage-increase-self-on-enemy-defeated-7-sec",
@@ -10201,6 +10471,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-600-of-own-atk",
      "top-evasion-decrease-all-enemies-every-10-sec-burning-5-sec",
@@ -10215,6 +10486,9 @@
   "identity": "Natsu Dragneel",
   "collection": "Fairy Tail",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Natsu Dragneel.png",
@@ -10243,10 +10517,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -10271,10 +10545,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-critical-rate-increase-self-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -10311,11 +10585,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-700-of-own-atk",
      "top-burn-each-target-hit-every-10-sec-30-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -10325,6 +10599,9 @@
   "identity": "Minerva Orland",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Neo Minerva.png",
@@ -10375,6 +10652,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "heal-self-30-700-of-own-atk",
@@ -10438,6 +10716,7 @@
       "notes": "Once Only"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-increase-self-hp-50-once-only-5-sec",
      "top-atk-increase-self-hp-50-once-only-5-sec"
@@ -10500,6 +10779,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-8-sec-850-of-own-atk",
      "top-atk-decrease-each-target-hit-every-8-sec-50-5-sec",
@@ -10515,6 +10795,9 @@
   "identity": "Cana Alberona",
   "collection": "Noir Family",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "noir-family",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Noir Cana.png",
@@ -10553,6 +10836,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-critical-rate-increase-self-20-3-sec"
@@ -10603,6 +10887,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-critical-damage-increase-self-20-5-sec",
      "top-shield-self-20-5-sec",
@@ -10654,6 +10939,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-850-of-own-atk",
      "bind-each-target-hit-every-10-sec-20-5-sec",
@@ -10668,6 +10954,9 @@
   "identity": "Gildarts Clive",
   "collection": "Noir Family",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "noir-family",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Noir Gildarts.png",
@@ -10706,6 +10995,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk",
      "high-def-increase-self-20-3-sec"
@@ -10744,6 +11034,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-increase-self-every-7-sec-5-sec",
      "top-critical-defense-increase-self-every-7-sec-5-sec"
@@ -10806,6 +11097,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-750-of-own-atk",
      "taunt-each-target-hit-every-10-sec-50-5-sec",
@@ -10821,6 +11113,9 @@
   "identity": "Erza Scarlet",
   "collection": "Otherworld Adventure",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "otherworld-adventure",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Otherworld Adventure Erza.png",
@@ -10871,6 +11166,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "top-critical-resistance-decrease-single-enemy-30-3-sec",
@@ -10922,6 +11218,7 @@
       "notes": "Enemies affected by Paralysis, Burn or Bleed"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-area-paralysis-burn-or-bleed-5-sec",
      "top-atk-decrease-enemies-in-target-area-paralysis-burn-or-bleed-5-sec"
@@ -10972,6 +11269,7 @@
       "notes": "Extends duration of additional effects by 0.5 sec for each Brave Ally (max 3 sec)"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-900-of-own-atk",
      "heal-block-each-target-hit-every-10-sec-7-sec-extended-per-brave-ally",
@@ -10986,6 +11284,9 @@
   "identity": "Kagura Mikazuchi",
   "collection": "Otherworld Adventure",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "otherworld-adventure",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Otherworld Adventure Kagura.png",
@@ -11036,6 +11337,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-atk-increase-technique-allies-critical-hit-3-sec",
@@ -11087,6 +11389,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "silence-single-enemy-30-5-sec"
     ]
@@ -11136,6 +11439,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-950-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-40-5-sec",
@@ -11148,8 +11452,11 @@
   "id": "parallel-world-mystogan",
   "name": "Parallel World Mystogan",
   "identity": "Mystogan",
-  "collection": "Parallel World",
+  "collection": "Parallel World -Part 2-",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "parallel-world",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Melee",
   "portrait": null,
@@ -11200,6 +11507,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "top-shield-self-20-3-sec",
@@ -11251,6 +11559,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-decrease-all-enemies-critical-hit-5-sec",
      "top-critical-damage-decrease-all-enemies-critical-hit-5-sec",
@@ -11314,6 +11623,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-8-sec-1050-of-own-atk",
      "heal-block-each-target-hit-every-8-sec-5-sec",
@@ -11329,6 +11639,9 @@
   "identity": "Edolas Wendy",
   "collection": "Parallel World",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "parallel-world",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": null,
@@ -11379,6 +11692,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk"
     ]
@@ -11440,6 +11754,7 @@
       "notes": "Affected by Freeze, Burn or Bleed"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-area-freeze-burn-or-bleed-7-sec",
      "top-critical-resistance-decrease-enemies-in-target-area-freeze-burn-or-bleed-7-sec",
@@ -11504,6 +11819,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-900-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-7-sec-extended-per-heart-ally",
@@ -11519,6 +11835,9 @@
   "identity": "Erza Scarlet",
   "collection": "Pure White Oath",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "pure-white-oath",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Pure White Oath Erza.png",
@@ -11581,6 +11900,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "mid-atk-increase-mind-allies-3-sec",
@@ -11621,6 +11941,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-attacker-when-attacked-5-sec",
      "top-paralysis-attacker-when-attacked-5-sec"
@@ -11659,6 +11980,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-9-sec-1000-of-own-atk",
      "additional-damage-each-target-hit-every-9-sec-50-hp-lost"
@@ -11672,6 +11994,9 @@
   "identity": "Jellal Fernandes",
   "collection": "Pure White Oath",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "pure-white-oath",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Pure White Oath Jellal.png",
@@ -11722,6 +12047,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-def-decrease-single-enemy-30-3-sec",
@@ -11761,6 +12087,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "mid-burn-all-enemies-every-5-sec-5-sec",
      "heal-block-all-enemies-every-5-sec-5-sec"
@@ -11823,6 +12150,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-850-of-own-atk",
      "top-def-decrease-all-enemies-every-10-sec-7-sec",
@@ -11838,6 +12166,9 @@
   "identity": "Juvia Lockser",
   "collection": "Rock'n Magic",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "Rock'n Magic Juvia.png",
@@ -11888,6 +12219,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "heal-self-30-700-of-own-atk",
@@ -11927,6 +12259,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-increase-all-allies-while-on-the-field"
     ]
@@ -12024,6 +12357,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-8-sec-850-of-own-atk",
      "critical-shield-self-every-8-sec-7-sec",
@@ -12042,6 +12376,9 @@
   "identity": "Lucy Heartfilia",
   "collection": "Rock'n Magic",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "rock-n-magic",
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Rock'n Magic Lucy.png",
@@ -12092,6 +12429,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-atk-increase-brave-allies-critical-hit-3-sec",
@@ -12143,6 +12481,7 @@
       "notes": "Targets affected by Paralysis or Burn"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "high-bleed-enemies-in-target-area-paralysis-or-burn-5-sec",
      "top-critical-resistance-decrease-enemies-in-target-area-paralysis-or-burn-5-sec",
@@ -12206,6 +12545,7 @@
       "notes": "Effect extends 0.5 sec per Brave Ally up to 3.5 sec."
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-950-of-own-atk",
      "top-critical-defense-decrease-each-target-hit-every-10-sec-40-5-sec-duration-scales-per-brave-ally",
@@ -12221,6 +12561,9 @@
   "identity": "Rogue Cheney",
   "collection": "Sabertooth",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Rogue Cheney.png",
@@ -12249,10 +12592,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -12277,10 +12620,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-evasion-increase-self-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -12305,10 +12648,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-750-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -12318,6 +12661,9 @@
   "identity": "Selene",
   "collection": "Fabled Quest II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "half-anniversary-fest",
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Selene.png",
@@ -12368,6 +12714,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-180-of-own-atk",
      "high-critical-defense-decrease-single-enemy-30-3-sec",
@@ -12407,6 +12754,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-normal-skill-hit-20-350-of-own-atk",
      "additional-damage-each-target-hit-status-affected-350-of-own-atk"
@@ -12469,6 +12817,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-11-sec-950-of-own-atk",
      "invincible-self-every-11-sec-5-sec",
@@ -12484,6 +12833,9 @@
   "identity": "Sherria Blendy",
   "collection": "Lamia Scale",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Sherria Blendy.png",
@@ -12512,10 +12864,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -12540,10 +12892,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "heal-self-every-6-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -12568,10 +12920,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-750-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -12581,6 +12933,9 @@
   "identity": "Silver Fullbuster",
   "collection": "Tartaros",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Silver Fullbuster.png",
@@ -12609,10 +12964,10 @@
       "notes": "Melee"
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -12637,10 +12992,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-freeze-single-enemy-10-4-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -12677,11 +13032,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-700-of-own-atk",
      "additional-damage-each-target-hit-every-10-sec-freeze-450-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -12691,10 +13046,13 @@
   "identity": "Mavis Vermillion",
   "collection": "Starry Night Reunion",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "starry-night-reunion",
+  "bannerArt": "starry-night-reunion-mavis.webp",
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Starry Night Reunion Mavis.png",
-  "signatureLacrima": "starry-reunion-mavis-lacrima",
+  "signatureLacrima": "starry-night-reunion-mavis-lacrima",
   "skills": [
    {
     "kind": "Normal",
@@ -12729,6 +13087,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-bleed-single-enemy-30-3-sec"
@@ -12767,6 +13126,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-increase-technique-allies-5-sec",
      "top-critical-damage-increase-technique-allies-5-sec"
@@ -12817,6 +13177,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-850-of-own-atk",
      "top-critical-resistance-decrease-each-target-hit-every-9-sec-5-sec",
@@ -12831,6 +13192,9 @@
   "identity": "Zeref Dragneel",
   "collection": "Starry Night Reunion",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "starry-night-reunion",
+  "bannerArt": "starry-night-reunion-zeref.webp",
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Starry Night Reunion Zeref.png",
@@ -12881,6 +13245,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-def-increase-mind-allies-3-sec",
@@ -12920,6 +13285,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-decrease-enemies-in-target-area-paralysis-or-blind-5-sec",
      "top-critical-rate-decrease-enemies-in-target-area-paralysis-or-blind-5-sec"
@@ -12970,6 +13336,7 @@
       "notes": "Duration increases by 0.5 sec per Intelligence ally, up to +3 sec."
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-950-of-own-atk",
      "blind-each-target-hit-every-10-sec-30-5-sec-extended-per-mind-ally",
@@ -12984,6 +13351,9 @@
   "identity": "Sting Eucliffe",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": "madofes-jul-2026",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Sting-Dragon Force.png",
@@ -13034,6 +13404,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-180-of-own-atk",
      "high-atk-increase-technique-allies-critical-hit-3-sec",
@@ -13085,6 +13456,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-skill-hit-30-400-of-own-atk",
      "top-bleed-single-enemy-5-sec",
@@ -13148,6 +13520,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-950-of-own-atk",
      "top-def-decrease-each-target-hit-every-10-sec-bleed-5-sec",
@@ -13163,6 +13536,9 @@
   "identity": "Sting Eucliffe",
   "collection": "Sabertooth",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Sting Eucliffe.png",
@@ -13191,10 +13567,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-140-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -13219,10 +13595,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-critical-rate-increase-self-20-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -13247,10 +13623,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-700-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -13260,6 +13636,9 @@
   "identity": "Suzaku",
   "collection": "Fabled Quest II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "fabled-quest-ii",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Suzaku.png",
@@ -13298,6 +13677,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "top-bleed-single-enemy-30-3-sec"
@@ -13348,6 +13728,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-increase-self-constant",
      "top-accuracy-increase-self-constant"
@@ -13398,6 +13779,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-9-sec-1050-of-own-atk",
      "top-bleed-each-target-hit-every-9-sec-5-sec",
@@ -13412,6 +13794,9 @@
   "identity": "Gildarts Clive",
   "collection": "Swayed by the Evening Breeze",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "swayed-by-the-evening-breeze",
+  "bannerArt": "swayed-by-the-evening-breeze-gildarts.webp",
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Swayed by the Evening Breeze Gildarts.png",
@@ -13464,12 +13849,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-paralysis-single-enemy-30-3-sec",
      "heal-block-single-enemy-30-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -13518,12 +13903,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "high-evasion-decrease-all-enemies-every-7-sec-7-sec",
      "high-critical-defense-decrease-all-enemies-every-7-sec-7-sec",
      "high-critical-resistance-decrease-all-enemies-every-7-sec-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -13572,12 +13957,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-range-every-10-sec-900-of-own-atk",
      "bind-each-target-hit-every-10-sec-30-7-sec",
      "top-paralysis-each-target-hit-every-10-sec-30-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -13587,6 +13972,9 @@
   "identity": "Mystogan",
   "collection": "Swayed by the Evening Breeze",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "swayed-by-the-evening-breeze",
+  "bannerArt": "swayed-by-the-evening-breeze-mystogan.webp",
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Swayed by the Evening Breeze Mystogan.png",
@@ -13639,12 +14027,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-evasion-decrease-single-enemy-30-3-sec",
      "high-burn-single-enemy-30-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -13693,12 +14081,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-increase-heart-allies-critical-hit-5-sec",
      "top-critical-defense-increase-heart-allies-critical-hit-5-sec",
      "high-continuous-heal-heart-allies-critical-hit-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -13759,13 +14147,13 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-950-of-own-atk",
      "top-atk-increase-all-allies-every-10-sec-5-sec-extended-per-heart-ally",
      "top-shield-all-allies-every-10-sec-5-sec",
      "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-every-10-sec-0-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -13775,6 +14163,9 @@
   "identity": "Cana Alberona",
   "collection": "Swaying in the Summer Night",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "swaying-in-the-summer-night",
+  "bannerArt": "swaying-in-the-summer-night-cana.webp",
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Swaying in the Summer Night Cana.png",
@@ -13837,6 +14228,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "silence-single-enemy-30-3-sec",
@@ -13889,6 +14281,7 @@
       "notes": "Target Affected by Bleed or Silence"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-area-bleed-or-silence-5-sec",
      "top-evasion-decrease-enemies-in-target-area-bleed-or-silence-5-sec"
@@ -13939,6 +14332,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-1000-of-own-atk",
      "additional-damage-each-target-hit-every-10-sec-50-hp-lost",
@@ -13953,6 +14347,9 @@
   "identity": "Lisanna Strauss",
   "collection": "Swaying in the Summer Night",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "swaying-in-the-summer-night",
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Swaying in the Summer Night Lisanna.png",
@@ -13991,6 +14388,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "heal-lowest-hp-ally-130-of-own-atk"
@@ -14041,6 +14439,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-increase-all-allies-every-5-sec-5-sec",
      "top-critical-rate-increase-all-allies-every-5-sec-5-sec",
@@ -14116,6 +14515,7 @@
       "notes": "Instant"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-continuous-heal-all-allies-every-11-sec-5-sec",
      "action-block-barrier-all-allies-every-11-sec-5-sec",
@@ -14131,6 +14531,9 @@
   "identity": "Juvia Lockser",
   "collection": "Sweet Gift",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "sweet-gift",
+  "bannerArt": "sweet-gift-juvia.webp",
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Sweet Gift Juvia.png",
@@ -14169,6 +14572,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk",
      "heal-lowest-hp-ally-150-of-own-atk"
@@ -14207,6 +14611,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-critical-damage-increase-technique-allies-every-7-sec-5-sec",
      "high-shield-technique-allies-every-7-sec-5-sec"
@@ -14269,6 +14674,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "heal-all-allies-every-11-sec-900-of-own-atk",
      "top-atk-increase-all-allies-every-11-sec-5-sec",
@@ -14284,6 +14690,9 @@
   "identity": "Levy McGarden",
   "collection": "Sweet Gift",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "sweet-gift",
+  "bannerArt": "sweet-gift-levy.webp",
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Sweet Gift Levy.png",
@@ -14324,11 +14733,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "silence-single-enemy-10-3-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -14365,11 +14774,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-def-decrease-single-enemy-silence-5-sec",
      "top-critical-defense-decrease-single-enemy-silence-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -14418,12 +14827,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-650-of-own-atk",
      "silence-each-target-hit-every-9-sec-50-3-sec",
      "push-back-ultimate-skill-gauge-each-target-hit-every-9-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -14433,6 +14842,9 @@
   "identity": "Sherria Blendy",
   "collection": "Twin Moon Halloween",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "twin-moon-halloween",
+  "bannerArt": "twin-moon-halloween-sherria.webp",
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Twin Moon Halloween Sherria.png",
@@ -14483,6 +14895,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "heal-self-30-600-of-own-atk",
@@ -14546,6 +14959,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-atk-increase-mind-allies-every-5-sec-5-sec",
      "top-critical-rate-increase-mind-allies-every-5-sec-5-sec",
@@ -14610,6 +15024,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-8-sec-1050-of-own-atk",
      "bind-each-target-hit-every-8-sec-50-5-sec",
@@ -14625,10 +15040,13 @@
   "identity": "Sherry Blendy",
   "collection": "Twin Moon Halloween",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "twin-moon-halloween",
+  "bannerArt": "twin-moon-halloween-sherry.webp",
   "attribute": "Heart",
   "role": "Ranged",
-  "portrait": "Screenshot 2026-10-22 at 104335 AM.png",
-  "signatureLacrima": "twin-moon-halloween-sherry",
+  "portrait": "Twin Moon Halloween Sherry.png",
+  "signatureLacrima": "twin-moon-halloween-sherry-lacrima",
   "skills": [
    {
     "kind": "Normal",
@@ -14675,6 +15093,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
      "high-critical-damage-increase-all-allies-30-3-sec",
@@ -14726,6 +15145,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-all-enemies-critical-hit-5-sec",
      "top-critical-resistance-decrease-all-enemies-critical-hit-5-sec",
@@ -14789,6 +15209,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-950-of-own-atk",
      "silence-each-target-hit-every-10-sec-60-5-sec",
@@ -14804,6 +15225,9 @@
   "identity": "Ultear Milkovich",
   "collection": "Grimoire Heart",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Ultear -Grimoire Heart-.png",
@@ -14854,6 +15278,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-180-of-own-atk",
      "high-atk-increase-brave-allies-critical-hit-3-sec",
@@ -14905,6 +15330,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-area-freeze-5-sec",
      "top-critical-resistance-decrease-enemies-in-target-area-freeze-5-sec",
@@ -14944,6 +15370,7 @@
       "notes": "Extends the duration of the effect by 0.5 sec for each Brave ally (up to 3 sec)"
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-10-sec-950-of-own-atk",
      "top-freeze-each-target-hit-every-10-sec-30-5-sec"
@@ -14957,6 +15384,9 @@
   "identity": "Wendy Marvell",
   "collection": "Fabled Quest II",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "fabled-quest-ii",
+  "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Wendy -Bakeneko-.png",
@@ -15007,6 +15437,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-atk-decrease-single-enemy-30-3-sec",
@@ -15058,6 +15489,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-area-paralysis-5-sec",
      "top-critical-defense-decrease-enemies-in-target-area-paralysis-5-sec",
@@ -15109,6 +15541,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-9-sec-900-of-own-atk",
      "top-paralysis-each-target-hit-every-9-sec-5-sec",
@@ -15123,6 +15556,9 @@
   "identity": "Wendy Marvell",
   "collection": "New Form",
   "rarity": "UR",
+  "newForm": true,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Wendy -Dragon Force-.png",
@@ -15161,6 +15597,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-continuous-heal-self-30-3s"
@@ -15211,6 +15648,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-range-burn-5-sec",
      "top-critical-defense-decrease-enemies-in-target-range-burn-5-sec",
@@ -15262,6 +15700,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-all-enemies-every-11-sec-800-of-own-atk",
      "top-burn-each-target-hit-every-11-sec-5-sec",
@@ -15276,6 +15715,9 @@
   "identity": "Wendy Marvell",
   "collection": "Fairy Tail",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": null,
+  "bannerArt": null,
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Wendy Marvell.png",
@@ -15304,10 +15746,10 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-120-of-own-atk"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -15356,11 +15798,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-all-allies-10-7-sec",
      "top-critical-rate-increase-all-allies-10-7-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -15397,11 +15839,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "heal-all-allies-every-10-sec-800-of-own-atk",
      "blessing-of-the-sky-dragon-all-allies"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  },
@@ -15411,6 +15853,9 @@
   "identity": "Gajeel Redfox",
   "collection": "White Gift",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "white-gift",
+  "bannerArt": "white-gift-gajeel.webp",
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "White Gift Gajeel.png",
@@ -15449,6 +15894,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-bleed-single-enemy-20-2-sec"
@@ -15487,6 +15933,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "high-def-decrease-all-enemies-while-on-the-field",
      "high-critical-resistance-decrease-all-enemies-while-on-the-field"
@@ -15537,6 +15984,7 @@
       "notes": null
      }
     ],
+    "levelTextSource": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-850-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-50-5-sec",
@@ -15551,6 +15999,9 @@
   "identity": "Gray Fullbuster",
   "collection": "White Gift",
   "rarity": "UR",
+  "newForm": false,
+  "debutBanner": "white-gift",
+  "bannerArt": "white-gift-gray.webp",
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "White Gift Gray.png",
@@ -15591,11 +16042,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-freeze-single-enemy-10-2-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Special",
@@ -15632,11 +16083,11 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-self-every-5-sec-5-sec",
      "top-accuracy-increase-self-every-5-sec-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    },
    {
     "kind": "Ultimate",
@@ -15685,12 +16136,12 @@
       "notes": null
      }
     ],
+    "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "damage-all-enemies-every-11-sec-750-of-own-atk",
      "top-freeze-each-target-hit-every-11-sec-30-5-sec",
      "top-def-decrease-each-target-hit-every-11-sec-30-5-sec"
-    ],
-    "levelTextSource": "madochro.wiki.gg"
+    ]
    }
   ]
  }

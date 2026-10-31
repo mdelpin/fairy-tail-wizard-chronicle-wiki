@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Kanji from '../../components/Kanji.astro';
 import Pennant from '../../components/Pennant.astro';
-import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../lib/data';
+import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } from '../../lib/data';
 ---
 <Base title="Wizard Roster" section="characters" description="All UR wizards in FAIRY TAIL Wizard Chronicle, filterable by attribute and role.">
   <div class="wrap">
@@ -29,7 +29,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
       <div class="row" role="group" aria-label="Role">
         <span class="lbl">Role</span>
         <button type="button" class="pill" data-filter="role" data-value="" aria-pressed="true">All</button>
-        {ROLES.map((r) => <button type="button" class="pill" data-filter="role" data-value={r} aria-pressed="false">{r}</button>)}
+        {ROLES.map((r) => <button type="button" class="pill" data-filter="role" data-value={r} aria-pressed="false"><img class="ric" src={roleIcon(r)} alt="" width="24" height="24" />{r}</button>)}
       </div>
     </div>
 
@@ -45,7 +45,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
             </span>
             <span class="body">
               <span class="heading name">{u.name}</span>
-              <span class="meta"><Kanji attr={u.attribute} size={20} />{u.attribute} · {u.role}</span>
+              <span class="meta"><Kanji attr={u.attribute} size={20} />{u.attribute} · {roleIcon(u.role) && <img class="ric sm" src={roleIcon(u.role)} alt="" width="18" height="18" />}{u.role}</span>
             </span>
           </a>
         </li>
@@ -106,7 +106,10 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits } from '../../
   .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
   .lbl { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); }
   .pill { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 14px 0 8px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
-  .pill:not(:has(.kanji)) { padding-left: 14px; }
+  .pill:not(:has(.kanji, .ric)) { padding-left: 14px; }
+  .pill:has(.ric) { padding-left: 7px; gap: 6px; }
+  .ric { width: 24px; height: 24px; flex: none; }
+  .ric.sm { width: 18px; height: 18px; margin-right: -2px; }
   .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
   .cards { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 18px; }
   .card { display: flex; flex-direction: column; height: 100%; border-radius: 16px; overflow: hidden; background: #fff; border: 2px solid var(--line); border-top: 6px solid var(--c); color: var(--ink); text-decoration: none; box-shadow: 0 3px 0 var(--brass); }

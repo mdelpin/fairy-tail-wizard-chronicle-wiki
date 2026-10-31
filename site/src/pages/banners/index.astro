@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pennant from '../../components/Pennant.astro';
+import { banners, unitById, url, portraits, initials, bannerDates, DATE_NOTE, ATTR } from '../../lib/data';
+// A release timeline: which wizards each banner introduced. Newest first; undated banners last.
+const dated = banners.filter((b) => b.start).slice().reverse();
+const undated = banners.filter((b) => !b.start);
+const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoFes', Pickup: 'Pickup', Special: 'Special', 'Half Anniversary Fest': 'Half Anniversary' };
+---
+<Base title="Banners" section="banners" description="Every FAIRY TAIL Wizard Chronicle banner and the wizards it introduced, with dates in Japan time.">
+  <div class="wrap" data-pagefind-body>
+    <span hidden data-pagefind-filter="Type">Banner</span>
+    <div class="head">
+      <Pennant width={34} star />
+      <div>
+        <h1>Banners</h1>
+        <p class="muted">Where each wizard first became available. {banners.length} banners · newest first.</p>
+      </div>
+    </div>
+    <p class="datenote" data-pagefind-ignore>{DATE_NOTE}</p>
+
+    {[['Timeline', dated], ['Date not recorded yet', undated]].map(([title, list]) => (list as typeof banners).length > 0 && (
+      <section>
+        <div class="section-title"><Pennant /><h2>{title as string}</h2></div>
+        <ol class="list">
+          {(list as typeof banners).map((b) => {
+            const us = b.units.map((id) => unitById.get(id)!).filter(Boolean);
+            const art = us.filter((u) => u.bannerArt);
+            const dates = bannerDates(b);
+            return (
+              <li class="item" id={b.id}>
+                {art.length > 0 && (
+                  <div class={`arts n${Math.min(art.length, 2)}`} data-pagefind-ignore>
+                    {art.slice(0, 2).map((u) => <img src={url(`banner-art/${u.bannerArt}`)} alt="" width="640" height="240" loading="lazy" />)}
+                  </div>
+                )}
+                <div class="body">
+                  <div class="top">
+                    <h3 class="heading nm">{b.name}</h3>
+                    {b.type && <span class={`type type-${b.type.replace(/\W+/g, '')}`} data-pagefind-ignore>{TYPE_LABEL[b.type] ?? b.type}</span>}
+                  </div>
+                  {dates && <span class="when" data-pagefind-ignore>{dates}</span>}
+                  {us.length > 0
+                    ? <ul class="units">
+                        {us.map((u) => (
+                          <li><a href={url(`characters/${u.id}/`)} style={`--c:${ATTR[u.attribute].color}`}>
+                            {portraits.has(u.id)
+                              ? <img src={url(`portraits/${u.id}.webp`)} alt="" width="40" height="40" loading="lazy" />
+                              : <span class="ph">{initials(u.name)}</span>}
+                            <span>{u.name}</span>
+                          </a></li>
+                        ))}
+                      </ul>
+                    : <p class="muted none" data-pagefind-ignore>No new wizards.</p>}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .head { display: flex; align-items: center; gap: 16px; }
+  .head h1 { font-size: 42px; line-height: 1; }
+  .head p { margin: 4px 0 0; }
+  .datenote { margin: 12px 0 0; max-width: 760px; font-size: 13px; color: var(--muted); }
+  .list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; align-items: start; }
+  .item { border-radius: 16px; overflow: hidden; background: #fff; border: 2px solid var(--line); box-shadow: 0 3px 0 var(--brass); scroll-margin-top: 16px; display: flex; flex-direction: column; }
+  .item:target { box-shadow: 0 0 0 3px var(--crimson); }
+  .arts { display: grid; border-bottom: 2px solid var(--brass); background: var(--timber); }
+  .arts.n2 { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .arts img { width: 100%; height: auto; aspect-ratio: 640 / 240; object-fit: cover; object-position: left center; }
+  .arts.n2 img { aspect-ratio: 320 / 240; }
+  .body { padding: 14px 18px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .top { display: flex; align-items: center; gap: 10px; justify-content: space-between; }
+  .nm { font-size: 19px; line-height: 1.2; }
+  .type { flex: none; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: #EFE5D3; color: var(--timber); }
+  .type-MadoFes { background: var(--crimson); color: var(--cream); }
+  .type-Pickup { background: #2F5D8A; color: var(--cream); }
+  .type-HalfAnniversaryFest, .type-Special { background: var(--brass); color: var(--ink); }
+  .when { font: 500 13px var(--mono); color: var(--muted); }
+  .units { list-style: none; padding: 0; margin: 2px 0 0; display: flex; flex-direction: column; gap: 6px; }
+  .units a { display: flex; align-items: center; gap: 10px; color: var(--ink); font-size: 14px; font-weight: 500; }
+  .units a:hover { color: var(--crimson); }
+  .units img, .units .ph { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid var(--c); }
+  .units .ph { display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--c); background: #FBF4E7; }
+  .none { margin: 0; font-size: 14px; }
+  @media (max-width: 420px) { .list { grid-template-columns: 1fr; } }
+</style>

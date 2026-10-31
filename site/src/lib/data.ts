@@ -3,6 +3,7 @@ import unitsJson from '../data/units.json';
 import appsJson from '../data/applications.json';
 import effectsJson from '../data/effects.json';
 import lacrimasJson from '../data/lacrimas.json';
+import bannersJson from '../data/banners.json';
 
 export interface Effect {
   id: string; name: string; family: string | null; direction: string | null; tier: string | null;
@@ -30,7 +31,21 @@ export const WIKI_CREDIT = { name: 'madochro.wiki.gg', href: 'https://madochro.w
 export interface Unit {
   id: string; name: string; identity: string | null; collection: string | null; rarity: string | null;
   attribute: Attribute; role: string | null; portrait: string | null; signatureLacrima: string | null;
+  /** Collection name starts with "New Form" (the game spreads them over several). */
+  newForm: boolean;
+  /** The banner the unit first became obtainable on, if recorded. */
+  debutBanner: string | null;
+  /** File name in public/banner-art/, if the unit's gacha art is recorded. */
+  bannerArt: string | null;
   skills: Skill[];
+}
+export interface Banner {
+  id: string; name: string; type: string | null;
+  /** Official JST days, YYYY-MM-DD. */
+  start: string | null; end: string | null;
+  /** 'Confirmed' (game or official post) or 'Calculated' (two-week rhythm); null when no date is known. */
+  dateSource: string | null;
+  units: string[];
 }
 export interface Lacrima {
   id: string; name: string; kind: 'signature' | 'generic'; signatureFor: string | null;
@@ -44,6 +59,20 @@ export const effects = new Map((effectsJson as Effect[]).map((e) => [e.id, e]));
 export const lacrimas = (lacrimasJson as Lacrima[]).slice().sort((a, b) => a.name.localeCompare(b.name));
 export const unitById = new Map(units.map((u) => [u.id, u]));
 export const lacrimaById = new Map(lacrimas.map((l) => [l.id, l]));
+/** Oldest first; banners without a date at the end. */
+export const banners = bannersJson as Banner[];
+export const bannerById = new Map(banners.map((b) => [b.id, b]));
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** '2026-03-06' -> '6 Mar 2026' (a JST calendar day, shown as written; no time-zone shift). */
+export const dayText = (d: string) => { const [y, m, dd] = d.split('-').map(Number); return `${dd} ${MONTHS[m - 1]} ${y}`; };
+/** 'Calculated' dates get an ≈ so readers can tell them from confirmed ones. */
+export const bannerDates = (b: Banner) => {
+  if (!b.start) return null;
+  const approx = b.dateSource === 'Calculated' ? '≈ ' : '';
+  return approx + dayText(b.start) + (b.end ? ` – ${dayText(b.end)}` : '');
+};
+export const DATE_NOTE = '≈ worked out from the two-week banner rhythm; other dates are confirmed by the game or an official post. Dates are Japan time (JST): banners switch at 15:00 JST.';
 
 export const url = (path: string) => import.meta.env.BASE_URL.replace(/\/?$/, '/') + path.replace(/^\//, '');
 
@@ -62,6 +91,15 @@ export const ATTR: Record<Attribute, { kanji: string; color: string; text: strin
 };
 export const ATTR_ORDER: Attribute[] = ['Brave', 'Mind', 'Technique', 'Heart'];
 export const ROLES = ['Melee', 'Ranged', 'Disrupt', 'Heal', 'Defense'];
+/** Role icons from the game, in public/icons/role/. */
+export const roleIcon = (role: string | null) => (role && ROLES.includes(role) ? url(`icons/role/${role.toLowerCase()}.webp`) : null);
+/** The Normal skill icon follows attribute and attack range (fist = melee, comet = ranged), in public/icons/skill/. */
+const NORMAL_ICON: Record<Attribute, number> = { Brave: 1, Technique: 2, Mind: 3, Heart: 4 };
+export const normalIcon = (u: Unit) => {
+  const range = u.skills.find((s) => s.kind === 'Normal')?.attackRange;
+  if (range !== 'Melee' && range !== 'Ranged') return null;
+  return url(`icons/skill/0${NORMAL_ICON[u.attribute] + (range === 'Ranged' ? 4 : 0)}.webp`);
+};
 export const KIND_ORDER = ['Normal', 'Special', 'Ultimate'];
 
 // ---------- effects ----------

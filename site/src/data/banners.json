@@ -1,0 +1,488 @@
+[
+ {
+  "id": "pickup-erza-heaven-s-wheel-armor",
+  "name": "Pickup: Erza -Heaven's Wheel Armor-",
+  "type": "Pickup",
+  "start": "2025-12-03",
+  "end": null,
+  "dateSource": "Calculated",
+  "units": [
+   "erza-heaven-s-wheel-armor"
+  ]
+ },
+ {
+  "id": "pickup-natsu-dragon-force",
+  "name": "Pickup: Natsu -Dragon Force-",
+  "type": "Pickup",
+  "start": "2025-12-03",
+  "end": null,
+  "dateSource": "Calculated",
+  "units": [
+   "natsu-dragon-force"
+  ]
+ },
+ {
+  "id": "pickup-gray-ice-devil-slayer-mage",
+  "name": "Pickup: Gray -Ice Devil Slayer Mage-",
+  "type": "Pickup",
+  "start": "2025-12-05",
+  "end": null,
+  "dateSource": "Confirmed",
+  "units": [
+   "gray-ice-devil-slayer-mage"
+  ]
+ },
+ {
+  "id": "pickup-lucy-leo-form",
+  "name": "Pickup: Lucy -Leo Form-",
+  "type": "Pickup",
+  "start": "2025-12-07",
+  "end": null,
+  "dateSource": "Calculated",
+  "units": [
+   "lucy-leo-form"
+  ]
+ },
+ {
+  "id": "holy-night-festival",
+  "name": "Holy Night Festival",
+  "type": "Regular",
+  "start": "2025-12-11",
+  "end": "2025-12-26",
+  "dateSource": "Confirmed",
+  "units": [
+   "holy-night-juvia",
+   "holy-night-mirajane"
+  ]
+ },
+ {
+  "id": "new-year-first-dream",
+  "name": "New Year! First Dream",
+  "type": "Regular",
+  "start": "2025-12-26",
+  "end": "2026-01-09",
+  "dateSource": "Calculated",
+  "units": [
+   "first-dream-erza",
+   "first-dream-laxus"
+  ]
+ },
+ {
+  "id": "cyberpunk",
+  "name": "Cyberpunk",
+  "type": "Regular",
+  "start": "2026-01-09",
+  "end": "2026-01-23",
+  "dateSource": "Calculated",
+  "units": [
+   "cyberpunk-rogue",
+   "cyberpunk-sting"
+  ]
+ },
+ {
+  "id": "pickup-mavis-vermillion",
+  "name": "Pickup: Mavis Vermillion",
+  "type": "Pickup",
+  "start": "2026-01-17",
+  "end": null,
+  "dateSource": "Confirmed",
+  "units": [
+   "mavis-vermillion"
+  ]
+ },
+ {
+  "id": "victory-bunny",
+  "name": "Victory Bunny",
+  "type": "Regular",
+  "start": "2026-01-23",
+  "end": "2026-02-06",
+  "dateSource": "Calculated",
+  "units": [
+   "bunny-lucy",
+   "bunny-yukino"
+  ]
+ },
+ {
+  "id": "sweet-gift",
+  "name": "Sweet Gift",
+  "type": "Regular",
+  "start": "2026-02-06",
+  "end": "2026-02-20",
+  "dateSource": "Calculated",
+  "units": [
+   "sweet-gift-juvia",
+   "sweet-gift-levy"
+  ]
+ },
+ {
+  "id": "noir-family",
+  "name": "Noir Family",
+  "type": "Regular",
+  "start": "2026-02-20",
+  "end": "2026-03-06",
+  "dateSource": "Calculated",
+  "units": [
+   "noir-cana",
+   "noir-gildarts"
+  ]
+ },
+ {
+  "id": "pickup-dark-mage-zeref",
+  "name": "Pickup: Dark Mage Zeref",
+  "type": "Pickup",
+  "start": "2026-02-25",
+  "end": null,
+  "dateSource": "Confirmed",
+  "units": [
+   "dark-mage-zeref"
+  ]
+ },
+ {
+  "id": "madofes-feb-2026",
+  "name": "MadoFes Feb. 2026",
+  "type": "MadoFes",
+  "start": "2026-03-01",
+  "end": "2026-03-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "laxus-red-lightning-dragon-mode"
+  ]
+ },
+ {
+  "id": "white-gift",
+  "name": "White Gift",
+  "type": "Regular",
+  "start": "2026-03-06",
+  "end": "2026-03-20",
+  "dateSource": "Calculated",
+  "units": [
+   "white-gift-gajeel",
+   "white-gift-gray"
+  ]
+ },
+ {
+  "id": "egg-hunt-wizard",
+  "name": "Egg Hunt Wizard",
+  "type": "Regular",
+  "start": "2026-03-20",
+  "end": "2026-04-03",
+  "dateSource": "Calculated",
+  "units": [
+   "egg-hunt-brandish",
+   "egg-hunt-irene"
+  ]
+ },
+ {
+  "id": "madochro-academy",
+  "name": "MadoChro Academy",
+  "type": "Regular",
+  "start": "2026-04-03",
+  "end": "2026-04-17",
+  "dateSource": "Calculated",
+  "units": [
+   "academy-kagura",
+   "academy-lisanna"
+  ]
+ },
+ {
+  "id": "parallel-world",
+  "name": "Parallel World",
+  "type": "Regular",
+  "start": "2026-04-17",
+  "end": "2026-05-01",
+  "dateSource": "Calculated",
+  "units": [
+   "erza-knightwalker",
+   "natsu-dragion",
+   "parallel-world-mystogan",
+   "parallel-world-wendy"
+  ]
+ },
+ {
+  "id": "moonlit-reverie",
+  "name": "Moonlit Reverie",
+  "type": "Regular",
+  "start": "2026-05-01",
+  "end": "2026-05-15",
+  "dateSource": "Calculated",
+  "units": [
+   "moonlit-reverie-levy",
+   "moonlit-reverie-mavis"
+  ]
+ },
+ {
+  "id": "fabled-quest-i",
+  "name": "Fabled Quest I",
+  "type": "Regular",
+  "start": "2026-05-15",
+  "end": "2026-05-29",
+  "dateSource": "Calculated",
+  "units": [
+   "ignia",
+   "lucy-leo-x-virgo-form"
+  ]
+ },
+ {
+  "id": "fabled-quest-ii",
+  "name": "Fabled Quest II",
+  "type": "Regular",
+  "start": "2026-05-29",
+  "end": "2026-06-12",
+  "dateSource": "Calculated",
+  "units": [
+   "suzaku",
+   "wendy-bakeneko"
+  ]
+ },
+ {
+  "id": "pure-white-oath",
+  "name": "Pure White Oath",
+  "type": "Regular",
+  "start": "2026-06-12",
+  "end": "2026-06-26",
+  "dateSource": "Calculated",
+  "units": [
+   "pure-white-oath-erza",
+   "pure-white-oath-jellal"
+  ]
+ },
+ {
+  "id": "starry-night-reunion",
+  "name": "Starry Night Reunion",
+  "type": "Regular",
+  "start": "2026-06-26",
+  "end": "2026-07-10",
+  "dateSource": "Calculated",
+  "units": [
+   "starry-night-reunion-mavis",
+   "starry-night-reunion-zeref"
+  ]
+ },
+ {
+  "id": "midsummer-sorcerer",
+  "name": "Midsummer Sorcerer",
+  "type": "Regular",
+  "start": "2026-07-10",
+  "end": "2026-07-24",
+  "dateSource": "Calculated",
+  "units": [
+   "midsummer-sorcerer-lucy",
+   "midsummer-sorcerer-mirajane"
+  ]
+ },
+ {
+  "id": "blazing-beach-vacation",
+  "name": "Blazing Beach Vacation",
+  "type": "Regular",
+  "start": "2026-07-24",
+  "end": "2026-08-07",
+  "dateSource": "Calculated",
+  "units": [
+   "blazing-beach-vacation-laxus",
+   "blazing-beach-vacation-natsu"
+  ]
+ },
+ {
+  "id": "swaying-in-the-summer-night",
+  "name": "Swaying in the Summer Night",
+  "type": "Regular",
+  "start": "2026-08-07",
+  "end": "2026-08-21",
+  "dateSource": "Calculated",
+  "units": [
+   "swaying-in-the-summer-night-cana",
+   "swaying-in-the-summer-night-lisanna"
+  ]
+ },
+ {
+  "id": "swayed-by-the-evening-breeze",
+  "name": "Swayed by the Evening Breeze",
+  "type": "Regular",
+  "start": "2026-08-21",
+  "end": "2026-09-04",
+  "dateSource": "Calculated",
+  "units": [
+   "swayed-by-the-evening-breeze-gildarts",
+   "swayed-by-the-evening-breeze-mystogan"
+  ]
+ },
+ {
+  "id": "otherworld-adventure",
+  "name": "Otherworld Adventure",
+  "type": "Regular",
+  "start": "2026-09-04",
+  "end": "2026-09-18",
+  "dateSource": "Calculated",
+  "units": [
+   "otherworld-adventure-erza",
+   "otherworld-adventure-kagura"
+  ]
+ },
+ {
+  "id": "fairy-harvest-festival",
+  "name": "Fairy Harvest Festival",
+  "type": "Regular",
+  "start": "2026-09-18",
+  "end": "2026-10-02",
+  "dateSource": "Calculated",
+  "units": [
+   "fairy-harvest-festival-makarov",
+   "fairy-harvest-festival-wendy"
+  ]
+ },
+ {
+  "id": "rock-n-magic",
+  "name": "Rock'n Magic",
+  "type": "Regular",
+  "start": "2026-10-02",
+  "end": "2026-10-16",
+  "dateSource": "Calculated",
+  "units": [
+   "rock-n-magic-juvia",
+   "rock-n-magic-lucy"
+  ]
+ },
+ {
+  "id": "twin-moon-halloween",
+  "name": "Twin Moon Halloween",
+  "type": "Regular",
+  "start": "2026-10-16",
+  "end": "2026-10-30",
+  "dateSource": "Calculated",
+  "units": [
+   "twin-moon-halloween-sherria",
+   "twin-moon-halloween-sherry"
+  ]
+ },
+ {
+  "id": "parallel-world-part-2",
+  "name": "Parallel World -Part 2-",
+  "type": "Regular",
+  "start": "2026-10-30",
+  "end": "2026-11-13",
+  "dateSource": "Confirmed",
+  "units": []
+ },
+ {
+  "id": "block-chronicle",
+  "name": "Block Chronicle",
+  "type": "Special",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "block-lucy",
+   "block-natsu"
+  ]
+ },
+ {
+  "id": "half-anniversary-fest",
+  "name": "Half Anniversary Fest",
+  "type": "Half Anniversary Fest",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "selene"
+  ]
+ },
+ {
+  "id": "madofes-jellal-fernandes",
+  "name": "MadoFes (Jellal Fernandes)",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "jellal-fernandes"
+  ]
+ },
+ {
+  "id": "madofes-mirajane-satan-soul",
+  "name": "MadoFes (Mirajane -Satan Soul-)",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "mirajane-satan-soul"
+  ]
+ },
+ {
+  "id": "madofes-apr-2026",
+  "name": "MadoFes Apr. 2026",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "ichiya-power-perfume"
+  ]
+ },
+ {
+  "id": "madofes-aug-2026",
+  "name": "MadoFes Aug. 2026",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "juvia-element-4"
+  ]
+ },
+ {
+  "id": "madofes-jul-2026",
+  "name": "MadoFes Jul. 2026",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "sting-dragon-force"
+  ]
+ },
+ {
+  "id": "madofes-may-2026",
+  "name": "MadoFes May 2026",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "natsu-lightning-fire-dragon-mode"
+  ]
+ },
+ {
+  "id": "madofes-nov-2026",
+  "name": "MadoFes Nov. 2026",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "master-enchant-irene"
+  ]
+ },
+ {
+  "id": "madofes-oct-2026",
+  "name": "MadoFes Oct. 2026",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "fairy-tactician-mavis"
+  ]
+ },
+ {
+  "id": "madofes-sep-2026",
+  "name": "MadoFes Sep. 2026",
+  "type": "MadoFes",
+  "start": null,
+  "end": null,
+  "dateSource": null,
+  "units": [
+   "emperor-spriggan-zeref"
+  ]
+ }
+]
