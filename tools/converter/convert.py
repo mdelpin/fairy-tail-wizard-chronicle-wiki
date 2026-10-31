@@ -418,6 +418,8 @@ def main(root, out, slugs_path=None, public_dir=None):
             "kind": "signature" if owner else "generic",
             "signatureFor": unit_slug.get(owner) if owner else None,
             "gameText": clean(f.get("gameText")),
+            # editor's note, e.g. behaviour tested in play that the game text leaves out
+            "notes": clean(f.get("notes")),
             "applications": [app_slug[("lacrima", a)] for a in apps],
         })
     for u in units:

@@ -50,6 +50,8 @@ export interface Banner {
 export interface Lacrima {
   id: string; name: string; kind: 'signature' | 'generic'; signatureFor: string | null;
   gameText: string | null; applications: string[];
+  /** Editor's note (not game text), e.g. behaviour tested in play. */
+  notes?: string | null;
 }
 export type Attribute = 'Brave' | 'Mind' | 'Technique' | 'Heart';
 

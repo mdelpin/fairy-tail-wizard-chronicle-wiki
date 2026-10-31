@@ -157,6 +157,7 @@ const nIcon = normalIcon(unit);
             <span class="lbl gold">Signature lacrima</span>
             <a class="heading" href={url(`lacrimas/#${sig.id}`)}>{sig.name}</a>
             {sig.gameText && <p>{sig.gameText}</p>}
+            {sig.notes && <p class="signote"><span class="gold">Note · </span>{sig.notes}</p>}
           </div>
         )}
         {sameIdentity.length > 0 && (
@@ -211,6 +212,7 @@ const nIcon = normalIcon(unit);
   .lacrima a { color: var(--cream); font-size: 19px; }
   .lacrima p { margin: 0; font-size: 14px; line-height: 1.6; }
   .gold { color: #E6C77A; }
+  .lacrima p.signote { font-size: 13px; opacity: .9; border-top: 1px solid rgba(230,214,184,.25); padding-top: 10px; }
   .ic { width: 26px; height: 26px; margin: -2px 0; }
   .ic.sq { border-radius: 6px; }
   .badge:has(.ic) { padding-left: 6px; }
