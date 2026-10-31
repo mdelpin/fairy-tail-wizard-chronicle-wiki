@@ -5,7 +5,8 @@ import Pennant from '../../components/Pennant.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
   units, applications, effects, lacrimaById, ATTR, KIND_ORDER, url, portraits, initials,
-  baseName, valueText, familyKey, WIKI_CREDIT, type Unit, type Effect,
+  baseName, valueText, familyKey, WIKI_CREDIT, bannerById, bannerDates, DATE_NOTE, roleIcon, normalIcon,
+  type Unit, type Effect,
 } from '../../lib/data';
 
 export function getStaticPaths() {
@@ -35,6 +36,10 @@ const ownSupplies = [...needs].filter((f) => inflicts.has(f));
 const sig = unit.signatureLacrima ? lacrimaById.get(unit.signatureLacrima) : undefined;
 const sameIdentity = units.filter((u) => u.identity && u.identity === unit.identity && u.id !== unit.id);
 const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
+const debut = unit.debutBanner ? bannerById.get(unit.debutBanner) : undefined;
+const debutDates = debut ? bannerDates(debut) : null;
+const rIcon = roleIcon(unit.role);
+const nIcon = normalIcon(unit);
 ---
 <Base title={unit.name} section="characters" description={`${unit.name}: ${unit.attribute} ${unit.role} wizard in FAIRY TAIL Wizard Chronicle — skills, effects and signature lacrima.`}>
   <div class="wrap" data-pagefind-body data-pagefind-meta={`title:${unit.name}`}>
@@ -59,8 +64,8 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
         <h1>{unit.name}</h1>
         <div class="badges">
           <span class="badge"><Kanji attr={unit.attribute} size={30} /><span style={`color:${a.text};font-weight:600`}>{unit.attribute}</span></span>
-          <span class="badge">Role · {unit.role}</span>
-          {skills[0]?.attackRange && <span class="badge">Normal attack · {skills[0].attackRange}</span>}
+          <span class="badge">{rIcon && <img class="ic" src={rIcon} alt="" width="26" height="26" />}Role · {unit.role}</span>
+          {skills[0]?.attackRange && <span class="badge">{nIcon && <img class="ic sq" src={nIcon} alt="" width="26" height="26" />}Normal attack · {skills[0].attackRange}</span>}
         </div>
         <div class="glance" data-pagefind-ignore>
           {inflicts.size > 0 && (
@@ -91,6 +96,7 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
           return (
             <article class="skill">
               <div class="skill-head">
+                {s.kind === 'Normal' && nIcon && <img class="skill-ic" src={nIcon} alt="" width="40" height="40" />}
                 <span class={`kind kind-${s.kind}`} data-pagefind-ignore>{s.kind}</span>
                 <h3 id={`skill-${s.kind.toLowerCase()}`}>{s.name ?? s.kind}</h3>
                 <span class="muted unlock" data-pagefind-ignore>{UNLOCK[s.kind]}</span>
@@ -133,11 +139,25 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
       </div>
 
       <aside class="side">
+        {(debut || unit.newForm) && (
+          <div class="debut" data-pagefind-ignore>
+            {unit.bannerArt && <img class="art" src={url(`banner-art/${unit.bannerArt}`)} alt={`${unit.name} banner art`} width="640" height="240" loading="lazy" />}
+            <div class="debut-body">
+              {debut && <>
+                <span class="lbl">First available</span>
+                <a class="heading" href={url(`banners/#${debut.id}`)}>{debut.name}</a>
+                {debutDates && <span class="when" title={DATE_NOTE}>{debutDates}</span>}
+              </>}
+              {unit.newForm && <p class="nf"><strong>New Form</strong> — only obtainable from Pickup banners (paid gems only) or as a random MadoFes pull.</p>}
+            </div>
+          </div>
+        )}
         {sig && (
           <div class="lacrima">
             <span class="lbl gold">Signature lacrima</span>
             <a class="heading" href={url(`lacrimas/#${sig.id}`)}>{sig.name}</a>
             {sig.gameText && <p>{sig.gameText}</p>}
+            {sig.notes && <p class="signote"><span class="gold">Note · </span>{sig.notes}</p>}
           </div>
         )}
         {sameIdentity.length > 0 && (
@@ -192,6 +212,18 @@ const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
   .lacrima a { color: var(--cream); font-size: 19px; }
   .lacrima p { margin: 0; font-size: 14px; line-height: 1.6; }
   .gold { color: #E6C77A; }
+  .lacrima p.signote { font-size: 13px; opacity: .9; border-top: 1px solid rgba(230,214,184,.25); padding-top: 10px; }
+  .ic { width: 26px; height: 26px; margin: -2px 0; }
+  .ic.sq { border-radius: 6px; }
+  .badge:has(.ic) { padding-left: 6px; }
+  .skill-ic { width: 40px; height: 40px; border-radius: 8px; box-shadow: 0 1px 2px rgba(40,10,6,.35); }
+  .debut { border-radius: 18px; overflow: hidden; background: #fff; border: 2px solid var(--line); box-shadow: 0 3px 0 var(--brass); }
+  .debut .art { width: 100%; height: auto; aspect-ratio: 640 / 240; object-fit: cover; border-bottom: 2px solid var(--brass); }
+  .debut-body { padding: 16px 20px 18px; display: flex; flex-direction: column; gap: 6px; }
+  .debut-body .heading { font-size: 19px; color: var(--ink); }
+  .debut-body .heading:hover { color: var(--crimson); }
+  .when { font: 500 13px var(--mono); color: var(--muted); cursor: help; }
+  .nf { margin: 6px 0 0; font-size: 13px; line-height: 1.55; color: #3A2A1F; }
   .pinboard { padding: 22px; border-radius: 18px; background: var(--ember); border: 3px solid var(--brass); display: flex; flex-direction: column; gap: 10px; }
   .pinboard .heading { color: #FFF3E0; font-size: 18px; }
   .pin { padding: 10px 12px; border-radius: 6px; background: #FFFBF2; color: var(--ink); font-size: 14px; box-shadow: 0 2px 0 rgba(40,10,6,.4); }

@@ -6,7 +6,10 @@ import urllib.parse
 
 import yaml
 
-GAME_FOLDERS = ["Characters", "Effects", "EffectApplications", "Lacrimas", "LacrimaEffectApplications"]
+# Allowlist: only these object types are ever read. Anything else in the space (Team Builder data,
+# notes, queries, new private types) is invisible to the wiki unless it is added here on purpose.
+GAME_FOLDERS = ["Characters", "Skills", "Effects", "EffectApplications", "Lacrimas", "LacrimaEffectApplications",
+                "Banners", "BannerArts"]
 
 
 def read(path):
@@ -27,7 +30,10 @@ def load(root):
             stem = os.path.splitext(os.path.basename(p))[0]
             # the export writes some characters as #UXXXX in file names; links use the real character
             stem = re.sub(r"#U([0-9a-fA-F]{4})", lambda m: chr(int(m.group(1), 16)), stem)
-            recs[stem] = {"fm": fm, "body": body, "file": stem}
+            # Page text is kept only for Skills (the Lv.1-3 text). Every other page body, above all the
+            # Character pages with personal strategy notes, is dropped here and never reaches the converter.
+            recs[stem] = {"fm": fm, "body": body if folder == "Skills" else None, "file": stem,
+                          "_private_body": body if folder == "Characters" else None}
         out[folder] = recs
     return out
 

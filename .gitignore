@@ -12,3 +12,8 @@ replit.nix
 .quartz/
 quartz/cli/tui/dist/
 .turbo/
+
+# never commit a raw Capacities export (it holds personal data)
+capacities-exports/
+*.zip
+__pycache__/

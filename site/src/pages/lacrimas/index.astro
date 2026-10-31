@@ -27,6 +27,7 @@ const generic = lacrimas.filter((l) => l.kind === 'generic');
                 <h3 id={l.id} class="heading nm">{l.name}</h3>
                 {owner && <a class="owner" href={url(`characters/${owner.id}/`)}>{owner.name}</a>}
                 {l.gameText && <p>{l.gameText}</p>}
+                {l.notes && <p class="notes"><span class="nl">Note</span>{l.notes}</p>}
               </li>
             );
           })}
@@ -47,4 +48,6 @@ const generic = lacrimas.filter((l) => l.kind === 'generic');
   .nm { font-size: 18px; }
   .owner { font-size: 13px; font-weight: 600; }
   .item p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+  .item p.notes { margin-top: 4px; padding: 8px 10px; border-radius: 8px; background: #FBF4E7; border-left: 3px solid var(--brass); font-size: 13px; }
+  .nl { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--timber); }
 </style>
