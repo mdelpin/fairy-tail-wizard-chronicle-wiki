@@ -88,9 +88,9 @@ export const portraits = new Set(
 
 // ---------- attributes ----------
 export const ATTR: Record<Attribute, { kanji: string; color: string; text: string; tint: string; alt: string }> = {
-  Brave: { kanji: '勇', color: '#B83A26', text: '#9E3020', tint: '184,58,38', alt: 'also shown in game as Valor or Courage' },
-  Mind: { kanji: '知', color: '#2C64A8', text: '#24558F', tint: '44,100,168', alt: 'also shown in game as Wisdom' },
-  Technique: { kanji: '技', color: '#2D7F4F', text: '#256B42', tint: '45,127,79', alt: 'also shown in game as Skill' },
+  Brave: { kanji: '勇', color: '#B83A26', text: '#9E3020', tint: '184,58,38', alt: 'also shown in game as Valor, Courage or Brv' },
+  Mind: { kanji: '知', color: '#2C64A8', text: '#24558F', tint: '44,100,168', alt: 'also shown in game as Wisdom or Int' },
+  Technique: { kanji: '技', color: '#2D7F4F', text: '#256B42', tint: '45,127,79', alt: 'also shown in game as Skill or Tech' },
   Heart: { kanji: '心', color: '#9A700C', text: '#7A5A0A', tint: '154,112,12', alt: '' },
 };
 export const ATTR_ORDER: Attribute[] = ['Brave', 'Mind', 'Technique', 'Heart'];
