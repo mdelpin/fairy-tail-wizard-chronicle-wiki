@@ -5,6 +5,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Accuracy + 3",
+  "notes": null,
   "applications": [
    "accuracy-up-3-self"
   ]
@@ -15,6 +16,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Accuracy + 5",
+  "notes": null,
   "applications": [
    "accuracy-5-self"
   ]
@@ -25,6 +27,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Critical Damage +30",
+  "notes": null,
   "applications": [
    "critical-damage-30-self"
   ]
@@ -35,6 +38,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Critical Damage + 50",
+  "notes": null,
   "applications": [
    "critical-damage-50-self"
   ]
@@ -45,6 +49,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Critical Defense + 30",
+  "notes": null,
   "applications": [
    "critical-defense-30-self"
   ]
@@ -55,6 +60,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Critical Defense + 50",
+  "notes": null,
   "applications": [
    "critical-defense-50-self"
   ]
@@ -65,6 +71,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Critical Rate +3",
+  "notes": null,
   "applications": [
    "critical-rate-3-self"
   ]
@@ -75,6 +82,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Critical Rate +5",
+  "notes": null,
   "applications": [
    "critical-rate-5-self"
   ]
@@ -85,6 +93,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Critical Resistance +3",
+  "notes": null,
   "applications": [
    "critical-resistance-3-self"
   ]
@@ -95,6 +104,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Critical Resistance +5",
+  "notes": null,
   "applications": [
    "critical-resistance-5-self"
   ]
@@ -105,6 +115,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Evasion Rate +3",
+  "notes": null,
   "applications": [
    "evasion-rate-3-self"
   ]
@@ -115,6 +126,7 @@
   "kind": "generic",
   "signatureFor": null,
   "gameText": "Evasion Rate +5",
+  "notes": null,
   "applications": [
    "evasion-rate-5-self"
   ]
@@ -125,6 +137,7 @@
   "kind": "signature",
   "signatureFor": "academy-kagura",
   "gameText": "At the start of battle, grant yourself [Top] Shield for 4 sec.",
+  "notes": null,
   "applications": [
    "top-shield-self-start-of-battle-4-sec"
   ]
@@ -135,6 +148,7 @@
   "kind": "signature",
   "signatureFor": "academy-lisanna",
   "gameText": "When defeated, inflicts Bind on all enemies for 3 sec.",
+  "notes": null,
   "applications": [
    "bind-all-enemies-when-defeated-3-sec"
   ]
@@ -145,6 +159,7 @@
   "kind": "signature",
   "signatureFor": "august",
   "gameText": "After the battle starts, grants self for 5 sec, [Top] ATK Up and  [Top] Critical Damage Up.",
+  "notes": null,
   "applications": [
    "top-atk-increase-self-start-of-battle-5-sec",
    "top-critical-damage-increase-self-start-of-battle-5-sec"
@@ -156,6 +171,7 @@
   "kind": "signature",
   "signatureFor": "blazing-beach-vacation-laxus",
   "gameText": "While this unit is on the field, grants all allies Medium DEF Increase and Medium Critical Resistance Increase.",
+  "notes": null,
   "applications": [
    "mid-critical-resistance-increase-all-allies-while-on-the-field",
    "mid-def-increase-all-allies-while-on-the-field"
@@ -167,6 +183,7 @@
   "kind": "signature",
   "signatureFor": "blazing-beach-vacation-natsu",
   "gameText": "When defeated inflicts all enemies with [Top] ATK Decrease and Silence for 3 sec.",
+  "notes": null,
   "applications": [
    "silence-all-enemies-when-defeated-3-sec",
    "top-atk-decrease-all-enemies-when-defeated-3-sec"
@@ -178,6 +195,7 @@
   "kind": "signature",
   "signatureFor": "block-lucy",
   "gameText": "After a normal skill hits, if the target is affected with Paralysis, applies: [Top] DEF Decrease and [Top] Critical Defense Decrease.",
+  "notes": null,
   "applications": [
    "top-critical-defense-decrease-single-enemy-paralysis",
    "top-def-decrease-single-enemy-paralysis"
@@ -189,6 +207,7 @@
   "kind": "signature",
   "signatureFor": "block-natsu",
   "gameText": "When defeated, inflicts all enemies for 3s with: [Top] Burn and [Top] Critical Damage Decrease",
+  "notes": null,
   "applications": [
    "top-burn-all-enemies-when-defeated-3-sec",
    "top-critical-damage-decrease-all-enemies-when-defeated-3-sec"
@@ -200,6 +219,7 @@
   "kind": "signature",
   "signatureFor": "brandish",
   "gameText": "Every 7 sec, for 3 sec, grants all allies [Mid] Regen",
+  "notes": null,
   "applications": [
    "mid-regen-all-allies-every-7-sec-3-sec"
   ]
@@ -210,6 +230,7 @@
   "kind": "signature",
   "signatureFor": "bunny-lucy",
   "gameText": "When you are present in the field, apply to all enemies [Mid] DEF Decrease",
+  "notes": null,
   "applications": [
    "mid-def-decrease-all-enemies-while-on-the-field"
   ]
@@ -220,6 +241,7 @@
   "kind": "signature",
   "signatureFor": "bunny-yukino",
   "gameText": "When you are incapacitated, apply to all enemies for 3 seconds Silence",
+  "notes": null,
   "applications": [
    "silence-all-enemies-when-incapacitated-3-sec"
   ]
@@ -230,6 +252,7 @@
   "kind": "signature",
   "signatureFor": "cana-alberona",
   "gameText": "Every 5 sec, for 3 sec grants self [Top] ATK Up",
+  "notes": null,
   "applications": [
    "top-atk-increase-self-every-5-sec-3-sec"
   ]
@@ -240,6 +263,7 @@
   "kind": "signature",
   "signatureFor": "contractor-of-the-twelve-gates-yukino",
   "gameText": "While on the field, grants all allies [Mid] ATK Increase and [Mid] Critical Rate Increase",
+  "notes": null,
   "applications": [
    "mid-atk-increase-all-allies-while-on-the-field",
    "mid-critical-rate-increase-all-allies-while-on-the-field"
@@ -251,6 +275,7 @@
   "kind": "signature",
   "signatureFor": "cyberpunk-rogue",
   "gameText": "After a normal skill hits, there is a 10% chance to inflict the target for 3 seconds with Blind.",
+  "notes": null,
   "applications": [
    "blind-single-enemy-10-3-sec"
   ]
@@ -261,6 +286,7 @@
   "kind": "signature",
   "signatureFor": "cyberpunk-sting",
   "gameText": "When defeated, grant all allies for 3 seconds [Top] ATK Increase and [High] Shield",
+  "notes": null,
   "applications": [
    "high-shield-all-allies-when-defeated-3-sec",
    "top-atk-increase-all-allies-when-defeated-3-sec"
@@ -272,6 +298,7 @@
   "kind": "signature",
   "signatureFor": "dark-mage-zeref",
   "gameText": "When you are attacked, inflict on the attacker for 3 sec, [Top] Bleed.",
+  "notes": null,
   "applications": [
    "top-bleed-attacker-when-attacked-3-sec"
   ]
@@ -282,6 +309,7 @@
   "kind": "signature",
   "signatureFor": "egg-hunt-brandish",
   "gameText": "When defeated, inflicts Silence and Heal Block on all enemies for 2 sec.",
+  "notes": null,
   "applications": [
    "heal-block-all-enemies-when-defeated-2-sec",
    "silence-all-enemies-when-defeated-20-2-sec"
@@ -293,6 +321,7 @@
   "kind": "signature",
   "signatureFor": "egg-hunt-irene",
   "gameText": "After a normal skill hits, there is a 20% chance to grant all allies [High] Continuous Heal for 3 sec.",
+  "notes": null,
   "applications": [
    "high-continuous-heal-all-allies-20-3-sec"
   ]
@@ -303,6 +332,7 @@
   "kind": "signature",
   "signatureFor": "elfman-strauss",
   "gameText": "When a normal skill hits (20% chance), grant yourself [High] Shield for 3 sec",
+  "notes": null,
   "applications": [
    "high-shield-self-20-3-sec"
   ]
@@ -313,6 +343,7 @@
   "kind": "signature",
   "signatureFor": "emperor-spriggan-zeref",
   "gameText": "When taking an attack, has a 30% chance to inflict [Low] Burn, [Low] Paralysis, and [Mid] ATK Decrease on the attacker for 2 sec.",
+  "notes": null,
   "applications": [
    "low-burn-attacker-when-attacked-30-2-sec",
    "low-paralysis-attacker-when-attacked-30-2-sec",
@@ -325,6 +356,7 @@
   "kind": "signature",
   "signatureFor": "erza-demon-blade-benizakura",
   "gameText": "When you are defeated, grant all allies for 3s [Top] ATK Increase and [Top] Critical Damage Increase",
+  "notes": null,
   "applications": [
    "top-atk-increase-all-allies-when-defeated-3-sec",
    "top-critical-damage-increase-all-allies-when-defeated-3-sec"
@@ -336,6 +368,7 @@
   "kind": "signature",
   "signatureFor": "erza-heaven-s-wheel-armor",
   "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, Silence and [Mid] Critical RES Down",
+  "notes": null,
   "applications": [
    "mid-critical-resistance-decrease-single-enemy-20-3-sec",
    "silence-single-enemy-20-3-sec"
@@ -347,6 +380,7 @@
   "kind": "signature",
   "signatureFor": "erza-knightwalker",
   "gameText": "When receiving an attack, has a 20% chance to grant each ally for 3 seconds: [Top] Shield.",
+  "notes": null,
   "applications": [
    "top-shield-all-allies-when-attacked-20-3-sec"
   ]
@@ -357,6 +391,7 @@
   "kind": "signature",
   "signatureFor": "fairy-harvest-festival-makarov",
   "gameText": "While on the field, grants all allies [Mid] ATK Increase and [Mid] DEF Increase, [Mid] Continuous Healing",
+  "notes": null,
   "applications": [
    "mid-atk-increase-all-allies-while-on-the-field",
    "mid-continuous-heal-all-allies-while-on-the-field",
@@ -369,6 +404,7 @@
   "kind": "signature",
   "signatureFor": "fairy-harvest-festival-wendy",
   "gameText": "At the start of the battle, inflicts [Mid] Burn and Heal Block on all enemies for 5 sec.",
+  "notes": null,
   "applications": [
    "heal-block-all-enemies-start-of-battle-5-sec",
    "mid-burn-all-enemies-start-of-battle-5-sec"
@@ -380,6 +416,7 @@
   "kind": "signature",
   "signatureFor": "fairy-tactician-mavis",
   "gameText": "Every 5 sec, inflicts [High] ATK Decrease and [High] DEF Decrease,  [High] Bleed on all enemies for 3 sec.",
+  "notes": null,
   "applications": [
    "high-atk-decrease-all-enemies-every-5-sec-3-sec",
    "high-bleed-all-enemies-every-5-sec-3-sec",
@@ -392,6 +429,7 @@
   "kind": "signature",
   "signatureFor": "first-dream-erza",
   "gameText": "Every 5 sec, grants yourself for 3 seconds [Top] ATK Increase and [Top] Critical Damage Increase",
+  "notes": null,
   "applications": [
    "top-atk-increase-self-every-5-sec-3-sec",
    "top-critical-damage-increase-self-every-5-sec-3-sec"
@@ -403,6 +441,7 @@
   "kind": "signature",
   "signatureFor": "first-dream-laxus",
   "gameText": "When you are attacked, there is a 30% chance to apply [Top] Paralysis to the target for 2 seconds.",
+  "notes": null,
   "applications": [
    "top-paralysis-attacker-when-attacked-30-2-sec"
   ]
@@ -413,6 +452,7 @@
   "kind": "signature",
   "signatureFor": "freed-justine",
   "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, [Top] DEF Down.",
+  "notes": null,
   "applications": [
    "top-def-decrease-single-enemy-20-3-sec"
   ]
@@ -423,6 +463,7 @@
   "kind": "signature",
   "signatureFor": "gajeel-redfox",
   "gameText": "When defeated, grants all allies Top ATK Up for 3 sec.",
+  "notes": null,
   "applications": [
    "top-atk-increase-all-allies-when-defeated-3-sec"
   ]
@@ -433,6 +474,7 @@
   "kind": "signature",
   "signatureFor": "gildarts-clive",
   "gameText": "Every 5 sec, for 3 sec, grants self [Mid] Critical Rate Up and [Mid] Critical Damage Up",
+  "notes": null,
   "applications": [
    "mid-critical-damage-increase-self-every-5-sec-3-sec",
    "mid-critical-rate-increase-self-every-5-sec-3-sec"
@@ -444,6 +486,7 @@
   "kind": "signature",
   "signatureFor": "gray-ice-devil-slayer-mage",
   "gameText": "When defeated, inflicts on all enemies for 3 sec, [Top] Freeze",
+  "notes": null,
   "applications": [
    "top-freeze-all-enemies-when-defeated-3-sec"
   ]
@@ -454,6 +497,7 @@
   "kind": "signature",
   "signatureFor": "gray-fullbuster",
   "gameText": "After a normal skill hits, has a 10% chance to inflict on the target for 2 sec,  [Mid] Freeze and [Mid] ATK Down",
+  "notes": null,
   "applications": [
    "mid-atk-decrease-single-enemy-10-2-sec",
    "mid-freeze-single-enemy-10-2-sec"
@@ -465,6 +509,7 @@
   "kind": "signature",
   "signatureFor": "hades",
   "gameText": "When you are attacked, has a 10% chance to inflict on the attacker for 2 sec, Bind.",
+  "notes": null,
   "applications": [
    "bind-attacker-10-2-sec"
   ]
@@ -475,6 +520,7 @@
   "kind": "signature",
   "signatureFor": "holy-night-juvia",
   "gameText": "While you are on the field, inflicts on all enemies [Mid] ATK Down",
+  "notes": null,
   "applications": [
    "mid-atk-decrease-all-enemies-while-on-the-field"
   ]
@@ -485,6 +531,7 @@
   "kind": "signature",
   "signatureFor": "holy-night-mirajane",
   "gameText": "At the start of battle, inflicts on all enemies for 3 sec, [Top] Burn",
+  "notes": null,
   "applications": [
    "top-burn-all-enemies-start-of-battle-3-sec"
   ]
@@ -495,6 +542,7 @@
   "kind": "signature",
   "signatureFor": "ichiya-power-perfume",
   "gameText": "At the start of battle, grants self for 3 seconds: [Top] DEF increase, [Top] Critical Defense Increase.",
+  "notes": null,
   "applications": [
    "top-critical-defense-increase-self-start-of-battle-3-sec",
    "top-def-increase-self-start-of-battle-3-sec"
@@ -506,6 +554,7 @@
   "kind": "signature",
   "signatureFor": "ichiya-vandalay-kotobuki",
   "gameText": "After a normal skill hits, has a 20% chance to remove all debuffs from all allies",
+  "notes": null,
   "applications": [
    "remove-all-debuffs-all-allies-20"
   ]
@@ -516,6 +565,7 @@
   "kind": "signature",
   "signatureFor": "ignia",
   "gameText": "When incapacitated, inflicts [Top] Burn on all enemies for 2 sec.",
+  "notes": null,
   "applications": [
    "top-burn-all-enemies-when-incapacitated-2-sec"
   ]
@@ -526,6 +576,7 @@
   "kind": "signature",
   "signatureFor": "irene-belserion",
   "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, [Top] Burn",
+  "notes": null,
   "applications": [
    "top-burn-single-enemy-20-3-sec"
   ]
@@ -536,6 +587,7 @@
   "kind": "signature",
   "signatureFor": "jellal-fernandes",
   "gameText": "At the start of battle, applies [Top] Paralysis to all enemies for 3 seconds.",
+  "notes": null,
   "applications": [
    "top-paralysis-all-enemies-start-of-battle-3-sec"
   ]
@@ -546,6 +598,7 @@
   "kind": "signature",
   "signatureFor": "jura-neekis",
   "gameText": "After a normal skill hits, has a 10% chance to grant all allies for 3 sec, [Mid] Shield.",
+  "notes": null,
   "applications": [
    "mid-shield-all-allies-10-3-sec"
   ]
@@ -556,6 +609,7 @@
   "kind": "signature",
   "signatureFor": "juvia-element-4",
   "gameText": "At the start of battle, inflicts [High] Burn and [High] DEF Decrease on all enemies for 6 sec.",
+  "notes": null,
   "applications": [
    "high-burn-all-enemies-start-of-battle-6-sec",
    "high-def-decrease-all-enemies-start-of-battle-6-sec"
@@ -567,6 +621,7 @@
   "kind": "signature",
   "signatureFor": "juvia-lockser",
   "gameText": "Every 5 sec, for 3 sec, grants self [Top] Critical Rate Up",
+  "notes": null,
   "applications": [
    "top-critical-rate-increase-self-every-5-sec-3-sec"
   ]
@@ -577,6 +632,7 @@
   "kind": "signature",
   "signatureFor": "kagura-mikazuchi",
   "gameText": "When a normal skill hits (20% chance), advance your current Ultimate Skill gauge by 0.5 sec",
+  "notes": null,
   "applications": [
    "advance-ultimate-skill-gauge-self-20-0-5-sec"
   ]
@@ -587,6 +643,7 @@
   "kind": "signature",
   "signatureFor": "laxus-red-lightning-dragon-mode",
   "gameText": "When defeated, inflicts [Top] Bleed on all enemies for 3 seconds.",
+  "notes": null,
   "applications": [
    "top-bleed-all-enemies-when-defeated-3-sec"
   ]
@@ -597,6 +654,7 @@
   "kind": "signature",
   "signatureFor": "laxus-dreyar",
   "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, [Top] Paralysis",
+  "notes": null,
   "applications": [
    "top-paralysis-single-enemy-20-3-sec"
   ]
@@ -607,6 +665,7 @@
   "kind": "signature",
   "signatureFor": "levy-mcgarden",
   "gameText": "After a Normal Skill hits, has a 10% chance to inflict Bind on the target for 3 sec.",
+  "notes": null,
   "applications": [
    "bind-single-enemy-10-3-sec"
   ]
@@ -617,6 +676,7 @@
   "kind": "signature",
   "signatureFor": "lucy-leo-form",
   "gameText": "While you are on the field, grants all allies [Mid] DEF Up.",
+  "notes": null,
   "applications": [
    "mid-def-increase-all-allies-while-on-the-field"
   ]
@@ -627,6 +687,7 @@
   "kind": "signature",
   "signatureFor": "lucy-leo-x-virgo-form",
   "gameText": "At the start of battle, grants all allies for 3 sec [High] Shield and [High] Critical Damage Increase",
+  "notes": null,
   "applications": [
    "high-critical-damage-increase-all-allies-start-of-battle-3-sec",
    "high-shield-all-allies-start-of-battle-3-sec"
@@ -638,6 +699,7 @@
   "kind": "signature",
   "signatureFor": "lucy-heartfilia",
   "gameText": "After a Normal Skill hits, has a 20% chance to inflict Silence and Top DEF Down on the target for 3 sec. The Top tier applies to DEF Down; Silence is untiered.",
+  "notes": null,
   "applications": [
    "silence-single-enemy-20-3-sec",
    "top-def-decrease-single-enemy-20-3-sec"
@@ -649,6 +711,7 @@
   "kind": "signature",
   "signatureFor": "lyon-vastia",
   "gameText": "After a normal skill hits, has a 10% chance to inflict on the target for 2 sec, [High] Freeze",
+  "notes": null,
   "applications": [
    "high-freeze-single-enemy-10-2-sec-2"
   ]
@@ -659,6 +722,7 @@
   "kind": "signature",
   "signatureFor": "makarov-dreyar",
   "gameText": "At the start of battle, grants self for 5 sec, [Top] Shield",
+  "notes": null,
   "applications": [
    "top-shield-self-start-of-battle-5-sec"
   ]
@@ -669,6 +733,7 @@
   "kind": "signature",
   "signatureFor": "mard-geer",
   "gameText": "After a Normal Skill hits, has a 20% chance to inflict Top Bleed on the target for 3 sec.",
+  "notes": null,
   "applications": [
    "top-bleed-single-enemy-20-3-sec"
   ]
@@ -679,6 +744,7 @@
   "kind": "signature",
   "signatureFor": "master-enchant-irene",
   "gameText": "While on the field, inflicts [Mid] Burn and [Mid] DEF Decrease, [Mid] ATK Decrease on all enemies",
+  "notes": null,
   "applications": [
    "mid-atk-decrease-all-enemies-while-on-the-field",
    "mid-burn-all-enemies-while-on-the-field",
@@ -691,6 +757,7 @@
   "kind": "signature",
   "signatureFor": "mavis-vermillion",
   "gameText": "While Mavis is on the field, grants all allies Low Continuous Heal and Mid Critical Defense Increase.",
+  "notes": null,
   "applications": [
    "low-continuous-heal-all-allies-while-on-the-field",
    "mid-critical-defense-increase-all-allies-while-on-the-field"
@@ -702,6 +769,7 @@
   "kind": "signature",
   "signatureFor": "meredy-grimoire-heart",
   "gameText": "While on the field, inflicts [Mid] DEF Decrease and [Mid] Evasion Decrease on all enemies",
+  "notes": null,
   "applications": [
    "mid-def-decrease-all-enemies-while-on-the-field",
    "mid-evasion-decrease-all-enemies-while-on-the-field"
@@ -713,6 +781,7 @@
   "kind": "signature",
   "signatureFor": "meredy",
   "gameText": "After the battle starts, grants all allies Mid ATK Up for 3 sec.",
+  "notes": null,
   "applications": [
    "mid-atk-increase-all-allies-start-of-battle-3-sec"
   ]
@@ -723,6 +792,7 @@
   "kind": "signature",
   "signatureFor": "midsummer-sorcerer-lucy",
   "gameText": "At the start of battle, inflicts [High] Bleed and [High] Critical Rate Decrease on all anemies for 5 sec.",
+  "notes": null,
   "applications": [
    "high-bleed-all-enemies-start-of-battle-5-sec",
    "high-critical-rate-decrease-all-enemies-start-of-battle-5-sec"
@@ -734,6 +804,7 @@
   "kind": "signature",
   "signatureFor": "midsummer-sorcerer-mirajane",
   "gameText": "While on the battlefield, grants all allies [Low] Continuous Heal and [Mid] DEF Increase",
+  "notes": null,
   "applications": [
    "low-continuous-heal-all-allies-while-on-the-field",
    "mid-def-increase-all-allies-while-on-the-field"
@@ -745,6 +816,7 @@
   "kind": "signature",
   "signatureFor": "minerva-orland",
   "gameText": "When a critical hit occurs, grants self Top Critical Rate Up for 3 sec. Trigger is recorded in notes because Critical Hit is not currently an available Lacrima trigger option.",
+  "notes": null,
   "applications": [
    "top-critical-rate-increase-self-3-sec-2"
   ]
@@ -755,6 +827,7 @@
   "kind": "signature",
   "signatureFor": "mirajane-satan-soul",
   "gameText": "When the user is attacked, there is a 20% chance to apply Silence to the target for 2 sec",
+  "notes": null,
   "applications": [
    "silence-attacker-20-2-sec"
   ]
@@ -765,6 +838,7 @@
   "kind": "signature",
   "signatureFor": "mirajane-strauss",
   "gameText": "When a normal skill hits (20%) chance, restore your HP by 300% of your ATK.",
+  "notes": null,
   "applications": [
    "heal-self-20-300-of-own-atk"
   ]
@@ -775,6 +849,7 @@
   "kind": "signature",
   "signatureFor": "moonlit-reverie-levy",
   "gameText": "While on the field, applies the following to all allies: [Mid] ATK Increase, [Mid] Critical Damage Increase.",
+  "notes": null,
   "applications": [
    "mid-atk-increase-all-allies-while-on-the-field",
    "mid-critical-damage-increase-all-allies-while-on-the-field"
@@ -786,6 +861,7 @@
   "kind": "signature",
   "signatureFor": "moonlit-reverie-mavis",
   "gameText": "When defeated, applies the following to all enemies for 2 seconds: [High] Burn, [High] Paralysis",
+  "notes": null,
   "applications": [
    "high-burn-all-enemies-when-defeated-2-sec",
    "high-paralysis-all-enemies-when-defeated-2-sec"
@@ -797,6 +873,7 @@
   "kind": "signature",
   "signatureFor": "mystogan",
   "gameText": "After a Normal Skill hits, has a 20% chance to grant self Mid ATK Up and Mid Accuracy Up for 3 sec.",
+  "notes": null,
   "applications": [
    "mid-atk-increase-self-20-3-sec",
    "mid-accuracy-increase-self-20-3-sec"
@@ -808,6 +885,7 @@
   "kind": "signature",
   "signatureFor": "natsu-dragon-force",
   "gameText": "When you are attacked, has a 30% chance to inflict on the attacker for 3 sec, [Top] Burn",
+  "notes": null,
   "applications": [
    "top-burn-attacker-when-attacked-30-3-sec"
   ]
@@ -818,6 +896,7 @@
   "kind": "signature",
   "signatureFor": "natsu-lightning-fire-dragon-mode",
   "gameText": "When taking damage, has a 20% chance to apply the following to the attacker for 2 sec: [High] Burn, [High] Paralysis",
+  "notes": null,
   "applications": [
    "high-burn-attacker-20-2-sec",
    "high-paralysis-attacker-20-2-sec"
@@ -829,6 +908,7 @@
   "kind": "signature",
   "signatureFor": "natsu-dragion",
   "gameText": "If the target is afflicted with Burn after a normal skill hits, reduces the target's accumulated Special Skill gauge by 0.5 seconds.",
+  "notes": null,
   "applications": [
    "push-back-special-skill-gauge-single-enemy-burn-0-5-sec"
   ]
@@ -839,6 +919,7 @@
   "kind": "signature",
   "signatureFor": "natsu-dragneel",
   "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, [Mid] Burn and [Mid] DEF Down",
+  "notes": null,
   "applications": [
    "mid-burn-single-enemy-20-3-sec",
    "mid-def-decrease-single-enemy-20-3-sec"
@@ -850,6 +931,7 @@
   "kind": "signature",
   "signatureFor": "neo-minerva",
   "gameText": "When taking an attack, has a 30% chance to inflict [Top] ATK Decrease and [High] Burn on the attacker for 3 sec.",
+  "notes": null,
   "applications": [
    "high-burn-attacker-when-attacked-30-3-sec",
    "top-atk-decrease-attacker-when-attacked-30-3-sec"
@@ -861,6 +943,7 @@
   "kind": "signature",
   "signatureFor": "noir-cana",
   "gameText": "Every 5 sec, grants all allies for 3 sec: [Mid] Critical Damage Increase",
+  "notes": null,
   "applications": [
    "mid-critical-damage-increase-all-allies-every-5-sec-3-sec"
   ]
@@ -871,6 +954,7 @@
   "kind": "signature",
   "signatureFor": "noir-gildarts",
   "gameText": "When defeated, grants all allies for 3 sec: [Top] DEF Increase and [Top] Critical Defense Increase",
+  "notes": null,
   "applications": [
    "top-critical-defense-increase-all-allies-when-defeated-3-sec",
    "top-def-decrease-all-allies-when-defeated-3-sec"
@@ -882,6 +966,7 @@
   "kind": "signature",
   "signatureFor": "otherworld-adventure-erza",
   "gameText": "While on the field, inflicts [Mid] Burn and [Low] Accuracy Decrease on all enemies.",
+  "notes": null,
   "applications": [
    "low-accuracy-decrease-all-enemies-while-on-the-field",
    "mid-burn-all-enemies-while-on-the-field"
@@ -893,6 +978,7 @@
   "kind": "signature",
   "signatureFor": "otherworld-adventure-kagura",
   "gameText": "At the start of battle, grants all allies [Top] Shield and [High] Critical Rate Increase for 4 sec",
+  "notes": null,
   "applications": [
    "high-critical-rate-increase-all-allies-start-of-battle-4-sec",
    "top-shield-all-allies-start-of-battle-4-sec"
@@ -904,6 +990,7 @@
   "kind": "signature",
   "signatureFor": "parallel-world-mystogan",
   "gameText": "When taking an attack, has a 30% chance to inflict Silence and [Mid] ATK Decrease, [Mid] Critical Rate Decrease on the attacker for 2 sec",
+  "notes": null,
   "applications": [
    "mid-atk-decrease-attacker-when-attacked-30-2-sec",
    "mid-critical-rate-decrease-attacker-when-attacked-30-2-sec",
@@ -916,6 +1003,7 @@
   "kind": "signature",
   "signatureFor": "parallel-world-wendy",
   "gameText": "While on the field, inflicts [Mid] Bleed and [Mid] ATK Decrease, [Mid] DEF Decrease on all enemies.",
+  "notes": null,
   "applications": [
    "mid-atk-decrease-all-enemies-while-on-the-field",
    "mid-bleed-all-enemies-while-on-the-field",
@@ -928,6 +1016,7 @@
   "kind": "signature",
   "signatureFor": "pure-white-oath-erza",
   "gameText": "When defeated, inflicts all enemies with for 3 sec, [High] Paralysis and [High] DEF Decrease.",
+  "notes": null,
   "applications": [
    "high-def-decrease-all-enemies-when-defeated-3-sec",
    "high-paralysis-all-enemies-when-defeated-3-sec"
@@ -939,6 +1028,7 @@
   "kind": "signature",
   "signatureFor": "pure-white-oath-jellal",
   "gameText": "While on the battlefield, inflicts all enemies with [Mid] Critical Rate Decrease and [Mid] Critical Resistance Decrease",
+  "notes": null,
   "applications": [
    "mid-critical-rate-decrease-all-enemies-while-on-the-field",
    "mid-critical-resistance-decrease-all-enemies-while-on-the-field"
@@ -950,6 +1040,7 @@
   "kind": "signature",
   "signatureFor": "rock-n-magic-juvia",
   "gameText": "When taking an attack, has a 30% chance to inflict [Top] ATK Decrease and [Top] Critical Damage Decrease on the attacker for 3 sec.",
+  "notes": null,
   "applications": [
    "top-atk-decrease-attacker-when-attacked-30-3-sec",
    "top-critical-damage-decrease-attacker-when-attacked-30-3-sec"
@@ -961,6 +1052,7 @@
   "kind": "signature",
   "signatureFor": "rock-n-magic-lucy",
   "gameText": "At the start of battle, inflicts [Mid] Paralysis, [High] ATK Decrease, [High] Critical Rate Decrease on all enemies for 5 sec",
+  "notes": null,
   "applications": [
    "high-atk-decrease-all-enemies-start-of-battle-5-sec",
    "high-critical-rate-decrease-all-enemies-start-of-battle-5-sec",
@@ -973,6 +1065,7 @@
   "kind": "signature",
   "signatureFor": "rogue-cheney",
   "gameText": "After a normal skill hits, has a 20% chance to grant self for 3 sec, [Top] ATK Up.",
+  "notes": null,
   "applications": [
    "top-atk-increase-self-20-3-sec"
   ]
@@ -983,6 +1076,7 @@
   "kind": "signature",
   "signatureFor": "selene",
   "gameText": "While on the battlefield, grants all allies [Mid] DEF Increase, and [Mid] Critical Defense Increase.",
+  "notes": null,
   "applications": [
    "mid-critical-defense-increase-all-allies-while-on-the-field",
    "mid-def-increase-all-allies-while-on-the-field"
@@ -994,6 +1088,7 @@
   "kind": "signature",
   "signatureFor": "sherria-blendy",
   "gameText": "Every 5 sec, grant yourself for 3 sec [Mid] ATK Up and [Mid] Accuracy Up",
+  "notes": null,
   "applications": [
    "mid-atk-increase-self-every-5-sec-3-sec",
    "mid-accuracy-increase-self-every-5-sec-3-sec"
@@ -1005,6 +1100,7 @@
   "kind": "signature",
   "signatureFor": "silver-fullbuster",
   "gameText": "When attacked, has a 10% chance to inflict Top Freeze on the attacker for 2 sec.",
+  "notes": null,
   "applications": [
    "top-freeze-attacker-when-attacked-10-2-sec"
   ]
@@ -1015,6 +1111,7 @@
   "kind": "signature",
   "signatureFor": "starry-night-reunion-mavis",
   "gameText": "While this character is on the field, grants all allies [Mid] ATK Increase and [Mid] Accuracy Increase.",
+  "notes": null,
   "applications": [
    "mid-atk-increase-all-allies-while-on-the-field",
    "mid-accuracy-increase-all-allies-while-on-the-field"
@@ -1026,6 +1123,7 @@
   "kind": "signature",
   "signatureFor": "starry-night-reunion-zeref",
   "gameText": "When defeated, inflicts Blind on all enemies for 3 sec",
+  "notes": null,
   "applications": [
    "blind-all-enemies-when-defeated-3-sec"
   ]
@@ -1036,6 +1134,7 @@
   "kind": "signature",
   "signatureFor": "sting-dragon-force",
   "gameText": "At the start of battle, inflicts [High] Bleed and Heal Block on all enemies for 5 sec",
+  "notes": null,
   "applications": [
    "heal-block-all-enemies-start-of-battle-5-sec",
    "high-bleed-all-enemies-start-of-battle-5-sec"
@@ -1047,6 +1146,7 @@
   "kind": "signature",
   "signatureFor": "sting-eucliffe",
   "gameText": "After a normal skill hits, has a 20% chance to grant self for 3 sec, Top Critical Damage Up",
+  "notes": null,
   "applications": [
    "top-critical-damage-increase-self-20-3-sec"
   ]
@@ -1057,6 +1157,7 @@
   "kind": "signature",
   "signatureFor": "suzaku",
   "gameText": "When attacked, has a 20% chance to inflict [High] Bleed and Silence on the target for 2 sec.",
+  "notes": null,
   "applications": [
    "high-bleed-attacker-20-2-sec",
    "silence-attacker-20-2-sec"
@@ -1068,6 +1169,7 @@
   "kind": "signature",
   "signatureFor": "swayed-by-the-evening-breeze-gildarts",
   "gameText": "While on the field, inflicts [High] DEF Decrease and [Low] Accuracy Decrease on all enemies.",
+  "notes": null,
   "applications": [
    "high-def-decrease-all-enemies-while-on-the-field-2",
    "low-accuracy-decrease-all-enemies-while-on-the-field"
@@ -1079,6 +1181,7 @@
   "kind": "signature",
   "signatureFor": "swayed-by-the-evening-breeze-mystogan",
   "gameText": "While on the field, grants all allies [Mid] ATK Increase and [Mid] Accuracy Increase.",
+  "notes": null,
   "applications": [
    "mid-atk-increase-all-allies-while-on-the-field",
    "mid-accuracy-increase-all-allies-while-on-the-field"
@@ -1090,6 +1193,7 @@
   "kind": "signature",
   "signatureFor": "swaying-in-the-summer-night-cana",
   "gameText": "Every 5 sec, inflicts all enemies with Silence and [Mid] ATK Down.",
+  "notes": null,
   "applications": [
    "mid-atk-decrease-all-enemies-every-5-sec",
    "silence-all-enemies-every-5-sec"
@@ -1100,7 +1204,8 @@
   "name": "Swaying in the Summer Night Lisanna Lacrima",
   "kind": "signature",
   "signatureFor": "swaying-in-the-summer-night-lisanna",
-  "gameText": "[Mid] ATK Decrease for 2 sec",
+  "gameText": "[Mid] ATK Decrease for 2 sec.",
+  "notes": "Tested in play (equipped on wizards other than Lisanna): the whole team gets a shield. The in-game text only says \"[Mid] ATK Decrease for 2 sec.\"",
   "applications": []
  },
  {
@@ -1109,6 +1214,7 @@
   "kind": "signature",
   "signatureFor": "sweet-gift-juvia",
   "gameText": "After a normal skill hits, has a 20% chance to grant all allies for 3 seconds: [Mid] Shield",
+  "notes": null,
   "applications": [
    "mid-shield-all-allies-20-3-sec"
   ]
@@ -1119,6 +1225,7 @@
   "kind": "signature",
   "signatureFor": "sweet-gift-levy",
   "gameText": "When you are attacked, has a 30% chance to inflict Silence on the attacker for 2 sec.",
+  "notes": null,
   "applications": [
    "silence-attacker-30-2-sec"
   ]
@@ -1129,6 +1236,7 @@
   "kind": "signature",
   "signatureFor": "twin-moon-halloween-sherria",
   "gameText": "At the start of battle, grants all allies [High] Shield and [Mid] Critical Resistance Increase for 5 sec.",
+  "notes": null,
   "applications": [
    "high-shield-all-allies-start-of-battle-5-sec",
    "mid-critical-resistance-increase-all-allies-start-of-battle-5-sec"
@@ -1140,6 +1248,7 @@
   "kind": "signature",
   "signatureFor": "twin-moon-halloween-sherry",
   "gameText": "While on the field, grants all allies [High] Critical Rate Increase and [Mid] ATK Increase, [Mid] Accuracy Increase.",
+  "notes": null,
   "applications": [
    "high-critical-rate-increase-all-allies-while-on-the-field",
    "mid-atk-increase-all-allies-while-on-the-field",
@@ -1152,6 +1261,7 @@
   "kind": "signature",
   "signatureFor": "ultear-grimoire-heart",
   "gameText": "When attacked,  has a 30% chance to inflict [High] Freeze and [High] Def Decrease on the attacker for 2 sec.",
+  "notes": null,
   "applications": [
    "high-def-decrease-attacker-when-attacked-30-2-sec",
    "high-freeze-attacker-when-attacked-30-2-sec"
@@ -1163,6 +1273,7 @@
   "kind": "signature",
   "signatureFor": "wendy-bakeneko",
   "gameText": "While on the battlefield, inflict [Mid] ATK Decrease and [Mid] Critical Damage Decrease on all enemies.",
+  "notes": null,
   "applications": [
    "mid-atk-decrease-all-enemies-while-on-the-field",
    "mid-critical-damage-decrease-all-enemies-while-on-the-field"
@@ -1174,6 +1285,7 @@
   "kind": "signature",
   "signatureFor": "wendy-dragon-force",
   "gameText": "When you are attacked, there is a a20% chance to apply to the attacker for 2 sec Heal Block",
+  "notes": null,
   "applications": [
    "heal-block-attacker-20-2-sec"
   ]
@@ -1184,6 +1296,7 @@
   "kind": "signature",
   "signatureFor": "wendy-marvell",
   "gameText": "At the start of battle, grants all allies Mid Evasion Up for 5 sec.",
+  "notes": null,
   "applications": [
    "mid-evasion-increase-all-allies-start-of-battle-5-sec"
   ]
@@ -1194,6 +1307,7 @@
   "kind": "signature",
   "signatureFor": "white-gift-gajeel",
   "gameText": "While you are on the field, inflicts [Mid] Critical Damage Decrease on all enemies.",
+  "notes": null,
   "applications": [
    "mid-critical-damage-decrease-all-enemies-while-on-the-field"
   ]
@@ -1204,6 +1318,7 @@
   "kind": "signature",
   "signatureFor": "white-gift-gray",
   "gameText": "After a normal skill hits, if the target is inflicted with Freeze, reduces the target's charged Special Skill Gauge by 0.5 seconds.",
+  "notes": null,
   "applications": [
    "push-back-special-skill-gauge-single-enemy-freeze-0-5-sec"
   ]

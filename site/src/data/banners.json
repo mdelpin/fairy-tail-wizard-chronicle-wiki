@@ -193,9 +193,7 @@
   "dateSource": "Calculated",
   "units": [
    "erza-knightwalker",
-   "natsu-dragion",
-   "parallel-world-mystogan",
-   "parallel-world-wendy"
+   "natsu-dragion"
   ]
  },
  {
@@ -361,7 +359,21 @@
   "start": "2026-10-30",
   "end": "2026-11-13",
   "dateSource": "Confirmed",
-  "units": []
+  "units": [
+   "parallel-world-wendy",
+   "parallel-world-mystogan"
+  ]
+ },
+ {
+  "id": "madofes-nov-2026",
+  "name": "MadoFes Nov. 2026",
+  "type": "MadoFes",
+  "start": "2026-11-01",
+  "end": "2026-11-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "master-enchant-irene"
+  ]
  },
  {
   "id": "block-chronicle",
@@ -450,17 +462,6 @@
   "dateSource": null,
   "units": [
    "natsu-lightning-fire-dragon-mode"
-  ]
- },
- {
-  "id": "madofes-nov-2026",
-  "name": "MadoFes Nov. 2026",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "master-enchant-irene"
   ]
  },
  {

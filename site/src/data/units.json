@@ -1615,7 +1615,8 @@
     "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-heart-allies-20-5-sec",
-     "top-def-increase-heart-allies-20-5-sec"
+     "top-def-increase-heart-allies-20-5-sec",
+     "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-20-0-7-sec"
     ]
    },
    {
@@ -3888,7 +3889,8 @@
     "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-range-burn-or-paralysis-5-sec",
-     "high-burn-enemies-in-target-range-burn-or-paralysis-5-sec"
+     "high-burn-enemies-in-target-range-burn-or-paralysis-5-sec",
+     "top-critical-defense-decrease-enemies-in-target-range-burn-or-paralysis-5-sec"
     ]
    },
    {
@@ -4560,7 +4562,8 @@
     ],
     "levelTextSource": "madochro.wiki.gg",
     "applications": [
-     "damage-single-enemy-normal-attack-130-of-own-atk"
+     "damage-single-enemy-normal-attack-130-of-own-atk",
+     "additional-damage-single-enemy-bleed-70-of-own-atk"
     ]
    },
    {
@@ -7626,7 +7629,7 @@
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Disrupt",
-  "portrait": "Lucy Heartfilia-SR.png",
+  "portrait": "Lucy Heartfilia.png",
   "signatureLacrima": "lucy-lacrima",
   "skills": [
    {
@@ -8097,9 +8100,9 @@
   "id": "master-enchant-irene",
   "name": "Master Enchant Irene",
   "identity": "Irene Belserion",
-  "collection": null,
+  "collection": "New Form",
   "rarity": "UR",
-  "newForm": false,
+  "newForm": true,
   "debutBanner": "madofes-nov-2026",
   "bannerArt": null,
   "attribute": "Technique",
@@ -10719,7 +10722,9 @@
     "levelTextSource": null,
     "applications": [
      "top-def-increase-self-hp-50-once-only-5-sec",
-     "top-atk-increase-self-hp-50-once-only-5-sec"
+     "top-atk-increase-self-hp-50-once-only-5-sec",
+     "damage-reflection-shield-self-hp-50-once-only-30-5-sec",
+     "heal-self-hp-50-once-only-1500-of-own-atk"
     ]
    },
    {
@@ -11221,7 +11226,8 @@
     "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-area-paralysis-burn-or-bleed-5-sec",
-     "top-atk-decrease-enemies-in-target-area-paralysis-burn-or-bleed-5-sec"
+     "top-atk-decrease-enemies-in-target-area-paralysis-burn-or-bleed-5-sec",
+     "top-evasion-decrease-enemies-in-target-area-paralysis-burn-or-bleed-5-sec"
     ]
    },
    {
@@ -11391,7 +11397,9 @@
     ],
     "levelTextSource": null,
     "applications": [
-     "silence-single-enemy-30-5-sec"
+     "silence-single-enemy-30-5-sec",
+     "push-back-ultimate-skill-gauge-single-enemy-30-0-9-sec",
+     "top-critical-defense-decrease-single-enemy-30-5-sec"
     ]
    },
    {
@@ -11455,7 +11463,7 @@
   "collection": "Parallel World -Part 2-",
   "rarity": "UR",
   "newForm": false,
-  "debutBanner": "parallel-world",
+  "debutBanner": "parallel-world-part-2",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Melee",
@@ -11640,7 +11648,7 @@
   "collection": "Parallel World",
   "rarity": "UR",
   "newForm": false,
-  "debutBanner": "parallel-world",
+  "debutBanner": "parallel-world-part-2",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
@@ -11694,7 +11702,9 @@
     ],
     "levelTextSource": null,
     "applications": [
-     "damage-single-enemy-normal-attack-160-of-own-atk"
+     "damage-single-enemy-normal-attack-160-of-own-atk",
+     "top-critical-defense-decrease-single-enemy-30-3-sec",
+     "top-evasion-decrease-single-enemy-30-3-sec"
     ]
    },
    {
@@ -12167,8 +12177,8 @@
   "collection": "Rock'n Magic",
   "rarity": "UR",
   "newForm": false,
-  "debutBanner": null,
-  "bannerArt": null,
+  "debutBanner": "rock-n-magic",
+  "bannerArt": "rock-n-magic-juvia.webp",
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "Rock'n Magic Juvia.png",
@@ -12261,7 +12271,8 @@
     ],
     "levelTextSource": null,
     "applications": [
-     "top-def-increase-all-allies-while-on-the-field"
+     "top-def-increase-all-allies-while-on-the-field",
+     "top-critical-defense-increase-all-allies-while-on-the-field"
     ]
    },
    {
@@ -12378,7 +12389,7 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "rock-n-magic",
-  "bannerArt": null,
+  "bannerArt": "rock-n-magic-lucy.webp",
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Rock'n Magic Lucy.png",
@@ -13731,7 +13742,8 @@
     "levelTextSource": null,
     "applications": [
      "top-atk-increase-self-constant",
-     "top-accuracy-increase-self-constant"
+     "top-accuracy-increase-self-constant",
+     "top-critical-damage-increase-self-constant"
     ]
    },
    {
@@ -14284,7 +14296,8 @@
     "levelTextSource": null,
     "applications": [
      "top-def-decrease-enemies-in-target-area-bleed-or-silence-5-sec",
-     "top-evasion-decrease-enemies-in-target-area-bleed-or-silence-5-sec"
+     "top-evasion-decrease-enemies-in-target-area-bleed-or-silence-5-sec",
+     "top-critical-defense-decrease-enemies-in-target-area-bleed-or-silence-5-sec"
     ]
    },
    {
@@ -14349,7 +14362,7 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "swaying-in-the-summer-night",
-  "bannerArt": null,
+  "bannerArt": "swaying-in-the-summer-night-lisanna.webp",
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Swaying in the Summer Night Lisanna.png",
@@ -15801,7 +15814,8 @@
     "levelTextSource": "madochro.wiki.gg",
     "applications": [
      "top-atk-increase-all-allies-10-7-sec",
-     "top-critical-rate-increase-all-allies-10-7-sec"
+     "top-critical-rate-increase-all-allies-10-7-sec",
+     "advance-ultimate-skill-gauge-all-allies-10-0-7-sec"
     ]
    },
    {
