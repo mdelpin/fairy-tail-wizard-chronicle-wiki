@@ -97,18 +97,8 @@ export const ATTR_ORDER: Attribute[] = ['Brave', 'Mind', 'Technique', 'Heart'];
 export const ROLES = ['Melee', 'Ranged', 'Disrupt', 'Heal', 'Defense'];
 /** Role icons from the game, in public/icons/role/. */
 export const roleIcon = (role: string | null) => (role && ROLES.includes(role) ? url(`icons/role/${role.toLowerCase()}.webp`) : null);
-/** The Normal skill icon follows attribute and attack range (fist = melee, comet = ranged), in public/icons/skill/. */
-const NORMAL_ICON: Record<Attribute, number> = { Brave: 1, Technique: 2, Mind: 3, Heart: 4 };
-export const normalIcon = (u: Unit) => {
-  const range = u.skills.find((s) => s.kind === 'Normal')?.attackRange;
-  if (range !== 'Melee' && range !== 'Ranged') return null;
-  return url(`icons/skill/0${NORMAL_ICON[u.attribute] + (range === 'Ranged' ? 4 : 0)}.webp`);
-};
-/** A skill's icon: the recorded one, or for Normal skills the attribute × range rule. */
-export const skillIcon = (u: Unit, s: Skill) => {
-  if (s.icon) return url(`icons/skill/${String(s.icon).padStart(2, '0')}.webp`);
-  return s.kind === 'Normal' ? normalIcon(u) : null;
-};
+/** A skill's icon, only when it has been recorded from the game (no guessing from attribute or range). */
+export const skillIcon = (_u: Unit, s: Skill) => (s.icon ? url(`icons/skill/${String(s.icon).padStart(2, '0')}.webp`) : null);
 export const KIND_ORDER = ['Normal', 'Special', 'Ultimate'];
 
 // ---------- effects ----------

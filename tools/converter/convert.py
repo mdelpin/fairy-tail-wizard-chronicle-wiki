@@ -321,7 +321,7 @@ def main(root, out, slugs_path=None, public_dir=None):
             "kind": f.get("kind"), "name": clean(f.get("skillName")), "unit": unit_title,
             "attackRange": clean(f.get("attackRange")),
             "gameText": texts, "levelTable": table, "_apps": apps,
-            # game icon number (public/icons/skill/NN.webp); Normal skills fall back to attribute × range on the site
+            # game icon number (public/icons/skill/NN.webp), recorded from the game; no icon is shown without one
             "icon": icon,
             # where the Lv.1-2 text came from: 'madochro.wiki.gg' (credited on the site) or 'In game'
             "levelTextSource": clean(f.get("levelTextSource")),
