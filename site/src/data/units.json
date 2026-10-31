@@ -8107,7 +8107,7 @@
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
-  "portrait": null,
+  "portrait": "Master Enchant Irene.png",
   "signatureLacrima": "master-enchant-irene-lacrima",
   "skills": [
    {
@@ -11652,7 +11652,7 @@
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
-  "portrait": null,
+  "portrait": "Parallel World Wendy.png",
   "signatureLacrima": "parallel-world-wendy-lacrima",
   "skills": [
    {
