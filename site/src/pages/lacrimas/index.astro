@@ -134,6 +134,8 @@ const pct = (c: number | null) => (c != null ? `${Math.round(c * 100)}%` : null)
   .hint { margin: 0; font-size: 13px; color: var(--muted); }
   .clear { padding: 0; border: 0; background: none; color: var(--crimson); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; margin-left: 8px; }
   .group { margin-top: 24px; }
+  /* display:flex on .item would otherwise override the hidden attribute */
+  .item[hidden], .group[hidden] { display: none; }
   .tags { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
   .tags li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); }
   .tag { padding: 2px 8px; border-radius: 999px; background: #F3E6CE; border: 1px solid var(--brass); font-size: 12px; font-weight: 700; color: var(--timber); }
