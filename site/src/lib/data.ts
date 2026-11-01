@@ -83,9 +83,9 @@ export const bannerDates = (b: Banner) => {
 /** A unit's own first-available date wins over the banner's start; the end stays the banner's. */
 export const unitDates = (u: Unit, b?: Banner) => {
   if (!u.availableFrom) return b ? bannerDates(b) : null;
-  // the start is entered by hand, so only the banner's end can be an estimate
+  // while the banner's own dates are still estimated, so is the day derived from them
   const approx = b?.dateSource === 'Calculated' ? '≈ ' : '';
-  return dayText(u.availableFrom) + (b?.end ? ` – ${approx}${dayText(b.end)}` : '');
+  return approx + dayText(u.availableFrom) + (b?.end ? ` – ${dayText(b.end)}` : '');
 };
 export const DATE_NOTE = '≈ estimated from the two-week banner cycle. Japan time; banners change at 15:00 JST.';
 
