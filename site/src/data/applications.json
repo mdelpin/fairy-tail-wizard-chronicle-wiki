@@ -240,7 +240,7 @@
     "Freeze"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -296,7 +296,7 @@
     "Burn"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -339,18 +339,17 @@
   "gameText": "If the target is affected with Burn, Paralysis, Silence, or Bleed after the attack hits, deals additional damage equal to 350% of ATK."
  },
  {
-  "id": "additional-damage-enemies-in-target-area-burn-300-of-own-atk",
+  "id": "additional-damage-enemies-in-target-area-special-skill-hit-burn-300-of-own-atk",
   "source": "unit",
   "effect": "additional-damage",
   "type": "Inflicts",
   "target": "Enemies in Target Area",
   "trigger": {
    "events": [
-    "normal skill hit",
-    "after attack hits"
+    "special skill hit"
    ],
    "everySeconds": null,
-   "raw": "Normal Skill Hit, After Attack Hits"
+   "raw": "Special Skill Hit"
   },
   "chance": null,
   "durationSeconds": null,
@@ -364,45 +363,12 @@
     "Burn"
    ],
    "match": "Any",
-   "subject": "Target Hit",
-   "timing": "At Attack Hit",
-   "state": "Present"
-  },
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "additional-damage-single-enemy-bleed-20-350-of-own-atk",
-  "source": "unit",
-  "effect": "additional-damage",
-  "type": "Inflicts",
-  "target": "Single Enemy",
-  "trigger": {
-   "events": [
-    "normal skill hit",
-    "after attack hits"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit, After Attack Hits"
-  },
-  "chance": 0.2,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 350,
-   "unit": "Percent of own ATK"
-  },
-  "condition": null,
-  "requires": {
-   "families": [
-    "Bleed"
-   ],
-   "match": "Any",
    "subject": "Target",
    "timing": "At Attack Hit",
    "state": "Present"
   },
   "scaling": null,
-  "gameText": "If the attack hits a target afflicted with \"Bleed\", deals an additional 350% of ATK as damage."
+  "gameText": null
  },
  {
   "id": "additional-damage-single-enemy-bleed-70-of-own-atk",
@@ -429,12 +395,36 @@
     "Bleed"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
   "scaling": null,
   "gameText": "If the target is Bleeding after the hit, deal an additional 70% ATK damage."
+ },
+ {
+  "id": "additional-damage-single-enemy-every-10-sec-70-hp-lost",
+  "source": "unit",
+  "effect": "additional-damage",
+  "type": "Inflicts",
+  "target": "Single Enemy",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 70,
+   "unit": "Percent of HP Lost"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
  },
  {
   "id": "additional-damage-single-enemy-freeze-300-of-own-atk",
@@ -502,6 +492,38 @@
   "gameText": "IWhen a critical hit occurs....If the attack hits and the target is in a Paralysis state, deal additional damage equal to 250% of ATK"
  },
  {
+  "id": "additional-damage-single-enemy-special-skill-hit-bleed-350-of-own-atk",
+  "source": "unit",
+  "effect": "additional-damage",
+  "type": "Inflicts",
+  "target": "Single Enemy",
+  "trigger": {
+   "events": [
+    "special skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Special Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 350,
+   "unit": "Percent of own ATK"
+  },
+  "condition": null,
+  "requires": {
+   "families": [
+    "Bleed"
+   ],
+   "match": "Any",
+   "subject": "Target",
+   "timing": "At Attack Hit",
+   "state": "Present"
+  },
+  "scaling": null,
+  "gameText": "If the attack hits a target afflicted with \"Bleed\", deals an additional 350% of ATK as damage."
+ },
+ {
   "id": "advance-special-skill-gauge-all-allies-30-0-7-sec",
   "source": "unit",
   "effect": "advance-special-skill-gauge",
@@ -530,7 +552,7 @@
   "source": "unit",
   "effect": "advance-special-skill-gauge",
   "type": "Provides",
-  "target": "Current Special Skill Gauge",
+  "target": "Self",
   "trigger": {
    "events": [
     "normal skill hit"
@@ -550,11 +572,11 @@
   "gameText": null
  },
  {
-  "id": "advance-ultimate-skill-gauge-all-allies-10-0-7-sec",
+  "id": "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-10-0-7-sec",
   "source": "unit",
   "effect": "advance-ultimate-skill-gauge",
   "type": "Provides",
-  "target": "All Allies",
+  "target": "Current Ultimate Skill Gauge",
   "trigger": {
    "events": [
     "normal skill hit"
@@ -586,7 +608,7 @@
    "everySeconds": null,
    "raw": "Normal Skill Hit"
   },
-  "chance": null,
+  "chance": 0.2,
   "durationSeconds": null,
   "valueOverride": {
    "amount": 0.7,
@@ -788,7 +810,7 @@
     "Bleed"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -2289,6 +2311,30 @@
   "gameText": null
  },
  {
+  "id": "damage-enemies-in-target-area-normal-skill-hit-20-300-of-own-atk",
+  "source": "unit",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "Enemies in Target Area",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.2,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 300,
+   "unit": "Percent of own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "damage-enemies-in-target-area-normal-skill-hit-20-350-of-own-atk",
   "source": "unit",
   "effect": "damage",
@@ -3241,11 +3287,10 @@
   "target": "Enemies in Target Area",
   "trigger": {
    "events": [
-    "normal skill hit",
-    "after attack hits"
+    "normal skill hit"
    ],
    "everySeconds": null,
-   "raw": "Normal Skill Hit, After Attack Hits"
+   "raw": "Normal Skill Hit"
   },
   "chance": null,
   "durationSeconds": 5,
@@ -3256,7 +3301,7 @@
     "Silence"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -3449,6 +3494,35 @@
   "condition": null,
   "requires": null,
   "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "heal-all-allies-every-11-sec-950-of-own-atk-scales-per-technique-ally",
+  "source": "unit",
+  "effect": "heal",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 11,
+   "raw": "Every 11 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 950,
+   "unit": "Percent of own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Healing",
+   "increasePerUnit": 50,
+   "increaseValueUnit": "Percent",
+   "scalingBasis": "Technique Ally",
+   "maximumNumberOfIncreases": 7,
+   "maximumResult": 350
+  },
   "gameText": null
  },
  {
@@ -4332,7 +4406,7 @@
   "gameText": null
  },
  {
-  "id": "high-burn-enemies-in-target-range-burn-or-paralysis-5-sec",
+  "id": "high-burn-enemies-in-target-area-burn-or-paralysis-5-sec",
   "source": "unit",
   "effect": "high-burn",
   "type": "Inflicts",
@@ -4369,11 +4443,10 @@
   "target": "Single Enemy",
   "trigger": {
    "events": [
-    "normal skill hit",
-    "after attack hits"
+    "normal skill hit"
    ],
    "everySeconds": null,
-   "raw": "Normal Skill Hit, After Attack Hits"
+   "raw": "Normal Skill Hit"
   },
   "chance": 0.2,
   "durationSeconds": 3,
@@ -5252,6 +5325,27 @@
   },
   "chance": null,
   "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-def-increase-mind-allies-5-sec",
+  "source": "unit",
+  "effect": "high-def-increase",
+  "type": "Provides",
+  "target": "Mind Allies",
+  "trigger": {
+   "events": [
+    "critical hit"
+   ],
+   "everySeconds": null,
+   "raw": "Critical Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -6193,9 +6287,30 @@
   "gameText": "After a normal skill hits,  if the target is in a Freeze state, push back the target's accumulated Ultimate Skill gauge by 0.7 sec."
  },
  {
+  "id": "remove-all-buffs-each-target-hit-every-10-sec",
+  "source": "unit",
+  "effect": "remove-all-buffs",
+  "type": "Removes",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "remove-all-buffs-each-target-hit-every-8-sec",
   "source": "unit",
-  "effect": "removes-all-buffs",
+  "effect": "remove-all-buffs",
   "type": "Removes",
   "target": "Each Target Hit",
   "trigger": {
@@ -6216,7 +6331,7 @@
  {
   "id": "remove-all-buffs-each-target-hit-special-skill-hit-burn-paralysis-or-bleed",
   "source": "unit",
-  "effect": "removes-all-buffs",
+  "effect": "remove-all-buffs",
   "type": "Removes",
   "target": "Each Target Hit",
   "trigger": {
@@ -6275,27 +6390,6 @@
    "events": [],
    "everySeconds": 11,
    "raw": "Every 11 sec"
-  },
-  "chance": null,
-  "durationSeconds": null,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "removes-all-buffs-each-target-hit-every-10-sec",
-  "source": "unit",
-  "effect": "removes-all-buffs",
-  "type": "Removes",
-  "target": "Each Target Hit",
-  "trigger": {
-   "events": [
-    "after attack hits"
-   ],
-   "everySeconds": 10,
-   "raw": "Every 10 sec, After Attack Hits"
   },
   "chance": null,
   "durationSeconds": null,
@@ -6382,11 +6476,8 @@
    "raw": "Every 10 sec, After Attack Hits"
   },
   "chance": null,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 5,
-   "unit": null
-  },
+  "durationSeconds": 5,
+  "valueOverride": null,
   "condition": null,
   "requires": null,
   "scaling": null,
@@ -6613,27 +6704,6 @@
   },
   "chance": 0.3,
   "durationSeconds": 3,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "silence-single-enemy-5-sec",
-  "source": "unit",
-  "effect": "silence",
-  "type": "Inflicts",
-  "target": "Single Enemy",
-  "trigger": {
-   "events": [
-    "after attack hits"
-   ],
-   "everySeconds": null,
-   "raw": "After Attack Hits"
-  },
-  "chance": null,
-  "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -8231,28 +8301,6 @@
   "gameText": null
  },
  {
-  "id": "top-bleed-single-enemy-5-sec",
-  "source": "unit",
-  "effect": "top-bleed",
-  "type": "Inflicts",
-  "target": "Single Enemy",
-  "trigger": {
-   "events": [
-    "normal skill hit",
-    "after attack hits"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit, After Attack Hits"
-  },
-  "chance": null,
-  "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "top-bleed-single-enemy-every-10-sec-50-5-sec",
   "source": "unit",
   "effect": "top-bleed",
@@ -8293,6 +8341,27 @@
   "requires": null,
   "scaling": null,
   "gameText": "After the attack hits, there is a 50% chance to inflict Top Bleed on the target for 5 sec."
+ },
+ {
+  "id": "top-bleed-single-enemy-special-skill-hit-5-sec",
+  "source": "unit",
+  "effect": "top-bleed",
+  "type": "Inflicts",
+  "target": "Single Enemy",
+  "trigger": {
+   "events": [
+    "special skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Special Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
  },
  {
   "id": "top-burn-each-target-hit-every-10-sec-30-5-sec",
@@ -8477,28 +8546,6 @@
   },
   "chance": 0.3,
   "durationSeconds": 3,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "top-burn-single-enemy-5-sec",
-  "source": "unit",
-  "effect": "top-burn",
-  "type": "Inflicts",
-  "target": "Single Enemy",
-  "trigger": {
-   "events": [
-    "normal skill hit",
-    "after attack hits"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit, After Attack Hits"
-  },
-  "chance": null,
-  "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -8928,7 +8975,7 @@
  {
   "id": "top-critical-damage-increase-mind-allies-3-sec",
   "source": "unit",
-  "effect": "top-critical-damage-decrease",
+  "effect": "top-critical-damage-increase",
   "type": "Provides",
   "target": "Mind Allies",
   "trigger": {
@@ -9254,7 +9301,7 @@
  {
   "id": "top-critical-defense-decrease-each-target-hit-every-10-sec-20-5-sec",
   "source": "unit",
-  "effect": "bind",
+  "effect": "top-critical-defense-decrease",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -9378,7 +9425,7 @@
     "Bleed"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -9518,6 +9565,65 @@
   "gameText": null
  },
  {
+  "id": "top-critical-defense-decrease-enemies-in-target-area-burn-5-sec",
+  "source": "unit",
+  "effect": "top-critical-defense-decrease",
+  "type": "Inflicts",
+  "target": "Enemies in Target Area",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": {
+   "families": [
+    "Burn"
+   ],
+   "match": "Any",
+   "subject": "Target",
+   "timing": "After Attack Hits",
+   "state": "Present"
+  },
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-defense-decrease-enemies-in-target-area-burn-or-paralysis-5-sec",
+  "source": "unit",
+  "effect": "top-critical-defense-decrease",
+  "type": "Inflicts",
+  "target": "Enemies in Target Area",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": {
+   "families": [
+    "Burn",
+    "Paralysis"
+   ],
+   "match": "Any",
+   "subject": "Target",
+   "timing": "After Attack Hits",
+   "state": "Present"
+  },
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-critical-defense-decrease-enemies-in-target-area-paralysis-5-sec",
   "source": "unit",
   "effect": "top-critical-defense-decrease",
@@ -9568,71 +9674,12 @@
     "Silence"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
   "scaling": null,
   "gameText": "After normal skill hits, if enemies within the target area are affected by Silence, there is a 5 sec effect applied to each enemy: [Top] Critical Defense Decrease..."
- },
- {
-  "id": "top-critical-defense-decrease-enemies-in-target-range-burn-5-sec",
-  "source": "unit",
-  "effect": "top-critical-defense-decrease",
-  "type": "Inflicts",
-  "target": "Enemies in Target Area",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": null,
-  "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": {
-   "families": [
-    "Burn"
-   ],
-   "match": "Any",
-   "subject": "Target",
-   "timing": "After Attack Hits",
-   "state": "Present"
-  },
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "top-critical-defense-decrease-enemies-in-target-range-burn-or-paralysis-5-sec",
-  "source": "unit",
-  "effect": "top-critical-defense-decrease",
-  "type": "Inflicts",
-  "target": "Enemies in Target Area",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": null,
-  "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": {
-   "families": [
-    "Burn",
-    "Paralysis"
-   ],
-   "match": "Any",
-   "subject": "Target",
-   "timing": "After Attack Hits",
-   "state": "Present"
-  },
-  "scaling": null,
-  "gameText": null
  },
  {
   "id": "top-critical-defense-decrease-single-enemy-30-3-sec",
@@ -10691,7 +10738,7 @@
     "Silence"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -11027,7 +11074,7 @@
     "Bleed"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -11126,6 +11173,65 @@
    "families": [
     "Bleed",
     "Silence"
+   ],
+   "match": "Any",
+   "subject": "Target",
+   "timing": "After Attack Hits",
+   "state": "Present"
+  },
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-decrease-enemies-in-target-area-burn-5-sec",
+  "source": "unit",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "Enemies in Target Area",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": {
+   "families": [
+    "Burn"
+   ],
+   "match": "Any",
+   "subject": "Target",
+   "timing": "After Attack Hits",
+   "state": "Present"
+  },
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-decrease-enemies-in-target-area-burn-or-paralysis-5-sec",
+  "source": "unit",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "Enemies in Target Area",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": {
+   "families": [
+    "Burn",
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -11277,65 +11383,6 @@
     "Paralysis",
     "Silence",
     "Bleed"
-   ],
-   "match": "Any",
-   "subject": "Target",
-   "timing": "After Attack Hits",
-   "state": "Present"
-  },
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "top-def-decrease-enemies-in-target-range-burn-5-sec",
-  "source": "unit",
-  "effect": "top-def-decrease",
-  "type": "Inflicts",
-  "target": "Enemies in Target Area",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": null,
-  "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": {
-   "families": [
-    "Burn"
-   ],
-   "match": "Any",
-   "subject": "Target",
-   "timing": "After Attack Hits",
-   "state": "Present"
-  },
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "top-def-decrease-enemies-in-target-range-burn-or-paralysis-5-sec",
-  "source": "unit",
-  "effect": "top-def-decrease",
-  "type": "Inflicts",
-  "target": "Enemies in Target Area",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": null,
-  "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": {
-   "families": [
-    "Burn",
-    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -11917,7 +11964,7 @@
     "Bleed"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -12453,18 +12500,17 @@
   "gameText": null
  },
  {
-  "id": "top-paralysis-single-enemy-5-sec",
+  "id": "top-paralysis-single-enemy-special-skill-hit-5-sec",
   "source": "unit",
   "effect": "top-paralysis",
   "type": "Inflicts",
   "target": "Single Enemy",
   "trigger": {
    "events": [
-    "normal skill hit",
-    "after attack hits"
+    "special skill hit"
    ],
    "everySeconds": null,
-   "raw": "Normal Skill Hit, After Attack Hits"
+   "raw": "Special Skill Hit"
   },
   "chance": null,
   "durationSeconds": 5,
@@ -14682,7 +14728,7 @@
   "gameText": null
  },
  {
-  "id": "silence-all-enemies-when-defeated-20-2-sec",
+  "id": "silence-all-enemies-when-defeated-2-sec",
   "source": "lacrima",
   "effect": "silence",
   "type": "Inflicts",
