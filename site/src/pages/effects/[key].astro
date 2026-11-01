@@ -1,4 +1,5 @@
 ---
+import Info from '../../components/Info.astro';
 import Base from '../../layouts/Base.astro';
 import MagicCircle from '../../components/MagicCircle.astro';
 import Kanji from '../../components/Kanji.astro';
@@ -44,18 +45,16 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
 ---
 <Base title={m.label} section="effects" description={`Every wizard and lacrima in FAIRY TAIL Wizard Chronicle that applies ${m.label}.`}>
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href={url('effects/')}>Effect Finder</a><span aria-hidden="true">/</span><span>{m.label}</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href={url('effects/')}>Effect Finder</a></nav>
 
     <section class="banner" style={`--c:${m.color}`}>
       <MagicCircle size={460} color="#F3D27A" style="right:-60px;top:50%;transform:translateY(-50%);opacity:.28" />
       <div class="banner-body">
         <span class="medal"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#FFF3E0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={m.icon} /></svg></span>
         <div class="what">
-          <span class="eyebrow">Effect Finder</span>
-          <h1>{m.label}</h1>
+          <h1>{m.label} <Info><p>Values and tiers are Lv.3. Open a skill’s Lv.1–2 for earlier values.</p></Info></h1>
           {sample && <span class="sub">{[sample.polarity, sample.mechanic].filter(Boolean).join(' · ')}</span>}
           <div class="counts">
-            <span><strong>{cards.length}</strong> wizards apply it</span>
             {lac.length > 0 && <span><strong>{new Set(lac.map((l) => l.lacrima.id)).size}</strong> lacrimas</span>}
             {needUnits.length > 0 && <a href="#needs"><strong>{new Set(needUnits.map((n) => n.unit.id)).size}</strong> need it on the target</a>}
           </div>
@@ -96,9 +95,8 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
           {rolesPresent.map((x) => <button type="button" class="pill" data-filter="role" data-value={x} aria-pressed="false">{x}</button>)}
         </div>
       )}
-      <p class="status"><span id="shown">{cards.length}</span> of {cards.length} wizards<span id="active" hidden> · <span id="active-list"></span> · <button type="button" id="clear" class="clear">Clear filters</button></span></p>
+      <p class="status"><span id="shown">{cards.length}</span> of {cards.length} wizards<span id="active" hidden> · <button type="button" class="clear">Clear filters</button></span></p>
     </div>
-    <p class="hint">Matches use Lv.3 values. Earlier levels are shown where they’ve been recorded.</p>
 
     <div class="results">
       {cards.map(({ unit, rows }) => {
@@ -123,8 +121,8 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
                   <p class="lv"><span class="lvl">Lv.3</span><span>{segs(skill.gameText.Lv3).map((x) => x.hit ? <mark class="mark">{x.s}</mark> : x.s)}</span></p>
                 )}
                 {skill.gameText?.Lv1
-                  ? <details><summary>Show Lv.1–2</summary>{['Lv1', 'Lv2'].map((k) => skill.gameText[k] && <p class="lv"><span class="lvl">{k.replace('Lv', 'Lv.')}</span><span>{skill.gameText[k]}</span></p>)}{skill.levelTextSource === WIKI_CREDIT.name && <p class="credit">Lv.1–2 text from <a href={WIKI_CREDIT.href}>{WIKI_CREDIT.name}</a>, <a href={WIKI_CREDIT.licenseHref}>{WIKI_CREDIT.license}</a>.</p>}</details>
-                  : <p class="nolv">Lv.1 and Lv.2 not recorded yet.</p>}
+                  ? <details><summary>Lv.1–2</summary>{['Lv1', 'Lv2'].map((k) => skill.gameText[k] && <p class="lv"><span class="lvl">{k.replace('Lv', 'Lv.')}</span><span>{skill.gameText[k]}</span></p>)}{skill.levelTextSource === WIKI_CREDIT.name && <p class="credit">Lv.1–2: <a href={WIKI_CREDIT.href}>{WIKI_CREDIT.name}</a> (<a href={WIKI_CREDIT.licenseHref}>{WIKI_CREDIT.license}</a>)</p>}</details>
+                  : null}
               </div>
             ))}
           </article>
@@ -132,7 +130,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
       })}
     </div>
 
-    <p id="none" class="muted" hidden>No wizards match these filters.</p>
+    <p id="none" class="muted" hidden>No wizards match. <button type="button" class="clear">Clear filters</button></p>
 
     {lac.length > 0 && (
       <section id="lacrimas">
@@ -151,7 +149,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
 
     {needUnits.length > 0 && (
       <section id="needs">
-        <div class="section-title"><h2>Needs {m.label} on the target</h2><p>These skills only trigger extra effects when the target already has it.</p></div>
+        <div class="section-title"><h2>Needs {m.label} on the target</h2></div>
         <div class="table-wrap needs">
           <table class="fx">
             <thead><tr><th scope="col">Wizard</th><th scope="col">Skill</th><th scope="col">Unlocks</th><th scope="col">Needs any of</th></tr></thead>
@@ -194,8 +192,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0;
     const active = [state.tier && state.tier + ' tier', state.attr, state.role].filter(Boolean);
-    document.getElementById('active')!.hidden = active.length === 0;
-    document.getElementById('active-list')!.textContent = active.join(' · ');
+    document.getElementById('active')!.hidden = active.length === 0 || n === 0;
     const p = new URLSearchParams();
     for (const [k, v] of Object.entries(state)) if (v) p.set(k, v);
     const qs = p.toString();
@@ -204,7 +201,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   for (const p of pills) p.addEventListener('click', () => {
     state[p.dataset.filter!] = p.dataset.value || null; apply();
   });
-  document.getElementById('clear')!.addEventListener('click', () => { state.tier = state.attr = state.role = null; apply(); });
+  document.querySelectorAll('.clear').forEach((b) => b.addEventListener('click', () => { state.tier = state.attr = state.role = null; apply(); }));
   apply();
 </script>
 
@@ -214,7 +211,6 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .banner-body { position: relative; padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; }
   .medal { flex: none; width: 96px; height: 96px; border-radius: 50%; background: rgba(0,0,0,.25); border: 4px solid var(--brass); display: flex; align-items: center; justify-content: center; }
   .what { flex: 1 1 280px; display: flex; flex-direction: column; gap: 6px; }
-  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #F3D27A; }
   .what h1 { font-size: clamp(36px, 5vw, 54px); line-height: 1; }
   .sub { font-size: 15px; color: #F6DFC8; }
   .counts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
@@ -235,7 +231,6 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .pill { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 16px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
   .pill:has(.kanji) { padding-left: 8px; }
   .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
-  .hint { margin: 14px 0 0; padding: 10px 16px; border-radius: 12px; background: #FFFBF2; border: 1px dashed var(--brass); font-size: 13px; color: var(--muted); }
   .results { display: flex; flex-direction: column; gap: 18px; margin-top: 18px; }
   .card { background: #fff; border: 2px solid #D9B98C; border-left: 8px solid var(--c); border-radius: 18px; overflow: hidden; box-shadow: 0 3px 0 var(--brass), 0 10px 24px rgba(74,47,30,.12); }
   .card-head { display: flex; align-items: center; gap: 16px; padding: 14px 20px; background: rgba(var(--t), .13); border-bottom: 1px solid rgba(var(--t), .28); }
@@ -252,7 +247,6 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .match { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: #FBF1E4; border: 1px solid #F0D9C2; font-size: 14px; }
   .lv { margin: 0; display: flex; gap: 12px; font-size: 15px; line-height: 1.65; }
   .lvl { flex: none; width: 38px; font: 700 12px/1.9 var(--mono); color: var(--crimson); }
-  .nolv { margin: 0 0 0 50px; font-size: 13px; color: var(--muted); }
   .credit { margin: 6px 0 0 50px; font-size: 12px; color: var(--muted); }
   details summary { cursor: pointer; font-size: 13px; color: var(--timber); margin-left: 50px; }
   .lac-list { display: flex; flex-direction: column; gap: 10px; }

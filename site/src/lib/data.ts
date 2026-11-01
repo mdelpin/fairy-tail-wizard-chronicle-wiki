@@ -3,6 +3,7 @@ import unitsJson from '../data/units.json';
 import appsJson from '../data/applications.json';
 import effectsJson from '../data/effects.json';
 import lacrimasJson from '../data/lacrimas.json';
+import bannersJson from '../data/banners.json';
 
 export interface Effect {
   id: string; name: string; family: string | null; direction: string | null; tier: string | null;
@@ -23,6 +24,10 @@ export interface Application {
 export interface Skill {
   kind: 'Normal' | 'Special' | 'Ultimate'; name: string | null; attackRange: string | null;
   gameText: Record<string, string>; applications: string[];
+  /** Editor's note (not game text). */
+  notes?: string | null;
+  /** Game icon number (public/icons/skill/NN.webp), when recorded. */
+  icon?: number | null;
   /** Where the Lv.1–2 text came from: 'madochro.wiki.gg' (credited) or 'In game'. */
   levelTextSource?: string | null;
 }
@@ -30,11 +35,27 @@ export const WIKI_CREDIT = { name: 'madochro.wiki.gg', href: 'https://madochro.w
 export interface Unit {
   id: string; name: string; identity: string | null; collection: string | null; rarity: string | null;
   attribute: Attribute; role: string | null; portrait: string | null; signatureLacrima: string | null;
+  /** Collection name starts with "New Form" (the game spreads them over several). */
+  newForm: boolean;
+  /** The banner the unit first became obtainable on, if recorded. */
+  debutBanner: string | null;
+  /** File name in public/banner-art/, if the unit's gacha art is recorded. */
+  bannerArt: string | null;
   skills: Skill[];
+}
+export interface Banner {
+  id: string; name: string; type: string | null;
+  /** Official JST days, YYYY-MM-DD. */
+  start: string | null; end: string | null;
+  /** 'Confirmed' (game or official post) or 'Calculated' (two-week rhythm); null when no date is known. */
+  dateSource: string | null;
+  units: string[];
 }
 export interface Lacrima {
   id: string; name: string; kind: 'signature' | 'generic'; signatureFor: string | null;
   gameText: string | null; applications: string[];
+  /** Editor's note (not game text), e.g. behaviour tested in play. */
+  notes?: string | null;
 }
 export type Attribute = 'Brave' | 'Mind' | 'Technique' | 'Heart';
 
@@ -44,6 +65,20 @@ export const effects = new Map((effectsJson as Effect[]).map((e) => [e.id, e]));
 export const lacrimas = (lacrimasJson as Lacrima[]).slice().sort((a, b) => a.name.localeCompare(b.name));
 export const unitById = new Map(units.map((u) => [u.id, u]));
 export const lacrimaById = new Map(lacrimas.map((l) => [l.id, l]));
+/** Oldest first; banners without a date at the end. */
+export const banners = bannersJson as Banner[];
+export const bannerById = new Map(banners.map((b) => [b.id, b]));
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** '2026-03-06' -> '6 Mar 2026' (a JST calendar day, shown as written; no time-zone shift). */
+export const dayText = (d: string) => { const [y, m, dd] = d.split('-').map(Number); return `${dd} ${MONTHS[m - 1]} ${y}`; };
+/** 'Calculated' dates get an ≈ so readers can tell them from confirmed ones. */
+export const bannerDates = (b: Banner) => {
+  if (!b.start) return null;
+  const approx = b.dateSource === 'Calculated' ? '≈ ' : '';
+  return approx + dayText(b.start) + (b.end ? ` – ${dayText(b.end)}` : '');
+};
+export const DATE_NOTE = '≈ estimated from the two-week banner cycle. Japan time; banners change at 15:00 JST.';
 
 export const url = (path: string) => import.meta.env.BASE_URL.replace(/\/?$/, '/') + path.replace(/^\//, '');
 
@@ -55,13 +90,17 @@ export const portraits = new Set(
 
 // ---------- attributes ----------
 export const ATTR: Record<Attribute, { kanji: string; color: string; text: string; tint: string; alt: string }> = {
-  Brave: { kanji: '勇', color: '#B83A26', text: '#9E3020', tint: '184,58,38', alt: 'also shown in game as Valor or Courage' },
-  Mind: { kanji: '知', color: '#2C64A8', text: '#24558F', tint: '44,100,168', alt: 'also shown in game as Wisdom' },
-  Technique: { kanji: '技', color: '#2D7F4F', text: '#256B42', tint: '45,127,79', alt: 'also shown in game as Skill' },
+  Brave: { kanji: '勇', color: '#B83A26', text: '#9E3020', tint: '184,58,38', alt: 'also shown in game as Valor, Courage or Brv' },
+  Mind: { kanji: '知', color: '#2C64A8', text: '#24558F', tint: '44,100,168', alt: 'also shown in game as Wisdom or Int' },
+  Technique: { kanji: '技', color: '#2D7F4F', text: '#256B42', tint: '45,127,79', alt: 'also shown in game as Skill or Tech' },
   Heart: { kanji: '心', color: '#9A700C', text: '#7A5A0A', tint: '154,112,12', alt: '' },
 };
 export const ATTR_ORDER: Attribute[] = ['Brave', 'Mind', 'Technique', 'Heart'];
 export const ROLES = ['Melee', 'Ranged', 'Disrupt', 'Heal', 'Defense'];
+/** Role icons from the game, in public/icons/role/. */
+export const roleIcon = (role: string | null) => (role && ROLES.includes(role) ? url(`icons/role/${role.toLowerCase()}.webp`) : null);
+/** A skill's icon, only when it has been recorded from the game (no guessing from attribute or range). */
+export const skillIcon = (_u: Unit, s: Skill) => (s.icon ? url(`icons/skill/${String(s.icon).padStart(2, '0')}.webp`) : null);
 export const KIND_ORDER = ['Normal', 'Special', 'Ultimate'];
 
 // ---------- effects ----------
