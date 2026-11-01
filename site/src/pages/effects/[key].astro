@@ -55,6 +55,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
           <h1>{m.label} <Info><p>Values and tiers are Lv.3. Open a skill’s Lv.1–2 for earlier values.</p></Info></h1>
           {sample && <span class="sub">{[sample.polarity, sample.mechanic].filter(Boolean).join(' · ')}</span>}
           <div class="counts">
+            <span><strong>{cards.length}</strong> wizards apply it</span>
             {lac.length > 0 && <span><strong>{new Set(lac.map((l) => l.lacrima.id)).size}</strong> lacrimas</span>}
             {needUnits.length > 0 && <a href="#needs"><strong>{new Set(needUnits.map((n) => n.unit.id)).size}</strong> need it on the target</a>}
           </div>
@@ -95,7 +96,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
           {rolesPresent.map((x) => <button type="button" class="pill" data-filter="role" data-value={x} aria-pressed="false">{x}</button>)}
         </div>
       )}
-      <p class="status"><span id="shown">{cards.length}</span> of {cards.length} wizards<span id="active" hidden> · <button type="button" class="clear">Clear filters</button></span></p>
+      <p class="status" id="status" hidden><span id="shown">{cards.length}</span> of {cards.length} wizards<span id="active"> · <button type="button" class="clear">Clear filters</button></span></p>
     </div>
 
     <div class="results">
@@ -192,7 +193,8 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0;
     const active = [state.tier && state.tier + ' tier', state.attr, state.role].filter(Boolean);
-    document.getElementById('active')!.hidden = active.length === 0 || n === 0;
+    document.getElementById('status')!.hidden = active.length === 0;
+    document.getElementById('active')!.hidden = n === 0;
     const p = new URLSearchParams();
     for (const [k, v] of Object.entries(state)) if (v) p.set(k, v);
     const qs = p.toString();
