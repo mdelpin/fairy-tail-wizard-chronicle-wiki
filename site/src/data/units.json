@@ -12793,6 +12793,8 @@
     "name": "Cross Constellation",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Deals damage equal to 650% of ATK to all enemies every 10 sec. After the attack hits, inflicts [Top] DEF Decrease, [Top] Critical Defense Decrease, and [High] Paralysis for 5 sec.",
+     "Lv2": "Deals damage equal to 750% of ATK to all enemies every 10 sec. After the attack hits, inflicts [Top] DEF Decrease, [Top] Critical Defense Decrease, and [High] Paralysis for 6 sec.",
      "Lv3": "Deals damage equal to 850% of ATK to all enemies every 10 sec. After the attack hits, inflicts [Top] DEF Decrease, [Top] Critical Defense Decrease, and [High] Paralysis for 7 sec."
     },
     "levelTable": [
@@ -15475,6 +15477,8 @@
     "name": "Sweet Water Gift",
     "attackRange": null,
     "gameText": {
+     "Lv1": "Every 11 seconds, restores HP of all allies equal to 700% of your ATK. Additionally, grants the target for 3 seconds: [Top] ATK Increase, [Top] DEF Increase, [Top] Critical Defense Increase.",
+     "Lv2": "Every 11 seconds, restores HP of all allies equal to 800% of your ATK. Additionally, grants the target for 4 seconds: [Top] ATK Increase, [Top] DEF Increase, [Top] Critical Defense Increase.",
      "Lv3": "Every 11 seconds, restores HP of all allies equal to 900% of your ATK. Additionally, grants the target for 5 seconds: [Top] ATK Increase, [Top] DEF Increase, [Top] Critical Defense Increase."
     },
     "levelTable": [
