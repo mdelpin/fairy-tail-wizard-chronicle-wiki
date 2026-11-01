@@ -1,9 +1,16 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Pennant from '../../components/Pennant.astro';
-import { lacrimas, unitById, url } from '../../lib/data';
+import { lacrimas, unitById, url, lacrimaRows, TRIGGER_GROUPS } from '../../lib/data';
 const signature = lacrimas.filter((l) => l.kind === 'signature');
 const generic = lacrimas.filter((l) => l.kind === 'generic');
+const rowsOf = new Map(lacrimas.map((l) => [l.id, lacrimaRows(l)]));
+const all = [...rowsOf.values()].flat();
+const uniq = (xs: (string | null | undefined)[]) => [...new Set(xs.filter(Boolean) as string[])].sort((a, b) => a.localeCompare(b));
+const groups = TRIGGER_GROUPS.filter((g) => all.some((r) => r.group === g));
+const targets = uniq(all.map((r) => r.app.target));
+const effectLabels = uniq(all.map((r) => r.label));
+const pct = (c: number | null) => (c != null ? `${Math.round(c * 100)}%` : null);
 ---
 <Base title="Lacrimas" section="lacrimas" description="Every signature and stat lacrima in FAIRY TAIL Wizard Chronicle with its game text.">
   <div class="wrap" data-pagefind-body>
@@ -16,17 +23,43 @@ const generic = lacrimas.filter((l) => l.kind === 'generic');
       <div><h1>Lacrimas</h1></div>
     </div>
 
+    <div class="filters" data-pagefind-ignore>
+      <label class="search"><span class="lbl">Search</span><input id="q" type="search" placeholder="Name or game text" autocomplete="off" /></label>
+      <div class="row"><span class="lbl">Trigger</span>
+        {groups.map((g) => <button type="button" class="pill" data-filter="trigger" data-value={g} aria-pressed="false">{g}</button>)}
+      </div>
+      <div class="row"><span class="lbl">Target</span>
+        {targets.map((t) => <button type="button" class="pill" data-filter="target" data-value={t} aria-pressed="false">{t}</button>)}
+      </div>
+      <div class="row"><label class="lbl" for="effect">Effect</label>
+        <select id="effect"><option value="">Any effect</option>{effectLabels.map((e) => <option value={e}>{e}</option>)}</select>
+      </div>
+      <p class="status" id="status" aria-live="polite"><span id="shown-wrap"><strong id="shown">{lacrimas.length}</strong> of {lacrimas.length} lacrimas</span> <button type="button" class="clear" id="clear" hidden>Clear filters</button></p>
+      <p class="hint">Constant = always on while the wizard is on the field. Stat lacrimas have no trigger, so a trigger filter hides them.</p>
+    </div>
+
     {[['Signature lacrimas', signature], ['Stat lacrimas', generic]].map(([title, list]) => (
-      <section>
+      <section class="group">
         <div class="section-title"><Pennant /><h2>{title as string}</h2></div>
         <ul class="list">
           {(list as typeof lacrimas).map((l) => {
             const owner = l.signatureFor ? unitById.get(l.signatureFor) : undefined;
             return (
-              <li class="item">
+              <li class="item" data-trigger={[...new Set(rowsOf.get(l.id)!.map((r) => r.group))].filter(Boolean).join('|')} data-target={[...new Set(rowsOf.get(l.id)!.map((r) => r.app.target))].filter(Boolean).join('|')} data-effect={[...new Set(rowsOf.get(l.id)!.map((r) => r.label))].filter(Boolean).join('|')} data-text={[l.name, owner?.name, l.gameText].filter(Boolean).join(' ').toLowerCase()}>
                 <h3 id={l.id} class="heading nm">{l.name}</h3>
                 {owner && <a class="owner" href={url(`characters/${owner.id}/`)}>{owner.name}</a>}
                 {l.gameText && <p>{l.gameText}</p>}
+                {rowsOf.get(l.id)!.length > 0 && (
+                  <ul class="tags">
+                    {rowsOf.get(l.id)!.map((r) => (
+                      <li>
+                        {r.group && <span class={`tag g-${r.group.replace(/\W/g, '').toLowerCase()}`}>{r.app.trigger?.raw}</span>}
+                        {r.label && <strong>{r.label}</strong>}
+                        <span>{[r.app.target, r.app.durationSeconds != null ? `${r.app.durationSeconds} sec` : null, pct(r.app.chance)].filter(Boolean).join(' · ')}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 {l.notes && <p class="notes"><span class="nl">Note</span>{l.notes}</p>}
               </li>
             );
@@ -34,8 +67,48 @@ const generic = lacrimas.filter((l) => l.kind === 'generic');
         </ul>
       </section>
     ))}
+    <p id="none" class="status" hidden>No lacrima matches those filters.</p>
   </div>
 </Base>
+
+<script>
+  // Trigger and target pills, the effect menu and the search box all combine. State lives in the URL.
+  const keys = ['trigger', 'target', 'effect', 'q'] as const;
+  const params = new URLSearchParams(location.search);
+  const state: Record<string, string> = Object.fromEntries(keys.map((k) => [k, params.get(k) ?? '']));
+  const pills = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill')];
+  const q = document.getElementById('q') as HTMLInputElement;
+  const effect = document.getElementById('effect') as HTMLSelectElement;
+  const has = (list: string | undefined, v: string) => !v || (list ?? '').split('|').includes(v);
+  function apply() {
+    let n = 0;
+    document.querySelectorAll<HTMLElement>('.group').forEach((sec) => {
+      let any = false;
+      sec.querySelectorAll<HTMLElement>('.item').forEach((li) => {
+        const ok = has(li.dataset.trigger, state.trigger) && has(li.dataset.target, state.target) && has(li.dataset.effect, state.effect)
+          && (!state.q || (li.dataset.text ?? '').includes(state.q.toLowerCase()));
+        li.hidden = !ok; if (ok) { n++; any = true; }
+      });
+      sec.hidden = !any;
+    });
+    for (const p of pills) p.setAttribute('aria-pressed', String(state[p.dataset.filter!] === p.dataset.value));
+    effect.value = state.effect; q.value = state.q;
+    document.getElementById('shown')!.textContent = String(n);
+    document.getElementById('none')!.hidden = n > 0;
+    document.getElementById('clear')!.hidden = keys.every((k) => !state[k]);
+    const p = new URLSearchParams();
+    for (const k of keys) if (state[k]) p.set(k, state[k]);
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+  for (const p of pills) p.addEventListener('click', () => {
+    const k = p.dataset.filter!; state[k] = state[k] === p.dataset.value ? '' : p.dataset.value!; apply();
+  });
+  effect.addEventListener('change', () => { state.effect = effect.value; apply(); });
+  q.addEventListener('input', () => { state.q = q.value.trim(); apply(); });
+  document.getElementById('clear')!.addEventListener('click', () => { for (const k of keys) state[k] = ''; apply(); });
+  apply();
+</script>
 
 <style>
   .head { display: flex; align-items: center; gap: 16px; }
@@ -49,5 +122,23 @@ const generic = lacrimas.filter((l) => l.kind === 'generic');
   .owner { font-size: 13px; font-weight: 600; }
   .item p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
   .item p.notes { margin-top: 4px; padding: 8px 10px; border-radius: 8px; background: #FBF4E7; border-left: 3px solid var(--brass); font-size: 13px; }
+  .filters { display: flex; flex-direction: column; gap: 10px; margin: 22px 0 6px; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .lbl { width: 70px; font-size: 13px; font-weight: 700; color: var(--timber); }
+  .search { display: flex; align-items: center; gap: 8px; }
+  .search input, #effect { min-height: 38px; padding: 0 14px; border-radius: 999px; border: 2px solid var(--line); background: #fff; font: 600 13px var(--body); color: var(--ink); }
+  .search input { width: min(340px, 100%); }
+  .pill { display: inline-flex; align-items: center; min-height: 38px; padding: 0 16px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+  .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
+  .status { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
+  .hint { margin: 0; font-size: 13px; color: var(--muted); }
+  .clear { padding: 0; border: 0; background: none; color: var(--crimson); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; margin-left: 8px; }
+  .group { margin-top: 24px; }
+  /* display:flex on .item would otherwise override the hidden attribute */
+  .item[hidden], .group[hidden] { display: none; }
+  .tags { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  .tags li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); }
+  .tag { padding: 2px 8px; border-radius: 999px; background: #F3E6CE; border: 1px solid var(--brass); font-size: 12px; font-weight: 700; color: var(--timber); }
+  .tag.g-constant { background: var(--crimson); border-color: var(--crimson); color: var(--cream); }
   .nl { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--timber); }
 </style>
