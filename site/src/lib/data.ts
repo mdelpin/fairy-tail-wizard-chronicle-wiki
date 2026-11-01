@@ -221,6 +221,27 @@ export function buildFinderIndex() {
   return { meta, applies, fromLacrimas, needs };
 }
 
+/** Plain groupings of the game's trigger wording, so lacrimas can be filtered without knowing every phrase. */
+export const TRIGGER_GROUPS = ['Constant', 'Repeating', 'On an event', 'One-off'] as const;
+export type TriggerGroup = (typeof TRIGGER_GROUPS)[number];
+export function triggerGroup(t: Application['trigger']): TriggerGroup | null {
+  if (!t) return null;
+  const raw = t.raw.toLowerCase();
+  if (raw === 'while on the field') return 'Constant';
+  if (t.everySeconds != null || raw.startsWith('every')) return 'Repeating';
+  if (['start of battle', 'when defeated', 'when incapacitated'].includes(raw)) return 'One-off';
+  return 'On an event';
+}
+/** What a lacrima does, one row per effect it applies, for the lacrima list and its filters. */
+export function lacrimaRows(l: Lacrima) {
+  return l.applications.flatMap((id) => {
+    const app = applications.get(id); if (!app) return [];
+    const effect = app.effect ? effects.get(app.effect) : undefined;
+    const fm = effect && familyKey(effect);
+    return [{ app, effect, label: fm ? fm.label : effect ? baseName(effect) : null, group: triggerGroup(app.trigger) }];
+  });
+}
+
 export const tierRank = (t: string | null) => (t ? TIER_ORDER.indexOf(t) : 9);
 export const initials = (name: string) =>
   name.replace(/-.*-/, '').split(' ').filter(Boolean).slice(-2).map((w) => w[0]).join('');
