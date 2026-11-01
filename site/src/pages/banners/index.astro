@@ -1,4 +1,5 @@
 ---
+import Info from '../../components/Info.astro';
 import Base from '../../layouts/Base.astro';
 import Pennant from '../../components/Pennant.astro';
 import { banners, unitById, url, portraits, initials, bannerDates, DATE_NOTE, ATTR } from '../../lib/data';
@@ -13,13 +14,12 @@ const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoF
     <div class="head">
       <Pennant width={34} star />
       <div>
-        <h1>Banners</h1>
-        <p class="muted">Where each wizard first became available. {banners.length} banners · newest first.</p>
+        <h1>Banners <Info><p>{DATE_NOTE}</p></Info></h1>
+        <p class="muted">{banners.length} banners</p>
       </div>
     </div>
-    <p class="datenote" data-pagefind-ignore>{DATE_NOTE}</p>
 
-    {[['Timeline', dated], ['Date not recorded yet', undated]].map(([title, list]) => (list as typeof banners).length > 0 && (
+    {[['Timeline', dated], ['Undated', undated]].map(([title, list]) => (list as typeof banners).length > 0 && (
       <section>
         <div class="section-title"><Pennant /><h2>{title as string}</h2></div>
         <ol class="list">
@@ -66,7 +66,6 @@ const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoF
   .head { display: flex; align-items: center; gap: 16px; }
   .head h1 { font-size: 42px; line-height: 1; }
   .head p { margin: 4px 0 0; }
-  .datenote { margin: 12px 0 0; max-width: 760px; font-size: 13px; color: var(--muted); }
   .list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; align-items: start; }
   .item { border-radius: 16px; overflow: hidden; background: #fff; border: 2px solid var(--line); box-shadow: 0 3px 0 var(--brass); scroll-margin-top: 16px; display: flex; flex-direction: column; }
   .item:target { box-shadow: 0 0 0 3px var(--crimson); }

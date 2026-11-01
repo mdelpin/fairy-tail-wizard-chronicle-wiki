@@ -14,14 +14,13 @@ const fx = [...idx.meta.values()].map((m) => ({ label: m.label, href: url(`effec
       <Pennant width={34} star />
       <div>
         <h1>Search</h1>
-        <p class="muted">Wizards, skill text, effects and lacrimas. Try “Bleed”, “Technique-type ally” or “Zodiac”.</p>
       </div>
     </div>
     <div class="panel box">
       <div id="fx-hits" hidden></div>
       <div id="search"></div>
-      <noscript><p>Search needs JavaScript. You can still browse the <a href={url('characters/')}>Wizard Roster</a> or the <a href={url('effects/')}>Effect Finder</a>.</p></noscript>
-      <p id="unavailable" class="muted" hidden>The search index isn’t built yet. It is created by <code>npm run build</code>, so search works in <code>npm run preview</code> and on the live site, not in <code>npm run dev</code>.</p>
+      <noscript><p>Search needs JavaScript. Browse the <a href={url('characters/')}>Wizard Roster</a>.</p></noscript>
+      <p id="unavailable" class="muted" hidden>Search isn’t available. Browse the <a href={url('characters/')}>Wizard Roster</a>.</p>
     </div>
   </div>
   <script is:inline define:vars={{ bundle, fx }}>

@@ -1,0 +1,19 @@
+---
+// One clicked ⓘ for anything a player wouldn't know at a glance. Opens in place, no script.
+interface Props { label?: string }
+const { label = 'About this page' } = Astro.props;
+---
+<details class="info" data-pagefind-ignore>
+  <summary aria-label={label} title={label}>i</summary>
+  <div class="pop"><slot /></div>
+</details>
+
+<style>
+  .info { position: relative; display: inline-block; vertical-align: middle; }
+  summary { list-style: none; display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--brass); color: var(--timber); background: #FBF4E7; font: italic 700 14px Georgia, serif; cursor: pointer; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover, .info[open] summary { background: var(--brass); color: var(--ink); }
+  .pop { position: absolute; z-index: 20; left: 0; top: calc(100% + 8px); width: min(340px, calc(100vw - 32px)); padding: 12px 14px; border-radius: 12px; background: #fff; border: 2px solid var(--line); box-shadow: 0 6px 18px rgba(74, 47, 30, .18); font: 400 14px/1.45 var(--body); color: var(--ink); text-align: left; }
+  .pop :global(p) { margin: 0; }
+  .pop :global(p + p) { margin-top: 8px; }
+</style>

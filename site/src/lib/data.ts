@@ -78,7 +78,7 @@ export const bannerDates = (b: Banner) => {
   const approx = b.dateSource === 'Calculated' ? '≈ ' : '';
   return approx + dayText(b.start) + (b.end ? ` – ${dayText(b.end)}` : '');
 };
-export const DATE_NOTE = '≈ worked out from the two-week banner rhythm; other dates are confirmed by the game or an official post. Dates are Japan time (JST): banners switch at 15:00 JST.';
+export const DATE_NOTE = '≈ estimated from the two-week banner cycle. Japan time; banners change at 15:00 JST.';
 
 export const url = (path: string) => import.meta.env.BASE_URL.replace(/\/?$/, '/') + path.replace(/^\//, '');
 

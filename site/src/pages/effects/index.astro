@@ -1,4 +1,5 @@
 ---
+import Info from '../../components/Info.astro';
 import Base from '../../layouts/Base.astro';
 import MagicCircle from '../../components/MagicCircle.astro';
 import Pennant from '../../components/Pennant.astro';
@@ -18,16 +19,15 @@ const groups = GROUPS.map(([title, blurb]) => ({
     <section class="panel intro">
       <MagicCircle size={480} style="right:-80px;top:50%;transform:translateY(-50%)" />
       <div class="intro-body">
-        <div class="title"><Pennant width={34} star /><h1>Effect Finder</h1></div>
-        <p>Pick an effect to see every wizard and lacrima that <strong>applies</strong> it — or whose skills <strong>need</strong> it on the target first.</p>
+        <div class="title"><Pennant width={34} star /><h1>Effect Finder</h1><Info><p><strong>Needs</strong> lists skills that only trigger extra effects when the target already has that effect, such as Burn, Paralysis or Bleed.</p></Info></div>
         <label class="sr-only" for="eq">Find an effect</label>
-        <input id="eq" type="search" placeholder="Type an effect — Burn, Shield, Accuracy…" autocomplete="off" />
+        <input id="eq" type="search" placeholder="Find an effect" autocomplete="off" />
       </div>
     </section>
 
     {groups.map((g) => (
       <section class="group" data-group>
-        <div class="section-title"><h2>{g.title}</h2><p>{g.blurb}</p></div>
+        <div class="section-title"><h2>{g.title}</h2></div>
         <div class="tiles">
           {g.items.map((m) => (
             <a class="tile" href={url(`effects/${m.key}/`)} data-label={m.label.toLowerCase()} style={`--c:${m.color}`}>
@@ -43,10 +43,6 @@ const groups = GROUPS.map(([title, blurb]) => ({
       </section>
     ))}
 
-    <div class="note explain">
-      <strong class="heading">What does “needed by” mean?</strong>
-      <span>Some skills only trigger extra effects when the target already has Burn, Paralysis or Bleed. Those wizards are listed under <em>needs</em>, so you can find who sets up a combo and who pays it off.</span>
-    </div>
   </div>
 </Base>
 
@@ -80,6 +76,5 @@ const groups = GROUPS.map(([title, blurb]) => ({
   .nm { font-size: 19px; }
   .small { font-size: 13px; color: var(--ink-2); }
   .need { align-self: flex-start; padding: 2px 9px; border-radius: 999px; background: #FBEBD5; border: 1px solid #E3C79C; color: #6E3A12; font-size: 12px; font-weight: 600; }
-  .explain { margin-top: 44px; max-width: 560px; transform: rotate(-.6deg); display: flex; flex-direction: column; gap: 6px; }
   @media (max-width: 600px) { .intro { padding: 26px 20px; } }
 </style>

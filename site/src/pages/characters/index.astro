@@ -10,13 +10,13 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } fr
       <Pennant width={34} star />
       <div>
         <h1>Wizard Roster</h1>
-        <p class="muted"><span id="shown">{units.length}</span> of {units.length} UR wizards<span id="active" hidden> · <span id="active-list"></span> · <button type="button" id="clear" class="clear">Clear filters</button></span></p>
+        <p class="muted"><span id="shown">{units.length}</span> of {units.length} wizards<span id="active" hidden> · <button type="button" class="clear">Clear filters</button></span></p>
       </div>
     </div>
 
     <div class="filters panel">
       <label class="sr-only" for="f-q">Filter by name</label>
-      <input id="f-q" type="search" placeholder="Filter by name or identity — e.g. “Natsu”" />
+      <input id="f-q" type="search" placeholder="Filter by name" />
       <div class="row" role="group" aria-label="Attribute">
         <span class="lbl">Attribute</span>
         <button type="button" class="pill" data-filter="attr" data-value="" aria-pressed="true">All</button>
@@ -51,7 +51,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } fr
         </li>
       ))}
     </ul>
-    <p id="none" class="muted" hidden>No wizards match these filters.</p>
+    <p id="none" class="muted" hidden>No wizards match. <button type="button" class="clear">Clear filters</button></p>
   </div>
 </Base>
 
@@ -73,10 +73,9 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } fr
     for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0;
-    // Say what is narrowing the list, and keep the address bar in step with the page.
+    // Offer Clear only while something narrows the list; keep the address bar in step with the page.
     const active = [text && `“${q.value.trim()}”`, state.attr, state.role].filter(Boolean);
-    document.getElementById('active')!.hidden = active.length === 0;
-    document.getElementById('active-list')!.textContent = active.join(' · ');
+    document.getElementById('active')!.hidden = active.length === 0 || n === 0;
     const p = new URLSearchParams();
     if (q.value.trim()) p.set('q', q.value.trim());
     if (state.attr) p.set('attr', state.attr);
@@ -84,9 +83,9 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } fr
     const s = p.toString();
     history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
   }
-  document.getElementById('clear')!.addEventListener('click', () => {
+  document.querySelectorAll('.clear').forEach((b) => b.addEventListener('click', () => {
     q.value = ''; state.attr = null; state.role = null; apply(); q.focus();
-  });
+  }));
   for (const p of pills) p.addEventListener('click', () => {
     state[p.dataset.filter!] = p.dataset.value || null; apply();
   });

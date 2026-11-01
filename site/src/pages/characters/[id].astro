@@ -48,8 +48,7 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
     {portraits.has(unit.id) && <span hidden data-pagefind-meta={`image:${url(`portraits/${unit.id}.webp`)}`}></span>}
     <nav class="crumbs" data-pagefind-ignore aria-label="Breadcrumb">
       <a href={url('characters/')}>Wizard Roster</a><span aria-hidden="true">/</span>
-      <a href={url(`characters/?attr=${unit.attribute}`)}>{unit.attribute}</a><span aria-hidden="true">/</span>
-      <span>{unit.name}</span>
+      <a href={url(`characters/?attr=${unit.attribute}`)}>{unit.attribute}</a>
     </nav>
 
     <section class="panel hero">
@@ -82,7 +81,7 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
           {needs.size > 0 && (
             <div><span class="lbl">Needs on target</span><div class="chips">
               <span class="tag need">{[...needs].join(' or ')}</span>
-              {ownSupplies.length > 0 && <span class="own">✓ own kit applies {ownSupplies.join(', ')}</span>}
+              {ownSupplies.length > 0 && <span class="own">Applies {ownSupplies.join(', ')} itself</span>}
             </div></div>
           )}
         </div>
@@ -130,11 +129,11 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
               )}
               {s.gameText?.Lv1
                 ? <details class="levels" data-pagefind-ignore>
-                    <summary>Lv.1 and Lv.2</summary>
+                    <summary>Lv.1–2</summary>
                     {['Lv1', 'Lv2'].map((k) => s.gameText[k] && <p class="lv"><span class="lvl">{k.replace('Lv', 'Lv.')}</span><span>{s.gameText[k]}</span></p>)}
-                    {s.levelTextSource === WIKI_CREDIT.name && <p class="credit">Lv.1–2 text from <a href={WIKI_CREDIT.href}>{WIKI_CREDIT.name}</a>, <a href={WIKI_CREDIT.licenseHref}>{WIKI_CREDIT.license}</a>.</p>}
+                    {s.levelTextSource === WIKI_CREDIT.name && <p class="credit">Lv.1–2: <a href={WIKI_CREDIT.href}>{WIKI_CREDIT.name}</a> (<a href={WIKI_CREDIT.licenseHref}>{WIKI_CREDIT.license}</a>)</p>}
                   </details>
-                : <p class="levels muted" data-pagefind-ignore>Lv.1 and Lv.2 not recorded yet.</p>}
+                : null}
             </article>
           );
         })}
@@ -150,7 +149,7 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
                 <a class="heading" href={url(`banners/#${debut.id}`)}>{debut.name}</a>
                 {debutDates && <span class="when" title={DATE_NOTE}>{debutDates}</span>}
               </>}
-              {unit.newForm && <p class="nf"><strong>New Form</strong> — only obtainable from Pickup banners (paid gems only) or as a random MadoFes pull.</p>}
+              {unit.newForm && <p class="nf"><strong>New Form</strong> · Pickup (paid gems) or MadoFes only</p>}
             </div>
           </div>
         )}
