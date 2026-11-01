@@ -139,9 +139,8 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
         <div class="lac-list">
           {[...new Map(lac.map((l) => [l.lacrima.id, l])).values()].map(({ lacrima, effect, app }) => (
             <div class="lac" data-tier={effect.tier ?? ''}>
-              <span class={`tier tier-${effect.tier ?? 'none'}`}>{effect.tier ?? '—'}</span>
               <a class="heading" href={url(`lacrimas/#${lacrima.id}`)}>{lacrima.name}</a>
-              <span class="muted">{[app.trigger?.raw, facts(app)].filter(Boolean).join(' · ')}</span>
+              <div class="match"><span class={`tier tier-${effect.tier ?? 'none'}`}>{effect.tier ?? '—'}</span><strong>{m.label}</strong><span>{[app.trigger?.raw, facts(app)].filter(Boolean).join(' · ')}</span></div>
             </div>
           ))}
         </div>
