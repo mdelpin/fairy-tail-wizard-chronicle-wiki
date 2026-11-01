@@ -791,7 +791,7 @@
   "name": "Midsummer Sorcerer Lucy Lacrima",
   "kind": "signature",
   "signatureFor": "midsummer-sorcerer-lucy",
-  "gameText": "At the start of battle, inflicts [High] Bleed and [High] Critical Rate Decrease on all anemies for 5 sec.",
+  "gameText": "At the start of battle, inflicts [High] Bleed and [High] Critical Rate Decrease on all enemies for 5 sec.",
   "notes": null,
   "applications": [
    "high-bleed-all-enemies-start-of-battle-5-sec",

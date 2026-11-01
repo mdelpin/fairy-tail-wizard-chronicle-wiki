@@ -5,7 +5,7 @@ import Pennant from '../../components/Pennant.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
   units, applications, effects, lacrimaById, ATTR, KIND_ORDER, url, portraits, initials,
-  baseName, valueText, familyKey, WIKI_CREDIT, bannerById, bannerDates, DATE_NOTE, roleIcon, skillIcon,
+  baseName, valueText, familyKey, WIKI_CREDIT, bannerById, bannerDates, unitDates, DATE_NOTE, roleIcon, skillIcon,
   type Unit, type Effect,
 } from '../../lib/data';
 
@@ -37,7 +37,7 @@ const sig = unit.signatureLacrima ? lacrimaById.get(unit.signatureLacrima) : und
 const sameIdentity = units.filter((u) => u.identity && u.identity === unit.identity && u.id !== unit.id);
 const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
 const debut = unit.debutBanner ? bannerById.get(unit.debutBanner) : undefined;
-const debutDates = debut ? bannerDates(debut) : null;
+const debutDates = unitDates(unit, debut);
 const rIcon = roleIcon(unit.role);
 const normal = skills.find((x) => x.kind === 'Normal');
 const nIcon = normal ? skillIcon(unit, normal) : null;
