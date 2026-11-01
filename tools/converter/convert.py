@@ -403,6 +403,8 @@ def main(root, out, slugs_path=None, public_dir=None):
             # the game spreads New Forms over several "New Form" collections when one fills up
             "newForm": bool(collection and collection.lower().startswith("new form")),
             "debutBanner": ban_slug.get(debut[0]) if debut else None,
+            # the JST day this wizard first became obtainable (the 2nd wizard of a themed week starts later than its banner)
+            "availableFrom": iso_day(f.get("availableFrom")),
             "bannerArt": f"{unit_slug[stem]}.webp" if arts else None,
             "_artFile": arts[0][1] if arts else None,
             "attribute": attr_name(f.get("attribute")), "role": clean(f.get("class")),

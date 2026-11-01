@@ -39,6 +39,8 @@ export interface Unit {
   newForm: boolean;
   /** The banner the unit first became obtainable on, if recorded. */
   debutBanner: string | null;
+  /** JST day (YYYY-MM-DD) the unit first became obtainable; later than the banner's start for a themed week's second wizard. */
+  availableFrom: string | null;
   /** File name in public/banner-art/, if the unit's gacha art is recorded. */
   bannerArt: string | null;
   skills: Skill[];
@@ -77,6 +79,13 @@ export const bannerDates = (b: Banner) => {
   if (!b.start) return null;
   const approx = b.dateSource === 'Calculated' ? '≈ ' : '';
   return approx + dayText(b.start) + (b.end ? ` – ${dayText(b.end)}` : '');
+};
+/** A unit's own first-available date wins over the banner's start; the end stays the banner's. */
+export const unitDates = (u: Unit, b?: Banner) => {
+  if (!u.availableFrom) return b ? bannerDates(b) : null;
+  // the start is entered by hand, so only the banner's end can be an estimate
+  const approx = b?.dateSource === 'Calculated' ? '≈ ' : '';
+  return dayText(u.availableFrom) + (b?.end ? ` – ${approx}${dayText(b.end)}` : '');
 };
 export const DATE_NOTE = '≈ estimated from the two-week banner cycle. Japan time; banners change at 15:00 JST.';
 
