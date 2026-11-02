@@ -91,6 +91,8 @@ export const unitDates = (u: Unit, b?: Banner) => {
   const approx = b?.dateSource === 'Calculated' ? '≈ ' : '';
   return approx + dayText(u.availableFrom) + (b?.end ? ` – ${dayText(b.end)}` : '');
 };
+/** JST day the game went live; wizards available from then have no debut banner. */
+export const LAUNCH_DAY = '2025-12-03';
 export const DATE_NOTE = '≈ estimated from the two-week banner cycle. Japan time; banners change at 15:00 JST.';
 
 export const url = (path: string) => import.meta.env.BASE_URL.replace(/\/?$/, '/') + path.replace(/^\//, '');
