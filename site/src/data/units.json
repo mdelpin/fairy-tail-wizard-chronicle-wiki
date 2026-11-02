@@ -12,6 +12,7 @@
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Academy Kagura.png",
+  "card": "academy-kagura.webp",
   "signatureLacrima": "academy-kagura-lacrima",
   "skills": [
    {
@@ -171,6 +172,7 @@
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Academy Lisanna.png",
+  "card": null,
   "signatureLacrima": "academy-lisanna-lacrima",
   "skills": [
    {
@@ -356,6 +358,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "August.png",
+  "card": "august.webp",
   "signatureLacrima": "august-lacrima",
   "skills": [
    {
@@ -476,6 +479,7 @@
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Blazing Beach Vacation Laxus.png",
+  "card": null,
   "signatureLacrima": "blazing-beach-vacation-laxus-lacrima",
   "skills": [
    {
@@ -700,6 +704,7 @@
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Blazing Beach Vacation Natsu.png",
+  "card": null,
   "signatureLacrima": "blazing-beach-vacation-natsu-lacrima",
   "skills": [
    {
@@ -924,6 +929,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Block Lucy.png",
+  "card": null,
   "signatureLacrima": "block-lucy-lacrima",
   "skills": [
    {
@@ -1109,6 +1115,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Block Natsu.png",
+  "card": null,
   "signatureLacrima": "block-natsu-lacrima",
   "skills": [
    {
@@ -1281,6 +1288,7 @@
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Brandish.png",
+  "card": null,
   "signatureLacrima": "brandish-lacrima",
   "skills": [
    {
@@ -1427,6 +1435,7 @@
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Bunny Lucy.png",
+  "card": null,
   "signatureLacrima": "bunny-lucy-lacrima",
   "skills": [
    {
@@ -1586,6 +1595,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Bunny Yukino.png",
+  "card": null,
   "signatureLacrima": "bunny-yukino-lacrima",
   "skills": [
    {
@@ -1745,6 +1755,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Cana Alberona.png",
+  "card": null,
   "signatureLacrima": "cana-lacrima",
   "skills": [
    {
@@ -1852,6 +1863,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Contractor of the Twelve Gate Keys Yukino.png",
+  "card": null,
   "signatureLacrima": "contractor-of-the-twelve-gates-yukino-lacrima",
   "skills": [
    {
@@ -2050,6 +2062,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Cyberpunk Rogue.png",
+  "card": null,
   "signatureLacrima": "cyberpunk-rogue-lacrima",
   "skills": [
    {
@@ -2183,6 +2196,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Cyberpunk Sting.png",
+  "card": null,
   "signatureLacrima": "cyberpunk-sting-lacrima",
   "skills": [
    {
@@ -2342,6 +2356,7 @@
   "attribute": "Technique",
   "role": "Disrupt",
   "portrait": "Dark Mage Zeref.png",
+  "card": "dark-mage-zeref.webp",
   "signatureLacrima": "dark-mage-zeref-lacrima",
   "skills": [
    {
@@ -2527,6 +2542,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Egg Hunt Brandish.png",
+  "card": null,
   "signatureLacrima": "egg-hunt-brandish-lacrima",
   "skills": [
    {
@@ -2686,6 +2702,7 @@
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Egg Hunt Irene.png",
+  "card": null,
   "signatureLacrima": "egg-hunt-irene-lacrima",
   "skills": [
    {
@@ -2871,6 +2888,7 @@
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Elfman Strauss.png",
+  "card": null,
   "signatureLacrima": "elfman-lacrima",
   "skills": [
    {
@@ -3004,6 +3022,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Emperor Spriggan Zeref.png",
+  "card": null,
   "signatureLacrima": "emperor-spriggan-zeref-lacrima",
   "skills": [
    {
@@ -3215,6 +3234,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Erza -Demon Blade Benizakura-.png",
+  "card": null,
   "signatureLacrima": "erza-demon-blade-benizakura-lacrima",
   "skills": [
    {
@@ -3400,6 +3420,7 @@
   "attribute": "Technique",
   "role": "Defense",
   "portrait": "Erza-Heaven's Wheel Armor.png",
+  "card": null,
   "signatureLacrima": "erza-heaven-s-wheel-armor-lacrima",
   "skills": [
    {
@@ -3559,6 +3580,7 @@
   "attribute": "Heart",
   "role": "Defense",
   "portrait": "Erza Knightwalker.png",
+  "card": null,
   "signatureLacrima": "erza-knightwalker-lacrima",
   "skills": [
    {
@@ -3770,6 +3792,7 @@
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Fairy Harvest Festival Makarov.png",
+  "card": null,
   "signatureLacrima": "fairy-harvest-festival-makarov-lacrima",
   "skills": [
    {
@@ -3968,6 +3991,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Fairy Tail Harvest Wendy.png",
+  "card": null,
   "signatureLacrima": "fairy-harvest-festival-wendy-lacrima",
   "skills": [
    {
@@ -4153,6 +4177,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Fairy Tactician Mavis.png",
+  "card": null,
   "signatureLacrima": "fairy-tactician-mavis-lacrima",
   "skills": [
    {
@@ -4364,6 +4389,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "First Dream Erza.png",
+  "card": null,
   "signatureLacrima": "first-dream-erza-lacrima",
   "skills": [
    {
@@ -4498,6 +4524,7 @@
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "First Dream Laxus.png",
+  "card": null,
   "signatureLacrima": "first-dream-laxus-lacrima",
   "skills": [
    {
@@ -4644,6 +4671,7 @@
   "attribute": "Technique",
   "role": "Disrupt",
   "portrait": "Freed Justine.png",
+  "card": null,
   "signatureLacrima": "freed-lacrima",
   "skills": [
    {
@@ -4764,6 +4792,7 @@
   "attribute": "Heart",
   "role": "Defense",
   "portrait": "Gajeel Redfox.png",
+  "card": null,
   "signatureLacrima": "gajeel-lacrima",
   "skills": [
    {
@@ -4910,6 +4939,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Gildarts.png",
+  "card": null,
   "signatureLacrima": "gildarts-lacrima",
   "skills": [
    {
@@ -5056,6 +5086,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Gray -Ice Devil Slayer Mage-.png",
+  "card": null,
   "signatureLacrima": "gray-ice-devil-slayer-mage-lacrima",
   "skills": [
    {
@@ -5202,6 +5233,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Gray Fullbuster.png",
+  "card": null,
   "signatureLacrima": "gray-lacrima",
   "skills": [
    {
@@ -5322,6 +5354,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Hades.png",
+  "card": null,
   "signatureLacrima": "hades-lacrima",
   "skills": [
    {
@@ -5442,6 +5475,7 @@
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Holy Night Juvia.png",
+  "card": null,
   "signatureLacrima": "holy-night-juvia-lacrima",
   "skills": [
    {
@@ -5588,6 +5622,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Holy Night Mirajane.png",
+  "card": null,
   "signatureLacrima": "holy-night-mirajane-lacrima",
   "skills": [
    {
@@ -5721,6 +5756,7 @@
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Ichiya -Power Perfume-.png",
+  "card": null,
   "signatureLacrima": "ichiya-power-perfume-lacrima",
   "skills": [
    {
@@ -5893,6 +5929,7 @@
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Ichiya Vandalay Kotobuki.png",
+  "card": null,
   "signatureLacrima": "ichiya-lacrima",
   "skills": [
    {
@@ -6039,6 +6076,7 @@
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Ignia.png",
+  "card": null,
   "signatureLacrima": "ignia-lacrima",
   "skills": [
    {
@@ -6211,6 +6249,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Irene Belserion.png",
+  "card": null,
   "signatureLacrima": "irene-lacrima",
   "skills": [
    {
@@ -6357,6 +6396,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Jellal Fernandes.png",
+  "card": null,
   "signatureLacrima": "jellal-lacrima",
   "skills": [
    {
@@ -6542,6 +6582,7 @@
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "Jura Neekis.png",
+  "card": null,
   "signatureLacrima": "jura-lacrima",
   "skills": [
    {
@@ -6662,6 +6703,7 @@
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Juvia -Element 4-.png",
+  "card": null,
   "signatureLacrima": "juvia-element-4-lacrima",
   "skills": [
    {
@@ -6873,6 +6915,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Juvia Lockser.png",
+  "card": null,
   "signatureLacrima": "juvia-lacrima",
   "skills": [
    {
@@ -7019,6 +7062,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Kagura Mikazuchi.png",
+  "card": null,
   "signatureLacrima": "kagura-lacrima",
   "skills": [
    {
@@ -7178,6 +7222,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Larcade Dragneel.png",
+  "card": null,
   "signatureLacrima": null,
   "skills": [
    {
@@ -7298,6 +7343,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Laxus-Red Lighthing Dragon Mode.png",
+  "card": null,
   "signatureLacrima": "laxus-red-lightning-dragon-mode-lacrima",
   "skills": [
    {
@@ -7470,6 +7516,7 @@
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Laxus Dreyar.png",
+  "card": null,
   "signatureLacrima": "laxus-lacrima",
   "skills": [
    {
@@ -7603,6 +7650,7 @@
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Levy McGarden.png",
+  "card": null,
   "signatureLacrima": "levy-lacrima",
   "skills": [
    {
@@ -7736,6 +7784,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Lucy -Leo Form-.png",
+  "card": null,
   "signatureLacrima": "lucy-leo-form-lacrima",
   "skills": [
    {
@@ -7869,6 +7918,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Lucy -Leo x Virgo Form-.png",
+  "card": null,
   "signatureLacrima": "lucy-leo-x-virgo-form-lacrima",
   "skills": [
    {
@@ -8067,6 +8117,7 @@
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Lucy Heartfilia.png",
+  "card": null,
   "signatureLacrima": "lucy-lacrima",
   "skills": [
    {
@@ -8187,6 +8238,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Lyon Vastia.png",
+  "card": null,
   "signatureLacrima": "lyon-lacrima",
   "skills": [
    {
@@ -8307,6 +8359,7 @@
   "attribute": "Technique",
   "role": "Defense",
   "portrait": "Makarov Dreyar.png",
+  "card": null,
   "signatureLacrima": "makarov-lacrima",
   "skills": [
    {
@@ -8453,6 +8506,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Mard Geer.png",
+  "card": null,
   "signatureLacrima": "mard-lacrima",
   "skills": [
    {
@@ -8573,6 +8627,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Master Enchant Irene.png",
+  "card": null,
   "signatureLacrima": "master-enchant-irene-lacrima",
   "skills": [
    {
@@ -8810,6 +8865,7 @@
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Mavis Vermillion.png",
+  "card": "mavis-vermillion.webp",
   "signatureLacrima": "mavis-lacrima",
   "skills": [
    {
@@ -8995,6 +9051,7 @@
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Meredy.png",
+  "card": null,
   "signatureLacrima": "meredy-lacrima",
   "skills": [
    {
@@ -9115,6 +9172,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Meredy -Grimoire Heart-.png",
+  "card": null,
   "signatureLacrima": "meredy-grimoire-heart-lacrima",
   "skills": [
    {
@@ -9287,6 +9345,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Midsummer Sorcerer Lucy.png",
+  "card": null,
   "signatureLacrima": "midsummer-sorcerer-lucy-lacrima",
   "skills": [
    {
@@ -9472,6 +9531,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Midsummer Sorcerer Mirajane.png",
+  "card": null,
   "signatureLacrima": "midsummer-sorcerer-mirajane-lacrima",
   "skills": [
    {
@@ -9670,6 +9730,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Minerva Orland.png",
+  "card": null,
   "signatureLacrima": "minerva-lacrima",
   "skills": [
    {
@@ -9803,6 +9864,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Mirajane -Satan Soul-.png",
+  "card": null,
   "signatureLacrima": "mirajane-satan-soul-lacrima",
   "skills": [
    {
@@ -9988,6 +10050,7 @@
   "attribute": "Brave",
   "role": "Heal",
   "portrait": "Mirajane Strauss.png",
+  "card": null,
   "signatureLacrima": "mirajane-lacrima",
   "skills": [
    {
@@ -10134,6 +10197,7 @@
   "attribute": "Brave",
   "role": "Heal",
   "portrait": "Moonlit Reverie Levy.png",
+  "card": null,
   "signatureLacrima": "moonlit-reverie-levy-lacrima",
   "skills": [
    {
@@ -10345,6 +10409,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Moonlit Reverie Mavis.png",
+  "card": null,
   "signatureLacrima": "moonlit-reverie-mavis-lacrima",
   "skills": [
    {
@@ -10504,6 +10569,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Mystogan.png",
+  "card": null,
   "signatureLacrima": "mystogan-lacrima",
   "skills": [
    {
@@ -10611,6 +10677,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Natsu-Dragon Force.png",
+  "card": null,
   "signatureLacrima": "natsu-dragon-force-lacrima",
   "skills": [
    {
@@ -10757,6 +10824,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Natsu-Lightning Fire Dragon Mode-.png",
+  "card": null,
   "signatureLacrima": "natsu-lightning-fire-dragon-mode-lacrima",
   "skills": [
    {
@@ -10955,6 +11023,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Natsu Dragion.png",
+  "card": null,
   "signatureLacrima": "natsu-dragion-lacrima",
   "skills": [
    {
@@ -11140,6 +11209,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Natsu Dragneel.png",
+  "card": null,
   "signatureLacrima": "natsu-lacrima",
   "skills": [
    {
@@ -11260,6 +11330,7 @@
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Neo Minerva.png",
+  "card": null,
   "signatureLacrima": "neo-minerva-lacrima",
   "skills": [
    {
@@ -11471,6 +11542,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Noir Cana.png",
+  "card": null,
   "signatureLacrima": "noir-cana-lacrima",
   "skills": [
    {
@@ -11643,6 +11715,7 @@
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Noir Gildarts.png",
+  "card": null,
   "signatureLacrima": "noir-gildarts-lacrima",
   "skills": [
    {
@@ -11815,6 +11888,7 @@
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Otherworld Adventure Erza.png",
+  "card": null,
   "signatureLacrima": "otherworld-adventure-erza-lacrima",
   "skills": [
    {
@@ -12000,6 +12074,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Otherworld Adventure Kagura.png",
+  "card": null,
   "signatureLacrima": "otherworld-adventure-kagura-lacrima",
   "skills": [
    {
@@ -12185,6 +12260,7 @@
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Parallel World Mystogan.png",
+  "card": null,
   "signatureLacrima": "parallel-world-mystogan-lacrima",
   "skills": [
    {
@@ -12383,6 +12459,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Parallel World Wendy.png",
+  "card": null,
   "signatureLacrima": "parallel-world-wendy-lacrima",
   "skills": [
    {
@@ -12594,6 +12671,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Pure White Oath Erza.png",
+  "card": null,
   "signatureLacrima": "pure-white-oath-erza-lacrima",
   "skills": [
    {
@@ -12766,6 +12844,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Pure White Oath Jellal.png",
+  "card": null,
   "signatureLacrima": "pure-white-oath-jellal-lacrima",
   "skills": [
    {
@@ -12951,6 +13030,7 @@
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "Rock'n Magic Juvia.png",
+  "card": null,
   "signatureLacrima": "rock-n-magic-juvia-lacrima",
   "skills": [
    {
@@ -13175,6 +13255,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Rock'n Magic Lucy.png",
+  "card": "rock-n-magic-lucy.webp",
   "signatureLacrima": "rock-n-magic-lucy-lacrima",
   "skills": [
    {
@@ -13373,6 +13454,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Rogue Cheney.png",
+  "card": null,
   "signatureLacrima": "rogue-lacrima",
   "skills": [
    {
@@ -13480,6 +13562,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Selene.png",
+  "card": null,
   "signatureLacrima": "selene-lacrima",
   "skills": [
    {
@@ -13665,6 +13748,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Sherria Blendy.png",
+  "card": null,
   "signatureLacrima": "sherria-lacrima",
   "skills": [
    {
@@ -13772,6 +13856,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Silver Fullbuster.png",
+  "card": null,
   "signatureLacrima": "silver-lacrima",
   "skills": [
    {
@@ -13892,6 +13977,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Starry Night Reunion Mavis.png",
+  "card": null,
   "signatureLacrima": "starry-night-reunion-mavis-lacrima",
   "skills": [
    {
@@ -14051,6 +14137,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Starry Night Reunion Zeref.png",
+  "card": null,
   "signatureLacrima": "starry-night-reunion-zeref-lacrima",
   "skills": [
    {
@@ -14223,6 +14310,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Sting-Dragon Force.png",
+  "card": null,
   "signatureLacrima": "sting-dragon-force-lacrima",
   "skills": [
    {
@@ -14421,6 +14509,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Sting Eucliffe.png",
+  "card": null,
   "signatureLacrima": "sting-lacrima",
   "skills": [
    {
@@ -14528,6 +14617,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Suzaku.png",
+  "card": null,
   "signatureLacrima": "suzaku-lacrima",
   "skills": [
    {
@@ -14700,6 +14790,7 @@
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Swayed by the Evening Breeze Gildarts.png",
+  "card": null,
   "signatureLacrima": "swayed-by-the-evening-breeze-gildarts-lacrima",
   "skills": [
    {
@@ -14885,6 +14976,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Swayed by the Evening Breeze Mystogan.png",
+  "card": null,
   "signatureLacrima": "swayed-by-the-evening-breeze-mystogan-lacrima",
   "skills": [
    {
@@ -15083,6 +15175,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Swaying in the Summer Night Cana.png",
+  "card": null,
   "signatureLacrima": "swaying-in-the-summer-night-cana-lacrima",
   "skills": [
    {
@@ -15281,6 +15374,7 @@
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Swaying in the Summer Night Lisanna.png",
+  "card": null,
   "signatureLacrima": "swaying-in-the-summer-night-lisanna-lacrima",
   "skills": [
    {
@@ -15479,6 +15573,7 @@
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Sweet Gift Juvia.png",
+  "card": null,
   "signatureLacrima": "sweet-gift-juvia-lacrima",
   "skills": [
    {
@@ -15651,6 +15746,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Sweet Gift Levy.png",
+  "card": null,
   "signatureLacrima": "sweet-gift-levy-lacrima",
   "skills": [
    {
@@ -15810,6 +15906,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Twin Moon Halloween Sherria.png",
+  "card": null,
   "signatureLacrima": "twin-moon-halloween-sherria-lacrima",
   "skills": [
    {
@@ -16021,6 +16118,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Twin Moon Halloween Sherry.png",
+  "card": null,
   "signatureLacrima": "twin-moon-halloween-sherry-lacrima",
   "skills": [
    {
@@ -16219,6 +16317,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Ultear -Grimoire Heart-.png",
+  "card": null,
   "signatureLacrima": "ultear-grimoire-heart-lacrima",
   "skills": [
    {
@@ -16391,6 +16490,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Wendy -Bakeneko-.png",
+  "card": null,
   "signatureLacrima": "wendy-bakeneko-lacrima",
   "skills": [
    {
@@ -16576,6 +16676,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Wendy -Dragon Force-.png",
+  "card": null,
   "signatureLacrima": "wendy-dragon-force-lacrima",
   "skills": [
    {
@@ -16748,6 +16849,7 @@
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Wendy Marvell.png",
+  "card": null,
   "signatureLacrima": "wendy-lacrima",
   "skills": [
    {
@@ -16907,6 +17009,7 @@
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "White Gift Gajeel.png",
+  "card": null,
   "signatureLacrima": "white-gift-gajeel-lacrima",
   "skills": [
    {
@@ -17066,6 +17169,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "White Gift Gray.png",
+  "card": null,
   "signatureLacrima": "white-gift-gray-lacrima",
   "skills": [
    {

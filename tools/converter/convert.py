@@ -392,6 +392,8 @@ def main(root, out, slugs_path=None, public_dir=None):
         if kinds != KINDS:
             issue("Skill links", f"{where}: needs exactly one Normal, Special and Ultimate skill; has {kinds or 'none'}")
         img = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("coverImage") or ""))
+        cm = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("debutCard") or ""))
+        card_src = urllib.parse.unquote(cm.group(1)) if cm else None
         debut = ref(f.get("debutBanner"), "Banners", where, "debutBanner", many=True)
         if len(debut) > 1:
             issue("Debut banners", f"{where} has {len(debut)} Debut Banners (should be one): "
@@ -410,6 +412,9 @@ def main(root, out, slugs_path=None, public_dir=None):
             "_artFile": arts[0][1] if arts else None,
             "attribute": attr_name(f.get("attribute")), "role": clean(f.get("class")),
             "portrait": urllib.parse.unquote(img.group(1)) if img else None,
+            # the full release card (art + sprite + name plate): file in public/cards/
+            "card": f"{unit_slug[stem]}.webp" if card_src else None,
+            "_cardSrc": card_src,
             "signatureLacrima": None,  # filled after lacrimas get slugs
             "_sig": sig,
             "skills": sorted(sk, key=lambda s: ["Normal", "Special", "Ultimate"].index(s["kind"])
@@ -517,6 +522,29 @@ def main(root, out, slugs_path=None, public_dir=None):
             if old not in {b["cover"] for b in banners if b["cover"]}:
                 os.remove(os.path.join(cdest, old))
 
+        # release cards: 3:4 portrait art, shown in a lightbox on the character page
+        kdest = os.path.join(public_dir, "cards")
+        os.makedirs(kdest, exist_ok=True)
+        for u in units:
+            if not u["card"]:
+                continue
+            src = os.path.join(media, u["_cardSrc"])
+            if not os.path.exists(src):
+                issue("Release cards", f"'{u['id']}': card image '{u['_cardSrc']}' is not in the export")
+                u["card"] = None
+                continue
+            im = Image.open(src).convert("RGB")
+            if abs(im.width / im.height - 0.75) > 0.03:
+                issue("Release cards", f"'{u['id']}': card is {im.width}x{im.height}, not 3:4")
+            im.thumbnail((720, 960), Image.LANCZOS)
+            im.save(os.path.join(kdest, u["card"]), "WEBP", quality=82, method=6)
+        for old in os.listdir(kdest):
+            if old not in {u["card"] for u in units if u["card"]}:
+                os.remove(os.path.join(kdest, old))
+        missing = [u["id"] for u in units if not u["card"]]
+        if missing:
+            issue("Release cards missing", f"{len(missing)} wizards have no Debut Card yet")
+
         # portraits: only for wizards that don't have one yet; hand-made portraits are never replaced
         pdest = os.path.join(public_dir, "portraits")
         os.makedirs(pdest, exist_ok=True)
@@ -549,6 +577,8 @@ def main(root, out, slugs_path=None, public_dir=None):
     # ---------- write
     for b in banners:
         b.pop("_coverSrc", None)
+    for u in units:
+        u.pop("_cardSrc", None)
     payload = {"effects": effects, "applications": applications, "units": units, "lacrimas": lacrimas,
                "banners": banners}
     for k, v in payload.items():

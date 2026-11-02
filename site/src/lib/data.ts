@@ -43,6 +43,8 @@ export interface Unit {
   availableFrom: string | null;
   /** File name in public/banner-art/, if the unit's gacha art is recorded. */
   bannerArt: string | null;
+  /** File name in public/cards/: the full release card (art, sprite, name plate), if recorded. */
+  card?: string | null;
   skills: Skill[];
 }
 export interface Banner {
