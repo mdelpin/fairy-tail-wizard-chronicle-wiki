@@ -1,6 +1,16 @@
 # Validation report
 
-104 units, 115 lacrimas, 101 effects, 699 effect applications, 52 banners, 58 banner arts. 6 issues in 4 categories.
+104 units, 115 lacrimas, 101 effects, 699 effect applications, 52 banners, 58 banner arts. 12 issues in 4 categories.
+
+## Release cards missing (no Debut Card linked) (7)
+
+- academy-lisanna
+- blazing-beach-vacation-natsu
+- meredy
+- natsu-dragneel
+- sting-dragon-force
+- suzaku
+- swayed-by-the-evening-breeze-mystogan
 
 ## Banner covers (2)
 
@@ -15,8 +25,4 @@
 ## Missing required values (1)
 
 - Lacrima '✨ Swaying in the Summer Night Lisanna Lacrima': lacrimaEffectApplications is empty
-
-## Release cards missing (1)
-
-- 99 wizards have no Debut Card yet
 

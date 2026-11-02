@@ -543,7 +543,8 @@ def main(root, out, slugs_path=None, public_dir=None):
                 os.remove(os.path.join(kdest, old))
         missing = [u["id"] for u in units if not u["card"]]
         if missing:
-            issue("Release cards missing", f"{len(missing)} wizards have no Debut Card yet")
+            for m in missing:
+                issue("Release cards missing (no Debut Card linked)", m)
 
         # portraits: only for wizards that don't have one yet; hand-made portraits are never replaced
         pdest = os.path.join(public_dir, "portraits")
