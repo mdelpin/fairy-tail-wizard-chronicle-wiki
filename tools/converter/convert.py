@@ -4,7 +4,8 @@ usage: python3 convert.py <export space dir> <out_dir> [slugs.json] [public_dir]
 
 Only the object types in common.GAME_FOLDERS are read (an allowlist), and only the fields named
 below are copied. Page text is published for Skills only. With public_dir, banner art images are
-written to <public_dir>/banner-art/<unit id>.webp.
+written to <public_dir>/banner-art/<unit id>.webp, and each banner's cover image (the event
+banner) to <public_dir>/event-banners/<image name>.webp (banners sharing one image share one file).
 """
 import collections
 import difflib
@@ -460,8 +461,15 @@ def main(root, out, slugs_path=None, public_dir=None):
             source = None  # a source label with no date says nothing
         if start and end and end < start:
             issue("Values out of range", f"{where}: ends ({end}) before it starts ({start})")
+        cov = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("coverImage") or ""))
+        cover_src = urllib.parse.unquote(cov.group(1)) if cov else None
+        if not cover_src:
+            issue("Banner covers", f"{where}: no cover image (event banner)")
         banners.append({"id": ban_slug[stem], "name": t, "type": clean(f.get("bannerType")),
-                        "start": start, "end": end, "dateSource": source, "units": ids})
+                        "start": start, "end": end, "dateSource": source, "units": ids,
+                        "cover": (re.sub(r"[^a-z0-9]+", "-", os.path.splitext(cover_src)[0].lower()).strip("-") + ".webp")
+                                 if cover_src else None,
+                        "_coverSrc": cover_src})
     banners.sort(key=lambda b: (b["start"] or "9999", b["name"]))
 
     # banner art images -> public/banner-art/<unit id>.webp
@@ -483,6 +491,31 @@ def main(root, out, slugs_path=None, public_dir=None):
                 issue("Banner art", f"'{uid}': image file '{fn}' is not in the export")
                 continue
             Image.open(src).convert("RGB").save(os.path.join(dest, f"{uid}.webp"), "WEBP", quality=82, method=6)
+
+        # event banners (banner cover images) -> public/event-banners/<name>.webp, 800 px wide.
+        # Banners that share one source image (e.g. the launch pickups) share one file.
+        cdest = os.path.join(public_dir, "event-banners")
+        os.makedirs(cdest, exist_ok=True)
+        done = set()
+        for b in banners:
+            if not b["cover"] or b["cover"] in done:
+                continue
+            src = os.path.join(media, b["_coverSrc"])
+            if not os.path.exists(src):
+                issue("Banner covers", f"'{b['id']}': image file '{b['_coverSrc']}' is not in the export")
+                b["cover"] = None
+                continue
+            im = Image.open(src).convert("RGB")
+            w, h = im.size
+            if abs(w / h - 16 / 9) > 0.15:
+                issue("Banner covers", f"'{b['id']}': {w}x{h} is not close to 16:9 (the card crops it to fit)")
+            if w > 800:
+                im = im.resize((800, round(h * 800 / w)), Image.LANCZOS)
+            im.save(os.path.join(cdest, b["cover"]), "WEBP", quality=82, method=6)
+            done.add(b["cover"])
+        for old in os.listdir(cdest):
+            if old not in {b["cover"] for b in banners if b["cover"]}:
+                os.remove(os.path.join(cdest, old))
 
         # portraits: only for wizards that don't have one yet; hand-made portraits are never replaced
         pdest = os.path.join(public_dir, "portraits")
@@ -514,6 +547,8 @@ def main(root, out, slugs_path=None, public_dir=None):
         issue("Typos", f"activationInterval '{raw}': {n} records")
 
     # ---------- write
+    for b in banners:
+        b.pop("_coverSrc", None)
     payload = {"effects": effects, "applications": applications, "units": units, "lacrimas": lacrimas,
                "banners": banners}
     for k, v in payload.items():

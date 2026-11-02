@@ -52,6 +52,8 @@ export interface Banner {
   /** 'Confirmed' (game or official post) or 'Calculated' (two-week rhythm); null when no date is known. */
   dateSource: string | null;
   units: string[];
+  /** File name in public/event-banners/: the event banner (cover image), if recorded. */
+  cover?: string | null;
 }
 export interface Lacrima {
   id: string; name: string; kind: 'signature' | 'generic'; signatureFor: string | null;
