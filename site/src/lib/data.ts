@@ -43,6 +43,8 @@ export interface Unit {
   availableFrom: string | null;
   /** File name in public/banner-art/, if the unit's gacha art is recorded. */
   bannerArt: string | null;
+  /** File name in public/cards/: the full release card (art, sprite, name plate), if recorded. */
+  card?: string | null;
   skills: Skill[];
 }
 export interface Banner {
@@ -52,6 +54,8 @@ export interface Banner {
   /** 'Confirmed' (game or official post) or 'Calculated' (two-week rhythm); null when no date is known. */
   dateSource: string | null;
   units: string[];
+  /** File name in public/event-banners/: the event banner (cover image), if recorded. */
+  cover?: string | null;
 }
 export interface Lacrima {
   id: string; name: string; kind: 'signature' | 'generic'; signatureFor: string | null;
@@ -87,6 +91,8 @@ export const unitDates = (u: Unit, b?: Banner) => {
   const approx = b?.dateSource === 'Calculated' ? '≈ ' : '';
   return approx + dayText(u.availableFrom) + (b?.end ? ` – ${dayText(b.end)}` : '');
 };
+/** JST day the game went live; wizards available from then have no debut banner. */
+export const LAUNCH_DAY = '2025-12-03';
 export const DATE_NOTE = '≈ estimated from the two-week banner cycle. Japan time; banners change at 15:00 JST.';
 
 export const url = (path: string) => import.meta.env.BASE_URL.replace(/\/?$/, '/') + path.replace(/^\//, '');

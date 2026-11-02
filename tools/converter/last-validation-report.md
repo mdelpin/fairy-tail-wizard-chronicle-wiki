@@ -1,6 +1,21 @@
 # Validation report
 
-104 units, 115 lacrimas, 101 effects, 699 effect applications, 42 banners, 54 banner arts. 3 issues in 2 categories.
+104 units, 115 lacrimas, 101 effects, 699 effect applications, 52 banners, 58 banner arts. 12 issues in 4 categories.
+
+## Release cards missing (no Debut Card linked) (7)
+
+- academy-lisanna
+- blazing-beach-vacation-natsu
+- meredy
+- natsu-dragneel
+- sting-dragon-force
+- suzaku
+- swayed-by-the-evening-breeze-mystogan
+
+## Banner covers (2)
+
+- 'pickup-dark-mage-zeref': 794x1060 is not close to 16:9 (the card crops it to fit)
+- 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
 
 ## Near-duplicate values (typo or inconsistent spelling?) (2)
 

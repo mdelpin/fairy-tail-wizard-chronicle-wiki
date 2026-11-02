@@ -12,6 +12,7 @@
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Academy Kagura.png",
+  "card": "academy-kagura.webp",
   "signatureLacrima": "academy-kagura-lacrima",
   "skills": [
    {
@@ -171,6 +172,7 @@
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Academy Lisanna.png",
+  "card": null,
   "signatureLacrima": "academy-lisanna-lacrima",
   "skills": [
    {
@@ -351,11 +353,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "August.png",
+  "card": "august.webp",
   "signatureLacrima": "august-lacrima",
   "skills": [
    {
@@ -471,11 +474,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "blazing-beach-vacation",
-  "availableFrom": "2026-07-26",
+  "availableFrom": "2026-07-25",
   "bannerArt": "blazing-beach-vacation-laxus.webp",
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Blazing Beach Vacation Laxus.png",
+  "card": "blazing-beach-vacation-laxus.webp",
   "signatureLacrima": "blazing-beach-vacation-laxus-lacrima",
   "skills": [
    {
@@ -700,6 +704,7 @@
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Blazing Beach Vacation Natsu.png",
+  "card": null,
   "signatureLacrima": "blazing-beach-vacation-natsu-lacrima",
   "skills": [
    {
@@ -914,16 +919,17 @@
  {
   "id": "block-lucy",
   "name": "Block Lucy",
-  "identity": "Lucy Heartfilia",
+  "identity": "Block Lucy",
   "collection": "Block Chronicle",
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "block-chronicle",
-  "availableFrom": null,
+  "availableFrom": "2026-04-01",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Block Lucy.png",
+  "card": "block-lucy.webp",
   "signatureLacrima": "block-lucy-lacrima",
   "skills": [
    {
@@ -1099,16 +1105,17 @@
  {
   "id": "block-natsu",
   "name": "Block Natsu",
-  "identity": "Natsu Dragneel",
+  "identity": "Block Natsu",
   "collection": "Block Chronicle",
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "block-chronicle",
-  "availableFrom": null,
+  "availableFrom": "2026-04-01",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Block Natsu.png",
+  "card": "block-natsu.webp",
   "signatureLacrima": "block-natsu-lacrima",
   "skills": [
    {
@@ -1276,11 +1283,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Brandish.png",
+  "card": "brandish.webp",
   "signatureLacrima": "brandish-lacrima",
   "skills": [
    {
@@ -1427,6 +1435,7 @@
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Bunny Lucy.png",
+  "card": "bunny-lucy.webp",
   "signatureLacrima": "bunny-lucy-lacrima",
   "skills": [
    {
@@ -1586,6 +1595,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Bunny Yukino.png",
+  "card": "bunny-yukino.webp",
   "signatureLacrima": "bunny-yukino-lacrima",
   "skills": [
    {
@@ -1740,11 +1750,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Cana Alberona.png",
+  "card": "cana-alberona.webp",
   "signatureLacrima": "cana-lacrima",
   "skills": [
    {
@@ -1846,12 +1857,13 @@
   "collection": "New Form",
   "rarity": "UR",
   "newForm": true,
-  "debutBanner": null,
-  "availableFrom": null,
+  "debutBanner": "300-day-anniversary",
+  "availableFrom": "2026-09-19",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Contractor of the Twelve Gate Keys Yukino.png",
+  "card": "contractor-of-the-twelve-gates-yukino.webp",
   "signatureLacrima": "contractor-of-the-twelve-gates-yukino-lacrima",
   "skills": [
    {
@@ -2050,6 +2062,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Cyberpunk Rogue.png",
+  "card": "cyberpunk-rogue.webp",
   "signatureLacrima": "cyberpunk-rogue-lacrima",
   "skills": [
    {
@@ -2183,6 +2196,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Cyberpunk Sting.png",
+  "card": "cyberpunk-sting.webp",
   "signatureLacrima": "cyberpunk-sting-lacrima",
   "skills": [
    {
@@ -2337,11 +2351,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "pickup-dark-mage-zeref",
-  "availableFrom": null,
+  "availableFrom": "2026-02-25",
   "bannerArt": "dark-mage-zeref.webp",
   "attribute": "Technique",
   "role": "Disrupt",
   "portrait": "Dark Mage Zeref.png",
+  "card": "dark-mage-zeref.webp",
   "signatureLacrima": "dark-mage-zeref-lacrima",
   "skills": [
    {
@@ -2527,6 +2542,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Egg Hunt Brandish.png",
+  "card": "egg-hunt-brandish.webp",
   "signatureLacrima": "egg-hunt-brandish-lacrima",
   "skills": [
    {
@@ -2686,6 +2702,7 @@
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Egg Hunt Irene.png",
+  "card": "egg-hunt-irene.webp",
   "signatureLacrima": "egg-hunt-irene-lacrima",
   "skills": [
    {
@@ -2866,11 +2883,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Elfman Strauss.png",
+  "card": "elfman-strauss.webp",
   "signatureLacrima": "elfman-lacrima",
   "skills": [
    {
@@ -2999,11 +3017,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "madofes-sep-2026",
-  "availableFrom": null,
+  "availableFrom": "2026-09-01",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Emperor Spriggan Zeref.png",
+  "card": "emperor-spriggan-zeref.webp",
   "signatureLacrima": "emperor-spriggan-zeref-lacrima",
   "skills": [
    {
@@ -3209,12 +3228,13 @@
   "collection": "New Form",
   "rarity": "UR",
   "newForm": true,
-  "debutBanner": null,
-  "availableFrom": null,
-  "bannerArt": null,
+  "debutBanner": "100-day-anniversary",
+  "availableFrom": "2026-03-12",
+  "bannerArt": "erza-demon-blade-benizakura.webp",
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Erza -Demon Blade Benizakura-.png",
+  "card": "erza-demon-blade-benizakura.webp",
   "signatureLacrima": "erza-demon-blade-benizakura-lacrima",
   "skills": [
    {
@@ -3400,6 +3420,7 @@
   "attribute": "Technique",
   "role": "Defense",
   "portrait": "Erza-Heaven's Wheel Armor.png",
+  "card": "erza-heaven-s-wheel-armor.webp",
   "signatureLacrima": "erza-heaven-s-wheel-armor-lacrima",
   "skills": [
    {
@@ -3559,6 +3580,7 @@
   "attribute": "Heart",
   "role": "Defense",
   "portrait": "Erza Knightwalker.png",
+  "card": "erza-knightwalker.webp",
   "signatureLacrima": "erza-knightwalker-lacrima",
   "skills": [
    {
@@ -3770,6 +3792,7 @@
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Fairy Harvest Festival Makarov.png",
+  "card": "fairy-harvest-festival-makarov.webp",
   "signatureLacrima": "fairy-harvest-festival-makarov-lacrima",
   "skills": [
    {
@@ -3968,6 +3991,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Fairy Tail Harvest Wendy.png",
+  "card": "fairy-harvest-festival-wendy.webp",
   "signatureLacrima": "fairy-harvest-festival-wendy-lacrima",
   "skills": [
    {
@@ -4148,11 +4172,12 @@
   "rarity": "UR",
   "newForm": true,
   "debutBanner": "madofes-oct-2026",
-  "availableFrom": null,
+  "availableFrom": "2026-10-01",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Fairy Tactician Mavis.png",
+  "card": "fairy-tactician-mavis.webp",
   "signatureLacrima": "fairy-tactician-mavis-lacrima",
   "skills": [
    {
@@ -4364,6 +4389,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "First Dream Erza.png",
+  "card": "first-dream-erza.webp",
   "signatureLacrima": "first-dream-erza-lacrima",
   "skills": [
    {
@@ -4498,6 +4524,7 @@
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "First Dream Laxus.png",
+  "card": "first-dream-laxus.webp",
   "signatureLacrima": "first-dream-laxus-lacrima",
   "skills": [
    {
@@ -4639,11 +4666,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Disrupt",
   "portrait": "Freed Justine.png",
+  "card": "freed-justine.webp",
   "signatureLacrima": "freed-lacrima",
   "skills": [
    {
@@ -4759,11 +4787,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Defense",
   "portrait": "Gajeel Redfox.png",
+  "card": "gajeel-redfox.webp",
   "signatureLacrima": "gajeel-lacrima",
   "skills": [
    {
@@ -4905,11 +4934,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Gildarts.png",
+  "card": "gildarts-clive.webp",
   "signatureLacrima": "gildarts-lacrima",
   "skills": [
    {
@@ -5056,6 +5086,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Gray -Ice Devil Slayer Mage-.png",
+  "card": "gray-ice-devil-slayer-mage.webp",
   "signatureLacrima": "gray-ice-devil-slayer-mage-lacrima",
   "skills": [
    {
@@ -5197,11 +5228,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Gray Fullbuster.png",
+  "card": "gray-fullbuster.webp",
   "signatureLacrima": "gray-lacrima",
   "skills": [
    {
@@ -5317,11 +5349,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Hades.png",
+  "card": "hades.webp",
   "signatureLacrima": "hades-lacrima",
   "skills": [
    {
@@ -5442,6 +5475,7 @@
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Holy Night Juvia.png",
+  "card": "holy-night-juvia.webp",
   "signatureLacrima": "holy-night-juvia-lacrima",
   "skills": [
    {
@@ -5583,11 +5617,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "holy-night-festival",
-  "availableFrom": "2025-12-13",
+  "availableFrom": "2025-12-14",
   "bannerArt": "holy-night-mirajane.webp",
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Holy Night Mirajane.png",
+  "card": "holy-night-mirajane.webp",
   "signatureLacrima": "holy-night-mirajane-lacrima",
   "skills": [
    {
@@ -5716,11 +5751,12 @@
   "rarity": "UR",
   "newForm": true,
   "debutBanner": "madofes-apr-2026",
-  "availableFrom": null,
+  "availableFrom": "2026-04-01",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Ichiya -Power Perfume-.png",
+  "card": "ichiya-power-perfume.webp",
   "signatureLacrima": "ichiya-power-perfume-lacrima",
   "skills": [
    {
@@ -5888,11 +5924,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Ichiya Vandalay Kotobuki.png",
+  "card": "ichiya-vandalay-kotobuki.webp",
   "signatureLacrima": "ichiya-lacrima",
   "skills": [
    {
@@ -6039,6 +6076,7 @@
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Ignia.png",
+  "card": "ignia.webp",
   "signatureLacrima": "ignia-lacrima",
   "skills": [
    {
@@ -6206,11 +6244,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Irene Belserion.png",
+  "card": "irene-belserion.webp",
   "signatureLacrima": "irene-lacrima",
   "skills": [
    {
@@ -6352,11 +6391,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "madofes-jellal-fernandes",
-  "availableFrom": null,
+  "availableFrom": "2026-01-01",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Jellal Fernandes.png",
+  "card": "jellal-fernandes.webp",
   "signatureLacrima": "jellal-lacrima",
   "skills": [
    {
@@ -6537,11 +6577,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "Jura Neekis.png",
+  "card": "jura-neekis.webp",
   "signatureLacrima": "jura-lacrima",
   "skills": [
    {
@@ -6657,11 +6698,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "madofes-aug-2026",
-  "availableFrom": null,
+  "availableFrom": "2026-08-01",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Juvia -Element 4-.png",
+  "card": "juvia-element-4.webp",
   "signatureLacrima": "juvia-element-4-lacrima",
   "skills": [
    {
@@ -6868,11 +6910,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Juvia Lockser.png",
+  "card": "juvia-lockser.webp",
   "signatureLacrima": "juvia-lacrima",
   "skills": [
    {
@@ -7014,11 +7057,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Kagura Mikazuchi.png",
+  "card": "kagura-mikazuchi.webp",
   "signatureLacrima": "kagura-lacrima",
   "skills": [
    {
@@ -7173,11 +7217,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Larcade Dragneel.png",
+  "card": "larcade-dragneel.webp",
   "signatureLacrima": null,
   "skills": [
    {
@@ -7293,11 +7338,12 @@
   "rarity": "UR",
   "newForm": true,
   "debutBanner": "madofes-feb-2026",
-  "availableFrom": null,
+  "availableFrom": "2026-03-01",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Laxus-Red Lighthing Dragon Mode.png",
+  "card": "laxus-red-lightning-dragon-mode.webp",
   "signatureLacrima": "laxus-red-lightning-dragon-mode-lacrima",
   "skills": [
    {
@@ -7465,11 +7511,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Laxus Dreyar.png",
+  "card": "laxus-dreyar.webp",
   "signatureLacrima": "laxus-lacrima",
   "skills": [
    {
@@ -7598,11 +7645,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Levy McGarden.png",
+  "card": "levy-mcgarden.webp",
   "signatureLacrima": "levy-lacrima",
   "skills": [
    {
@@ -7736,6 +7784,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Lucy -Leo Form-.png",
+  "card": "lucy-leo-form.webp",
   "signatureLacrima": "lucy-leo-form-lacrima",
   "skills": [
    {
@@ -7869,6 +7918,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Lucy -Leo x Virgo Form-.png",
+  "card": "lucy-leo-x-virgo-form.webp",
   "signatureLacrima": "lucy-leo-x-virgo-form-lacrima",
   "skills": [
    {
@@ -8062,11 +8112,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Lucy Heartfilia.png",
+  "card": "lucy-heartfilia.webp",
   "signatureLacrima": "lucy-lacrima",
   "skills": [
    {
@@ -8182,11 +8233,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Lyon Vastia.png",
+  "card": "lyon-vastia.webp",
   "signatureLacrima": "lyon-lacrima",
   "skills": [
    {
@@ -8302,11 +8354,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Defense",
   "portrait": "Makarov Dreyar.png",
+  "card": "makarov-dreyar.webp",
   "signatureLacrima": "makarov-lacrima",
   "skills": [
    {
@@ -8448,11 +8501,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Mard Geer.png",
+  "card": "mard-geer.webp",
   "signatureLacrima": "mard-lacrima",
   "skills": [
    {
@@ -8573,6 +8627,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Master Enchant Irene.png",
+  "card": "master-enchant-irene.webp",
   "signatureLacrima": "master-enchant-irene-lacrima",
   "skills": [
    {
@@ -8805,11 +8860,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "pickup-mavis-vermillion",
-  "availableFrom": null,
+  "availableFrom": "2026-01-17",
   "bannerArt": "mavis-vermillion.webp",
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Mavis Vermillion.png",
+  "card": "mavis-vermillion.webp",
   "signatureLacrima": "mavis-lacrima",
   "skills": [
    {
@@ -8990,11 +9046,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Heal",
   "portrait": "Meredy.png",
+  "card": null,
   "signatureLacrima": "meredy-lacrima",
   "skills": [
    {
@@ -9109,12 +9166,13 @@
   "collection": "Grimoire Heart",
   "rarity": "UR",
   "newForm": false,
-  "debutBanner": null,
-  "availableFrom": null,
-  "bannerArt": null,
+  "debutBanner": "200-day-anniversary",
+  "availableFrom": "2026-06-21",
+  "bannerArt": "meredy-grimoire-heart.webp",
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Meredy -Grimoire Heart-.png",
+  "card": "meredy-grimoire-heart.webp",
   "signatureLacrima": "meredy-grimoire-heart-lacrima",
   "skills": [
    {
@@ -9287,6 +9345,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Midsummer Sorcerer Lucy.png",
+  "card": "midsummer-sorcerer-lucy.webp",
   "signatureLacrima": "midsummer-sorcerer-lucy-lacrima",
   "skills": [
    {
@@ -9472,6 +9531,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Midsummer Sorcerer Mirajane.png",
+  "card": "midsummer-sorcerer-mirajane.webp",
   "signatureLacrima": "midsummer-sorcerer-mirajane-lacrima",
   "skills": [
    {
@@ -9665,11 +9725,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Minerva Orland.png",
+  "card": "minerva-orland.webp",
   "signatureLacrima": "minerva-lacrima",
   "skills": [
    {
@@ -9798,11 +9859,12 @@
   "rarity": "UR",
   "newForm": true,
   "debutBanner": "madofes-mirajane-satan-soul",
-  "availableFrom": null,
+  "availableFrom": "2026-02-01",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Mirajane -Satan Soul-.png",
+  "card": "mirajane-satan-soul.webp",
   "signatureLacrima": "mirajane-satan-soul-lacrima",
   "skills": [
    {
@@ -9983,11 +10045,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Heal",
   "portrait": "Mirajane Strauss.png",
+  "card": "mirajane-strauss.webp",
   "signatureLacrima": "mirajane-lacrima",
   "skills": [
    {
@@ -10134,6 +10197,7 @@
   "attribute": "Brave",
   "role": "Heal",
   "portrait": "Moonlit Reverie Levy.png",
+  "card": "moonlit-reverie-levy.webp",
   "signatureLacrima": "moonlit-reverie-levy-lacrima",
   "skills": [
    {
@@ -10345,6 +10409,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Moonlit Reverie Mavis.png",
+  "card": "moonlit-reverie-mavis.webp",
   "signatureLacrima": "moonlit-reverie-mavis-lacrima",
   "skills": [
    {
@@ -10499,11 +10564,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Mystogan.png",
+  "card": "mystogan.webp",
   "signatureLacrima": "mystogan-lacrima",
   "skills": [
    {
@@ -10611,6 +10677,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Natsu-Dragon Force.png",
+  "card": "natsu-dragon-force.webp",
   "signatureLacrima": "natsu-dragon-force-lacrima",
   "skills": [
    {
@@ -10752,11 +10819,12 @@
   "rarity": "UR",
   "newForm": true,
   "debutBanner": "madofes-may-2026",
-  "availableFrom": null,
+  "availableFrom": "2026-05-01",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Natsu-Lightning Fire Dragon Mode-.png",
+  "card": "natsu-lightning-fire-dragon-mode.webp",
   "signatureLacrima": "natsu-lightning-fire-dragon-mode-lacrima",
   "skills": [
    {
@@ -10955,6 +11023,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Natsu Dragion.png",
+  "card": "natsu-dragion.webp",
   "signatureLacrima": "natsu-dragion-lacrima",
   "skills": [
    {
@@ -11135,11 +11204,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Natsu Dragneel.png",
+  "card": null,
   "signatureLacrima": "natsu-lacrima",
   "skills": [
    {
@@ -11254,12 +11324,13 @@
   "collection": "New Form",
   "rarity": "UR",
   "newForm": true,
-  "debutBanner": null,
-  "availableFrom": null,
+  "debutBanner": "300-day-anniversary",
+  "availableFrom": "2026-09-21",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Neo Minerva.png",
+  "card": "neo-minerva.webp",
   "signatureLacrima": "neo-minerva-lacrima",
   "skills": [
    {
@@ -11471,6 +11542,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Noir Cana.png",
+  "card": "noir-cana.webp",
   "signatureLacrima": "noir-cana-lacrima",
   "skills": [
    {
@@ -11643,6 +11715,7 @@
   "attribute": "Brave",
   "role": "Defense",
   "portrait": "Noir Gildarts.png",
+  "card": "noir-gildarts.webp",
   "signatureLacrima": "noir-gildarts-lacrima",
   "skills": [
    {
@@ -11815,6 +11888,7 @@
   "attribute": "Brave",
   "role": "Disrupt",
   "portrait": "Otherworld Adventure Erza.png",
+  "card": "otherworld-adventure-erza.webp",
   "signatureLacrima": "otherworld-adventure-erza-lacrima",
   "skills": [
    {
@@ -12000,6 +12074,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Otherworld Adventure Kagura.png",
+  "card": "otherworld-adventure-kagura.webp",
   "signatureLacrima": "otherworld-adventure-kagura-lacrima",
   "skills": [
    {
@@ -12185,6 +12260,7 @@
   "attribute": "Brave",
   "role": "Melee",
   "portrait": "Parallel World Mystogan.png",
+  "card": "parallel-world-mystogan.webp",
   "signatureLacrima": "parallel-world-mystogan-lacrima",
   "skills": [
    {
@@ -12383,6 +12459,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Parallel World Wendy.png",
+  "card": "parallel-world-wendy.webp",
   "signatureLacrima": "parallel-world-wendy-lacrima",
   "skills": [
    {
@@ -12594,6 +12671,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Pure White Oath Erza.png",
+  "card": "pure-white-oath-erza.webp",
   "signatureLacrima": "pure-white-oath-erza-lacrima",
   "skills": [
    {
@@ -12766,6 +12844,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Pure White Oath Jellal.png",
+  "card": "pure-white-oath-jellal.webp",
   "signatureLacrima": "pure-white-oath-jellal-lacrima",
   "skills": [
    {
@@ -12951,6 +13030,7 @@
   "attribute": "Mind",
   "role": "Defense",
   "portrait": "Rock'n Magic Juvia.png",
+  "card": "rock-n-magic-juvia.webp",
   "signatureLacrima": "rock-n-magic-juvia-lacrima",
   "skills": [
    {
@@ -13175,6 +13255,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Rock'n Magic Lucy.png",
+  "card": "rock-n-magic-lucy.webp",
   "signatureLacrima": "rock-n-magic-lucy-lacrima",
   "skills": [
    {
@@ -13368,11 +13449,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Rogue Cheney.png",
+  "card": "rogue-cheney.webp",
   "signatureLacrima": "rogue-lacrima",
   "skills": [
    {
@@ -13474,12 +13556,13 @@
   "collection": "Fabled Quest II",
   "rarity": "UR",
   "newForm": false,
-  "debutBanner": "half-anniversary-fest",
-  "availableFrom": null,
+  "debutBanner": "half-anniversary-fes",
+  "availableFrom": "2026-06-01",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Selene.png",
+  "card": "selene.webp",
   "signatureLacrima": "selene-lacrima",
   "skills": [
    {
@@ -13660,11 +13743,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Sherria Blendy.png",
+  "card": "sherria-blendy.webp",
   "signatureLacrima": "sherria-lacrima",
   "skills": [
    {
@@ -13767,11 +13851,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Silver Fullbuster.png",
+  "card": "silver-fullbuster.webp",
   "signatureLacrima": "silver-lacrima",
   "skills": [
    {
@@ -13892,6 +13977,7 @@
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Starry Night Reunion Mavis.png",
+  "card": "starry-night-reunion-mavis.webp",
   "signatureLacrima": "starry-night-reunion-mavis-lacrima",
   "skills": [
    {
@@ -14051,6 +14137,7 @@
   "attribute": "Mind",
   "role": "Ranged",
   "portrait": "Starry Night Reunion Zeref.png",
+  "card": "starry-night-reunion-zeref.webp",
   "signatureLacrima": "starry-night-reunion-zeref-lacrima",
   "skills": [
    {
@@ -14218,11 +14305,12 @@
   "rarity": "UR",
   "newForm": true,
   "debutBanner": "madofes-jul-2026",
-  "availableFrom": null,
+  "availableFrom": "2026-07-01",
   "bannerArt": null,
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Sting-Dragon Force.png",
+  "card": null,
   "signatureLacrima": "sting-dragon-force-lacrima",
   "skills": [
    {
@@ -14416,11 +14504,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Sting Eucliffe.png",
+  "card": "sting-eucliffe.webp",
   "signatureLacrima": "sting-lacrima",
   "skills": [
    {
@@ -14528,6 +14617,7 @@
   "attribute": "Technique",
   "role": "Melee",
   "portrait": "Suzaku.png",
+  "card": null,
   "signatureLacrima": "suzaku-lacrima",
   "skills": [
    {
@@ -14700,6 +14790,7 @@
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "Swayed by the Evening Breeze Gildarts.png",
+  "card": "swayed-by-the-evening-breeze-gildarts.webp",
   "signatureLacrima": "swayed-by-the-evening-breeze-gildarts-lacrima",
   "skills": [
    {
@@ -14885,6 +14976,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Swayed by the Evening Breeze Mystogan.png",
+  "card": null,
   "signatureLacrima": "swayed-by-the-evening-breeze-mystogan-lacrima",
   "skills": [
    {
@@ -15083,6 +15175,7 @@
   "attribute": "Heart",
   "role": "Melee",
   "portrait": "Swaying in the Summer Night Cana.png",
+  "card": "swaying-in-the-summer-night-cana.webp",
   "signatureLacrima": "swaying-in-the-summer-night-cana-lacrima",
   "skills": [
    {
@@ -15281,6 +15374,7 @@
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Swaying in the Summer Night Lisanna.png",
+  "card": "swaying-in-the-summer-night-lisanna.webp",
   "signatureLacrima": "swaying-in-the-summer-night-lisanna-lacrima",
   "skills": [
    {
@@ -15474,11 +15568,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "sweet-gift",
-  "availableFrom": "2026-02-08",
+  "availableFrom": "2026-02-06",
   "bannerArt": "sweet-gift-juvia.webp",
   "attribute": "Technique",
   "role": "Heal",
   "portrait": "Sweet Gift Juvia.png",
+  "card": "sweet-gift-juvia.webp",
   "signatureLacrima": "sweet-gift-juvia-lacrima",
   "skills": [
    {
@@ -15646,11 +15741,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "sweet-gift",
-  "availableFrom": "2026-02-06",
+  "availableFrom": "2026-02-08",
   "bannerArt": "sweet-gift-levy.webp",
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Sweet Gift Levy.png",
+  "card": "sweet-gift-levy.webp",
   "signatureLacrima": "sweet-gift-levy-lacrima",
   "skills": [
    {
@@ -15810,6 +15906,7 @@
   "attribute": "Mind",
   "role": "Melee",
   "portrait": "Twin Moon Halloween Sherria.png",
+  "card": "twin-moon-halloween-sherria.webp",
   "signatureLacrima": "twin-moon-halloween-sherria-lacrima",
   "skills": [
    {
@@ -16021,6 +16118,7 @@
   "attribute": "Heart",
   "role": "Ranged",
   "portrait": "Twin Moon Halloween Sherry.png",
+  "card": "twin-moon-halloween-sherry.webp",
   "signatureLacrima": "twin-moon-halloween-sherry-lacrima",
   "skills": [
    {
@@ -16213,12 +16311,13 @@
   "collection": "Grimoire Heart",
   "rarity": "UR",
   "newForm": false,
-  "debutBanner": null,
-  "availableFrom": null,
-  "bannerArt": null,
+  "debutBanner": "200-day-anniversary",
+  "availableFrom": "2026-06-23",
+  "bannerArt": "ultear-grimoire-heart.webp",
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "Ultear -Grimoire Heart-.png",
+  "card": "ultear-grimoire-heart.webp",
   "signatureLacrima": "ultear-grimoire-heart-lacrima",
   "skills": [
    {
@@ -16391,6 +16490,7 @@
   "attribute": "Heart",
   "role": "Disrupt",
   "portrait": "Wendy -Bakeneko-.png",
+  "card": "wendy-bakeneko.webp",
   "signatureLacrima": "wendy-bakeneko-lacrima",
   "skills": [
    {
@@ -16570,12 +16670,13 @@
   "collection": "New Form",
   "rarity": "UR",
   "newForm": true,
-  "debutBanner": null,
-  "availableFrom": null,
-  "bannerArt": null,
+  "debutBanner": "100-day-anniversary",
+  "availableFrom": "2026-03-14",
+  "bannerArt": "wendy-dragon-force.webp",
   "attribute": "Technique",
   "role": "Ranged",
   "portrait": "Wendy -Dragon Force-.png",
+  "card": "wendy-dragon-force.webp",
   "signatureLacrima": "wendy-dragon-force-lacrima",
   "skills": [
    {
@@ -16743,11 +16844,12 @@
   "rarity": "UR",
   "newForm": false,
   "debutBanner": null,
-  "availableFrom": null,
+  "availableFrom": "2025-12-03",
   "bannerArt": null,
   "attribute": "Mind",
   "role": "Heal",
   "portrait": "Wendy Marvell.png",
+  "card": "wendy-marvell.webp",
   "signatureLacrima": "wendy-lacrima",
   "skills": [
    {
@@ -16897,7 +16999,7 @@
  {
   "id": "white-gift-gajeel",
   "name": "White Gift Gajeel",
-  "identity": "Gajeel Redfox",
+  "identity": "Sherria Blendy",
   "collection": "White Gift",
   "rarity": "UR",
   "newForm": false,
@@ -16907,6 +17009,7 @@
   "attribute": "Mind",
   "role": "Disrupt",
   "portrait": "White Gift Gajeel.png",
+  "card": "white-gift-gajeel.webp",
   "signatureLacrima": "white-gift-gajeel-lacrima",
   "skills": [
    {
@@ -17066,6 +17169,7 @@
   "attribute": "Brave",
   "role": "Ranged",
   "portrait": "White Gift Gray.png",
+  "card": "white-gift-gray.webp",
   "signatureLacrima": "white-gift-gray-lacrima",
   "skills": [
    {

@@ -29,7 +29,11 @@ const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoF
             const dates = bannerDates(b);
             return (
               <li class="item" id={b.id}>
-                {art.length > 0 && (
+                {b.cover ? (
+                  <div class="cover" data-pagefind-ignore>
+                    <img src={url(`event-banners/${b.cover}`)} alt="" width="800" height="450" loading="lazy" />
+                  </div>
+                ) : art.length > 0 && (
                   <div class={`arts n${Math.min(art.length, 2)}`} data-pagefind-ignore>
                     {art.slice(0, 2).map((u) => <img src={url(`banner-art/${u.bannerArt}`)} alt="" width="640" height="240" loading="lazy" />)}
                   </div>
@@ -69,6 +73,8 @@ const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoF
   .list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; align-items: start; }
   .item { border-radius: 16px; overflow: hidden; background: #fff; border: 2px solid var(--line); box-shadow: 0 3px 0 var(--brass); scroll-margin-top: 16px; display: flex; flex-direction: column; }
   .item:target { box-shadow: 0 0 0 3px var(--crimson); }
+  .cover { border-bottom: 2px solid var(--brass); background: var(--timber); }
+  .cover img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: center top; }
   .arts { display: grid; border-bottom: 2px solid var(--brass); background: var(--timber); }
   .arts.n2 { grid-template-columns: 1fr 1fr; gap: 2px; }
   .arts img { width: 100%; height: auto; aspect-ratio: 640 / 240; object-fit: cover; object-position: left center; }

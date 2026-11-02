@@ -4,44 +4,48 @@
   "name": "Pickup: Erza -Heaven's Wheel Armor-",
   "type": "Pickup",
   "start": "2025-12-03",
-  "end": null,
-  "dateSource": "Calculated",
+  "end": "2025-12-11",
+  "dateSource": "Confirmed",
   "units": [
    "erza-heaven-s-wheel-armor"
-  ]
+  ],
+  "cover": "release-celebration-pickup-banner.webp"
  },
  {
   "id": "pickup-natsu-dragon-force",
   "name": "Pickup: Natsu -Dragon Force-",
   "type": "Pickup",
   "start": "2025-12-03",
-  "end": null,
-  "dateSource": "Calculated",
+  "end": "2025-12-18",
+  "dateSource": "Confirmed",
   "units": [
    "natsu-dragon-force"
-  ]
+  ],
+  "cover": "release-celebration-pickup-banner.webp"
  },
  {
   "id": "pickup-gray-ice-devil-slayer-mage",
   "name": "Pickup: Gray -Ice Devil Slayer Mage-",
   "type": "Pickup",
   "start": "2025-12-05",
-  "end": null,
+  "end": "2025-12-20",
   "dateSource": "Confirmed",
   "units": [
    "gray-ice-devil-slayer-mage"
-  ]
+  ],
+  "cover": "release-celebration-pickup-banner.webp"
  },
  {
   "id": "pickup-lucy-leo-form",
   "name": "Pickup: Lucy -Leo Form-",
   "type": "Pickup",
   "start": "2025-12-07",
-  "end": null,
-  "dateSource": "Calculated",
+  "end": "2025-12-22",
+  "dateSource": "Confirmed",
   "units": [
    "lucy-leo-form"
-  ]
+  ],
+  "cover": "release-celebration-pickup-banner.webp"
  },
  {
   "id": "holy-night-festival",
@@ -53,7 +57,8 @@
   "units": [
    "holy-night-juvia",
    "holy-night-mirajane"
-  ]
+  ],
+  "cover": "holy-night-event-banner.webp"
  },
  {
   "id": "new-year-first-dream",
@@ -61,11 +66,24 @@
   "type": "Regular",
   "start": "2025-12-26",
   "end": "2026-01-09",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "first-dream-erza",
    "first-dream-laxus"
-  ]
+  ],
+  "cover": "new-year-s-first-dream-banner.webp"
+ },
+ {
+  "id": "madofes-jellal-fernandes",
+  "name": "MadoFes (Jellal Fernandes)",
+  "type": "MadoFes",
+  "start": "2026-01-01",
+  "end": "2026-01-03",
+  "dateSource": "Calculated",
+  "units": [
+   "jellal-fernandes"
+  ],
+  "cover": "jellal-fernandes-madofes-release-card.webp"
  },
  {
   "id": "cyberpunk",
@@ -73,11 +91,12 @@
   "type": "Regular",
   "start": "2026-01-09",
   "end": "2026-01-23",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "cyberpunk-rogue",
    "cyberpunk-sting"
-  ]
+  ],
+  "cover": "cyberpuunk-banner.webp"
  },
  {
   "id": "pickup-mavis-vermillion",
@@ -88,7 +107,8 @@
   "dateSource": "Confirmed",
   "units": [
    "mavis-vermillion"
-  ]
+  ],
+  "cover": "mavis-vermillion-release-card.webp"
  },
  {
   "id": "victory-bunny",
@@ -96,11 +116,24 @@
   "type": "Regular",
   "start": "2026-01-23",
   "end": "2026-02-06",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "bunny-lucy",
    "bunny-yukino"
-  ]
+  ],
+  "cover": "victory-bunny-banner.webp"
+ },
+ {
+  "id": "madofes-mirajane-satan-soul",
+  "name": "MadoFes (Mirajane -Satan Soul-)",
+  "type": "MadoFes",
+  "start": "2026-02-01",
+  "end": "2026-02-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "mirajane-satan-soul"
+  ],
+  "cover": "mirajane-satan-soul-madofes-banner.webp"
  },
  {
   "id": "sweet-gift",
@@ -108,11 +141,12 @@
   "type": "Regular",
   "start": "2026-02-06",
   "end": "2026-02-20",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "sweet-gift-juvia",
    "sweet-gift-levy"
-  ]
+  ],
+  "cover": "sweet-gift-banner.webp"
  },
  {
   "id": "noir-family",
@@ -120,22 +154,24 @@
   "type": "Regular",
   "start": "2026-02-20",
   "end": "2026-03-06",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "noir-cana",
    "noir-gildarts"
-  ]
+  ],
+  "cover": "noir-family-banner.webp"
  },
  {
   "id": "pickup-dark-mage-zeref",
   "name": "Pickup: Dark Mage Zeref",
   "type": "Pickup",
   "start": "2026-02-25",
-  "end": null,
+  "end": "2026-03-08",
   "dateSource": "Confirmed",
   "units": [
    "dark-mage-zeref"
-  ]
+  ],
+  "cover": "dark-mage-zeref-release-card.webp"
  },
  {
   "id": "madofes-feb-2026",
@@ -146,7 +182,8 @@
   "dateSource": "Confirmed",
   "units": [
    "laxus-red-lightning-dragon-mode"
-  ]
+  ],
+  "cover": "laxus-red-lightning-dragon-mode-madofes-banner.webp"
  },
  {
   "id": "white-gift",
@@ -154,11 +191,25 @@
   "type": "Regular",
   "start": "2026-03-06",
   "end": "2026-03-20",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "white-gift-gajeel",
    "white-gift-gray"
-  ]
+  ],
+  "cover": "white-gift-banner.webp"
+ },
+ {
+  "id": "100-day-anniversary",
+  "name": "100 Day Anniversary",
+  "type": "Special",
+  "start": "2026-03-12",
+  "end": "2026-03-23",
+  "dateSource": "Confirmed",
+  "units": [
+   "wendy-dragon-force",
+   "erza-demon-blade-benizakura"
+  ],
+  "cover": "100-days-anniversary-banner.webp"
  },
  {
   "id": "egg-hunt-wizard",
@@ -166,11 +217,37 @@
   "type": "Regular",
   "start": "2026-03-20",
   "end": "2026-04-03",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "egg-hunt-brandish",
    "egg-hunt-irene"
-  ]
+  ],
+  "cover": "egg-hunt-wizard-banner.webp"
+ },
+ {
+  "id": "block-chronicle",
+  "name": "Block Chronicle",
+  "type": "Special",
+  "start": "2026-04-01",
+  "end": "2026-04-01",
+  "dateSource": "Confirmed",
+  "units": [
+   "block-lucy",
+   "block-natsu"
+  ],
+  "cover": "block-chronicle-banner.webp"
+ },
+ {
+  "id": "madofes-apr-2026",
+  "name": "MadoFes Apr. 2026",
+  "type": "MadoFes",
+  "start": "2026-04-01",
+  "end": "2026-04-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "ichiya-power-perfume"
+  ],
+  "cover": "ichiya-power-parfun-madofes-banner.webp"
  },
  {
   "id": "madochro-academy",
@@ -178,11 +255,12 @@
   "type": "Regular",
   "start": "2026-04-03",
   "end": "2026-04-17",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "academy-kagura",
    "academy-lisanna"
-  ]
+  ],
+  "cover": "madochro-academy-banner.webp"
  },
  {
   "id": "parallel-world",
@@ -190,11 +268,24 @@
   "type": "Regular",
   "start": "2026-04-17",
   "end": "2026-05-01",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "erza-knightwalker",
    "natsu-dragion"
-  ]
+  ],
+  "cover": "parallel-world-banner.webp"
+ },
+ {
+  "id": "madofes-may-2026",
+  "name": "MadoFes May 2026",
+  "type": "MadoFes",
+  "start": "2026-05-01",
+  "end": "2026-05-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "natsu-lightning-fire-dragon-mode"
+  ],
+  "cover": "natsu-lightning-fire-dragon-mode-madofes-banner.webp"
  },
  {
   "id": "moonlit-reverie",
@@ -202,11 +293,12 @@
   "type": "Regular",
   "start": "2026-05-01",
   "end": "2026-05-15",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "moonlit-reverie-levy",
    "moonlit-reverie-mavis"
-  ]
+  ],
+  "cover": "moonlit-reverie-banner.webp"
  },
  {
   "id": "fabled-quest-i",
@@ -214,11 +306,12 @@
   "type": "Regular",
   "start": "2026-05-15",
   "end": "2026-05-29",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "ignia",
    "lucy-leo-x-virgo-form"
-  ]
+  ],
+  "cover": "half-anniversary-banner.webp"
  },
  {
   "id": "fabled-quest-ii",
@@ -226,11 +319,24 @@
   "type": "Regular",
   "start": "2026-05-29",
   "end": "2026-06-12",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "suzaku",
    "wendy-bakeneko"
-  ]
+  ],
+  "cover": "half-anniversary-part-2-banner.webp"
+ },
+ {
+  "id": "half-anniversary-fes",
+  "name": "Half Anniversary Fes",
+  "type": "Half Anniversary Fest",
+  "start": "2026-06-01",
+  "end": "2026-06-07",
+  "dateSource": "Confirmed",
+  "units": [
+   "selene"
+  ],
+  "cover": "half-anniversary-fes-banner.webp"
  },
  {
   "id": "pure-white-oath",
@@ -238,11 +344,25 @@
   "type": "Regular",
   "start": "2026-06-12",
   "end": "2026-06-26",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "pure-white-oath-erza",
    "pure-white-oath-jellal"
-  ]
+  ],
+  "cover": "pure-white-oath-banner.webp"
+ },
+ {
+  "id": "200-day-anniversary",
+  "name": "200 Day Anniversary",
+  "type": "Special",
+  "start": "2026-06-21",
+  "end": "2026-07-02",
+  "dateSource": "Confirmed",
+  "units": [
+   "meredy-grimoire-heart",
+   "ultear-grimoire-heart"
+  ],
+  "cover": "200-days-anniversary-banner.webp"
  },
  {
   "id": "starry-night-reunion",
@@ -250,11 +370,34 @@
   "type": "Regular",
   "start": "2026-06-26",
   "end": "2026-07-10",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "starry-night-reunion-mavis",
    "starry-night-reunion-zeref"
-  ]
+  ],
+  "cover": "starry-night-reunion-banner.webp"
+ },
+ {
+  "id": "madofes-jul-2026",
+  "name": "MadoFes Jul. 2026",
+  "type": "MadoFes",
+  "start": "2026-07-01",
+  "end": "2026-07-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "sting-dragon-force"
+  ],
+  "cover": "sting-dragon-force-madofes-banner.webp"
+ },
+ {
+  "id": "7-7-special-event",
+  "name": "7/7 Special Event",
+  "type": "Special",
+  "start": "2026-07-07",
+  "end": "2026-07-14",
+  "dateSource": "Confirmed",
+  "units": [],
+  "cover": "7-7-event-banner.webp"
  },
  {
   "id": "midsummer-sorcerer",
@@ -262,11 +405,22 @@
   "type": "Regular",
   "start": "2026-07-10",
   "end": "2026-07-24",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "midsummer-sorcerer-lucy",
    "midsummer-sorcerer-mirajane"
-  ]
+  ],
+  "cover": "midsummer-sorcerer-banner.webp"
+ },
+ {
+  "id": "skill-attribute-limited-selectable-pickup-gacha-jul-2026",
+  "name": "Skill Attribute Limited Selectable Pickup Gacha (Jul 2026)",
+  "type": "Special",
+  "start": "2026-07-14",
+  "end": "2026-07-21",
+  "dateSource": "Confirmed",
+  "units": [],
+  "cover": "skill-attribute-limited-gacha-banner.webp"
  },
  {
   "id": "blazing-beach-vacation",
@@ -278,7 +432,30 @@
   "units": [
    "blazing-beach-vacation-laxus",
    "blazing-beach-vacation-natsu"
-  ]
+  ],
+  "cover": "blazing-beach-vacation-banner.webp"
+ },
+ {
+  "id": "intelligence-attribute-limited-selectable-pickup-gacha-jul-2026",
+  "name": "Intelligence Attribute Limited Selectable Pickup Gacha (Jul 2026)",
+  "type": "Special",
+  "start": "2026-07-28",
+  "end": "2026-08-04",
+  "dateSource": "Calculated",
+  "units": [],
+  "cover": "intelligence-attribute-limited-banner.webp"
+ },
+ {
+  "id": "madofes-aug-2026",
+  "name": "MadoFes Aug. 2026",
+  "type": "MadoFes",
+  "start": "2026-08-01",
+  "end": "2026-08-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "juvia-element-4"
+  ],
+  "cover": "juvia-element-4-madofes-banner.webp"
  },
  {
   "id": "swaying-in-the-summer-night",
@@ -286,11 +463,12 @@
   "type": "Regular",
   "start": "2026-08-07",
   "end": "2026-08-21",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "swaying-in-the-summer-night-cana",
    "swaying-in-the-summer-night-lisanna"
-  ]
+  ],
+  "cover": "swaying-in-the-summer-night-banner.webp"
  },
  {
   "id": "swayed-by-the-evening-breeze",
@@ -298,11 +476,34 @@
   "type": "Regular",
   "start": "2026-08-21",
   "end": "2026-09-04",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "swayed-by-the-evening-breeze-gildarts",
    "swayed-by-the-evening-breeze-mystogan"
-  ]
+  ],
+  "cover": "swayed-by-the-evening-breeze-banner.webp"
+ },
+ {
+  "id": "spirit-attribute-limited-selectable-pickup-gacha-aug-2026",
+  "name": "Spirit Attribute Limited Selectable Pickup Gacha (Aug 2026)",
+  "type": "Special",
+  "start": "2026-08-24",
+  "end": "2026-09-03",
+  "dateSource": "Confirmed",
+  "units": [],
+  "cover": "spirit-attribute-limited-aug-26-banner.webp"
+ },
+ {
+  "id": "madofes-sep-2026",
+  "name": "MadoFes Sep. 2026",
+  "type": "MadoFes",
+  "start": "2026-09-01",
+  "end": "2026-09-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "emperor-spriggan-zeref"
+  ],
+  "cover": "emperor-spriggan-zeref-madofes-banner.webp"
  },
  {
   "id": "otherworld-adventure",
@@ -310,11 +511,12 @@
   "type": "Regular",
   "start": "2026-09-04",
   "end": "2026-09-18",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "otherworld-adventure-erza",
    "otherworld-adventure-kagura"
-  ]
+  ],
+  "cover": "otherworld-adventure-banner.webp"
  },
  {
   "id": "fairy-harvest-festival",
@@ -322,11 +524,37 @@
   "type": "Regular",
   "start": "2026-09-18",
   "end": "2026-10-02",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "fairy-harvest-festival-makarov",
    "fairy-harvest-festival-wendy"
-  ]
+  ],
+  "cover": "fairy-harvest-festival-banner.webp"
+ },
+ {
+  "id": "300-day-anniversary",
+  "name": "300-Day Anniversary",
+  "type": "Special",
+  "start": "2026-09-19",
+  "end": "2026-09-30",
+  "dateSource": "Confirmed",
+  "units": [
+   "contractor-of-the-twelve-gates-yukino",
+   "neo-minerva"
+  ],
+  "cover": "399-days-anniversary-banner.webp"
+ },
+ {
+  "id": "madofes-oct-2026",
+  "name": "MadoFes Oct. 2026",
+  "type": "MadoFes",
+  "start": "2026-10-01",
+  "end": "2026-10-03",
+  "dateSource": "Confirmed",
+  "units": [
+   "fairy-tactician-mavis"
+  ],
+  "cover": "fairy-tactician-mavis-madofes-banner.webp"
  },
  {
   "id": "rock-n-magic",
@@ -334,11 +562,22 @@
   "type": "Regular",
   "start": "2026-10-02",
   "end": "2026-10-16",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "rock-n-magic-juvia",
    "rock-n-magic-lucy"
-  ]
+  ],
+  "cover": "rock-n-magic-banner.webp"
+ },
+ {
+  "id": "1-million-downloads-celebration-gacha-oct-2026",
+  "name": "1 Million Downloads Celebration Gacha (Oct 2026)",
+  "type": "Special",
+  "start": "2026-10-10",
+  "end": "2026-10-19",
+  "dateSource": "Confirmed",
+  "units": [],
+  "cover": "1-million-downloads-banner.webp"
  },
  {
   "id": "twin-moon-halloween",
@@ -346,11 +585,32 @@
   "type": "Regular",
   "start": "2026-10-16",
   "end": "2026-10-30",
-  "dateSource": "Calculated",
+  "dateSource": "Confirmed",
   "units": [
    "twin-moon-halloween-sherria",
    "twin-moon-halloween-sherry"
-  ]
+  ],
+  "cover": "twin-moon-halloween-banner.webp"
+ },
+ {
+  "id": "intelligence-attribute-guild-release-celebration-gacha-oct-2026",
+  "name": "Intelligence Attribute Guild Release Celebration Gacha (Oct 2026)",
+  "type": "Special",
+  "start": "2026-10-27",
+  "end": "2026-11-03",
+  "dateSource": "Confirmed",
+  "units": [],
+  "cover": "intelligence-attribute-guild-gacha.webp"
+ },
+ {
+  "id": "spirit-attribute-guild-release-celebration-gacha-oct-2026",
+  "name": "Spirit Attribute Guild Release Celebration Gacha (Oct 2026)",
+  "type": "Special",
+  "start": "2026-10-27",
+  "end": "2026-11-03",
+  "dateSource": "Confirmed",
+  "units": [],
+  "cover": "spirit-attribute-limited-guild-banner.webp"
  },
  {
   "id": "parallel-world-part-2",
@@ -362,7 +622,8 @@
   "units": [
    "parallel-world-wendy",
    "parallel-world-mystogan"
-  ]
+  ],
+  "cover": "parallel-world-part-2-banner.webp"
  },
  {
   "id": "madofes-nov-2026",
@@ -373,117 +634,7 @@
   "dateSource": "Confirmed",
   "units": [
    "master-enchant-irene"
-  ]
- },
- {
-  "id": "block-chronicle",
-  "name": "Block Chronicle",
-  "type": "Special",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "block-lucy",
-   "block-natsu"
-  ]
- },
- {
-  "id": "half-anniversary-fest",
-  "name": "Half Anniversary Fest",
-  "type": "Half Anniversary Fest",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "selene"
-  ]
- },
- {
-  "id": "madofes-jellal-fernandes",
-  "name": "MadoFes (Jellal Fernandes)",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "jellal-fernandes"
-  ]
- },
- {
-  "id": "madofes-mirajane-satan-soul",
-  "name": "MadoFes (Mirajane -Satan Soul-)",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "mirajane-satan-soul"
-  ]
- },
- {
-  "id": "madofes-apr-2026",
-  "name": "MadoFes Apr. 2026",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "ichiya-power-perfume"
-  ]
- },
- {
-  "id": "madofes-aug-2026",
-  "name": "MadoFes Aug. 2026",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "juvia-element-4"
-  ]
- },
- {
-  "id": "madofes-jul-2026",
-  "name": "MadoFes Jul. 2026",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "sting-dragon-force"
-  ]
- },
- {
-  "id": "madofes-may-2026",
-  "name": "MadoFes May 2026",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "natsu-lightning-fire-dragon-mode"
-  ]
- },
- {
-  "id": "madofes-oct-2026",
-  "name": "MadoFes Oct. 2026",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "fairy-tactician-mavis"
-  ]
- },
- {
-  "id": "madofes-sep-2026",
-  "name": "MadoFes Sep. 2026",
-  "type": "MadoFes",
-  "start": null,
-  "end": null,
-  "dateSource": null,
-  "units": [
-   "emperor-spriggan-zeref"
-  ]
+  ],
+  "cover": "master-enchant-irene-madofes-banner.webp"
  }
 ]
