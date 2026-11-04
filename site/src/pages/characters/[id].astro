@@ -6,7 +6,7 @@ import Kanji from '../../components/Kanji.astro';
 import {
   units, applications, effects, lacrimaById, ATTR, KIND_ORDER, url, portraits, initials, LAUNCH_DAY, dayText,
   baseName, valueText, familyKey, WIKI_CREDIT, bannerById, bannerDates, unitDates, DATE_NOTE, roleIcon, skillIcon,
-  COLLECTION_BONUS_PCT, type Unit, type Effect,
+  COLLECTION_BONUS_PCT, COLLECTION_LEVEL_STEPS, COLLECTION_AWAKEN_STEPS, type Unit, type Effect,
 } from '../../lib/data';
 
 export function getStaticPaths() {
@@ -40,6 +40,8 @@ const debut = unit.debutBanner ? bannerById.get(unit.debutBanner) : undefined;
 const debutDates = unitDates(unit, debut);
 const rIcon = roleIcon(unit.role);
 const bonusPct = unit.rarity ? COLLECTION_BONUS_PCT[unit.rarity] : undefined;
+const bonusLevel = bonusPct ? bonusPct * COLLECTION_LEVEL_STEPS : 0;
+const bonusAwaken = bonusPct ? bonusPct * COLLECTION_AWAKEN_STEPS : 0;
 const normal = skills.find((x) => x.kind === 'Normal');
 const nIcon = normal ? skillIcon(unit, normal) : null;
 ---
@@ -73,7 +75,7 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
         <div class="badges">
           <span class="badge"><Kanji attr={unit.attribute} size={30} /><span style={`color:${a.text};font-weight:600`}>{unit.attribute}</span></span>
           <span class="badge">{rIcon && <img class="ic" src={rIcon} alt="" width="26" height="26" />}Role · {unit.role}</span>
-          {unit.collectionBonusStat && bonusPct && <span class="badge" title={`The Collection screen adds ${unit.collectionBonusStat} +${bonusPct}% for each Level and Awaken milestone this wizard reaches.`} data-pagefind-ignore>Collection bonus · {unit.collectionBonusStat} +{bonusPct}%</span>}
+          {unit.collectionBonusStat && bonusPct && <span class="badge" title={`Collection screen bonus: ${unit.collectionBonusStat} +${bonusPct}% per step. Up to +${bonusLevel}% from Level (every 10 levels to Lv.100) and +${bonusAwaken}% from Awakening (11 steps).`} data-pagefind-ignore>Collection bonus · {unit.collectionBonusStat} up to +{bonusLevel + bonusAwaken}%</span>}
           {skills[0]?.attackRange && <span class="badge">{nIcon && <img class="ic sq" src={nIcon} alt="" width="26" height="26" />}Normal attack · {skills[0].attackRange}</span>}
         </div>
         <div class="glance" data-pagefind-ignore>

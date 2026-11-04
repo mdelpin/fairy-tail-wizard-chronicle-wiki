@@ -96,8 +96,11 @@ export const unitDates = (u: Unit, b?: Banner) => {
 /** JST day the game went live; wizards available from then have no debut banner. */
 export const LAUNCH_DAY = '2025-12-03';
 /** Wizard rarities, best first. Filters list only those present in the data. */
-/** Collection bonus per Level or Awaken milestone, by rarity (confirmed in game for N, R, SR and UR). */
+/** Collection bonus per Level or Awaken milestone, by rarity (N 1, R and SR 3, UR 5; confirmed in game). */
 export const COLLECTION_BONUS_PCT: Record<string, number> = { N: 1, R: 3, SR: 3, UR: 5 };
+/** Milestones on the Collection screen: Level 10, 20 ... 100 and Awaken 1 ... 11. */
+export const COLLECTION_LEVEL_STEPS = 10;
+export const COLLECTION_AWAKEN_STEPS = 11;
 export const RARITIES = ['UR', 'SR', 'R', 'N'] as const;
 export const raritiesIn = (list: { rarity: string | null }[]) => RARITIES.filter((r) => list.some((u) => u.rarity === r));
 export const DATE_NOTE = '≈ estimated from the two-week banner cycle. Japan time; banners change at 15:00 JST.';
