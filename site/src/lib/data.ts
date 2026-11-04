@@ -4,6 +4,7 @@ import appsJson from '../data/applications.json';
 import effectsJson from '../data/effects.json';
 import lacrimasJson from '../data/lacrimas.json';
 import bannersJson from '../data/banners.json';
+import companionsJson from '../data/companions.json';
 
 export interface Effect {
   id: string; name: string; family: string | null; direction: string | null; tier: string | null;
@@ -21,6 +22,19 @@ export interface Application {
   requires: { families: string[]; match: string | null } | null;
   gameText: string | null;
 }
+export interface CompanionApplication extends Pick<Application, 'id' | 'effect' | 'type' | 'target' | 'trigger' | 'chance' | 'condition' | 'gameText'> {
+  source: 'companion';
+  durationByLevel: [number | null, number | null, number | null];
+}
+export interface Companion {
+  id: string; name: string; type: string | null; rarity: string | null; image: string | null;
+  introducedOn: string | null; introducedVia: string | null; introducedBanner: string | null;
+  skillName: string | null; skillLevelFromStars: number[];
+  ownedStat: string | null; ownedStart: number | null; ownedStep: number | null;
+  applications: string[];
+}
+export const COMPANION_TYPES = ['Spirit', 'Exceed', 'Dragon'] as const;
+export const MAX_COMPANION_STARS = 11;
 export interface Skill {
   kind: 'Normal' | 'Special' | 'Ultimate'; name: string | null; attackRange: string | null;
   gameText: Record<string, string>; applications: string[];
@@ -56,6 +70,7 @@ export interface Banner {
   /** 'Confirmed' (game or official post) or 'Calculated' (two-week rhythm); null when no date is known. */
   dateSource: string | null;
   units: string[];
+  companions?: string[];
   /** File name in public/event-banners/: the event banner (cover image), if recorded. */
   cover?: string | null;
 }
@@ -68,7 +83,11 @@ export interface Lacrima {
 export type Attribute = 'Brave' | 'Mind' | 'Technique' | 'Heart';
 
 export const units = (unitsJson as Unit[]).slice().sort((a, b) => a.name.localeCompare(b.name));
-export const applications = new Map((appsJson as Application[]).map((a) => [a.id, a]));
+const allApplications = appsJson as (Application | CompanionApplication)[];
+export const applications = new Map(allApplications.filter((a) => a.source !== 'companion').map((a) => [a.id, a]));
+export const companionApplications = new Map(allApplications.filter((a) => a.source === 'companion').map((a) => [a.id, a]));
+export const companions = (companionsJson as Companion[]).slice().sort((a, b) => a.name.localeCompare(b.name));
+export const companionById = new Map(companions.map((c) => [c.id, c]));
 export const effects = new Map((effectsJson as Effect[]).map((e) => [e.id, e]));
 export const lacrimas = (lacrimasJson as Lacrima[]).slice().sort((a, b) => a.name.localeCompare(b.name));
 export const unitById = new Map(units.map((u) => [u.id, u]));
@@ -225,12 +244,14 @@ export const GROUPS = [
 
 export interface Match { unit: Unit; skill: Skill; app: Application; effect: Effect }
 export interface LacrimaMatch { lacrima: Lacrima; app: Application; effect: Effect }
+export interface CompanionMatch { companion: Companion; app: CompanionApplication; effect: Effect }
 
 /** Everything the finder knows, indexed by family key. Built once at build time. */
-export function buildFinderIndex() {
+export function buildFinderIndex(includeCompanions = false) {
   const meta = new Map<string, FamilyMeta>();
   const applies = new Map<string, Match[]>();
   const fromLacrimas = new Map<string, LacrimaMatch[]>();
+  const fromCompanions = new Map<string, CompanionMatch[]>();
   const needs = new Map<string, { unit: Unit; skill: Skill; app: Application }[]>();
   const push = <T>(m: Map<string, T[]>, k: string, v: T) => (m.get(k) ?? m.set(k, []).get(k)!).push(v);
 
@@ -249,7 +270,15 @@ export function buildFinderIndex() {
     const fm = effect && familyKey(effect);
     if (effect && fm) { meta.set(fm.key, fm); push(fromLacrimas, fm.key, { lacrima, app, effect }); }
   }
-  return { meta, applies, fromLacrimas, needs };
+  if (includeCompanions) {
+    for (const companion of companions) for (const id of companion.applications) {
+      const app = companionApplications.get(id);
+      const effect = app?.effect ? effects.get(app.effect) : undefined;
+      const fm = effect && familyKey(effect);
+      if (app && effect && fm) { meta.set(fm.key, fm); push(fromCompanions, fm.key, { companion, app, effect }); }
+    }
+  }
+  return { meta, applies, fromLacrimas, fromCompanions, needs };
 }
 
 /** Plain groupings of the game's trigger wording, so lacrimas can be filtered without knowing every phrase. */

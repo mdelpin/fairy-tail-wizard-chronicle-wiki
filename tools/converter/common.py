@@ -9,7 +9,7 @@ import yaml
 # Allowlist: only these object types are ever read. Anything else in the space (Team Builder data,
 # notes, queries, new private types) is invisible to the wiki unless it is added here on purpose.
 GAME_FOLDERS = ["Characters", "Skills", "Effects", "EffectApplications", "Lacrimas", "LacrimaEffectApplications",
-                "Banners", "BannerArts", "SkillIcons"]
+                "Banners", "BannerArts", "SkillIcons", "Companions", "CompanionEffectApplications"]
 
 
 def read(path):

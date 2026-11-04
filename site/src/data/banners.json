@@ -9,6 +9,7 @@
   "units": [
    "erza-heaven-s-wheel-armor"
   ],
+  "companions": [],
   "cover": "release-celebration-pickup-banner.webp"
  },
  {
@@ -21,6 +22,7 @@
   "units": [
    "natsu-dragon-force"
   ],
+  "companions": [],
   "cover": "release-celebration-pickup-banner.webp"
  },
  {
@@ -33,6 +35,7 @@
   "units": [
    "gray-ice-devil-slayer-mage"
   ],
+  "companions": [],
   "cover": "release-celebration-pickup-banner.webp"
  },
  {
@@ -45,6 +48,7 @@
   "units": [
    "lucy-leo-form"
   ],
+  "companions": [],
   "cover": "release-celebration-pickup-banner.webp"
  },
  {
@@ -58,6 +62,7 @@
    "holy-night-juvia",
    "holy-night-mirajane"
   ],
+  "companions": [],
   "cover": "holy-night-event-banner.webp"
  },
  {
@@ -71,6 +76,7 @@
    "first-dream-erza",
    "first-dream-laxus"
   ],
+  "companions": [],
   "cover": "new-year-s-first-dream-banner.webp"
  },
  {
@@ -83,6 +89,7 @@
   "units": [
    "jellal-fernandes"
   ],
+  "companions": [],
   "cover": "jellal-fernandes-madofes-release-card.webp"
  },
  {
@@ -96,6 +103,7 @@
    "cyberpunk-rogue",
    "cyberpunk-sting"
   ],
+  "companions": [],
   "cover": "cyberpuunk-banner.webp"
  },
  {
@@ -108,6 +116,7 @@
   "units": [
    "mavis-vermillion"
   ],
+  "companions": [],
   "cover": "mavis-vermillion-release-card.webp"
  },
  {
@@ -121,6 +130,7 @@
    "bunny-lucy",
    "bunny-yukino"
   ],
+  "companions": [],
   "cover": "victory-bunny-banner.webp"
  },
  {
@@ -133,6 +143,7 @@
   "units": [
    "mirajane-satan-soul"
   ],
+  "companions": [],
   "cover": "mirajane-satan-soul-madofes-banner.webp"
  },
  {
@@ -146,6 +157,7 @@
    "sweet-gift-juvia",
    "sweet-gift-levy"
   ],
+  "companions": [],
   "cover": "sweet-gift-banner.webp"
  },
  {
@@ -159,6 +171,7 @@
    "noir-cana",
    "noir-gildarts"
   ],
+  "companions": [],
   "cover": "noir-family-banner.webp"
  },
  {
@@ -171,6 +184,7 @@
   "units": [
    "dark-mage-zeref"
   ],
+  "companions": [],
   "cover": "dark-mage-zeref-release-card.webp"
  },
  {
@@ -183,6 +197,7 @@
   "units": [
    "laxus-red-lightning-dragon-mode"
   ],
+  "companions": [],
   "cover": "laxus-red-lightning-dragon-mode-madofes-banner.webp"
  },
  {
@@ -196,6 +211,7 @@
    "white-gift-gajeel",
    "white-gift-gray"
   ],
+  "companions": [],
   "cover": "white-gift-banner.webp"
  },
  {
@@ -209,6 +225,7 @@
    "wendy-dragon-force",
    "erza-demon-blade-benizakura"
   ],
+  "companions": [],
   "cover": "100-days-anniversary-banner.webp"
  },
  {
@@ -222,6 +239,7 @@
    "egg-hunt-brandish",
    "egg-hunt-irene"
   ],
+  "companions": [],
   "cover": "egg-hunt-wizard-banner.webp"
  },
  {
@@ -235,6 +253,7 @@
    "block-lucy",
    "block-natsu"
   ],
+  "companions": [],
   "cover": "block-chronicle-banner.webp"
  },
  {
@@ -247,6 +266,7 @@
   "units": [
    "ichiya-power-perfume"
   ],
+  "companions": [],
   "cover": "ichiya-power-parfun-madofes-banner.webp"
  },
  {
@@ -260,6 +280,7 @@
    "academy-kagura",
    "academy-lisanna"
   ],
+  "companions": [],
   "cover": "madochro-academy-banner.webp"
  },
  {
@@ -273,6 +294,7 @@
    "erza-knightwalker",
    "natsu-dragion"
   ],
+  "companions": [],
   "cover": "parallel-world-banner.webp"
  },
  {
@@ -285,6 +307,7 @@
   "units": [
    "natsu-lightning-fire-dragon-mode"
   ],
+  "companions": [],
   "cover": "natsu-lightning-fire-dragon-mode-madofes-banner.webp"
  },
  {
@@ -298,6 +321,7 @@
    "moonlit-reverie-levy",
    "moonlit-reverie-mavis"
   ],
+  "companions": [],
   "cover": "moonlit-reverie-banner.webp"
  },
  {
@@ -311,6 +335,7 @@
    "ignia",
    "lucy-leo-x-virgo-form"
   ],
+  "companions": [],
   "cover": "half-anniversary-banner.webp"
  },
  {
@@ -324,6 +349,7 @@
    "suzaku",
    "wendy-bakeneko"
   ],
+  "companions": [],
   "cover": "half-anniversary-part-2-banner.webp"
  },
  {
@@ -336,6 +362,7 @@
   "units": [
    "selene"
   ],
+  "companions": [],
   "cover": "half-anniversary-fes-banner.webp"
  },
  {
@@ -349,6 +376,7 @@
    "pure-white-oath-erza",
    "pure-white-oath-jellal"
   ],
+  "companions": [],
   "cover": "pure-white-oath-banner.webp"
  },
  {
@@ -362,6 +390,7 @@
    "meredy-grimoire-heart",
    "ultear-grimoire-heart"
   ],
+  "companions": [],
   "cover": "200-days-anniversary-banner.webp"
  },
  {
@@ -375,6 +404,7 @@
    "starry-night-reunion-mavis",
    "starry-night-reunion-zeref"
   ],
+  "companions": [],
   "cover": "starry-night-reunion-banner.webp"
  },
  {
@@ -387,6 +417,7 @@
   "units": [
    "sting-dragon-force"
   ],
+  "companions": [],
   "cover": "sting-dragon-force-madofes-banner.webp"
  },
  {
@@ -397,6 +428,7 @@
   "end": "2026-07-14",
   "dateSource": "Confirmed",
   "units": [],
+  "companions": [],
   "cover": "7-7-event-banner.webp"
  },
  {
@@ -410,6 +442,7 @@
    "midsummer-sorcerer-lucy",
    "midsummer-sorcerer-mirajane"
   ],
+  "companions": [],
   "cover": "midsummer-sorcerer-banner.webp"
  },
  {
@@ -420,6 +453,7 @@
   "end": "2026-07-21",
   "dateSource": "Confirmed",
   "units": [],
+  "companions": [],
   "cover": "skill-attribute-limited-gacha-banner.webp"
  },
  {
@@ -433,6 +467,7 @@
    "blazing-beach-vacation-laxus",
    "blazing-beach-vacation-natsu"
   ],
+  "companions": [],
   "cover": "blazing-beach-vacation-banner.webp"
  },
  {
@@ -443,6 +478,7 @@
   "end": "2026-08-04",
   "dateSource": "Calculated",
   "units": [],
+  "companions": [],
   "cover": "intelligence-attribute-limited-banner.webp"
  },
  {
@@ -455,6 +491,7 @@
   "units": [
    "juvia-element-4"
   ],
+  "companions": [],
   "cover": "juvia-element-4-madofes-banner.webp"
  },
  {
@@ -468,6 +505,7 @@
    "swaying-in-the-summer-night-cana",
    "swaying-in-the-summer-night-lisanna"
   ],
+  "companions": [],
   "cover": "swaying-in-the-summer-night-banner.webp"
  },
  {
@@ -481,6 +519,7 @@
    "swayed-by-the-evening-breeze-gildarts",
    "swayed-by-the-evening-breeze-mystogan"
   ],
+  "companions": [],
   "cover": "swayed-by-the-evening-breeze-banner.webp"
  },
  {
@@ -491,6 +530,7 @@
   "end": "2026-09-03",
   "dateSource": "Confirmed",
   "units": [],
+  "companions": [],
   "cover": "spirit-attribute-limited-aug-26-banner.webp"
  },
  {
@@ -503,6 +543,7 @@
   "units": [
    "emperor-spriggan-zeref"
   ],
+  "companions": [],
   "cover": "emperor-spriggan-zeref-madofes-banner.webp"
  },
  {
@@ -516,6 +557,7 @@
    "otherworld-adventure-erza",
    "otherworld-adventure-kagura"
   ],
+  "companions": [],
   "cover": "otherworld-adventure-banner.webp"
  },
  {
@@ -529,6 +571,7 @@
    "fairy-harvest-festival-makarov",
    "fairy-harvest-festival-wendy"
   ],
+  "companions": [],
   "cover": "fairy-harvest-festival-banner.webp"
  },
  {
@@ -542,6 +585,7 @@
    "contractor-of-the-twelve-gates-yukino",
    "neo-minerva"
   ],
+  "companions": [],
   "cover": "399-days-anniversary-banner.webp"
  },
  {
@@ -554,6 +598,7 @@
   "units": [
    "fairy-tactician-mavis"
   ],
+  "companions": [],
   "cover": "fairy-tactician-mavis-madofes-banner.webp"
  },
  {
@@ -567,6 +612,7 @@
    "rock-n-magic-juvia",
    "rock-n-magic-lucy"
   ],
+  "companions": [],
   "cover": "rock-n-magic-banner.webp"
  },
  {
@@ -577,6 +623,7 @@
   "end": "2026-10-19",
   "dateSource": "Confirmed",
   "units": [],
+  "companions": [],
   "cover": "1-million-downloads-banner.webp"
  },
  {
@@ -590,6 +637,7 @@
    "twin-moon-halloween-sherria",
    "twin-moon-halloween-sherry"
   ],
+  "companions": [],
   "cover": "twin-moon-halloween-banner.webp"
  },
  {
@@ -600,6 +648,7 @@
   "end": "2026-11-03",
   "dateSource": "Confirmed",
   "units": [],
+  "companions": [],
   "cover": "intelligence-attribute-guild-gacha.webp"
  },
  {
@@ -610,6 +659,7 @@
   "end": "2026-11-03",
   "dateSource": "Confirmed",
   "units": [],
+  "companions": [],
   "cover": "spirit-attribute-limited-guild-banner.webp"
  },
  {
@@ -623,6 +673,7 @@
    "parallel-world-wendy",
    "parallel-world-mystogan"
   ],
+  "companions": [],
   "cover": "parallel-world-part-2-banner.webp"
  },
  {
@@ -635,6 +686,7 @@
   "units": [
    "master-enchant-irene"
   ],
+  "companions": [],
   "cover": "master-enchant-irene-madofes-banner.webp"
  },
  {
@@ -645,6 +697,7 @@
   "end": "2026-11-09",
   "dateSource": "Confirmed",
   "units": [],
+  "companions": [],
   "cover": "guild-launch-sp-brave-attributed-limited-gacha-banner.webp"
  },
  {
@@ -655,6 +708,7 @@
   "end": "2026-11-09",
   "dateSource": "Confirmed",
   "units": [],
+  "companions": [],
   "cover": "guild-launch-sp-technique-limited-gacha-banner.webp"
  }
 ]

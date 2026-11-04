@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pennant from '../../components/Pennant.astro';
+import { companions, COMPANION_TYPES, raritiesIn, url, initials } from '../../lib/data';
+
+const types: Record<string, string> = { Spirit: 'Celestial Spirits', Exceed: 'Exceeds', Dragon: 'Dragons' };
+const groups = [
+  ...COMPANION_TYPES.map((type) => ({ title: types[type], entries: companions.filter((c) => c.type === type) })),
+  { title: 'Other companions', entries: companions.filter((c) => !COMPANION_TYPES.some((type) => c.type === type)) },
+].filter((group) => group.entries.length);
+const rarities = raritiesIn(companions);
+---
+<Base title="Companions" section="companions" description="Spirits, Exceeds and Dragons in FAIRY TAIL Wizard Chronicle.">
+  <div class="wrap">
+    <div class="head"><Pennant width={34} star /><h1>Companions</h1></div>
+    <p class="muted availability">As of Nov 2026, companions can appear in companion event gachas, roulette and the medal shop.</p>
+
+    {rarities.length > 0 && (
+      <div class="panel filters" role="group" aria-label="Rarity">
+        <span>Rarity</span>
+        {['', ...rarities].map((r) => <button type="button" class="pill" data-companion-filter={r} aria-pressed={r === ''}>{r || 'All'}</button>)}
+      </div>
+    )}
+
+    {groups.map(({ title, entries }) => (
+      <section data-companion-group>
+        <div class="section-title"><Pennant /><h2>{title}</h2></div>
+        <ul class="cards">
+          {entries.map((c) => (
+            <li data-companion-rarity={c.rarity ?? ''}>
+              <a class="card" href={url(`companions/${c.id}/`)}>
+                <span class="art">
+                  {c.image ? <img src={url(`companions/${c.image}`)} alt="" width="320" height="320" loading="lazy" /> : <span aria-hidden="true" class="heading placeholder">{initials(c.name)}</span>}
+                  {c.rarity && <span class={`rarity rarity-${c.rarity}`}>{c.rarity}</span>}
+                </span>
+                <span class="body">
+                  <span class="heading name">{c.name}</span>
+                  {c.skillName && <span class="muted">{c.skillName}</span>}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+    {companions.length === 0 && <p class="muted">Companion entries are in preparation.</p>}
+  </div>
+</Base>
+
+<script>
+  const pills = [...document.querySelectorAll<HTMLButtonElement>('[data-companion-filter]')];
+  const groups = [...document.querySelectorAll<HTMLElement>('[data-companion-group]')];
+  function apply(rarity: string) {
+    for (const group of groups) {
+      const cards = [...group.querySelectorAll<HTMLLIElement>('[data-companion-rarity]')];
+      for (const card of cards) card.hidden = !!rarity && card.dataset.companionRarity !== rarity;
+      group.hidden = cards.every((card) => card.hidden);
+    }
+    for (const pill of pills) pill.setAttribute('aria-pressed', String(pill.dataset.companionFilter === rarity));
+  }
+  const selected = new URLSearchParams(location.search).get('rarity');
+  apply(pills.some((pill) => pill.dataset.companionFilter === selected) ? selected! : '');
+  for (const pill of pills) pill.addEventListener('click', () => {
+    const rarity = pill.dataset.companionFilter ?? '';
+    const next = new URL(location.href);
+    if (rarity) next.searchParams.set('rarity', rarity); else next.searchParams.delete('rarity');
+    history.replaceState(null, '', next);
+    apply(rarity);
+  });
+</script>
+
+<style>
+  .head { display: flex; align-items: center; gap: 16px; }
+  h1 { font-size: 42px; line-height: 1; }
+  .availability { margin: 12px 0 22px; }
+  .filters { padding: 14px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; box-shadow: 0 3px 0 var(--brass-dark); }
+  .filters > span { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); }
+  .pill { min-height: 38px; padding: 0 14px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+  .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
+  .cards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+  .card { display: flex; flex-direction: column; height: 100%; border: 2px solid var(--line); border-top: 5px solid var(--brass); border-radius: 16px; overflow: hidden; background: #fff; color: var(--ink); box-shadow: 0 3px 0 var(--brass); }
+  .card:hover { text-decoration: none; transform: translateY(-2px); }
+  .art { position: relative; aspect-ratio: 1; display: grid; place-items: center; background: #F3E8D3; }
+  .art img { width: 100%; height: 100%; object-fit: contain; }
+  .placeholder { color: var(--timber); font-size: 42px; }
+  .rarity { position: absolute; left: 10px; top: 10px; }
+  .body { padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+  .name { font-size: 18px; line-height: 1.2; }
+</style>

@@ -10,11 +10,13 @@ banner) to <public_dir>/event-banners/<image name>.webp (banners sharing one ima
 import collections
 import difflib
 import json
+import math
 import os
 import re
 import sys
 import unicodedata
 import urllib.parse
+from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import links, load, norm_title, resolve, title_index  # noqa: E402
@@ -24,6 +26,7 @@ PERSONAL = {"ownedUnit", "currentStars", "lacrimasEquipped", "equippedBy",
             "primaryTeamContribution", "secondaryTeamContribution", "teamSynergy"}
 
 KINDS = ["Normal", "Special", "Ultimate"]
+MAX_COMPANION_STARS = 11
 
 issues = collections.defaultdict(list)  # category -> [message]
 
@@ -140,6 +143,15 @@ def iso_day(v):
     return str(v)[:10]
 
 
+def companion_number(fields, prop, where, required=True):
+    value = fields.get(prop)
+    if type(value) in (int, float) and math.isfinite(value):
+        return value
+    if required or value is not None:
+        issue("Missing or invalid companion values", f"{where}: {prop} needs a number")
+    return None
+
+
 def main(root, out, slugs_path=None, public_dir=None):
     os.makedirs(out, exist_ok=True)
     data = load(root)
@@ -147,6 +159,8 @@ def main(root, out, slugs_path=None, public_dir=None):
                                                          "Lacrimas", "LacrimaEffectApplications", "Banners",
                                                          "BannerArts", "SkillIcons"])
     idx = {k: title_index(v) for k, v in data.items()}
+    companions_src = data["Companions"]
+    companion_apps_src = data["CompanionEffectApplications"]
 
     # address table: reuse existing slugs, mint new ones, flag collisions
     slugs = {}
@@ -155,7 +169,9 @@ def main(root, out, slugs_path=None, public_dir=None):
     # forget addresses of records that no longer exist (renamed or deleted), so their old
     # addresses don't force '-2' suffixes on the records that replace them
     live = {"unit": set(C), "effect": set(E), "lacrima": set(L), "banner": set(B),
-            "application": {f"unit:{s}" for s in EA} | {f"lacrima:{s}" for s in LEA}}
+            "companion": set(companions_src),
+            "application": {f"unit:{s}" for s in EA} | {f"lacrima:{s}" for s in LEA}
+                           | {f"companion:{s}" for s in companion_apps_src}}
     for kind, keys in live.items():
         gone = [k for k in slugs.get(kind, {}) if k not in keys]
         for k in gone:
@@ -194,7 +210,8 @@ def main(root, out, slugs_path=None, public_dir=None):
         for stems in groups.values():
             if len(stems) < 2:
                 continue
-            bodies = [{k: v for k, v in recs[s]["fm"].items() if k not in owner_keys} for s in stems]
+            ignored = owner_keys | {"companions"} if folder == "CompanionEffectApplications" else owner_keys
+            bodies = [{k: v for k, v in recs[s]["fm"].items() if k not in ignored} for s in stems]
             titles = " / ".join(f"'{recs[s]['fm'].get('title')}'" for s in stems)
             if all(b == bodies[0] for b in bodies):
                 issue("Same record entered twice (merge into one shared record)", f"{folder}: {titles}")
@@ -242,7 +259,7 @@ def main(root, out, slugs_path=None, public_dir=None):
         })
     known_fams = {e["family"] for e in effects if e["family"]}
 
-    # ---------- applications (unit and lacrima, one shape)
+    # ---------- applications
     applications = []
     app_slug = {}
 
@@ -252,10 +269,24 @@ def main(root, out, slugs_path=None, public_dir=None):
         sl = slug_for("application", f"{source}:{stem}", t)
         app_slug[(source, stem)] = sl
         eff = ref(f.get("effect"), "Effects", where, "effect", required=True)
-        ch = f.get("chance")
+        ch = companion_number(f, "chance", where, required=False) if source == "companion" else f.get("chance")
         if ch is not None and not (0 < float(ch) <= 1):
             issue("Values out of range", f"{where}: chance {ch} is not between 0 and 1")
         cond = f.get("condition", f.get("conditions"))
+        app = {
+            "id": sl, "source": source, "effect": eff_slug.get(eff) if eff else None,
+            "type": clean(f.get("applicationType")), "target": clean(f.get("target")),
+            "trigger": parse_trigger(f.get("activationInterval"), where), "chance": ch,
+        }
+        if source == "companion":
+            duration_props = [f"durationSecondsLv{lv}" for lv in (1, 2, 3)]
+            has_duration = any(f.get(prop) is not None for prop in duration_props)
+            return {
+                **app, "durationByLevel": [companion_number(f, prop, where, required=has_duration)
+                                           for prop in duration_props],
+                "condition": clean(cond), "gameText": clean(f.get("gameText")),
+            }
+
         req = None
         if f.get("requiredEffectFamilies"):
             req = {"families": families(f.get("requiredEffectFamilies"), known_fams, where),
@@ -267,23 +298,20 @@ def main(root, out, slugs_path=None, public_dir=None):
         if f.get("scalingAttribute"):
             scaling = {k: f.get(k) for k in ["scalingAttribute", "increasePerUnit", "increaseValueUnit",
                                               "scalingBasis", "maximumNumberOfIncreases", "maximumResult"]}
-        applications.append({
-            "id": sl, "source": source, "effect": eff_slug.get(eff) if eff else None,
-            "type": clean(f.get("applicationType")), "target": clean(f.get("target")),
-            "trigger": parse_trigger(f.get("activationInterval"), where),
-            "chance": ch, "durationSeconds": f.get("durationSeconds"),
+        return {
+            **app, "durationSeconds": f.get("durationSeconds"),
             "valueOverride": ({"amount": f.get("effectValue"), "unit": f.get("valueUnit")}
                               if f.get("effectValue") is not None else None),
             "condition": clean(cond), "requires": req, "scaling": scaling,
             "gameText": clean(f.get("gameText")),
-        })
+        }
 
     for stem, r in sorted(EA.items()):
-        application(stem, r["fm"], "unit", "EffectApplication")
+        applications.append(application(stem, r["fm"], "unit", "EffectApplication"))
         if not r["fm"].get("character"):
             issue("Orphans", f"EffectApplication '{r['fm'].get('title')}' is linked to no character")
     for stem, r in sorted(LEA.items()):
-        application(stem, r["fm"], "lacrima", "LacrimaEffectApplication")
+        applications.append(application(stem, r["fm"], "lacrima", "LacrimaEffectApplication"))
 
     # ---------- skills
     skill_by_title = {}
@@ -339,6 +367,74 @@ def main(root, out, slugs_path=None, public_dir=None):
     ban_slug = {}
     for stem, r in sorted(B.items()):
         ban_slug[stem] = slug_for("banner", stem, clean(r["fm"].get("title")) or stem)
+
+    # ---------- companions (separate applications, shared effect definitions)
+    companion_slug = {}
+    companions = []
+    companion_images = {}
+    apps_by_companion = collections.defaultdict(dict)
+    companion_apps = {}
+    for stem, r in sorted(companion_apps_src.items()):
+        f = r["fm"]
+        where = f"CompanionEffectApplication '{clean(f.get('title')) or stem}'"
+        app = application(stem, f, "companion", "CompanionEffectApplication")
+        companion_apps[stem] = app
+        for owner in ref(f.get("companions"), "Companions", where, "companions", many=True):
+            apps_by_companion[owner][stem] = app
+
+    for stem, r in sorted(companions_src.items()):
+        f = r["fm"]
+        name = clean(f.get("title")) or stem
+        where = f"Companion '{name}'"
+        slug = slug_for("companion", stem, name)
+        companion_slug[stem] = slug
+        apps = apps_by_companion[stem]
+        for app_stem in ref(f.get("companionEffectApplications"), "CompanionEffectApplications", where,
+                            "companionEffectApplications", many=True):
+            apps[app_stem] = companion_apps[app_stem]
+        if not any(a["effect"] for a in apps.values()):
+            issue("Missing required values", f"{where}: no companion effect application with a resolved effect")
+
+        kind, rarity, stat, skill = (clean(f.get(k)) for k in ("companionType", "rarity", "ownedStat", "skillName"))
+        for prop, value in (("companionType", kind), ("rarity", rarity), ("ownedStat", stat), ("skillName", skill)):
+            if not value:
+                issue("Missing required values", f"{where}: {prop} is empty")
+        start = companion_number(f, "ownedStart", where)
+        step = companion_number(f, "ownedStep", where)
+        # Flag outliers for review while the known range is based on one companion.
+        if start is not None and step is not None and (start < 0 or step < 0 or start + step * MAX_COMPANION_STARS > 10_000):
+            issue("Values out of range", f"{where}: implausible Owned Effect progression ({start}% + {step}% per star)")
+        thresholds = clean(f.get("skillLevelFromStars"))
+        levels = []
+        if thresholds is None:
+            issue("Missing required values", f"{where}: skillLevelFromStars is empty")
+        elif re.fullmatch(r"0\s*,\s*[1-9]\d?\s*,\s*[1-9]\d?", str(thresholds)):
+            levels = [int(n) for n in thresholds.split(",")]
+        if thresholds is not None and not (levels and 0 < levels[1] < levels[2] <= MAX_COMPANION_STARS):
+            issue("Values out of range", f"{where}: skillLevelFromStars must start at 0 and increase up to 11")
+            levels = []
+
+        via = clean(f.get("introducedVia"))
+        day = iso_day(f.get("introducedOn"))
+        if day:
+            try:
+                day = date.fromisoformat(day).isoformat()
+            except ValueError:
+                issue("Missing or invalid companion values", f"{where}: introducedOn needs a date")
+                day = None
+        elif via:
+            issue("Missing required values", f"{where}: introducedVia is set but introducedOn is empty")
+        banner = ref(f.get("introducedBanner"), "Banners", where, "introducedBanner")
+        image = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
+        if image:
+            companion_images[slug] = urllib.parse.unquote(image.group(1))
+        companions.append({
+            "id": slug, "name": name, "type": kind, "rarity": rarity, "image": None,
+            "introducedOn": day, "introducedVia": via, "introducedBanner": ban_slug.get(banner),
+            "skillName": skill, "skillLevelFromStars": levels,
+            "ownedStat": stat, "ownedStart": start, "ownedStep": step,
+            "applications": [app["id"] for app in apps.values()],
+        })
 
     # banner art: each BannerArt names one unit (bannerUnit) and one image
     art_by_unit = collections.defaultdict(list)  # character stem -> [(art stem, image file)]
@@ -458,6 +554,7 @@ def main(root, out, slugs_path=None, public_dir=None):
     # ---------- banners
     banners = []
     debut_of = {u["id"]: u["debutBanner"] for u in units}
+    introduction_of = {c["id"]: c["introducedBanner"] for c in companions}
     for stem, r in sorted(B.items()):
         f = r["fm"]
         t = clean(f.get("title")) or stem
@@ -467,6 +564,11 @@ def main(root, out, slugs_path=None, public_dir=None):
         for uid in ids:
             if debut_of.get(uid) != ban_slug[stem]:
                 issue("Debut banners", f"{where} lists '{uid}', whose Debut Banner is '{debut_of.get(uid)}'")
+        companion_ids = list(dict.fromkeys(companion_slug[c] for c in
+                             ref(f.get("companions"), "Companions", where, "companions", many=True)))
+        for cid in companion_ids:
+            if introduction_of[cid] != ban_slug[stem]:
+                issue("Companion banners", f"{where} lists '{cid}', whose introducedBanner is '{introduction_of[cid]}'")
         start, end = iso_day(f.get("startDate")), iso_day(f.get("endDate"))
         source = clean(f.get("dateSource"))
         if source and not start and not end:
@@ -479,10 +581,16 @@ def main(root, out, slugs_path=None, public_dir=None):
             issue("Banner covers", f"{where}: no cover image (event banner)")
         banners.append({"id": ban_slug[stem], "name": t, "type": clean(f.get("bannerType")),
                         "start": start, "end": end, "dateSource": source, "units": ids,
+                        "companions": companion_ids,
                         "cover": (re.sub(r"[^a-z0-9]+", "-", os.path.splitext(cover_src)[0].lower()).strip("-") + ".webp")
                                  if cover_src else None,
                         "_coverSrc": cover_src})
     banners.sort(key=lambda b: (b["start"] or "9999", b["name"]))
+    companions_on_banner = {b["id"]: set(b["companions"]) for b in banners}
+    for c in companions:
+        banner = c["introducedBanner"]
+        if banner and c["id"] not in companions_on_banner[banner]:
+            issue("Companion banners", f"Companion '{c['name']}': introducedBanner '{banner}' does not list it")
 
     # banner art images -> public/banner-art/<unit id>.webp
     art_files = {u["id"]: u.pop("_artFile") for u in units}
@@ -569,6 +677,31 @@ def main(root, out, slugs_path=None, public_dir=None):
             im.save(out_p, "WEBP", quality=80, method=6)
             issue("Portraits added (new wizards; check they look right)", u["id"])
 
+        dest = os.path.join(public_dir, "companions")
+        os.makedirs(dest, exist_ok=True)
+        for c in companions:
+            fn = companion_images.get(c["id"])
+            if not fn:
+                continue
+            src = os.path.realpath(os.path.join(media, fn))
+            if os.path.dirname(src) != os.path.realpath(media) or not os.path.isfile(src):
+                issue("Companion images", f"'{c['name']}': cover image '{fn}' is not in the export media folder")
+                continue
+            filename = f"{c['id']}.webp"
+            try:
+                with Image.open(src) as original:
+                    im = original.convert("RGBA")
+            except OSError:
+                issue("Companion images", f"'{c['name']}': could not read cover image '{fn}'")
+                continue
+            im.thumbnail((320, 320), Image.LANCZOS)
+            im.save(os.path.join(dest, filename), "WEBP", quality=80, method=6)
+            c["image"] = filename
+        wanted = {c["image"] for c in companions if c["image"]}
+        for old in os.scandir(dest):
+            if old.is_file() and old.name.endswith(".webp") and old.name not in wanted:
+                os.remove(old.path)
+
     # ---------- vocabulary checks
     near_duplicates([u["identity"] for u in units], "identity")
     near_duplicates([e["name"] for e in effects], "Effect title")
@@ -587,18 +720,14 @@ def main(root, out, slugs_path=None, public_dir=None):
         b.pop("_coverSrc", None)
     for u in units:
         u.pop("_cardSrc", None)
-    payload = {"effects": effects, "applications": applications, "units": units, "lacrimas": lacrimas,
-               "banners": banners}
-    for k, v in payload.items():
-        with open(os.path.join(out, f"{k}.json"), "w", encoding="utf-8") as fh:
-            json.dump(v, fh, ensure_ascii=False, indent=1)
-    with open(os.path.join(out, "slugs.json"), "w", encoding="utf-8") as fh:
-        json.dump(slugs, fh, ensure_ascii=False, indent=1, sort_keys=True)
+    payload = {"effects": effects, "applications": applications + list(companion_apps.values()),
+               "units": units, "lacrimas": lacrimas, "banners": banners, "companions": companions}
 
     # guard: nothing personal leaked
     blob = json.dumps(payload, ensure_ascii=False)
     leaked = [k for k in PERSONAL if f'"{k}"' in blob]
-    assert not leaked, f"personal fields leaked: {leaked}"
+    if leaked:
+        raise AssertionError(f"personal fields leaked: {leaked}")
     # guard: no sentence from a Character page body (personal strategy notes) reached the output
     for stem, r in C.items():
         for line in (r.get("_private_body") or "").splitlines():
@@ -606,12 +735,19 @@ def main(root, out, slugs_path=None, public_dir=None):
             if len(line) >= 40 and line in blob:
                 raise AssertionError(f"text from Character page '{stem}' leaked into the output: {line[:60]}…")
 
+    for k, v in payload.items():
+        with open(os.path.join(out, f"{k}.json"), "w", encoding="utf-8") as fh:
+            json.dump(v, fh, ensure_ascii=False, indent=1)
+    with open(os.path.join(out, "slugs.json"), "w", encoding="utf-8") as fh:
+        json.dump(slugs, fh, ensure_ascii=False, indent=1, sort_keys=True)
+
     with open(os.path.join(out, "validation-report.md"), "w", encoding="utf-8") as fh:
         total = sum(len(v) for v in issues.values())
         fh.write("# Validation report\n\n")
         fh.write(f"{len(units)} units, {len(lacrimas)} lacrimas, {len(effects)} effects, "
                  f"{len(applications)} effect applications, {len(banners)} banners, "
-                 f"{sum(1 for u in units if u['bannerArt'])} banner arts. "
+                 f"{sum(1 for u in units if u['bannerArt'])} banner arts, "
+                 f"{len(companions)} companions, {len(companion_apps)} companion effect applications. "
                  f"{total} issues in {len(issues)} categories.\n\n")
         for cat in sorted(issues, key=lambda c: -len(issues[c])):
             fh.write(f"## {cat} ({len(issues[cat])})\n\n")
