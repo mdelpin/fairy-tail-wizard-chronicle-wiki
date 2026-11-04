@@ -400,9 +400,16 @@ def main(root, out, slugs_path=None, public_dir=None):
                   + ", ".join(debut))
         arts = art_by_unit.get(stem, [])
         collection = clean(f.get("collection"))
+        # which stat this wizard's Collection screen bonus raises (ATK, HP or DEF); the % per step follows rarity
+        bonus_stat = clean(f.get("collectionBonusStat"))
+        if bonus_stat not in ("ATK", "HP", "DEF"):
+            issue("Collection bonus", f"Character '{t}': collection bonus stat is "
+                  + (f"'{bonus_stat}' (expected ATK, HP or DEF)" if bonus_stat else "empty"))
+            bonus_stat = None
         units.append({
             "id": unit_slug[stem], "name": t, "identity": clean(f.get("identity")),
             "collection": collection, "rarity": clean(f.get("rarity")),
+            "collectionBonusStat": bonus_stat,
             # the game spreads New Forms over several "New Form" collections when one fills up
             "newForm": bool(collection and collection.lower().startswith("new form")),
             "debutBanner": ban_slug.get(debut[0]) if debut else None,
