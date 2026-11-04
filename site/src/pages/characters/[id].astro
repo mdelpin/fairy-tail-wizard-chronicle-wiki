@@ -38,6 +38,8 @@ const sameIdentity = units.filter((u) => u.identity && u.identity === unit.ident
 const effectLabel = (e: Effect | undefined) => (e ? baseName(e) : '—');
 const debut = unit.debutBanner ? bannerById.get(unit.debutBanner) : undefined;
 const debutDates = unitDates(unit, debut);
+// The in-game collection goes with "first available", but not when it only repeats the banner or the New Form note
+const showCollection = !!unit.collection && !unit.newForm && unit.collection !== debut?.name;
 const rIcon = roleIcon(unit.role);
 const normal = skills.find((x) => x.kind === 'Normal');
 const nIcon = normal ? skillIcon(unit, normal) : null;
@@ -67,7 +69,6 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
         </dialog>
       )}
       <div class="info">
-        <span class="muted">{[unit.identity, unit.collection].filter(Boolean).join(' · ')}</span>
         <h1>{unit.name}</h1>
         <div class="badges">
           <span class="badge"><Kanji attr={unit.attribute} size={30} /><span style={`color:${a.text};font-weight:600`}>{unit.attribute}</span></span>
@@ -147,7 +148,7 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
       </div>
 
       <aside class="side">
-        {(debut || unit.newForm || unit.availableFrom) && (
+        {(debut || unit.newForm || unit.availableFrom || unit.collection) && (
           <div class="debut" data-pagefind-ignore>
             {unit.bannerArt && <img class="art" src={url(`banner-art/${unit.bannerArt}`)} alt={`${unit.name} banner art`} width="640" height="240" loading="lazy" />}
             <div class="debut-body">
@@ -160,6 +161,7 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
                 <span class="lbl">{unit.availableFrom === LAUNCH_DAY ? 'Available from launch' : 'First available'}</span>
                 <span class="when-big">{dayText(unit.availableFrom)}</span>
               </>}
+              {showCollection && <span class="coll"><span class="lbl">In-game collection</span> {unit.collection}</span>}
               {unit.newForm && <p class="nf"><strong>New Form</strong> · Pickup (paid gems) or MadoFes only</p>}
             </div>
           </div>
@@ -244,6 +246,8 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
   .debut { border-radius: 18px; overflow: hidden; background: #fff; border: 2px solid var(--line); box-shadow: 0 3px 0 var(--brass); }
   .debut .art { width: 100%; height: auto; aspect-ratio: 640 / 240; object-fit: cover; border-bottom: 2px solid var(--brass); }
   .debut-body { padding: 16px 20px 18px; display: flex; flex-direction: column; gap: 6px; }
+  .debut-body .coll { font-size: 14px; color: var(--ink); }
+  .debut-body .coll .lbl { display: block; margin-bottom: 2px; }
   .debut-body .heading { font-size: 19px; color: var(--ink); }
   .debut-body .heading:hover { color: var(--crimson); }
   .when { font: 500 13px var(--mono); color: var(--muted); cursor: help; }
