@@ -346,6 +346,248 @@
   ]
  },
  {
+  "id": "ajeel",
+  "name": "Ajeel",
+  "identity": "Ajeel",
+  "collection": "Spriggan 12",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Ranged",
+  "portrait": "Ajeel.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Sand World",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ngrant yourself for 3 sec\n[High] Evasion Up.",
+     "Lv2": "On critical hit,\ngrant yourself for 4 sec\n[High] Evasion Up.",
+     "Lv3": "On critical hit,\ngrant yourself for 5 sec\n[High] Evasion Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Self",
+      "effect": "Evasion Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-evasion-increase-self-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Sand Sword (Ramru Seif)",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 250% of ATK to enemies in the target area.\nAfter the attack hits, there is a 30% chance to inflict on each target for 3 sec\n[High] Accuracy Decrease.",
+     "Lv2": "Every 10 sec, deal damage equal to 300% of ATK to enemies in the target area.\nAfter the attack hits, there is a 30% chance to inflict on each target for 4 sec\n[High] Accuracy Decrease.",
+     "Lv3": "Every 10 sec, deal damage equal to 350% of ATK to enemies in the target area.\nAfter the attack hits, there is a 30% chance to inflict on each target for 5 sec\n[High] Accuracy Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Enemies in Target Area",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "350% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Each Target Hit",
+      "effect": "Accuracy Decrease",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 27,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-enemies-in-target-area-every-10-sec-350-of-own-atk",
+     "high-accuracy-decrease-each-target-hit-every-10-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "alzack-connell",
+  "name": "Alzack Connell",
+  "identity": "Alzack Conell",
+  "collection": "Fairy Tail IV",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Ranged",
+  "portrait": "Alzack Connell.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Mudshot",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a critical hit occurs,\ninflicts on the target for 3 sec\n[Mid] Accuracy Decrease.",
+     "Lv2": "When a critical hit occurs,\ninflicts on the target for 4 sec\n[Mid] Accuracy Decrease.",
+     "Lv3": "When a critical hit occurs,\ninflicts on the target for 5 sec\n[Mid] Accuracy Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Accuracy Decrease",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-accuracy-decrease-single-enemy-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Tornado Shot",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Critical Resistance Decrease.",
+     "Lv2": "Every 9 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 6 sec\n[Mid] Critical Resistance Decrease.",
+     "Lv3": "Every 9 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 7 sec\n[Mid] Critical Resistance Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 9 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Resistance Decrease",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 33,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-9-sec-400-of-own-atk",
+     "mid-critical-resistance-decrease-every-9-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "august",
   "name": "August",
   "identity": "August",
@@ -462,6 +704,503 @@
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-700-of-own-atk",
      "bind-each-target-hit-every-11-sec-20-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "azuma",
+  "name": "Azuma",
+  "identity": "Azuma",
+  "collection": "Grimoire Heart",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Disrupt",
+  "portrait": "Azuma.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Ruler of the universe",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 6 sec, grants all Heart allies for 3 sec\n[Mid] Critical Damage Increase.",
+     "Lv2": "Every 6 sec, grants all Heart allies for 4 sec\n[Mid] Critical Damage Increase.",
+     "Lv3": "Every 6 sec, grants all Heart allies for 5 sec\n[Mid] Critical Damage Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 6 sec",
+      "target": "All Heart Allies",
+      "effect": "Critical Damage Increase",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-critical-damage-increase-heart-allies-every-6-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Great Tree Arc",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 3 sec\nSilence.",
+     "Lv2": "Every 12 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 4 sec\nSilence.",
+     "Lv3": "Every 12 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\nSilence."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Silence",
+      "tier": null,
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 13,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-400-of-own-atk",
+     "silence-single-enemy-every-12-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bacchus-groh",
+  "name": "Bacchus Groh",
+  "identity": "Bacchus Groh",
+  "collection": "Fierce Battle at the Grand Magic Games",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Melee",
+  "portrait": "Bacchus Groh.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Drunken Hawk",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "After a normal skill hits, has a 20% chance\nto grant self for 2 sec\n[Mid] Critical Damage Increase and\n[Mid] Critical Rate Increase.",
+     "Lv2": "After a normal skill hits, has a 20% chance\nto grant self for 3 sec\n[Mid] Critical Damage Increase and\n[Mid] Critical Rate Increase.",
+     "Lv3": "After a normal skill hits, has a 20% chance\nto grant self for 4 sec\n[Mid] Critical Damage Increase and\n[Mid] Critical Rate Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Self",
+      "effect": "Critical Damage Increase",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Self",
+      "effect": "Critical Rate Increase",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-critical-damage-increase-self-20-4sec",
+     "mid-critical-rate-increase-self-20-4sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Drunken Palm: Moonlight",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] DEF Decrease.",
+     "Lv2": "Every 10 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 6 sec\n[Mid] DEF Decrease.",
+     "Lv3": "Every 10 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 7 sec\n[Mid] DEF Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "500% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "DEF Decrease",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 43,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-500-of-own-atk",
+     "mid-def-decrease-single-enemy-every-10-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bickslow",
+  "name": "Bickslow",
+  "identity": "Bickslow",
+  "collection": "Fairy Tail III",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Defense",
+  "portrait": "Bickslow.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "X-Formation",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ngrant yourself for 3 sec\n[High] Critical RES Up.",
+     "Lv2": "When a normal skill hits (20% chance),\ngrant yourself for 4 sec\n[High] Critical RES Up.",
+     "Lv3": "When a normal skill hits (20% chance),\ngrant yourself for 5 sec\n[High] Critical RES Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Self",
+      "effect": "Critical Resistance Increase",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-critical-resistance-increase-self-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Seith Magic: Dullahan Possession",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 5 sec\n[High] DEF Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 6 sec\n[High] DEF Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 7 sec\n[High] DEF Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "DEF Increase",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-550-of-own-atk",
+     "high-def-increase-all-allies-every-11-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bisca-connell",
+  "name": "Bisca Connell",
+  "identity": "Bisca Connell",
+  "collection": "Fairy Tail IV",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Ranged",
+  "portrait": "Bisca Connell.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The Cowgirl Bullet",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 6 sec, grant yourself for 3 sec\n[Mid] Critical Rate Increase.",
+     "Lv2": "Every 6 sec, grant yourself for 4 sec\n[Mid] Critical Rate Increase.",
+     "Lv3": "Every 6 sec, grant yourself for 5 sec\n[Mid] Critical Rate Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 6 sec",
+      "target": "Self",
+      "effect": "Critical Rate Increase",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-critical-rate-increase-self-every-6-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Homing Shoot",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant yourself for 5 sec\n[Mid] Accuracy Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant yourself for 6 sec\n[Mid] Accuracy Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant yourself for 7 sec\n[Mid] Accuracy Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Self",
+      "effect": "Accuracy Increase",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 43,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-400-of-own-atk",
+     "mid-accuracy-increase-self-every-11-sec-30-7-sec"
     ]
    }
   ]
@@ -1276,6 +2015,248 @@
   ]
  },
  {
+  "id": "bloodman",
+  "name": "Bloodman",
+  "identity": "Bloodman",
+  "collection": "Spriggan 12",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Defense",
+  "portrait": "Bloodman.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Body of Mist",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 7 sec, grant yourself for 3 sec\n[High] Critical RES Up.",
+     "Lv2": "Every 7 sec, grant yourself for 4 sec\n[High] Critical RES Up.",
+     "Lv3": "Every 7 sec, grant yourself for 5 sec\n[High] Critical RES Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "Self",
+      "effect": "Critical Resistance Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-critical-resistance-increase-self-every-7-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Third Seal Release",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 3 sec\n[High] ATK Decrease.",
+     "Lv2": "Every 11 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 4 sec\n[High] ATK Decrease.",
+     "Lv3": "Every 11 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[High] ATK Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "ATK Decrease",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-550-of-own-atk",
+     "high-atk-decrease-single-enemy-every-11-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bluenote-stinger",
+  "name": "Bluenote Stinger",
+  "identity": "Bluenote Stinger",
+  "collection": "Grimoire Heart",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Melee",
+  "portrait": "Bluenote Stinger.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "A tyrant who manipulates gravity",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ninflict for 3 sec on the target\n[Mid] Evasion Down.",
+     "Lv2": "When a normal skill hits (20% chance),\ninflict for 4 sec on the target\n[Mid] Evasion Down.",
+     "Lv3": "When a normal skill hits (20% chance),\ninflict for 5 sec on the target\n[Mid] Evasion Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Evasion Decrease",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-evasion-decrease-single-enemy-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Super Gravity Sphere",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Critical Damage Decrease.",
+     "Lv2": "Every 10 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 6 sec\n[Mid] Critical Damage Decrease.",
+     "Lv3": "Every 10 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 7 sec\n[Mid] Critical Damage Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "500% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Damage Decrease",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 29,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-500-of-own-atk",
+     "mid-critical-damage-decrease-single-enemy-every-10-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "brandish",
   "name": "Brandish",
   "identity": "Brandish",
@@ -1585,7 +2566,7 @@
  {
   "id": "bunny-yukino",
   "name": "Bunny Yukino",
-  "identity": "Yukino Aguria",
+  "identity": "Yukino Agria",
   "collection": "Victory Bunny",
   "rarity": "UR",
   "newForm": false,
@@ -1851,9 +2832,130 @@
   ]
  },
  {
+  "id": "cobra",
+  "name": "Cobra",
+  "identity": "Cobra (Erik)",
+  "collection": "Oracion Seis",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Melee",
+  "portrait": "Cobra.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Mind-reading hearing",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ninflict for 3 sec on the target\n[Mid] DEF Decrease.",
+     "Lv2": "When a normal skill hits (20% chance),\ninflict for 4 sec on the target\n[Mid] DEF Decrease.",
+     "Lv3": "When a normal skill hits (20% chance),\ninflict for 5 sec on the target\n[Mid] DEF Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "DEF Decrease",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-def-decrease-single-enemy-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Poison Dragon Twin Fangs",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 3 sec\n[Mid] Paralysis.",
+     "Lv2": "Every 10 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 4 sec\n[Mid] Paralysis.",
+     "Lv3": "Every 10 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Paralysis."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "450% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Paralysis",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 39,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-450-of-own-atk",
+     "mid-paralysis-single-enemy-every-10-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "contractor-of-the-twelve-gates-yukino",
   "name": "Contractor of the Twelve Gates Yukino",
-  "identity": "Yukino Aguria",
+  "identity": "Yukino Agria",
   "collection": "New Form",
   "rarity": "UR",
   "newForm": true,
@@ -2344,6 +3446,127 @@
   ]
  },
  {
+  "id": "dark-guild-underling",
+  "name": "Dark Guild Underling",
+  "identity": "Dark Guild Underling",
+  "collection": "Countless Enemies",
+  "rarity": "N",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Disrupt",
+  "portrait": "Dark Guild Underling.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 60% ATK damage to the target.",
+     "Lv2": "Deals 65% ATK damage to the target.",
+     "Lv3": "Deals 70% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "70% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-70-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Targeting vital spots",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a critical hit occurs, inflicts on the target for 3 sec [Low] Critical Resistance Decrease.",
+     "Lv2": "When a critical hit occurs, inflicts on the target for 4 sec [Low] Critical Resistance Decrease.",
+     "Lv3": "When a critical hit occurs, inflicts on the target for 5 sec [Low] Critical Resistance Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Resistance Decrease",
+      "tier": "Low",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "low-critical-resistance-decrease-single-enemy-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Curse Attack",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 200% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 3 sec [Low] Evasion Decrease.",
+     "Lv2": "Every 12 sec, deal damage equal to 250% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 4 sec [Low] Evasion Decrease.",
+     "Lv3": "Every 12 sec, deal damage equal to 300% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 5 sec [Low] Evasion Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "300% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Evasion Decrease",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 29,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-300-of-own-atk",
+     "low-evasion-decrease-single-enemy-every-12-sec-20-5-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "dark-mage-zeref",
   "name": "Dark Mage Zeref",
   "identity": "Zeref Dragneel",
@@ -2525,6 +3748,127 @@
      "top-def-decrease-each-target-hit-every-11-sec-bleed-5-sec",
      "top-evasion-decrease-each-target-hit-every-11-sec-bleed-5-sec",
      "bind-each-target-hit-every-11-sec-bleed-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "dimaria-yesta",
+  "name": "Dimaria Yesta",
+  "identity": "Dimaria Yestia",
+  "collection": "Spriggan 12",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Melee",
+  "portrait": "Dimaria Yesta.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Valkyrie's encouragement",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "After a normal skill hits, there is a 30% chance\nto grant yourself for 3 sec\n[High] Accuracy Increase.",
+     "Lv2": "After a normal skill hits, there is a 30% chance\nto grant yourself for 4 sec\n[High] Accuracy Increase.",
+     "Lv3": "After a normal skill hits, there is a 30% chance\nto grant yourself for 5 sec\n[High] Accuracy Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Self",
+      "effect": "Accuracy Increase",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-accuracy-increase-self-30-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Aegis Seal",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 5 sec\n[High] Evasion Decrease.",
+     "Lv2": "Every 10 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 6 sec\n[High] Evasion Decrease.",
+     "Lv3": "Every 10 sec, deal damage equal to 600% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 7 sec\n[High] Evasion Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "600% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Evasion Decrease",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 41,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-600-of-own-atk",
+     "high-evasion-decrease-single-enemy-every-10-sec-20-7-sec"
     ]
    }
   ]
@@ -3010,6 +4354,114 @@
   ]
  },
  {
+  "id": "elite-mage",
+  "name": "Elite Mage",
+  "identity": "Elite Mage",
+  "collection": "Countless Enemies",
+  "rarity": "N",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Heal",
+  "portrait": "Elite Mage.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 60% ATK damage to the target.",
+     "Lv2": "Deals 65% ATK damage to the target.",
+     "Lv3": "Deals 70% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "70% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-70-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Veteran skills",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec [Low] ATK Decrease.",
+     "Lv2": "After a normal skill hits, has a 20% chance to inflict on the target for 4 sec [Low] ATK Decrease.",
+     "Lv3": "After a normal skill hits, has a 20% chance to inflict on the target for 5 sec [Low] ATK Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "ATK Decrease",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "low-atk-decrease-single-enemy-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Heal Light",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, restore the HP of the ally with the lowest HP by an amount equal to 200% of your ATK.",
+     "Lv2": "Every 10 sec, restore the HP of the ally with the lowest HP by an amount equal to 250% of your ATK.",
+     "Lv3": "Every 10 sec, restore the HP of the ally with the lowest HP by an amount equal to 300% of your ATK."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Lowest HP Ally",
+      "effect": "Heal",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "300% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 18,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "heal-lowest-hp-ally-every-10-sec-300-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
   "id": "emperor-spriggan-zeref",
   "name": "Emperor Spriggan Zeref",
   "identity": "Zeref Dragneel",
@@ -3217,6 +4669,127 @@
      "blind-each-target-hit-every-8-sec-5-sec",
      "heal-block-each-target-hit-every-8-sec-5-sec",
      "remove-all-buffs-each-target-hit-every-8-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "erigor",
+  "name": "Erigor",
+  "identity": "Erigor",
+  "collection": "Dark Guild",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Melee",
+  "portrait": "Erigor.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Storm mail",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ngrant all INT-type allies for 3 sec\n[Mid] Shield.",
+     "Lv2": "On critical hit,\ngrant all INT-type allies for 4 sec\n[Mid] Shield.",
+     "Lv3": "On critical hit,\ngrant all INT-type allies for 5 sec\n[Mid] Shield."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "All INT-type Allies",
+      "effect": "Shield",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 17,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-shield-mind-allies-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Emerald Rush (Emera Param)",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Critical Defense Decrease.",
+     "Lv2": "Every 10 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 6 sec\n[Mid] Critical Defense Decrease.",
+     "Lv3": "Every 10 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 7 sec\n[Mid] Critical Defense Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "450% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Defense Decrease",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 41,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-450-of-own-atk",
+     "mid-critical-defense-decrease-single-enemy-every-10-sec-30-7-sec"
     ]
    }
   ]
@@ -3775,6 +5348,503 @@
      "top-def-increase-self-every-9-sec-7-sec",
      "top-shield-all-allies-every-9-sec-50-5-sec",
      "top-atk-increase-all-allies-50-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "erza-scarlet-sr",
+  "name": "Erza Scarlet (SR)",
+  "identity": "Erza Scarlet",
+  "collection": "Beginning of the Adventure",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Melee",
+  "portrait": "Erza Scarlet-SR.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Scarlet Sword Flash",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ninflict for 3 sec on the target\n[High] DEF Down and [High] Critical DEF Down.",
+     "Lv2": "When a normal skill hits (20% chance),\ninflict for 4 sec on the target\n[High] DEF Down and [High] Critical DEF Down.",
+     "Lv3": "When a normal skill hits (20% chance),\ninflict for 5 sec on the target\n[High] DEF Down and [High] Critical DEF Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "DEF Decrease",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Defense Decrease",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-def-decrease-single-enemy-20-5-sec",
+     "high-critical-defense-decrease-single-enemy-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Titania s Strike",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 3 sec\n[High] Bleed.",
+     "Lv2": "Every 10 sec, deal damage equal to 600% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 4 sec\n[High] Bleed.",
+     "Lv3": "Every 10 sec, deal damage equal to 650% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 5 sec\n[High] Bleed."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "650% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Bleed",
+      "tier": "High",
+      "chance": "40%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 41,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-650-of-own-atk",
+     "high-bleed-single-enemy-every-10-sec-40-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "eve",
+  "name": "Eve",
+  "identity": "Eve Tearm",
+  "collection": "Blue Pegasus",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Ranged",
+  "portrait": "Eve.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Christmas Eve",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 6 sec, inflict for 3 sec on the target [Mid] Crit Rate Down.",
+     "Lv2": "Every 6 sec, inflict for 4 sec on the target [Mid] Crit Rate Down.",
+     "Lv3": "Every 6 sec, inflict for 5 sec on the target [Mid] Crit Rate Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 6 sec",
+      "target": "Single Enemy",
+      "effect": "Critical Rate Decrease",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-critical-rate-decrease-single-enemy-every-6-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "White Fang",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 300% of ATK to the target. After the attack hits, there is a 30% chance to inflict on the target for 3 sec [Mid] Freeze.",
+     "Lv2": "Every 11 sec, deal damage equal to 350% of ATK to the target. After the attack hits, there is a 30% chance to inflict on the target for 4 sec [Mid] Freeze.",
+     "Lv3": "Every 11 sec, deal damage equal to 400% of ATK to the target. After the attack hits, there is a 30% chance to inflict on the target for 5 sec [Mid] Freeze."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Freeze",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 23,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-400-of-own-atk",
+     "mid-freeze-single-enemy-every-11-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "evergreen",
+  "name": "Evergreen",
+  "identity": "Evergreen",
+  "collection": "Fairy Tail III",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Disrupt",
+  "portrait": "Evergreen.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The only female member of the Thunder God Clan",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (30% chance),\ninflict for 3 sec on the target\n[High] Critical DMG Down.",
+     "Lv2": "When a normal skill hits (30% chance),\ninflict for 4 sec on the target\n[High] Critical DMG Down.",
+     "Lv3": "When a normal skill hits (30% chance),\ninflict for 5 sec on the target\n[High] Critical DMG Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Damage Decrease",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-critical-damage-decrease-single-enemy-30-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Stone Eyes",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 50% chance to inflict on the target for 2 sec\nBind.",
+     "Lv2": "Every 12 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 50% chance to inflict on the target for 3 sec\nBind.",
+     "Lv3": "Every 12 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 50% chance to inflict on the target for 4 sec\nBind."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Bind",
+      "tier": null,
+      "chance": "50%",
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 11,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-550-of-own-atk",
+     "bind-single-enemy-every-12-sec-50-4-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ezail",
+  "name": "Ezail",
+  "identity": "Ezel",
+  "collection": "Tartaros",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Melee",
+  "portrait": "Ezail.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Ezel of the Dojikiri",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ninflict for 3 sec on the target\n[High] Critical DEF Down.",
+     "Lv2": "On critical hit,\ninflict for 4 sec on the target\n[High] Critical DEF Down.",
+     "Lv3": "On critical hit,\ninflict for 5 sec on the target\n[High] Critical DEF Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Defense Decrease",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-critical-defense-decrease-single-enemy-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Onimaru",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 20% chance to grant yourself for 5 sec\n[High] Critical Rate Increase.",
+     "Lv2": "Every 10 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 20% chance to grant yourself for 6 sec\n[High] Critical Rate Increase.",
+     "Lv3": "Every 10 sec, deal damage equal to 600% of ATK to the target.\nAfter the attack hits, there is a 20% chance to grant yourself for 7 sec\n[High] Critical Rate Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "600% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Self",
+      "effect": "Critical Rate Increase",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 41,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-600-of-own-atk",
+     "high-critical-rate-increase-self-every-10-sec-20-7-sec"
     ]
    }
   ]
@@ -4659,6 +6729,140 @@
   ]
  },
  {
+  "id": "flare-corona",
+  "name": "Flare Corona",
+  "identity": "Flare Corona",
+  "collection": "Fierce Battle at the Grand Magic Games",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Melee",
+  "portrait": "Flare Corona.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Hair-dripping firefly",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ninflict for 2 sec\n[Mid] Critical Resistance Decrease and\n[Mid] Critical Defense Decrease on the target.",
+     "Lv2": "On critical hit,\ninflict for 3 sec\n[Mid] Critical Resistance Decrease and\n[Mid] Critical Defense Decrease on the target.",
+     "Lv3": "On critical hit,\ninflict for 4 sec\n[Mid] Critical Resistance Decrease and\n[Mid] Critical Defense Decrease on the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Resistance Decrease",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Defense Decrease",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-critical-resistance-decrease-single-enemy-critical-hit-4-sec",
+     "mid-critical-defense-decrease-single-enemy-critical-hit-4-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Wolf Fang of Drifting Hair",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 3 sec\n[Mid] Bleed.",
+     "Lv2": "Every 10 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 4 sec\n[Mid] Bleed.",
+     "Lv3": "Every 10 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Bleed."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "450% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Bleed",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 41,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-450-of-own-atk",
+     "mid-bleed-single-enemy-every-10-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "freed-justine",
   "name": "Freed Justine",
   "identity": "Freed Justine",
@@ -5074,6 +7278,114 @@
   ]
  },
  {
+  "id": "god-serena",
+  "name": "God Serena",
+  "identity": "God Serena",
+  "collection": "Spriggan 12",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Ranged",
+  "portrait": "God Serena.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The prestige of being ranked number one",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ninflict for 3 sec on the target\n[High] Evasion Down.",
+     "Lv2": "On critical hit,\ninflict for 4 sec on the target\n[High] Evasion Down.",
+     "Lv3": "On critical hit,\ninflict for 5 sec on the target\n[High] Evasion Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Evasion Decrease",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-evasion-decrease-single-enemy-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Purgatory Dragon Hellfire",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 9 sec, deal damage equal to 350% of ATK to enemies in the target area.",
+     "Lv2": "Every 9 sec, deal damage equal to 400% of ATK to enemies in the target area.",
+     "Lv3": "Every 9 sec, deal damage equal to 450% of ATK to enemies in the target area."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 9 sec",
+      "target": "Enemies in Target Area",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "450% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 21,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-enemies-in-target-area-every-9-sec-450-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
   "id": "gray-ice-devil-slayer-mage",
   "name": "Gray -Ice Devil Slayer Mage-",
   "identity": "Gray Fullbuster",
@@ -5342,6 +7654,140 @@
   ]
  },
  {
+  "id": "gray-fullbuster-sr",
+  "name": "Gray Fullbuster (SR)",
+  "identity": "Gray Fullbuster",
+  "collection": "Beginning of the Adventure",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Ranged",
+  "portrait": "Gray Fullbuster-SR.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Ice Makeup \"Prison\"",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ninflict for 3 sec on the target\n[High] Evasion Down and [High] Critical Rate Down.",
+     "Lv2": "When a normal skill hits (20% chance),\ninflict for 4 sec on the target\n[High] Evasion Down and [High] Critical Rate Down.",
+     "Lv3": "When a normal skill hits (20% chance),\ninflict for 5 sec on the target\n[High] Evasion Down and [High] Critical Rate Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Evasion Decrease",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Rate Decrease",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-evasion-decrease-single-enemy-20-5-sec",
+     "high-critical-rate-decrease-single-enemy-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Ice-Make: Charging Lance",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 3 sec\n[High] Freeze.",
+     "Lv2": "Every 10 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 4 sec\n[High] Freeze.",
+     "Lv3": "Every 10 sec, deal damage equal to 600% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 5 sec\n[High] Freeze."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "600% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Freeze",
+      "tier": "High",
+      "chance": "40%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 23,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-600-of-own-atk",
+     "high-freeze-single-enemy-every-10-sec-40-5-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "hades",
   "name": "Hades",
   "identity": "Hades",
@@ -5458,6 +7904,127 @@
     "notes": null,
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-800-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "hibiki",
+  "name": "Hibiki",
+  "identity": "Hibiki Lates",
+  "collection": "Blue Pegasus",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Heal",
+  "portrait": "Hibiki.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Protect",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 7 sec, grant all INT-type allies for 3 sec\n[High] DEF Up.",
+     "Lv2": "Every 7 sec, grant all INT-type allies for 4 sec\n[High] DEF Up.",
+     "Lv3": "Every 7 sec, grant all INT-type allies for 5 sec\n[High] DEF Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "Mind Allies",
+      "effect": "DEF Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-def-increase-mind-allies-every-7-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Archive",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, heal the ally with the lowest HP for an amount equal to\n400% of your ATK.\nThen grant that ally for 3 sec\n[High] ATK Increase.",
+     "Lv2": "Every 10 sec, heal the ally with the lowest HP for an amount equal to\n450% of your ATK.\nThen grant that ally for 4 sec\n[High] ATK Increase.",
+     "Lv3": "Every 10 sec, heal the ally with the lowest HP for an amount equal to\n500% of your ATK.\nThen grant that ally for 5 sec\n[High] ATK Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Lowest HP Ally",
+      "effect": "Heal",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "500% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Lowest HP Ally",
+      "effect": "ATK Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "Granted after healing to the same ally."
+     }
+    ],
+    "icon": 18,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "heal-lowest-hp-ally-every-10-sec-500-of-own-atk",
+     "high-atk-increase-lowest-hp-ally-every-10-sec-5-sec"
     ]
    }
   ]
@@ -5739,6 +8306,127 @@
     "applications": [
      "damage-single-enemy-every-9-sec-1100-of-own-atk",
      "top-burn-single-enemy-50-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "hoteye",
+  "name": "Hoteye",
+  "identity": "Hoteye (Richard)",
+  "collection": "Oracion Seis",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Defense",
+  "portrait": "Hoteye.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Liquid Ground",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a critical hit occurs,\ngrants all allies for 2 sec\n[Mid] Evasion Increase.",
+     "Lv2": "When a critical hit occurs,\ngrants all allies for 3 sec\n[Mid] Evasion Increase.",
+     "Lv3": "When a critical hit occurs,\ngrants all allies for 4 sec\n[Mid] Evasion Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "All Allies",
+      "effect": "Evasion Increase",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-evasion-increase-all-allies-critical-hit-4-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Love Makes the World Go Round",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 3 sec\n[Mid] DEF Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 4 sec\n[Mid] DEF Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 5 sec\n[Mid] DEF Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "DEF Increase",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-400-of-own-atk",
+     "mid-def-increase-all-allies-every-11-sec-30-5-sec"
     ]
    }
   ]
@@ -6237,6 +8925,127 @@
   ]
  },
  {
+  "id": "invel-yura",
+  "name": "Invel Yura",
+  "identity": "Invel Yura",
+  "collection": "Spriggan 12",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Ranged",
+  "portrait": "Invel Yura.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The Winter General's Order",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ninflict for 3 sec on the target\n[High] Critical RES Down.",
+     "Lv2": "On critical hit,\ninflict for 4 sec on the target\n[High] Critical RES Down.",
+     "Lv3": "On critical hit,\ninflict for 5 sec on the target\n[High] Critical RES Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Resistance Decrease",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-critical-resistance-decrease-single-enemy-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "World of Winter",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 3 sec\n[High] Freeze.",
+     "Lv2": "Every 11 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 4 sec\n[High] Freeze.",
+     "Lv3": "Every 11 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[High] Freeze."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "500% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Freeze",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 23,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-500-of-own-atk",
+     "high-freeze-single-enemy-every-11-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "irene-belserion",
   "name": "Irene Belserion",
   "identity": "Irene Belserion",
@@ -6379,6 +9188,127 @@
      "damage-all-enemies-every-9-sec-700-of-own-atk",
      "top-critical-defense-decrease-each-target-hit-every-9-sec-5-sec",
      "high-burn-each-target-hit-every-9-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jackal",
+  "name": "Jackal",
+  "identity": "Jackal",
+  "collection": "Tartaros",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Melee",
+  "portrait": "Jackal.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Landmine Spell",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 7 sec, grant yourself for 3 sec\n[High] Critical DMG Up.",
+     "Lv2": "Every 7 sec, grant yourself for 4 sec\n[High] Critical DMG Up.",
+     "Lv3": "Every 7 sec, grant yourself for 5 sec\n[High] Critical DMG Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "Self",
+      "effect": "Critical Damage Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-critical-damage-increase-self-every-7-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Explosive Spiral",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 3 sec\n[High] Burn.",
+     "Lv2": "Every 10 sec, deal damage equal to 600% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 4 sec\n[High] Burn.",
+     "Lv3": "Every 10 sec, deal damage equal to 650% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 5 sec\n[High] Burn."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "650% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Burn",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 21,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-650-of-own-atk",
+     "high-burn-single-enemy-every-10-sec-20-5-sec"
     ]
    }
   ]
@@ -6565,6 +9495,248 @@
      "top-evasion-increase-self-paralysis-5-sec",
      "top-critical-defense-increase-self-every-10-sec-paralysis-5-sec",
      "heal-block-each-target-hit-every-10-sec-paralysis-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jenny",
+  "name": "Jenny",
+  "identity": "Jenny Realight",
+  "collection": "Blue Pegasus",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Disrupt",
+  "portrait": "Jenny.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Blue Pegasus Glamorous Model",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ninflict for 2 sec on the target\n[Mid] Evasion Down and\n[Mid] Crit Rate Down.",
+     "Lv2": "When a normal skill hits (20% chance),\ninflict for 3 sec on the target\n[Mid] Evasion Down and\n[Mid] Crit Rate Down.",
+     "Lv3": "When a normal skill hits (20% chance),\ninflict for 4 sec on the target\n[Mid] Evasion Down and\n[Mid] Crit Rate Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Evasion Decrease",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Rate Decrease",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-evasion-decrease-single-enemy-20-4-sec",
+     "mid-critical-rate-decrease-single-enemy-20-4-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Machina Soul",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] DEF Decrease.",
+     "Lv2": "Every 12 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 6 sec\n[Mid] DEF Decrease.",
+     "Lv3": "Every 12 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 7 sec\n[Mid] DEF Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "DEF Decrease",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-400-of-own-atk",
+     "mid-def-decrease-single-enemy-every-12-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jose-porla",
+  "name": "Jose Porla",
+  "identity": "Jose Porla",
+  "collection": "Phantom Lord",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Ranged",
+  "portrait": "Jose Porla.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Cold-blooded ruler",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 6 sec, grants self for 3 sec\n[Mid] ATK Increase.",
+     "Lv2": "Every 6 sec, grants self for 4 sec\n[Mid] ATK Increase.",
+     "Lv3": "Every 6 sec, grants self for 5 sec\n[Mid] ATK Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 6 sec",
+      "target": "Self",
+      "effect": "ATK Increase",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-atk-increase-self-every-6-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Dead Wave",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 400% of ATK to the target.",
+     "Lv2": "Every 11 sec, deal damage equal to 450% of ATK to the target.",
+     "Lv3": "Every 11 sec, deal damage equal to 500% of ATK to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "500% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 29,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-500-of-own-atk"
     ]
    }
   ]
@@ -7210,6 +10382,127 @@
   ]
  },
  {
+  "id": "kyoka",
+  "name": "Kyoka",
+  "identity": "Kyoka",
+  "collection": "Tartaros",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Melee",
+  "portrait": "Kyoka.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Claw Armor",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ngrant yourself for 3 sec\n[High] Critical DEF Up.",
+     "Lv2": "On critical hit,\ngrant yourself for 4 sec\n[High] Critical DEF Up.",
+     "Lv3": "On critical hit,\ngrant yourself for 5 sec\n[High] Critical DEF Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Self",
+      "effect": "Critical Defense Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-critical-defense-increase-self-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Armor Crusher Claw",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 3 sec\n[High] Critical Resistance Decrease.",
+     "Lv2": "Every 10 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 4 sec\n[High] Critical Resistance Decrease.",
+     "Lv3": "Every 10 sec, deal damage equal to 600% of ATK to the target.\nAfter the attack hits, there is a 20% chance to inflict on the target for 5 sec\n[High] Critical Resistance Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "600% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Resistance Decrease",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 41,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-600-of-own-atk",
+     "high-critical-resistance-decrease-single-enemy-every-10-sec-20-5-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "larcade-dragneel",
   "name": "Larcade Dragneel",
   "identity": "Larcade Dragneel",
@@ -7772,6 +11065,114 @@
   ]
  },
  {
+  "id": "lisanna",
+  "name": "Lisanna",
+  "identity": "Lisanna Strauss",
+  "collection": "Fairy Tail IV",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Heal",
+  "portrait": "Lisanna.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "A beloved childhood friend",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ngrant all Heart-type allies for 3 sec\n[High] DEF Up.",
+     "Lv2": "On critical hit,\ngrant all Heart-type allies for 4 sec\n[High] DEF Up.",
+     "Lv3": "On critical hit,\ngrant all Heart-type allies for 5 sec\n[High] DEF Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "All Heart Allies",
+      "effect": "DEF Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-def-increase-heart-allies-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Fairy Tail s White Smile",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, heal the ally with the lowest HP for an amount equal to 400% of your ATK.",
+     "Lv2": "Every 10 sec, heal the ally with the lowest HP for an amount equal to 450% of your ATK.",
+     "Lv3": "Every 10 sec, heal the ally with the lowest HP for an amount equal to 500% of your ATK."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Ally with Lowest HP",
+      "effect": "Heal",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "500% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 18,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "heal-lowest-hp-ally-every-10-sec-500-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
   "id": "lucy-leo-form",
   "name": "Lucy -Leo Form-",
   "identity": "Lucy Heartfilia",
@@ -8226,6 +11627,127 @@
   ]
  },
  {
+  "id": "lucy-heartfilia-sr",
+  "name": "Lucy Heartfilia (SR)",
+  "identity": "Lucy Heartfilia",
+  "collection": "Beginning of the Adventure",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Heal",
+  "portrait": "Lucy Heartfilia-SR.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The daughter of the Heartfilia family",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 7 sec, grant all BRV-type allies for 3 sec\n[High] Evasion Up and [High] Accuracy Up.",
+     "Lv2": "Every 7 sec, grant all BRV-type allies for 4 sec\n[High] Evasion Up and [High] Accuracy Up.",
+     "Lv3": "Every 7 sec, grant all BRV-type allies for 5 sec\n[High] Evasion Up and [High] Accuracy Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "All Brave Allies",
+      "effect": "Evasion Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "All Brave Allies",
+      "effect": "Accuracy Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-evasion-increase-brave-allies-every-7-sec-5-sec",
+     "high-accuracy-increase-brave-allies-every-7-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Wish of the Celestial Mage",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, heal all allies for an amount equal to 300% of your ATK.",
+     "Lv2": "Every 10 sec, heal all allies for an amount equal to 350% of your ATK.",
+     "Lv3": "Every 10 sec, heal all allies for an amount equal to 400% of your ATK."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "All Allies",
+      "effect": "Heal",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 18,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "heal-all-allies-every-10-sec-400-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
   "id": "lyon-vastia",
   "name": "Lyon Vastia",
   "identity": "Lyon Vastia",
@@ -8342,6 +11864,369 @@
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-700-of-own-atk",
      "high-freeze-each-target-hit-20-2-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "macao",
+  "name": "Macao",
+  "identity": "Macao Conbolt",
+  "collection": "Fairy Tail IV",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Defense",
+  "portrait": "Macao.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Purple Flare",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 6 sec, grant yourself for 3 sec\n[Mid] DEF Up.",
+     "Lv2": "Every 6 sec, grant yourself for 4 sec\n[Mid] DEF Up.",
+     "Lv3": "Every 6 sec, grant yourself for 5 sec\n[Mid] DEF Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 6 sec",
+      "target": "Self",
+      "effect": "DEF Increase",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-def-increase-self-every-6-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Purple Net",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 3 sec\n[Mid] Critical Defense Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 4 sec\n[Mid] Critical Defense Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 5 sec\n[Mid] Critical Defense Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "Critical Defense Increase",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-400-of-own-atk",
+     "mid-critical-defense-increase-all-allies-every-11-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "mage",
+  "name": "Mage",
+  "identity": "Mage",
+  "collection": "Countless Enemies",
+  "rarity": "N",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Ranged",
+  "portrait": "Mage.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 60% ATK damage to the target.",
+     "Lv2": "Deals 65% ATK damage to the target.",
+     "Lv3": "Deals 70% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "70% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-70-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Magic Power Charge",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a critical hit occurs, grants self for 3 sec [Low] Critical Damage Increase.",
+     "Lv2": "When a critical hit occurs, grants self for 4 sec [Low] Critical Damage Increase.",
+     "Lv3": "When a critical hit occurs, grants self for 5 sec [Low] Critical Damage Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Self",
+      "effect": "Critical Damage Increase",
+      "tier": "Low",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "low-critical-damage-increase-self-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Magic Cannon",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 200% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 3 sec [Low] DEF Decrease.",
+     "Lv2": "Every 11 sec, deal damage equal to 250% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 4 sec [Low] DEF Decrease.",
+     "Lv3": "Every 11 sec, deal damage equal to 300% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 5 sec [Low] DEF Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "300% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "DEF Decrease",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 31,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-300-of-own-atk",
+     "low-def-decrease-single-enemy-every-11-sec-20-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "mage-evil",
+  "name": "Mage (Evil)",
+  "identity": "Mage (Evil)",
+  "collection": "Countless Enemies",
+  "rarity": "N",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Ranged",
+  "portrait": "Mage (Evil).png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 60% ATK damage to the target.",
+     "Lv2": "Deals 65% ATK damage to the target.",
+     "Lv3": "Deals 70% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "70% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-70-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Intimidation",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec [Low] Critical Damage Decrease.",
+     "Lv2": "After a normal skill hits, has a 20% chance to inflict on the target for 4 sec [Low] Critical Damage Decrease.",
+     "Lv3": "After a normal skill hits, has a 20% chance to inflict on the target for 5 sec [Low] Critical Damage Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Damage Decrease",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "low-critical-damage-decrease-single-enemy-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Dark Shot",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 200% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 3 sec [Low] Accuracy Decrease.",
+     "Lv2": "Every 11 sec, deal damage equal to 250% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 4 sec [Low] Accuracy Decrease.",
+     "Lv3": "Every 11 sec, deal damage equal to 300% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 5 sec [Low] Accuracy Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "300% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Accuracy Decrease",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 29,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-300-of-own-atk",
+     "low-accuracy-decrease-single-enemy-every-11-sec-20-5-sec"
     ]
    }
   ]
@@ -8853,6 +12738,140 @@
   ]
  },
  {
+  "id": "master-zero",
+  "name": "Master Zero",
+  "identity": "Master Zero (Brain)",
+  "collection": "Oracion Seis",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Defense",
+  "portrait": "Master Zero.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Dark Gravity",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ninflict for 2 sec on the target\n[Mid] Evasion Decrease and\n[Mid] Critical Damage Decrease.",
+     "Lv2": "When a normal skill hits (20% chance),\ninflict for 3 sec on the target\n[Mid] Evasion Decrease and\n[Mid] Critical Damage Decrease.",
+     "Lv3": "When a normal skill hits (20% chance),\ninflict for 4 sec on the target\n[Mid] Evasion Decrease and\n[Mid] Critical Damage Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Evasion Decrease",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Damage Decrease",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-evasion-decrease-single-enemy-20-4-sec",
+     "mid-critical-damage-decrease-single-enemy-20-4-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Genesis Zero",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 3 sec\n[Mid] Critical Resistance Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 4 sec\n[Mid] Critical Resistance Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 5 sec\n[Mid] Critical Resistance Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "450% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "Critical Resistance Increase",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 29,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-450-of-own-atk",
+     "mid-critical-resistance-increase-all-allies-every-11-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "mavis-vermillion",
   "name": "Mavis Vermillion",
   "identity": "Mavis Vermillion",
@@ -9333,6 +13352,248 @@
   ]
  },
  {
+  "id": "mest",
+  "name": "Mest",
+  "identity": "Mest Gryder",
+  "collection": "Fairy Tail IV",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Disrupt",
+  "portrait": "Mest.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Teleportation (Direct Line)",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ninflict for 3 sec on the target\n[High] Accuracy Down.",
+     "Lv2": "On critical hit,\ninflict for 4 sec on the target\n[High] Accuracy Down.",
+     "Lv3": "On critical hit,\ninflict for 5 sec on the target\n[High] Accuracy Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Accuracy Decrease",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-accuracy-decrease-single-enemy-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Memory Manipulation",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 50% chance to inflict on the target for 3 sec\nSilence.",
+     "Lv2": "Every 12 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 50% chance to inflict on the target for 4 sec\nSilence.",
+     "Lv3": "Every 12 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 50% chance to inflict on the target for 5 sec\nSilence."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Silence",
+      "tier": null,
+      "chance": "50%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 13,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-550-of-own-atk",
+     "silence-single-enemy-every-12-sec-50-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "midnight",
+  "name": "Midnight",
+  "identity": "Midnight (Macbeth)",
+  "collection": "Oracion Seis",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Disrupt",
+  "portrait": "Midnight.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Refraction (reflector)",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ninflict for 3 sec on the target\n[Mid] ATK Down.",
+     "Lv2": "When a normal skill hits (20% chance),\ninflict for 4 sec on the target\n[Mid] ATK Down.",
+     "Lv3": "When a normal skill hits (20% chance),\ninflict for 5 sec on the target\n[Mid] ATK Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "ATK Decrease",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-atk-decrease-single-enemy-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Spiral Pain",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Critical Damage Decrease.",
+     "Lv2": "Every 12 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 6 sec\n[Mid] Critical Damage Decrease.",
+     "Lv3": "Every 12 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 7 sec\n[Mid] Critical Damage Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "450% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Damage Decrease",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-450-of-own-atk",
+     "mid-critical-damage-decrease-single-enemy-every-12-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "midsummer-sorcerer-lucy",
   "name": "Midsummer Sorcerer Lucy",
   "identity": "Lucy Heartfilia",
@@ -9713,6 +13974,127 @@
      "damage-enemies-in-range-every-9-sec-1000-of-own-atk",
      "high-burn-each-target-hit-every-9-sec-5-sec",
      "high-bleed-each-target-hit-every-9-sec-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "millianna",
+  "name": "Millianna",
+  "identity": "Milliana",
+  "collection": "Fierce Battle at the Grand Magic Games",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Disrupt",
+  "portrait": "Millianna.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The strongest",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ninflict for 3 sec on the target\n[High] Accuracy Down.",
+     "Lv2": "On critical hit,\ninflict for 4 sec on the target\n[High] Accuracy Down.",
+     "Lv3": "On critical hit,\ninflict for 5 sec on the target\n[High] Accuracy Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Accuracy Decrease",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-accuracy-decrease-single-enemy-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Binding Tube",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 3 sec\nBind.",
+     "Lv2": "Every 12 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 4 sec\nBind.",
+     "Lv3": "Every 12 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 40% chance to inflict on the target for 5 sec\nBind."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Bind",
+      "tier": null,
+      "chance": "40%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 11,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-550-of-own-atk",
+     "bind-single-enemy-every-12-sec-40-5-sec"
     ]
    }
   ]
@@ -11318,6 +15700,127 @@
   ]
  },
  {
+  "id": "natsu-dragneel-sr",
+  "name": "Natsu Dragneel (SR)",
+  "identity": "Natsu Dragneel",
+  "collection": "Beginning of the Adventure",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Melee",
+  "portrait": "Natsu Dragneel-SR.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Fire Dragon Flame",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 7 sec, grant yourself for 3 sec\n[High] ATK Up and [High] Critical DMG Up.",
+     "Lv2": "Every 7 sec, grant yourself for 4 sec\n[High] ATK Up and [High] Critical DMG Up.",
+     "Lv3": "Every 7 sec, grant yourself for 5 sec\n[High] ATK Up and [High] Critical DMG Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "Self",
+      "effect": "ATK Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "Self",
+      "effect": "Critical Damage Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-atk-increase-self-every-7-sec-5-sec",
+     "high-critical-damage-increase-self-every-7-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Fire Dragon Iron Fist",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 8 sec, deal damage equal to 600% of ATK to the target.",
+     "Lv2": "Every 8 sec, deal damage equal to 650% of ATK to the target.",
+     "Lv3": "Every 8 sec, deal damage equal to 700% of ATK to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 8 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "700% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 21,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-8-sec-700-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
   "id": "neo-minerva",
   "name": "Neo Minerva",
   "identity": "Minerva Orland",
@@ -12450,7 +16953,7 @@
   "id": "parallel-world-wendy",
   "name": "Parallel World Wendy",
   "identity": "Edolas Wendy",
-  "collection": "Parallel World",
+  "collection": "Parallel World -Part 2-",
   "rarity": "UR",
   "newForm": false,
   "debutBanner": "parallel-world-part-2",
@@ -13018,6 +17521,127 @@
   ]
  },
  {
+  "id": "racer",
+  "name": "Racer",
+  "identity": "Racer (Sawyer)",
+  "collection": "Oracion Seis",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Disrupt",
+  "portrait": "Racer.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Eye side lash",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ngrant yourself for 3 sec\n[Mid] Evasion Increase.",
+     "Lv2": "On critical hit,\ngrant yourself for 4 sec\n[Mid] Evasion Increase.",
+     "Lv3": "On critical hit,\ngrant yourself for 5 sec\n[Mid] Evasion Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Self",
+      "effect": "Evasion Increase",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-evasion-increase-self-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Gear Change: Red Zone",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Evasion Decrease.",
+     "Lv2": "Every 12 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 6 sec\n[Mid] Evasion Decrease.",
+     "Lv3": "Every 12 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 7 sec\n[Mid] Evasion Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Evasion Decrease",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-400-of-own-atk",
+     "mid-evasion-decrease-single-enemy-every-12-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "rock-n-magic-juvia",
   "name": "Rock'n Magic Juvia",
   "identity": "Juvia Lockser",
@@ -13550,6 +18174,248 @@
   ]
  },
  {
+  "id": "rufus",
+  "name": "Rufus",
+  "identity": "Rufus Lore",
+  "collection": "Fierce Battle at the Grand Magic Games",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Ranged",
+  "portrait": "Rufus.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "A line of ancient sword saints",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "After a normal skill hits, has a 20% chance to grant self for 3 sec [Mid] Accuracy Increase.",
+     "Lv2": "After a normal skill hits, has a 20% chance to grant self for 4 sec [Mid] Accuracy Increase.",
+     "Lv3": "After a normal skill hits, has a 20% chance to grant self for 5 sec [Mid] Accuracy Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Self",
+      "effect": "Accuracy Increase",
+      "tier": "Mid",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-accuracy-increase-self-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Starfall Night",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 350% of ATK to the target. After the attack hits, there is a 30% chance to grant yourself for 5 sec [Mid] ATK Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 400% of ATK to the target. After the attack hits, there is a 30% chance to grant yourself for 6 sec [Mid] ATK Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 450% of ATK to the target. After the attack hits, there is a 30% chance to grant yourself for 7 sec [Mid] ATK Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "450% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Self",
+      "effect": "ATK Increase",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 31,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-450-of-own-atk",
+     "mid-atk-increase-self-every-11-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "seilah",
+  "name": "Seilah",
+  "identity": "Seilah",
+  "collection": "Tartaros",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Disrupt",
+  "portrait": "Seilah.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Unleashing the Demonic Eye",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (20% chance),\ninflict for 3 sec on the target\n[High] DEF Down.",
+     "Lv2": "When a normal skill hits (20% chance),\ninflict for 4 sec on the target\n[High] DEF Down.",
+     "Lv3": "When a normal skill hits (20% chance),\ninflict for 5 sec on the target\n[High] DEF Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "DEF Decrease",
+      "tier": "High",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-def-decrease-single-enemy-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Command (Macro)",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 3 sec\nSilence.",
+     "Lv2": "Every 12 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 4 sec\nSilence.",
+     "Lv3": "Every 12 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\nSilence."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Silence",
+      "tier": null,
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 13,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-550-of-own-atk",
+     "silence-single-enemy-every-12-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "selene",
   "name": "Selene",
   "identity": "Selene",
@@ -13844,6 +18710,127 @@
   ]
  },
  {
+  "id": "sherry-blendy",
+  "name": "Sherry Blendy",
+  "identity": "Sherry Blendy",
+  "collection": "Lamia Scale",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Ranged",
+  "portrait": "Sherry Blendy.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Love and manipulation, Doll Master",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ninflict for 3 sec on the target\n[Mid] Critical Rate Decrease.",
+     "Lv2": "On critical hit,\ninflict for 4 sec on the target\n[Mid] Critical Rate Decrease.",
+     "Lv3": "On critical hit,\ninflict for 5 sec on the target\n[Mid] Critical Rate Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Single Enemy",
+      "effect": "Critical Rate Decrease",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-critical-rate-decrease-single-enemy-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Puppet Strike",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Critical Rate Decrease.",
+     "Lv2": "Every 11 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 6 sec\n[Mid] Critical Rate Decrease.",
+     "Lv3": "Every 11 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 7 sec\n[Mid] Critical Rate Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Rate Decrease",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-400-of-own-atk",
+     "mid-critical-rate-decrease-single-enemy-every-11-sec-30-7sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "silver-fullbuster",
   "name": "Silver Fullbuster",
   "identity": "Silver Fullbuster",
@@ -13960,6 +18947,114 @@
     "applications": [
      "damage-enemies-in-target-area-every-10-sec-700-of-own-atk",
      "additional-damage-each-target-hit-every-10-sec-freeze-450-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "soldier",
+  "name": "Soldier",
+  "identity": "Soldier",
+  "collection": "Countless Enemies",
+  "rarity": "N",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Mind",
+  "role": "Melee",
+  "portrait": "Soldier.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 60% ATK damage to the target.",
+     "Lv2": "Deals 65% ATK damage to the target.",
+     "Lv3": "Deals 70% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "70% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-70-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Inspiration",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 6 sec, for 3 sec, grants self [Low] ATK Increase.",
+     "Lv2": "Every 6 sec, for 4 sec, grants self [Low] ATK Increase.",
+     "Lv3": "Every 6 sec, for 5 sec, grants self [Low] ATK Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 6 sec",
+      "target": "Self",
+      "effect": "ATK Increase",
+      "tier": "Low",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "low-atk-increase-self-every-6-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Critical Slash",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 250% of ATK to the target.",
+     "Lv2": "Every 10 sec, deal damage equal to 300% of ATK to the target.",
+     "Lv3": "Every 10 sec, deal damage equal to 350% of ATK to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "350% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 41,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-350-of-own-atk"
     ]
    }
   ]
@@ -15894,6 +20989,490 @@
   ]
  },
  {
+  "id": "tempester",
+  "name": "Tempester",
+  "identity": "Tempester",
+  "collection": "Tartaros",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Defense",
+  "portrait": "Tempester.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The Undying Tempest",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a critical hit occurs,\nfor 2 sec, grant\n[High] Shield to all allies with the Heart attribute.",
+     "Lv2": "When a critical hit occurs,\nfor 3 sec, grant\n[High] Shield to all allies with the Heart attribute.",
+     "Lv3": "When a critical hit occurs,\nfor 4 sec, grant\n[High] Shield to all allies with the Heart attribute."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Heart Allies",
+      "effect": "Shield",
+      "tier": "High",
+      "chance": null,
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 17,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-shield-heart-allies-critical-hit-4-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Clack",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 5 sec\n[High] Critical Resistance Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 6 sec\n[High] Critical Resistance Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 7 sec\n[High] Critical Resistance Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "Critical Resistance Increase",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-550-of-own-atk",
+     "high-critical-resistance-increase-all-allies-every-11-sec-30-7-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tenrou-beast",
+  "name": "Tenrou Beast",
+  "identity": "Tenrou Beast",
+  "collection": "Countless Enemies",
+  "rarity": "N",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Defense",
+  "portrait": "Tenrou Beast.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 60% ATK damage to the target.",
+     "Lv2": "Deals 65% ATK damage to the target.",
+     "Lv3": "Deals 70% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "70% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-70-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Wild instinct",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "After a normal skill hits, has a 20% chance to grant self for 3 sec [Low] Critical Resistance Increase.",
+     "Lv2": "After a normal skill hits, has a 20% chance to grant self for 4 sec [Low] Critical Resistance Increase.",
+     "Lv3": "After a normal skill hits, has a 20% chance to grant self for 5 sec [Low] Critical Resistance Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Self",
+      "effect": "Critical Resistance Increase",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "low-critical-resistance-increase-self-20-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Rage of the Earth",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 200% of ATK to the target. After the attack hits, there is a 20% chance to grant each ally for 2 sec [Low] DEF Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 250% of ATK to the target. After the attack hits, there is a 20% chance to grant each ally for 3 sec [Low] DEF Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 300% of ATK to the target. After the attack hits, there is a 20% chance to grant each ally for 4 sec [Low] DEF Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "300% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "DEF Increase",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "4 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-300-of-own-atk",
+     "low-def-increase-all-allies-every-11-sec-20-4-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "thug",
+  "name": "Thug",
+  "identity": "Thug",
+  "collection": "Countless Enemies",
+  "rarity": "N",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Melee",
+  "portrait": "Thug.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 60% ATK damage to the target.",
+     "Lv2": "Deals 65% ATK damage to the target.",
+     "Lv3": "Deals 70% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "70% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-70-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "evil plot",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a critical hit occurs, grants self for 3 sec [Low] Critical Rate Increase.",
+     "Lv2": "When a critical hit occurs, grants self for 4 sec [Low] Critical Rate Increase.",
+     "Lv3": "When a critical hit occurs, grants self for 5 sec [Low] Critical Rate Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Self",
+      "effect": "Critical Rate Increase",
+      "tier": "Low",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "low-critical-rate-increase-self-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Spirit Strike",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 200% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 3 sec [Low] Critical Resistance Decrease.",
+     "Lv2": "Every 10 sec, deal damage equal to 250% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 4 sec [Low] Critical Resistance Decrease.",
+     "Lv3": "Every 10 sec, deal damage equal to 300% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 5 sec [Low] Critical Resistance Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "300% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Resistance Decrease",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 41,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-300-of-own-atk",
+     "low-critical-resistance-decrease-single-enemy-every-10-sec-20-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "torafuzar",
+  "name": "Torafuzar",
+  "identity": "Torafuzar",
+  "collection": "Tartaros",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Heart",
+  "role": "Defense",
+  "portrait": "Torafuzar.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The strongest defense of the Nine Demon Gates",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 7 sec, inflict for 3 sec on the target\nTaunt.",
+     "Lv2": "Every 7 sec, inflict for 4 sec on the target\nTaunt.",
+     "Lv3": "Every 7 sec, inflict for 5 sec on the target\nTaunt."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "Single Enemy",
+      "effect": "Taunt",
+      "tier": null,
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 14,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "taunt-single-enemy-every-7-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Ultra Hard Armor",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 40% chance to grant yourself for 3 sec\n[High] DEF Increase.",
+     "Lv2": "Every 10 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 40% chance to grant yourself for 4 sec\n[High] DEF Increase.",
+     "Lv3": "Every 10 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 40% chance to grant yourself for 5 sec\n[High] DEF Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Self",
+      "effect": "DEF Increase",
+      "tier": "High",
+      "chance": "40%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-def-increase-self-every-10-sec-40-5-sec",
+     "damage-single-enemy-every-10-sec-550-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
   "id": "twin-moon-halloween-sherria",
   "name": "Twin Moon Halloween Sherria",
   "identity": "Sherria Blendy",
@@ -16305,6 +21884,114 @@
   ]
  },
  {
+  "id": "ultear",
+  "name": "Ultear",
+  "identity": "Ultear Milkovich",
+  "collection": "Crime Sorciere",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Heal",
+  "portrait": "Ultear.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Second Origin",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 7 sec, grant all Technique-type allies for 3 sec\n[High] ATK Up.",
+     "Lv2": "Every 6 sec, grant all Technique-type allies for 4 sec\n[High] ATK Up.",
+     "Lv3": "Every 5 sec, grant all Technique-type allies for 5 sec\n[High] ATK Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 5 sec",
+      "target": "All Technique Allies",
+      "effect": "ATK Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-atk-increase-technique-allies-every-5-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Last Aegis",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, heal all allies for an amount equal to 250% of your ATK.",
+     "Lv2": "Every 11 sec, heal all allies for an amount equal to 300% of your ATK.",
+     "Lv3": "Every 11 sec, heal all allies for an amount equal to 350% of your ATK."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "All Allies",
+      "effect": "Heal",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "350% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 18,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "heal-all-allies-every-11-sec-350-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
   "id": "ultear-grimoire-heart",
   "name": "Ultear -Grimoire Heart-",
   "identity": "Ultear Milkovich",
@@ -16473,6 +22160,356 @@
     "applications": [
      "damage-all-enemies-every-10-sec-950-of-own-atk",
      "top-freeze-each-target-hit-every-10-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "wahl-icht",
+  "name": "Wahl Icht",
+  "identity": "Wahl Icht",
+  "collection": "Spriggan 12",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Ranged",
+  "portrait": "Wahl Icht.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Vortex Charge",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 7 sec, for 3 sec,\ngrant yourself\n[High] Critical Rate Increase.",
+     "Lv2": "Every 7 sec, for 4 sec,\ngrant yourself\n[High] Critical Rate Increase.",
+     "Lv3": "Every 7 sec, for 5 sec,\ngrant yourself\n[High] Critical Rate Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 7 sec",
+      "target": "Self",
+      "effect": "Critical Rate Increase",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-critical-rate-increase-self-every-7-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Long-Range Anti-Material Magic Cannon",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 450% of ATK to enemies within the target area.",
+     "Lv2": "Every 10 sec, deal damage equal to 500% of ATK to enemies within the target area.",
+     "Lv3": "Every 10 sec, deal damage equal to 550% of ATK to enemies within the target area."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Enemies in Target Area",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 29,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-enemies-in-target-area-every-10-sec-550-of-own-atk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "wakaba-mine",
+  "name": "Wakaba Mine",
+  "identity": "Wakaba Mine",
+  "collection": "Fairy Tail IV",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Technique",
+  "role": "Defense",
+  "portrait": "Wakaba Mine.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Smoke Fake",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 6 sec, inflicts on the target for 3 sec\n[Mid] Accuracy Decrease.",
+     "Lv2": "Every 6 sec, inflicts on the target for 4 sec\n[Mid] Accuracy Decrease.",
+     "Lv3": "Every 6 sec, inflicts on the target for 5 sec\n[Mid] Accuracy Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 6 sec",
+      "target": "Single Enemy",
+      "effect": "Accuracy Decrease",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-accuracy-decrease-single-enemy-every-6-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Smoke Magic",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 300% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 3 sec\n[Mid] Evasion Increase.",
+     "Lv2": "Every 11 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 4 sec\n[Mid] Evasion Increase.",
+     "Lv3": "Every 11 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to grant each ally for 5 sec\n[Mid] Evasion Increase."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "400% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "Evasion Increase",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-400-of-own-atk",
+     "mid-evasion-increase-all-allies-every-11-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "wandering-spirit",
+  "name": "Wandering Spirit",
+  "identity": "Wandering Spirit",
+  "collection": "Countless Enemies",
+  "rarity": "N",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Disrupt",
+  "portrait": "Wandering Spirit.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 60% ATK damage to the target.",
+     "Lv2": "Deals 65% ATK damage to the target.",
+     "Lv3": "Deals 70% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "70% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-70-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Black Mist",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 6 sec, inflicts on the target for 3 sec, [Low] Accuracy Decrease.",
+     "Lv2": "Every 6 sec, inflicts on the target for 4 sec, [Low] Accuracy Decrease.",
+     "Lv3": "Every 6 sec, inflicts on the target for 5 sec, [Low] Accuracy Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 6 sec",
+      "target": "Single Enemy",
+      "effect": "Accuracy Decrease",
+      "tier": "Low",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "low-accuracy-decrease-single-enemy-every-6-sec-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Ghost Power",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 12 sec, deal damage equal to 200% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 3 sec [Low] Critical Rate Decrease.",
+     "Lv2": "Every 12 sec, deal damage equal to 250% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 4 sec [Low] Critical Rate Decrease.",
+     "Lv3": "Every 12 sec, deal damage equal to 300% of ATK to the target. After the attack hits, there is a 20% chance to inflict on the target for 5 sec [Low] Critical Rate Decrease."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 12 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "300% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Rate Decrease",
+      "tier": "Low",
+      "chance": "20%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 29,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-12-sec-300-of-own-atk",
+     "low-critical-rate-decrease-single-enemy-every-12-sec-20-5-sec"
     ]
    }
   ]
@@ -16999,7 +23036,7 @@
  {
   "id": "white-gift-gajeel",
   "name": "White Gift Gajeel",
-  "identity": "Sherria Blendy",
+  "identity": "Gajeel Redfox",
   "collection": "White Gift",
   "rarity": "UR",
   "newForm": false,
@@ -17312,6 +23349,248 @@
      "damage-all-enemies-every-11-sec-750-of-own-atk",
      "top-freeze-each-target-hit-every-11-sec-30-5-sec",
      "top-def-decrease-each-target-hit-every-11-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "yukino-agria",
+  "name": "Yukino Agria",
+  "identity": "Yukino Agria",
+  "collection": "Celestial Spirit Mage",
+  "rarity": "SR",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Ranged",
+  "portrait": "Yukino Agria.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 80% ATK damage to the target.",
+     "Lv2": "Deals 85% ATK damage to the target.",
+     "Lv3": "Deals 90% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "90% ATK",
+      "condition": null,
+      "notes": "Ranged"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-90-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Silver Star Spirit Mage",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a normal skill hits (30% chance),\ninflict for 3 sec on the target\n[High] ATK Down.",
+     "Lv2": "When a normal skill hits (30% chance),\ninflict for 4 sec on the target\n[High] ATK Down.",
+     "Lv3": "When a normal skill hits (30% chance),\ninflict for 5 sec on the target\n[High] ATK Down."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "ATK Decrease",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "high-atk-decrease-single-enemy-30-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Libra Summon",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 11 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 3 sec\nSilence.",
+     "Lv2": "Every 11 sec, deal damage equal to 500% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 4 sec\nSilence.",
+     "Lv3": "Every 11 sec, deal damage equal to 550% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\nSilence."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 11 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "550% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Silence",
+      "tier": null,
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 27,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-11-sec-550-of-own-atk",
+     "silence-single-enemy-every-11-sec-30-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "zancrow",
+  "name": "Zancrow",
+  "identity": "Zancrow",
+  "collection": "Grimoire Heart",
+  "rarity": "R",
+  "newForm": false,
+  "debutBanner": null,
+  "availableFrom": "2025-12-03",
+  "bannerArt": null,
+  "attribute": "Brave",
+  "role": "Melee",
+  "portrait": "Zancrow.png",
+  "card": null,
+  "signatureLacrima": null,
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
+    "gameText": {
+     "Lv1": "Deals 70% ATK damage to the target.",
+     "Lv2": "Deals 75% ATK damage to the target.",
+     "Lv3": "Deals 80% ATK damage to the target."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "80% ATK",
+      "condition": null,
+      "notes": "Melee"
+     }
+    ],
+    "icon": 1,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-80-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The Flame God's Supper",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "On critical hit,\ngrant yourself for 3 sec\n[Mid] Critical Resistance Up.",
+     "Lv2": "On critical hit,\ngrant yourself for 4 sec\n[Mid] Critical Resistance Up.",
+     "Lv3": "On critical hit,\ngrant yourself for 5 sec\n[Mid] Critical Resistance Up."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "Self",
+      "effect": "Critical Resistance Increase",
+      "tier": "Mid",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 9,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "mid-critical-resistance-increase-self-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Kagutsuchi of the Flame God",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deal damage equal to 350% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 3 sec\n[Mid] Burn.",
+     "Lv2": "Every 10 sec, deal damage equal to 400% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 4 sec\n[Mid] Burn.",
+     "Lv3": "Every 10 sec, deal damage equal to 450% of ATK to the target.\nAfter the attack hits, there is a 30% chance to inflict on the target for 5 sec\n[Mid] Burn."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "450% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Burn",
+      "tier": "Mid",
+      "chance": "30%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 21,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-every-10-sec-450-of-own-atk",
+     "mid-burn-single-enemy-every-10-sec-30-5-sec"
     ]
    }
   ]

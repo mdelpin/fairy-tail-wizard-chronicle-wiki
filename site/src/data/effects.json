@@ -425,6 +425,22 @@
   "counteredBy": []
  },
  {
+  "id": "high-accuracy-decrease",
+  "name": "High Accuracy Decrease",
+  "family": "Accuracy",
+  "direction": "Down",
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 15,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Accuracy decreases by 15%",
+  "counteredBy": []
+ },
+ {
   "id": "high-accuracy-increase",
   "name": "High Accuracy Increase",
   "family": "Accuracy",
@@ -491,6 +507,22 @@
   },
   "secondary": null,
   "gameText": "Recovers 100% of ATK per sec",
+  "counteredBy": []
+ },
+ {
+  "id": "high-critical-damage-decrease",
+  "name": "High Critical Damage Decrease",
+  "family": "Critical Damage",
+  "direction": "Down",
+  "tier": "High",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 40,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage decreases by 40%",
   "counteredBy": []
  },
  {
@@ -738,6 +770,38 @@
   "counteredBy": []
  },
  {
+  "id": "low-atk-decrease",
+  "name": "Low ATK Decrease",
+  "family": "ATK",
+  "direction": "Down",
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "ATK Decreases by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-atk-increase",
+  "name": "Low ATK Increase",
+  "family": "ATK",
+  "direction": "Up",
+  "tier": "Low",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "ATK Increases by 10%",
+  "counteredBy": []
+ },
+ {
   "id": "low-accuracy-decrease",
   "name": "Low Accuracy Decrease",
   "family": "Accuracy",
@@ -788,6 +852,150 @@
   },
   "secondary": null,
   "gameText": "Recovers 50% of ATK per sec",
+  "counteredBy": []
+ },
+ {
+  "id": "low-critical-damage-decrease",
+  "name": "Low Critical Damage Decrease",
+  "family": "Critical Damage",
+  "direction": "Down",
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage decreases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-critical-damage-increase",
+  "name": "Low Critical Damage Increase",
+  "family": "Critical Damage",
+  "direction": "Up",
+  "tier": "Low",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 20,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Damage increases by 20%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-critical-rate-decrease",
+  "name": "Low Critical Rate Decrease",
+  "family": "Critical Rate",
+  "direction": "Down",
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Rate decreases by 5%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-critical-rate-increase",
+  "name": "Low Critical Rate Increase",
+  "family": "Critical Rate",
+  "direction": "Up",
+  "tier": "Low",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Rate increases by 5%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-critical-resistance-decrease",
+  "name": "Low Critical Resistance Decrease",
+  "family": "Critical Resistance",
+  "direction": "Down",
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Resistance decrease by 5%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-critical-resistance-increase",
+  "name": "Low Critical Resistance Increase",
+  "family": "Critical Resistance",
+  "direction": "Up",
+  "tier": "Low",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Resistance increases by 5%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-def-decrease",
+  "name": "Low DEF Decrease",
+  "family": "DEF",
+  "direction": "Down",
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "DEF decreases by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-def-increase",
+  "name": "Low DEF Increase",
+  "family": "DEF",
+  "direction": "Up",
+  "tier": "Low",
+  "polarity": "Beneficial",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "DEF increases by 10%",
+  "counteredBy": []
+ },
+ {
+  "id": "low-evasion-decrease",
+  "name": "Low Evasion Decrease",
+  "family": "Evasion",
+  "direction": "Down",
+  "tier": "Low",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 5,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Evasion Decreases by 5%",
   "counteredBy": []
  },
  {
@@ -844,6 +1052,22 @@
   "counteredBy": []
  },
  {
+  "id": "mid-accuracy-decrease",
+  "name": "Mid Accuracy Decrease",
+  "family": "Accuracy",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Accuracy decreases by 10%",
+  "counteredBy": []
+ },
+ {
   "id": "mid-accuracy-increase",
   "name": "Mid Accuracy Increase",
   "family": "Accuracy",
@@ -866,10 +1090,13 @@
   "direction": null,
   "tier": "Mid",
   "polarity": "Harmful",
-  "mechanic": null,
-  "value": null,
+  "mechanic": "Damage Over Time",
+  "value": {
+   "amount": 30,
+   "unit": "Percent of ATK per sec"
+  },
   "secondary": null,
-  "gameText": null,
+  "gameText": "HP -30% ATK per sec",
   "counteredBy": []
  },
  {
@@ -936,6 +1163,22 @@
   },
   "secondary": null,
   "gameText": "Critical Damage increases by 30%",
+  "counteredBy": []
+ },
+ {
+  "id": "mid-critical-defense-decrease",
+  "name": "Mid Critical Defense Decrease",
+  "family": "Critical Defense",
+  "direction": "Down",
+  "tier": "Mid",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": {
+   "amount": 30,
+   "unit": "Percent"
+  },
+  "secondary": null,
+  "gameText": "Critical Defense decreases by 30%",
   "counteredBy": []
  },
  {
@@ -1047,7 +1290,7 @@
    "unit": "Percent"
   },
   "secondary": null,
-  "gameText": "DEF Increase by 15%",
+  "gameText": "DEF Increases by 15%",
   "counteredBy": []
  },
  {
@@ -1074,9 +1317,12 @@
   "tier": "Mid",
   "polarity": "Beneficial",
   "mechanic": "Stat Modifier",
-  "value": null,
+  "value": {
+   "amount": 10,
+   "unit": "Percent"
+  },
   "secondary": null,
-  "gameText": null,
+  "gameText": "Evasion increases by 10%",
   "counteredBy": []
  },
  {
@@ -1089,7 +1335,7 @@
   "mechanic": "Control",
   "value": null,
   "secondary": {
-   "stat": "DEF",
+   "stat": "Critical Defense",
    "direction": "Down",
    "amount": 20,
    "unit": "Percent"
@@ -1104,7 +1350,7 @@
   "direction": "Down",
   "tier": "Mid",
   "polarity": "Harmful",
-  "mechanic": "Stat Modifier",
+  "mechanic": "Damage Over Time",
   "value": {
    "amount": 20,
    "unit": "Percent of ATK per sec"

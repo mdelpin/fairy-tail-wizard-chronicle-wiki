@@ -346,7 +346,7 @@ def main(root, out, slugs_path=None, public_dir=None):
         f = r["fm"]
         where = f"BannerArt '{clean(f.get('title')) or stem}'"
         unit = ref(f.get("bannerUnit"), "Characters", where, "bannerUnit", required=True)
-        img = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("bannerArt") or ""))
+        img = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("bannerArt") or ""))
         if not img:
             issue("Missing required values", f"{where}: bannerArt has no image")
         if unit and img:
@@ -391,8 +391,8 @@ def main(root, out, slugs_path=None, public_dir=None):
         kinds = sorted(s["kind"] or "?" for s in sk)
         if kinds != KINDS:
             issue("Skill links", f"{where}: needs exactly one Normal, Special and Ultimate skill; has {kinds or 'none'}")
-        img = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("coverImage") or ""))
-        cm = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("debutCard") or ""))
+        img = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
+        cm = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("debutCard") or ""))
         card_src = urllib.parse.unquote(cm.group(1)) if cm else None
         debut = ref(f.get("debutBanner"), "Banners", where, "debutBanner", many=True)
         if len(debut) > 1:
@@ -466,7 +466,7 @@ def main(root, out, slugs_path=None, public_dir=None):
             source = None  # a source label with no date says nothing
         if start and end and end < start:
             issue("Values out of range", f"{where}: ends ({end}) before it starts ({start})")
-        cov = re.search(r"\]\(\.\./Images/Media/([^)]+)\)", str(f.get("coverImage") or ""))
+        cov = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
         cover_src = urllib.parse.unquote(cov.group(1)) if cov else None
         if not cover_src:
             issue("Banner covers", f"{where}: no cover image (event banner)")

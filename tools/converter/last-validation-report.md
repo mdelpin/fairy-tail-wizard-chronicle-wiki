@@ -1,16 +1,123 @@
 # Validation report
 
-104 units, 115 lacrimas, 101 effects, 699 effect applications, 52 banners, 58 banner arts. 12 issues in 4 categories.
+156 units, 115 lacrimas, 116 effects, 824 effect applications, 54 banners, 58 banner arts. 116 issues in 5 categories.
 
-## Release cards missing (no Debut Card linked) (7)
+## Release cards missing (no Debut Card linked) (59)
 
 - academy-lisanna
+- ajeel
+- alzack-connell
+- azuma
+- bacchus-groh
+- bickslow
+- bisca-connell
 - blazing-beach-vacation-natsu
+- bloodman
+- bluenote-stinger
+- cobra
+- dark-guild-underling
+- dimaria-yesta
+- elite-mage
+- erigor
+- erza-scarlet-sr
+- eve
+- evergreen
+- ezail
+- flare-corona
+- god-serena
+- gray-fullbuster-sr
+- hibiki
+- hoteye
+- invel-yura
+- jackal
+- jenny
+- jose-porla
+- kyoka
+- lisanna
+- lucy-heartfilia-sr
+- macao
+- mage
+- mage-evil
+- master-zero
 - meredy
+- mest
+- midnight
+- millianna
 - natsu-dragneel
+- natsu-dragneel-sr
+- racer
+- rufus
+- seilah
+- sherry-blendy
+- soldier
 - sting-dragon-force
 - suzaku
 - swayed-by-the-evening-breeze-mystogan
+- tempester
+- tenrou-beast
+- thug
+- torafuzar
+- ultear
+- wahl-icht
+- wakaba-mine
+- wandering-spirit
+- yukino-agria
+- zancrow
+
+## Portraits added (new wizards; check they look right) (52)
+
+- ajeel
+- alzack-connell
+- azuma
+- bacchus-groh
+- bickslow
+- bisca-connell
+- bloodman
+- bluenote-stinger
+- cobra
+- dark-guild-underling
+- dimaria-yesta
+- elite-mage
+- erigor
+- erza-scarlet-sr
+- eve
+- evergreen
+- ezail
+- flare-corona
+- god-serena
+- gray-fullbuster-sr
+- hibiki
+- hoteye
+- invel-yura
+- jackal
+- jenny
+- jose-porla
+- kyoka
+- lisanna
+- lucy-heartfilia-sr
+- macao
+- mage
+- mage-evil
+- master-zero
+- mest
+- midnight
+- millianna
+- natsu-dragneel-sr
+- racer
+- rufus
+- seilah
+- sherry-blendy
+- soldier
+- tempester
+- tenrou-beast
+- thug
+- torafuzar
+- ultear
+- wahl-icht
+- wakaba-mine
+- wandering-spirit
+- yukino-agria
+- zancrow
 
 ## Banner covers (2)
 
