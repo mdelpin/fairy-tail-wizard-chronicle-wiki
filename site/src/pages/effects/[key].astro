@@ -5,18 +5,20 @@ import MagicCircle from '../../components/MagicCircle.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
   buildFinderIndex, raritiesIn, effects, WIKI_CREDIT, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
-  type FamilyMeta, type Match, type LacrimaMatch, type Unit, type Skill, type Application,
+  type FamilyMeta, type Match, type LacrimaMatch, type CompanionMatch, type Unit, type Skill, type Application,
 } from '../../lib/data';
 
 export function getStaticPaths() {
-  const idx = buildFinderIndex();
+  const idx = buildFinderIndex(true);
   return [...idx.meta.values()].map((m) => ({
     params: { key: m.key },
-    props: { m, applies: idx.applies.get(m.key) ?? [], lac: idx.fromLacrimas.get(m.key) ?? [], needs: idx.needs.get(m.key) ?? [] },
+    props: { m, applies: idx.applies.get(m.key) ?? [], lac: idx.fromLacrimas.get(m.key) ?? [],
+      companions: idx.fromCompanions.get(m.key) ?? [], needs: idx.needs.get(m.key) ?? [] },
   }));
 }
-const { m, applies, lac, needs } = Astro.props as {
-  m: FamilyMeta; applies: Match[]; lac: LacrimaMatch[]; needs: { unit: Unit; skill: Skill; app: Application }[];
+const { m, applies, lac, companions, needs } = Astro.props as {
+  m: FamilyMeta; applies: Match[]; lac: LacrimaMatch[]; companions: CompanionMatch[];
+  needs: { unit: Unit; skill: Skill; app: Application }[];
 };
 
 // Group matches per unit, strongest tier first
@@ -26,6 +28,8 @@ const cards = [...byUnit.values()]
   .map((c) => ({ ...c, rows: c.rows.sort((a, b) => KIND_ORDER.indexOf(a.skill.kind) - KIND_ORDER.indexOf(b.skill.kind)) }))
   .sort((a, b) => Math.min(...a.rows.map((r) => tierRank(r.effect.tier))) - Math.min(...b.rows.map((r) => tierRank(r.effect.tier))) || a.unit.name.localeCompare(b.unit.name));
 const needUnits = [...new Map(needs.map((n) => [n.unit.id + n.skill.kind, n])).values()];
+const byCompanion = new Map<string, CompanionMatch[]>();
+for (const x of companions) (byCompanion.get(x.companion.id) ?? byCompanion.set(x.companion.id, []).get(x.companion.id)!).push(x);
 
 // Tier ladder from the effect definitions themselves
 const ladder = [...effects.values()]
@@ -44,7 +48,7 @@ const fam = m.family.replace(/^Critical /, 'Crit(?:ical)? ');
 const rx = new RegExp(`(\\[(?:Top|High|Mid|Low)\\]\\s*(?:${fam}|${esc(m.family)})[^,.\\]]*)`, 'gi');
 const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }));
 ---
-<Base title={m.label} section="effects" description={`Every wizard and lacrima in FAIRY TAIL Wizard Chronicle that applies ${m.label}.`}>
+<Base title={m.label} section="effects" description={`Wizards, lacrimas and companions in FAIRY TAIL Wizard Chronicle that apply ${m.label}.`}>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href={url('effects/')}>Effect Finder</a></nav>
 
@@ -58,6 +62,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
           <div class="counts">
             <span><strong id="count-w">{cards.length}</strong> wizards apply it</span>
             {lac.length > 0 && <span><strong>{new Set(lac.map((l) => l.lacrima.id)).size}</strong> lacrimas</span>}
+            {byCompanion.size > 0 && <a href="#companions"><strong>{byCompanion.size}</strong> {byCompanion.size === 1 ? 'companion' : 'companions'}</a>}
             {needUnits.length > 0 && <a href="#needs"><strong>{new Set(needUnits.map((n) => n.unit.id)).size}</strong> need it on the target</a>}
           </div>
         </div>
@@ -141,6 +146,26 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
 
     <p id="none" class="muted" hidden>No wizards match. <button type="button" class="clear">Clear filters</button></p>
 
+    {byCompanion.size > 0 && (
+      <section id="companions">
+        <div class="section-title"><h2>Companions</h2></div>
+        <div class="lac-list">
+          {[...byCompanion.values()].map((rows) => (
+            <div class="companion-match">
+              <a class="heading" href={url(`companions/${rows[0].companion.id}/`)}>{rows[0].companion.name}</a>
+              {rows.map(({ app, effect }) => (
+                <div class="match">
+                  <span class={`tier tier-${effect.tier ?? 'none'}`}>{effect.tier ?? '—'}</span>
+                  <strong>{app.type ?? m.label}</strong>
+                  <span>{[app.trigger?.raw, app.target].filter(Boolean).join(' · ')}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
     {lac.length > 0 && (
       <section id="lacrimas">
         <div class="section-title"><h2>Lacrimas that apply it</h2></div>
@@ -202,7 +227,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
     for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('count-w')!.textContent = String(n);
-    document.getElementById('none')!.hidden = n > 0;
+    document.getElementById('none')!.hidden = n > 0 || !document.querySelector('.card');
     const active = [state.rarity, state.tier && state.tier + ' tier', state.attr, state.role].filter(Boolean);
     document.getElementById('status')!.hidden = active.length === 0;
     document.getElementById('active')!.hidden = n === 0;
@@ -266,6 +291,8 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .lac-list { display: flex; flex-direction: column; gap: 10px; }
   .lac { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
   .lac a { color: var(--ink); font-size: 17px; }
+  .companion-match { padding: 12px 16px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .companion-match a { color: var(--ink); font-size: 17px; }
   .needs { background: #fff; border: 1px solid var(--line); border-radius: 16px; }
   @media (max-width: 600px) { .banner-body { padding: 22px 18px; } .medal { width: 72px; height: 72px; } }
 </style>

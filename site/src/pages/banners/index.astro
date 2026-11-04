@@ -2,13 +2,13 @@
 import Info from '../../components/Info.astro';
 import Base from '../../layouts/Base.astro';
 import Pennant from '../../components/Pennant.astro';
-import { banners, unitById, url, portraits, initials, bannerDates, DATE_NOTE, ATTR } from '../../lib/data';
+import { banners, unitById, companionById, url, portraits, initials, bannerDates, DATE_NOTE, ATTR } from '../../lib/data';
 // A release timeline: which wizards each banner introduced. Newest first; undated banners last.
 const dated = banners.filter((b) => b.start).slice().reverse();
 const undated = banners.filter((b) => !b.start);
 const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoFes', Pickup: 'Pickup', Special: 'Special', 'Half Anniversary Fest': 'Half Anniversary' };
 ---
-<Base title="Banners" section="banners" description="Every FAIRY TAIL Wizard Chronicle banner and the wizards it introduced, with dates in Japan time.">
+<Base title="Banners" section="banners" description="Every FAIRY TAIL Wizard Chronicle banner and the wizards and companions it introduced, with dates in Japan time.">
   <div class="wrap" data-pagefind-body>
     <span hidden data-pagefind-filter="Type">Banner</span>
     <div class="head">
@@ -25,6 +25,7 @@ const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoF
         <ol class="list">
           {(list as typeof banners).map((b) => {
             const us = b.units.map((id) => unitById.get(id)!).filter(Boolean);
+            const cs = (b.companions ?? []).flatMap((id) => companionById.get(id) ?? []);
             const art = us.filter((u) => u.bannerArt);
             const dates = bannerDates(b);
             return (
@@ -56,6 +57,21 @@ const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoF
                         ))}
                       </ul>
                     : <p class="muted none" data-pagefind-ignore>No new wizards.</p>}
+                  {cs.length > 0 && (
+                    <div class="banner-companions">
+                      <h4>Companions</h4>
+                      <ul class="units">
+                        {cs.map((c) => (
+                          <li><a href={url(`companions/${c.id}/`)} style="--c:var(--brass-dark)">
+                            {c.image
+                              ? <img src={url(`companions/${c.image}`)} alt="" width="40" height="40" loading="lazy" />
+                              : <span class="ph">{initials(c.name)}</span>}
+                            <span>{c.name}</span>
+                          </a></li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </li>
             );
@@ -93,5 +109,6 @@ const TYPE_LABEL: Record<string, string> = { Regular: 'Regular', MadoFes: 'MadoF
   .units img, .units .ph { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid var(--c); }
   .units .ph { display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--c); background: #FBF4E7; }
   .none { margin: 0; font-size: 14px; }
+  .banner-companions h4 { margin: 4px 0; color: var(--muted); font-size: 13px; }
   @media (max-width: 420px) { .list { grid-template-columns: 1fr; } }
 </style>
