@@ -44,7 +44,7 @@ const nIcon = normal ? skillIcon(unit, normal) : null;
 ---
 <Base title={unit.name} section="characters" description={`${unit.name}: ${unit.attribute} ${unit.role} wizard in FAIRY TAIL Wizard Chronicle — skills, effects and signature lacrima.`}>
   <div class="wrap" data-pagefind-body data-pagefind-meta={`title:${unit.name}`}>
-    <span hidden data-pagefind-filter="Type">Wizard</span><span hidden data-pagefind-filter="Attribute">{unit.attribute}</span><span hidden data-pagefind-filter="Role">{unit.role}</span>
+    <span hidden data-pagefind-filter="Type">Wizard</span><span hidden data-pagefind-filter="Attribute">{unit.attribute}</span><span hidden data-pagefind-filter="Role">{unit.role}</span><span hidden data-pagefind-filter="Rarity">{unit.rarity}</span>
     {portraits.has(unit.id) && <span hidden data-pagefind-meta={`image:${url(`portraits/${unit.id}.webp`)}`}></span>}
     <nav class="crumbs" data-pagefind-ignore aria-label="Breadcrumb">
       <a href={url('characters/')}>Wizard Roster</a><span aria-hidden="true">/</span>

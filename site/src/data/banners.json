@@ -636,5 +636,25 @@
    "master-enchant-irene"
   ],
   "cover": "master-enchant-irene-madofes-banner.webp"
+ },
+ {
+  "id": "brave-attribute-guild-release-celebration-gacha-nov-2026",
+  "name": "Brave Attribute Guild Release Celebration Gacha (Nov 2026)",
+  "type": "Special",
+  "start": "2026-11-03",
+  "end": "2026-11-09",
+  "dateSource": "Confirmed",
+  "units": [],
+  "cover": "guild-launch-sp-brave-attributed-limited-gacha-banner.webp"
+ },
+ {
+  "id": "technique-attribute-guild-release-celebration-gacha-nov-2026",
+  "name": "Technique Attribute Guild Release Celebration Gacha (Nov 2026",
+  "type": "Special",
+  "start": "2026-11-03",
+  "end": "2026-11-09",
+  "dateSource": "Confirmed",
+  "units": [],
+  "cover": "guild-launch-sp-technique-limited-gacha-banner.webp"
  }
 ]

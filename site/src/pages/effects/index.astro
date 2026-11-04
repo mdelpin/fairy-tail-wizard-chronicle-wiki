@@ -3,11 +3,15 @@ import Info from '../../components/Info.astro';
 import Base from '../../layouts/Base.astro';
 import MagicCircle from '../../components/MagicCircle.astro';
 import Pennant from '../../components/Pennant.astro';
-import { buildFinderIndex, GROUPS, url } from '../../lib/data';
+import { buildFinderIndex, raritiesIn, units, RARITIES, GROUPS, url } from '../../lib/data';
 
 const { meta, applies, needs, fromLacrimas } = buildFinderIndex();
 const unitCount = (k: string) => new Set((applies.get(k) ?? []).map((m) => m.unit.id)).size;
 const needCount = (k: string) => new Set((needs.get(k) ?? []).map((m) => m.unit.id)).size;
+// Wizard counts per rarity, so the page can recount when a rarity is picked.
+const byRarity = (k: string, src: Map<string, { unit: { id: string; rarity: string | null } }[]>) =>
+  Object.fromEntries(RARITIES.map((r) => [r, new Set((src.get(k) ?? []).filter((m) => m.unit.rarity === r).map((m) => m.unit.id)).size]));
+const present = raritiesIn(units);
 const lacCount = (k: string) => new Set((fromLacrimas.get(k) ?? []).map((m) => m.lacrima.id)).size;
 const groups = GROUPS.map(([title, blurb]) => ({
   title, blurb,
@@ -22,6 +26,13 @@ const groups = GROUPS.map(([title, blurb]) => ({
         <div class="title"><Pennant width={34} star /><h1>Effect Finder</h1><Info><p><strong>Needs</strong> lists skills that only trigger extra effects when the target already has that effect, such as Burn, Paralysis or Bleed.</p></Info></div>
         <label class="sr-only" for="eq">Find an effect</label>
         <input id="eq" type="search" placeholder="Find an effect" autocomplete="off" />
+        {present.length > 1 && (
+          <div class="rar" role="group" aria-label="Rarity">
+            <span class="rlbl">Wizard rarity</span>
+            <button type="button" class="pill" data-value="" aria-pressed="true">All</button>
+            {present.map((r) => <button type="button" class="pill" data-value={r} aria-pressed="false">{r}</button>)}
+          </div>
+        )}
       </div>
     </section>
 
@@ -30,12 +41,12 @@ const groups = GROUPS.map(([title, blurb]) => ({
         <div class="section-title"><h2>{g.title}</h2></div>
         <div class="tiles">
           {g.items.map((m) => (
-            <a class="tile" href={url(`effects/${m.key}/`)} data-label={m.label.toLowerCase()} style={`--c:${m.color}`}>
+            <a class="tile" href={url(`effects/${m.key}/`)} data-label={m.label.toLowerCase()} data-units={JSON.stringify(byRarity(m.key, applies))} data-needs={JSON.stringify(byRarity(m.key, needs))} data-lac={lacCount(m.key)} style={`--c:${m.color}`}>
               <span class="medal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8EC" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={m.icon} /></svg></span>
               <span class="txt">
                 <span class="heading nm">{m.label}</span>
-                <span class="small">{unitCount(m.key)} wizards{lacCount(m.key) ? ` · ${lacCount(m.key)} lacrimas` : ''}</span>
-                {needCount(m.key) > 0 && <span class="need">needed by {needCount(m.key)}</span>}
+                <span class="small"><span class="u">{unitCount(m.key)}</span> wizards{lacCount(m.key) ? ` · ${lacCount(m.key)} lacrimas` : ''}</span>
+                <span class="need" hidden={needCount(m.key) === 0}>needed by <span class="nn">{needCount(m.key)}</span></span>
               </span>
             </a>
           ))}
@@ -48,16 +59,40 @@ const groups = GROUPS.map(([title, blurb]) => ({
 
 <script>
   const input = document.getElementById('eq') as HTMLInputElement;
-  input.addEventListener('input', () => {
+  const pills = [...document.querySelectorAll<HTMLButtonElement>('.rar .pill')];
+  const tiles = [...document.querySelectorAll<HTMLAnchorElement>('.tile')];
+  let rarity: string | null = new URLSearchParams(location.search).get('rarity');
+  const base = new Map(tiles.map((t) => [t, t.getAttribute('href')!]));
+  function apply() {
     const t = input.value.trim().toLowerCase();
+    for (const tile of tiles) {
+      const units = JSON.parse(tile.dataset.units!) as Record<string, number>;
+      const needs = JSON.parse(tile.dataset.needs!) as Record<string, number>;
+      const sum = (o: Record<string, number>) => rarity ? (o[rarity] ?? 0) : Object.values(o).reduce((a, b) => a + b, 0);
+      const u = sum(units), n = sum(needs), lac = Number(tile.dataset.lac);
+      tile.querySelector('.u')!.textContent = String(u);
+      tile.querySelector('.nn')!.textContent = String(n);
+      (tile.querySelector('.need') as HTMLElement).hidden = n === 0;
+      // lacrimas have no rarity, so an effect no wizard of this rarity applies or needs has nothing to show
+      tile.dataset.empty = String(!!rarity && u === 0 && n === 0);
+      tile.href = base.get(tile)! + (rarity && u > 0 ? '?rarity=' + rarity : '');
+    }
     document.querySelectorAll<HTMLElement>('[data-group]').forEach((g) => {
       let any = false;
       g.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
-        const ok = !t || tile.dataset.label!.includes(t); tile.hidden = !ok; any ||= ok;
+        const ok = (!t || tile.dataset.label!.includes(t)) && tile.dataset.empty !== 'true'; tile.hidden = !ok; any ||= ok;
       });
       g.hidden = !any;
     });
-  });
+    for (const p of pills) p.setAttribute('aria-pressed', String((rarity ?? '') === p.dataset.value));
+    const q = new URLSearchParams(location.search);
+    if (rarity) q.set('rarity', rarity); else q.delete('rarity');
+    const qs = q.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+  for (const p of pills) p.addEventListener('click', () => { rarity = p.dataset.value || null; apply(); });
+  input.addEventListener('input', apply);
+  apply();
 </script>
 
 <style>
@@ -66,6 +101,10 @@ const groups = GROUPS.map(([title, blurb]) => ({
   .title { display: flex; align-items: center; gap: 14px; }
   .title h1 { font-size: 46px; line-height: 1; }
   .intro p { margin: 0; font-size: 17px; color: var(--ink-2); }
+  .rar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .rlbl { font-size: 13px; font-weight: 700; color: var(--timber); margin-right: 4px; }
+  .pill { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+  .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
   .intro input { height: 56px; padding: 0 22px; border-radius: 999px; border: 2px solid var(--brass); background: #fff; font-size: 17px; }
   .section-title { flex-wrap: wrap; align-items: baseline; }
   .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
