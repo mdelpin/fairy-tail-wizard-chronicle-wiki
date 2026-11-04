@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import MagicCircle from '../components/MagicCircle.astro';
 import Pennant from '../components/Pennant.astro';
 import Kanji from '../components/Kanji.astro';
-import { units, lacrimas, ATTR, ATTR_ORDER, ROLES, url, buildFinderIndex } from '../lib/data';
+import { units, companions, lacrimas, ATTR, ATTR_ORDER, ROLES, url, buildFinderIndex } from '../lib/data';
 
 const byAttr = Object.fromEntries(ATTR_ORDER.map((a) => [a, units.filter((u) => u.attribute === a).length]));
 const byRole = ROLES.map((r) => [r, units.filter((u) => u.role === r).length] as const).sort((a, b) => b[1] - a[1]);
@@ -61,7 +61,11 @@ const quick = ['burn', 'paralysis', 'bleed', 'heal-block', 'shield', 'cleanse'].
         <h2>Request board</h2>
         <div class="grid notes">
           <div class="note" style="transform:rotate(-1deg)"><span class="muted small">Now</span><strong>All currently available wizards</strong><span class="small">UR, SR, R and N. Kits, skills and effects.</span></div>
-          <div class="note" style="transform:rotate(-.5deg)"><span class="muted small">Coming up</span><strong>Dragons, Exceeds and Celestial Spirits</strong><span class="small">Not covered yet.</span></div>
+          <div class="note" style="transform:rotate(-.5deg)">
+            <span class="muted small">{companions.length ? 'Now' : 'Coming up'}</span>
+            <strong><a href={url('companions/')}>Dragons, Exceeds and Celestial Spirits</a></strong>
+            <span class="small">{companions.length ? `${companions.length} recorded. Skills, star progression and introductions.` : 'Companion entries are in preparation.'}</span>
+          </div>
         </div>
       </section>
     </div>
