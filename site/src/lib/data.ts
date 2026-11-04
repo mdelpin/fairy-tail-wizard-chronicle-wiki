@@ -93,6 +93,9 @@ export const unitDates = (u: Unit, b?: Banner) => {
 };
 /** JST day the game went live; wizards available from then have no debut banner. */
 export const LAUNCH_DAY = '2025-12-03';
+/** Wizard rarities, best first. Filters list only those present in the data. */
+export const RARITIES = ['UR', 'SR', 'R', 'N'] as const;
+export const raritiesIn = (list: { rarity: string | null }[]) => RARITIES.filter((r) => list.some((u) => u.rarity === r));
 export const DATE_NOTE = '≈ estimated from the two-week banner cycle. Japan time; banners change at 15:00 JST.';
 
 export const url = (path: string) => import.meta.env.BASE_URL.replace(/\/?$/, '/') + path.replace(/^\//, '');

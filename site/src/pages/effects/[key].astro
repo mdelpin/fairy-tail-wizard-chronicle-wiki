@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import MagicCircle from '../../components/MagicCircle.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
-  buildFinderIndex, effects, WIKI_CREDIT, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
+  buildFinderIndex, raritiesIn, effects, WIKI_CREDIT, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
   type FamilyMeta, type Match, type LacrimaMatch, type Unit, type Skill, type Application,
 } from '../../lib/data';
 
@@ -33,6 +33,7 @@ const ladder = [...effects.values()]
   .sort((a, b) => tierRank(a.tier) - tierRank(b.tier));
 const tiersPresent = [...new Set(applies.map((x) => x.effect.tier).filter(Boolean))] as string[];
 const sample = ladder[0];
+const raritiesPresent = raritiesIn(cards.map((c) => c.unit));
 const attrsPresent = ATTR_ORDER.filter((x) => cards.some((c) => c.unit.attribute === x));
 const rolesPresent = ROLES.filter((x) => cards.some((c) => c.unit.role === x));
 
@@ -55,7 +56,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
           <h1>{m.label} <Info><p>Values and tiers are Lv.3. Open a skill’s Lv.1–2 for earlier values.</p></Info></h1>
           {sample && <span class="sub">{[sample.polarity, sample.mechanic].filter(Boolean).join(' · ')}</span>}
           <div class="counts">
-            <span><strong>{cards.length}</strong> wizards apply it</span>
+            <span><strong id="count-w">{cards.length}</strong> wizards apply it</span>
             {lac.length > 0 && <span><strong>{new Set(lac.map((l) => l.lacrima.id)).size}</strong> lacrimas</span>}
             {needUnits.length > 0 && <a href="#needs"><strong>{new Set(needUnits.map((n) => n.unit.id)).size}</strong> need it on the target</a>}
           </div>
@@ -82,6 +83,13 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
           {TIER_ORDER.filter((t) => tiersPresent.includes(t)).map((t) => <button type="button" class="pill" data-filter="tier" data-value={t} aria-pressed="false">{t}</button>)}
         </div>
       )}
+      {raritiesPresent.length > 1 && (
+        <div class="row" role="group" aria-label="Rarity">
+          <span class="lbl">Rarity</span>
+          <button type="button" class="pill" data-filter="rarity" data-value="" aria-pressed="true">All</button>
+          {raritiesPresent.map((x) => <button type="button" class="pill" data-filter="rarity" data-value={x} aria-pressed="false">{x}</button>)}
+        </div>
+      )}
       {attrsPresent.length > 1 && (
         <div class="row" role="group" aria-label="Attribute">
           <span class="lbl">Attribute</span>
@@ -103,7 +111,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
       {cards.map(({ unit, rows }) => {
         const a = ATTR[unit.attribute];
         return (
-          <article class="card" data-attr={unit.attribute} data-role={unit.role} data-tiers={rows.map((r) => r.effect.tier ?? '').join(' ')} style={`--c:${a.color};--t:${a.tint}`}>
+          <article class="card" data-rarity={unit.rarity} data-attr={unit.attribute} data-role={unit.role} data-tiers={rows.map((r) => r.effect.tier ?? '').join(' ')} style={`--c:${a.color};--t:${a.tint}`}>
             <div class="card-head">
               <span class="av">
                 {portraits.has(unit.id) ? <img src={url(`portraits/${unit.id}.webp`)} alt="" loading="lazy" width="60" height="60" /> : <span class="heading">{initials(unit.name)}</span>}
@@ -158,7 +166,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
               {needUnits.map(({ unit, skill, app }) => {
                 const e = app.effect ? effects.get(app.effect) : undefined;
                 return (
-                  <tr>
+                  <tr data-rarity={unit.rarity}>
                     <td><a href={url(`characters/${unit.id}/`)}><strong>{unit.name}</strong></a></td>
                     <td><span class={`kind kind-${skill.kind}`}>{skill.kind}</span></td>
                     <td>{e?.name ?? '—'}</td>
@@ -179,20 +187,23 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   // Tier narrows skills and lacrimas; attribute and role narrow wizards. All three combine.
   const pills = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill')];
   const params = new URLSearchParams(location.search);
-  const state: Record<string, string | null> = { tier: params.get('tier'), attr: params.get('attr'), role: params.get('role') };
+  const known = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill[data-filter=rarity]')].map((b) => b.dataset.value);
+  const state: Record<string, string | null> = { rarity: known.includes(params.get('rarity') ?? '') ? params.get('rarity') : null, tier: params.get('tier'), attr: params.get('attr'), role: params.get('role') };
   function apply() {
     let n = 0;
     document.querySelectorAll<HTMLElement>('.card').forEach((card) => {
       let any = false;
       card.querySelectorAll<HTMLElement>('.hit').forEach((h) => { const ok = !state.tier || h.dataset.tier === state.tier; h.hidden = !ok; any ||= ok; });
-      const ok = any && (!state.attr || card.dataset.attr === state.attr) && (!state.role || card.dataset.role === state.role);
+      const ok = any && (!state.rarity || card.dataset.rarity === state.rarity) && (!state.attr || card.dataset.attr === state.attr) && (!state.role || card.dataset.role === state.role);
       card.hidden = !ok; if (ok) n++;
     });
+    document.querySelectorAll<HTMLElement>('.needs tbody tr').forEach((r) => { r.hidden = !!state.rarity && r.dataset.rarity !== state.rarity; });
     document.querySelectorAll<HTMLElement>('.lac').forEach((l) => { l.hidden = !!state.tier && l.dataset.tier !== state.tier; });
     for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
     document.getElementById('shown')!.textContent = String(n);
+    document.getElementById('count-w')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0;
-    const active = [state.tier && state.tier + ' tier', state.attr, state.role].filter(Boolean);
+    const active = [state.rarity, state.tier && state.tier + ' tier', state.attr, state.role].filter(Boolean);
     document.getElementById('status')!.hidden = active.length === 0;
     document.getElementById('active')!.hidden = n === 0;
     const p = new URLSearchParams();

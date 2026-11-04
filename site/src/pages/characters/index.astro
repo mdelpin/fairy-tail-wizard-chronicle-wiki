@@ -2,9 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import Kanji from '../../components/Kanji.astro';
 import Pennant from '../../components/Pennant.astro';
-import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } from '../../lib/data';
+import { units, raritiesIn, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } from '../../lib/data';
 ---
-<Base title="Wizard Roster" section="characters" description="All UR wizards in FAIRY TAIL Wizard Chronicle, filterable by attribute and role.">
+<Base title="Wizard Roster" section="characters" description="Every wizard in FAIRY TAIL Wizard Chronicle, filterable by rarity, attribute and role.">
   <div class="wrap">
     <div class="head">
       <Pennant width={34} star />
@@ -17,6 +17,13 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } fr
     <div class="filters panel">
       <label class="sr-only" for="f-q">Filter by name</label>
       <input id="f-q" type="search" placeholder="Filter by name" />
+      {raritiesIn(units).length > 1 && (
+        <div class="row" role="group" aria-label="Rarity">
+          <span class="lbl">Rarity</span>
+          <button type="button" class="pill" data-filter="rarity" data-value="" aria-pressed="true">All</button>
+          {raritiesIn(units).map((r) => <button type="button" class="pill" data-filter="rarity" data-value={r} aria-pressed="false">{r}</button>)}
+        </div>
+      )}
       <div class="row" role="group" aria-label="Attribute">
         <span class="lbl">Attribute</span>
         <button type="button" class="pill" data-filter="attr" data-value="" aria-pressed="true">All</button>
@@ -35,7 +42,7 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } fr
 
     <ul class="cards" id="cards">
       {units.map((u) => (
-        <li data-name={`${u.name} ${u.identity ?? ''}`.toLowerCase()} data-attr={u.attribute} data-role={u.role}>
+        <li data-name={`${u.name} ${u.identity ?? ''}`.toLowerCase()} data-attr={u.attribute} data-role={u.role} data-rarity={u.rarity}>
           <a class="card" href={url(`characters/${u.id}/`)} style={`--c:${ATTR[u.attribute].color};--t:${ATTR[u.attribute].tint}`}>
             <span class="art">
               {portraits.has(u.id)
@@ -60,31 +67,32 @@ import { units, ATTR, ATTR_ORDER, ROLES, url, initials, portraits, roleIcon } fr
   const items = [...document.querySelectorAll<HTMLLIElement>('#cards li')];
   const pills = [...document.querySelectorAll<HTMLButtonElement>('.pill')];
   const params = new URLSearchParams(location.search);
-  const state: Record<string, string | null> = { attr: params.get('attr'), role: params.get('role') };
+  const state: Record<string, string | null> = { rarity: params.get('rarity'), attr: params.get('attr'), role: params.get('role') };
   q.value = params.get('q') ?? '';
   function apply() {
     const text = q.value.trim().toLowerCase();
     let n = 0;
     for (const li of items) {
       const ok = (!text || li.dataset.name!.includes(text)) &&
-        (!state.attr || li.dataset.attr === state.attr) && (!state.role || li.dataset.role === state.role);
+        (!state.rarity || li.dataset.rarity === state.rarity) && (!state.attr || li.dataset.attr === state.attr) && (!state.role || li.dataset.role === state.role);
       li.hidden = !ok; if (ok) n++;
     }
     for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0;
     // Offer Clear only while something narrows the list; keep the address bar in step with the page.
-    const active = [text && `“${q.value.trim()}”`, state.attr, state.role].filter(Boolean);
+    const active = [text && `“${q.value.trim()}”`, state.rarity, state.attr, state.role].filter(Boolean);
     document.getElementById('active')!.hidden = active.length === 0 || n === 0;
     const p = new URLSearchParams();
     if (q.value.trim()) p.set('q', q.value.trim());
+    if (state.rarity) p.set('rarity', state.rarity);
     if (state.attr) p.set('attr', state.attr);
     if (state.role) p.set('role', state.role);
     const s = p.toString();
     history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
   }
   document.querySelectorAll('.clear').forEach((b) => b.addEventListener('click', () => {
-    q.value = ''; state.attr = null; state.role = null; apply(); q.focus();
+    q.value = ''; state.rarity = null; state.attr = null; state.role = null; apply(); q.focus();
   }));
   for (const p of pills) p.addEventListener('click', () => {
     state[p.dataset.filter!] = p.dataset.value || null; apply();
