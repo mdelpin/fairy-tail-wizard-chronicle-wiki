@@ -34,6 +34,11 @@ const raids = [...events.values()].filter((event) => event.type === 'Guild Raid'
           </dl>
         </section>
 
+        <section aria-labelledby="attempts">
+          <div class="section-title"><Pennant /><h2 id="attempts">Challenge attempts</h2></div>
+          <div class="copy"><p>The <strong>Guild Card</strong> adds <strong>2 free Raid challenge attempts</strong>.</p></div>
+        </section>
+
         <section aria-labelledby="rewards">
           <div class="section-title"><Pennant /><h2 id="rewards">Raid rewards</h2></div>
           <dl class="definitions">
@@ -47,7 +52,7 @@ const raids = [...events.values()].filter((event) => event.type === 'Guild Raid'
           <div class="section-title"><Pennant /><h2 id="boss-progression">Boss progression</h2></div>
           <div class="copy"><p>Deliora's level increases after each defeat. The boss level is separate from its skills; see <a href={url('enemies/deliora/')}>Deliora's enemy page</a> for skill descriptions and effects.</p></div>
         </section>
-        <p class="source">Based on the in-game Guild Raid notice and help screens. Deliora's level progression was observed in play.</p>
+        <p class="source">Based on the in-game Guild Raid notice, help screens and Guild Card description. Deliora's level progression was observed in play.</p>
       </div>
 
       <aside class="side" aria-label="Guild Raid events">
