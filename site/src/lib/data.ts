@@ -163,7 +163,7 @@ export function valueText(a: Application, e: Effect | undefined): string {
 }
 
 // ---------- effect families for the finder ----------
-export interface FamilyMeta { key: string; label: string; family: string; dir?: 'Up' | 'Down'; group: string; color: string; icon: string }
+export interface FamilyMeta { key: string; label: string; family: string; dir?: 'Up' | 'Down'; group: string; color: string; icon: string; aka?: string[] }
 const ICON: Record<string, string> = {
   flame: 'M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-5 .5 1.5 1.3 2.5 2.2 3C11.5 9 11 6 12 3z',
   drop: 'M12 3c3 4.5 6 8 6 11a6 6 0 0 1-12 0c0-3 3-6.5 6-11z',
@@ -194,7 +194,9 @@ const SUPPORT: Record<string, string> = {
   'Critical Shield': 'shield', Invincible: 'star', 'Damage Reflection': 'reflect',
 };
 /** Effects that strip buffs or debuffs; grouped on their own so they're easy to find. */
-const DISPELS = new Set(['Remove All Buffs', 'Remove All Debuffs']);
+const DISPELS = new Set(['Cleanse', 'Remove All Buffs', 'Remove All Debuffs']);
+/** Other names players use, shown on the effect page so a search for them finds it. */
+const AKA: Record<string, string[]> = { Cleanse: ['Remove All Debuffs'] };
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 /** The finder key an effect belongs to, or null when it isn't listed (base Damage, Transformation). */
@@ -208,7 +210,7 @@ export function familyKey(e: Effect): FamilyMeta | null {
       ? { key: slug(f) + '-up', label: f + ' ↑', family: f, dir: 'Up', group: 'Stat boosts', color: '#8A6A1E', icon: ICON.up }
       : { key: slug(f) + '-down', label: f + ' ↓', family: f, dir: 'Down', group: 'Stat cuts', color: '#9E3B2A', icon: ICON.down };
   }
-  if (DISPELS.has(f)) return { key: slug(f), label: f, family: f, group: 'Dispels', color: '#5B4B8A', icon: ICON.sparkle };
+  if (DISPELS.has(f)) return { key: slug(f), label: f, family: f, group: 'Dispels', color: '#5B4B8A', icon: ICON.sparkle, aka: AKA[f] };
   if (f.includes('Gauge')) return { key: slug(f), label: f, family: f, group: 'Skill gauges', color: '#2F5D8A', icon: ICON.gauge };
   return { key: slug(f), label: f, family: f, group: 'Support', color: '#2D7F4F', icon: ICON[SUPPORT[f] ?? 'sparkle'] };
 }

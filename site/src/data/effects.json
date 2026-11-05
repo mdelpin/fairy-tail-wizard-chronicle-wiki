@@ -1433,19 +1433,6 @@
   "counteredBy": []
  },
  {
-  "id": "remove-all-debuffs",
-  "name": "Remove All Debuffs",
-  "family": "Remove All Debuffs",
-  "direction": null,
-  "tier": null,
-  "polarity": "Beneficial",
-  "mechanic": "Cleanse",
-  "value": null,
-  "secondary": null,
-  "gameText": null,
-  "counteredBy": []
- },
- {
   "id": "silence",
   "name": "Silence",
   "family": "Silence",

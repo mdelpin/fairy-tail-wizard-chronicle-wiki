@@ -8902,7 +8902,7 @@
  {
   "id": "remove-all-debuffs-all-allies-every-10-sec",
   "source": "unit",
-  "effect": "remove-all-debuffs",
+  "effect": "cleanse",
   "type": "Removes",
   "target": "All Allies",
   "trigger": {
@@ -8923,7 +8923,7 @@
  {
   "id": "remove-all-debuffs-all-allies-every-11-sec",
   "source": "unit",
-  "effect": "remove-all-debuffs",
+  "effect": "cleanse",
   "type": "Removes",
   "target": "All Allies",
   "trigger": {
@@ -17312,7 +17312,7 @@
  {
   "id": "remove-all-debuffs-all-allies-20",
   "source": "lacrima",
-  "effect": "remove-all-debuffs",
+  "effect": "cleanse",
   "type": "Removes",
   "target": "All Allies",
   "trigger": {

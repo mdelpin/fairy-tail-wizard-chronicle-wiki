@@ -55,6 +55,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
         <div class="what">
           <h1>{m.label} <Info><p>Values and tiers are Lv.3. Open a skill’s Lv.1–2 for earlier values.</p></Info></h1>
           {sample && <span class="sub">{[sample.polarity, sample.mechanic].filter(Boolean).join(' · ')}</span>}
+          {m.aka && m.aka.length > 0 && <span class="sub">Also called {m.aka.join(', ')}</span>}
           <div class="counts">
             <span><strong id="count-w">{cards.length}</strong> wizards apply it</span>
             {lac.length > 0 && <span><strong>{new Set(lac.map((l) => l.lacrima.id)).size}</strong> lacrimas</span>}

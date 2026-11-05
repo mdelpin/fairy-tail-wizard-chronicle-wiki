@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 116 effects, 824 effect applications, 54 banners, 58 banner arts. 63 issues in 4 categories.
+156 units, 115 lacrimas, 115 effects, 824 effect applications, 54 banners, 58 banner arts. 63 issues in 4 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -69,11 +69,11 @@
 - 'pickup-dark-mage-zeref': 794x1060 is not close to 16:9 (the card crops it to fit)
 - 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
 
+## Addresses retired (record renamed or deleted; old links to these pages stop working) (1)
+
+- effect: 1
+
 ## Missing required values (1)
 
 - Lacrima '✨ Swaying in the Summer Night Lisanna Lacrima': lacrimaEffectApplications is empty
-
-## Near-duplicate values (typo or inconsistent spelling?) (1)
-
-- Effect title: 'Remove All Buffs' vs 'Remove All Debuffs'
 
