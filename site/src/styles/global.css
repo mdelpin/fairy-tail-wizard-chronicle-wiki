@@ -31,18 +31,22 @@ h1, h2, h3, .heading { font-family: var(--heading); font-weight: 400; margin: 0;
 
 /* ---------- frame ---------- */
 .site-header { background: var(--timber); border-bottom: 4px solid var(--crimson); }
-.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding-top: 12px; padding-bottom: 12px; }
+.site-header .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 280px); align-items: center; gap: 12px 28px; padding-top: 12px; padding-bottom: 12px; }
 .brand { display: flex; align-items: center; gap: 12px; color: #F5EEDF; text-decoration: none; }
 .brand:hover { text-decoration: none; color: #fff; }
 .brand-name { font-family: var(--heading); font-size: 20px; line-height: 1.1; }
 .brand-sub { display: block; margin-top: 2px; font: 600 11px var(--body); letter-spacing: .14em; text-transform: uppercase; color: #E6C77A; }
-.nav { display: flex; flex-wrap: wrap; gap: 6px; }
+.nav { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; }
 .nav a { padding: 9px 16px; border-radius: 999px; border: 2px solid transparent; color: #E6D6B8; font-size: 14px; font-weight: 500; text-decoration: none; }
 .nav a:hover { color: #fff; border-color: #6B4A33; }
 .nav a[aria-current='page'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); font-weight: 600; }
-.header-search { flex: 1 1 220px; display: flex; justify-content: flex-end; }
+.header-search { min-width: 0; display: flex; justify-content: flex-end; }
 .header-search input { width: 100%; max-width: 280px; height: 40px; padding: 0 16px; border-radius: 999px; border: 2px solid #6B4A33; background: var(--timber-2); color: #F5EEDF; font: 14px var(--body); }
 .header-search input::placeholder { color: #CDB997; }
+@media (max-width: 600px) {
+  .site-header .wrap { grid-template-columns: minmax(0, 1fr); }
+  .header-search input { max-width: none; }
+}
 .site-footer { background: var(--timber); color: #E6D6B8; margin-top: 64px; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 22px; padding-bottom: 22px; font-size: 13px; }
 .site-footer a { color: #F3D27A; }
