@@ -32,9 +32,12 @@ const byCompanion = new Map<string, CompanionMatch[]>();
 for (const x of companions) (byCompanion.get(x.companion.id) ?? byCompanion.set(x.companion.id, []).get(x.companion.id)!).push(x);
 
 // Tier ladder from the effect definitions themselves
+const inFamily = (e: (typeof ladder)[number]) => e.family === m.family && (!m.dir || (e.direction ?? (/(Increase|Up)\b/.test(e.name) ? 'Up' : 'Down')) === m.dir);
 const ladder = [...effects.values()]
   .filter((e) => e.family === m.family && (!m.dir || (e.direction ?? (/(Increase|Up)\b/.test(e.name) ? 'Up' : 'Down')) === m.dir) && e.tier && TIER_ORDER.includes(e.tier))
   .sort((a, b) => tierRank(a.tier) - tierRank(b.tier));
+// Effects with no tiers (Critical Shield, Bind, Taunt …) have no ladder; show what each one does instead
+const plain = ladder.length > 0 ? [] : [...effects.values()].filter((e) => inFamily(e) && !e.tier && e.gameText);
 const tiersPresent = [...new Set(applies.map((x) => x.effect.tier).filter(Boolean))] as string[];
 const sample = ladder[0];
 const raritiesPresent = raritiesIn(cards.map((c) => c.unit));
@@ -73,6 +76,16 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
               <div role="listitem" class={`rung rung-${e.tier}`}>
                 <span class="t">{e.tier}</span>
                 <span class="v">{e.gameText ?? (e.value ? `${e.value.amount}` : '—')}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {plain.length > 0 && (
+          <div class="ladder" role="list" aria-label={`What ${m.label} does`}>
+            {plain.map((e) => (
+              <div role="listitem" class="rung rung-plain">
+                <span class="t">{plain.length > 1 ? e.name : 'Effect'}</span>
+                <span class="v">{e.gameText}</span>
               </div>
             ))}
           </div>
@@ -257,6 +270,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .counts strong { font-family: var(--heading); font-size: 16px; }
   .ladder { flex: 1 1 380px; display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; }
   .rung { padding: 12px; border-radius: 14px; background: #FBEBD5; color: var(--ink); display: flex; flex-direction: column; gap: 4px; }
+  .rung-plain { background: #FFF3E0; border: 2px solid var(--brass); }
   .rung-Top { background: #FFF3E0; border: 2px solid var(--brass); }
   .rung .t { font: 700 12px var(--mono); text-transform: uppercase; color: var(--ember); }
   .rung .v { font-size: 13px; line-height: 1.35; }
