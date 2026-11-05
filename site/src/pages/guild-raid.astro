@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import Pennant from '../components/Pennant.astro';
+import { events, enemies, dayText, url } from '../lib/data';
+
+const raids = [...events.values()].filter((event) => event.type === 'Guild Raid')
+  .sort((a, b) => (b.start ?? '').localeCompare(a.start ?? ''));
+---
+<Base title="Guild Raid" section="events" description="How Guild Raid works in FAIRY TAIL Wizard Chronicle: Defeat Points, boss summoning and Raid Score.">
+  <article class="wrap" data-pagefind-body>
+    <span hidden data-pagefind-filter="Type">Game mode</span>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href={url('events/')}>Events</a><span aria-hidden="true">/</span><span>Guild Raid</span></nav>
+    <header class="panel intro">
+      <Pennant width={36} star />
+      <div><h1>Guild Raid</h1><p>Fight alongside your guildmates, summon the raid boss and earn Raid Score.</p></div>
+    </header>
+
+    <div class="columns">
+      <div class="rules">
+        <section aria-labelledby="how-it-works">
+          <div class="section-title"><Pennant /><h2 id="how-it-works">How it works</h2></div>
+          <ol class="steps">
+            <li><h3>Defeat Etherious</h3><p>Defeat Etherious from Lv.1 to Lv.5 to earn <strong>Defeat Points</strong> and fill the gauge.</p></li>
+            <li><h3>Take on the boss</h3><p>The boss appears when the Defeat Points gauge is full. Join forces with your guildmates to fight it. The first Guild Raid features <a href={url('enemies/deliora/')}>Deliora</a>.</p></li>
+            <li><h3>Earn Raid Score</h3><p>Battle the boss alongside your guildmates. Your <strong>Raid Score</strong> is based on the amount of enemy HP you deplete in battle.</p></li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="points-and-score">
+          <div class="section-title"><Pennant /><h2 id="points-and-score">Points and scoring</h2></div>
+          <dl class="definitions">
+            <div><dt>Defeat Points</dt><dd>Earned by defeating Etherious. Filling the Defeat Points gauge makes the boss appear.</dd></div>
+            <div><dt>Raid Score</dt><dd>Earned by depleting enemy HP and used in the Guild Raid Ranking and Individual Raid Ranking.</dd></div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="rewards">
+          <div class="section-title"><Pennant /><h2 id="rewards">Raid rewards</h2></div>
+          <dl class="definitions">
+            <div><dt>Defeat Rewards</dt><dd>Earned by defeating raid enemies.</dd></div>
+            <div><dt>Score Rewards</dt><dd>Earned by reaching the required Raid Score.</dd></div>
+          </dl>
+          <div class="copy reward-note"><p>Rewards are stocked as you and your guildmates battle. <strong>Stocked rewards reset daily, so claim them before the reset.</strong></p><p>Frames earned as raid rewards have an expiration date.</p></div>
+        </section>
+
+        <section aria-labelledby="boss-progression">
+          <div class="section-title"><Pennant /><h2 id="boss-progression">Boss progression</h2></div>
+          <div class="copy"><p>Deliora's level increases after each defeat. The boss level is separate from its skills; see <a href={url('enemies/deliora/')}>Deliora's enemy page</a> for skill descriptions and effects.</p></div>
+        </section>
+        <p class="source">Based on the in-game Guild Raid notice and help screens. Deliora's level progression was observed in play.</p>
+      </div>
+
+      <aside class="side" aria-label="Guild Raid events">
+        <h2>Events</h2>
+        {raids.map((event) => <section class="event">
+          {event.image && <a href={url(`events/#${event.id}`)} tabindex="-1" aria-hidden="true"><img src={url(`events/${event.image}`)} alt="" width="800" height="450" /></a>}
+          <div class="event-body">
+            <h3><a href={url(`events/#${event.id}`)}>{event.name}</a></h3>
+            {event.start && <p class="dates">{dayText(event.start)}{event.end && ` – ${dayText(event.end)}`} JST</p>}
+            {event.dateSource === 'Conflicting' && <p class="date-note">Official notices disagree on the end date. Dates shown follow the in-game notice.</p>}
+            <ul>{enemies.filter((enemy) => event.enemies.includes(enemy.id)).map((enemy) => <li><a href={url(`enemies/${enemy.id}/`)}>{enemy.name} — skills and effects <span aria-hidden="true">→</span></a></li>)}</ul>
+          </div>
+        </section>)}
+      </aside>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .crumbs { display: flex; gap: 10px; margin-bottom: 18px; font-size: 14px; }
+  .intro { display: flex; align-items: center; gap: 18px; padding: 28px 32px; }
+  .intro > :global(svg) { flex: none; }
+  h1 { font-size: clamp(36px, 6vw, 48px); line-height: 1.1; }
+  .intro p { margin: 10px 0 0; color: var(--muted); }
+  .columns { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; align-items: start; }
+  .rules { min-width: 0; }
+  .steps { list-style: none; counter-reset: step; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 16px; background: #fff; overflow: hidden; }
+  .steps li { counter-increment: step; position: relative; padding: 22px 24px 22px 78px; }
+  .steps li + li { border-top: 1px solid var(--line); }
+  .steps li::before { content: counter(step); position: absolute; left: 24px; top: 23px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--crimson); color: var(--cream); font: 500 16px var(--mono); }
+  h3 { font-size: 23px; line-height: 1.25; }
+  .steps p { margin: 8px 0 0; }
+  .definitions { margin: 0; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+  .definitions > div { padding: 20px 24px; }
+  .definitions > div + div { border-top: 1px solid var(--line); }
+  dt { font-weight: 700; }
+  dd { margin: 6px 0 0; }
+  .copy { padding: 20px 24px; background: var(--panel); border-left: 4px solid var(--brass); border-radius: 0 12px 12px 0; }
+  .copy p { margin: 0; }
+  .reward-note { margin-top: 14px; }
+  .copy p + p { margin-top: 10px; }
+  .source { font-size: 13px; color: var(--muted); margin-top: 24px; }
+  .side { margin-top: 44px; }
+  .side > h2 { font-size: 24px; margin-bottom: 16px; }
+  .event { overflow: hidden; background: #fff; border: 2px solid var(--line); border-radius: 16px; box-shadow: 0 3px 0 var(--brass); }
+  .event + .event { margin-top: 20px; }
+  .event img { width: 100%; height: auto; }
+  .event-body { padding: 18px 20px; }
+  .event h3 { font-size: 21px; }
+  .event h3 a { color: var(--ink); }
+  .dates { font: 500 12px/1.6 var(--mono); color: var(--muted); margin: 10px 0; }
+  .date-note { font-size: 12px; color: var(--muted); }
+  .event ul { list-style: none; padding: 14px 0 0; margin: 14px 0 0; border-top: 1px solid var(--line); font-size: 14px; }
+  @media (max-width: 850px) { .columns { grid-template-columns: minmax(0, 1fr); gap: 0; } .side { max-width: 440px; } }
+  @media (max-width: 600px) { .intro { padding: 24px 20px; } .steps li { padding: 20px 18px 20px 66px; } .steps li::before { left: 18px; top: 21px; } }
+</style>

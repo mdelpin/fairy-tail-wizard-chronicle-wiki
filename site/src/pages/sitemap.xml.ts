@@ -6,7 +6,7 @@ export const GET: APIRoute = ({ site }) => {
   const base = (import.meta.env.BASE_URL.replace(/\/?$/, '/'));
   const abs = (path: string) => new URL(base + path, site).href;
   const paths = [
-    '', 'characters/', 'enemies/', 'events/', 'effects/', 'lacrimas/', 'banners/', 'search/',
+    '', 'characters/', 'enemies/', 'events/', 'guild-raid/', 'effects/', 'lacrimas/', 'banners/', 'search/',
     ...(companions.length ? ['companions/'] : []),
     ...units.map((u) => `characters/${u.id}/`),
     ...companions.map((c) => `companions/${c.id}/`),
