@@ -1,0 +1,14 @@
+[
+ {
+  "id": "guild-raid-deliora",
+  "name": "Guild Raid – Deliora",
+  "type": "Guild Raid",
+  "start": "2026-11-05",
+  "end": "2026-11-13",
+  "image": "guild-raid-deliora.webp",
+  "dateSource": "Conflicting",
+  "enemies": [
+   "deliora"
+  ]
+ }
+]

@@ -1,0 +1,116 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pennant from '../../components/Pennant.astro';
+import { bannerById, companions, companionApplications, effects, familyKey, dayText, url, MAX_COMPANION_STARS, type Companion } from '../../lib/data';
+
+export function getStaticPaths() {
+  return companions.map((companion) => ({ params: { id: companion.id }, props: { companion } }));
+}
+
+const { companion: c } = Astro.props as { companion: Companion };
+const banner = c.introducedBanner ? bannerById.get(c.introducedBanner) : undefined;
+const apps = c.applications.flatMap((id) => companionApplications.get(id) ?? []).map((app) => {
+  const effect = app.effect ? effects.get(app.effect) : undefined;
+  return { app, name: effect?.name ?? 'Unresolved effect', family: effect && familyKey(effect) };
+});
+const durationText = (n: number | null | undefined) => n == null ? '—' : `${n}s`;
+const levelText = [0, 1, 2].map((level) => [...new Set(apps.map(({ app, name }) => {
+  const duration = app.durationByLevel[level];
+  if (app.gameText && (!app.gameText.includes('{duration}') || duration != null)) {
+    return app.gameText.replaceAll('{duration}', durationText(duration));
+  }
+  return [app.trigger?.raw, [app.type, name].filter(Boolean).join(' '), app.target,
+    duration == null ? null : durationText(duration), app.chance == null ? null : `${app.chance * 100}% chance`, app.condition].filter(Boolean).join(' · ');
+}))]);
+const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 6, signDisplay: 'exceptZero' });
+const rows = Array.from({ length: MAX_COMPANION_STARS + 1 }, (_, stars) => {
+  const level = c.skillLevelFromStars.filter((from) => from <= stars).length;
+  const durations = apps.map(({ app, name }) => ({ name, duration: app.durationByLevel[level - 1] }));
+  const owned = c.ownedStart == null || c.ownedStep == null ? null : c.ownedStart + c.ownedStep * stars;
+  return { stars, level, durations, owned };
+});
+---
+<Base title={c.name} section="companions" description={`Skill, star progression and introduction for ${c.name} in FAIRY TAIL Wizard Chronicle.`}>
+  <article class="wrap" data-pagefind-body>
+    <span hidden data-pagefind-filter="Type">Companion</span>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href={url('companions/')}>Companions</a></nav>
+    <header class="panel overview">
+      {c.image && <img src={url(`companions/${c.image}`)} alt="" width="160" height="160" data-pagefind-meta="image[src]" />}
+      <div>
+        <h1>{c.name}</h1>
+        <div class="labels">
+          {c.rarity && <span class={`rarity rarity-${c.rarity}`}>{c.rarity}</span>}
+          {c.type && <span class="muted">{c.type}</span>}
+        </div>
+        <p class="introduced">
+          <strong>Introduced</strong>
+          {c.introducedVia || c.introducedOn || banner ? (
+            <span>{[c.introducedVia, c.introducedOn && `${dayText(c.introducedOn)} JST`].filter(Boolean).join(' · ')}
+              {banner && <a href={url(`banners/#${banner.id}`)}>{banner.name}</a>}
+            </span>
+          ) : <span class="muted">Details pending.</span>}
+        </p>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-title"><Pennant /><h2>{c.skillName ?? 'Skill'}</h2></div>
+      {apps.length ? (
+        <>
+          <div class="levels">
+            {levelText.map((lines, level) => (
+              <div class="entry"><h3>Lv.{level + 1}</h3>{lines.map((line) => <p>{line}</p>)}</div>
+            ))}
+          </div>
+          <h3 class="effects-title">Effects</h3>
+          <ul class="effects">
+            {[...new Map(apps.map((row) => [row.app.effect, row])).values()].map(({ name, family }) => (
+              <li>{family ? <a class="chip" href={url(`effects/${family.key}/#companions`)}>{name}</a> : <span class="chip">{name}</span>}</li>
+            ))}
+          </ul>
+        </>
+      ) : <p class="muted">Skill details pending.</p>}
+    </section>
+
+    <section>
+      <div class="section-title"><Pennant /><h2>Star progression</h2></div>
+      <div class="entry table-wrap">
+        <table class="fx progression">
+          <thead><tr><th scope="col">Stars</th><th scope="col">Skill level</th><th scope="col">Duration</th><th scope="col">Owned Effect{c.ownedStat && <span class="stat">{c.ownedStat}</span>}</th></tr></thead>
+          <tbody>
+            {rows.map(({ stars, level, durations, owned }) => (
+              <tr>
+                <th scope="row">{stars}</th>
+                <td>{level ? `Lv.${level}` : '—'}</td>
+                <td>{durations.every((d) => d.duration === durations[0]?.duration)
+                  ? durationText(durations[0]?.duration)
+                  : durations.map(({ name, duration }) => <span class="duration">{name} · {durationText(duration)}</span>)}</td>
+                <td>{owned == null ? '—' : `${number.format(owned)}%`}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .overview { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; padding: 22px; }
+  .overview img { width: min(130px, 100%); height: auto; aspect-ratio: 1; object-fit: contain; }
+  h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; }
+  .labels { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+  .introduced { margin: 14px 0 0; font-size: 14px; }
+  .introduced > span, .introduced a { display: block; }
+  .levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; }
+  .entry { border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+  .levels .entry { padding: 14px 16px; }
+  .levels p { margin: 6px 0 0; }
+  .effects-title { margin-top: 16px; }
+  .effects { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 8px 0 0; padding: 0; }
+  table.progression { min-width: 0; }
+  table.progression th, table.progression td { padding: 8px 10px; }
+  table.progression tbody th { border-top: 1px solid var(--line); background: #FFF9EF; }
+  .stat, .duration { display: block; }
+  .stat { text-transform: none; }
+</style>

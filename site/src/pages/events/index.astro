@@ -1,0 +1,65 @@
+---
+import Info from '../../components/Info.astro';
+import Base from '../../layouts/Base.astro';
+import Pennant from '../../components/Pennant.astro';
+import { events, enemies, dayText, url } from '../../lib/data';
+
+const entries = [...events.values()].sort((a, b) => (b.start ?? '').localeCompare(a.start ?? '') || a.name.localeCompare(b.name));
+const dated = entries.filter((event) => event.start);
+const undated = entries.filter((event) => !event.start);
+const groups = [['Timeline', dated], ['Undated', undated]] as const;
+---
+<Base title="Events" section="events" description="FAIRY TAIL Wizard Chronicle events and their enemies, with dates in Japan time.">
+  <div class="wrap" data-pagefind-body>
+    <span hidden data-pagefind-filter="Type">Event</span>
+    <div class="head">
+      <Pennant width={34} star />
+      <div><h1>Events <Info><p>Dates are shown in Japan time (JST).</p></Info></h1><p class="muted">{entries.length} {entries.length === 1 ? 'event' : 'events'}</p></div>
+    </div>
+    {groups.map(([title, list]) => list.length > 0 && <section>
+      <div class="section-title"><Pennant /><h2>{title}</h2></div>
+      <ol class="list">
+        {list.map((event) => <li class="item" id={event.id}>
+          {event.image && <div class="cover" data-pagefind-ignore><img src={url(`events/${event.image}`)} alt="" width="800" height="450" loading="lazy" /></div>}
+          <div class="body">
+            <div class="top"><h3 class="heading nm">{event.name}</h3>{event.type && <span class="type" data-pagefind-ignore>{event.type}</span>}</div>
+            {event.start && <div class="when" data-pagefind-ignore>
+              {dayText(event.start)}{event.end && ` – ${dayText(event.end)}`}
+              {event.dateSource === 'Conflicting' && <Info label="Date discrepancy"><p>Official notices disagree on the end date. The dates shown follow the in-game notice.</p></Info>}
+            </div>}
+            <ul class="enemies">
+              {enemies.filter((enemy) => event.enemies.includes(enemy.id)).map((enemy) => <li><a href={url(`enemies/${enemy.id}/`)}>
+                {enemy.image && <img src={url(`enemies/${enemy.image}`)} alt="" width="40" height="40" loading="lazy" />}
+                <span>{enemy.name}</span>
+              </a></li>)}
+            </ul>
+          </div>
+        </li>)}
+      </ol>
+    </section>)}
+  </div>
+</Base>
+
+<style>
+  .head { position: relative; display: flex; align-items: center; gap: 16px; }
+  .head :global(.info) { position: static; }
+  .head :global(.pop) { left: 0; }
+  h1 { font-size: 42px; line-height: 1; }
+  .head p { margin: 4px 0 0; }
+  .list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 16px; align-items: start; }
+  .item { position: relative; border: 2px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 3px 0 var(--brass); scroll-margin-top: 16px; }
+  .item:target { box-shadow: 0 0 0 3px var(--crimson); }
+  .cover { overflow: hidden; border-radius: 14px 14px 0 0; border-bottom: 2px solid var(--brass); background: var(--timber); }
+  .cover img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+  .body { display: flex; flex-direction: column; gap: 8px; padding: 14px 18px 16px; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .nm { font-size: 19px; line-height: 1.2; }
+  .type { flex: none; padding: 3px 10px; border-radius: 999px; background: var(--brass); color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .when { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font: 500 13px var(--mono); color: var(--muted); }
+  .when :global(.info) { position: static; }
+  .when :global(.pop) { top: calc(100% + 8px); left: 16px; width: min(340px, calc(100% - 32px)); }
+  .enemies { list-style: none; padding: 0; margin: 2px 0 0; display: flex; flex-direction: column; gap: 6px; }
+  .enemies a { display: flex; align-items: center; gap: 10px; color: var(--ink); font-size: 14px; font-weight: 500; }
+  .enemies a:hover { color: var(--crimson); }
+  .enemies img { width: 40px; height: 40px; object-fit: contain; border: 2px solid var(--brass); border-radius: 50%; }
+</style>

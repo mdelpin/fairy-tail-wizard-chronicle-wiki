@@ -1,0 +1,62 @@
+[
+ {
+  "id": "deliora",
+  "name": "Deliora",
+  "type": "Raid",
+  "role": "Boss",
+  "image": "deliora.webp",
+  "immuneTo": [],
+  "events": [
+   "guild-raid-deliora"
+  ],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 140% ATK damage to targets within range. After the attack hits, has a 20% chance to grant self for 3 sec, [Top] Shield.",
+    "applications": [
+     "damage-enemies-in-range-normal-attack-140-of-own-atk",
+     "top-shield-self-20-3-sec-2"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Undying Vitality",
+    "icon": 9,
+    "gameText": "Permanently grants self [Top] ATK Increase and [Top] DEF Increase, Action Impairment Barrier, Critical Shield.",
+    "applications": [
+     "top-atk-increase-self-constant-2",
+     "top-def-increase-self-constant",
+     "action-impairment-barrier-self-constant",
+     "critical-shield-self-constant"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Resurgent Calamity",
+    "icon": 30,
+    "gameText": "Every 8 sec, deals 650% ATK damage to all enemies. After the attack hits, inflicts [Top] Burn and [Top] Paralysis, [Top] DEF Decrease, [Top] Critical Damage Decrease, Heal Block on the target for 4 sec.",
+    "applications": [
+     "damage-all-enemies-every-8-sec-650-of-own-atk",
+     "top-burn-each-target-hit-every-8-sec-4-sec",
+     "top-paralysis-each-target-hit-every-8-sec-4-sec",
+     "top-def-decrease-each-target-hit-every-8-sec-4-sec",
+     "top-critical-damage-decrease-each-target-hit-every-8-sec-4-sec",
+     "heal-block-each-target-hit-every-8-sec-4-sec"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Demon from the Book of Zeref",
+    "icon": 10,
+    "gameText": "Every 6 sec, has a 30% chance to inflict Bind and [Top] Bleed, Silence on all enemies for 3 sec.",
+    "applications": [
+     "bind-all-enemies-every-6-sec-30-3-sec",
+     "top-bleed-all-enemies-every-6-sec-30-3-sec",
+     "silence-all-enemies-every-6-sec-30-3-sec"
+    ]
+   }
+  ]
+ }
+]
