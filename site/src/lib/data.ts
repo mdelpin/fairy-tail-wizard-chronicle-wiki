@@ -193,6 +193,8 @@ const SUPPORT: Record<string, string> = {
   Heal: 'heal', Shield: 'shield', Cleanse: 'sparkle', 'Action Block Barrier': 'barrier',
   'Critical Shield': 'shield', Invincible: 'star', 'Damage Reflection': 'reflect',
 };
+/** Effects that strip buffs or debuffs; grouped on their own so they're easy to find. */
+const DISPELS = new Set(['Remove All Buffs', 'Remove All Debuffs']);
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 /** The finder key an effect belongs to, or null when it isn't listed (base Damage, Transformation). */
@@ -206,6 +208,7 @@ export function familyKey(e: Effect): FamilyMeta | null {
       ? { key: slug(f) + '-up', label: f + ' ↑', family: f, dir: 'Up', group: 'Stat boosts', color: '#8A6A1E', icon: ICON.up }
       : { key: slug(f) + '-down', label: f + ' ↓', family: f, dir: 'Down', group: 'Stat cuts', color: '#9E3B2A', icon: ICON.down };
   }
+  if (DISPELS.has(f)) return { key: slug(f), label: f, family: f, group: 'Dispels', color: '#5B4B8A', icon: ICON.sparkle };
   if (f.includes('Gauge')) return { key: slug(f), label: f, family: f, group: 'Skill gauges', color: '#2F5D8A', icon: ICON.gauge };
   return { key: slug(f), label: f, family: f, group: 'Support', color: '#2D7F4F', icon: ICON[SUPPORT[f] ?? 'sparkle'] };
 }
@@ -214,6 +217,7 @@ export const GROUPS = [
   ['Stat boosts', 'Increases for yourself and allies'],
   ['Stat cuts', 'Decreases on enemies'],
   ['Support', 'Healing and protection'],
+  ['Dispels', 'Remove all buffs or debuffs'],
   ['Skill gauges', 'Speed up allies, slow down enemies'],
 ] as const;
 

@@ -1422,7 +1422,7 @@
  {
   "id": "remove-all-buffs",
   "name": "Remove All Buffs",
-  "family": "Cleanse",
+  "family": "Remove All Buffs",
   "direction": null,
   "tier": null,
   "polarity": "Harmful",
@@ -1435,7 +1435,7 @@
  {
   "id": "remove-all-debuffs",
   "name": "Remove All Debuffs",
-  "family": "Cleanse",
+  "family": "Remove All Debuffs",
   "direction": null,
   "tier": null,
   "polarity": "Beneficial",
