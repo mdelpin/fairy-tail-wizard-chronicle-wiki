@@ -1,10 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Pennant from '../components/Pennant.astro';
-import { events, enemies, dayText, url } from '../lib/data';
+import { url } from '../lib/data';
 
-const raids = [...events.values()].filter((event) => event.type === 'Guild Raid')
-  .sort((a, b) => (b.start ?? '').localeCompare(a.start ?? ''));
 ---
 <Base title="Guild Raid" section="events" description="How Guild Raid works in FAIRY TAIL Wizard Chronicle: Defeat Points, boss summoning and Raid Score.">
   <article class="wrap" data-pagefind-body>
@@ -55,17 +53,11 @@ const raids = [...events.values()].filter((event) => event.type === 'Guild Raid'
         <p class="source">Based on the in-game Guild Raid notice, help screens and Guild Card description. Deliora's level progression was observed in play.</p>
       </div>
 
-      <aside class="side" aria-label="Guild Raid events">
-        <h2>Events</h2>
-        {raids.map((event) => <section class="event">
-          {event.image && <a href={url(`events/#${event.id}`)} tabindex="-1" aria-hidden="true"><img src={url(`events/${event.image}`)} alt="" width="800" height="450" /></a>}
-          <div class="event-body">
-            <h3><a href={url(`events/#${event.id}`)}>{event.name}</a></h3>
-            {event.start && <p class="dates">{dayText(event.start)}{event.end && ` – ${dayText(event.end)}`} JST</p>}
-            {event.dateSource === 'Conflicting' && <p class="date-note">Official notices disagree on the end date. Dates shown follow the in-game notice.</p>}
-            <ul>{enemies.filter((enemy) => event.enemies.includes(enemy.id)).map((enemy) => <li><a href={url(`enemies/${enemy.id}/`)}>{enemy.name} — skills and effects <span aria-hidden="true">→</span></a></li>)}</ul>
-          </div>
-        </section>)}
+      <aside class="side" aria-label="Guild Raid runs">
+        <a class="side-link" href={url('events/')}>
+          <span class="side-label">Events</span>
+          <span class="side-text">See every Guild Raid, with dates and bosses, on the Events timeline <span aria-hidden="true">→</span></span>
+        </a>
       </aside>
     </div>
   </article>
@@ -96,16 +88,10 @@ const raids = [...events.values()].filter((event) => event.type === 'Guild Raid'
   .copy p + p { margin-top: 10px; }
   .source { font-size: 13px; color: var(--muted); margin-top: 24px; }
   .side { margin-top: 44px; }
-  .side > h2 { font-size: 24px; margin-bottom: 16px; }
-  .event { overflow: hidden; background: #fff; border: 2px solid var(--line); border-radius: 16px; box-shadow: 0 3px 0 var(--brass); }
-  .event + .event { margin-top: 20px; }
-  .event img { width: 100%; height: auto; }
-  .event-body { padding: 18px 20px; }
-  .event h3 { font-size: 21px; }
-  .event h3 a { color: var(--ink); }
-  .dates { font: 500 12px/1.6 var(--mono); color: var(--muted); margin: 10px 0; }
-  .date-note { font-size: 12px; color: var(--muted); }
-  .event ul { list-style: none; padding: 14px 0 0; margin: 14px 0 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .side-link { display: block; padding: 18px 20px; background: #fff; border: 2px solid var(--line); border-radius: 16px; box-shadow: 0 3px 0 var(--brass); color: var(--ink); }
+  .side-link:hover { box-shadow: 0 3px 0 var(--crimson); }
+  .side-label { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--crimson); }
+  .side-text { font-size: 15px; line-height: 1.4; }
   @media (max-width: 850px) { .columns { grid-template-columns: minmax(0, 1fr); gap: 0; } .side { max-width: 440px; } }
   @media (max-width: 600px) { .intro { padding: 24px 20px; } .steps li { padding: 20px 18px 20px 66px; } .steps li::before { left: 18px; top: 21px; } }
 </style>
