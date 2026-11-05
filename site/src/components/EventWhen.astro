@@ -1,0 +1,38 @@
+---
+// An event's dates. Exact times are shown in UTC, as the game's notices state them; a small script adds the
+// reader's own time beneath. Without times (or without script) it falls back to the day range, in Japan time.
+import { dayText, utcText, type GameEvent } from '../lib/data';
+interface Props { event: GameEvent; ranking?: boolean }
+const { event, ranking = false } = Astro.props;
+const timed = Boolean(event.startAt && event.endAt);
+const hasRanking = ranking && Boolean(event.rankingStartAt && event.rankingEndAt);
+---
+{timed ? <span class="event-when">
+  <span class="utc"><time datetime={event.startAt!}>{utcText(event.startAt!)}</time> – <time datetime={event.endAt!}>{utcText(event.endAt!)}</time></span>
+  <span class="local" data-start={event.startAt} data-end={event.endAt} data-label="Your time" hidden></span>
+  {hasRanking && <span class="rank">Ranking calculation: <time datetime={event.rankingStartAt!}>{utcText(event.rankingStartAt!)}</time> – <time datetime={event.rankingEndAt!}>{utcText(event.rankingEndAt!)}</time></span>}
+  {hasRanking && <span class="local" data-start={event.rankingStartAt} data-end={event.rankingEndAt} data-label="Your time" hidden></span>}
+</span> : event.start && <span class="event-when">{dayText(event.start)}{event.end && ` – ${dayText(event.end)}`} JST</span>}
+
+<script>
+  // Adds each reader's own time zone; stays hidden when the browser can't say or it is already UTC.
+  const fmt = new Intl.DateTimeFormat(undefined, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+  const zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  if (zone && zone !== 'UTC' && zone !== 'Etc/UTC') {
+    document.querySelectorAll<HTMLElement>('.event-when .local').forEach((el) => {
+      const start = new Date(el.dataset.start ?? ''), end = new Date(el.dataset.end ?? '');
+      if (isNaN(start.getTime()) || isNaN(end.getTime())) return;
+      // each moment is its own unbreakable piece, so a line can only wrap at the dash
+      const moment = (d: Date) => { const span = document.createElement('span'); span.className = 'moment'; span.textContent = fmt.format(d); return span; };
+      el.replaceChildren(`${el.dataset.label}: `, moment(start), ' – ', moment(end));
+      el.hidden = false;
+    });
+  }
+</script>
+
+<style>
+  .event-when { display: flex; flex-direction: column; gap: 2px; }
+  time, .event-when :global(.moment) { white-space: nowrap; }
+  .local { color: var(--timber); }
+  .rank { margin-top: 6px; }
+</style>

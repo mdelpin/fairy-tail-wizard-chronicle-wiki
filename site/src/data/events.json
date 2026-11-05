@@ -5,8 +5,13 @@
   "type": "Guild Raid",
   "start": "2026-11-05",
   "end": "2026-11-13",
+  "startAt": "2026-11-05T06:00Z",
+  "endAt": "2026-11-13T05:59Z",
+  "rankingStartAt": "2026-11-13T06:00Z",
+  "rankingEndAt": "2026-11-17T05:59Z",
   "image": "guild-raid-deliora.webp",
   "dateSource": "Conflicting",
+  "dateNote": null,
   "enemies": [
    "deliora"
   ]

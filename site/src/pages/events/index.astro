@@ -2,19 +2,20 @@
 import Info from '../../components/Info.astro';
 import Base from '../../layouts/Base.astro';
 import Pennant from '../../components/Pennant.astro';
-import { events, enemies, dayText, url } from '../../lib/data';
+import EventWhen from '../../components/EventWhen.astro';
+import { events, enemies, url } from '../../lib/data';
 
 const entries = [...events.values()].sort((a, b) => (b.start ?? '').localeCompare(a.start ?? '') || a.name.localeCompare(b.name));
 const dated = entries.filter((event) => event.start);
 const undated = entries.filter((event) => !event.start);
 const groups = [['Timeline', dated], ['Undated', undated]] as const;
 ---
-<Base title="Events" section="events" description="FAIRY TAIL Wizard Chronicle events and their enemies, with dates in Japan time.">
+<Base title="Events" section="events" description="FAIRY TAIL Wizard Chronicle events and their enemies, with times in UTC.">
   <div class="wrap" data-pagefind-body>
     <span hidden data-pagefind-filter="Type">Event</span>
     <div class="head">
       <Pennant width={34} star />
-      <div><h1>Events <Info><p>Dates are shown in Japan time (JST).</p></Info></h1><p class="muted">{entries.length} {entries.length === 1 ? 'event' : 'events'}</p></div>
+      <div><h1>Events <Info><p>Event times are shown in UTC, as the game's notices state them, with your own time beneath when your browser provides it. Events without a recorded time show dates in Japan time (JST).</p></Info></h1><p class="muted">{entries.length} {entries.length === 1 ? 'event' : 'events'}</p></div>
     </div>
     {groups.map(([title, list]) => list.length > 0 && <section>
       <div class="section-title"><Pennant /><h2>{title}</h2></div>
@@ -22,10 +23,10 @@ const groups = [['Timeline', dated], ['Undated', undated]] as const;
         {list.map((event) => <li class="item" id={event.id}>
           {event.image && <div class="cover" data-pagefind-ignore><img src={url(`events/${event.image}`)} alt="" width="800" height="450" loading="lazy" /></div>}
           <div class="body">
-            <div class="top"><h3 class="heading nm">{event.name}</h3>{event.type && <span class="type" data-pagefind-ignore>{event.type}</span>}</div>
+            <div class="top"><h3 class="heading nm">{event.name}</h3>{event.type && (event.type === 'Guild Raid' ? <a class="type" href={url('guild-raid/')} aria-label="Guild Raid rules and scoring" data-pagefind-ignore>{event.type} <span aria-hidden="true">↗</span></a> : <span class="type" data-pagefind-ignore>{event.type}</span>)}</div>
             {event.start && <div class="when" data-pagefind-ignore>
-              {dayText(event.start)}{event.end && ` – ${dayText(event.end)}`}
-              {event.dateSource === 'Conflicting' && <Info label="Date discrepancy"><p>Official notices disagree on the end date. The dates shown follow the in-game notice.</p></Info>}
+              <EventWhen event={event} />
+              {(event.dateNote || event.dateSource === 'Conflicting') && <Info label="Date discrepancy"><p>{event.dateNote ?? 'Official notices disagree on the end date. The dates shown follow the in-game notice.'}</p></Info>}
             </div>}
             <ul class="enemies">
               {enemies.filter((enemy) => event.enemies.includes(enemy.id)).map((enemy) => <li><a href={url(`enemies/${enemy.id}/`)}>

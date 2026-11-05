@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Pennant from '../../components/Pennant.astro';
+import EventWhen from '../../components/EventWhen.astro';
 import { enemies, events, dayText, initials, url } from '../../lib/data';
 ---
 <Base title="Enemies" section="enemies" description="Enemy skills and event appearances in FAIRY TAIL Wizard Chronicle.">
@@ -19,7 +20,7 @@ import { enemies, events, dayText, initials, url } from '../../lib/data';
               <span class="muted">{[enemy.type, enemy.role].filter(Boolean).join(' · ')}</span>
               {enemy.events.flatMap((id) => events.get(id) ?? []).map((event) => (
                 <span class="event">{event.name}
-                  {event.start && event.end && <span class="muted dates">{dayText(event.start)} – {dayText(event.end)} JST</span>}
+                  <span class="muted dates"><EventWhen event={event} /></span>
                 </span>
               ))}
             </div>

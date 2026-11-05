@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import Pennant from '../components/Pennant.astro';
+import { url } from '../lib/data';
+
+---
+<Base title="Guild Raid" section="events" description="How Guild Raid works in FAIRY TAIL Wizard Chronicle: Defeat Points, boss summoning and Raid Score.">
+  <article class="wrap" data-pagefind-body>
+    <span hidden data-pagefind-filter="Type">Game mode</span>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href={url('events/')}>Events</a><span aria-hidden="true">/</span><span>Guild Raid</span></nav>
+    <header class="panel intro">
+      <Pennant width={36} star />
+      <div><h1>Guild Raid</h1><p>Fight alongside your guildmates, summon the raid boss and earn Raid Score.</p></div>
+    </header>
+
+    <div class="columns">
+      <div class="rules">
+        <section aria-labelledby="how-it-works">
+          <div class="section-title"><Pennant /><h2 id="how-it-works">How it works</h2></div>
+          <ol class="steps">
+            <li><h3>Defeat Etherious</h3><p>Defeat Etherious from Lv.1 to Lv.5 to earn <strong>Defeat Points</strong> and fill the gauge.</p></li>
+            <li><h3>Take on the boss</h3><p>The boss appears when the Defeat Points gauge is full. Join forces with your guildmates to fight it. The first Guild Raid features <a href={url('enemies/deliora/')}>Deliora</a>.</p></li>
+            <li><h3>Earn Raid Score</h3><p>Battle the boss alongside your guildmates. Your <strong>Raid Score</strong> is based on the amount of enemy HP you deplete in battle.</p></li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="points-and-score">
+          <div class="section-title"><Pennant /><h2 id="points-and-score">Points and scoring</h2></div>
+          <dl class="definitions">
+            <div><dt>Defeat Points</dt><dd>Earned by defeating Etherious. Filling the Defeat Points gauge makes the boss appear.</dd></div>
+            <div><dt>Raid Score</dt><dd>Earned by depleting enemy HP and used in the Guild Raid Ranking and Individual Raid Ranking.</dd></div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="attempts">
+          <div class="section-title"><Pennant /><h2 id="attempts">Challenge attempts</h2></div>
+          <div class="copy"><p>The <strong>Guild Card</strong> adds <strong>2 free Raid challenge attempts</strong>.</p></div>
+        </section>
+
+        <section aria-labelledby="rewards">
+          <div class="section-title"><Pennant /><h2 id="rewards">Raid rewards</h2></div>
+          <dl class="definitions">
+            <div><dt>Defeat Rewards</dt><dd>Earned by defeating raid enemies.</dd></div>
+            <div><dt>Score Rewards</dt><dd>Earned by reaching the required Raid Score.</dd></div>
+          </dl>
+          <div class="copy reward-note"><p>Rewards are stocked as you and your guildmates battle. <strong>Stocked rewards reset daily, so claim them before the reset.</strong></p><p>Frames earned as raid rewards have an expiration date.</p></div>
+        </section>
+
+        <section aria-labelledby="boss-progression">
+          <div class="section-title"><Pennant /><h2 id="boss-progression">Boss progression</h2></div>
+          <div class="copy"><p>Deliora's level increases after each defeat. The boss level is separate from its skills; see <a href={url('enemies/deliora/')}>Deliora's enemy page</a> for skill descriptions and effects.</p></div>
+        </section>
+        <p class="source">Based on the in-game Guild Raid notice, help screens and Guild Card description. Deliora's level progression was observed in play.</p>
+      </div>
+
+      <aside class="side" aria-label="Guild Raid runs">
+        <a class="side-link" href={url('events/')}>
+          <span class="side-label">Events</span>
+          <span class="side-text">See every Guild Raid, with dates and bosses, on the Events timeline <span aria-hidden="true">→</span></span>
+        </a>
+      </aside>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .crumbs { display: flex; gap: 10px; margin-bottom: 18px; font-size: 14px; }
+  .intro { display: flex; align-items: center; gap: 18px; padding: 28px 32px; }
+  .intro > :global(svg) { flex: none; }
+  h1 { font-size: clamp(36px, 6vw, 48px); line-height: 1.1; }
+  .intro p { margin: 10px 0 0; color: var(--muted); }
+  .columns { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; align-items: start; }
+  .rules { min-width: 0; }
+  .steps { list-style: none; counter-reset: step; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 16px; background: #fff; overflow: hidden; }
+  .steps li { counter-increment: step; position: relative; padding: 22px 24px 22px 78px; }
+  .steps li + li { border-top: 1px solid var(--line); }
+  .steps li::before { content: counter(step); position: absolute; left: 24px; top: 23px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--crimson); color: var(--cream); font: 500 16px var(--mono); }
+  h3 { font-size: 23px; line-height: 1.25; }
+  .steps p { margin: 8px 0 0; }
+  .definitions { margin: 0; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+  .definitions > div { padding: 20px 24px; }
+  .definitions > div + div { border-top: 1px solid var(--line); }
+  dt { font-weight: 700; }
+  dd { margin: 6px 0 0; }
+  .copy { padding: 20px 24px; background: var(--panel); border-left: 4px solid var(--brass); border-radius: 0 12px 12px 0; }
+  .copy p { margin: 0; }
+  .reward-note { margin-top: 14px; }
+  .copy p + p { margin-top: 10px; }
+  .source { font-size: 13px; color: var(--muted); margin-top: 24px; }
+  .side { margin-top: 44px; }
+  .side-link { display: block; padding: 18px 20px; background: #fff; border: 2px solid var(--line); border-radius: 16px; box-shadow: 0 3px 0 var(--brass); color: var(--ink); }
+  .side-link:hover { box-shadow: 0 3px 0 var(--crimson); }
+  .side-label { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--crimson); }
+  .side-text { font-size: 15px; line-height: 1.4; }
+  @media (max-width: 850px) { .columns { grid-template-columns: minmax(0, 1fr); gap: 0; } .side { max-width: 440px; } }
+  @media (max-width: 600px) { .intro { padding: 24px 20px; } .steps li { padding: 20px 18px 20px 66px; } .steps li::before { left: 18px; top: 21px; } }
+</style>

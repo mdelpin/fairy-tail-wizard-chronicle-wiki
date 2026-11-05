@@ -1,26 +1,33 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Pennant from '../../components/Pennant.astro';
-import { enemies, enemyApplications, effects, events, dayText, familyKey, buildFinderIndex, valueText, url, type Enemy } from '../../lib/data';
+import EventWhen from '../../components/EventWhen.astro';
+import EffectNote from '../../components/EffectNote.astro';
+import { enemies, enemyApplications, effects, events, dayText, familyKey, valueText, url, type Enemy } from '../../lib/data';
 
 export function getStaticPaths() {
   return enemies.map((enemy) => ({ params: { id: enemy.id }, props: { enemy } }));
 }
 const { enemy } = Astro.props as { enemy: Enemy };
 const appearances = enemy.events.flatMap((id) => events.get(id) ?? []);
-const families = buildFinderIndex(true).meta;
 const effectRows = (ids: string[]) => ids.flatMap((id) => {
   const app = enemyApplications.get(id);
   if (!app) return [];
   const effect = app.effect ? effects.get(app.effect) : undefined;
-  const family = effect && familyKey(effect);
-  return [{ app, effect, family, href: family && families.has(family.key) ? url(`effects/${family.key}/`) : null }];
+  return [{ app, effect, family: effect && familyKey(effect) }];
 });
-const inflicts = new Map<string, string | null>(), selfBuffs = new Map<string, string | null>();
-for (const skill of enemy.skills) for (const { app, family, href } of effectRows(skill.applications)) {
-  if (!family) continue;
-  if (app.type === 'Inflicts') inflicts.set(family.label, href);
-  if (app.type === 'Provides' && app.target === 'Self') selfBuffs.set(family.label, href);
+// Tag label -> what each effect behind it does (several tiers or variants can share one tag)
+type Note = { name: string; text: string | null };
+const addNote = (map: Map<string, Note[]>, label: string, note: Note) => {
+  const list = map.get(label) ?? map.set(label, []).get(label)!;
+  if (!list.some((n) => n.name === note.name)) list.push(note);
+};
+const inflicts = new Map<string, Note[]>(), selfBuffs = new Map<string, Note[]>();
+for (const skill of enemy.skills) for (const { app, effect, family } of effectRows(skill.applications)) {
+  if (!family || !effect) continue;
+  const note = { name: effect.name, text: effect.gameText };
+  if (app.type === 'Inflicts') addNote(inflicts, family.label, note);
+  if (app.type === 'Provides' && app.target === 'Self') addNote(selfBuffs, family.label, note);
 }
 const immunities = enemy.immuneTo.flatMap((id) => effects.get(id) ?? []);
 ---
@@ -33,10 +40,10 @@ const immunities = enemy.immuneTo.flatMap((id) => effects.get(id) ?? []);
       <div class="info"><h1>{enemy.name}</h1><p class="muted">{[enemy.type, enemy.role].filter(Boolean).join(' · ')}</p>
         <div class="glance">
           {inflicts.size > 0 && <div><span class="label">Inflicts</span><div class="chips">
-            {[...inflicts].map(([label, href]) => href ? <a class="tag bad" href={href}>{label}</a> : <span class="tag bad">{label}</span>)}
+            {[...inflicts].map(([label, notes]) => <EffectNote class="tag bad" label={label} notes={notes} />)}
           </div></div>}
           {selfBuffs.size > 0 && <div><span class="label">Self-buffs</span><div class="chips">
-            {[...selfBuffs].map(([label, href]) => href ? <a class="tag good" href={href}>{label}</a> : <span class="tag good">{label}</span>)}
+            {[...selfBuffs].map(([label, notes]) => <EffectNote class="tag good" label={label} notes={notes} />)}
           </div></div>}
         </div>
         <div class="jumps"><a class="chip" href="#skills">Skills</a>{appearances.length > 0 && <a class="chip" href="#events">Events</a>}</div>
@@ -58,9 +65,9 @@ const immunities = enemy.immuneTo.flatMap((id) => effects.get(id) ?? []);
             {rows.length > 0 && <div class="table-wrap" role="region" aria-label={`${skill.name ?? skill.kind} effects`} tabindex="0" data-pagefind-ignore>
               <table class="fx">
                 <thead><tr><th scope="col">Effect</th><th scope="col">Target</th><th scope="col">Trigger</th><th scope="col">Chance</th><th scope="col">Duration</th><th scope="col">Value</th></tr></thead>
-                <tbody>{rows.map(({ app, effect, href }) => <tr>
+                <tbody>{rows.map(({ app, effect }) => <tr>
                   <td>
-                    {href ? <a href={href}><strong>{effect?.name}</strong></a> : <strong>{effect?.name ?? 'Unresolved effect'}</strong>}
+                    {effect ? <strong><EffectNote inline label={effect.name} notes={[{ name: effect.name, text: effect.gameText }]} /></strong> : <strong>Unresolved effect</strong>}
                     {app.requires && <div class="condition">Requires {app.requires.families.join(app.requires.match === 'All' ? ' and ' : ' or ')}</div>}
                     {app.condition && <div class="condition">{app.condition}</div>}
                   </td>
@@ -81,7 +88,7 @@ const immunities = enemy.immuneTo.flatMap((id) => effects.get(id) ?? []);
         <span class="event-body">
           <span class="label">Event</span>
           <span class="heading">{event.name}</span>
-          {event.start && event.end && <span class="dates">{dayText(event.start)} – {dayText(event.end)} JST</span>}
+          <span class="dates"><EventWhen event={event} /></span>
         </span>
       </a>)}
     </aside>}
@@ -103,9 +110,9 @@ const immunities = enemy.immuneTo.flatMap((id) => effects.get(id) ?? []);
   .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 12px; }
   .glance > div { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag { padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 500; text-decoration: none; }
-  .tag.bad { background: #F6DCD7; color: #8A1F25; }
-  .tag.good { background: #DCEBDD; color: #245C33; }
+  .chips :global(.tag) { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 500; text-decoration: none; }
+  .chips :global(.tag.bad) { background: #F6DCD7; color: #8A1F25; }
+  .chips :global(.tag.good) { background: #DCEBDD; color: #245C33; }
   .jumps { display: flex; flex-wrap: wrap; gap: 8px; }
   .entry { border: 1px solid var(--line); border-radius: 16px; background: #fff; overflow: hidden; }
   .cols { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }

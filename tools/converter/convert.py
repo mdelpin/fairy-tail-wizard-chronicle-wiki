@@ -143,6 +143,15 @@ def iso_day(v):
     return str(v)[:10]
 
 
+def iso_moment(v):
+    """An exact UTC moment 'YYYY-MM-DDTHH:MMZ' from a Capacities date-and-time, or None for a plain day.
+    Capacities writes day dates as T00:00:00.000Z, so a time of exactly 00:00 UTC reads as a day."""
+    m = re.match(r"^(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2})(?::\d{2}(?:\.\d+)?)?Z$", str(v or "").strip())
+    if not m or (m.group(2), m.group(3)) == ("00", "00"):
+        return None
+    return f"{m.group(1)}T{m.group(2)}:{m.group(3)}Z"
+
+
 def companion_number(fields, prop, where, required=True):
     value = fields.get(prop)
     if type(value) in (int, float) and math.isfinite(value):
@@ -683,6 +692,15 @@ def main(root, out, slugs_path=None, public_dir=None):
                 issue("Missing required values", f"{where}: {prop} is empty")
         if days["start"] and days["end"] and days["end"] < days["start"]:
             issue("Event dates", f"{where}: ends before it starts")
+        moments = {k: iso_moment(f.get(p)) for k, p in (("startAt", "start"), ("endAt", "end"),
+                                                          ("rankingStartAt", "rankingStart"), ("rankingEndAt", "rankingEnd"))}
+        if not moments["startAt"] or not moments["endAt"]:
+            issue("Event dates", f"{where}: start and end have no time of day (shown as dates only)")
+        elif moments["endAt"] <= moments["startAt"]:
+            issue("Event dates", f"{where}: ends before it starts")
+        if moments["rankingStartAt"] and moments["rankingEndAt"] and moments["rankingEndAt"] <= moments["rankingStartAt"]:
+            issue("Event dates", f"{where}: the ranking period ends before it starts")
+        date_note = clean(f.get("dateNote"))
         note = clean(r["body"])
         date_disputed = bool(note and "unresolved" in note.lower())
         if note:
@@ -692,8 +710,9 @@ def main(root, out, slugs_path=None, public_dir=None):
         image = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
         if image:
             event_images[event_slug[stem]] = urllib.parse.unquote(image.group(1))
-        events.append({"id": event_slug[stem], "name": name, "type": clean(f.get("type_")), **days,
+        events.append({"id": event_slug[stem], "name": name, "type": clean(f.get("type_")), **days, **moments,
                        "image": None, "dateSource": "Conflicting" if date_disputed else None,
+                       "dateNote": date_note,
                        "enemies": [enemy_slug[e] for e in event_enemies[stem]]})
     for stem, linked in enemy_events.items():
         for event in linked:
