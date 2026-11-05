@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pennant from '../../components/Pennant.astro';
+import { enemies, events, dayText, initials, url } from '../../lib/data';
+---
+<Base title="Enemies" section="enemies" description="Enemy skills and event appearances in FAIRY TAIL Wizard Chronicle.">
+  <div class="wrap">
+    <div class="head"><Pennant width={34} star /><h1>Enemies</h1></div>
+    <p class="muted">{enemies.length} recorded. Skills and event appearances.</p>
+    <ul class="cards">
+      {enemies.map((enemy) => (
+        <li>
+          <a class="card" href={url(`enemies/${enemy.id}/`)}>
+            <div class="art">
+              {enemy.image ? <img src={url(`enemies/${enemy.image}`)} alt="" width="320" height="320" loading="lazy" /> : <span class="heading placeholder" aria-hidden="true">{initials(enemy.name)}</span>}
+            </div>
+            <div class="body">
+              <h2>{enemy.name}</h2>
+              <span class="muted">{[enemy.type, enemy.role].filter(Boolean).join(' · ')}</span>
+              {enemy.events.flatMap((id) => events.get(id) ?? []).map((event) => (
+                <span class="event">{event.name}
+                  {event.start && event.end && <span class="muted dates">{dayText(event.start)} – {dayText(event.end)} JST</span>}
+                </span>
+              ))}
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+    {enemies.length === 0 && <p class="muted">Enemy entries are in preparation.</p>}
+  </div>
+</Base>
+
+<style>
+  .head { display: flex; align-items: center; gap: 16px; }
+  h1 { font-size: 42px; line-height: 1; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 20px; list-style: none; padding: 0; margin: 24px 0 0; }
+  .card { display: flex; flex-direction: column; height: 100%; border: 2px solid var(--line); border-top: 5px solid var(--crimson); border-radius: 16px; overflow: hidden; background: #fff; color: var(--ink); box-shadow: 0 3px 0 var(--brass); }
+  .card:hover { text-decoration: none; transform: translateY(-2px); }
+  .art { display: grid; place-items: center; aspect-ratio: 4 / 3; background: #F3E8D3; }
+  .art img { width: 100%; height: 100%; object-fit: contain; }
+  .placeholder { font-size: 42px; }
+  .body { display: flex; flex-direction: column; gap: 6px; padding: 18px; font-size: 14px; }
+  h2 { font-size: 26px; }
+  .event { margin-top: 8px; }
+  .dates { display: block; font-size: 13px; }
+</style>

@@ -9,7 +9,8 @@ import yaml
 # Allowlist: only these object types are ever read. Anything else in the space (Team Builder data,
 # notes, queries, new private types) is invisible to the wiki unless it is added here on purpose.
 GAME_FOLDERS = ["Characters", "Skills", "Effects", "EffectApplications", "Lacrimas", "LacrimaEffectApplications",
-                "Banners", "BannerArts", "SkillIcons", "Companions", "CompanionEffectApplications"]
+                "Banners", "BannerArts", "SkillIcons", "Companions", "CompanionEffectApplications",
+                "Enemies", "EnemySkills", "EnemyEffectApplications", "Events"]
 
 
 def read(path):
@@ -30,9 +31,13 @@ def load(root):
             stem = os.path.splitext(os.path.basename(p))[0]
             # the export writes some characters as #UXXXX in file names; links use the real character
             stem = re.sub(r"#U([0-9a-fA-F]{4})", lambda m: chr(int(m.group(1), 16)), stem)
-            # Page text is kept only for Skills (the Lv.1-3 text). Every other page body, above all the
-            # Character pages with personal strategy notes, is dropped here and never reaches the converter.
-            recs[stem] = {"fm": fm, "body": body if folder == "Skills" else None, "file": stem,
+            # Only skill tables are published; Event source notes are read for date validation only.
+            kept_body = body if folder == "Skills" else None
+            # shortcut: only the leading date/source paragraph is checked; add a property if source tracking expands.
+            if folder == "Events":
+                first = body.strip().split("\n\n", 1)[0]
+                kept_body = first if first.startswith("Dates from the in-game ") else None
+            recs[stem] = {"fm": fm, "body": kept_body, "file": stem,
                           "_private_body": body if folder == "Characters" else None}
         out[folder] = recs
     return out

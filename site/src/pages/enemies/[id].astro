@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pennant from '../../components/Pennant.astro';
+import { enemies, enemyApplications, effects, events, dayText, familyKey, buildFinderIndex, valueText, url, type Enemy } from '../../lib/data';
+
+export function getStaticPaths() {
+  return enemies.map((enemy) => ({ params: { id: enemy.id }, props: { enemy } }));
+}
+const { enemy } = Astro.props as { enemy: Enemy };
+const appearances = enemy.events.flatMap((id) => events.get(id) ?? []);
+const families = buildFinderIndex(true).meta;
+const effectRows = (ids: string[]) => ids.flatMap((id) => {
+  const app = enemyApplications.get(id);
+  if (!app) return [];
+  const effect = app.effect ? effects.get(app.effect) : undefined;
+  const family = effect && familyKey(effect);
+  return [{ app, effect, family, href: family && families.has(family.key) ? url(`effects/${family.key}/`) : null }];
+});
+const inflicts = new Map<string, string | null>(), selfBuffs = new Map<string, string | null>();
+for (const skill of enemy.skills) for (const { app, family, href } of effectRows(skill.applications)) {
+  if (!family) continue;
+  if (app.type === 'Inflicts') inflicts.set(family.label, href);
+  if (app.type === 'Provides' && app.target === 'Self') selfBuffs.set(family.label, href);
+}
+const immunities = enemy.immuneTo.flatMap((id) => effects.get(id) ?? []);
+---
+<Base title={enemy.name} section="enemies" description={`${enemy.name}: enemy skills, effects and event appearances in FAIRY TAIL Wizard Chronicle.`}>
+  <article class="wrap" data-pagefind-body data-pagefind-meta={`title:${enemy.name}`}>
+    <span hidden data-pagefind-filter="Type">Enemy</span>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href={url('enemies/')}>Enemies</a></nav>
+    <header class="panel overview">
+      {enemy.image && <img src={url(`enemies/${enemy.image}`)} alt="" width="240" height="240" data-pagefind-meta="image[src]" />}
+      <div class="info"><h1>{enemy.name}</h1><p class="muted">{[enemy.type, enemy.role].filter(Boolean).join(' · ')}</p>
+        <div class="glance">
+          {inflicts.size > 0 && <div><span class="label">Inflicts</span><div class="chips">
+            {[...inflicts].map(([label, href]) => href ? <a class="tag bad" href={href}>{label}</a> : <span class="tag bad">{label}</span>)}
+          </div></div>}
+          {selfBuffs.size > 0 && <div><span class="label">Self-buffs</span><div class="chips">
+            {[...selfBuffs].map(([label, href]) => href ? <a class="tag good" href={href}>{label}</a> : <span class="tag good">{label}</span>)}
+          </div></div>}
+        </div>
+        <div class="jumps"><a class="chip" href="#skills">Skills</a>{appearances.length > 0 && <a class="chip" href="#events">Events</a>}</div>
+      </div>
+    </header>
+
+    <div class="cols">
+    <section id="skills" class="skill-column">
+      <div class="section-title"><Pennant /><h2>Skills</h2></div>
+      <div class="skills">
+        {enemy.skills.map((skill) => {
+          const rows = effectRows(skill.applications);
+          return <article class="entry skill" id={`skill-${skill.kind?.toLowerCase()}`}>
+            <div class="skill-head">
+              {skill.icon && <img src={url(`icons/skill/${String(skill.icon).padStart(2, '0')}.webp`)} alt="" width="40" height="40" />}
+              <span class={`kind kind-${skill.kind}`}>{skill.kind}</span><h3>{skill.name ?? skill.kind}</h3>
+            </div>
+            {skill.gameText && <p class="game-text">{skill.gameText}</p>}
+            {rows.length > 0 && <div class="table-wrap" role="region" aria-label={`${skill.name ?? skill.kind} effects`} tabindex="0" data-pagefind-ignore>
+              <table class="fx">
+                <thead><tr><th scope="col">Effect</th><th scope="col">Target</th><th scope="col">Trigger</th><th scope="col">Chance</th><th scope="col">Duration</th><th scope="col">Value</th></tr></thead>
+                <tbody>{rows.map(({ app, effect, href }) => <tr>
+                  <td>
+                    {href ? <a href={href}><strong>{effect?.name}</strong></a> : <strong>{effect?.name ?? 'Unresolved effect'}</strong>}
+                    {app.requires && <div class="condition">Requires {app.requires.families.join(app.requires.match === 'All' ? ' and ' : ' or ')}</div>}
+                    {app.condition && <div class="condition">{app.condition}</div>}
+                  </td>
+                  <td>{app.target ?? '—'}</td><td>{app.trigger?.raw ?? '—'}</td>
+                  <td class="num">{app.chance == null ? '—' : `${Math.round(app.chance * 100)}%`}</td>
+                  <td class="num">{app.durationSeconds != null ? `${app.durationSeconds}s` : app.trigger?.events.includes('constant') ? 'Permanent' : '—'}</td>
+                  <td class="num">{valueText(app, effect)}</td>
+                </tr>)}</tbody>
+              </table>
+            </div>}
+          </article>;
+        })}
+      </div>
+    </section>
+    {appearances.length > 0 && <aside class="side" id="events" aria-label="Events">
+      {appearances.map((event) => <a class="event-link" href={url(`events/#${event.id}`)}>
+        {event.image && <img class="event-art" src={url(`events/${event.image}`)} alt="" width="800" height="450" loading="lazy" />}
+        <span class="event-body">
+          <span class="label">Event</span>
+          <span class="heading">{event.name}</span>
+          {event.start && event.end && <span class="dates">{dayText(event.start)} – {dayText(event.end)} JST</span>}
+        </span>
+      </a>)}
+    </aside>}
+    </div>
+    {immunities.length > 0 && <section>
+      <div class="section-title"><Pennant /><h2>Immune to</h2></div>
+      <ul>{immunities.map((effect) => <li>{effect.name}</li>)}</ul>
+    </section>}
+  </article>
+</Base>
+
+<style>
+  .crumbs { margin-bottom: 18px; font-size: 14px; }
+  .overview { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding: 24px; }
+  .overview > img { width: min(240px, 100%); height: auto; max-height: 300px; object-fit: contain; }
+  h1 { font-size: clamp(36px, 6vw, 52px); line-height: 1.1; }
+  .info { flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+  .info p { margin: 0; }
+  .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 12px; }
+  .glance > div { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 500; text-decoration: none; }
+  .tag.bad { background: #F6DCD7; color: #8A1F25; }
+  .tag.good { background: #DCEBDD; color: #245C33; }
+  .jumps { display: flex; flex-wrap: wrap; gap: 8px; }
+  .entry { border: 1px solid var(--line); border-radius: 16px; background: #fff; overflow: hidden; }
+  .cols { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+  .skill-column { flex: 999 1 640px; min-width: 0; }
+  .skill-column > .section-title { margin-top: 36px; }
+  .side { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px; margin-top: 36px; }
+  .event-link { display: block; overflow: hidden; border: 2px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 3px 0 var(--brass); color: var(--ink); }
+  .event-link:hover { text-decoration: none; border-color: var(--brass); }
+  .event-art { width: 100%; height: auto; border-bottom: 2px solid var(--brass); }
+  .event-body { display: flex; flex-direction: column; gap: 6px; padding: 16px 20px 18px; }
+  .event-body .heading { font-size: 19px; }
+  .label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .dates { font: 500 13px var(--mono); color: var(--muted); }
+  h3 { font-size: 24px; }
+  .skills { display: grid; gap: 20px; }
+  .skill-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 18px 22px 0; }
+  .kind-Additional { background: #6B4FA0; }
+  .game-text { margin: 14px 22px 20px; }
+  .condition { margin-top: 4px; font-size: 12px; color: var(--muted); }
+</style>

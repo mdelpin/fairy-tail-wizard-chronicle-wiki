@@ -5,6 +5,8 @@ import effectsJson from '../data/effects.json';
 import lacrimasJson from '../data/lacrimas.json';
 import bannersJson from '../data/banners.json';
 import companionsJson from '../data/companions.json';
+import enemiesJson from '../data/enemies.json';
+import eventsJson from '../data/events.json';
 
 export interface Effect {
   id: string; name: string; family: string | null; direction: string | null; tier: string | null;
@@ -14,7 +16,7 @@ export interface Effect {
   gameText: string | null;
 }
 export interface Application {
-  id: string; source: 'unit' | 'lacrima'; effect: string | null; type: string | null; target: string | null;
+  id: string; source: 'unit' | 'lacrima' | 'enemy'; effect: string | null; type: string | null; target: string | null;
   trigger: { events: string[]; everySeconds: number | null; raw: string } | null;
   chance: number | null; durationSeconds: number | null;
   valueOverride: { amount: number; unit: string } | null;
@@ -80,12 +82,27 @@ export interface Lacrima {
   /** Editor's note (not game text), e.g. behaviour tested in play. */
   notes?: string | null;
 }
+export interface EnemySkill {
+  kind: 'Normal' | 'Special' | 'Ultimate' | 'Additional'; name: string | null;
+  icon: number | null; gameText: string | null; applications: string[];
+}
+export interface Enemy {
+  id: string; name: string; type: string | null; role: string | null; image: string | null;
+  immuneTo: string[]; events: string[]; skills: EnemySkill[];
+}
+export interface GameEvent {
+  id: string; name: string; type: string | null; start: string | null; end: string | null;
+  image: string | null; dateSource: string | null; enemies: string[];
+}
 export type Attribute = 'Brave' | 'Mind' | 'Technique' | 'Heart';
 
 export const units = (unitsJson as Unit[]).slice().sort((a, b) => a.name.localeCompare(b.name));
 const allApplications = appsJson as (Application | CompanionApplication)[];
-export const applications = new Map(allApplications.filter((a) => a.source !== 'companion').map((a) => [a.id, a]));
+export const applications = new Map(allApplications.filter((a) => a.source === 'unit' || a.source === 'lacrima').map((a) => [a.id, a]));
 export const companionApplications = new Map(allApplications.filter((a) => a.source === 'companion').map((a) => [a.id, a]));
+export const enemyApplications = new Map(allApplications.filter((a) => a.source === 'enemy').map((a) => [a.id, a]));
+export const enemies = (enemiesJson as Enemy[]).slice().sort((a, b) => a.name.localeCompare(b.name));
+export const events = new Map((eventsJson as GameEvent[]).map((e) => [e.id, e]));
 export const companions = (companionsJson as Companion[]).slice().sort((a, b) => a.name.localeCompare(b.name));
 export const companionById = new Map(companions.map((c) => [c.id, c]));
 export const effects = new Map((effectsJson as Effect[]).map((e) => [e.id, e]));

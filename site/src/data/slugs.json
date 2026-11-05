@@ -1,5 +1,20 @@
 {
  "application": {
+  "enemy:Action Impairment Barrier → Self – Constant": "action-impairment-barrier-self-constant",
+  "enemy:Bind → All Enemies – Every 6 sec  30  3 sec": "bind-all-enemies-every-6-sec-30-3-sec",
+  "enemy:Critical Shield → Self – Constant": "critical-shield-self-constant",
+  "enemy:Damage → All Enemies – Every 8 sec  650 of Own ATK": "damage-all-enemies-every-8-sec-650-of-own-atk",
+  "enemy:Damage → Enemies in Range – Normal Attack  140 of Own ATK": "damage-enemies-in-range-normal-attack-140-of-own-atk",
+  "enemy:Heal Block → Each Target Hit – Every 8 sec  4 sec": "heal-block-each-target-hit-every-8-sec-4-sec",
+  "enemy:Silence → All Enemies – Every 6 sec  30  3 sec": "silence-all-enemies-every-6-sec-30-3-sec",
+  "enemy:Top ATK Increase → Self – Constant": "top-atk-increase-self-constant-2",
+  "enemy:Top Bleed → All Enemies – Every 6 sec  30  3 sec": "top-bleed-all-enemies-every-6-sec-30-3-sec",
+  "enemy:Top Burn → Each Target Hit – Every 8 sec  4 sec": "top-burn-each-target-hit-every-8-sec-4-sec",
+  "enemy:Top Critical Damage Decrease → Each Target Hit – Every 8 sec  4 sec": "top-critical-damage-decrease-each-target-hit-every-8-sec-4-sec",
+  "enemy:Top DEF Decrease → Each Target Hit – Every 8 sec  4 sec": "top-def-decrease-each-target-hit-every-8-sec-4-sec",
+  "enemy:Top DEF Increase → Self – Constant": "top-def-increase-self-constant",
+  "enemy:Top Paralysis → Each Target Hit – Every 8 sec  4 sec": "top-paralysis-each-target-hit-every-8-sec-4-sec",
+  "enemy:Top Shield → Self – 20  3 sec": "top-shield-self-20-3-sec-2",
   "lacrima:Accuracy +5 → Self": "accuracy-5-self",
   "lacrima:Accuracy Up +3 → Self": "accuracy-up-3-self",
   "lacrima:Advance Ultimate Skill Gauge → Self – 20  05 sec": "advance-ultimate-skill-gauge-self-20-0-5-sec",
@@ -997,6 +1012,12 @@
   "Top Freeze": "top-freeze",
   "Top Paralysis": "top-paralysis",
   "Top Shield": "top-shield"
+ },
+ "enemy": {
+  "Deliora": "deliora"
+ },
+ "event": {
+  "Guild Raid – Deliora": "guild-raid-deliora"
  },
  "lacrima": {
   "Accuracy Up I": "accuracy-up-i",

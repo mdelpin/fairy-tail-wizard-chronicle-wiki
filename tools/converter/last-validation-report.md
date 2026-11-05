@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 115 effects, 824 effect applications, 54 banners, 58 banner arts. 63 issues in 4 categories.
+156 units, 115 lacrimas, 115 effects, 824 effect applications, 54 banners, 58 banner arts, 0 companions, 0 companion effect applications, 1 enemies, 4 enemy skills, 15 enemy effect applications, 1 events. 63 issues in 4 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -69,11 +69,11 @@
 - 'pickup-dark-mage-zeref': 794x1060 is not close to 16:9 (the card crops it to fit)
 - 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
 
-## Addresses retired (record renamed or deleted; old links to these pages stop working) (1)
-
-- effect: 1
-
 ## Missing required values (1)
 
 - Lacrima '✨ Swaying in the Summer Night Lisanna Lacrima': lacrimaEffectApplications is empty
+
+## Event date sources need review (1)
+
+- Event 'Guild Raid – Deliora': Dates from the in-game Guild Raid notice: November 5, 2026 at 06:00 – November 13, 2026 at 05:59 UTC, equivalent to November 5 at 15:00 – November 13 at 14:59 JST. Deliora is the featured boss. The official @madochro_en launch post, dated November 5, instead states an end of November 12 at 14:59 JST; the preview post visible in the supplied X screenshot gives the same earlier end. The date properties follow the in-game notice; the conflicting end dates remain unresolved.
 

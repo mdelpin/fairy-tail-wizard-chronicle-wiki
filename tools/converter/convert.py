@@ -155,12 +155,15 @@ def companion_number(fields, prop, where, required=True):
 def main(root, out, slugs_path=None, public_dir=None):
     os.makedirs(out, exist_ok=True)
     data = load(root)
+    data["Banners"] = {s: r for s, r in data["Banners"].items() if clean(r["fm"].get("title")) != "Untitled"}
     C, S, E, EA, L, LEA, B, BA, SI = (data[k] for k in ["Characters", "Skills", "Effects", "EffectApplications",
                                                          "Lacrimas", "LacrimaEffectApplications", "Banners",
                                                          "BannerArts", "SkillIcons"])
     idx = {k: title_index(v) for k, v in data.items()}
     companions_src = data["Companions"]
     companion_apps_src = data["CompanionEffectApplications"]
+    enemies_src, enemy_skills_src, enemy_apps_src, events_src = (
+        data[k] for k in ["Enemies", "EnemySkills", "EnemyEffectApplications", "Events"])
 
     # address table: reuse existing slugs, mint new ones, flag collisions
     slugs = {}
@@ -170,8 +173,10 @@ def main(root, out, slugs_path=None, public_dir=None):
     # addresses don't force '-2' suffixes on the records that replace them
     live = {"unit": set(C), "effect": set(E), "lacrima": set(L), "banner": set(B),
             "companion": set(companions_src),
+            "enemy": set(enemies_src), "event": set(events_src),
             "application": {f"unit:{s}" for s in EA} | {f"lacrima:{s}" for s in LEA}
-                           | {f"companion:{s}" for s in companion_apps_src}}
+                           | {f"companion:{s}" for s in companion_apps_src}
+                           | {f"enemy:{s}" for s in enemy_apps_src}}
     for kind, keys in live.items():
         gone = [k for k in slugs.get(kind, {}) if k not in keys]
         for k in gone:
@@ -202,7 +207,7 @@ def main(root, out, slugs_path=None, public_dir=None):
         used[kind][sl] = key
         return sl
 
-    owner_keys = {"title", "character", "lacrima", "gameText", "tags"}
+    owner_keys = {"title", "character", "lacrima", "enemy", "gameText", "tags"}
     for folder, recs in data.items():
         groups = collections.defaultdict(list)
         for stem, r in recs.items():
@@ -269,7 +274,7 @@ def main(root, out, slugs_path=None, public_dir=None):
         sl = slug_for("application", f"{source}:{stem}", t)
         app_slug[(source, stem)] = sl
         eff = ref(f.get("effect"), "Effects", where, "effect", required=True)
-        ch = companion_number(f, "chance", where, required=False) if source == "companion" else f.get("chance")
+        ch = companion_number(f, "chance", where, required=False) if source in ("companion", "enemy") else f.get("chance")
         if ch is not None and not (0 < float(ch) <= 1):
             issue("Values out of range", f"{where}: chance {ch} is not between 0 and 1")
         cond = f.get("condition", f.get("conditions"))
@@ -290,7 +295,7 @@ def main(root, out, slugs_path=None, public_dir=None):
         req = None
         if f.get("requiredEffectFamilies"):
             req = {"families": families(f.get("requiredEffectFamilies"), known_fams, where),
-                   "match": clean(f.get("effectFamilyMatchRule")),
+                   "match": clean(f.get("effectFamilyMatchRule", f.get("effectFamilyMatchingRule"))),
                    "subject": clean(f.get("effectConditionSubject")),
                    "timing": clean(f.get("effectEvaluationTiming")),
                    "state": clean(f.get("requiredEffectState"))}
@@ -298,10 +303,19 @@ def main(root, out, slugs_path=None, public_dir=None):
         if f.get("scalingAttribute"):
             scaling = {k: f.get(k) for k in ["scalingAttribute", "increasePerUnit", "increaseValueUnit",
                                               "scalingBasis", "maximumNumberOfIncreases", "maximumResult"]}
+        duration, value = f.get("durationSeconds"), f.get("effectValue")
+        if source == "enemy":
+            duration = companion_number(f, "durationSeconds", where, required=False)
+            value = companion_number(f, "effectValue", where, required=False)
+            if duration is not None and duration < 0:
+                issue("Values out of range", f"{where}: durationSeconds is negative")
+            for prop in ("applicationType", "target", "activationInterval"):
+                if not f.get(prop):
+                    issue("Missing required values", f"{where}: {prop} is empty")
         return {
-            **app, "durationSeconds": f.get("durationSeconds"),
-            "valueOverride": ({"amount": f.get("effectValue"), "unit": f.get("valueUnit")}
-                              if f.get("effectValue") is not None else None),
+            **app, "durationSeconds": duration,
+            "valueOverride": ({"amount": value, "unit": f.get("valueUnit")}
+                              if value is not None else None),
             "condition": clean(cond), "requires": req, "scaling": scaling,
             "gameText": clean(f.get("gameText")),
         }
@@ -312,6 +326,17 @@ def main(root, out, slugs_path=None, public_dir=None):
             issue("Orphans", f"EffectApplication '{r['fm'].get('title')}' is linked to no character")
     for stem, r in sorted(LEA.items()):
         applications.append(application(stem, r["fm"], "lacrima", "LacrimaEffectApplication"))
+
+    def skill_icon(f, prop, where):
+        icons = ref(f.get(prop), "SkillIcons", where, prop, many=True)
+        if len(icons) > 1:
+            issue("Skill icons", f"{where} has {len(icons)} icons; the first is used")
+        if icons:
+            n = SI[icons[0]]["fm"].get("number")
+            if type(n) in (int, float) and 1 <= n <= 44 and n == int(n):
+                return int(n)
+            issue("Skill icons", f"Skill Icon '{icons[0]}' has no valid Number (1–44)")
+        return None
 
     # ---------- skills
     skill_by_title = {}
@@ -336,16 +361,7 @@ def main(root, out, slugs_path=None, public_dir=None):
                 used_apps.add(stem)
         title = norm_title(f.get("title"))
         texts, table = parse_levels(body, title)
-        icon = None
-        icons = ref(f.get("skillIcons"), "SkillIcons", f"Skill '{title}'", "skillIcons", many=True)
-        if len(icons) > 1:
-            issue("Skill icons", f"Skill '{title}' has {len(icons)} icons; the first is used")
-        if icons:
-            n = SI[icons[0]]["fm"].get("number")
-            if isinstance(n, (int, float)) and 1 <= n <= 44:
-                icon = int(n)
-            else:
-                issue("Skill icons", f"Skill Icon '{icons[0]}' has no valid Number (1–44)")
+        icon = skill_icon(f, "skillIcons", f"Skill '{title}'")
         skill_by_title[title] = {
             "kind": f.get("kind"), "name": clean(f.get("skillName")), "unit": unit_title,
             "attackRange": clean(f.get("attackRange")),
@@ -592,6 +608,106 @@ def main(root, out, slugs_path=None, public_dir=None):
         if banner and c["id"] not in companions_on_banner[banner]:
             issue("Companion banners", f"Companion '{c['name']}': introducedBanner '{banner}' does not list it")
 
+    # ---------- enemies and events (their applications never enter the wizard finder)
+    enemy_slug = {s: slug_for("enemy", s, clean(r["fm"].get("title")) or s) for s, r in sorted(enemies_src.items())}
+    event_slug = {s: slug_for("event", s, clean(r["fm"].get("title")) or s) for s, r in sorted(events_src.items())}
+    enemy_apps = {s: application(s, r["fm"], "enemy", "EnemyEffectApplication")
+                  for s, r in sorted(enemy_apps_src.items())}
+    enemy_skills, used_enemy_apps, used_enemy_skills = {}, set(), set()
+    skill_owners, application_owners = {}, {}
+    for stem, r in sorted(enemy_apps_src.items()):
+        f = r["fm"]
+        application_owners[stem] = ref(f.get("enemy"), "Enemies", f"EnemyEffectApplication '{f.get('title')}'",
+                                        "enemy", many=True, required=True)
+    enemy_kinds = KINDS + ["Additional"]
+    for stem, r in sorted(enemy_skills_src.items()):
+        f = r["fm"]
+        where = f"Enemy Skill '{f.get('title')}'"
+        skill_owners[stem] = ref(f.get("enemies"), "Enemies", where, "enemies", many=True, required=True)
+        apps = ref(f.get("effectApplications"), "EnemyEffectApplications", where,
+                   "effectApplications", many=True, required=True)
+        used_enemy_apps.update(apps)
+        for prop in ("skillName", "gameText", "kind"):
+            if not f.get(prop):
+                issue("Missing required values", f"{where}: {prop} is empty")
+        if f.get("kind") and f["kind"] not in enemy_kinds:
+            issue("Enemy skills", f"{where}: unrecognized kind '{f['kind']}'")
+        for app in apps:
+            if not set(skill_owners[stem]) <= set(application_owners[app]):
+                issue("Enemy links", f"{where}: application '{app}' does not name the same enemies")
+        enemy_skills[stem] = {
+            "kind": clean(f.get("kind")), "name": clean(f.get("skillName")),
+            "icon": skill_icon(f, "skillIcon", where), "gameText": clean(f.get("gameText")),
+            "applications": [enemy_apps[a]["id"] for a in apps],
+        }
+    enemies, events, enemy_images, event_images = [], [], {}, {}
+    enemy_events, event_enemies = {}, {}
+    for stem, r in sorted(enemies_src.items()):
+        f = r["fm"]
+        name = clean(f.get("title")) or stem
+        where = f"Enemy '{name}'"
+        skills = ref(f.get("skills"), "EnemySkills", where, "skills", many=True, required=True)
+        used_enemy_skills.update(skills)
+        for s in skills:
+            if stem not in skill_owners[s]:
+                issue("Enemy links", f"{where}: skill '{s}' does not name this enemy")
+        enemy_events[stem] = ref(f.get("events"), "Events", where, "events", many=True)
+        immune = ref(f.get("immuneTo"), "Effects", where, "immuneTo", many=True)
+        for prop in ("type_", "role"):
+            if not f.get(prop):
+                issue("Missing required values", f"{where}: {prop} is empty")
+        image = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
+        if image:
+            enemy_images[enemy_slug[stem]] = urllib.parse.unquote(image.group(1))
+        enemies.append({
+            "id": enemy_slug[stem], "name": name, "type": clean(f.get("type_")), "role": clean(f.get("role")),
+            "image": None, "immuneTo": [eff_slug[e] for e in immune],
+            "events": [event_slug[e] for e in enemy_events[stem]],
+            "skills": sorted([enemy_skills[s] for s in skills],
+                             key=lambda s: enemy_kinds.index(s["kind"]) if s["kind"] in enemy_kinds else 99),
+        })
+    for stem, r in sorted(events_src.items()):
+        f = r["fm"]
+        name = clean(f.get("title")) or stem
+        where = f"Event '{name}'"
+        event_enemies[stem] = ref(f.get("enemies"), "Enemies", where, "enemies", many=True)
+        days = {}
+        for prop in ("start", "end"):
+            raw = iso_day(f.get(prop))
+            try:
+                days[prop] = date.fromisoformat(raw).isoformat() if raw else None
+            except ValueError:
+                issue("Event dates", f"{where}: {prop} needs a date")
+                days[prop] = None
+            if not days[prop]:
+                issue("Missing required values", f"{where}: {prop} is empty")
+        if days["start"] and days["end"] and days["end"] < days["start"]:
+            issue("Event dates", f"{where}: ends before it starts")
+        note = clean(r["body"])
+        date_disputed = bool(note and "unresolved" in note.lower())
+        if note:
+            note = re.sub(r"\[([^\]]+)\]\((https?://[^\s)]+)\)", r"\1", note)
+            if date_disputed:
+                issue("Event date sources need review", f"{where}: {note}")
+        image = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
+        if image:
+            event_images[event_slug[stem]] = urllib.parse.unquote(image.group(1))
+        events.append({"id": event_slug[stem], "name": name, "type": clean(f.get("type_")), **days,
+                       "image": None, "dateSource": "Conflicting" if date_disputed else None,
+                       "enemies": [enemy_slug[e] for e in event_enemies[stem]]})
+    for stem, linked in enemy_events.items():
+        for event in linked:
+            if stem not in event_enemies[event]:
+                issue("Enemy links", f"Enemy '{stem}': Event '{event}' does not list it")
+    for stem, linked in event_enemies.items():
+        for enemy in linked:
+            if stem not in enemy_events[enemy]:
+                issue("Enemy links", f"Event '{stem}': Enemy '{enemy}' does not list it")
+    for stem in enemy_apps_src.keys() - used_enemy_apps:
+        issue("Enemy applications no skill links to", stem)
+    for stem in enemy_skills_src.keys() - used_enemy_skills:
+        issue("Enemy skills no enemy links to", stem)
+
     # banner art images -> public/banner-art/<unit id>.webp
     art_files = {u["id"]: u.pop("_artFile") for u in units}
     if public_dir:
@@ -677,30 +793,33 @@ def main(root, out, slugs_path=None, public_dir=None):
             im.save(out_p, "WEBP", quality=80, method=6)
             issue("Portraits added (new wizards; check they look right)", u["id"])
 
-        dest = os.path.join(public_dir, "companions")
-        os.makedirs(dest, exist_ok=True)
-        for c in companions:
-            fn = companion_images.get(c["id"])
-            if not fn:
-                continue
-            src = os.path.realpath(os.path.join(media, fn))
-            if os.path.dirname(src) != os.path.realpath(media) or not os.path.isfile(src):
-                issue("Companion images", f"'{c['name']}': cover image '{fn}' is not in the export media folder")
-                continue
-            filename = f"{c['id']}.webp"
-            try:
-                with Image.open(src) as original:
-                    im = original.convert("RGBA")
-            except OSError:
-                issue("Companion images", f"'{c['name']}': could not read cover image '{fn}'")
-                continue
-            im.thumbnail((320, 320), Image.LANCZOS)
-            im.save(os.path.join(dest, filename), "WEBP", quality=80, method=6)
-            c["image"] = filename
-        wanted = {c["image"] for c in companions if c["image"]}
-        for old in os.scandir(dest):
-            if old.is_file() and old.name.endswith(".webp") and old.name not in wanted:
-                os.remove(old.path)
+        for folder, records, images, size in [("companions", companions, companion_images, 320),
+                                               ("enemies", enemies, enemy_images, 640),
+                                               ("events", events, event_images, 800)]:
+            dest = os.path.join(public_dir, folder)
+            os.makedirs(dest, exist_ok=True)
+            for record in records:
+                fn = images.get(record["id"])
+                if not fn:
+                    continue
+                src = os.path.realpath(os.path.join(media, fn))
+                if os.path.dirname(src) != os.path.realpath(media) or not os.path.isfile(src):
+                    issue(f"{folder.capitalize()} images", f"'{record['name']}': cover image '{fn}' is not in the export media folder")
+                    continue
+                filename = f"{record['id']}.webp"
+                try:
+                    with Image.open(src) as original:
+                        im = original.convert("RGBA")
+                except OSError:
+                    issue(f"{folder.capitalize()} images", f"'{record['name']}': could not read cover image '{fn}'")
+                    continue
+                im.thumbnail((size, size), Image.LANCZOS)
+                im.save(os.path.join(dest, filename), "WEBP", quality=80, method=6)
+                record["image"] = filename
+            wanted = {record["image"] for record in records if record["image"]}
+            for old in os.scandir(dest):
+                if old.is_file() and old.name.endswith(".webp") and old.name not in wanted:
+                    os.remove(old.path)
 
     # ---------- vocabulary checks
     near_duplicates([u["identity"] for u in units], "identity")
@@ -721,7 +840,9 @@ def main(root, out, slugs_path=None, public_dir=None):
     for u in units:
         u.pop("_cardSrc", None)
     payload = {"effects": effects, "applications": applications + list(companion_apps.values()),
-               "units": units, "lacrimas": lacrimas, "banners": banners, "companions": companions}
+               "units": units, "lacrimas": lacrimas, "banners": banners, "companions": companions,
+               "enemies": enemies, "events": events}
+    payload["applications"] += list(enemy_apps.values())
 
     # guard: nothing personal leaked
     blob = json.dumps(payload, ensure_ascii=False)
@@ -747,7 +868,9 @@ def main(root, out, slugs_path=None, public_dir=None):
         fh.write(f"{len(units)} units, {len(lacrimas)} lacrimas, {len(effects)} effects, "
                  f"{len(applications)} effect applications, {len(banners)} banners, "
                  f"{sum(1 for u in units if u['bannerArt'])} banner arts, "
-                 f"{len(companions)} companions, {len(companion_apps)} companion effect applications. "
+                 f"{len(companions)} companions, {len(companion_apps)} companion effect applications, "
+                 f"{len(enemies)} enemies, {len(enemy_skills)} enemy skills, {len(enemy_apps)} enemy effect applications, "
+                 f"{len(events)} events. "
                  f"{total} issues in {len(issues)} categories.\n\n")
         for cat in sorted(issues, key=lambda c: -len(issues[c])):
             fh.write(f"## {cat} ({len(issues[cat])})\n\n")
