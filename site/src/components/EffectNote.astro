@@ -1,0 +1,24 @@
+---
+// An effect's name that opens, on click or tap, a short note on what it does. No script, no link away.
+// Without any text (the effect has none recorded yet) it renders as plain text, so the gap stays visible.
+interface Note { name: string; text: string | null }
+interface Props { label: string; notes: Note[]; inline?: boolean; class?: string }
+const { label, notes, inline = false, class: cls = '' } = Astro.props;
+const withText = notes.filter((n) => n.text);
+---
+{withText.length === 0
+  ? <span class={cls}>{label}</span>
+  : <details class:list={['effect-note', { inline }]} data-pagefind-ignore>
+      <summary class={cls}>{label}</summary>
+      <div class="pop">{withText.map((n) => <p>{withText.length > 1 || n.name !== label ? <strong>{n.name}. </strong> : null}{n.text}</p>)}</div>
+    </details>}
+
+<style>
+  .effect-note { position: relative; display: inline-block; vertical-align: baseline; }
+  summary { list-style: none; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
+  summary::-webkit-details-marker { display: none; }
+  .pop { z-index: 20; margin-top: 6px; padding: 10px 12px; border-radius: 12px; background: #fff; border: 2px solid var(--line); font: 400 14px/1.45 var(--body); color: var(--ink); text-align: left; text-transform: none; letter-spacing: 0; }
+  .effect-note:not(.inline) .pop { position: absolute; left: 0; top: 100%; width: min(320px, calc(100vw - 32px)); box-shadow: 0 6px 18px rgba(74, 47, 30, .18); }
+  .pop :global(p) { margin: 0; }
+  .pop :global(p + p) { margin-top: 6px; }
+</style>
