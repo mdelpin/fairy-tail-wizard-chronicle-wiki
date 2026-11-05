@@ -92,7 +92,9 @@ export interface Enemy {
 }
 export interface GameEvent {
   id: string; name: string; type: string | null; start: string | null; end: string | null;
-  image: string | null; dateSource: string | null; enemies: string[];
+  /** Exact UTC moments, 'YYYY-MM-DDTHH:MMZ'; null when Capacities holds only a day. */
+  startAt: string | null; endAt: string | null; rankingStartAt: string | null; rankingEndAt: string | null;
+  image: string | null; dateSource: string | null; dateNote: string | null; enemies: string[];
 }
 export type Attribute = 'Brave' | 'Mind' | 'Technique' | 'Heart';
 
@@ -116,6 +118,8 @@ export const bannerById = new Map(banners.map((b) => [b.id, b]));
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 /** '2026-03-06' -> '6 Mar 2026' (a JST calendar day, shown as written; no time-zone shift). */
 export const dayText = (d: string) => { const [y, m, dd] = d.split('-').map(Number); return `${dd} ${MONTHS[m - 1]} ${y}`; };
+/** '2026-11-05T06:00Z' -> '5 Nov 2026, 06:00 UTC' (an exact moment, shown in UTC as the game's notice states it). */
+export const utcText = (iso: string) => `${dayText(iso.slice(0, 10))}, ${iso.slice(11, 16)} UTC`;
 /** 'Calculated' dates get an ≈ so readers can tell them from confirmed ones. */
 export const bannerDates = (b: Banner) => {
   if (!b.start) return null;
