@@ -42,6 +42,10 @@ const fullTitle = section === 'home' ? 'Fairy Tail Wizard Chronicle — Unoffici
         <Pennant width={30} star />
         <span class="brand-name">Fairy Tail Wizard Chronicle<span class="brand-sub">Unofficial wiki</span></span>
       </a>
+      <form class="header-search" action={url('search/')} method="get" role="search">
+        <label class="sr-only" for="hdr-q">Search the wiki</label>
+        <input id="hdr-q" name="q" type="search" placeholder="Search the wiki…" />
+      </form>
       <nav class="nav" aria-label="Primary">
         <a href={url('characters/')} aria-current={section === 'characters' ? 'page' : undefined}>Characters</a>
         {companions.length > 0 && <a href={url('companions/')} aria-current={section === 'companions' ? 'page' : undefined}>Companions</a>}
@@ -51,10 +55,6 @@ const fullTitle = section === 'home' ? 'Fairy Tail Wizard Chronicle — Unoffici
         <a href={url('banners/')} aria-current={section === 'banners' ? 'page' : undefined}>Banners</a>
         <a href={url('events/')} aria-current={section === 'events' ? 'page' : undefined}>Events</a>
       </nav>
-      <form class="header-search" action={url('search/')} method="get" role="search">
-        <label class="sr-only" for="hdr-q">Search the wiki</label>
-        <input id="hdr-q" name="q" type="search" placeholder="Search the wiki…" />
-      </form>
     </div>
   </header>
   <main>
