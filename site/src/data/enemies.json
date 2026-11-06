@@ -5,6 +5,7 @@
   "type": "Raid",
   "role": "Boss",
   "image": "deliora.webp",
+  "defeatPoints": null,
   "immuneTo": [],
   "events": [
    "guild-raid-deliora"
@@ -55,6 +56,278 @@
      "bind-all-enemies-every-6-sec-30-3-sec",
      "top-bleed-all-enemies-every-6-sec-30-3-sec",
      "silence-all-enemies-every-6-sec-30-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "etherious-lv-1",
+  "name": "Etherious Lv.1",
+  "type": "Raid",
+  "role": "Minion",
+  "image": "etherious-lv-1.webp",
+  "defeatPoints": 20,
+  "immuneTo": [],
+  "events": [
+   "guild-raid-deliora"
+  ],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 110% ATK damage to the target area.",
+    "applications": [
+     "damage-enemies-in-target-area-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Awakening of Magic",
+    "icon": 9,
+    "gameText": "Every 4 sec, grants self for 2 sec [Top] ATK increase.",
+    "applications": [
+     "top-atk-increase-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Raging Blow",
+    "icon": 44,
+    "gameText": "Deals 500% ATK damage to all enemies. After the attack hits, inflicts [Top] Paralysis and [Top] ATK Decrease on the target for 3 sec.",
+    "applications": [
+     "damage-all-enemies-500-of-own-atk",
+     "top-atk-decrease-each-target-hit-after-attack-hits-3-sec",
+     "top-paralysis-each-target-hit-after-attack-hits-3-sec"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Ominous Gaze",
+    "icon": 11,
+    "gameText": "Every 5 sec, grants self for 3 sec, [Top] Accuracy Increase.",
+    "applications": [
+     "top-accuracy-increase-self-every-5-sec-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "etherious-lv-2",
+  "name": "Etherious Lv.2",
+  "type": "Raid",
+  "role": "Minion",
+  "image": "etherious-lv-2.webp",
+  "defeatPoints": 30,
+  "immuneTo": [],
+  "events": [
+   "guild-raid-deliora"
+  ],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 110% ATK damage to the target area.",
+    "applications": [
+     "damage-enemies-in-target-area-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Magic Beast's Resolve",
+    "icon": 9,
+    "gameText": "Every 4 sec, grants self [Top] ATK Increase and [Top] DEF Increase for 2 sec.",
+    "applications": [
+     "top-atk-increase-self-every-4-sec-2-sec",
+     "top-def-increase-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Fierce Smash",
+    "icon": 44,
+    "gameText": "Deals 500% ATK damage to all enemies. After the attack hits, inflicts [Top] Bleed and [Top] DEF Decrease on the target for 3 sec.",
+    "applications": [
+     "damage-all-enemies-500-of-own-atk",
+     "top-bleed-each-target-hit-after-attack-hits-3-sec",
+     "top-def-decrease-each-target-hit-after-attack-hits-3-sec"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Magic Recovery",
+    "icon": 18,
+    "gameText": "Every 5 sec, grants self [Top] Continuous Healing for 3 sec",
+    "applications": [
+     "top-continuous-heal-self-every-5-sec-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "etherious-lv-3",
+  "name": "Etherious Lv.3",
+  "type": "Raid",
+  "role": "Minion",
+  "image": "etherious-lv-3.webp",
+  "defeatPoints": 40,
+  "immuneTo": [],
+  "events": [
+   "guild-raid-deliora"
+  ],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 110% ATK damage to the target area.",
+    "applications": [
+     "damage-enemies-in-target-area-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Unleashed Madness",
+    "icon": 9,
+    "gameText": "Every 4 sec, grants self [Top] ATK Increase and [Top] DEF Increase, Action Impairment Barrier for 2 sec",
+    "applications": [
+     "top-atk-increase-self-every-4-sec-2-sec",
+     "top-def-increase-self-every-4-sec-2-sec",
+     "action-impairment-barrier-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Savage Heavy Blow",
+    "icon": 44,
+    "gameText": "Deals 500% ATK damage to all enemies. After the attack hits, inflicts [Top] Burn and [Top] ATK Decrease, [Top] DEF Decrease on the target for 3 sec.",
+    "applications": [
+     "damage-all-enemies-500-of-own-atk",
+     "top-burn-each-target-hit-after-attack-hits-3-sec",
+     "top-atk-decrease-each-target-hit-after-attack-hits-3-sec",
+     "top-def-decrease-each-target-hit-after-attack-hits-3-sec"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Terrifying Roar",
+    "icon": 11,
+    "gameText": "Every 6 sec, has a 20% chance to inflict Bind on all enemies for 3 sec.",
+    "applications": [
+     "bind-all-enemies-every-6-sec-20-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "etherious-lv-4",
+  "name": "Etherious Lv.4",
+  "type": "Raid",
+  "role": "Minion",
+  "image": "etherious-lv-4.webp",
+  "defeatPoints": 50,
+  "immuneTo": [],
+  "events": [
+   "guild-raid-deliora"
+  ],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 120% ATK damage to the target area.",
+    "applications": [
+     "damage-enemies-in-target-area-normal-attack-120-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Surging Evil Power",
+    "icon": 9,
+    "gameText": "Every 4 sec, grants self [Top] ATK Increase and [Top] Critical Damage Increase, Action Impairment Barrier for 2 sec.",
+    "applications": [
+     "top-atk-increase-self-every-4-sec-2-sec",
+     "top-critical-damage-increase-self-every-4-sec-2-sec",
+     "action-impairment-barrier-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Frenzied Tremor",
+    "icon": 44,
+    "gameText": "Deals 550% ATK damage to all enemies. After the attack hits, inflicts [Top] Paralysis, and [Top] Critical Damage Decrease, [Top] Critical DEF Decrease on the target for 3 sec.",
+    "applications": [
+     "damage-all-enemies-550-of-own-atk",
+     "top-paralysis-each-target-hit-after-attack-hits-3-sec",
+     "top-critical-damage-decrease-each-target-hit-after-attack-hits-3-sec",
+     "top-critical-defense-decrease-each-target-hit-after-attack-hits-3-sec"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Savage Beast's Intimidation",
+    "icon": 11,
+    "gameText": "Every 6 sec, has a 20% chance to inflict Bind and [Top] DEF Decrease on all enemies for 3 sec.",
+    "applications": [
+     "bind-all-enemies-every-6-sec-20-3-sec",
+     "top-def-decrease-all-enemies-every-6-sec-20-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "etherious-lv-5",
+  "name": "Etherious Lv.5",
+  "type": "Raid",
+  "role": "Minion",
+  "image": "etherious-lv-5.webp",
+  "defeatPoints": 60,
+  "immuneTo": [],
+  "events": [
+   "guild-raid-deliora"
+  ],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 130% ATK damage to the target area.",
+    "applications": [
+     "damage-enemies-in-target-area-normal-attack-130-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Awakening of Tyranny",
+    "icon": 9,
+    "gameText": "Every 4 sec, grants self [Top] ATK Increase and [Top] Shield, Action Impairment Barrier for 2 sec.",
+    "applications": [
+     "top-atk-increase-self-every-4-sec-2-sec",
+     "top-shield-self-every-4-sec-2-sec",
+     "action-impairment-barrier-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Earth-Shaking Impact",
+    "icon": 44,
+    "gameText": "Deals 600% ATK damage to all enemies. After the attack hits, inflicts [Top] Bleed and [Top] Paralysis, Heal Block on the target for 3 sec.",
+    "applications": [
+     "damage-all-enemies-600-of-own-atk",
+     "top-bleed-each-target-hit-after-attack-hits-3-sec",
+     "top-paralysis-each-target-hit-after-attack-hits-3-sec",
+     "heal-block-each-target-hit-after-attack-hits-3-sec"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Hope-Crushing Pressure",
+    "icon": 11,
+    "gameText": "Every 6 sec, has a 25% chance to inflict Bind and [Top] Burn on all enemies for 3 sec",
+    "applications": [
+     "top-burn-all-enemies-every-6-sec-25-3-sec",
+     "bind-all-enemies-every-6-sec-25-3-sec"
     ]
    }
   ]

@@ -319,6 +319,9 @@ def main(root, out, slugs_path=None, public_dir=None):
             if duration is not None and duration < 0:
                 issue("Values out of range", f"{where}: durationSeconds is negative")
             for prop in ("applicationType", "target", "activationInterval"):
+                # An enemy's damage hit (e.g. an ultimate) states no interval in the game, so it may be blank.
+                if prop == "activationInterval" and eff == "Damage":
+                    continue
                 if not f.get(prop):
                     issue("Missing required values", f"{where}: {prop} is empty")
         return {
@@ -668,9 +671,19 @@ def main(root, out, slugs_path=None, public_dir=None):
         image = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
         if image:
             enemy_images[enemy_slug[stem]] = urllib.parse.unquote(image.group(1))
+        # Defeat Points a minion gives toward summoning the boss; the boss itself has none.
+        dp = f.get("defeatPoints")
+        if type(dp) in (int, float) and math.isfinite(dp) and dp >= 0:
+            dp = int(dp) if float(dp).is_integer() else dp
+        else:
+            if dp is not None:
+                issue("Values out of range", f"{where}: defeatPoints needs a number")
+            elif clean(f.get("role")) == "Minion":
+                issue("Missing required values", f"{where}: defeatPoints is empty")
+            dp = None
         enemies.append({
             "id": enemy_slug[stem], "name": name, "type": clean(f.get("type_")), "role": clean(f.get("role")),
-            "image": None, "immuneTo": [eff_slug[e] for e in immune],
+            "image": None, "defeatPoints": dp, "immuneTo": [eff_slug[e] for e in immune],
             "events": [event_slug[e] for e in enemy_events[stem]],
             "skills": sorted([enemy_skills[s] for s in skills],
                              key=lambda s: enemy_kinds.index(s["kind"]) if s["kind"] in enemy_kinds else 99),
