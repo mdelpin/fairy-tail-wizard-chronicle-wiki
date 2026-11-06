@@ -18,7 +18,7 @@ import { enemies, events, dayText, initials, url } from '../../lib/data';
             <div class="body">
               <h2>{enemy.name}</h2>
               <span class="muted">{[enemy.type, enemy.role].filter(Boolean).join(' · ')}</span>
-              {enemy.defeatPoints != null && <span class="dp"><strong>+{enemy.defeatPoints}</strong> Defeat Points</span>}
+              {enemy.defeatPoints != null && <span class="dp"><strong>+{enemy.defeatPoints}</strong> Defeat Points{enemy.goldenDefeatPoints != null && <> · golden <strong>+{enemy.goldenDefeatPoints}</strong></>}</span>}
               {enemy.events.flatMap((id) => events.get(id) ?? []).map((event) => (
                 <span class="event">{event.name}
                   <span class="muted dates"><EventWhen event={event} /></span>

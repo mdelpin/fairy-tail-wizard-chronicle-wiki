@@ -653,6 +653,7 @@ def main(root, out, slugs_path=None, public_dir=None):
             "applications": [enemy_apps[a]["id"] for a in apps],
         }
     enemies, events, enemy_images, event_images = [], [], {}, {}
+    enemy_golden_images = {}
     enemy_events, event_enemies = {}, {}
     for stem, r in sorted(enemies_src.items()):
         f = r["fm"]
@@ -671,6 +672,17 @@ def main(root, out, slugs_path=None, public_dir=None):
         image = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
         if image:
             enemy_images[enemy_slug[stem]] = urllib.parse.unquote(image.group(1))
+        # A golden version of a minion looks different and gives more Defeat Points; both are optional.
+        golden = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("goldenVariant") or ""))
+        if golden:
+            enemy_golden_images[enemy_slug[stem]] = urllib.parse.unquote(golden.group(1))
+        gdp = f.get("goldenDefeatPoints")
+        if type(gdp) in (int, float) and math.isfinite(gdp) and gdp >= 0:
+            gdp = int(gdp) if float(gdp).is_integer() else gdp
+        else:
+            if gdp is not None:
+                issue("Values out of range", f"{where}: goldenDefeatPoints needs a number")
+            gdp = None
         # Defeat Points a minion gives toward summoning the boss; the boss itself has none.
         dp = f.get("defeatPoints")
         if type(dp) in (int, float) and math.isfinite(dp) and dp >= 0:
@@ -683,7 +695,8 @@ def main(root, out, slugs_path=None, public_dir=None):
             dp = None
         enemies.append({
             "id": enemy_slug[stem], "name": name, "type": clean(f.get("type_")), "role": clean(f.get("role")),
-            "image": None, "defeatPoints": dp, "immuneTo": [eff_slug[e] for e in immune],
+            "image": None, "goldenImage": None, "defeatPoints": dp,
+            "goldenDefeatPoints": gdp, "immuneTo": [eff_slug[e] for e in immune],
             "events": [event_slug[e] for e in enemy_events[stem]],
             "skills": sorted([enemy_skills[s] for s in skills],
                              key=lambda s: enemy_kinds.index(s["kind"]) if s["kind"] in enemy_kinds else 99),
@@ -848,6 +861,26 @@ def main(root, out, slugs_path=None, public_dir=None):
                 im.thumbnail((size, size), Image.LANCZOS)
                 im.save(os.path.join(dest, filename), "WEBP", quality=80, method=6)
                 record["image"] = filename
+        # golden versions of minions get their own picture beside the normal one
+        gdest = os.path.join(public_dir, "enemies")
+        for record in enemies:
+            fn = enemy_golden_images.get(record["id"])
+            if not fn:
+                continue
+            src = os.path.realpath(os.path.join(media, fn))
+            if os.path.dirname(src) != os.path.realpath(media) or not os.path.isfile(src):
+                issue("Enemies images", f"'{record['name']}': golden image '{fn}' is not in the export media folder")
+                continue
+            try:
+                with Image.open(src) as original:
+                    im = original.convert("RGBA")
+            except OSError:
+                issue("Enemies images", f"'{record['name']}': could not read golden image '{fn}'")
+                continue
+            im.thumbnail((640, 640), Image.LANCZOS)
+            filename = f"{record['id']}-golden.webp"
+            im.save(os.path.join(gdest, filename), "WEBP", quality=80, method=6)
+            record["goldenImage"] = filename
             wanted = {record["image"] for record in records if record["image"]}
             for old in os.scandir(dest):
                 if old.is_file() and old.name.endswith(".webp") and old.name not in wanted:
