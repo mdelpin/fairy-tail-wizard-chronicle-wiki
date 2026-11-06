@@ -5,7 +5,9 @@
   "type": "Raid",
   "role": "Boss",
   "image": "deliora.webp",
+  "goldenImage": null,
   "defeatPoints": null,
+  "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [
    "guild-raid-deliora"
@@ -66,7 +68,9 @@
   "type": "Raid",
   "role": "Minion",
   "image": "etherious-lv-1.webp",
+  "goldenImage": "etherious-lv-1-golden.webp",
   "defeatPoints": 20,
+  "goldenDefeatPoints": 40,
   "immuneTo": [],
   "events": [
    "guild-raid-deliora"
@@ -118,7 +122,9 @@
   "type": "Raid",
   "role": "Minion",
   "image": "etherious-lv-2.webp",
+  "goldenImage": "etherious-lv-2-golden.webp",
   "defeatPoints": 30,
+  "goldenDefeatPoints": 60,
   "immuneTo": [],
   "events": [
    "guild-raid-deliora"
@@ -171,7 +177,9 @@
   "type": "Raid",
   "role": "Minion",
   "image": "etherious-lv-3.webp",
+  "goldenImage": "etherious-lv-3-golden.webp",
   "defeatPoints": 40,
+  "goldenDefeatPoints": 80,
   "immuneTo": [],
   "events": [
    "guild-raid-deliora"
@@ -226,7 +234,9 @@
   "type": "Raid",
   "role": "Minion",
   "image": "etherious-lv-4.webp",
+  "goldenImage": "etherious-lv-4-golden.webp",
   "defeatPoints": 50,
+  "goldenDefeatPoints": 100,
   "immuneTo": [],
   "events": [
    "guild-raid-deliora"
@@ -282,7 +292,9 @@
   "type": "Raid",
   "role": "Minion",
   "image": "etherious-lv-5.webp",
+  "goldenImage": "etherious-lv-5-golden.webp",
   "defeatPoints": 60,
+  "goldenDefeatPoints": 120,
   "immuneTo": [],
   "events": [
    "guild-raid-deliora"
