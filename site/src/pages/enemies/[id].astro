@@ -39,6 +39,11 @@ const immunities = enemy.immuneTo.flatMap((id) => effects.get(id) ?? []);
       {enemy.image && <img src={url(`enemies/${enemy.image}`)} alt="" width="240" height="240" data-pagefind-meta="image[src]" />}
       <div class="info"><h1>{enemy.name}</h1><p class="muted">{[enemy.type, enemy.role].filter(Boolean).join(' · ')}</p>
         <div class="glance">
+          {enemy.defeatPoints != null && <div class="dp">
+            <span class="label">Defeat Points</span>
+            <strong class="heading dp-value">+{enemy.defeatPoints}</strong>
+            <span class="muted dp-note">Fill the Defeat Points gauge to summon the boss.</span>
+          </div>}
           {inflicts.size > 0 && <div><span class="label">Inflicts</span><div class="chips">
             {[...inflicts].map(([label, notes]) => <EffectNote class="tag bad" label={label} notes={notes} />)}
           </div></div>}
@@ -113,6 +118,8 @@ const immunities = enemy.immuneTo.flatMap((id) => effects.get(id) ?? []);
   .chips :global(.tag) { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 500; text-decoration: none; }
   .chips :global(.tag.bad) { background: #F6DCD7; color: #8A1F25; }
   .chips :global(.tag.good) { background: #DCEBDD; color: #245C33; }
+  .dp-value { font-size: 34px; line-height: 1; color: var(--crimson); }
+  .dp-note { font-size: 13px; }
   .jumps { display: flex; flex-wrap: wrap; gap: 8px; }
   .entry { border: 1px solid var(--line); border-radius: 16px; background: #fff; overflow: hidden; }
   .cols { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }

@@ -11,9 +11,14 @@
   "rankingEndAt": "2026-11-17T05:59Z",
   "image": "guild-raid-deliora.webp",
   "dateSource": "Conflicting",
-  "dateNote": null,
+  "dateNote": "The official X posts give an end of 12 Nov, 14:59 JST. The in-game Notice, the raid screen and the lobby countdown all give 13 Nov (05:59 UTC), so the times shown follow the game.",
   "enemies": [
-   "deliora"
+   "deliora",
+   "etherious-lv-5",
+   "etherious-lv-1",
+   "etherious-lv-2",
+   "etherious-lv-3",
+   "etherious-lv-4"
   ]
  }
 ]

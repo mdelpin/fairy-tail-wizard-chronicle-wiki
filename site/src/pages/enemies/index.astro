@@ -18,6 +18,7 @@ import { enemies, events, dayText, initials, url } from '../../lib/data';
             <div class="body">
               <h2>{enemy.name}</h2>
               <span class="muted">{[enemy.type, enemy.role].filter(Boolean).join(' · ')}</span>
+              {enemy.defeatPoints != null && <span class="dp"><strong>+{enemy.defeatPoints}</strong> Defeat Points</span>}
               {enemy.events.flatMap((id) => events.get(id) ?? []).map((event) => (
                 <span class="event">{event.name}
                   <span class="muted dates"><EventWhen event={event} /></span>
@@ -43,6 +44,7 @@ import { enemies, events, dayText, initials, url } from '../../lib/data';
   .placeholder { font-size: 42px; }
   .body { display: flex; flex-direction: column; gap: 6px; padding: 18px; font-size: 14px; }
   h2 { font-size: 26px; }
+  .dp { color: var(--crimson); }
   .event { margin-top: 8px; }
   .dates { display: block; font-size: 13px; }
 </style>
