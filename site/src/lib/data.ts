@@ -14,6 +14,10 @@ export interface Effect {
   value: { amount: number; unit: string } | null;
   secondary: { stat: string; direction: string; amount: number; unit: string } | null;
   gameText: string | null;
+  /** Effects that counter this one (stored on the countered effect). */
+  counteredBy?: string[];
+  /** Effects this one removes (stored on the remover). */
+  removes?: string[];
 }
 export interface Application {
   id: string; source: 'unit' | 'lacrima' | 'enemy'; effect: string | null; type: string | null; target: string | null;
@@ -266,6 +270,44 @@ export const GROUPS = [
   ['Dispels', 'Remove all buffs or debuffs'],
   ['Skill gauges', 'Speed up allies, slow down enemies'],
 ] as const;
+
+/**
+ * Cleanse's game text is "Removes all debuffs", so it is treated as removing every lasting debuff:
+ * the status ailments and stat cuts. Skill-gauge effects are left out because they are instant, not
+ * lasting. Remove All Buffs has no source text yet, so it only counts what is entered under Removes.
+ */
+const CLEANSE_SCOPE = new Set(['Status ailments', 'Stat cuts']);
+
+export interface CounterLink { key: string; label: string }
+/**
+ * Who counters whom, worked out per effect family (not per tier). Two sources are combined:
+ * "Countered By" on the countered effect, "Removes" on the remover, plus the Cleanse rule above.
+ * An effect with no data has no entry: absence means "not recorded", never "nothing counters it".
+ */
+export function buildCounterIndex() {
+  const fam = (id: string) => { const e = effects.get(id); return e ? familyKey(e) : null; };
+  const metas = new Map<string, FamilyMeta>();
+  for (const e of effects.values()) { const fm = familyKey(e); if (fm) metas.set(fm.key, fm); }
+  const edges = new Set<string>();
+  const add = (counter?: string, target?: string) => { if (counter && target && counter !== target) edges.add(`${counter}>${target}`); };
+  for (const e of effects.values()) {
+    const me = familyKey(e); if (!me) continue;
+    for (const id of e.removes ?? []) add(me.key, fam(id)?.key);
+    for (const id of e.counteredBy ?? []) add(fam(id)?.key, me.key);
+  }
+  if (metas.has('cleanse')) for (const [k, m] of metas) if (CLEANSE_SCOPE.has(m.group)) add('cleanse', k);
+  const counteredBy = new Map<string, CounterLink[]>();
+  const counters = new Map<string, CounterLink[]>();
+  const push = (m: Map<string, CounterLink[]>, k: string, l: CounterLink) => (m.get(k) ?? m.set(k, []).get(k)!).push(l);
+  for (const edge of edges) {
+    const [c, t] = edge.split('>');
+    const cm = metas.get(c), tm = metas.get(t); if (!cm || !tm) continue;
+    push(counteredBy, t, { key: cm.key, label: cm.label });
+    push(counters, c, { key: tm.key, label: tm.label });
+  }
+  for (const m of [counteredBy, counters]) for (const l of m.values()) l.sort((a, b) => a.label.localeCompare(b.label));
+  return { counteredBy, counters };
+}
 
 export interface Match { unit: Unit; skill: Skill; app: Application; effect: Effect }
 export interface LacrimaMatch { lacrima: Lacrima; app: Application; effect: Effect }

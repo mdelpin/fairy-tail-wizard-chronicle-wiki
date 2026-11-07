@@ -270,6 +270,7 @@ def main(root, out, slugs_path=None, public_dir=None):
                       if f.get("defaultValue") is not None else None),
             "secondary": sec, "gameText": clean(f.get("gameText")),
             "counteredBy": [eff_slug.get(s, slugify(s)) for s in ref(f.get("counteredBy"), "Effects", f"Effect '{t}'", "counteredBy", many=True)],
+            "removes": [eff_slug.get(s, slugify(s)) for s in ref(f.get("removes"), "Effects", f"Effect '{t}'", "removes", many=True)],
         })
     known_fams = {e["family"] for e in effects if e["family"]}
 
