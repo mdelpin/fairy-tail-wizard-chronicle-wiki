@@ -356,4 +356,13 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .companion-match a { color: var(--ink); font-size: 17px; }
   .needs { background: #fff; border: 1px solid var(--line); border-radius: 16px; }
   @media (max-width: 600px) { .banner-body { padding: 22px 18px; } .medal { width: 72px; height: 72px; } }
+  /* Phones: one scrollable line per filter instead of wrapped pills, label stays put */
+  @media (max-width: 600px) {
+    .filters { gap: 6px; margin-top: 44px; }
+    .row { flex-wrap: nowrap; overflow-x: auto; gap: 6px; margin: 0 -16px; padding: 2px 16px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .row::-webkit-scrollbar { display: none; }
+    .lbl { flex: none; width: 64px; position: sticky; left: -16px; z-index: 1; align-self: stretch; display: flex; align-items: center; background: var(--page); box-shadow: 8px 0 8px -4px var(--page); }
+    .pill { flex: none; min-height: 34px; padding: 0 14px; }
+    .pill:has(.kanji) { padding-left: 6px; }
+  }
 </style>
