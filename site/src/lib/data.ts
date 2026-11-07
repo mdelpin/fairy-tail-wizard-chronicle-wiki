@@ -21,7 +21,7 @@ export interface Application {
   chance: number | null; durationSeconds: number | null;
   valueOverride: { amount: number; unit: string } | null;
   condition: string | null;
-  requires: { families: string[]; match: string | null } | null;
+  requires: { families: string[]; match: string | null; subject?: string | null } | null;
   gameText: string | null;
 }
 export interface CompanionApplication extends Pick<Application, 'id' | 'effect' | 'type' | 'target' | 'trigger' | 'chance' | 'condition' | 'gameText'> {

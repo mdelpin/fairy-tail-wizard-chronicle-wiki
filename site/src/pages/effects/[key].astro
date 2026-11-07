@@ -53,6 +53,10 @@ const targetGroup = (t: string | null) =>
   : /(Allies|Ally)$/.test(t) ? 'Allies'
   : 'Other';
 const targetsPresent = TARGET_GROUPS.filter((g) => cards.some((c) => c.rows.some((r) => targetGroup(r.app.target) === g)));
+// Reliability, best first: 0 no condition and no chance; 1 needs a status on the enemy; 2 a chance to proc; 3 any other condition
+const reliability = (a: Application) => (a.condition ? 3 : a.chance != null ? 2 : a.requires ? 1 : 0);
+const needNote = (a: Application) =>
+  a.requires?.families?.length ? `Needs ${a.requires.families.join(' or ')} ${a.requires.subject === 'Target Hit' ? 'on each enemy hit' : 'on the target'}` : a.condition ?? null;
 const kindsPresent = new Set(cards.flatMap((c) => c.rows.map((r) => r.skill.kind)));
 const showSkillFilter = kindsPresent.has('Ultimate') && kindsPresent.size > 1;
 
@@ -154,7 +158,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
         <span class="lbl">Sort</span>
         <button type="button" class="pill" data-filter="sort" data-value="" aria-pressed="true">Tier</button>
         <button type="button" class="pill" data-filter="sort" data-value="fastest" aria-pressed="false">Fastest</button>
-        <button type="button" class="pill" data-filter="sort" data-value="consistent" aria-pressed="false">Most consistent</button>
+        <button type="button" class="pill" data-filter="sort" data-value="reliable" aria-pressed="false">Reliable</button>
       </div>
       <p class="status" id="status" hidden><span id="shown">{cards.length}</span> of {cards.length} wizards<span id="active"> · <button type="button" class="clear">Clear filters</button></span></p>
     </div>
@@ -175,9 +179,10 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
               {rows.length > 1 && <span class="n">{rows.length} skills</span>}
             </div>
             {rows.map(({ skill, app, effect }) => (
-              <div class="hit" data-tier={effect.tier ?? ''} data-kind={skill.kind} data-target={targetGroup(app.target)} data-interval={app.trigger?.everySeconds ?? ''} data-chance={app.chance ?? ''}>
+              <div class="hit" data-tier={effect.tier ?? ''} data-kind={skill.kind} data-target={targetGroup(app.target)} data-interval={app.trigger?.everySeconds ?? ''} data-chance={app.chance ?? ''} data-rel={reliability(app)}>
                 <div class="hit-head"><span class={`kind kind-${skill.kind}`}>{skill.kind}</span><span class="heading sk">{skill.name ?? skill.kind}</span></div>
                 <div class="match"><span class={`tier tier-${effect.tier ?? 'none'}`}>{effect.tier ?? '—'}</span><strong>{m.label}</strong><span>{facts(app)}</span></div>
+                {needNote(app) && <p class="need">{needNote(app)}</p>}
                 {skill.gameText?.Lv3 && (
                   <p class="lv"><span class="lvl">Lv.3</span><span>{segs(skill.gameText.Lv3).map((x) => x.hit ? <mark class="mark">{x.s}</mark> : x.s)}</span></p>
                 )}
@@ -261,15 +266,15 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   const params = new URLSearchParams(location.search);
   const known = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill[data-filter=rarity]')].map((b) => b.dataset.value);
   const oneOf = (k: string, ok: string[]) => (ok.includes(params.get(k) ?? '') ? params.get(k) : null);
-  const state: Record<string, string | null> = { rarity: known.includes(params.get('rarity') ?? '') ? params.get('rarity') : null, tier: params.get('tier'), attr: params.get('attr'), role: params.get('role'), skills: oneOf('skills', ['noult', 'ult']), target: oneOf('target', [...document.querySelectorAll<HTMLButtonElement>('.filters .pill[data-filter=target]')].map((b) => b.dataset.value ?? '')), sort: oneOf('sort', ['fastest', 'consistent']) };
+  const state: Record<string, string | null> = { rarity: known.includes(params.get('rarity') ?? '') ? params.get('rarity') : null, tier: params.get('tier'), attr: params.get('attr'), role: params.get('role'), skills: oneOf('skills', ['noult', 'ult']), target: oneOf('target', [...document.querySelectorAll<HTMLButtonElement>('.filters .pill[data-filter=target]')].map((b) => b.dataset.value ?? '')), sort: oneOf('sort', ['fastest', 'reliable']) };
   const results = document.querySelector('.results');
   const original = [...document.querySelectorAll<HTMLElement>('.card')];
   const num = (v?: string) => (v === undefined || v === '' ? null : Number(v));
-  // Sort key from the skills still showing: fastest = shortest repeat time (no repeat time sorts last); consistent = highest chance (no chance listed counts as 100%)
+  // Sort key from the skills still showing: fastest = shortest repeat time (no repeat time sorts last); reliable = unconditional first, then status-ailment conditions, then chance procs (higher chance first), then other conditions
   function key(card: HTMLElement) {
     const hits = [...card.querySelectorAll<HTMLElement>('.hit')].filter((h) => !h.hidden);
     if (state.sort === 'fastest') { const v = hits.map((h) => num(h.dataset.interval)).filter((x): x is number => x !== null); return v.length ? Math.min(...v) : Infinity; }
-    if (state.sort === 'consistent') return -Math.max(...hits.map((h) => num(h.dataset.chance) ?? 1));
+    if (state.sort === 'reliable') return Math.min(...hits.map((h) => Number(h.dataset.rel) + (1 - (num(h.dataset.chance) ?? 1)) / 10));
     return 0;
   }
   function apply() {
@@ -344,6 +349,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .hit:first-of-type { border-top: 0; }
   .hit-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .sk { font-size: 17px; }
+  .need { margin: 6px 2px 0; font-size: 13px; color: var(--muted); }
   .match { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: #FBF1E4; border: 1px solid #F0D9C2; font-size: 14px; }
   .lv { margin: 0; display: flex; gap: 12px; font-size: 15px; line-height: 1.65; }
   .lvl { flex: none; width: 38px; font: 700 12px/1.9 var(--mono); color: var(--crimson); }
