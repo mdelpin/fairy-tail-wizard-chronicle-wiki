@@ -299,11 +299,12 @@ export function familyBlurb(name: string): string | null {
 
 /**
  * Mechanics that last for a while, so Remove All Debuffs / Remove All Buffs can take them off. Instant
- * damage and healing, other removals and gauge changes are over as soon as they happen. Prevention and
- * Mitigation are left out on purpose: whether the Remove All effects strip barriers and shields is not
- * confirmed in game, so those pairs show only when entered as Counters in Capacities.
+ * damage and healing, other removals and gauge changes are over as soon as they happen. Prevention,
+ * Mitigation and Reactive Damage (Damage Reflection) are left out on purpose: whether the Remove All
+ * effects strip barriers, shields or a reflect is not confirmed in game, so those pairs show only when
+ * entered as Counters in Capacities.
  */
-const LASTING = new Set(['Stat Modifier', 'Damage Over Time', 'Control', 'Heal Over Time', 'Reactive Damage']);
+const LASTING = new Set(['Stat Modifier', 'Damage Over Time', 'Control', 'Heal Over Time']);
 
 export interface CounterLink { key: string; label: string }
 /**
