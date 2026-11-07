@@ -1,0 +1,375 @@
+[
+ {
+  "id": "atk",
+  "name": "ATK",
+  "definition": null,
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "ATK"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "accuracy",
+  "name": "Accuracy",
+  "definition": null,
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "Accuracy"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "action-block-barrier",
+  "name": "Action Block Barrier",
+  "definition": "Negates action block effects",
+  "mechanic": "Prevention",
+  "affectedStats": [],
+  "counters": [
+   "Bind",
+   "Freeze"
+  ],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "bind",
+  "name": "Bind",
+  "definition": "Prevents the unit from acting",
+  "mechanic": "Control",
+  "affectedStats": [],
+  "counters": [],
+  "counteredBy": [
+   "Action Block Barrier",
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "bleed",
+  "name": "Bleed",
+  "definition": "Lowers HP over time",
+  "mechanic": "Damage Over Time",
+  "affectedStats": [
+   "HP"
+  ],
+  "counters": [],
+  "counteredBy": [
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "blind",
+  "name": "Blind",
+  "definition": "Halves accuracy",
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "Accuracy"
+  ],
+  "counters": [],
+  "counteredBy": [
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "burn",
+  "name": "Burn",
+  "definition": "Lowers HP over time while also lowering ATK",
+  "mechanic": "Damage Over Time",
+  "affectedStats": [
+   "HP",
+   "ATK"
+  ],
+  "counters": [],
+  "counteredBy": [
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "continuous-heal",
+  "name": "Continuous Heal",
+  "definition": "Restores HP over the effect's duration",
+  "mechanic": "Heal Over Time",
+  "affectedStats": [
+   "HP"
+  ],
+  "counters": [],
+  "counteredBy": [
+   "Heal Block"
+  ],
+  "removes": null
+ },
+ {
+  "id": "critical-damage",
+  "name": "Critical Damage",
+  "definition": null,
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "Critical Damage"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "critical-defense",
+  "name": "Critical Defense",
+  "definition": null,
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "Critical Defense"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "critical-rate",
+  "name": "Critical Rate",
+  "definition": null,
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "Critical Rate"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "critical-resistance",
+  "name": "Critical Resistance",
+  "definition": null,
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "Critical Resistance"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "critical-shield",
+  "name": "Critical Shield",
+  "definition": "Prevents critical hits",
+  "mechanic": "Prevention",
+  "affectedStats": [],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "def",
+  "name": "DEF",
+  "definition": null,
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "DEF"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "damage",
+  "name": "Damage",
+  "definition": "Reduces a target's current HP",
+  "mechanic": "Instant Damage",
+  "affectedStats": [
+   "HP"
+  ],
+  "counters": [],
+  "counteredBy": [
+   "Invincible",
+   "Shield"
+  ],
+  "removes": null
+ },
+ {
+  "id": "damage-reflection",
+  "name": "Damage Reflection",
+  "definition": "Reflects a percent of damage taken back to the attacker",
+  "mechanic": "Reactive Damage",
+  "affectedStats": [
+   "HP"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "evasion",
+  "name": "Evasion",
+  "definition": null,
+  "mechanic": "Stat Modifier",
+  "affectedStats": [
+   "Evasion"
+  ],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "freeze",
+  "name": "Freeze",
+  "definition": "Cannot act",
+  "mechanic": "Control",
+  "affectedStats": [
+   "Critical Defense"
+  ],
+  "counters": [],
+  "counteredBy": [
+   "Action Block Barrier",
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "heal",
+  "name": "Heal",
+  "definition": "Restores HP",
+  "mechanic": "Instant Heal",
+  "affectedStats": [
+   "HP"
+  ],
+  "counters": [],
+  "counteredBy": [
+   "Heal Block"
+  ],
+  "removes": null
+ },
+ {
+  "id": "heal-block",
+  "name": "Heal Block",
+  "definition": "Cannot be healed",
+  "mechanic": "Prevention",
+  "affectedStats": [],
+  "counters": [
+   "Heal",
+   "Continuous Heal"
+  ],
+  "counteredBy": [
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "invincible",
+  "name": "Invincible",
+  "definition": "Becomes invincible",
+  "mechanic": "Prevention",
+  "affectedStats": [],
+  "counters": [
+   "Damage"
+  ],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "paralysis",
+  "name": "Paralysis",
+  "definition": "Lowers HP over time while also lowering DEF",
+  "mechanic": "Damage Over Time",
+  "affectedStats": [
+   "HP",
+   "DEF"
+  ],
+  "counters": [],
+  "counteredBy": [
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "remove-all-buffs",
+  "name": "Remove All Buffs",
+  "definition": "Removes all buffs",
+  "mechanic": "Removal",
+  "affectedStats": [],
+  "counters": [],
+  "counteredBy": [],
+  "removes": "Buffs"
+ },
+ {
+  "id": "remove-all-debuffs",
+  "name": "Remove All Debuffs",
+  "definition": "Removes all debuffs",
+  "mechanic": "Removal",
+  "affectedStats": [],
+  "counters": [
+   "Paralysis",
+   "Burn",
+   "Bleed",
+   "Blind",
+   "Freeze",
+   "Bind",
+   "Heal Block",
+   "Silence",
+   "Taunt"
+  ],
+  "counteredBy": [],
+  "removes": "Debuffs"
+ },
+ {
+  "id": "shield",
+  "name": "Shield",
+  "definition": "Negates a set amount of damage",
+  "mechanic": "Mitigation",
+  "affectedStats": [],
+  "counters": [
+   "Damage"
+  ],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "silence",
+  "name": "Silence",
+  "definition": "Stops the Ultimate Skill Gauge during the effect",
+  "mechanic": "Control",
+  "affectedStats": [],
+  "counters": [],
+  "counteredBy": [
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "skill-gauge",
+  "name": "Skill Gauge",
+  "definition": "Moves a skill's gauge forward or back",
+  "mechanic": "Gauge Modifier",
+  "affectedStats": [],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ },
+ {
+  "id": "taunt",
+  "name": "Taunt",
+  "definition": "Forces the target to normal attack the source of Taunt",
+  "mechanic": "Control",
+  "affectedStats": [],
+  "counters": [],
+  "counteredBy": [
+   "Remove All Debuffs"
+  ],
+  "removes": null
+ },
+ {
+  "id": "transformation",
+  "name": "Transformation",
+  "definition": "Transforms the unit",
+  "mechanic": null,
+  "affectedStats": [],
+  "counters": [],
+  "counteredBy": [],
+  "removes": null
+ }
+]

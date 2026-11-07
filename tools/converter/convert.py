@@ -77,14 +77,8 @@ def parse_trigger(raw, where):
     return {"events": events, "everySeconds": every, "raw": raw}
 
 
-def families(raw, known, where):
-    if not raw:
-        return []
-    out = [f.strip() for f in re.split(r",| or ", str(raw)) if f.strip()]
-    for f in out:
-        if f not in known:
-            issue("Required effect families not in the effectFamily list", f"{where}: '{f}'")
-    return out
+MECHANICS = {"Stat Modifier", "Damage Over Time", "Instant Damage", "Instant Heal", "Heal Over Time", "Removal",
+             "Control", "Prevention", "Mitigation", "Reactive Damage", "Gauge Modifier"}
 
 
 LEVEL_COLS = ["Level", "Trigger", "Target", "Effect", "Tier", "Chance", "Duration", "Value", "Condition", "Notes"]
@@ -128,6 +122,9 @@ def near_duplicates(values, label):
             if (a, b) in seen:
                 continue
             al, bl = a.lower(), b.lower()
+            # Remove All Buffs / Remove All Debuffs are two different effects, one letter-pair apart
+            if {al, bl} == {"remove all buffs", "remove all debuffs"}:
+                continue
             # 'Top X Increase' vs 'Mid X Decrease', 'Up I' vs 'Up II', 'Every 5 sec' vs 'Every 7 sec' are real variants
             if al != bl and LEGIT_VARIANTS.sub("", al) == LEGIT_VARIANTS.sub("", bl):
                 continue
@@ -168,6 +165,7 @@ def main(root, out, slugs_path=None, public_dir=None):
     C, S, E, EA, L, LEA, B, BA, SI = (data[k] for k in ["Characters", "Skills", "Effects", "EffectApplications",
                                                          "Lacrimas", "LacrimaEffectApplications", "Banners",
                                                          "BannerArts", "SkillIcons"])
+    FAM, PAR = data["EffectFamilies"], data["Parameters"]
     idx = {k: title_index(v) for k, v in data.items()}
     companions_src = data["Companions"]
     companion_apps_src = data["CompanionEffectApplications"]
@@ -248,6 +246,33 @@ def main(root, out, slugs_path=None, public_dir=None):
             issue("Missing required values", f"{where}: {prop} is empty")
         return res if many else (res[0] if res else None)
 
+    # ---------- parameters and effect families
+    # A Parameter is a stat from the game's stat table; its Display Name is the short form the wiki shows
+    # (ATK, DEF, Evasion) and falls back to the title when empty.
+    par_name = {stem: clean(r["fm"].get("displayName")) or clean(r["fm"].get("title")) or stem
+                for stem, r in PAR.items()}
+    fam_name = {stem: clean(r["fm"].get("title")) or stem for stem, r in FAM.items()}
+    families_out = []
+    for stem, r in sorted(FAM.items()):
+        f, name = r["fm"], fam_name[stem]
+        where = f"Effect family '{name}'"
+        mechanic = clean(f.get("mechanic"))
+        if not mechanic:
+            issue("Effect families without a Mechanic (shown without one on the site)", name)
+        elif mechanic not in MECHANICS:
+            issue("Unknown Mechanic (add it to MECHANICS in convert.py and to the site if it needs handling)",
+                  f"{where}: '{mechanic}'")
+        families_out.append({
+            "id": slugify(name), "name": name, "definition": clean(f.get("definition")), "mechanic": mechanic,
+            "affectedStats": [par_name[s] for s in ref(f.get("affectedStats"), "Parameters", where,
+                                                       "affectedStats", many=True)],
+            "counters": [fam_name[s] for s in ref(f.get("counters"), "EffectFamilies", where, "counters", many=True)],
+            "counteredBy": [fam_name[s] for s in ref(f.get("counteredBy"), "EffectFamilies", where,
+                                                     "counteredBy", many=True)],
+            "removes": clean(f.get("removes")),
+        })
+    fam_by_stem = {stem: next(x for x in families_out if x["name"] == fam_name[stem]) for stem in FAM}
+
     # ---------- effects
     effects = []
     eff_slug = {}
@@ -258,21 +283,26 @@ def main(root, out, slugs_path=None, public_dir=None):
         eff_slug[stem] = sl
         if not f.get("effectFamily"):
             issue("Missing required values", f"Effect '{t}': effectFamily is empty")
+        fam_stem = ref(f.get("effectFamily"), "EffectFamilies", f"Effect '{t}'", "effectFamily")
+        family = fam_by_stem.get(fam_stem)
+        if not clean(f.get("polarity")):
+            issue("Missing required values", f"Effect '{t}': polarity is empty")
         sec = None
         if f.get("secondaryStat"):
             sec = {"stat": f.get("secondaryStat"), "direction": f.get("secondaryDirection"),
                    "amount": f.get("secondaryValue"), "unit": f.get("secondaryUnit")}
         effects.append({
-            "id": sl, "name": t, "family": clean(f.get("effectFamily")), "direction": clean(f.get("direction")),
+            "id": sl, "name": t, "family": family["name"] if family else None, "direction": clean(f.get("direction")),
             "tier": clean(f.get("magnitudeTier")), "polarity": clean(f.get("polarity")),
-            "mechanic": clean(f.get("mechanic")),
+            "mechanic": family["mechanic"] if family else None,
             "value": ({"amount": f.get("defaultValue"), "unit": f.get("valueUnit")}
                       if f.get("defaultValue") is not None else None),
             "secondary": sec, "gameText": clean(f.get("gameText")),
-            "counteredBy": [eff_slug.get(s, slugify(s)) for s in ref(f.get("counteredBy"), "Effects", f"Effect '{t}'", "counteredBy", many=True)],
-            "removes": [eff_slug.get(s, slugify(s)) for s in ref(f.get("removes"), "Effects", f"Effect '{t}'", "removes", many=True)],
         })
-    known_fams = {e["family"] for e in effects if e["family"]}
+    members = collections.Counter(e["family"] for e in effects if e["family"])
+    for x in families_out:
+        if not members[x["name"]]:
+            issue("Effect families with no Effects", x["name"])
 
     # ---------- applications
     applications = []
@@ -304,7 +334,8 @@ def main(root, out, slugs_path=None, public_dir=None):
 
         req = None
         if f.get("requiredEffectFamilies"):
-            req = {"families": families(f.get("requiredEffectFamilies"), known_fams, where),
+            req = {"families": [fam_name[s] for s in ref(f.get("requiredEffectFamilies"), "EffectFamilies", where,
+                                                         "requiredEffectFamilies", many=True)],
                    "match": clean(f.get("effectFamilyMatchRule", f.get("effectFamilyMatchingRule"))),
                    "subject": clean(f.get("effectConditionSubject")),
                    "timing": clean(f.get("effectEvaluationTiming")),
@@ -905,7 +936,7 @@ def main(root, out, slugs_path=None, public_dir=None):
         b.pop("_coverSrc", None)
     for u in units:
         u.pop("_cardSrc", None)
-    payload = {"effects": effects, "applications": applications + list(companion_apps.values()),
+    payload = {"effects": effects, "families": families_out, "applications": applications + list(companion_apps.values()),
                "units": units, "lacrimas": lacrimas, "banners": banners, "companions": companions,
                "enemies": enemies, "events": events}
     payload["applications"] += list(enemy_apps.values())
@@ -931,7 +962,7 @@ def main(root, out, slugs_path=None, public_dir=None):
     with open(os.path.join(out, "validation-report.md"), "w", encoding="utf-8") as fh:
         total = sum(len(v) for v in issues.values())
         fh.write("# Validation report\n\n")
-        fh.write(f"{len(units)} units, {len(lacrimas)} lacrimas, {len(effects)} effects, "
+        fh.write(f"{len(units)} units, {len(lacrimas)} lacrimas, {len(effects)} effects in {len(families_out)} families, "
                  f"{len(applications)} effect applications, {len(banners)} banners, "
                  f"{sum(1 for u in units if u['bannerArt'])} banner arts, "
                  f"{len(companions)} companions, {len(companion_apps)} companion effect applications, "

@@ -385,9 +385,9 @@ def main(root, out):
     os.makedirs(os.path.join(out, "Effects (new)"), exist_ok=True)
     with open(os.path.join(out, "Effects (new)", "Damage.md"), "w", encoding="utf-8") as f:
         f.write("---\n" + yaml.safe_dump({
-            "type": "Effect", "title": "Damage", "tags": [], "effectFamily": "Damage", "direction": None,
-            "magnitudeTier": None, "polarity": "Harmful", "mechanic": "Damage", "defaultValue": None,
-            "valueUnit": "Percent of own ATK", "counteredBy": [], "removes": [], "secondaryStat": None,
+            "type": "Effect", "title": "Damage", "tags": [], "effectFamily": ["[[Damage]]"], "direction": None,
+            "magnitudeTier": None, "polarity": "Harmful", "defaultValue": None,
+            "valueUnit": "Percent of own ATK", "secondaryStat": None,
             "secondaryDirection": None, "secondaryValue": None, "secondaryUnit": None,
             "gameText": None}, allow_unicode=True, sort_keys=False) + "---\n")
     stats["damage_records"] = len(damage_eas)
