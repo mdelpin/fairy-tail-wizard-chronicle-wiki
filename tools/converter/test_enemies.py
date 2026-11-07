@@ -21,8 +21,10 @@ class EnemyConverterTest(unittest.TestCase):
             run()
             baseline = {name: read(name) for name in ("units", "lacrimas", "banners", "companions", "applications")}
             record(root, "Banners", "Untitled")
-            for name, family in [("Damage", "Damage"), ("Shield", "Shield"), ("Burn", "Burn")]:
-                record(root, "Effects", name, effectFamily=family)
+            for name, family, mechanic in [("Damage", "Damage", "Instant Damage"), ("Shield", "Shield", "Mitigation"),
+                                           ("Burn", "Burn", "Damage Over Time")]:
+                record(root, "EffectFamilies", family, mechanic=mechanic)
+                record(root, "Effects", name, effectFamily=[f"[[{family}]]"], polarity="Harmful")
             record(root, "SkillIcons", "Fixture Icon", number=41)
             app_specs = [
                 ("Normal Damage", "Damage", "Normal Attack", "Inflicts", "Enemies in Range", None, None, 140),
@@ -38,7 +40,7 @@ class EnemyConverterTest(unittest.TestCase):
                        durationSeconds=duration, effectValue=value,
                        valueUnit="Percent of Own ATK" if value else None, ownedUnit=True,
                        conditions="After the normal hit" if title == "Shield" else None,
-                       requiredEffectFamilies="Burn" if title == "Additional Burn" else None,
+                       requiredEffectFamilies=["[[Burn]]"] if title == "Additional Burn" else None,
                        effectFamilyMatchingRule="Any" if title == "Additional Burn" else None)
             skill_apps = {"Normal": ["Normal Damage", "Shield"], "Special": ["Constant Buff"],
                           "Ultimate": ["Ultimate Damage", "Burn"], "Additional": ["Additional Burn"]}

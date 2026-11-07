@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import MagicCircle from '../../components/MagicCircle.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
-  buildFinderIndex, raritiesIn, effects, WIKI_CREDIT, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
+  buildFinderIndex, buildCounterIndex, familyBlurb, families, raritiesIn, effects, WIKI_CREDIT, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
   type FamilyMeta, type Match, type LacrimaMatch, type CompanionMatch, type Unit, type Skill, type Application,
 } from '../../lib/data';
 
@@ -16,6 +16,7 @@ export function getStaticPaths() {
       companions: idx.fromCompanions.get(m.key) ?? [], needs: idx.needs.get(m.key) ?? [] },
   }));
 }
+const counterIdx = buildCounterIndex();
 const { m, applies, lac, companions, needs } = Astro.props as {
   m: FamilyMeta; applies: Match[]; lac: LacrimaMatch[]; companions: CompanionMatch[];
   needs: { unit: Unit; skill: Skill; app: Application }[];
@@ -40,6 +41,12 @@ const ladder = [...effects.values()]
 const plain = ladder.length > 0 ? [] : [...effects.values()].filter((e) => inFamily(e) && !e.tier && e.gameText);
 const tiersPresent = [...new Set(applies.map((x) => x.effect.tier).filter(Boolean))] as string[];
 const sample = ladder[0];
+// Family facts: the Definition (or a generated "Modifies X" for stat families), then Affected Stats when a Definition leads
+const famRec = families.get(m.family);
+const blurbText = familyBlurb(m.family);
+// don't say it twice when an Effect row below already carries the very same sentence (Remove All Buffs / Debuffs)
+const blurb = blurbText && !plain.some((e) => e.gameText === blurbText) ? blurbText : null;
+const showStats = !!(famRec?.definition && famRec.affectedStats.length);
 const raritiesPresent = raritiesIn(cards.map((c) => c.unit));
 const attrsPresent = ATTR_ORDER.filter((x) => cards.some((c) => c.unit.attribute === x));
 const rolesPresent = ROLES.filter((x) => cards.some((c) => c.unit.role === x));
@@ -78,7 +85,8 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
         <div class="what">
           <h1>{m.label} <Info><p>Values and tiers are Lv.3. Open a skill’s Lv.1–2 for earlier values.</p></Info></h1>
           {sample && <span class="sub">{[sample.polarity, sample.mechanic].filter(Boolean).join(' · ')}</span>}
-          {m.aka && m.aka.length > 0 && <span class="sub">Also called {m.aka.join(', ')}</span>}
+          {blurb && <span class="sub">{blurb}</span>}
+          {showStats && <span class="sub">Affects {famRec!.affectedStats.join(', ')}</span>}
           <div class="counts">
             <span><strong id="count-w">{cards.length}</strong> wizards apply it</span>
             {lac.length > 0 && <span><strong>{new Set(lac.map((l) => l.lacrima.id)).size}</strong> lacrimas</span>}
@@ -108,6 +116,19 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
         )}
       </div>
     </section>
+
+    {(counterIdx.counteredBy.has(m.key) || counterIdx.counters.has(m.key)) && (
+      <section class="counters" aria-label="Counters">
+        {counterIdx.counteredBy.has(m.key) && (
+          <div class="crow"><span class="clbl">Countered by</span>
+            <span class="clist">{counterIdx.counteredBy.get(m.key)!.map((c) => <a class="chip" href={url(`effects/${c.key}/`)}>{c.label}</a>)}</span></div>
+        )}
+        {counterIdx.counters.has(m.key) && (
+          <div class="crow"><span class="clbl">Counters</span>
+            <span class="clist">{counterIdx.counters.get(m.key)!.map((c) => <a class="chip" href={url(`effects/${c.key}/`)}>{c.label}</a>)}</span></div>
+        )}
+      </section>
+    )}
 
     <div>
     <div class="filters" aria-label="Filter wizards">
@@ -326,6 +347,10 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .rung .t { font: 700 12px var(--mono); text-transform: uppercase; color: var(--ember); }
   .rung .v { font-size: 13px; line-height: 1.35; }
   .lac-more { margin: -4px 0 12px; font-size: 14px; font-weight: 600; }
+  .counters { display: flex; flex-direction: column; gap: 8px; margin: 18px 0 0; }
+  .crow { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; }
+  .clbl { width: 92px; flex: none; font-size: 13px; font-weight: 700; color: var(--timber); }
+  .clist { display: flex; flex-wrap: wrap; gap: 6px; }
   .filters { display: flex; flex-direction: column; gap: 10px; margin: 22px 0 0; }
   .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
   .lbl { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); }

@@ -28,8 +28,10 @@ def sample(root):
         effect = f"High {stat} Increase"
         application = f"{effect} - Every 6 sec"
         if not (root / "Effects" / f"{effect}.md").exists():
-            record(root, "Effects", effect, effectFamily=stat, direction="Up", magnitudeTier="High",
-                   mechanic="Stat Modifier")
+            if not (root / "EffectFamilies" / f"{stat}.md").exists():
+                record(root, "EffectFamilies", stat, mechanic="Stat Modifier", affectedStats=[])
+            record(root, "Effects", effect, effectFamily=[f"[[{stat}]]"], direction="Up", magnitudeTier="High",
+                   polarity="Beneficial")
         record(root, "CompanionEffectApplications", application, effect=f"[[{effect}]]",
                companions=["[[Block Happy]]", "[[Sample Spirit]]"],
                applicationType="Provides", target="All Allies", activationInterval="Every 6 sec",

@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 115 effects, 824 effect applications, 54 banners, 58 banner arts, 0 companions, 0 companion effect applications, 6 enemies, 24 enemy skills, 40 enemy effect applications, 1 events. 63 issues in 4 categories.
+156 units, 115 lacrimas, 113 effects in 29 families, 824 effect applications, 54 banners, 58 banner arts, 0 companions, 0 companion effect applications, 6 enemies, 24 enemy skills, 40 enemy effect applications, 1 events. 66 issues in 6 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -64,10 +64,19 @@
 - yukino-agria
 - zancrow
 
+## Addresses retired (record renamed or deleted; old links to these pages stop working) (2)
+
+- banner: 1
+- effect: 3
+
 ## Banner covers (2)
 
 - 'pickup-dark-mage-zeref': 794x1060 is not close to 16:9 (the card crops it to fit)
 - 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
+
+## Effect families without a Mechanic (shown without one on the site) (1)
+
+- Transformation
 
 ## Missing required values (1)
 

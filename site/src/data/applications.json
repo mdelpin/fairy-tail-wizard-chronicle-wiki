@@ -63,7 +63,7 @@
  {
   "id": "action-impairment-barrier-all-allies-every-9-sec-5-sec-extended-per-technique-ally",
   "source": "unit",
-  "effect": "action-impairment-barrier",
+  "effect": "action-block-barrier",
   "type": "Provides",
   "target": "All Allies",
   "trigger": {
@@ -91,7 +91,7 @@
  {
   "id": "additional-damage-each-target-hit-special-skill-hit-burn-paralysis-or-bleed-450-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -125,7 +125,7 @@
  {
   "id": "additional-damage-each-target-hit-special-skill-hit-burn-paralysis-silence-or-blind-400-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -144,10 +144,10 @@
   "condition": null,
   "requires": {
    "families": [
+    "Blind",
     "Burn",
     "Paralysis",
-    "Silence",
-    "Blind"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -160,7 +160,7 @@
  {
   "id": "additional-damage-each-target-hit-special-skill-hit-burn-silence-or-bleed-450-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -179,9 +179,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Silence",
-    "Bleed"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -194,7 +194,7 @@
  {
   "id": "additional-damage-each-target-hit-every-10-sec-50-hp-lost",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -218,7 +218,7 @@
  {
   "id": "additional-damage-each-target-hit-every-10-sec-freeze-450-of-own-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -250,7 +250,7 @@
  {
   "id": "additional-damage-each-target-hit-every-9-sec-50-hp-lost",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -274,7 +274,7 @@
  {
   "id": "additional-damage-each-target-hit-every-9-sec-burn-400-of-own-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -306,7 +306,7 @@
  {
   "id": "additional-damage-each-target-hit-status-affected-350-of-own-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Each Target Hit",
   "trigger": {
@@ -325,9 +325,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
     "Paralysis",
-    "Bleed",
     "Silence"
    ],
    "match": "Any",
@@ -341,7 +341,7 @@
  {
   "id": "additional-damage-enemies-in-target-area-special-skill-hit-burn-300-of-own-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Enemies in Target Area",
   "trigger": {
@@ -373,7 +373,7 @@
  {
   "id": "additional-damage-single-enemy-bleed-70-of-own-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Single Enemy",
   "trigger": {
@@ -405,7 +405,7 @@
  {
   "id": "additional-damage-single-enemy-every-10-sec-70-hp-lost",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Single Enemy",
   "trigger": {
@@ -429,7 +429,7 @@
  {
   "id": "additional-damage-single-enemy-freeze-300-of-own-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Single Enemy",
   "trigger": {
@@ -461,7 +461,7 @@
  {
   "id": "additional-damage-single-enemy-paralysis-250-of-own-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Single Enemy",
   "trigger": {
@@ -494,7 +494,7 @@
  {
   "id": "additional-damage-single-enemy-special-skill-hit-bleed-350-of-own-atk",
   "source": "unit",
-  "effect": "additional-damage",
+  "effect": "damage",
   "type": "Inflicts",
   "target": "Single Enemy",
   "trigger": {
@@ -3690,8 +3690,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Silence",
-    "Burn"
+    "Burn",
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -3762,9 +3762,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Silence",
-    "Bleed"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -3822,8 +3822,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Paralysis",
-    "Burn"
+    "Burn",
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -5042,8 +5042,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Paralysis",
-    "Burn"
+    "Burn",
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -7092,9 +7092,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Freeze",
-    "Bleed"
+    "Freeze"
    ],
    "match": "Any",
    "subject": "Target",
@@ -8887,9 +8887,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Paralysis",
-    "Bleed"
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -8902,7 +8902,7 @@
  {
   "id": "remove-all-debuffs-all-allies-every-10-sec",
   "source": "unit",
-  "effect": "cleanse",
+  "effect": "remove-all-debuffs",
   "type": "Removes",
   "target": "All Allies",
   "trigger": {
@@ -8923,7 +8923,7 @@
  {
   "id": "remove-all-debuffs-all-allies-every-11-sec",
   "source": "unit",
-  "effect": "cleanse",
+  "effect": "remove-all-debuffs",
   "type": "Removes",
   "target": "All Allies",
   "trigger": {
@@ -9402,7 +9402,7 @@
   "source": "unit",
   "effect": "taunt",
   "type": "Inflicts",
-  "target": "Enemies in Area",
+  "target": "Enemies in Target Area",
   "trigger": {
    "events": [
     "critical hit",
@@ -9457,10 +9457,10 @@
   "condition": null,
   "requires": {
    "families": [
+    "Blind",
     "Burn",
     "Paralysis",
-    "Silence",
-    "Blind"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -9671,8 +9671,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Paralysis",
-    "Blind"
+    "Blind",
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -9701,9 +9701,9 @@
   "condition": null,
   "requires": {
    "families": [
-    "Paralysis",
+    "Bleed",
     "Burn",
-    "Bleed"
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -12014,8 +12014,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Silence",
-    "Burn"
+    "Burn",
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -12115,9 +12115,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Silence",
-    "Bleed"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -12175,8 +12175,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Silence",
-    "Bleed"
+    "Bleed",
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target",
@@ -12542,10 +12542,10 @@
   "condition": null,
   "requires": {
    "families": [
+    "Blind",
     "Burn",
     "Paralysis",
-    "Silence",
-    "Blind"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -12666,9 +12666,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Freeze",
-    "Bleed"
+    "Freeze"
    ],
    "match": "Any",
    "subject": "Target",
@@ -12697,8 +12697,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Paralysis",
-    "Blind"
+    "Blind",
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -13143,8 +13143,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Silence",
-    "Burn"
+    "Burn",
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -13265,9 +13265,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Freeze",
-    "Bleed"
+    "Freeze"
    ],
    "match": "Any",
    "subject": "Target",
@@ -13296,8 +13296,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Paralysis",
-    "Burn"
+    "Burn",
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -13326,9 +13326,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Paralysis",
-    "Silence",
-    "Bleed"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target",
@@ -13642,8 +13642,8 @@
   "condition": null,
   "requires": {
    "families": [
-    "Silence",
-    "Burn"
+    "Burn",
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -13911,9 +13911,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Freeze",
-    "Bleed"
+    "Freeze"
    ],
    "match": "Any",
    "subject": "Target",
@@ -13971,9 +13971,9 @@
   "condition": null,
   "requires": {
    "families": [
-    "Paralysis",
     "Bleed",
-    "Burn"
+    "Burn",
+    "Paralysis"
    ],
    "match": "Any",
    "subject": "Target",
@@ -14002,9 +14002,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Paralysis",
-    "Silence",
-    "Bleed"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target",
@@ -14633,9 +14633,9 @@
   "condition": null,
   "requires": {
    "families": [
+    "Bleed",
     "Burn",
-    "Silence",
-    "Bleed"
+    "Silence"
    ],
    "match": "Any",
    "subject": "Target Hit",
@@ -17312,7 +17312,7 @@
  {
   "id": "remove-all-debuffs-all-allies-20",
   "source": "lacrima",
-  "effect": "cleanse",
+  "effect": "remove-all-debuffs",
   "type": "Removes",
   "target": "All Allies",
   "trigger": {
@@ -18286,7 +18286,7 @@
  {
   "id": "action-impairment-barrier-self-constant",
   "source": "enemy",
-  "effect": "action-impairment-barrier",
+  "effect": "action-block-barrier",
   "type": "Provides",
   "target": "Self",
   "trigger": {
@@ -18307,7 +18307,7 @@
  {
   "id": "action-impairment-barrier-self-every-4-sec-2-sec",
   "source": "enemy",
-  "effect": "action-impairment-barrier",
+  "effect": "action-block-barrier",
   "type": "Provides",
   "target": "Self",
   "trigger": {

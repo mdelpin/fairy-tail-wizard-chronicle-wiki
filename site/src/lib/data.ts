@@ -2,6 +2,7 @@
 import unitsJson from '../data/units.json';
 import appsJson from '../data/applications.json';
 import effectsJson from '../data/effects.json';
+import familiesJson from '../data/families.json';
 import lacrimasJson from '../data/lacrimas.json';
 import bannersJson from '../data/banners.json';
 import companionsJson from '../data/companions.json';
@@ -14,6 +15,16 @@ export interface Effect {
   value: { amount: number; unit: string } | null;
   secondary: { stat: string; direction: string; amount: number; unit: string } | null;
   gameText: string | null;
+}
+/** What never varies between the tiers of an effect. Mechanic, Definition and Affected Stats are read from the Effect Family object in Capacities. */
+export interface EffectFamily {
+  id: string; name: string; definition: string | null; mechanic: string | null;
+  /** Display names of the Parameters (stats) the family changes, e.g. ['HP', 'ATK']. */
+  affectedStats: string[];
+  /** Families this one counters / is countered by, as entered in Capacities (the two sides stay in sync there). */
+  counters: string[]; counteredBy: string[];
+  /** 'Debuffs' or 'Buffs' for the Remove All families; null otherwise. */
+  removes: string | null;
 }
 export interface Application {
   id: string; source: 'unit' | 'lacrima' | 'enemy'; effect: string | null; type: string | null; target: string | null;
@@ -112,6 +123,7 @@ export const events = new Map((eventsJson as GameEvent[]).map((e) => [e.id, e]))
 export const companions = (companionsJson as Companion[]).slice().sort((a, b) => a.name.localeCompare(b.name));
 export const companionById = new Map(companions.map((c) => [c.id, c]));
 export const effects = new Map((effectsJson as Effect[]).map((e) => [e.id, e]));
+export const families = new Map((familiesJson as EffectFamily[]).map((f) => [f.name, f]));
 export const lacrimas = (lacrimasJson as Lacrima[]).slice().sort((a, b) => a.name.localeCompare(b.name));
 export const unitById = new Map(units.map((u) => [u.id, u]));
 export const lacrimaById = new Map(lacrimas.map((l) => [l.id, l]));
@@ -207,7 +219,11 @@ export function valueText(a: Application, e: Effect | undefined): string {
 }
 
 // ---------- effect families for the finder ----------
-export interface FamilyMeta { key: string; label: string; family: string; dir?: 'Up' | 'Down'; group: string; color: string; icon: string; aka?: string[] }
+export interface FamilyMeta {
+  key: string; label: string; family: string; dir?: 'Up' | 'Down'; group: string; color: string; icon: string;
+  /** Mechanic of the family and Polarity of this page's effects; the counter rules use both. */
+  mechanic: string | null; polarity: string | null;
+}
 const ICON: Record<string, string> = {
   flame: 'M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-5 .5 1.5 1.3 2.5 2.2 3C11.5 9 11 6 12 3z',
   drop: 'M12 3c3 4.5 6 8 6 11a6 6 0 0 1-12 0c0-3 3-6.5 6-11z',
@@ -234,29 +250,30 @@ const AILMENTS: Record<string, [string, string]> = {
   Freeze: ['#2C7FA8', 'snow'], Blind: ['#4A4A4A', 'blind'], Taunt: ['#B5651D', 'target'],
 };
 const SUPPORT: Record<string, string> = {
-  Heal: 'heal', Shield: 'shield', Cleanse: 'sparkle', 'Action Block Barrier': 'barrier',
+  Heal: 'heal', Shield: 'shield', 'Action Block Barrier': 'barrier',
   'Critical Shield': 'shield', Invincible: 'star', 'Damage Reflection': 'reflect',
 };
-/** Effects that strip buffs or debuffs; grouped on their own so they're easy to find. */
-const DISPELS = new Set(['Cleanse', 'Remove All Buffs', 'Remove All Debuffs']);
-/** Other names players use, shown on the effect page so a search for them finds it. */
-const AKA: Record<string, string[]> = { Cleanse: ['Remove All Debuffs'] };
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 /** The finder key an effect belongs to, or null when it isn't listed (base Damage, Transformation). */
 export function familyKey(e: Effect): FamilyMeta | null {
   const f = e.family;
   if (!f || f === 'Damage' || f === 'Transformation') return null;
-  if (AILMENTS[f]) return { key: slug(f), label: f, family: f, group: 'Status ailments', color: AILMENTS[f][0], icon: ICON[AILMENTS[f][1]] };
+  const base = { family: f, mechanic: e.mechanic, polarity: e.polarity };
+  if (AILMENTS[f]) return { ...base, key: slug(f), label: f, group: 'Status ailments', color: AILMENTS[f][0], icon: ICON[AILMENTS[f][1]] };
+  // Stat Modifier families and Gauge Modifier families split into an Up and a Down page
   if (e.mechanic === 'Stat Modifier') {
     const d = direction(e) ?? 'Up';
     return d === 'Up'
-      ? { key: slug(f) + '-up', label: f + ' ↑', family: f, dir: 'Up', group: 'Stat boosts', color: '#8A6A1E', icon: ICON.up }
-      : { key: slug(f) + '-down', label: f + ' ↓', family: f, dir: 'Down', group: 'Stat cuts', color: '#9E3B2A', icon: ICON.down };
+      ? { ...base, key: slug(f) + '-up', label: f + ' ↑', dir: 'Up', group: 'Stat boosts', color: '#8A6A1E', icon: ICON.up }
+      : { ...base, key: slug(f) + '-down', label: f + ' ↓', dir: 'Down', group: 'Stat cuts', color: '#9E3B2A', icon: ICON.down };
   }
-  if (DISPELS.has(f)) return { key: slug(f), label: f, family: f, group: 'Dispels', color: '#5B4B8A', icon: ICON.sparkle, aka: AKA[f] };
-  if (f.includes('Gauge')) return { key: slug(f), label: f, family: f, group: 'Skill gauges', color: '#2F5D8A', icon: ICON.gauge };
-  return { key: slug(f), label: f, family: f, group: 'Support', color: '#2D7F4F', icon: ICON[SUPPORT[f] ?? 'sparkle'] };
+  if (e.mechanic === 'Gauge Modifier') {
+    const d = direction(e) ?? 'Up';
+    return { ...base, key: slug(f) + (d === 'Up' ? '-up' : '-down'), label: f + (d === 'Up' ? ' ↑' : ' ↓'), dir: d, group: 'Skill gauges', color: '#2F5D8A', icon: ICON.gauge };
+  }
+  if (e.mechanic === 'Removal') return { ...base, key: slug(f), label: f, group: 'Dispels', color: '#5B4B8A', icon: ICON.sparkle };
+  return { ...base, key: slug(f), label: f, group: 'Support', color: '#2D7F4F', icon: ICON[SUPPORT[f] ?? 'sparkle'] };
 }
 export const GROUPS = [
   ['Status ailments', 'Damage over time and control'],
@@ -266,6 +283,65 @@ export const GROUPS = [
   ['Dispels', 'Remove all buffs or debuffs'],
   ['Skill gauges', 'Speed up allies, slow down enemies'],
 ] as const;
+
+/**
+ * What a family page says about the family itself: its Definition when one is entered, otherwise, for a
+ * Stat Modifier family, a line built from its Affected Stats ("Modifies ATK"). Stat families have no
+ * Definition on purpose, since Mechanic and Affected Stats already say it all.
+ */
+export function familyBlurb(name: string): string | null {
+  const f = families.get(name);
+  if (!f) return null;
+  if (f.definition) return f.definition;
+  if (f.mechanic === 'Stat Modifier' && f.affectedStats.length) return `Modifies ${f.affectedStats.join(' and ')}`;
+  return null;
+}
+
+/**
+ * Mechanics that last for a while, so Remove All Debuffs / Remove All Buffs can take them off. Instant
+ * damage and healing, other removals and gauge changes are over as soon as they happen. Prevention,
+ * Mitigation and Reactive Damage (Damage Reflection) are left out on purpose: whether the Remove All
+ * effects strip barriers, shields or a reflect is not confirmed in game, so those pairs show only when
+ * entered as Counters in Capacities.
+ */
+const LASTING = new Set(['Stat Modifier', 'Damage Over Time', 'Control', 'Heal Over Time']);
+
+export interface CounterLink { key: string; label: string }
+/**
+ * Who counters whom, per finder page. Three sources, all read from the Effect Family objects:
+ * Counters (the family counters these), Countered By (the family is countered by these; the two stay in
+ * sync in Capacities), and Removes (Debuffs or Buffs): a family that removes Debuffs counters every page
+ * of a lasting Mechanic whose effects are Harmful, and Buffs mirrors that with Beneficial.
+ * A page with no entry means "not recorded", never "nothing counters it".
+ */
+export function buildCounterIndex() {
+  const metas = new Map<string, FamilyMeta>();
+  for (const e of effects.values()) { const fm = familyKey(e); if (fm) metas.set(fm.key, fm); }
+  const pagesOf = new Map<string, FamilyMeta[]>();
+  for (const m of metas.values()) (pagesOf.get(m.family) ?? pagesOf.set(m.family, []).get(m.family)!).push(m);
+  const edges = new Set<string>();
+  const add = (counter: FamilyMeta, target: FamilyMeta) => { if (counter.key !== target.key) edges.add(`${counter.key}>${target.key}`); };
+  for (const f of families.values()) {
+    const mine = pagesOf.get(f.name) ?? [];
+    for (const name of f.counters) for (const c of mine) for (const t of pagesOf.get(name) ?? []) add(c, t);
+    for (const name of f.counteredBy) for (const t of mine) for (const c of pagesOf.get(name) ?? []) add(c, t);
+    if (f.removes === 'Debuffs' || f.removes === 'Buffs') {
+      const wanted = f.removes === 'Debuffs' ? 'Harmful' : 'Beneficial';
+      for (const c of mine) for (const t of metas.values()) if (t.polarity === wanted && t.mechanic && LASTING.has(t.mechanic)) add(c, t);
+    }
+  }
+  const counteredBy = new Map<string, CounterLink[]>();
+  const counters = new Map<string, CounterLink[]>();
+  const push = (m: Map<string, CounterLink[]>, k: string, l: CounterLink) => (m.get(k) ?? m.set(k, []).get(k)!).push(l);
+  for (const edge of edges) {
+    const [c, t] = edge.split('>');
+    const cm = metas.get(c)!, tm = metas.get(t)!;
+    push(counteredBy, t, { key: cm.key, label: cm.label });
+    push(counters, c, { key: tm.key, label: tm.label });
+  }
+  for (const m of [counteredBy, counters]) for (const l of m.values()) l.sort((a, b) => a.label.localeCompare(b.label));
+  return { counteredBy, counters };
+}
 
 export interface Match { unit: Unit; skill: Skill; app: Application; effect: Effect }
 export interface LacrimaMatch { lacrima: Lacrima; app: Application; effect: Effect }
