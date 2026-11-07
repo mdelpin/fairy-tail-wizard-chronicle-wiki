@@ -43,8 +43,20 @@ const sample = ladder[0];
 const raritiesPresent = raritiesIn(cards.map((c) => c.unit));
 const attrsPresent = ATTR_ORDER.filter((x) => cards.some((c) => c.unit.attribute === x));
 const rolesPresent = ROLES.filter((x) => cards.some((c) => c.unit.role === x));
+// Targets in order from narrowest to widest reach, then ally targets
+const TARGET_ORDER = ['Single Enemy', 'Each Target Hit', 'Enemies Around Target', 'Enemies in Target Area', 'Enemies in Area', 'Enemies in Range', 'All Enemies', 'Attacker', 'Self', 'Lowest HP Ally', 'All Allies', 'Brave Allies', 'Mind Allies', 'Technique Allies', 'Heart Allies'];
+const TARGET_HELP: Record<string, string> = {
+  'Single Enemy': 'The one enemy the skill is aimed at.',
+  'Each Target Hit': 'A follow-up effect applied to each enemy hit by a multi-target attack.',
+  'Enemies Around Target': 'The enemies standing around the target.',
+  'Enemies in Target Area': 'The reach of the skill: every enemy inside its area.',
+};
+const trank = (t: string) => { const i = TARGET_ORDER.indexOf(t); return i < 0 ? 99 : i; };
+const targetsPresent = [...new Set(cards.flatMap((c) => c.rows.map((r) => r.app.target).filter(Boolean)))].sort((a, b) => trank(a) - trank(b) || a.localeCompare(b));
+const kindsPresent = new Set(cards.flatMap((c) => c.rows.map((r) => r.skill.kind)));
+const showSkillFilter = kindsPresent.has('Ultimate') && kindsPresent.size > 1;
 
-const facts = (a: Application) => [a.target, a.durationSeconds != null ? `${a.durationSeconds} sec` : null, a.chance != null ? `${Math.round(a.chance * 100)}%` : null].filter(Boolean).join(' · ');
+const facts = (a: Application) => [a.target, a.trigger?.everySeconds ? `every ${a.trigger.everySeconds} sec` : null, a.durationSeconds != null ? `${a.durationSeconds} sec` : null, a.chance != null ? `${Math.round(a.chance * 100)}%` : null].filter(Boolean).join(' · ');
 // Highlight "[Tier] Name" mentions of this effect in game text
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const fam = m.family.replace(/^Critical /, 'Crit(?:ical)? ');
@@ -123,6 +135,27 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
           {rolesPresent.map((x) => <button type="button" class="pill" data-filter="role" data-value={x} aria-pressed="false">{x}</button>)}
         </div>
       )}
+      {targetsPresent.length > 1 && (
+        <div class="row" role="group" aria-label="Target">
+          <span class="lbl">Target {targetsPresent.some((t) => TARGET_HELP[t]) && <Info label="What the targets mean">{targetsPresent.filter((t) => TARGET_HELP[t]).map((t) => <p><strong>{t}.</strong> {TARGET_HELP[t]}</p>)}</Info>}</span>
+          <button type="button" class="pill" data-filter="target" data-value="" aria-pressed="true">All</button>
+          {targetsPresent.map((t) => <button type="button" class="pill" data-filter="target" data-value={t} aria-pressed="false">{t}</button>)}
+        </div>
+      )}
+      {showSkillFilter && (
+        <div class="row" role="group" aria-label="Skill">
+          <span class="lbl">Skill</span>
+          <button type="button" class="pill" data-filter="skills" data-value="" aria-pressed="true">All</button>
+          <button type="button" class="pill" data-filter="skills" data-value="noult" aria-pressed="false">No Ultimate</button>
+          <button type="button" class="pill" data-filter="skills" data-value="ult" aria-pressed="false">Ultimate only</button>
+        </div>
+      )}
+      <div class="row" role="group" aria-label="Sort">
+        <span class="lbl">Sort</span>
+        <button type="button" class="pill" data-filter="sort" data-value="" aria-pressed="true">Tier</button>
+        <button type="button" class="pill" data-filter="sort" data-value="fastest" aria-pressed="false">Fastest</button>
+        <button type="button" class="pill" data-filter="sort" data-value="consistent" aria-pressed="false">Most consistent</button>
+      </div>
       <p class="status" id="status" hidden><span id="shown">{cards.length}</span> of {cards.length} wizards<span id="active"> · <button type="button" class="clear">Clear filters</button></span></p>
     </div>
 
@@ -142,7 +175,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
               {rows.length > 1 && <span class="n">{rows.length} skills</span>}
             </div>
             {rows.map(({ skill, app, effect }) => (
-              <div class="hit" data-tier={effect.tier ?? ''}>
+              <div class="hit" data-tier={effect.tier ?? ''} data-kind={skill.kind} data-target={app.target ?? ''} data-interval={app.trigger?.everySeconds ?? ''} data-chance={app.chance ?? ''}>
                 <div class="hit-head"><span class={`kind kind-${skill.kind}`}>{skill.kind}</span><span class="heading sk">{skill.name ?? skill.kind}</span></div>
                 <div class="match"><span class={`tier tier-${effect.tier ?? 'none'}`}>{effect.tier ?? '—'}</span><strong>{m.label}</strong><span>{facts(app)}</span></div>
                 {skill.gameText?.Lv3 && (
@@ -227,22 +260,35 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   const pills = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill')];
   const params = new URLSearchParams(location.search);
   const known = [...document.querySelectorAll<HTMLButtonElement>('.filters .pill[data-filter=rarity]')].map((b) => b.dataset.value);
-  const state: Record<string, string | null> = { rarity: known.includes(params.get('rarity') ?? '') ? params.get('rarity') : null, tier: params.get('tier'), attr: params.get('attr'), role: params.get('role') };
+  const oneOf = (k: string, ok: string[]) => (ok.includes(params.get(k) ?? '') ? params.get(k) : null);
+  const state: Record<string, string | null> = { rarity: known.includes(params.get('rarity') ?? '') ? params.get('rarity') : null, tier: params.get('tier'), attr: params.get('attr'), role: params.get('role'), skills: oneOf('skills', ['noult', 'ult']), target: oneOf('target', [...document.querySelectorAll<HTMLButtonElement>('.filters .pill[data-filter=target]')].map((b) => b.dataset.value ?? '')), sort: oneOf('sort', ['fastest', 'consistent']) };
+  const results = document.querySelector('.results');
+  const original = [...document.querySelectorAll<HTMLElement>('.card')];
+  const num = (v?: string) => (v === undefined || v === '' ? null : Number(v));
+  // Sort key from the skills still showing: fastest = shortest repeat time (no repeat time sorts last); consistent = highest chance (no chance listed counts as 100%)
+  function key(card: HTMLElement) {
+    const hits = [...card.querySelectorAll<HTMLElement>('.hit')].filter((h) => !h.hidden);
+    if (state.sort === 'fastest') { const v = hits.map((h) => num(h.dataset.interval)).filter((x): x is number => x !== null); return v.length ? Math.min(...v) : Infinity; }
+    if (state.sort === 'consistent') return -Math.max(...hits.map((h) => num(h.dataset.chance) ?? 1));
+    return 0;
+  }
   function apply() {
     let n = 0;
     document.querySelectorAll<HTMLElement>('.card').forEach((card) => {
       let any = false;
-      card.querySelectorAll<HTMLElement>('.hit').forEach((h) => { const ok = !state.tier || h.dataset.tier === state.tier; h.hidden = !ok; any ||= ok; });
+      card.querySelectorAll<HTMLElement>('.hit').forEach((h) => { const ok = (!state.tier || h.dataset.tier === state.tier) && (!state.skills || (state.skills === 'ult') === (h.dataset.kind === 'Ultimate')) && (!state.target || h.dataset.target === state.target); h.hidden = !ok; any ||= ok; });
       const ok = any && (!state.rarity || card.dataset.rarity === state.rarity) && (!state.attr || card.dataset.attr === state.attr) && (!state.role || card.dataset.role === state.role);
       card.hidden = !ok; if (ok) n++;
     });
     document.querySelectorAll<HTMLElement>('.needs tbody tr').forEach((r) => { r.hidden = !!state.rarity && r.dataset.rarity !== state.rarity; });
     document.querySelectorAll<HTMLElement>('.lac').forEach((l) => { l.hidden = !!state.tier && l.dataset.tier !== state.tier; });
     for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
+    const keyed = new Map(original.map((c) => [c, key(c)]));
+    original.slice().sort((a, b) => { const x = keyed.get(a)!, y = keyed.get(b)!; return x < y ? -1 : x > y ? 1 : original.indexOf(a) - original.indexOf(b); }).forEach((c) => results?.appendChild(c));
     document.getElementById('shown')!.textContent = String(n);
     document.getElementById('count-w')!.textContent = String(n);
     document.getElementById('none')!.hidden = n > 0 || !document.querySelector('.card');
-    const active = [state.rarity, state.tier && state.tier + ' tier', state.attr, state.role].filter(Boolean);
+    const active = [state.rarity, state.tier && state.tier + ' tier', state.attr, state.role, state.target, state.skills && (state.skills === 'ult' ? 'Ultimate only' : 'No Ultimate')].filter(Boolean);
     document.getElementById('status')!.hidden = active.length === 0;
     document.getElementById('active')!.hidden = n === 0;
     const p = new URLSearchParams();
@@ -253,7 +299,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   for (const p of pills) p.addEventListener('click', () => {
     state[p.dataset.filter!] = p.dataset.value || null; apply();
   });
-  document.querySelectorAll('.clear').forEach((b) => b.addEventListener('click', () => { state.tier = state.attr = state.role = null; apply(); }));
+  document.querySelectorAll('.clear').forEach((b) => b.addEventListener('click', () => { state.tier = state.attr = state.role = state.rarity = state.skills = state.target = null; apply(); }));
   apply();
 </script>
 
