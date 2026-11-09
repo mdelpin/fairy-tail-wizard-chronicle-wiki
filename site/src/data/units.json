@@ -4954,13 +4954,13 @@
       "level": "3",
       "trigger": "While on the Field",
       "target": "Heart Allies",
-      "effect": "DEF Increase",
+      "effect": "DEF Decrease",
       "tier": "High",
       "chance": null,
       "duration": null,
       "value": null,
       "condition": null,
-      "notes": "Typo in Game Text, reads Decrease."
+      "notes": "Heart allies really do receive DEF Decrease; confirmed in play 2026-11-09 (the debuff icon appears on Heart allies only).”"
      }
     ],
     "icon": 9,
@@ -4970,7 +4970,7 @@
      "top-atk-increase-heart-allies-while-on-the-field",
      "top-critical-damage-increase-heart-allies-while-on-the-field",
      "top-accuracy-increase-heart-allies-while-on-the-field",
-     "high-def-increase-heart-allies-while-on-the-field"
+     "high-def-decrease-heart-allies-while-on-the-field"
     ]
    },
    {
