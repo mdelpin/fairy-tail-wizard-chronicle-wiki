@@ -17981,27 +17981,6 @@
   "gameText": null
  },
  {
-  "id": "top-def-decrease-all-allies-when-defeated-3-sec",
-  "source": "lacrima",
-  "effect": "top-def-decrease",
-  "type": "Provides",
-  "target": "All Allies",
-  "trigger": {
-   "events": [
-    "when defeated"
-   ],
-   "everySeconds": null,
-   "raw": "When Defeated"
-  },
-  "chance": null,
-  "durationSeconds": 3,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "top-def-decrease-single-enemy-20-3-sec",
   "source": "lacrima",
   "effect": "top-def-decrease",
@@ -18048,6 +18027,27 @@
    "timing": "After Attack Hits",
    "state": "Present"
   },
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-increase-all-allies-when-defeated-3-sec",
+  "source": "lacrima",
+  "effect": "top-def-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [
+    "when defeated"
+   ],
+   "everySeconds": null,
+   "raw": "When Defeated"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
   "scaling": null,
   "gameText": null
  },
