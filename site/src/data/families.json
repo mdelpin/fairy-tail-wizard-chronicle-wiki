@@ -31,7 +31,9 @@
   "affectedStats": [],
   "counters": [
    "Bind",
-   "Freeze"
+   "Freeze",
+   "Silence",
+   "Blind"
   ],
   "counteredBy": [],
   "removes": null
@@ -73,7 +75,8 @@
   ],
   "counters": [],
   "counteredBy": [
-   "Remove All Debuffs"
+   "Remove All Debuffs",
+   "Action Block Barrier"
   ],
   "removes": null
  },
@@ -336,7 +339,8 @@
   "affectedStats": [],
   "counters": [],
   "counteredBy": [
-   "Remove All Debuffs"
+   "Remove All Debuffs",
+   "Action Block Barrier"
   ],
   "removes": null
  },

@@ -419,7 +419,7 @@ def main(root, out, slugs_path=None, public_dir=None):
             continue
         targets = ([S[x]["fm"].get("title", x) for x in skills_hit] + [L[x]["fm"].get("title", x) for x in lacrimas_hit]
                    + [enemy_skills_src[x]["fm"].get("title", x) for x in enemy_hit])
-        issue("Live game issues (reported to the developers, not yet resolved)",
+        issue("Live game issues",
               f"{where} → {', '.join(map(str, targets)) or 'unresolved link'}")
         live_issues.append(where)
         note = f.get("publicNote")
