@@ -6378,6 +6378,27 @@
   "gameText": null
  },
  {
+  "id": "high-def-decrease-heart-allies-while-on-the-field",
+  "source": "unit",
+  "effect": "high-def-decrease",
+  "type": "Inflicts",
+  "target": "Heart Allies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "high-def-decrease-single-enemy-20-5-sec",
   "source": "unit",
   "effect": "high-def-decrease",
@@ -6477,27 +6498,6 @@
   },
   "chance": null,
   "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "high-def-increase-heart-allies-while-on-the-field",
-  "source": "unit",
-  "effect": "high-def-increase",
-  "type": "Provides",
-  "target": "Heart Allies",
-  "trigger": {
-   "events": [
-    "while on the field"
-   ],
-   "everySeconds": null,
-   "raw": "While on the Field"
-  },
-  "chance": null,
-  "durationSeconds": null,
   "valueOverride": null,
   "condition": null,
   "requires": null,
