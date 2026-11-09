@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 113 effects in 29 families, 826 effect applications, 54 banners, 58 banner arts, 0 companions, 0 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 17 live game issues. 93 issues in 8 categories.
+156 units, 115 lacrimas, 113 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 0 companions, 0 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 17 live game issues. 90 issues in 7 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -99,12 +99,6 @@
 - Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration'
 - Issue 'Selene Skill: English description is cut off before the last effect'
 - Issue 'Skiadrum Skill: English description is cut off before the second effect'
-
-## Same record entered twice (merge into one shared record) (3)
-
-- EffectApplications: 'Damage → Enemies in Target Area – Every 9 sec / 850% of Own ATK' / 'Damage → Enemies in Target Area – Every 9 sec / 850% of Own ATK'
-- EffectApplications: 'High Freeze → Single Enemy – 10% / 2 sec' / 'High Freeze → Single Enemy – 10% / 2 sec'
-- EffectApplications: 'Silence → Each Target Hit –  Every 9 sec / 50% / 5 sec' / 'Silence → Each Target Hit – Every 9 sec / 50% / 5 sec'
 
 ## Banner covers (2)
 

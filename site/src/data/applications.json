@@ -2373,28 +2373,6 @@
   "gameText": null
  },
  {
-  "id": "damage-enemies-in-target-area-every-9-sec-850-of-own-atk-2",
-  "source": "unit",
-  "effect": "damage",
-  "type": "Inflicts",
-  "target": "Enemies in Target Area",
-  "trigger": {
-   "events": [],
-   "everySeconds": 9,
-   "raw": "Every 9 sec"
-  },
-  "chance": null,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 850,
-   "unit": "Percent of Own ATK"
-  },
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "damage-enemies-in-target-area-normal-skill-hit-20-250-of-own-atk",
   "source": "unit",
   "effect": "damage",
@@ -6948,27 +6926,6 @@
   "gameText": null
  },
  {
-  "id": "high-freeze-single-enemy-10-2-sec-3",
-  "source": "unit",
-  "effect": "high-freeze",
-  "type": "Inflicts",
-  "target": "Single Enemy",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": 0.1,
-  "durationSeconds": 2,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "high-freeze-single-enemy-10-4-sec",
   "source": "unit",
   "effect": "high-freeze",
@@ -8940,48 +8897,6 @@
   "gameText": null
  },
  {
-  "id": "silence-each-target-hit-every-9-sec-40-5-sec",
-  "source": "unit",
-  "effect": "silence",
-  "type": "Inflicts",
-  "target": "Each Target Hit",
-  "trigger": {
-   "events": [
-    "after attack hits"
-   ],
-   "everySeconds": 9,
-   "raw": "Every 9 sec, After Attack Hits"
-  },
-  "chance": 0.4,
-  "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "silence-each-target-hit-every-9-sec-50-5-sec",
-  "source": "unit",
-  "effect": "silence",
-  "type": "Inflicts",
-  "target": "Each Target Hit",
-  "trigger": {
-   "events": [
-    "after attack hits"
-   ],
-   "everySeconds": 9,
-   "raw": "Every 9 sec, After Attack Hits"
-  },
-  "chance": 0.5,
-  "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "silence-each-target-hit-50-5-sec",
   "source": "unit",
   "effect": "silence",
@@ -9109,6 +9024,27 @@
    "raw": "Every 8 sec, After Attack Hits"
   },
   "chance": 0.5,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "silence-each-target-hit-every-9-sec-40-5-sec",
+  "source": "unit",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 9,
+   "raw": "Every 9 sec, After Attack Hits"
+  },
+  "chance": 0.4,
   "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,

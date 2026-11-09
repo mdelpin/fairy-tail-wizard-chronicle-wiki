@@ -7054,7 +7054,7 @@
     "notes": null,
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-600-of-own-atk",
-     "silence-each-target-hit-every-9-sec-50-5-sec"
+     "silence-each-target-hit-every-9-sec-50-5-sec-2"
     ]
    }
   ]
@@ -7527,7 +7527,7 @@
     ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
-     "high-freeze-single-enemy-10-2-sec-3"
+     "high-freeze-single-enemy-10-2-sec"
     ]
    },
    {
@@ -21185,7 +21185,7 @@
      }
     ],
     "applications": [
-     "damage-enemies-in-target-area-every-9-sec-850-of-own-atk-2",
+     "damage-enemies-in-target-area-every-9-sec-850-of-own-atk",
      "silence-each-target-hit-every-9-sec-50-5-sec-2",
      "push-back-ultimate-skill-gauge-each-target-hit-every-9-sec"
     ]
