@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 113 effects in 29 families, 824 effect applications, 54 banners, 58 banner arts, 0 companions, 0 companion effect applications, 6 enemies, 24 enemy skills, 40 enemy effect applications, 1 events. 66 issues in 6 categories.
+156 units, 115 lacrimas, 113 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 0 companions, 0 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 17 live game issues. 90 issues in 7 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -64,10 +64,41 @@
 - yukino-agria
 - zancrow
 
-## Addresses retired (record renamed or deleted; old links to these pages stop working) (2)
+## Live game issues (17)
 
-- banner: 1
-- effect: 3
+- Issue 'Blazing Beach Vacation Laxus Ultimate: healing drops at Lv.3 (750% / 850% / 750%)' → Blazing Beach Vacation Laxus — Ultimate
+- Issue 'Dark Mage Zeref Normal: English omits the Bind and lists lower damage than Japanese' → Dark Mage Zeref — Normal
+- Issue 'Emperor Spriggan Zeref Normal: English says Ranged, Japanese says Melee' → Emperor Spriggan Zeref — Normal
+- Issue 'First Dream Laxus Special: Lv.2 text describes a different effect' → First Dream Laxus — Special
+- Issue 'First Dream Laxus Ultimate: English says Accuracy Increase on enemies, Japanese says Down' → First Dream Laxus — Ultimate
+- Issue 'Grandeeney Skill: English description is cut off before the last effect and the duration' → unresolved link
+- Issue 'Gray -Ice Devil Slayer Mage- Normal: Freeze chance is 15% in English, 10% in Japanese' → Gray -Ice Devil Slayer Mage- — Normal
+- Issue 'Jellal Fernandes Ultimate: English says Evasion and Critical Defense Increase on the target, Japanese says Down' → Jellal Fernandes — Ultimate
+- Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration' → unresolved link
+- Issue 'Minerva Lacrima: English says it triggers on a critical hit, Japanese says a normal skill hit (20%)' → ✨ Minerva Lacrima
+- Issue 'Mirajane -Satan Soul- Normal: English says Evasion Increase, Japanese says Accuracy Increase' → Mirajane -Satan Soul- — Normal
+- Issue 'Natsu Dragion Ultimate: damage drops at Lv.3 (600% / 700% / 600%)' → Natsu Dragion — Ultimate
+- Issue 'Selene Skill: English description is cut off before the last effect' → unresolved link
+- Issue 'Skiadrum Skill: English description is cut off before the second effect' → unresolved link
+- Issue 'Swayed by the Evening Breeze Gildarts Normal: Lv.3 damage is 130% in English, 160% in Japanese' → Swayed by the Evening Breeze Gildarts — Normal
+- Issue 'Swaying in the Summer Night Lisanna Lacrima: text does not match effect' → ✨ Swaying in the Summer Night Lisanna Lacrima
+- Issue 'Sweet Gift Levy Ultimate: damage is 650% at every level' → Sweet Gift Levy — Ultimate
+
+## Broken or ambiguous links (6)
+
+- Banner 'Egg Hunt Wizard' → companions: no record titled 'Irene -Dragon Form-'
+- Banner 'Fabled Quest I' → companions: no record titled 'Mercphobia, the Water Dragon God'
+- Banner 'Fabled Quest II' → companions: no record titled 'Selene, the Moon Dragon God'
+- Banner 'Fairy Harvest Festival' → companions: no record titled 'Grandeeney'
+- Banner 'Holy Night Festival' → companions: no record titled 'Fire Dragon King Igneel'
+- Banner 'Parallel World -Part 2-' → companions: no record titled 'Dorma Anim Black Sky'
+
+## Live issues the site cannot show yet (no notice slot for enemy or companion skills) (4)
+
+- Issue 'Grandeeney Skill: English description is cut off before the last effect and the duration'
+- Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration'
+- Issue 'Selene Skill: English description is cut off before the last effect'
+- Issue 'Skiadrum Skill: English description is cut off before the second effect'
 
 ## Banner covers (2)
 
@@ -77,10 +108,6 @@
 ## Effect families without a Mechanic (shown without one on the site) (1)
 
 - Transformation
-
-## Missing required values (1)
-
-- Lacrima '✨ Swaying in the Summer Night Lisanna Lacrima': lacrimaEffectApplications is empty
 
 ## Event date sources need review (1)
 

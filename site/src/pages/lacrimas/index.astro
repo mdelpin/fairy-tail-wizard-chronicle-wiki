@@ -61,6 +61,7 @@ const pct = (c: number | null) => (c != null ? `${Math.round(c * 100)}%` : null)
                   </ul>
                 )}
                 {l.notes && <p class="notes"><span class="nl">Note</span>{l.notes}</p>}
+                {l.issues?.map((i) => <p class="notes issue"><span class="nl">Known issue{i.problemType ? ` · ${i.problemType}` : ''}</span>{i.note}</p>)}
               </li>
             );
           })}
@@ -140,5 +141,6 @@ const pct = (c: number | null) => (c != null ? `${Math.round(c * 100)}%` : null)
   .tags li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); }
   .tag { padding: 2px 8px; border-radius: 999px; background: #F3E6CE; border: 1px solid var(--brass); font-size: 12px; font-weight: 700; color: var(--timber); }
   .tag.g-constant { background: var(--crimson); border-color: var(--crimson); color: var(--cream); }
+  .item p.issue { border-left-color: var(--crimson); }
   .nl { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--timber); }
 </style>

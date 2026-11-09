@@ -63,6 +63,53 @@
   ]
  },
  {
+  "id": "dorma-anim-black-sky",
+  "name": "Dorma Anim Black Sky",
+  "type": "Event Hard Challenge",
+  "role": "Boss",
+  "image": null,
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal attack",
+    "icon": 41,
+    "gameText": "Deals 150% ATK damage to the target.",
+    "applications": [
+     "damage-single-enemy-normal-attack-150-of-own-atk-2"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Boundless Energy",
+    "icon": 16,
+    "gameText": "Every 4 sec, grants self the following effects for 2 sec: [Top] ATK Increase, [Top] Critical Resistance Increase, [Top] DEF Increase, and Action Impairment Barrier.",
+    "applications": [
+     "top-atk-increase-self-every-4-sec-2-sec",
+     "top-critical-resistance-increase-self-every-4-sec-2-sec",
+     "top-def-increase-self-every-4-sec-2-sec",
+     "action-impairment-barrier-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Evil Dragon Knight's Strike",
+    "icon": 42,
+    "gameText": "Deals 550% ATK Damage to all enemies. After the attack hits, inflicts on the target for 3 sec: [Top] Burn and [Top] ATK Decrease and [Top] Critical Damage Decrease as additional effects.",
+    "applications": [
+     "damage-all-enemies-550-of-own-atk",
+     "top-burn-each-target-hit-after-attack-hits-3-sec",
+     "top-atk-decrease-each-target-hit-after-attack-hits-3-sec",
+     "top-critical-damage-decrease-each-target-hit-after-attack-hits-3-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "etherious-lv-1",
   "name": "Etherious Lv.1",
   "type": "Raid",

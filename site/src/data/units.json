@@ -1350,7 +1350,7 @@
     "gameText": {
      "Lv1": "Every 11 sec., restores all allies' HP by 750% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 3 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 3 sec.",
      "Lv2": "Every 11 sec., restores all allies' HP by 850% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 4 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 4 sec.",
-     "Lv3": "Every 11 sec., restores all allies' HP by 750% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 5 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 5 sec."
+     "Lv3": "Every 11 sec., restores all allies' HP by 950% of own ATK. Increases damage by 50% for each INT ally (up to 350%). Also grants the targets [Top] Continuous Heal and [Top] DEF Increase for 5 sec., and removes all debuffs from all allies. Additionally, grants all INT allies [High] Critical Rate Increase and [High] ATK Increase for 5 sec."
     },
     "levelTable": [
      {
@@ -1361,9 +1361,9 @@
       "tier": null,
       "chance": null,
       "duration": null,
-      "value": "750% of own ATK",
+      "value": "950% of own ATK",
       "condition": null,
-      "notes": "Increases by 50% per INT/Mind ally, up to +350%"
+      "notes": "Increases by 50% per INT/Mind ally, up to +350%. The English text displays 750% at Lv.3. The Japanese text reads 950%, which fits the 750 / 850 / 950 progression. Not tested in play."
      },
      {
       "level": "3",
@@ -1427,10 +1427,16 @@
      }
     ],
     "icon": 18,
-    "levelTextSource": "In game",
-    "notes": "Source text is inconsistent: Heal is 750% of own ATK at Lv.1, 850% at Lv.2, and 750% at Lv.3, so the Lv.3 value may be a tooltip error. The tooltip says INT allies; these are recorded as Mind Allies.",
+    "levelTextSource": "Corrected from Japanese text",
+    "notes": null,
+    "issues": [
+     {
+      "problemType": "Value Anomaly",
+      "note": "The English text shows 750% healing at Lv.3, lower than Lv.2 (850%) and the same as Lv.1. The Japanese text reads 950% at Lv.3, which fits the 750% / 850% / 950% progression (with durations of 3 / 4 / 5 sec), so the English figure is almost certainly an error. The wiki records 950%. Everything else in the skill text matches the Japanese. The text says INT allies; these are recorded as Mind Allies."
+     }
+    ],
     "applications": [
-     "heal-all-allies-every-11-sec-750-of-own-atk-scales-per-mind-ally",
+     "heal-all-allies-every-11-sec-950-of-own-atk-scales-per-mind-ally",
      "top-continuous-heal-all-allies-every-11-sec-5-sec",
      "top-def-increase-all-allies-every-11-sec-5-sec",
      "remove-all-debuffs-all-allies-every-11-sec",
@@ -3612,9 +3618,9 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
-     "Lv1": "Deals 100% ATK damage to the target. After hitting, 20% chance to inflict 1s of Bind.",
-     "Lv2": "Deals 120% ATK damage to the target. After hitting, 20% chance to inflict 1s of Bind.",
-     "Lv3": "Deals 150% ATK damage to the target. After hitting, 20% chance to inflict 1s of Bind."
+     "Lv1": "Deals 100% ATK damage to the target. After hitting, 10% chance to inflict 2s of Bind.",
+     "Lv2": "Deals 120% ATK damage to the target. After hitting, 10% chance to inflict 2s of Bind.",
+     "Lv3": "Deals 150% ATK damage to the target. After hitting, 10% chance to inflict 2s of Bind."
     },
     "levelTable": [
      {
@@ -3635,19 +3641,25 @@
       "target": "Single Enemy",
       "effect": "Bind",
       "tier": null,
-      "chance": "20%",
-      "duration": "1 sec",
+      "chance": "10%",
+      "duration": "2 sec",
       "value": null,
       "condition": null,
       "notes": null
      }
     ],
     "icon": 1,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Missing Data",
+      "note": "The English text lists damage of 90% / 100% / 120% of ATK and does not mention a Bind at any level. The Japanese text (黒魔道士 ゼレフ) says 100% / 120% / 150% of ATK, with a 10% chance to inflict Bind for 2 sec at every level. The wiki records the Japanese values."
+     }
+    ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
-     "bind-single-enemy-20-1-sec"
+     "bind-single-enemy-10-2-sec"
     ]
    },
    {
@@ -4510,8 +4522,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 140% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 600% of ATK and grants [Top] DEF Increase for 3 sec.",
      "Lv2": "Deals 160% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 600% of ATK and grants [Top] DEF Increase for 3 sec.",
@@ -4558,6 +4570,12 @@
     "icon": 4,
     "levelTextSource": "In game",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The English skill name reads \"Normal Attack (Ranged)\". The Japanese text (皇帝スプリガンゼレフ) reads 通常攻撃（近距離）, which is Normal Attack (Melee). The damage (140% / 160% / 190% of ATK) and the effects match in both. The wiki records Melee."
+     }
+    ],
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "heal-self-30-600-of-own-atk",
@@ -6690,7 +6708,7 @@
     "attackRange": null,
     "gameText": {
      "Lv1": "After a normal skill hits, there is a 20% chance to grant [Top] Shield to INT allies for 3 seconds.",
-     "Lv2": "When a normal skill hits and the target is in Burn state, advance your current Ultimate Skill gauge by 0.6 sec.",
+     "Lv2": "After a normal skill hits, there is a 20% chance to grant [Top] Shield to INT allies for 4 seconds.",
      "Lv3": "After a normal skill hits, there is a 20% chance to grant [Top] Shield to INT allies for 5 seconds."
     },
     "levelTable": [
@@ -6708,8 +6726,14 @@
      }
     ],
     "icon": 17,
-    "levelTextSource": "In game",
-    "notes": "Lv.2 looks like text from a different skill.",
+    "levelTextSource": "Corrected from Japanese text",
+    "notes": null,
+    "issues": [
+     {
+      "problemType": "Wrong Wording",
+      "note": "The English Lv.2 text describes a different effect (advancing the Ultimate Skill gauge against a Burning target). It is word for word the Lv.2 text of Holy Night Mirajane's Special (also 0.6 sec), so it looks like text pasted from that skill; her own skill is correct. The Japanese Lv.2 text reads the same as Lv.1 and Lv.3: a 20% chance, after a normal skill hits, to grant [Top] Shield to INT allies, for 4 sec, following the 3 / 4 / 5 sec progression. The wiki records the Japanese text. Lv.1 and Lv.3 match the Japanese."
+     }
+    ],
     "applications": [
      "top-shield-mind-allies-20-5-sec"
     ]
@@ -6719,9 +6743,9 @@
     "name": "New Year Welcome - Thunderhawk Formation -",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Deals damage equal to 500% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 3 seconds [Top] Paralysis and [Top] Accuracy Increase.",
-     "Lv2": "Deals damage equal to 600% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 4 seconds [Top] Paralysis and [Top] Accuracy Increase.",
-     "Lv3": "Deals damage equal to 700% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 5 seconds [Top] Paralysis and [Top] Accuracy Increase."
+     "Lv1": "Deals damage equal to 500% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 3 seconds [Top] Paralysis and [Top] Accuracy Decrease.",
+     "Lv2": "Deals damage equal to 600% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 4 seconds [Top] Paralysis and [Top] Accuracy Decrease.",
+     "Lv3": "Deals damage equal to 700% of ATK to all enemies every 9 seconds. After an attack hits, with a 40% chance, applies to each target for 5 seconds [Top] Paralysis and [Top] Accuracy Decrease."
     },
     "levelTable": [
      {
@@ -6762,8 +6786,14 @@
      }
     ],
     "icon": 44,
-    "levelTextSource": "In game",
-    "notes": "Typo in game text: it reads \"[Top] Accuracy Increase\" but the effect is applied to enemies, so it is modelled as Accuracy Decrease.",
+    "levelTextSource": "Corrected from Japanese text",
+    "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The English text says the skill applies \"[Top] Accuracy Increase\" to each target, but the target is an enemy. The Japanese text says [Top] Accuracy Decrease, so the English word is wrong. The wiki records Accuracy Decrease. The damage (500% / 600% / 700%), the 40% chance and the durations (3 / 4 / 5 sec) match the Japanese."
+     }
+    ],
     "applications": [
      "damage-all-enemies-every-9-sec-700-of-own-atk",
      "top-paralysis-each-target-hit-every-9-sec-40-5-sec",
@@ -7024,7 +7054,7 @@
     "notes": null,
     "applications": [
      "damage-enemies-in-target-area-every-9-sec-600-of-own-atk",
-     "silence-each-target-hit-every-9-sec-50-5-sec"
+     "silence-each-target-hit-every-9-sec-50-5-sec-2"
     ]
    }
   ]
@@ -7456,9 +7486,9 @@
     "name": "Normal Attack (Melee)",
     "attackRange": "Melee",
     "gameText": {
-     "Lv1": "Deals 100% ATK damage to the target. After hitting, 15% chance to inflict 2s of [High] Freeze.",
-     "Lv2": "Deals 120% ATK damage to the target. After hitting, 15% chance to inflict 2s of [High] Freeze.",
-     "Lv3": "Deals 150% ATK damage to the target. After hitting, 15% chance to inflict 2s of [High] Freeze."
+     "Lv1": "Deals 100% ATK damage to the target. After hitting, 10% chance to inflict 2s of [High] Freeze.",
+     "Lv2": "Deals 120% ATK damage to the target. After hitting, 10% chance to inflict 2s of [High] Freeze.",
+     "Lv3": "Deals 150% ATK damage to the target. After hitting, 10% chance to inflict 2s of [High] Freeze."
     },
     "levelTable": [
      {
@@ -7479,7 +7509,7 @@
       "target": "Single Enemy",
       "effect": "Freeze",
       "tier": "High",
-      "chance": "15%",
+      "chance": "10%",
       "duration": "2 sec",
       "value": null,
       "condition": null,
@@ -7487,11 +7517,17 @@
      }
     ],
     "icon": 1,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Value Anomaly",
+      "note": "The English text says a 15% chance to inflict [High] Freeze for 2 sec at every level. The Japanese text (グレイ -氷の滅悪魔導士-) says a 10% chance, with the same 2 sec duration. The wiki records the Japanese value. The damage (100% / 120% / 150% of ATK) and the Freeze tier match in both."
+     }
+    ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
-     "high-freeze-single-enemy-15-2-sec"
+     "high-freeze-single-enemy-10-2-sec"
     ]
    },
    {
@@ -9497,9 +9533,9 @@
     "name": "Seven-Star Sword",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Deals damage equal to 550% of ATK to all enemies every 10 seconds. After an attack hits, if the target is afflicted with Paralysis, for 3 seconds, grants the target [Top] Evasion Increase and [Top] Critical Defense Increase, Heal Block.",
-     "Lv2": "Deals damage equal to 650% of ATK to all enemies every 10 seconds. After an attack hits, if the target is afflicted with Paralysis, for 4 seconds, grants the target [Top] Evasion Increase and [Top] Critical Defense Increase, Heal Block.",
-     "Lv3": "Deals damage equal to 750% of ATK to all enemies every 10 seconds. After an attack hits, if the target is afflicted with Paralysis, for 5 seconds, grants the target [Top] Evasion Increase and [Top] Critical Defense Increase, Heal Block."
+     "Lv1": "Deals damage equal to 550% of ATK to all enemies every 10 seconds. After an attack hits, if the target is afflicted with Paralysis, for 3 seconds, inflicts [Top] Evasion Decrease, [Top] Critical Defense Decrease and Heal Block on the target.",
+     "Lv2": "Deals damage equal to 650% of ATK to all enemies every 10 seconds. After an attack hits, if the target is afflicted with Paralysis, for 4 seconds, inflicts [Top] Evasion Decrease, [Top] Critical Defense Decrease and Heal Block on the target.",
+     "Lv3": "Deals damage equal to 750% of ATK to all enemies every 10 seconds. After an attack hits, if the target is afflicted with Paralysis, for 5 seconds, inflicts [Top] Evasion Decrease, [Top] Critical Defense Decrease and Heal Block on the target."
     },
     "levelTable": [
      {
@@ -9517,26 +9553,26 @@
      {
       "level": "3",
       "trigger": "After Attack Hits",
-      "target": "Self",
-      "effect": "Evasion Increase",
+      "target": "Paralyzed Target",
+      "effect": "Evasion Decrease",
       "tier": "Top",
       "chance": null,
       "duration": "5 sec",
       "value": null,
       "condition": null,
-      "notes": "Game text is contradictory"
+      "notes": "The English text says \"Evasion Increase\" granted to the target. The Japanese text says Evasion Down. Not tested in play."
      },
      {
       "level": "3",
       "trigger": "After Attack Hits",
-      "target": "Self",
-      "effect": "Critical Defense Increase",
+      "target": "Paralyzed Target",
+      "effect": "Critical Defense Decrease",
       "tier": "Top",
       "chance": null,
       "duration": "5 sec",
       "value": null,
       "condition": null,
-      "notes": "Game text is contradictory"
+      "notes": "The English text says \"Critical Defense Increase\" granted to the target. The Japanese text says Critical Defense Down. Not tested in play."
      },
      {
       "level": "3",
@@ -9552,12 +9588,18 @@
      }
     ],
     "icon": 32,
-    "levelTextSource": "In game",
-    "notes": "The text reads “grants the target” and the wiki models it as Self",
+    "levelTextSource": "Corrected from Japanese text",
+    "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The English text says the skill \"grants the target [Top] Evasion Increase and [Top] Critical Defense Increase\", which contradicts itself because the target is an enemy. The Japanese text says Evasion Decrease and Critical Defense Decrease, plus Heal Block, all inflicted on the Paralyzed target. The wiki records them as debuffs on the target. The damage (550% / 650% / 750%) and the durations (3 / 4 / 5 sec) match the Japanese."
+     }
+    ],
     "applications": [
      "damage-all-enemies-every-10-sec-750-of-own-atk",
-     "top-evasion-increase-self-paralysis-5-sec",
-     "top-critical-defense-increase-self-every-10-sec-paralysis-5-sec",
+     "top-evasion-decrease-each-target-hit-every-10-sec-paralysis-5-sec",
+     "top-critical-defense-decrease-each-target-hit-every-10-sec-paralysis-5-sec",
      "heal-block-each-target-hit-every-10-sec-paralysis-5-sec"
     ]
    }
@@ -14352,9 +14394,9 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
-     "Lv1": "Deals damage equal to 100% of ATK to the target. When a critical hit occurs, for 3 seconds, grants allies of the Heart attribute [High] Critical Damage Increase and [High] Evasion Increase.",
-     "Lv2": "Deals damage equal to 120% of ATK to the target. When a critical hit occurs, for 3 seconds, grants allies of the Heart attribute [High] Critical Damage Increase and [High] Evasion Increase.",
-     "Lv3": "Deals damage equal to 150% of ATK to the target. When a critical hit occurs, for 3 seconds, grants allies of the Heart attribute [High] Critical Damage Increase and [High] Evasion Increase."
+     "Lv1": "Deals damage equal to 100% of ATK to the target. When a critical hit occurs, for 3 seconds, grants allies of the Heart attribute [High] Critical Damage Increase and [High] Accuracy Increase.",
+     "Lv2": "Deals damage equal to 120% of ATK to the target. When a critical hit occurs, for 3 seconds, grants allies of the Heart attribute [High] Critical Damage Increase and [High] Accuracy Increase.",
+     "Lv3": "Deals damage equal to 150% of ATK to the target. When a critical hit occurs, for 3 seconds, grants allies of the Heart attribute [High] Critical Damage Increase and [High] Accuracy Increase."
     },
     "levelTable": [
      {
@@ -14385,7 +14427,7 @@
       "level": "3",
       "trigger": "Critical Hit",
       "target": "Heart Allies",
-      "effect": "Evasion Increase",
+      "effect": "Accuracy Increase",
       "tier": "High",
       "chance": null,
       "duration": "3 sec",
@@ -14395,12 +14437,18 @@
      }
     ],
     "icon": 8,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The English text says the critical-hit buff for Heart allies is [High] Evasion Increase. The Japanese text (ミラジェーン -サタンソウル-) says [High] Accuracy Up (命中率アップ), which is Accuracy, not Evasion. The wiki records Accuracy Increase. The damage (100% / 120% / 150% of ATK), the 3 sec duration, the Critical Damage Increase and the Heart-attribute target match in both."
+     }
+    ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-critical-damage-increase-heart-allies-3-sec",
-     "high-evasion-increase-heart-allies-3-sec"
+     "high-accuracy-increase-heart-allies-3-sec"
     ]
    },
    {
@@ -15632,7 +15680,7 @@
     "gameText": {
      "Lv1": "Deals 600% ATK damage to all enemies every 10 seconds. After the attack hits, applies to all enemies afflicted with Burn for 3 seconds: [Top] Evasion Decrease and [Top] Critical Defense Decrease.",
      "Lv2": "Deals 700% ATK damage to all enemies every 10 seconds. After the attack hits, applies to all enemies afflicted with Burn for 4 seconds: [Top] Evasion Decrease and [Top] Critical Defense Decrease.",
-     "Lv3": "Deals 600% ATK damage to all enemies every 10 seconds. After the attack hits, applies to all enemies afflicted with Burn for 5 seconds: [Top] Evasion Decrease and [Top] Critical Defense Decrease."
+     "Lv3": "Deals 800% ATK damage to all enemies every 10 seconds. After the attack hits, applies to all enemies afflicted with Burn for 5 seconds: [Top] Evasion Decrease and [Top] Critical Defense Decrease."
     },
     "levelTable": [
      {
@@ -15643,9 +15691,9 @@
       "tier": null,
       "chance": null,
       "duration": null,
-      "value": "600% ATK (displayed)",
+      "value": "800% ATK",
       "condition": null,
-      "notes": "“Suspected localization error. Lv 1 displays 600%, Lv 2 displays 700%; inferred Lv 3 value is 800%, unverified.”"
+      "notes": "The English text displays 600% at Lv.3. The Japanese text reads 800%, which fits the 600 / 700 / 800 progression. Not tested in play."
      },
      {
       "level": "3",
@@ -15673,10 +15721,16 @@
      }
     ],
     "icon": 22,
-    "levelTextSource": "In game",
-    "notes": "The game shows 600% at Lv.3, the same as Lv.1 (Lv.2 shows 700%). This is probably a game text error; the expected value is 800%, not verified.",
+    "levelTextSource": "Corrected from Japanese text",
+    "notes": null,
+    "issues": [
+     {
+      "problemType": "Value Anomaly",
+      "note": "The English text shows 600% at Lv.3, the same as Lv.1 (Lv.2 shows 700%). The Japanese text reads 800% at Lv.3, which fits the 600% / 700% / 800% progression (with durations of 3 / 4 / 5 sec), so the English figure is almost certainly an error. The wiki records 800%. Everything else in the skill text matches the Japanese."
+     }
+    ],
     "applications": [
-     "damage-all-enemies-every-10-sec-600-of-own-atk",
+     "damage-all-enemies-every-10-sec-800-of-own-atk",
      "top-evasion-decrease-all-enemies-every-10-sec-burning-5-sec",
      "top-critical-defense-decrease-all-enemies-every-10-sec-burning-5-sec"
     ]
@@ -20028,7 +20082,7 @@
     "gameText": {
      "Lv1": "Deals damage equal to 110% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Healing Block on the target for 3 sec.",
      "Lv2": "Deals damage equal to 130% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Healing Block on the target for 3 sec.",
-     "Lv3": "Deals damage equal to 130% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Healing Block on the target for 3 sec."
+     "Lv3": "Deals damage equal to 160% of ATK to the target. After the attack hits, has a 30% chance to inflict [High] Paralysis and Healing Block on the target for 3 sec."
     },
     "levelTable": [
      {
@@ -20039,9 +20093,9 @@
       "tier": null,
       "chance": null,
       "duration": null,
-      "value": "150% ATK",
+      "value": "160% ATK",
       "condition": null,
-      "notes": "Typo in text, Lvl 2 and 3 have same magnitude"
+      "notes": null
      },
      {
       "level": "3",
@@ -20069,10 +20123,16 @@
      }
     ],
     "icon": 7,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Value Anomaly",
+      "note": "The English text shows 130% damage at Lv.3, the same as Lv.2 (Lv.1 shows 110%). The Japanese text (宵風にゆられてギルダーツ) reads 110% / 130% / 160%, so the English Lv.3 figure is almost certainly an error. The wiki records 160%. The 30% chance, the 3 sec duration, [High] Paralysis and Heal Block match in both."
+     }
+    ],
     "applications": [
-     "damage-single-enemy-normal-attack-150-of-own-atk",
+     "damage-single-enemy-normal-attack-160-of-own-atk",
      "high-paralysis-single-enemy-30-3-sec",
      "heal-block-single-enemy-30-3-sec"
     ]
@@ -21074,8 +21134,8 @@
     "attackRange": null,
     "gameText": {
      "Lv1": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits, there is a 50% chance for 3 sec to inflict Silence and rewind the target's accumulated Ultimate Skill gauge by 0.5 sec.",
-     "Lv2": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits, there is a 50% chance for 3 sec to inflict Silence and rewind the target's accumulated Ultimate Skill gauge by 0.6 sec.",
-     "Lv3": "Every 9 sec, deal damage equal to 650% of ATK within the target area. After the attack hits, there is a 50% chance for 3 sec to inflict Silence and rewind the target's accumulated Ultimate Skill gauge by 0.7 sec."
+     "Lv2": "Every 9 sec, deal damage equal to 750% of ATK within the target area. After the attack hits, there is a 50% chance for 4 sec to inflict Silence and rewind the target's accumulated Ultimate Skill gauge by 0.6 sec.",
+     "Lv3": "Every 9 sec, deal damage equal to 850% of ATK within the target area. After the attack hits, there is a 50% chance for 5 sec to inflict Silence and rewind the target's accumulated Ultimate Skill gauge by 0.7 sec."
     },
     "levelTable": [
      {
@@ -21086,9 +21146,9 @@
       "tier": null,
       "chance": null,
       "duration": null,
-      "value": "650% ATK",
+      "value": "850% ATK",
       "condition": null,
-      "notes": null
+      "notes": "The English text displays 650% at every level. The Japanese text reads 650 / 750 / 850%. Not tested in play."
      },
      {
       "level": "3",
@@ -21097,10 +21157,10 @@
       "effect": "Silence",
       "tier": null,
       "chance": "50%",
-      "duration": "3 sec",
+      "duration": "5 sec",
       "value": null,
       "condition": null,
-      "notes": null
+      "notes": "The English text displays 3 sec at every level. The Japanese text reads 3 / 4 / 5 sec. Not tested in play."
      },
      {
       "level": "3",
@@ -21116,11 +21176,17 @@
      }
     ],
     "icon": 22,
-    "levelTextSource": "In game",
-    "notes": "Lv.1–3 damage is 650% in the game text; only the gauge rewind changes by level (0.5 / 0.6 / 0.7 sec).",
+    "levelTextSource": "Corrected from Japanese text",
+    "notes": null,
+    "issues": [
+     {
+      "problemType": "Value Anomaly",
+      "note": "The English text shows 650% damage at every level and a 3 sec Silence at every level. The Japanese text reads 650% / 750% / 850% damage and a 3 / 4 / 5 sec Silence, so the English figures at Lv.2 and Lv.3 are almost certainly errors. The wiki records 850% and 5 sec. The gauge rewind (0.5 / 0.6 / 0.7 sec) and the 50% chance match the Japanese."
+     }
+    ],
     "applications": [
-     "damage-enemies-in-target-area-every-9-sec-650-of-own-atk",
-     "silence-each-target-hit-every-9-sec-50-3-sec",
+     "damage-enemies-in-target-area-every-9-sec-850-of-own-atk",
+     "silence-each-target-hit-every-9-sec-50-5-sec-2",
      "push-back-ultimate-skill-gauge-each-target-hit-every-9-sec"
     ]
    }

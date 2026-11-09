@@ -54,7 +54,7 @@
   "mechanic": "Prevention",
   "value": null,
   "secondary": null,
-  "gameText": "Negates action block effects (Bind, Freeze)"
+  "gameText": "Negates action block effects (Bind, Freeze, Silence, Blind)"
  },
  {
   "id": "advance-special-skill-gauge",

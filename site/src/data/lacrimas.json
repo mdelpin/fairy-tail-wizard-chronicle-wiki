@@ -815,10 +815,16 @@
   "name": "Minerva Lacrima",
   "kind": "signature",
   "signatureFor": "minerva-orland",
-  "gameText": "When a critical hit occurs, grants self Top Critical Rate Up for 3 sec. Trigger is recorded in notes because Critical Hit is not currently an available Lacrima trigger option.",
+  "gameText": "After a normal skill hits, has a 20% chance to grant self [Top] Critical Rate Up for 3 sec.",
   "notes": null,
   "applications": [
-   "top-critical-rate-increase-self-3-sec-2"
+   "top-critical-rate-increase-self-20-3-sec"
+  ],
+  "issues": [
+   {
+    "problemType": "Wrong Wording",
+    "note": "The English text says the lacrima grants [Top] Critical Rate Up to the wearer for 3 sec when a critical hit occurs. The Japanese text (ミネルバラクリマ) says that after a normal skill hits, there is a 20% chance to grant the wearer [Top] Critical Rate Up for 3 sec. The wiki records the Japanese text. The buff, its tier, its duration and its target match in both."
+   }
   ]
  },
  {
@@ -1204,9 +1210,18 @@
   "name": "Swaying in the Summer Night Lisanna Lacrima",
   "kind": "signature",
   "signatureFor": "swaying-in-the-summer-night-lisanna",
-  "gameText": "[Mid] ATK Decrease for 2 sec.",
-  "notes": "Tested in play (equipped on wizards other than Lisanna): the whole team gets a shield. The in-game text only says \"[Mid] ATK Decrease for 2 sec.\"",
-  "applications": []
+  "gameText": "At the start of battle, grants [Mid] Shield and [Mid] ATK Up to all allies for 5 sec",
+  "notes": null,
+  "applications": [
+   "mid-shield-all-allies-start-of-battle-5-sec",
+   "mid-atk-increase-all-allies-start-of-battle-5-sec"
+  ],
+  "issues": [
+   {
+    "problemType": "Mistranslation",
+    "note": "Tested in play (equipped on wizards other than Lisanna): the whole team gets a shield. The in-game text only says \"[Mid] ATK Decrease for 2 sec.\""
+   }
+  ]
  },
  {
   "id": "sweet-gift-juvia-lacrima",
