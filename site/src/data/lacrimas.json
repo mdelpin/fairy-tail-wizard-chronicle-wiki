@@ -1219,7 +1219,7 @@
   "issues": [
    {
     "problemType": "Mistranslation",
-    "note": "Tested in play (equipped on wizards other than Lisanna): the whole team gets a shield. The in-game text only says \"[Mid] ATK Decrease for 2 sec.\""
+    "note": "The English description says \"[Mid] ATK Decrease for 2 sec\". The Japanese text (夏夜にゆれてリサーナラクリマ) says that at the start of battle it grants all allies [Mid] Shield and [Mid] ATK Up for 5 sec. Play testing (equipped on wizards other than Lisanna) confirmed that the whole team receives a shield. The wiki records the Japanese text."
    }
   ]
  },
