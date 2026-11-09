@@ -48,11 +48,15 @@ export interface Companion {
 }
 export const COMPANION_TYPES = ['Spirit', 'Exceed', 'Dragon'] as const;
 export const MAX_COMPANION_STARS = 11;
+/** A live, reported fault in the game's own data; `note` is the editor's public wording. */
+export interface KnownIssue { problemType: string | null; note: string }
 export interface Skill {
   kind: 'Normal' | 'Special' | 'Ultimate'; name: string | null; attackRange: string | null;
   gameText: Record<string, string>; applications: string[];
   /** Editor's note (not game text). */
   notes?: string | null;
+  /** Live reported faults in the game's text or numbers for this skill. */
+  issues?: KnownIssue[];
   /** Game icon number (public/icons/skill/NN.webp), when recorded. */
   icon?: number | null;
   /** Where the Lv.1–2 text came from: 'madochro.wiki.gg' (credited) or 'In game'. */
@@ -92,6 +96,8 @@ export interface Lacrima {
   gameText: string | null; applications: string[];
   /** Editor's note (not game text), e.g. behaviour tested in play. */
   notes?: string | null;
+  /** Live reported faults in this lacrima's text or effect. */
+  issues?: KnownIssue[];
 }
 export interface EnemySkill {
   kind: 'Normal' | 'Special' | 'Ultimate' | 'Additional'; name: string | null;

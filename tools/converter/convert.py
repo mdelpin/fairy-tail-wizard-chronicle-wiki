@@ -3,7 +3,7 @@
 usage: python3 convert.py <export space dir> <out_dir> [slugs.json] [public_dir]
 
 Only the object types in common.GAME_FOLDERS are read (an allowlist), and only the fields named
-below are copied. Page text is published for Skills only. With public_dir, banner art images are
+below are copied. Page text is published for Skills only (plus the Public Note of a live Issue). With public_dir, banner art images are
 written to <public_dir>/banner-art/<unit id>.webp, and each banner's cover image (the event
 banner) to <public_dir>/event-banners/<image name>.webp (banners sharing one image share one file).
 """
@@ -23,7 +23,10 @@ from common import links, load, norm_title, resolve, title_index  # noqa: E402
 
 # Fields that must never appear in published output (checked at the end as a guard)
 PERSONAL = {"ownedUnit", "currentStars", "lacrimasEquipped", "equippedBy",
-            "primaryTeamContribution", "secondaryTeamContribution", "teamSynergy"}
+            "primaryTeamContribution", "secondaryTeamContribution", "teamSynergy",
+            # Issues: support tickets, screenshots and dates stay in Capacities
+            "evidence", "reportedOn", "affectedCharacterSkill", "affectedLacrima",
+            "affectedEnemySkill", "affectedCompanionSkill"}
 
 KINDS = ["Normal", "Special", "Ultimate"]
 MAX_COMPANION_STARS = 11
@@ -382,6 +385,59 @@ def main(root, out, slugs_path=None, public_dir=None):
             issue("Skill icons", f"Skill Icon '{icons[0]}' has no valid Number (1–44)")
         return None
 
+    # ---------- issues: known errors in the game's own data
+    # An issue is live while Resolution is empty. Only Problem Type and Public Note can leave Capacities,
+    # and only for a live issue whose Public Note is filled in. The page body (support tickets, notes to
+    # self), Evidence, dates and Status are never read.
+    RESOLUTIONS = {"Fixed in Game", "Won't Fix", "Not Reproducible", "Superseded"}
+    PROBLEMS = {"Truncated Text", "Conflicting Sources", "Mistranslation", "Missing Data", "Value Anomaly",
+                "Wrong Wording", "Other"}
+    skill_issues = collections.defaultdict(list)    # skill title -> [{"problemType", "note"}]
+    lacrima_issues = collections.defaultdict(list)  # lacrima file stem -> [...]
+    live_issues = []
+    for stem, r in sorted(data["Issues"].items()):
+        f = r["fm"]
+        where = f"Issue '{clean(f.get('title')) or stem}'"
+        resolution, problem = clean(f.get("resolution")), clean(f.get("problemType"))
+        if resolution and resolution not in RESOLUTIONS:
+            issue("Issues with unrecognised values", f"{where}: Resolution '{resolution}'")
+        if problem not in PROBLEMS:
+            issue("Issues with unrecognised values", f"{where}: Problem Type '{problem}'" if problem
+                  else f"{where}: Problem Type is empty")
+        skills_hit = ref(f.get("affectedCharacterSkill"), "Skills", where, "affectedCharacterSkill", many=True)
+        lacrimas_hit = ref(f.get("affectedLacrima"), "Lacrimas", where, "affectedLacrima", many=True)
+        enemy_hit = ref(f.get("affectedEnemySkill"), "EnemySkills", where, "affectedEnemySkill", many=True)
+        kinds_hit = [name for prop, name in (("affectedCharacterSkill", "skill"), ("affectedLacrima", "lacrima"),
+                                             ("affectedEnemySkill", "enemy skill"),
+                                             ("affectedCompanionSkill", "companion skill"))
+                     if links(f.get(prop))]
+        if not kinds_hit:
+            issue("Issues linked to nothing", where)
+        elif len(kinds_hit) > 1:
+            issue("Issues linked to more than one kind of record", f"{where}: {', '.join(kinds_hit)}")
+        if resolution:
+            continue
+        targets = ([S[x]["fm"].get("title", x) for x in skills_hit] + [L[x]["fm"].get("title", x) for x in lacrimas_hit]
+                   + [enemy_skills_src[x]["fm"].get("title", x) for x in enemy_hit])
+        issue("Live game issues (reported to the developers, not yet resolved)",
+              f"{where} → {', '.join(map(str, targets)) or 'unresolved link'}")
+        live_issues.append(where)
+        note = f.get("publicNote")
+        if note and not isinstance(note, str):
+            issue("Issues with unrecognised values", f"{where}: Public Note arrived as {type(note).__name__}, not text")
+            note = None
+        note = clean(note)
+        if not note:
+            issue("Live issues without a Public Note (nothing is published for them)", where)
+            continue
+        entry = {"problemType": problem, "note": note}
+        for x in skills_hit:
+            skill_issues[norm_title(S[x]["fm"].get("title", x))].append(entry)
+        for x in lacrimas_hit:
+            lacrima_issues[x].append(entry)
+        if enemy_hit or links(f.get("affectedCompanionSkill")):
+            issue("Live issues the site cannot show yet (no notice slot for enemy or companion skills)", where)
+
     # ---------- skills
     skill_by_title = {}
     used_apps = set()
@@ -417,6 +473,8 @@ def main(root, out, slugs_path=None, public_dir=None):
             # editor's note (not game text), e.g. a suspected error in the game's numbers
             "notes": clean(f.get("notes")),
         }
+    for title, found in skill_issues.items():
+        skill_by_title[title]["issues"] = found
     for stem, r in EA.items():
         if stem not in used_apps:
             issue("Effect applications no skill links to",
@@ -606,6 +664,7 @@ def main(root, out, slugs_path=None, public_dir=None):
             # editor's note, e.g. behaviour tested in play that the game text leaves out
             "notes": clean(f.get("notes")),
             "applications": [app_slug[("lacrima", a)] for a in apps],
+            **({"issues": lacrima_issues[stem]} if lacrima_issues.get(stem) else {}),
         })
     for u in units:
         sig = u.pop("_sig")
@@ -967,7 +1026,7 @@ def main(root, out, slugs_path=None, public_dir=None):
                  f"{sum(1 for u in units if u['bannerArt'])} banner arts, "
                  f"{len(companions)} companions, {len(companion_apps)} companion effect applications, "
                  f"{len(enemies)} enemies, {len(enemy_skills)} enemy skills, {len(enemy_apps)} enemy effect applications, "
-                 f"{len(events)} events. "
+                 f"{len(events)} events, {len(live_issues)} live game issues. "
                  f"{total} issues in {len(issues)} categories.\n\n")
         for cat in sorted(issues, key=lambda c: -len(issues[c])):
             fh.write(f"## {cat} ({len(issues[cat])})\n\n")
