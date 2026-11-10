@@ -22,6 +22,12 @@ const sameIdentity = companions.filter((o) => o.type === c.type && o.identity &&
   .sort((a, b) => (b.introducedOn ?? '').localeCompare(a.introducedOn ?? '') || a.name.localeCompare(b.name));
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 6, signDisplay: 'exceptZero' });
 const stepKnown = c.ownedStart != null && c.ownedStep != null;
+// Work-in-progress marker: derived from what is absent, so it clears itself when the data arrives.
+const missing = [
+  levels.length === 0 ? 'skill text' : levels.length < 3 ? (levels.length === 1 ? 'skill levels 2\u20133' : 'skill level 3') : null,
+  c.ownedStart == null || c.ownedStep == null ? 'the star bonus' : null,
+  !c.introducedOn && !c.introducedVia && !banner ? 'introduction details' : null,
+].filter((m): m is string => !!m);
 const introduced = [c.introducedVia, c.introducedOn && `${dayText(c.introducedOn)} JST`].filter(Boolean).join(' · ');
 ---
 <Base title={c.name} section="companions" description={`${c.name}: ${[c.rarity, c.type].filter(Boolean).join(' ')} in FAIRY TAIL Wizard Chronicle. Skill, star progression and introduction.`}>
@@ -42,6 +48,9 @@ const introduced = [c.introducedVia, c.introducedOn && `${dayText(c.introducedOn
           {c.type && <span class="muted">{c.type}</span>}
           {c.ownedStat && <span class="muted">· {c.ownedStat} bonus</span>}
         </div>
+        {missing.length > 0 && (
+          <p class="wip" data-pagefind-ignore><span class="wip-tag">Work in progress</span> Still collecting {missing.join(', ').replace(/, ([^,]*)$/, ' and $1')}.</p>
+        )}
         <p class="introduced">
           <strong>Introduced</strong>
           {introduced || banner ? (
@@ -121,6 +130,8 @@ const introduced = [c.introducedVia, c.introducedOn && `${dayText(c.introducedOn
   .overview img { width: min(130px, 100%); height: auto; aspect-ratio: 1; object-fit: contain; }
   h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; }
   .labels { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+  .wip { margin: 12px 0 0; font-size: 13px; color: #3A2A1F; }
+  .wip-tag { display: inline-block; margin-right: 6px; padding: 2px 10px; border-radius: 999px; background: #FBF4E7; border: 1.5px solid var(--brass); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--timber); }
   .introduced { margin: 14px 0 0; font-size: 14px; }
   .introduced > span, .introduced a { display: block; }
   .cols { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 28px; align-items: start; margin-top: 24px; }
