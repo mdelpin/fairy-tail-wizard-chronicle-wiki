@@ -1021,9 +1021,12 @@
   "tier": "Mid",
   "polarity": "Beneficial",
   "mechanic": "Heal Over Time",
-  "value": null,
+  "value": {
+   "amount": 80,
+   "unit": "Percent of ATK per sec"
+  },
   "secondary": null,
-  "gameText": null
+  "gameText": "Recovers 80% of ATK per sec"
  },
  {
   "id": "mid-critical-damage-decrease",
@@ -1241,18 +1244,6 @@
    "unit": "Percent"
   },
   "gameText": "HP -20% ATK per sec + DEF -10%"
- },
- {
-  "id": "mid-regen",
-  "name": "Mid Regen",
-  "family": "Continuous Heal",
-  "direction": null,
-  "tier": "Mid",
-  "polarity": "Beneficial",
-  "mechanic": "Heal Over Time",
-  "value": null,
-  "secondary": null,
-  "gameText": null
  },
  {
   "id": "mid-shield",

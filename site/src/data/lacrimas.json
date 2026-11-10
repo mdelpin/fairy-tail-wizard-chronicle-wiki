@@ -221,7 +221,7 @@
   "gameText": "Every 7 sec, for 3 sec, grants all allies [Mid] Regen",
   "notes": null,
   "applications": [
-   "mid-regen-all-allies-every-7-sec-3-sec"
+   "mid-continuous-heal-all-allies-every-7-sec-3-sec"
   ]
  },
  {

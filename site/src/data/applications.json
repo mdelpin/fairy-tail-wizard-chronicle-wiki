@@ -16707,6 +16707,25 @@
   "gameText": null
  },
  {
+  "id": "mid-continuous-heal-all-allies-every-7-sec-3-sec",
+  "source": "lacrima",
+  "effect": "mid-continuous-heal",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "mid-continuous-heal-all-allies-while-on-the-field",
   "source": "lacrima",
   "effect": "mid-continuous-heal",
@@ -17135,25 +17154,6 @@
   },
   "chance": null,
   "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "mid-regen-all-allies-every-7-sec-3-sec",
-  "source": "lacrima",
-  "effect": "mid-regen",
-  "type": "Provides",
-  "target": "All Allies",
-  "trigger": {
-   "events": [],
-   "everySeconds": 7,
-   "raw": "Every 7 sec"
-  },
-  "chance": null,
-  "durationSeconds": 3,
   "valueOverride": null,
   "condition": null,
   "requires": null,

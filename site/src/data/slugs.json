@@ -112,6 +112,7 @@
   "lacrima:Mid Burn → All Enemies – Start of Battle  5 sec": "mid-burn-all-enemies-start-of-battle-5-sec",
   "lacrima:Mid Burn → All Enemies – While on the Field": "mid-burn-all-enemies-while-on-the-field",
   "lacrima:Mid Burn → Single Enemy – 20  3 sec": "mid-burn-single-enemy-20-3-sec",
+  "lacrima:Mid Continuous Heal → All Allies – Every 7 sec  3 sec": "mid-continuous-heal-all-allies-every-7-sec-3-sec",
   "lacrima:Mid Continuous Heal → All Allies – While on the Field": "mid-continuous-heal-all-allies-while-on-the-field",
   "lacrima:Mid Critical Damage Decrease → All Enemies – While on the Field": "mid-critical-damage-decrease-all-enemies-while-on-the-field",
   "lacrima:Mid Critical Damage Increase → All Allies – Every 5 sec  3 sec": "mid-critical-damage-increase-all-allies-every-5-sec-3-sec",
@@ -133,7 +134,6 @@
   "lacrima:Mid Evasion Increase → All Allies – Start of Battle  5 sec": "mid-evasion-increase-all-allies-start-of-battle-5-sec",
   "lacrima:Mid Freeze → Single Enemy – 10  2 sec": "mid-freeze-single-enemy-10-2-sec",
   "lacrima:Mid Paralysis → All Enemies – Start of Battle  5 sec": "mid-paralysis-all-enemies-start-of-battle-5-sec",
-  "lacrima:Mid Regen → All Allies – Every 7 sec  3 sec": "mid-regen-all-allies-every-7-sec-3-sec",
   "lacrima:Mid Shield → All Allies – 10  3 sec": "mid-shield-all-allies-10-3-sec",
   "lacrima:Mid Shield → All Allies – 20  3 sec": "mid-shield-all-allies-20-3-sec",
   "lacrima:Mid Shield → All Allies – Start of Battle  5 sec": "mid-shield-all-allies-start-of-battle-5-sec",
@@ -922,6 +922,7 @@
   "Victory Bunny": "victory-bunny",
   "White Gift": "white-gift"
  },
+ "companion": {},
  "effect": {
   "30 Damage Reflection Shield": "30-damage-reflection-shield",
   "Accuracy Up I": "accuracy-up-i",
@@ -1006,7 +1007,6 @@
   "Mid Evasion Increase": "mid-evasion-increase",
   "Mid Freeze": "mid-freeze",
   "Mid Paralysis": "mid-paralysis",
-  "Mid Regen": "mid-regen",
   "Mid Shield": "mid-shield",
   "Push Back Special Skill Gauge": "push-back-special-skill-gauge",
   "Push Back Ultimate Skill Gauge": "push-back-ultimate-skill-gauge",
