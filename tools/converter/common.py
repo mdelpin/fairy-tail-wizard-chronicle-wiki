@@ -10,7 +10,7 @@ import yaml
 # notes, queries, new private types) is invisible to the wiki unless it is added here on purpose.
 GAME_FOLDERS = ["Characters", "Skills", "Effects", "EffectFamilies", "Parameters", "EffectApplications",
                 "Lacrimas", "LacrimaEffectApplications",
-                "Banners", "BannerArts", "SkillIcons", "Companions", "CompanionEffectApplications",
+                "Banners", "BannerArts", "SkillIcons", "Companions", "CompanionSkills", "CompanionEffectApplications",
                 "Enemies", "EnemySkills", "EnemyEffectApplications", "Events", "Issues"]
 
 
@@ -32,8 +32,9 @@ def load(root):
             stem = os.path.splitext(os.path.basename(p))[0]
             # the export writes some characters as #UXXXX in file names; links use the real character
             stem = re.sub(r"#U([0-9a-fA-F]{4})", lambda m: chr(int(m.group(1), 16)), stem)
-            # Only skill tables are published; Event source notes are read for date validation only.
-            kept_body = body if folder == "Skills" else None
+            # Only skill text is published (character and companion skills); Event source notes are read for
+            # date validation only.
+            kept_body = body if folder in ("Skills", "CompanionSkills") else None
             # shortcut: only the leading date/source paragraph is checked; add a property if source tracking expands.
             if folder == "Events":
                 first = body.strip().split("\n\n", 1)[0]

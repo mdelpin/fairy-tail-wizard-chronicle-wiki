@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 113 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 0 companions, 0 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 17 live game issues. 90 issues in 7 categories.
+156 units, 115 lacrimas, 112 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 30 live game issues. 102 issues in 7 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -64,41 +64,49 @@
 - yukino-agria
 - zancrow
 
-## Live game issues (17)
+## Live game issues (30)
 
+- Issue 'Academy Capricorn Skill: English description is cut off before the second effect and the duration' → Academy Capricorn — Skill
+- Issue 'Aquarius Skill: English description is cut off before the second effect' → Aquarius — Skill
+- Issue 'Aries Skill: English description is cut off before the second effect' → Aries — Skill
+- Issue 'Aries Skill: English name is Aquametria, Japanese name is Wool Bomb' → Aries — Skill
 - Issue 'Blazing Beach Vacation Laxus Ultimate: healing drops at Lv.3 (750% / 850% / 750%)' → Blazing Beach Vacation Laxus — Ultimate
 - Issue 'Dark Mage Zeref Normal: English omits the Bind and lists lower damage than Japanese' → Dark Mage Zeref — Normal
 - Issue 'Emperor Spriggan Zeref Normal: English says Ranged, Japanese says Melee' → Emperor Spriggan Zeref — Normal
+- Issue 'First Dream Aquarius Skill: English description is cut off before the second effect' → First Dream Aquarius — Skill
+- Issue 'First Dream Aquarius Skill: English name is Aquametria, the regular Aquarius's skill name' → First Dream Aquarius — Skill
 - Issue 'First Dream Laxus Special: Lv.2 text describes a different effect' → First Dream Laxus — Special
 - Issue 'First Dream Laxus Ultimate: English says Accuracy Increase on enemies, Japanese says Down' → First Dream Laxus — Ultimate
-- Issue 'Grandeeney Skill: English description is cut off before the last effect and the duration' → unresolved link
+- Issue 'Grandeeney Skill: English description is cut off before the last effect and the duration' → Grandeeney — Skill
 - Issue 'Gray -Ice Devil Slayer Mage- Normal: Freeze chance is 15% in English, 10% in Japanese' → Gray -Ice Devil Slayer Mage- — Normal
 - Issue 'Jellal Fernandes Ultimate: English says Evasion and Critical Defense Increase on the target, Japanese says Down' → Jellal Fernandes — Ultimate
-- Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration' → unresolved link
+- Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration' → Mercphobia — Skill
 - Issue 'Minerva Lacrima: English says it triggers on a critical hit, Japanese says a normal skill hit (20%)' → ✨ Minerva Lacrima
 - Issue 'Mirajane -Satan Soul- Normal: English says Evasion Increase, Japanese says Accuracy Increase' → Mirajane -Satan Soul- — Normal
 - Issue 'Natsu Dragion Ultimate: damage drops at Lv.3 (600% / 700% / 600%)' → Natsu Dragion — Ultimate
-- Issue 'Selene Skill: English description is cut off before the last effect' → unresolved link
-- Issue 'Skiadrum Skill: English description is cut off before the second effect' → unresolved link
+- Issue 'Otherworld Adventure Gemini Skill: English description is cut off before the third effect and the duration' → Otherworld Adventure Gemini — Skill
+- Issue 'Pure White Oath Lyra Skill: English description is cut off before the second effect' → Pure White Oath Lyra — Skill
+- Issue 'Rock'n Magic Virgo Skill: English description is cut off before the third effect and the duration' → Rock'n Magic Virgo — Skill
+- Issue 'Selene Skill: English description is cut off before the last effect' → Selene — Skill
+- Issue 'Skiadrum Skill: English description is cut off before the second effect' → Skiadrum — Skill
 - Issue 'Swayed by the Evening Breeze Gildarts Normal: Lv.3 damage is 130% in English, 160% in Japanese' → Swayed by the Evening Breeze Gildarts — Normal
 - Issue 'Swaying in the Summer Night Lisanna Lacrima: text does not match effect' → ✨ Swaying in the Summer Night Lisanna Lacrima
+- Issue 'Sweet Gift Carla Skill: English description is cut off before the second effect' → Sweet Gift Carla — Skill
 - Issue 'Sweet Gift Levy Ultimate: damage is 650% at every level' → Sweet Gift Levy — Ultimate
+- Issue 'Twin Moon Halloween Aquarius: the card shows Rock'n Magic Virgo's skill' → Twin Moon Halloween Aquarius — Skill
+- Issue 'Virgo Skill: English description is cut off before the second effect' → Virgo — Skill
+- Issue 'White Gift Leo Skill: English description is cut off before the second effect and the duration' → White Gift Leo — Skill
 
-## Broken or ambiguous links (6)
+## Owned step unknown (the page shows the start value only) (8)
 
-- Banner 'Egg Hunt Wizard' → companions: no record titled 'Irene -Dragon Form-'
-- Banner 'Fabled Quest I' → companions: no record titled 'Mercphobia, the Water Dragon God'
-- Banner 'Fabled Quest II' → companions: no record titled 'Selene, the Moon Dragon God'
-- Banner 'Fairy Harvest Festival' → companions: no record titled 'Grandeeney'
-- Banner 'Holy Night Festival' → companions: no record titled 'Fire Dragon King Igneel'
-- Banner 'Parallel World -Part 2-' → companions: no record titled 'Dorma Anim Black Sky'
-
-## Live issues the site cannot show yet (no notice slot for enemy or companion skills) (4)
-
-- Issue 'Grandeeney Skill: English description is cut off before the last effect and the duration'
-- Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration'
-- Issue 'Selene Skill: English description is cut off before the last effect'
-- Issue 'Skiadrum Skill: English description is cut off before the second effect'
+- Companion 'Acnologia'
+- Companion 'Aera Frosch'
+- Companion 'Aera Lector'
+- Companion 'Aries'
+- Companion 'Cyberpunk Frosch'
+- Companion 'Dorma Anim Black Sky'
+- Companion 'Irene -Dragon Form-'
+- Companion 'Skiadrum'
 
 ## Banner covers (2)
 
@@ -108,6 +116,10 @@
 ## Effect families without a Mechanic (shown without one on the site) (1)
 
 - Transformation
+
+## Companion skills without effects (placeholder skills are expected here) (1)
+
+- Companion 'Twin Moon Halloween Aquarius'
 
 ## Event date sources need review (1)
 

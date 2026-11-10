@@ -18,8 +18,8 @@ The unfinished Banner named `Untitled` is ignored, including in validation.
 ## What it publishes
 
 - **Allowlist of object types** (`common.GAME_FOLDERS`): Characters, Skills, Effects, EffectApplications,
-  Lacrimas, LacrimaEffectApplications, Banners, BannerArts, SkillIcons, Companions,
-  CompanionEffectApplications, Enemies, EnemySkills, EnemyEffectApplications, Events. Any other type in the space (Team Builder
+  Lacrimas, LacrimaEffectApplications, Banners, BannerArts, SkillIcons, Companions, CompanionSkills,
+  CompanionEffectApplications, Issues, Enemies, EnemySkills, EnemyEffectApplications, Events. Any other type in the space (Team Builder
   data, queries, new private types) is never read.
 - **Allowlist of fields**: only the properties `convert.py` copies by name reach the output. A property
   added in Capacities stays private until it is added here on purpose.
@@ -32,15 +32,19 @@ The unfinished Banner named `Untitled` is ignored, including in validation.
   they do not enter wizard Effect Finder counts. `Constant` with no duration displays as permanent;
   an empty duration on its own does not. Enemy/Event dates are JST calendar dates, like Banners;
   hours and source evidence stay in the Event's leading date/source paragraph in Capacities.
-- **Companions**: public skill and progression data, introduction details, and links to companion
-  applications. The applications share the wiki's Effect definitions and have their own
-  `source: companion` records in `applications.json`. A banner's `companions` links are separate
-  from its wizard links. Owned Effect is calculated as `ownedStart + ownedStep × stars`. Set
-  `skillLevelFromStars` per companion, for example `0, 1, 7` for Block Happy. When game text is
-  identical across levels except for the duration, write `{duration}` in `gameText` where the site
-  should insert the level's duration including its unit, such as `2s`. Literal game text is also
-  supported. Without game text, the site displays the recorded application details.
-- **Guards** that stop the run: any personal field name in the output, or any sentence from a
+- **Companions** (Dragons, Exceeds, Celestial Spirits): a Companion links to one Companion Skill (which links back
+  and lists its Companion Effect Applications); the skill's `**Lv.1**`... paragraphs are the published level text
+  (text on the same line or the next). Applications share the wiki's Effect definitions and have their own
+  `source: companion` records in `applications.json`; their `companion` field lists the companions that use them
+  and is cross-checked against the skills. The bonus stat comes from the `bonusStat` Parameter link (shown as ATK,
+  HP, DEF). Owned Effect is `ownedStart + ownedStep × stars`; an unowned card may have no step (published as null).
+  Unlock stars are one constant for every companion: Lv.2 at star 1, Lv.3 at red star 2 (star 7).
+  `identity` is published as written; companion identities are only compared within one companion type, and never
+  with wizards. An optional `stepConfirmed` checkbox (false = inferred, not seen) is published as is and is never
+  derived from `owned`. Live Issues linked through `affectedCompanionSkill` publish their Public Note on the
+  companion (`issues`). A Companion Skill's `notes` stay private. A banner's `companions` links are separate from
+  its wizard links.
+- **Guards** that stop the run: any personal field name in the output (including `owned` and `numberOfStars`), or any sentence from a
   Character page.
 - With a `public` folder as the last argument, banner art is written to `public/banner-art/<unit id>.webp`
   (old files are removed when art is unlinked).
@@ -57,8 +61,8 @@ The unfinished Banner named `Untitled` is ignored, including in validation.
 - **Effect applications no skill links to**: the EA names its character, but none of that character's
   Skills lists it, so the effect is missing from that wizard's skill tables and the Effect Finder.
 - **Debut banners**: a wizard with more than one Debut Banner, or a Banner and wizard that disagree.
-- **Companions**: missing skill, progression or introduction data, outlier progression values,
-  and disagreements between a Companion and Banner.
+- **Companions**: missing skill, stat, identity or introduction data, a skill and its applications that disagree
+  about who uses them, unknown owned steps, outlier progression values, and disagreements between a Companion and Banner.
 - **Addresses retired**: a record was renamed or deleted, so links to its old page stop working.
 - **Enemy links**: mismatched Enemy/Skill/Application ownership or Enemy/Event links, unused
   applications and unused skills. Missing effects, triggers, kinds, text and dates are also reported.
@@ -75,7 +79,8 @@ pushes it to the app. Reload the app and export again.
 
 - `common.py`: shared export reading and link resolution.
 - `extract_skills.py`, `fix_export.py`: one-off migration scripts from the move to the new space.
-- `test_companions.py`: a synthetic Block Happy export tests the converter and privacy guard.
+- `test_companions.py`: a synthetic export in the real Companion model tests the converter, the identity rules and
+  the privacy guard.
   Run it with `python3 tools/converter/test_companions.py` (PyYAML and Pillow).
 - `test_enemies.py`: checks all four skill kinds, timed/permanent effects, exported links,
   source-note privacy, images, validation, and unchanged legacy outputs.

@@ -18262,6 +18262,1306 @@
   "gameText": null
  },
  {
+  "id": "action-block-barrier-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "action-block-barrier",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "blind-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "blind",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-12-sec-200-of-party-s-average-atk",
+  "source": "companion",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 200,
+   "unit": "Percent of Party's Average ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+  "source": "companion",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 300,
+   "unit": "Percent of Party's Average ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-15-sec-300-of-party-s-average-atk",
+  "source": "companion",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 300,
+   "unit": "Percent of Party's Average ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-15-sec-450-of-party-s-average-atk",
+  "source": "companion",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 450,
+   "unit": "Percent of Party's Average ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-15-sec-500-of-party-s-average-atk",
+  "source": "companion",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 500,
+   "unit": "Percent of Party's Average ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "heal-lowest-hp-ally-every-6-sec-200-of-target-s-atk",
+  "source": "companion",
+  "effect": "heal",
+  "type": "Provides",
+  "target": "Lowest HP Ally",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 200,
+   "unit": "Percent of Target's ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "heal-block-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "heal-block",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "heal-block-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "heal-block",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "heal-lowest-hp-ally-every-6-sec-500-of-party-s-average-atk",
+  "source": "companion",
+  "effect": "heal",
+  "type": "Provides",
+  "target": "Lowest HP Ally",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 500,
+   "unit": "Percent of Party's Average ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "heal-lowest-hp-ally-every-6-sec-550-of-party-s-average-atk",
+  "source": "companion",
+  "effect": "heal",
+  "type": "Provides",
+  "target": "Lowest HP Ally",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 550,
+   "unit": "Percent of Party's Average ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "heal-lowest-hp-ally-every-6-sec-650-of-party-s-average-atk",
+  "source": "companion",
+  "effect": "heal",
+  "type": "Provides",
+  "target": "Lowest HP Ally",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 650,
+   "unit": "Percent of Party's Average ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-atk-increase-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "high-atk-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-atk-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "high-atk-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-accuracy-decrease-all-enemies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "high-accuracy-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-bleed-all-enemies-every-15-sec-3-sec",
+  "source": "companion",
+  "effect": "high-bleed",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-continuous-heal-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "high-continuous-heal",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-def-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "high-def-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-paralysis-all-enemies-every-6-sec-3-sec",
+  "source": "companion",
+  "effect": "high-paralysis",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "silence-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "silence-all-enemies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-decrease-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-atk-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-decrease-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-atk-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-decrease-all-enemies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-atk-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-decrease-all-enemies-every-6-sec-3-sec",
+  "source": "companion",
+  "effect": "top-atk-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-increase-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-atk-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-atk-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-accuracy-increase-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-accuracy-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-accuracy-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-accuracy-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-bleed-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-bleed",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-bleed-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-bleed",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-burn-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-burn",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-burn-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-burn",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-continuous-heal-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-continuous-heal",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-damage-decrease-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-critical-damage-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-damage-decrease-all-enemies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-critical-damage-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-damage-increase-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-critical-damage-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-damage-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-critical-damage-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-defense-decrease-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-critical-defense-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-defense-decrease-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-critical-defense-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-defense-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-critical-defense-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-rate-decrease-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-critical-rate-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-rate-decrease-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-critical-rate-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-rate-decrease-all-enemies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-critical-rate-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-rate-decrease-all-enemies-every-6-sec-3-sec",
+  "source": "companion",
+  "effect": "top-critical-rate-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-rate-increase-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-critical-rate-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-rate-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-critical-rate-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-resistance-decrease-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-critical-resistance-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-resistance-decrease-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-critical-resistance-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-resistance-decrease-all-enemies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-critical-resistance-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-resistance-decrease-all-enemies-every-6-sec-3-sec",
+  "source": "companion",
+  "effect": "top-critical-resistance-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-resistance-increase-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-critical-resistance-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-resistance-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-critical-resistance-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-decrease-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-decrease-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-decrease-all-enemies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-decrease-all-enemies-every-6-sec-3-sec",
+  "source": "companion",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-increase-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-def-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-increase-all-allies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-def-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-evasion-decrease-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-evasion-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-evasion-decrease-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-evasion-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-evasion-decrease-all-enemies-every-6-sec-2-sec",
+  "source": "companion",
+  "effect": "top-evasion-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-evasion-decrease-all-enemies-every-6-sec-3-sec",
+  "source": "companion",
+  "effect": "top-evasion-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 6,
+   "raw": "Every 6 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-paralysis-all-enemies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-paralysis",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-paralysis-all-enemies-every-15-sec-5-sec",
+  "source": "companion",
+  "effect": "top-paralysis",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-shield-all-allies-every-12-sec-3-sec",
+  "source": "companion",
+  "effect": "top-shield",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 12,
+   "raw": "Every 12 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "action-impairment-barrier-self-constant",
   "source": "enemy",
   "effect": "action-block-barrier",
