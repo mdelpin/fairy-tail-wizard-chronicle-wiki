@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import links, load, norm_title, resolve, title_index  # noqa: E402
 
 # Fields that must never appear in published output (checked at the end as a guard)
-PERSONAL = {"ownedUnit", "currentStars", "lacrimasEquipped", "equippedBy",
+PERSONAL = {"ownedUnit", "currentStars", "owned", "numberOfStars", "lacrimasEquipped", "equippedBy",
             "primaryTeamContribution", "secondaryTeamContribution", "teamSynergy",
             # Issues: support tickets, screenshots and dates stay in Capacities
             "evidence", "reportedOn", "affectedCharacterSkill", "affectedLacrima",
@@ -30,6 +30,9 @@ PERSONAL = {"ownedUnit", "currentStars", "lacrimasEquipped", "equippedBy",
 
 KINDS = ["Normal", "Special", "Ultimate"]
 MAX_COMPANION_STARS = 11
+# Same for every Dragon, Exceed and Celestial Spirit: Lv.2 at star 1, Lv.3 at red star 2 (star 7).
+COMPANION_LEVEL_STARS = [0, 1, 7]
+COMPANION_TYPES = ["Dragon", "Exceed", "Celestial Spirit"]
 
 issues = collections.defaultdict(list)  # category -> [message]
 
@@ -85,6 +88,13 @@ MECHANICS = {"Stat Modifier", "Damage Over Time", "Instant Damage", "Instant Hea
 
 
 LEVEL_COLS = ["Level", "Trigger", "Target", "Effect", "Tier", "Chance", "Duration", "Value", "Condition", "Notes"]
+
+
+def level_texts(body):
+    """'**Lv.N**' paragraphs only (companion skills have no level table)."""
+    # the text follows on the same line ("**Lv.1** Every 12 sec ...") or on the next one
+    return {f"Lv{m.group(1)}": m.group(2).strip()
+            for m in re.finditer(r"\*\*Lv\.(\d)\*\*[ \t]*\n*(.*?)(?=\n\s*\n|\Z)", body, re.S)}
 
 
 def parse_levels(body, where):
@@ -171,6 +181,7 @@ def main(root, out, slugs_path=None, public_dir=None):
     FAM, PAR = data["EffectFamilies"], data["Parameters"]
     idx = {k: title_index(v) for k, v in data.items()}
     companions_src = data["Companions"]
+    companion_skills_src = data["CompanionSkills"]
     companion_apps_src = data["CompanionEffectApplications"]
     enemies_src, enemy_skills_src, enemy_apps_src, events_src = (
         data[k] for k in ["Enemies", "EnemySkills", "EnemyEffectApplications", "Events"])
@@ -326,15 +337,6 @@ def main(root, out, slugs_path=None, public_dir=None):
             "type": clean(f.get("applicationType")), "target": clean(f.get("target")),
             "trigger": parse_trigger(f.get("activationInterval"), where), "chance": ch,
         }
-        if source == "companion":
-            duration_props = [f"durationSecondsLv{lv}" for lv in (1, 2, 3)]
-            has_duration = any(f.get(prop) is not None for prop in duration_props)
-            return {
-                **app, "durationByLevel": [companion_number(f, prop, where, required=has_duration)
-                                           for prop in duration_props],
-                "condition": clean(cond), "gameText": clean(f.get("gameText")),
-            }
-
         req = None
         if f.get("requiredEffectFamilies"):
             req = {"families": [fam_name[s] for s in ref(f.get("requiredEffectFamilies"), "EffectFamilies", where,
@@ -348,7 +350,7 @@ def main(root, out, slugs_path=None, public_dir=None):
             scaling = {k: f.get(k) for k in ["scalingAttribute", "increasePerUnit", "increaseValueUnit",
                                               "scalingBasis", "maximumNumberOfIncreases", "maximumResult"]}
         duration, value = f.get("durationSeconds"), f.get("effectValue")
-        if source == "enemy":
+        if source in ("enemy", "companion"):
             duration = companion_number(f, "durationSeconds", where, required=False)
             value = companion_number(f, "effectValue", where, required=False)
             if duration is not None and duration < 0:
@@ -394,6 +396,7 @@ def main(root, out, slugs_path=None, public_dir=None):
                 "Wrong Wording", "Other"}
     skill_issues = collections.defaultdict(list)    # skill title -> [{"problemType", "note"}]
     lacrima_issues = collections.defaultdict(list)  # lacrima file stem -> [...]
+    companion_skill_issues = collections.defaultdict(list)  # companion skill file stem -> [...]
     live_issues = []
     for stem, r in sorted(data["Issues"].items()):
         f = r["fm"]
@@ -407,6 +410,8 @@ def main(root, out, slugs_path=None, public_dir=None):
         skills_hit = ref(f.get("affectedCharacterSkill"), "Skills", where, "affectedCharacterSkill", many=True)
         lacrimas_hit = ref(f.get("affectedLacrima"), "Lacrimas", where, "affectedLacrima", many=True)
         enemy_hit = ref(f.get("affectedEnemySkill"), "EnemySkills", where, "affectedEnemySkill", many=True)
+        companion_hit = ref(f.get("affectedCompanionSkill"), "CompanionSkills", where, "affectedCompanionSkill",
+                            many=True)
         kinds_hit = [name for prop, name in (("affectedCharacterSkill", "skill"), ("affectedLacrima", "lacrima"),
                                              ("affectedEnemySkill", "enemy skill"),
                                              ("affectedCompanionSkill", "companion skill"))
@@ -418,7 +423,8 @@ def main(root, out, slugs_path=None, public_dir=None):
         if resolution:
             continue
         targets = ([S[x]["fm"].get("title", x) for x in skills_hit] + [L[x]["fm"].get("title", x) for x in lacrimas_hit]
-                   + [enemy_skills_src[x]["fm"].get("title", x) for x in enemy_hit])
+                   + [enemy_skills_src[x]["fm"].get("title", x) for x in enemy_hit]
+                   + [companion_skills_src[x]["fm"].get("title", x) for x in companion_hit])
         issue("Live game issues",
               f"{where} → {', '.join(map(str, targets)) or 'unresolved link'}")
         live_issues.append(where)
@@ -435,8 +441,10 @@ def main(root, out, slugs_path=None, public_dir=None):
             skill_issues[norm_title(S[x]["fm"].get("title", x))].append(entry)
         for x in lacrimas_hit:
             lacrima_issues[x].append(entry)
-        if enemy_hit or links(f.get("affectedCompanionSkill")):
-            issue("Live issues the site cannot show yet (no notice slot for enemy or companion skills)", where)
+        for x in companion_hit:
+            companion_skill_issues[x].append(entry)
+        if enemy_hit:
+            issue("Live issues the site cannot show yet (no notice slot for enemy skills)", where)
 
     # ---------- skills
     skill_by_title = {}
@@ -490,15 +498,37 @@ def main(root, out, slugs_path=None, public_dir=None):
     companion_slug = {}
     companions = []
     companion_images = {}
-    apps_by_companion = collections.defaultdict(dict)
     companion_apps = {}
     for stem, r in sorted(companion_apps_src.items()):
+        companion_apps[stem] = application(stem, r["fm"], "companion", "CompanionEffectApplication")
+
+    # A Companion Skill names its companion and its applications; applications also list the companions that
+    # use them. The skill is the source for the page; disagreements are reported.
+    skill_of, skill_apps = {}, {}  # companion stem -> skill stem; skill stem -> [application stems]
+    for stem, r in sorted(companion_skills_src.items()):
         f = r["fm"]
-        where = f"CompanionEffectApplication '{clean(f.get('title')) or stem}'"
-        app = application(stem, f, "companion", "CompanionEffectApplication")
-        companion_apps[stem] = app
-        for owner in ref(f.get("companions"), "Companions", where, "companions", many=True):
-            apps_by_companion[owner][stem] = app
+        where = f"CompanionSkill '{clean(f.get('title')) or stem}'"
+        owners = ref(f.get("companion"), "Companions", where, "companion", many=True)
+        if len(owners) != 1:
+            issue("Companion skills", f"{where}: names {len(owners)} companions (needs exactly one)")
+        for owner in owners:
+            if owner in skill_of:
+                issue("Companion skills", f"Companion '{owner}' has more than one skill")
+            skill_of[owner] = stem
+        skill_apps[stem] = list(dict.fromkeys(
+            ref(f.get("effectApplications"), "CompanionEffectApplications", where, "effectApplications", many=True)))
+    used_companion_apps = {a for apps in skill_apps.values() for a in apps}
+    for stem, r in sorted(companion_apps_src.items()):
+        if stem not in used_companion_apps:
+            issue("Companion applications no skill links to", f"'{norm_title(r['fm'].get('title'))}'")
+        users = set(ref(r["fm"].get("companion"), "Companions", f"CompanionEffectApplication '{stem}'", "companion",
+                        many=True))
+        by_skill = {c for c, sk in skill_of.items() if stem in skill_apps.get(sk, [])}
+        if users != by_skill:
+            for c in sorted(users ^ by_skill):
+                issue("Companion applications and skills disagree",
+                      f"'{norm_title(r['fm'].get('title'))}': {c} is listed on the "
+                      f"{'application only' if c in users else 'skill only'}")
 
     for stem, r in sorted(companions_src.items()):
         f = r["fm"]
@@ -506,31 +536,47 @@ def main(root, out, slugs_path=None, public_dir=None):
         where = f"Companion '{name}'"
         slug = slug_for("companion", stem, name)
         companion_slug[stem] = slug
-        apps = apps_by_companion[stem]
-        for app_stem in ref(f.get("companionEffectApplications"), "CompanionEffectApplications", where,
-                            "companionEffectApplications", many=True):
-            apps[app_stem] = companion_apps[app_stem]
-        if not any(a["effect"] for a in apps.values()):
-            issue("Missing required values", f"{where}: no companion effect application with a resolved effect")
 
-        kind, rarity, stat, skill = (clean(f.get(k)) for k in ("companionType", "rarity", "ownedStat", "skillName"))
-        for prop, value in (("companionType", kind), ("rarity", rarity), ("ownedStat", stat), ("skillName", skill)):
+        skill_stem = skill_of.get(stem)
+        sf = companion_skills_src[skill_stem]["fm"] if skill_stem else {}
+        if not skill_stem:
+            issue("Missing required values", f"{where}: no Companion Skill names this companion")
+        for ln in links(f.get("companionSkill")):
+            if skill_stem and norm_title(ln[0]) != norm_title(sf.get("title", "")):
+                issue("Companion skills", f"{where}: its Companion Skill field and the skill's Companion field disagree")
+        app_stems = skill_apps.get(skill_stem, [])
+        apps = [companion_apps[a] for a in app_stems]
+        text = level_texts(companion_skills_src[skill_stem]["body"] or "") if skill_stem else {}
+        source = clean(sf.get("levelTextSource"))
+        if skill_stem and not text:
+            issue("Missing required values", f"{where}: skill has no '**Lv.1**' text")
+        if skill_stem and not any(a["effect"] for a in apps):
+            # a placeholder skill (no text source, no effects) is expected while the game shows the wrong skill
+            issue("Companion skills without effects (placeholder skills are expected here)", where) if not source \
+                else issue("Missing required values", f"{where}: no companion effect application with a resolved effect")
+
+        kind, rarity, identity = (clean(f.get(k)) for k in ("companionType", "rarity", "identity"))
+        skill = clean(sf.get("skillName"))
+        stat_stem = ref(f.get("bonusStat"), "Parameters", where, "bonusStat")
+        stat = par_name[stat_stem] if stat_stem else None  # the short form the wiki shows: ATK, HP, DEF
+        for prop, value in (("companionType", kind), ("rarity", rarity), ("identity", identity),
+                            ("bonusStat", stat), ("skillName (on its Companion Skill)", skill)):
             if not value:
                 issue("Missing required values", f"{where}: {prop} is empty")
+        if kind and kind not in COMPANION_TYPES:
+            issue("Values out of range", f"{where}: companionType '{kind}' is not one of {', '.join(COMPANION_TYPES)}")
         start = companion_number(f, "ownedStart", where)
-        step = companion_number(f, "ownedStep", where)
-        # Flag outliers for review while the known range is based on one companion.
+        step = companion_number(f, "ownedStep", where, required=False)
+        if step is None:
+            issue("Owned step unknown (the page shows the start value only)", where)
+        # Flag outliers for review while the known range is based on a few companions.
         if start is not None and step is not None and (start < 0 or step < 0 or start + step * MAX_COMPANION_STARS > 10_000):
             issue("Values out of range", f"{where}: implausible Owned Effect progression ({start}% + {step}% per star)")
-        thresholds = clean(f.get("skillLevelFromStars"))
-        levels = []
-        if thresholds is None:
-            issue("Missing required values", f"{where}: skillLevelFromStars is empty")
-        elif re.fullmatch(r"0\s*,\s*[1-9]\d?\s*,\s*[1-9]\d?", str(thresholds)):
-            levels = [int(n) for n in thresholds.split(",")]
-        if thresholds is not None and not (levels and 0 < levels[1] < levels[2] <= MAX_COMPANION_STARS):
-            issue("Values out of range", f"{where}: skillLevelFromStars must start at 0 and increase up to 11")
-            levels = []
+        # Optional checkbox: false marks a step that is inferred rather than seen. Never derived from ownership.
+        confirmed = f.get("stepConfirmed")
+        if confirmed is not None and not isinstance(confirmed, bool):
+            issue("Missing or invalid companion values", f"{where}: stepConfirmed must be true or false")
+            confirmed = None
 
         via = clean(f.get("introducedVia"))
         day = iso_day(f.get("introducedOn"))
@@ -547,11 +593,13 @@ def main(root, out, slugs_path=None, public_dir=None):
         if image:
             companion_images[slug] = urllib.parse.unquote(image.group(1))
         companions.append({
-            "id": slug, "name": name, "type": kind, "rarity": rarity, "image": None,
+            "id": slug, "name": name, "type": kind, "rarity": rarity, "image": None, "identity": identity,
             "introducedOn": day, "introducedVia": via, "introducedBanner": ban_slug.get(banner),
-            "skillName": skill, "skillLevelFromStars": levels,
-            "ownedStat": stat, "ownedStart": start, "ownedStep": step,
-            "applications": [app["id"] for app in apps.values()],
+            "skillName": skill, "skillLevelFromStars": COMPANION_LEVEL_STARS,
+            "ownedStat": stat, "ownedStart": start, "ownedStep": step, "stepConfirmed": confirmed,
+            "levelTextSource": source, "gameText": text,
+            "issues": companion_skill_issues.get(skill_stem, []) if skill_stem else [],
+            "applications": [a["id"] for a in apps],
         })
 
     # banner art: each BannerArt names one unit (bannerUnit) and one image
@@ -952,6 +1000,13 @@ def main(root, out, slugs_path=None, public_dir=None):
                 im.thumbnail((size, size), Image.LANCZOS)
                 im.save(os.path.join(dest, filename), "WEBP", quality=80, method=6)
                 record["image"] = filename
+            # remove images of records that no longer exist or lost their cover (enemies keep their golden versions)
+            wanted = {record["image"] for record in records if record["image"]}
+            if folder == "enemies":
+                wanted |= {f"{record['id']}-golden.webp" for record in records if enemy_golden_images.get(record["id"])}
+            for old in os.scandir(dest):
+                if old.is_file() and old.name.endswith(".webp") and old.name not in wanted:
+                    os.remove(old.path)
         # golden versions of minions get their own picture beside the normal one
         gdest = os.path.join(public_dir, "enemies")
         for record in enemies:
@@ -972,13 +1027,11 @@ def main(root, out, slugs_path=None, public_dir=None):
             filename = f"{record['id']}-golden.webp"
             im.save(os.path.join(gdest, filename), "WEBP", quality=80, method=6)
             record["goldenImage"] = filename
-            wanted = {record["image"] for record in records if record["image"]}
-            for old in os.scandir(dest):
-                if old.is_file() and old.name.endswith(".webp") and old.name not in wanted:
-                    os.remove(old.path)
 
     # ---------- vocabulary checks
     near_duplicates([u["identity"] for u in units], "identity")
+    for kind in COMPANION_TYPES:  # identities never match across types (or against wizards)
+        near_duplicates([c["identity"] for c in companions if c["type"] == kind], f"{kind} identity")
     near_duplicates([e["name"] for e in effects], "Effect title")
     near_duplicates([a["target"] for a in applications], "target")
     near_duplicates([e["value"]["unit"] for e in effects if e["value"]] +
