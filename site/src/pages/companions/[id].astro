@@ -95,12 +95,9 @@ const introduced = [c.introducedVia, c.introducedOn && `${dayText(c.introducedOn
         <section data-pagefind-ignore>
           <div class="section-title"><Pennant /><h2>Star progression</h2></div>
           <p class="muted summary">
-            {stepKnown
-              ? <>Owned bonus: {number.format(c.ownedStart!)}% {c.ownedStat ?? ''} at 0 stars, +{c.ownedStep}% for each star.</>
-              : c.ownedStart != null ? <>Owned bonus: {number.format(c.ownedStart)}% {c.ownedStat ?? ''} at 0 stars. The step per star is not recorded yet.</> : <>Owned bonus not recorded yet.</>}
-            {' '}Skill Lv.2 unlocks at ★{c.skillLevelFromStars[1]}, Lv.3 at red ★2 (★{c.skillLevelFromStars[2]}).
+            {c.ownedStart != null && <>Owned bonus: {number.format(c.ownedStart)}% {c.ownedStat ?? ''} at 0 stars{stepKnown && <>, +{c.ownedStep}% for each star</>}. </>}
+            Skill Lv.2 unlocks at ★{c.skillLevelFromStars[1]}, Lv.3 at red ★2 (★{c.skillLevelFromStars[2]}).
           </p>
-          {c.stepConfirmed === false && <p class="snote"><span class="nl">Note</span>The step per star is inferred from the starting value, not yet seen in game.</p>}
         </section>
       </div>
 
