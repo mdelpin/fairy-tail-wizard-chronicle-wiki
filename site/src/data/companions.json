@@ -290,7 +290,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says \"inflict on all enemies for 3 seconds:\" and lists only \"[Superior] Attack Power Down\", so the second effect does not appear. The Japanese text says the skill inflicts [Top] ATK Decrease and [Top] Critical Rate Decrease for 3 sec. The wiki records both effects. In the English client, Superior is the word for the Top tier. The damage (300% of the allies' average attack power every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game. On the card, the text says \"inflict on all enemies for 3 seconds:\" and lists only \"[Superior] Attack Power Down\", so the second effect does not appear. The Japanese text says the skill inflicts [Top] ATK Decrease and [Top] Critical Rate Decrease for 3 sec. The wiki records both effects. In the English client, Superior is the word for the Top tier. The damage (300% of the allies' average attack power every 12 sec) matches the Japanese."
    },
    {
     "problemType": "Wrong Wording",
@@ -583,7 +583,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says the skill grants all allies \"[Top] Accuracy Increase and\" and then stops, so the second effect does not appear. The Japanese text says the skill grants [Top] Accuracy Increase and [Top] Shield for 3 sec. The wiki records both effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game. On the card, the text says the skill grants all allies \"[Top] Accuracy Increase and\" and then stops, so the second effect does not appear. The Japanese text says the skill grants [Top] Accuracy Increase and [Top] Shield for 3 sec. The wiki records both effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese."
    },
    {
     "problemType": "Wrong Wording",
@@ -1046,7 +1046,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says the skill grants all allies \"[Top] Continuous Heal, [Top] Critical Rate Increase, and\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill grants [Top] Continuous Heal, [Top] Critical Rate Increase and [Top] ATK Increase for 3 sec. The wiki records all three effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game. On the card, the text says the skill grants all allies \"[Top] Continuous Heal, [Top] Critical Rate Increase, and\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill grants [Top] Continuous Heal, [Top] Critical Rate Increase and [Top] ATK Increase for 3 sec. The wiki records all three effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese."
    }
   ],
   "applications": [
@@ -1183,7 +1183,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says the skill inflicts \"[Top] Paralysis and [Top] Critical Rate Decrease,\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill inflicts [Top] Paralysis, [Top] Critical Rate Decrease and [Top] ATK Decrease for 3 sec. The wiki records all three effects. The damage (300% of all allies' average ATK every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game. On the card, the text says the skill inflicts \"[Top] Paralysis and [Top] Critical Rate Decrease,\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill inflicts [Top] Paralysis, [Top] Critical Rate Decrease and [Top] ATK Decrease for 3 sec. The wiki records all three effects. The damage (300% of all allies' average ATK every 12 sec) matches the Japanese."
    }
   ],
   "applications": [
@@ -1322,7 +1322,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the dragon's card, the only level visible for a dragon that is not owned, the text ends after \"Additionally, inflicts for 5 sec: [Top] Bleed\", so the second effect does not appear. The Japanese text says the skill inflicts [Top] Bleed and [Top] DEF Decrease for 5 sec. The wiki records both effects. The damage (450% of all allies' average ATK every 15 sec) and the 5 sec duration match the Japanese."
+    "note": "The English description is cut off in the game. On the dragon's card, the text ends after \"Additionally, inflicts for 5 sec: [Top] Bleed\", so the second effect does not appear. The Japanese text says the skill inflicts [Top] Bleed and [Top] DEF Decrease for 5 sec. The wiki records both effects. The damage (450% of all allies' average ATK every 15 sec) and the 5 sec duration match the Japanese."
    }
   ],
   "applications": [
@@ -1420,7 +1420,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the Exceed's card, the only level visible for an Exceed that is not owned, the text ends after \"grants all allies for 2 seconds: [Top] ATK Increase and\", so the second effect does not appear. The Japanese text says the skill grants all allies [Top] ATK Increase and [Top] Critical Rate Increase for 2 sec. The wiki records both effects. The heal (550% of all allies' average ATK on the ally with the lowest HP, every 6 sec) and the 2 sec duration match the Japanese."
+    "note": "The English description is cut off in the game. On the Exceed's card, the text ends after \"grants all allies for 2 seconds: [Top] ATK Increase and\", so the second effect does not appear. The Japanese text says the skill grants all allies [Top] ATK Increase and [Top] Critical Rate Increase for 2 sec. The wiki records both effects. The heal (550% of all allies' average ATK on the ally with the lowest HP, every 6 sec) and the 2 sec duration match the Japanese."
    }
   ],
   "applications": [
@@ -1582,7 +1582,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card screen, which shows Lv.2, the text says the skill grants all allies \"[Top] Critical Resistance Increase and,\" and then stops, so the second effect does not appear. The Japanese text lists two buffs at every level: [Top] Critical Resistance Increase and [Top] Continuous Heal. The wiki records both effects. The damage (300%, 400% and 500% of all allies' average ATK every 12 sec) and the 3, 4 and 5 sec durations come from the Japanese."
+    "note": "The English description is cut off in the game. On the card screen, the text says the skill grants all allies \"[Top] Critical Resistance Increase and,\" and then stops, so the second effect does not appear. The Japanese text lists two buffs at every level: [Top] Critical Resistance Increase and [Top] Continuous Heal. The wiki records both effects. The damage (300%, 400% and 500% of all allies' average ATK every 12 sec) and the 3, 4 and 5 sec durations come from the Japanese."
    }
   ],
   "applications": [
@@ -1618,7 +1618,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says the skill \"grants all allies [Top] ATK Increase and\" and then stops, so the second effect and the duration do not appear. The Japanese text says the skill grants [Top] ATK Increase and [Top] Shield for 3 sec. The wiki records both effects. The damage (300% of the party's average ATK every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game. On the card, the text says the skill \"grants all allies [Top] ATK Increase and\" and then stops, so the second effect and the duration do not appear. The Japanese text says the skill grants [Top] ATK Increase and [Top] Shield for 3 sec. The wiki records both effects. The damage (300% of the party's average ATK every 12 sec) matches the Japanese."
    }
   ],
   "applications": [
