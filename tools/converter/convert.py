@@ -588,6 +588,8 @@ def main(root, out, slugs_path=None, public_dir=None):
                 day = None
         elif via:
             issue("Missing required values", f"{where}: introducedVia is set but introducedOn is empty")
+        if day and day > date.today().isoformat():
+            issue("Introduced dates in the future (wrong year?)", f"{where}: {day}")
         banner = ref(f.get("introducedBanner"), "Banners", where, "introducedBanner")
         image = re.search(r"\]\(\.\./Images/Media/(.+?)\)(?=['\"\]]|\s*$)", str(f.get("coverImage") or ""))
         if image:

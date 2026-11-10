@@ -168,11 +168,13 @@ class CompanionConverterTest(unittest.TestCase):
             sample(root)
             record(root, "Companions", "Needs review", companionType="Fairy", introducedVia="Event",
                    introducedBanner=["[[Sample Event Banner]]"], ownedStart=50, ownedStep=1000, stepConfirmed="yes")
+            record(root, "Companions", "Future Card", introducedVia="Roulette", introducedOn="2999-01-01T00:00:00.000Z")
             self.run_converter(root, output, Path(directory) / "public")
             report = (output / "validation-report.md").read_text()
             for warning in ("no Companion Skill names this companion", "introducedOn is empty", "is not one of",
                             "implausible Owned Effect progression", "does not list it", "rarity is empty",
-                            "identity is empty", "bonusStat is empty", "stepConfirmed must be true or false"):
+                            "identity is empty", "bonusStat is empty", "stepConfirmed must be true or false",
+                            "Introduced dates in the future"):
                 self.assertIn(warning, report)
 
 
