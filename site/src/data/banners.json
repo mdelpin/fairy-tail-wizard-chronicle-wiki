@@ -62,7 +62,9 @@
    "holy-night-juvia",
    "holy-night-mirajane"
   ],
-  "companions": [],
+  "companions": [
+   "fire-dragon-king-igneel"
+  ],
   "cover": "holy-night-event-banner.webp"
  },
  {
@@ -76,7 +78,9 @@
    "first-dream-erza",
    "first-dream-laxus"
   ],
-  "companions": [],
+  "companions": [
+   "first-dream-aquarius"
+  ],
   "cover": "new-year-s-first-dream-banner.webp"
  },
  {
@@ -103,7 +107,9 @@
    "cyberpunk-rogue",
    "cyberpunk-sting"
   ],
-  "companions": [],
+  "companions": [
+   "cyberpunk-frosch"
+  ],
   "cover": "cyberpuunk-banner.webp"
  },
  {
@@ -130,7 +136,9 @@
    "bunny-lucy",
    "bunny-yukino"
   ],
-  "companions": [],
+  "companions": [
+   "bunny-virgo"
+  ],
   "cover": "victory-bunny-banner.webp"
  },
  {
@@ -157,7 +165,9 @@
    "sweet-gift-juvia",
    "sweet-gift-levy"
   ],
-  "companions": [],
+  "companions": [
+   "sweet-gift-carla"
+  ],
   "cover": "sweet-gift-banner.webp"
  },
  {
@@ -171,7 +181,9 @@
    "noir-cana",
    "noir-gildarts"
   ],
-  "companions": [],
+  "companions": [
+   "skiadrum"
+  ],
   "cover": "noir-family-banner.webp"
  },
  {
@@ -211,7 +223,9 @@
    "white-gift-gajeel",
    "white-gift-gray"
   ],
-  "companions": [],
+  "companions": [
+   "white-gift-leo"
+  ],
   "cover": "white-gift-banner.webp"
  },
  {
@@ -239,7 +253,9 @@
    "egg-hunt-brandish",
    "egg-hunt-irene"
   ],
-  "companions": [],
+  "companions": [
+   "irene-dragon-form"
+  ],
   "cover": "egg-hunt-wizard-banner.webp"
  },
  {
@@ -253,7 +269,9 @@
    "block-lucy",
    "block-natsu"
   ],
-  "companions": [],
+  "companions": [
+   "block-happy"
+  ],
   "cover": "block-chronicle-banner.webp"
  },
  {
@@ -280,7 +298,9 @@
    "academy-kagura",
    "academy-lisanna"
   ],
-  "companions": [],
+  "companions": [
+   "academy-capricorn"
+  ],
   "cover": "madochro-academy-banner.webp"
  },
  {
@@ -294,7 +314,9 @@
    "erza-knightwalker",
    "natsu-dragion"
   ],
-  "companions": [],
+  "companions": [
+   "shagotte"
+  ],
   "cover": "parallel-world-banner.webp"
  },
  {
@@ -321,7 +343,9 @@
    "moonlit-reverie-levy",
    "moonlit-reverie-mavis"
   ],
-  "companions": [],
+  "companions": [
+   "moonlit-reverie-aries"
+  ],
   "cover": "moonlit-reverie-banner.webp"
  },
  {
@@ -335,7 +359,9 @@
    "ignia",
    "lucy-leo-x-virgo-form"
   ],
-  "companions": [],
+  "companions": [
+   "mercphobia-the-water-dragon-god"
+  ],
   "cover": "half-anniversary-banner.webp"
  },
  {
@@ -349,7 +375,9 @@
    "suzaku",
    "wendy-bakeneko"
   ],
-  "companions": [],
+  "companions": [
+   "selene-the-moon-dragon-god"
+  ],
   "cover": "half-anniversary-part-2-banner.webp"
  },
  {
@@ -376,7 +404,9 @@
    "pure-white-oath-erza",
    "pure-white-oath-jellal"
   ],
-  "companions": [],
+  "companions": [
+   "pure-white-oath-lyra"
+  ],
   "cover": "pure-white-oath-banner.webp"
  },
  {
@@ -404,7 +434,9 @@
    "starry-night-reunion-mavis",
    "starry-night-reunion-zeref"
   ],
-  "companions": [],
+  "companions": [
+   "nikora"
+  ],
   "cover": "starry-night-reunion-banner.webp"
  },
  {
@@ -442,7 +474,9 @@
    "midsummer-sorcerer-lucy",
    "midsummer-sorcerer-mirajane"
   ],
-  "companions": [],
+  "companions": [
+   "midsummer-sorcerer-virgo"
+  ],
   "cover": "midsummer-sorcerer-banner.webp"
  },
  {
@@ -467,7 +501,9 @@
    "blazing-beach-vacation-laxus",
    "blazing-beach-vacation-natsu"
   ],
-  "companions": [],
+  "companions": [
+   "blazing-beach-vacation-happy"
+  ],
   "cover": "blazing-beach-vacation-banner.webp"
  },
  {
@@ -505,7 +541,9 @@
    "swaying-in-the-summer-night-cana",
    "swaying-in-the-summer-night-lisanna"
   ],
-  "companions": [],
+  "companions": [
+   "swaying-in-the-summer-night-carla"
+  ],
   "cover": "swaying-in-the-summer-night-banner.webp"
  },
  {
@@ -519,7 +557,9 @@
    "swayed-by-the-evening-breeze-gildarts",
    "swayed-by-the-evening-breeze-mystogan"
   ],
-  "companions": [],
+  "companions": [
+   "swayed-by-the-evening-breeze-panther-lily"
+  ],
   "cover": "swayed-by-the-evening-breeze-banner.webp"
  },
  {
@@ -557,7 +597,9 @@
    "otherworld-adventure-erza",
    "otherworld-adventure-kagura"
   ],
-  "companions": [],
+  "companions": [
+   "otherworld-adventure-gemini"
+  ],
   "cover": "otherworld-adventure-banner.webp"
  },
  {
@@ -571,7 +613,9 @@
    "fairy-harvest-festival-makarov",
    "fairy-harvest-festival-wendy"
   ],
-  "companions": [],
+  "companions": [
+   "grandeeney"
+  ],
   "cover": "fairy-harvest-festival-banner.webp"
  },
  {
@@ -612,7 +656,9 @@
    "rock-n-magic-juvia",
    "rock-n-magic-lucy"
   ],
-  "companions": [],
+  "companions": [
+   "rock-n-magic-virgo"
+  ],
   "cover": "rock-n-magic-banner.webp"
  },
  {
@@ -637,7 +683,9 @@
    "twin-moon-halloween-sherria",
    "twin-moon-halloween-sherry"
   ],
-  "companions": [],
+  "companions": [
+   "twin-moon-halloween-aquarius"
+  ],
   "cover": "twin-moon-halloween-banner.webp"
  },
  {
@@ -673,7 +721,9 @@
    "parallel-world-wendy",
    "parallel-world-mystogan"
   ],
-  "companions": [],
+  "companions": [
+   "dorma-anim-black-sky"
+  ],
   "cover": "parallel-world-part-2-banner.webp"
  },
  {

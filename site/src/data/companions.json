@@ -1,1 +1,1630 @@
-[]
+[
+ {
+  "id": "academy-capricorn",
+  "name": "Academy Capricorn",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "academy-capricorn.webp",
+  "identity": "Capricorn",
+  "introducedOn": "2026-04-10",
+  "introducedVia": "Event",
+  "introducedBanner": "madochro-academy",
+  "skillName": "Passionate Coaching!",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Deals damage equal to 300% of the party's average ATK to all enemies every 12 seconds. Additionally inflicts all enemies with [Top] Burn and [Top] Critical Resistance Decrease for 3 seconds.",
+   "Lv2": "Deals damage equal to 400% of the party's average ATK to all enemies every 12 seconds. Additionally inflicts all enemies with [Top] Burn and [Top] Critical Resistance Decrease for 4 seconds.",
+   "Lv3": "Deals damage equal to 500% of the party's average ATK to all enemies every 12 seconds. Additionally inflicts all enemies with [Top] Burn and [Top] Critical Resistance Decrease for 5 seconds."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the card, which shows Lv.1, the text ends after \"Additionally inflicts all enemies with [Top] Burn and\", so the second effect and the duration do not appear. The Japanese text says the skill inflicts [Top] Burn and [Top] Critical Resistance Decrease for 3 sec. The wiki records both effects. The damage (300% of the party's average ATK every 12 sec) matches the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-burn-all-enemies-every-12-sec-3-sec",
+   "top-critical-resistance-decrease-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "acnologia",
+  "name": "Acnologia",
+  "type": "Dragon",
+  "rarity": "UR",
+  "image": "acnologia.webp",
+  "identity": "Acnologia",
+  "introducedOn": "2025-12-03",
+  "introducedVia": "Medal Exchange Shop",
+  "introducedBanner": null,
+  "skillName": "Eternal Flare",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 15 sec, deals damage to all enemies equal to 500% of the party's average ATK. Additionally, for 5 sec, inflicts Darkness, [Top] Burn, and Heal Block on the targets."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-15-sec-500-of-party-s-average-atk",
+   "blind-all-enemies-every-15-sec-5-sec",
+   "top-burn-all-enemies-every-15-sec-5-sec",
+   "heal-block-all-enemies-every-15-sec-5-sec"
+  ]
+ },
+ {
+  "id": "aera-carla",
+  "name": "Aera Carla",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "aera-carla.webp",
+  "identity": "Carla",
+  "introducedOn": "2025-12-25",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Eyes That See the Future",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, heals the ally with the lowest HP for 500% of the party's average ATK, and grants all allies for 2 sec, [High] Continuous Heal.",
+   "Lv2": "Every 6 sec, heals the ally with the lowest HP for 550% of the party's average ATK, and grants all allies for 3 sec, [High] Continuous Heal.",
+   "Lv3": "Every 6 sec, heals the ally with the lowest HP for 600% of the party's average ATK, and grants all allies for 4 sec, [High] Continuous Heal."
+  },
+  "issues": [],
+  "applications": [
+   "heal-lowest-hp-ally-every-6-sec-500-of-party-s-average-atk",
+   "high-continuous-heal-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "aera-frosch",
+  "name": "Aera Frosch",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "aera-frosch.webp",
+  "identity": "Frosch",
+  "introducedOn": "2026-01-22",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Princess Oracle",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, inflicts on all enemies for 2 sec, [Top] ATK Decrease and [Top] Critical Damage Decrease."
+  },
+  "issues": [],
+  "applications": [
+   "top-atk-decrease-all-enemies-every-6-sec-2-sec",
+   "top-critical-damage-decrease-all-enemies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "aera-happy",
+  "name": "Aera Happy",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "aera-happy.webp",
+  "identity": "Happy",
+  "introducedOn": "2025-12-11",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Wings of Good Fortune",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, grants all allies for 2 sec, [Top] ATK Increase and [Top] Critical Damage Increase.",
+   "Lv2": "Every 6 sec, grants all allies for 3 sec, [Top] ATK Increase and [Top] Critical Damage Increase.",
+   "Lv3": "Every 6 sec, grants all allies for 4 sec, [Top] ATK Increase and [Top] Critical Damage Increase."
+  },
+  "issues": [],
+  "applications": [
+   "top-atk-increase-all-allies-every-6-sec-2-sec",
+   "top-critical-damage-increase-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "aera-lector",
+  "name": "Aera Lector",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "aera-lector.webp",
+  "identity": "Lector",
+  "introducedOn": "2026-09-17",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Is that all?",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, inflicts all enemies with [Top] Evasion Decrease and [Top] Critical Rate Decrease for 2 sec."
+  },
+  "issues": [],
+  "applications": [
+   "top-evasion-decrease-all-enemies-every-6-sec-2-sec",
+   "top-critical-rate-decrease-all-enemies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "aera-panther-lily",
+  "name": "Aera Panther Lily",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "aera-panther-lily.webp",
+  "identity": "Panther Lily",
+  "introducedOn": "2026-01-08",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Steel Will",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, grants all allies for 2 sec, [Top] DEF Increase and [Top] Critical Defense Increase.",
+   "Lv2": "Every 6 sec, grants all allies for 3 sec, [Top] DEF Increase and [Top] Critical Defense Increase.",
+   "Lv3": "Every 6 sec, grants all allies for 4 sec, [Top] DEF Increase and [Top] Critical Defense Increase."
+  },
+  "issues": [],
+  "applications": [
+   "top-def-increase-all-allies-every-6-sec-2-sec",
+   "top-critical-defense-increase-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "aquarius",
+  "name": "Aquarius",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "aquarius.webp",
+  "identity": "Aquarius",
+  "introducedOn": "2026-01-29",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Aquametria",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 12 seconds, deal damage to all enemies equal to 300% of the average attack power of all allies. Furthermore, grant all allies the following buffs for 3 seconds: [Superior] Attack Power Up and [Superior] Critical Rate Up.",
+   "Lv2": "Every 12 seconds, deal damage to all enemies equal to 400% of the average attack power of all allies. Furthermore, grant all allies the following buffs for 4 seconds: [Superior] Attack Power Up and [Superior] Critical Rate Up.",
+   "Lv3": "Every 12 seconds, deal damage to all enemies equal to 500% of the average attack power of all allies. Furthermore, grant all allies the following buffs for 5 seconds: [Superior] Attack Power Up and [Superior] Critical Rate Up."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. At every level the text says the skill grants \"the following buffs\" but lists only \"[Superior] Attack Power Up\". The Japanese text lists two buffs: [Top] ATK Increase and [Top] Critical Rate Increase. The wiki records both effects. In the English client, Superior is the word for the Top tier. The damage (300%, 400% and 500% of all allies' average ATK every 12 sec) and the 3, 4 and 5 sec durations match the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-atk-increase-all-allies-every-12-sec-3-sec",
+   "top-critical-rate-increase-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "aries",
+  "name": "Aries",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "aries.webp",
+  "identity": "Aries",
+  "introducedOn": "2026-01-01",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Wool Bomb",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 12 seconds, deal damage to all enemies equal to 300% of the average attack power of all allies. Furthermore, inflict on all enemies for 3 seconds: [Superior] Attack Power Down and [Superior] Critical Rate Down."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says \"inflict on all enemies for 3 seconds:\" and lists only \"[Superior] Attack Power Down\", so the second effect does not appear. The Japanese text says the skill inflicts [Top] ATK Decrease and [Top] Critical Rate Decrease for 3 sec. The wiki records both effects. In the English client, Superior is the word for the Top tier. The damage (300% of the allies' average attack power every 12 sec) matches the Japanese."
+   },
+   {
+    "problemType": "Wrong Wording",
+    "note": "The English card shows the skill name \"Aquametria\", which is the name of Aquarius's skill. The Japanese card names Aries's skill ウールボム (Wool Bomb). The description under the name is Aries's own (300% damage with Attack Power Down), so only the name is wrong. The wiki uses the Japanese name."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-atk-decrease-all-enemies-every-12-sec-3-sec",
+   "top-critical-rate-decrease-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "blazing-beach-vacation-happy",
+  "name": "Blazing Beach Vacation Happy",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "blazing-beach-vacation-happy.webp",
+  "identity": "Happy",
+  "introducedOn": "2026-07-31",
+  "introducedVia": "Event",
+  "introducedBanner": "blazing-beach-vacation",
+  "skillName": "Happy Summer",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec., grants all allies [Top] ATK Increase, [Top] DEF Increase, and [Top] Accuracy Increase for 2 sec.",
+   "Lv2": "Every 6 sec., grants all allies [Top] ATK Increase, [Top] DEF Increase, and [Top] Accuracy Increase for 3 sec.",
+   "Lv3": "Every 6 sec., grants all allies [Top] ATK Increase, [Top] DEF Increase, and [Top] Accuracy Increase for 4 sec."
+  },
+  "issues": [],
+  "applications": [
+   "top-atk-increase-all-allies-every-6-sec-2-sec",
+   "top-def-increase-all-allies-every-6-sec-2-sec",
+   "top-accuracy-increase-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "block-happy",
+  "name": "Block Happy",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "block-happy.webp",
+  "identity": "Happy",
+  "introducedOn": "2026-04-01",
+  "introducedVia": "Event",
+  "introducedBanner": "block-chronicle",
+  "skillName": "Happy Ale",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6s, grants all allies for 2s: [High] ATK Increase and [High] DEF Increase.",
+   "Lv2": "Every 6s, grants all allies for 3s: [High] ATK Increase and [High] DEF Increase.",
+   "Lv3": "Every 6s, grants all allies for 4s: [High] ATK Increase and [High] DEF Increase."
+  },
+  "issues": [],
+  "applications": [
+   "high-atk-increase-all-allies-every-6-sec-2-sec",
+   "high-def-increase-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "bunny-virgo",
+  "name": "Bunny Virgo",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "bunny-virgo.webp",
+  "identity": "Virgo",
+  "introducedOn": "2026-01-30",
+  "introducedVia": "Event",
+  "introducedBanner": "victory-bunny",
+  "skillName": "Bunny Hole Surprise",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 12 seconds, deal damage equal to 300% of the average ATK of all allies to all enemies. Additionally, apply to all enemies for 3 seconds [Top] Paralysis and [Top] Evasion Decrease."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-paralysis-all-enemies-every-12-sec-3-sec",
+   "top-evasion-decrease-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "capricorn",
+  "name": "Capricorn",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "capricorn.webp",
+  "identity": "Capricorn",
+  "introducedOn": "2026-07-16",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Capricorn Combination",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also grants all allies [Top] Critical Damage Increase and [Top] Continuous Heal for 3 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-critical-damage-increase-all-allies-every-12-sec-3-sec",
+   "top-continuous-heal-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "carla",
+  "name": "Carla",
+  "type": "Exceed",
+  "rarity": "SR",
+  "image": "carla.webp",
+  "identity": "Carla",
+  "introducedOn": "2025-12-03",
+  "introducedVia": "Medal Exchange Shop",
+  "introducedBanner": null,
+  "skillName": "Princess Oracle",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, heals the ally with the lowest HP for 200% of the target's ATK.",
+   "Lv2": "Every 6 sec, heals the ally with the lowest HP for 250% of the target's ATK.",
+   "Lv3": "Every 6 sec, heals the ally with the lowest HP for 300% of the target's ATK."
+  },
+  "issues": [],
+  "applications": [
+   "heal-lowest-hp-ally-every-6-sec-200-of-target-s-atk"
+  ]
+ },
+ {
+  "id": "cyberpunk-frosch",
+  "name": "Cyberpunk Frosch",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "cyberpunk-frosch.webp",
+  "identity": "Frosch",
+  "introducedOn": "2026-01-16",
+  "introducedVia": "Event",
+  "introducedBanner": "cyberpunk",
+  "skillName": "Easy Install",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 seconds, inflict all enemies for 2 seconds with Silence and [Top] DEF Decrease."
+  },
+  "issues": [],
+  "applications": [
+   "silence-all-enemies-every-6-sec-2-sec",
+   "top-def-decrease-all-enemies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "dorma-anim-black-sky",
+  "name": "Dorma Anim Black Sky",
+  "type": "Dragon",
+  "rarity": "UR",
+  "image": "dorma-anim-black-sky.webp",
+  "identity": "Dorma Anim",
+  "introducedOn": "2026-11-06",
+  "introducedVia": "Event",
+  "introducedBanner": "parallel-world-part-2",
+  "skillName": "Evil Dragon Knight's Strike",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 15 sec, deals damage equal to 450% of all allies' average ATK to all enemies.\nAlso inflicts [Top] Burn,[Top] ATK Decrease,[Top] Critical Damage Decrease on targets for 5 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-15-sec-450-of-party-s-average-atk",
+   "top-burn-all-enemies-every-15-sec-5-sec",
+   "top-atk-decrease-all-enemies-every-15-sec-5-sec",
+   "top-critical-damage-decrease-all-enemies-every-15-sec-5-sec"
+  ]
+ },
+ {
+  "id": "fire-dragon-king-igneel",
+  "name": "Fire Dragon King Igneel",
+  "type": "Dragon",
+  "rarity": "UR",
+  "image": "fire-dragon-king-igneel.webp",
+  "identity": "Igneel",
+  "introducedOn": "2025-12-19",
+  "introducedVia": "Event",
+  "introducedBanner": "holy-night-festival",
+  "skillName": "Roar of the Flame Dragon King",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 15 sec, deals damage to all enemies equal to 450% of the party's average ATK.\nAdditionally, for 5 sec, inflicts [Top] Burn and Silence on the targets.",
+   "Lv2": "Every 15 sec, deals damage to all enemies equal to 550% of the party's average ATK.\nAdditionally, for 6 sec, inflicts [Top] Burn and Silence on the targets.",
+   "Lv3": "Every 15 sec, deals damage to all enemies equal to 650% of the party's average ATK.\nAdditionally, for 7 sec, inflicts [Top] Burn and Silence on the targets."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-15-sec-450-of-party-s-average-atk",
+   "top-burn-all-enemies-every-15-sec-5-sec",
+   "silence-all-enemies-every-15-sec-5-sec"
+  ]
+ },
+ {
+  "id": "first-dream-aquarius",
+  "name": "First Dream Aquarius",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "first-dream-aquarius.webp",
+  "identity": "Aquarius",
+  "introducedOn": "2026-01-02",
+  "introducedVia": "Event",
+  "introducedBanner": "new-year-first-dream",
+  "skillName": "Water God's First Shrine Visit",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 12 seconds, deal damage equal to 300% of the average ATK of all allies to all enemies. Also grant all allies for 3 seconds [Top] Accuracy Increase and [Top] Shield."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says the skill grants all allies \"[Top] Accuracy Increase and\" and then stops, so the second effect does not appear. The Japanese text says the skill grants [Top] Accuracy Increase and [Top] Shield for 3 sec. The wiki records both effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese."
+   },
+   {
+    "problemType": "Wrong Wording",
+    "note": "The English card shows the skill name \"Aquametria\", which is the name of the regular Aquarius's skill. The Japanese card names this skill 水神の初詣, a different name from the regular Aquarius's skill, so the English name looks like a copy. The description under the name is this card's own (Accuracy Increase and Shield), so only the name is affected. The wiki uses a translation of the Japanese name."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-accuracy-increase-all-allies-every-12-sec-3-sec",
+   "top-shield-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "fishing-happy",
+  "name": "Fishing Happy",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "fishing-happy.webp",
+  "identity": "Happy",
+  "introducedOn": "2026-08-06",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Where's the fish!?",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec., inflicts all enemies with [Top] Critical Resistance Decrease and [Top] Critical Damage Decrease for 2 sec."
+  },
+  "issues": [],
+  "applications": [
+   "top-critical-resistance-decrease-all-enemies-every-6-sec-2-sec",
+   "top-critical-damage-decrease-all-enemies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "frosch",
+  "name": "Frosch",
+  "type": "Exceed",
+  "rarity": "SR",
+  "image": "frosch.webp",
+  "identity": "Frosch",
+  "introducedOn": "2025-12-03",
+  "introducedVia": "Medal Exchange Shop",
+  "introducedBanner": null,
+  "skillName": "Fro Fights!",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, inflicts on all enemies for 2 sec, Silence.",
+   "Lv2": "Every 6 sec, inflicts on all enemies for 3 sec, Silence.",
+   "Lv3": "Every 6 sec, inflicts on all enemies for 4 sec, Silence."
+  },
+  "issues": [],
+  "applications": [
+   "silence-all-enemies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "gemini",
+  "name": "Gemini",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "gemini.webp",
+  "identity": "Gemini",
+  "introducedOn": "2026-07-30",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Twins Harmony",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also inflicts all enemies with [Top] DEF Decrease and Heal Block for 3 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-def-decrease-all-enemies-every-12-sec-3-sec",
+   "heal-block-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "grandeeney",
+  "name": "Grandeeney",
+  "type": "Dragon",
+  "rarity": "UR",
+  "image": "grandeeney.webp",
+  "identity": "Grandeeney",
+  "introducedOn": "2026-09-25",
+  "introducedVia": "Event",
+  "introducedBanner": "fairy-harvest-festival",
+  "skillName": "Sky Dragon's Roar",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 15 sec, deals damage equal to 450% of all allies' average ATK to all enemies. Also inflicts [Top] Bleed, [Top] Critical Rate Decrease and [Top] DEF Decrease on targets for 5 sec.",
+   "Lv2": "Every 15 sec, deals damage equal to 550% of all allies' average ATK to all enemies. Also inflicts [Top] Bleed, [Top] Critical Rate Decrease and [Top] DEF Decrease on targets for 6 sec.",
+   "Lv3": "Every 15 sec, deals damage equal to 650% of all allies' average ATK to all enemies. Also inflicts [Top] Bleed, [Top] Critical Rate Decrease and [Top] DEF Decrease on targets for 7 sec."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game at every skill level. On the dragon's card and in the rank-up list, the text stops after \"Also inflicts [Top] Bleed and [Top] Critical Rate Decrease,\", so the last effect and the duration do not appear. The Japanese text shows the full description: [Top] Bleed, [Top] Critical Rate Decrease and [Top] DEF Decrease, for 5 sec at Lv.1, 6 sec at Lv.2 and 7 sec at Lv.3. The wiki records the full text. The damage shown in English (450%, 550% and 650% of all allies' average ATK) matches the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-15-sec-450-of-party-s-average-atk",
+   "top-bleed-all-enemies-every-15-sec-5-sec",
+   "top-critical-rate-decrease-all-enemies-every-15-sec-5-sec",
+   "top-def-decrease-all-enemies-every-15-sec-5-sec"
+  ]
+ },
+ {
+  "id": "happy",
+  "name": "Happy",
+  "type": "Exceed",
+  "rarity": "SR",
+  "image": "happy.webp",
+  "identity": "Happy",
+  "introducedOn": "2025-12-03",
+  "introducedVia": "Medal Exchange Shop",
+  "introducedBanner": null,
+  "skillName": "Happy Ale",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, grants all allies for 2 sec, [High] DEF Increase.",
+   "Lv2": "Every 6 sec, grants all allies for 3 sec, [High] DEF Increase.",
+   "Lv3": "Every 6 sec, grants all allies for 4 sec, [High] DEF Increase."
+  },
+  "issues": [],
+  "applications": [
+   "high-def-increase-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "igneel-sr",
+  "name": "Igneel (SR)",
+  "type": "Dragon",
+  "rarity": "SR",
+  "image": "igneel-sr.webp",
+  "identity": "Igneel",
+  "introducedOn": "2025-12-03",
+  "introducedVia": "Medal Exchange Shop",
+  "introducedBanner": null,
+  "skillName": "Fire Dragon's Claw",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 15 sec, deals damage to all enemies equal to 300% of the party's average ATK. Additionally, for 3 sec, inflicts [High] Bleed on the targets.",
+   "Lv2": "Every 15 sec, deals damage to all enemies equal to 400% of the party's average ATK. Additionally, for 4 sec, inflicts [High] Bleed on the targets.",
+   "Lv3": "Every 15 sec, deals damage to all enemies equal to 500% of the party's average ATK. Additionally, for 5 sec, inflicts [High] Bleed on the targets."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-15-sec-300-of-party-s-average-atk",
+   "high-bleed-all-enemies-every-15-sec-3-sec"
+  ]
+ },
+ {
+  "id": "irene-dragon-form",
+  "name": "Irene -Dragon Form-",
+  "type": "Dragon",
+  "rarity": "UR",
+  "image": "irene-dragon-form.webp",
+  "identity": "Irene",
+  "introducedOn": "2026-03-27",
+  "introducedVia": "Event",
+  "introducedBanner": "egg-hunt-wizard",
+  "skillName": "Dracolux",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 15 sec, deals damage equal to 450% of the average ATK of all allies to all enemies.\nAdditionally inflicts Silence and Heal Block on the targets for 5 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-15-sec-450-of-party-s-average-atk",
+   "silence-all-enemies-every-15-sec-5-sec",
+   "heal-block-all-enemies-every-15-sec-5-sec"
+  ]
+ },
+ {
+  "id": "lector",
+  "name": "Lector",
+  "type": "Exceed",
+  "rarity": "SR",
+  "image": "lector.webp",
+  "identity": "Lector",
+  "introducedOn": "2025-12-03",
+  "introducedVia": "Medal Exchange Shop",
+  "introducedBanner": null,
+  "skillName": "Arrogant Attitude",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, inflicts on all enemies for 2 sec, [High] Accuracy Decrease.",
+   "Lv2": "Every 6 sec, inflicts on all enemies for 3 sec, [High] Accuracy Decrease.",
+   "Lv3": "Every 6 sec, inflicts on all enemies for 4 sec, [High] Accuracy Decrease."
+  },
+  "issues": [],
+  "applications": [
+   "high-accuracy-decrease-all-enemies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "leo",
+  "name": "Leo",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "leo.webp",
+  "identity": "Leo",
+  "introducedOn": "2026-01-15",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Regulus Impact",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Deals damage equal to 300% of the allies' average ATK to all enemies every 12 seconds. Additionally, applies the following effects to all enemies for 3 seconds: [Top] Bleed and [Top] DEF Decrease.",
+   "Lv2": "Deals damage equal to 400% of the allies' average ATK to all enemies every 12 seconds. Additionally, applies the following effects to all enemies for 4 seconds: [Top] Bleed and [Top] DEF Decrease.",
+   "Lv3": "Deals damage equal to 500% of the allies' average ATK to all enemies every 12 seconds. Additionally, applies the following effects to all enemies for 5 seconds: [Top] Bleed and [Top] DEF Decrease."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-bleed-all-enemies-every-12-sec-3-sec",
+   "top-def-decrease-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "mercphobia-the-water-dragon-god",
+  "name": "Mercphobia, the Water Dragon God",
+  "type": "Dragon",
+  "rarity": "UR",
+  "image": "mercphobia-the-water-dragon-god.webp",
+  "identity": "Mercphobia",
+  "introducedOn": "2026-06-05",
+  "introducedVia": "Event",
+  "introducedBanner": "fabled-quest-i",
+  "skillName": "Roar of the Water Dragon",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Deals damage equal to 450% of all allies' average ATK to all enemies every 15 sec. Also inflicts Silence, [Top] Critical Defense Decrease, and [Top] DEF Decrease on the targets for 5 sec.",
+   "Lv2": "Deals damage equal to 550% of all allies' average ATK to all enemies every 15 sec. Also inflicts Silence, [Top] Critical Defense Decrease, and [Top] DEF Decrease on the targets for 6 sec.",
+   "Lv3": "Deals damage equal to 650% of all allies' average ATK to all enemies every 15 sec. Also inflicts Silence, [Top] Critical Defense Decrease, and [Top] DEF Decrease on the targets for 7 sec."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On both the dragon's card and the rank-up list, the text stops after \"Also inflicts Silence, [Top] Critical Defense Decrease, and\", so the final effect and the duration do not appear at any level. The Japanese text shows the full description: Silence, [Top] Critical Defense Decrease and [Top] DEF Decrease, for 5 / 6 / 7 sec. The wiki records the full text. The damage shown in English (450% / 550% / 650% of all allies' average ATK) matches the Japanese at every level."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-15-sec-450-of-party-s-average-atk",
+   "top-critical-defense-decrease-all-enemies-every-15-sec-5-sec",
+   "top-def-decrease-all-enemies-every-15-sec-5-sec",
+   "silence-all-enemies-every-15-sec-5-sec"
+  ]
+ },
+ {
+  "id": "midsummer-sorcerer-virgo",
+  "name": "Midsummer Sorcerer Virgo",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "midsummer-sorcerer-virgo.webp",
+  "identity": "Virgo",
+  "introducedOn": "2026-07-17",
+  "introducedVia": "Event",
+  "introducedBanner": "midsummer-sorcerer",
+  "skillName": "Summer Split!",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Then inflicts Heal Block and [Top] DEF Decrease on all enemies for 3 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "heal-block-all-enemies-every-12-sec-3-sec",
+   "top-def-decrease-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "moonlit-reverie-aries",
+  "name": "Moonlit Reverie Aries",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "moonlit-reverie-aries.webp",
+  "identity": "Aries",
+  "introducedOn": "2026-05-08",
+  "introducedVia": "Event",
+  "introducedBanner": "moonlit-reverie",
+  "skillName": "Aries Thundercloud Spell",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Deals damage equal to 300% of the average ATK of all allies to all enemies every 12 seconds. Also inflicts [Top] Paralysis and [Top] DEF Decrease on all enemies for 3 seconds."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-paralysis-all-enemies-every-12-sec-3-sec",
+   "top-def-decrease-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "nikora",
+  "name": "Nikora",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "nikora.webp",
+  "identity": "Nikora",
+  "introducedOn": "2026-07-04",
+  "introducedVia": "Event",
+  "introducedBanner": "starry-night-reunion",
+  "skillName": "Puun!",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Deals damage equal to 300% of all allies' average ATK to all enemies every 12 sec. Also inflicts [Top] Bleed and [Top] ATK Decrease on all enemies for 3 sec.",
+   "Lv2": "Deals damage equal to 400% of all allies' average ATK to all enemies every 12 sec. Also inflicts [Top] Bleed and [Top] ATK Decrease on all enemies for 4 sec.",
+   "Lv3": "Deals damage equal to 500% of all allies' average ATK to all enemies every 12 sec. Also inflicts [Top] Bleed and [Top] ATK Decrease on all enemies for 5 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-bleed-all-enemies-every-12-sec-3-sec",
+   "top-atk-decrease-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "otherworld-adventure-gemini",
+  "name": "Otherworld Adventure Gemini",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "otherworld-adventure-gemini.webp",
+  "identity": "Gemini",
+  "introducedOn": "2026-09-11",
+  "introducedVia": "Event",
+  "introducedBanner": "otherworld-adventure",
+  "skillName": "Gemini Horn",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 12 sec, deals damage equal to 300% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 3 sec."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says the skill grants all allies \"[Top] Continuous Heal, [Top] Critical Rate Increase, and\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill grants [Top] Continuous Heal, [Top] Critical Rate Increase and [Top] ATK Increase for 3 sec. The wiki records all three effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-continuous-heal-all-allies-every-12-sec-3-sec",
+   "top-critical-rate-increase-all-allies-every-12-sec-3-sec",
+   "top-atk-increase-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "panther-lily",
+  "name": "Panther Lily",
+  "type": "Exceed",
+  "rarity": "SR",
+  "image": "panther-lily.webp",
+  "identity": "Panther Lily",
+  "introducedOn": "2025-12-03",
+  "introducedVia": "Medal Exchange Shop",
+  "introducedBanner": null,
+  "skillName": "Unshakable Spirit",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, grants all allies for 2 sec, [High] ATK Increase.",
+   "Lv2": "Every 6 sec, grants all allies for 3 sec, [High] ATK Increase.",
+   "Lv3": "Every 6 sec, grants all allies for 4 sec, [High] ATK Increase."
+  },
+  "issues": [],
+  "applications": [
+   "high-atk-increase-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "pisces",
+  "name": "Pisces",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "pisces.webp",
+  "identity": "Pisces",
+  "introducedOn": "2026-08-27",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Parent-Child Bond",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also grants all allies [Top] DEF Increase and Action Block Barrier for 3 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-def-increase-all-allies-every-12-sec-3-sec",
+   "action-block-barrier-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "pure-white-oath-lyra",
+  "name": "Pure White Oath Lyra",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "pure-white-oath-lyra.webp",
+  "identity": "Lyra",
+  "introducedOn": "2026-06-12",
+  "introducedVia": "Event",
+  "introducedBanner": "pure-white-oath",
+  "skillName": "Blessed Harp",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Deals damage equal to 300% of the average ATK of all allies to all enemies every 12 sec. Also grants all allies for 3 sec, [Top] Continuous Heal and [Top] DEF Increase.",
+   "Lv2": "Deals damage equal to 400% of the average ATK of all allies to all enemies every 12 sec. Also grants all allies for 4 sec, [Top] Continuous Heal and [Top] DEF Increase.",
+   "Lv3": "Deals damage equal to 500% of the average ATK of all allies to all enemies every 12 sec. Also grants all allies for 5 sec, [Top] Continuous Heal and [Top] DEF Increase."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the card, which shows Lv.1, the text says the skill grants all allies \"[Top] Continuous Heal and\" and then stops, so the second effect does not appear. The Japanese text lists two buffs at every level: [Top] Continuous Heal and [Top] DEF Increase. The wiki records both effects. The damage (300%, 400% and 500% of all allies' average ATK every 12 sec) and the 3, 4 and 5 sec durations come from the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-continuous-heal-all-allies-every-12-sec-3-sec",
+   "top-def-increase-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "rock-n-magic-virgo",
+  "name": "Rock'n Magic Virgo",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "rock-n-magic-virgo.webp",
+  "identity": "Virgo",
+  "introducedOn": "2026-10-09",
+  "introducedVia": "Event",
+  "introducedBanner": "rock-n-magic",
+  "skillName": "Punk the Rock",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also inflicts [Top] Paralysis, [Top] Critical Rate Decrease, and [Top] ATK Decrease for 3 sec."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says the skill inflicts \"[Top] Paralysis and [Top] Critical Rate Decrease,\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill inflicts [Top] Paralysis, [Top] Critical Rate Decrease and [Top] ATK Decrease for 3 sec. The wiki records all three effects. The damage (300% of all allies' average ATK every 12 sec) matches the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-paralysis-all-enemies-every-12-sec-3-sec",
+   "top-critical-rate-decrease-all-enemies-every-12-sec-3-sec",
+   "top-atk-decrease-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "scorpio",
+  "name": "Scorpio",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "scorpio.webp",
+  "identity": "Scorpio",
+  "introducedOn": "2026-08-14",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Sand Buster",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also inflicts all enemies with [Top] Critical Defense Decrease and [Top] Bleed for 3 sec.",
+   "Lv2": "Every 12 sec, deals damage equal to 400% of all allies' average ATK to all enemies. Also inflicts all enemies with [Top] Critical Defense Decrease and [Top] Bleed for 4 sec.",
+   "Lv3": "Every 12 sec, deals damage equal to 500% of all allies' average ATK to all enemies. Also inflicts all enemies with [Top] Critical Defense Decrease and [Top] Bleed for 5 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-critical-defense-decrease-all-enemies-every-12-sec-3-sec",
+   "top-bleed-all-enemies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "selene-the-moon-dragon-god",
+  "name": "Selene, the Moon Dragon God",
+  "type": "Dragon",
+  "rarity": "UR",
+  "image": "selene-the-moon-dragon-god.webp",
+  "identity": "Selene",
+  "introducedOn": "2026-06-05",
+  "introducedVia": "Event",
+  "introducedBanner": "fabled-quest-ii",
+  "skillName": "Moonlight Palm",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 15 sec, deals damage equal to 450% of all allies' average ATK to all enemies.\nAdditionally, inflicts [Top] Paralysis on targets for 5 sec, [Top] Critical Resistance Decrease, [Top] Evasion Decrease."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the dragon's card, the text stops after \"Additionally, inflicts [Top] Paralysis on targets for 5 sec, [Top] Critical Resistance Decrease,\", so the final effect does not appear. The Japanese text shows the full description: [Top] Paralysis, [Top] Critical Resistance Decrease and [Top] Evasion Decrease, for 5 sec. The wiki records the full text. The damage shown in English (450% of all allies' average ATK) matches the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-15-sec-450-of-party-s-average-atk",
+   "top-paralysis-all-enemies-every-15-sec-5-sec",
+   "top-critical-resistance-decrease-all-enemies-every-15-sec-5-sec",
+   "top-evasion-decrease-all-enemies-every-15-sec-5-sec"
+  ]
+ },
+ {
+  "id": "shagotte",
+  "name": "Shagotte",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "shagotte.webp",
+  "identity": "Shagotte",
+  "introducedOn": "2026-04-24",
+  "introducedVia": "Event",
+  "introducedBanner": "parallel-world",
+  "skillName": "Queen's Majesty",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Restores HP of the ally with the lowest HP every 6 seconds by 650% of the party's average ATK, and grants all allies for 2 seconds: [Top] ATK Increase",
+   "Lv2": "Restores HP of the ally with the lowest HP every 6 seconds by 700% of the party's average ATK, and grants all allies for 3 seconds: [Top] ATK Increase",
+   "Lv3": "Restores HP of the ally with the lowest HP every 6 seconds by 750% of the party's average ATK, and grants all allies for 4 seconds: [Top] ATK Increase"
+  },
+  "issues": [],
+  "applications": [
+   "heal-lowest-hp-ally-every-6-sec-650-of-party-s-average-atk",
+   "top-atk-increase-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "skiadrum",
+  "name": "Skiadrum",
+  "type": "Dragon",
+  "rarity": "UR",
+  "image": "skiadrum.webp",
+  "identity": "Skiadrum",
+  "introducedOn": "2026-02-27",
+  "introducedVia": "Event",
+  "introducedBanner": "noir-family",
+  "skillName": "Shadow Dragon's Roar",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 15 sec, deals damage equal to 450% of the average ATK of all allies to all enemies. Additionally, inflicts for 5 sec: [Top] Bleed and [Top] DEF Decrease."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the dragon's card, the only level visible for a dragon that is not owned, the text ends after \"Additionally, inflicts for 5 sec: [Top] Bleed\", so the second effect does not appear. The Japanese text says the skill inflicts [Top] Bleed and [Top] DEF Decrease for 5 sec. The wiki records both effects. The damage (450% of all allies' average ATK every 15 sec) and the 5 sec duration match the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-15-sec-450-of-party-s-average-atk",
+   "top-bleed-all-enemies-every-15-sec-5-sec",
+   "top-def-decrease-all-enemies-every-15-sec-5-sec"
+  ]
+ },
+ {
+  "id": "swayed-by-the-evening-breeze-panther-lily",
+  "name": "Swayed by the Evening Breeze Panther Lily",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "swayed-by-the-evening-breeze-panther-lily.webp",
+  "identity": "Panther Lily",
+  "introducedOn": "2026-08-28",
+  "introducedVia": "Event",
+  "introducedBanner": "swayed-by-the-evening-breeze",
+  "skillName": "Lunar Cast",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, inflicts [Top] ATK Decrease, [Top] Critical Rate Decrease, and [Top] DEF Decrease on all enemies for 3 sec."
+  },
+  "issues": [],
+  "applications": [
+   "top-atk-decrease-all-enemies-every-6-sec-3-sec",
+   "top-critical-rate-decrease-all-enemies-every-6-sec-3-sec",
+   "top-def-decrease-all-enemies-every-6-sec-3-sec"
+  ]
+ },
+ {
+  "id": "swaying-in-the-summer-night-carla",
+  "name": "Swaying in the Summer Night Carla",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "swaying-in-the-summer-night-carla.webp",
+  "identity": "Carla",
+  "introducedOn": "2026-08-14",
+  "introducedVia": "Event",
+  "introducedBanner": "swaying-in-the-summer-night",
+  "skillName": "Princess Scoop",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec, inflicts all enemies with [High] Paralysis, [Top] Critical Resistance Decrease, and [Top] Evasion Decrease for 3 sec."
+  },
+  "issues": [],
+  "applications": [
+   "high-paralysis-all-enemies-every-6-sec-3-sec",
+   "top-critical-resistance-decrease-all-enemies-every-6-sec-3-sec",
+   "top-evasion-decrease-all-enemies-every-6-sec-3-sec"
+  ]
+ },
+ {
+  "id": "sweet-gift-carla",
+  "name": "Sweet Gift Carla",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "sweet-gift-carla.webp",
+  "identity": "Carla",
+  "introducedOn": "2026-02-12",
+  "introducedVia": "Event",
+  "introducedBanner": "sweet-gift",
+  "skillName": "Gift from the Princess",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 6 seconds, restores HP of the ally with the lowest HP by 550% of the average ATK of all allies, and grants all allies for 2 seconds: [Top] ATK Increase and"
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the Exceed's card, the only level visible for an Exceed that is not owned, the text ends after \"grants all allies for 2 seconds: [Top] ATK Increase and\", so the second effect does not appear. The Japanese text says the skill grants all allies [Top] ATK Increase and [Top] Critical Rate Increase for 2 sec. The wiki records both effects. The heal (550% of all allies' average ATK on the ally with the lowest HP, every 6 sec) and the 2 sec duration match the Japanese."
+   }
+  ],
+  "applications": [
+   "heal-lowest-hp-ally-every-6-sec-550-of-party-s-average-atk",
+   "top-atk-increase-all-allies-every-6-sec-2-sec",
+   "top-critical-rate-increase-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "swordsman-panther-lily",
+  "name": "Swordsman Panther Lily",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "swordsman-panther-lily.webp",
+  "identity": "Panther Lily",
+  "introducedOn": "2026-09-03",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Intimidating Command",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec., inflicts all enemies with [Top] Evasion Rate Decrease and [Top] Critical Rate Decrease for 2 sec."
+  },
+  "issues": [],
+  "applications": [
+   "top-evasion-decrease-all-enemies-every-6-sec-2-sec",
+   "top-critical-rate-decrease-all-enemies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "taurus",
+  "name": "Taurus",
+  "type": "Celestial Spirit",
+  "rarity": "SR",
+  "image": "taurus.webp",
+  "identity": "Taurus",
+  "introducedOn": "2025-12-03",
+  "introducedVia": "Medal Exchange Shop",
+  "introducedBanner": null,
+  "skillName": "Taurus Slash",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 12 seconds, deals damage to all enemies equal to 200% of the average attack power of all allies. Furthermore, grants all allies the [Advanced] Attack Power Up buff for 3 seconds.",
+   "Lv2": "Every 12 seconds, deals damage to all enemies equal to 300% of the average attack power of all allies. Furthermore, grants all allies the [Advanced] Attack Power Up buff for 4 seconds.",
+   "Lv3": "Every 12 seconds, deals damage to all enemies equal to 400% of the average attack power of all allies. Furthermore, grants all allies the [Advanced] Attack Power Up buff for 5 seconds."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-200-of-party-s-average-atk",
+   "high-atk-increase-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "tea-time-carla",
+  "name": "Tea Time Carla",
+  "type": "Exceed",
+  "rarity": "UR",
+  "image": "tea-time-carla.webp",
+  "identity": "Carla",
+  "introducedOn": "2026-08-20",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "A Graceful Moment",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 50,
+  "ownedStep": 50,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 6 sec., grants all allies [Top] Critical Resistance Increase and [High] Continuous Heal for 2 sec."
+  },
+  "issues": [],
+  "applications": [
+   "top-critical-resistance-increase-all-allies-every-6-sec-2-sec",
+   "high-continuous-heal-all-allies-every-6-sec-2-sec"
+  ]
+ },
+ {
+  "id": "twin-moon-halloween-aquarius",
+  "name": "Twin Moon Halloween Aquarius",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "twin-moon-halloween-aquarius.webp",
+  "identity": "Aquarius",
+  "introducedOn": "2026-10-23",
+  "introducedVia": "Event",
+  "introducedBanner": "twin-moon-halloween",
+  "skillName": "Not available",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "ATK",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": null,
+  "gameText": {
+   "Lv1": "This card's skill is not available. The game currently shows another card's skill here."
+  },
+  "issues": [
+   {
+    "problemType": "Other",
+    "note": "The card shows the skill name \"Punk the Rock\" and a description (300% damage every 12 sec, then [Top] Paralysis, [Top] Critical Rate Decrease and [Top] ATK Decrease for 3 sec) that belong to Rock'n Magic Virgo. The English and the Japanese client show the same thing, so this is not a translation problem. The card's owned bonus (+100% Attack) is its own. Because the card's real skill is unknown, the wiki shows no skill for it until the game shows the card's own."
+   }
+  ],
+  "applications": []
+ },
+ {
+  "id": "virgo",
+  "name": "Virgo",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "virgo.webp",
+  "identity": "Virgo",
+  "introducedOn": "2026-01-29",
+  "introducedVia": "Roulette",
+  "introducedBanner": null,
+  "skillName": "Virgo Kick",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "HP",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Every 12s, deal damage to all enemies equal to 300% of all allies' average ATK. Also grants all allies for 3s, [Top] Critical Resistance Increase and [Top] Continuous Heal.",
+   "Lv2": "Every 12s, deal damage to all enemies equal to 400% of all allies' average ATK. Also grants all allies for 4s, [Top] Critical Resistance Increase and [Top] Continuous Heal.",
+   "Lv3": "Every 12s, deal damage to all enemies equal to 500% of all allies' average ATK. Also grants all allies for 5s, [Top] Critical Resistance Increase and [Top] Continuous Heal."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the card screen, which shows Lv.2, the text says the skill grants all allies \"[Top] Critical Resistance Increase and,\" and then stops, so the second effect does not appear. The Japanese text lists two buffs at every level: [Top] Critical Resistance Increase and [Top] Continuous Heal. The wiki records both effects. The damage (300%, 400% and 500% of all allies' average ATK every 12 sec) and the 3, 4 and 5 sec durations come from the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-critical-resistance-increase-all-allies-every-12-sec-3-sec",
+   "top-continuous-heal-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
+  "id": "white-gift-leo",
+  "name": "White Gift Leo",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "white-gift-leo.webp",
+  "identity": "Leo",
+  "introducedOn": "2026-03-13",
+  "introducedVia": "Event",
+  "introducedBanner": "white-gift",
+  "skillName": "Regulus White Gift",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": 100,
+  "stepConfirmed": null,
+  "levelTextSource": "Corrected from Japanese text",
+  "gameText": {
+   "Lv1": "Deals 300% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 3 seconds."
+  },
+  "issues": [
+   {
+    "problemType": "Truncated Text",
+    "note": "The English description is cut off in the game. On the card, the only level visible for a Celestial Spirit that is not owned, the text says the skill \"grants all allies [Top] ATK Increase and\" and then stops, so the second effect and the duration do not appear. The Japanese text says the skill grants [Top] ATK Increase and [Top] Shield for 3 sec. The wiki records both effects. The damage (300% of the party's average ATK every 12 sec) matches the Japanese."
+   }
+  ],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-atk-increase-all-allies-every-12-sec-3-sec",
+   "top-shield-all-allies-every-12-sec-3-sec"
+  ]
+ }
+]

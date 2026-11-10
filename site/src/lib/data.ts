@@ -35,18 +35,25 @@ export interface Application {
   requires: { families: string[]; match: string | null; subject?: string | null } | null;
   gameText: string | null;
 }
-export interface CompanionApplication extends Pick<Application, 'id' | 'effect' | 'type' | 'target' | 'trigger' | 'chance' | 'condition' | 'gameText'> {
+export interface CompanionApplication extends Pick<Application, 'id' | 'effect' | 'type' | 'target' | 'trigger' | 'chance' | 'durationSeconds' | 'valueOverride' | 'condition' | 'gameText'> {
   source: 'companion';
-  durationByLevel: [number | null, number | null, number | null];
 }
 export interface Companion {
   id: string; name: string; type: string | null; rarity: string | null; image: string | null;
+  /** Same word on the cards of one character; compared only within one companion type, never with wizards. */
+  identity: string | null;
   introducedOn: string | null; introducedVia: string | null; introducedBanner: string | null;
   skillName: string | null; skillLevelFromStars: number[];
   ownedStat: string | null; ownedStart: number | null; ownedStep: number | null;
+  /** false = the step per star is inferred, not seen in game; null = nothing recorded. */
+  stepConfirmed: boolean | null;
+  levelTextSource: string | null;
+  /** Lv1..Lv3 text as recorded; a card may have only Lv1. */
+  gameText: Record<string, string>;
+  issues: KnownIssue[];
   applications: string[];
 }
-export const COMPANION_TYPES = ['Spirit', 'Exceed', 'Dragon'] as const;
+export const COMPANION_TYPES = ['Celestial Spirit', 'Exceed', 'Dragon'] as const;
 export const MAX_COMPANION_STARS = 11;
 /** A live, reported fault in the game's own data; `note` is the editor's public wording. */
 export interface KnownIssue { problemType: string | null; note: string }
@@ -208,11 +215,12 @@ const UNIT_SHORT: Record<string, string> = {
   'Percent of own ATK': '% ATK', 'Percent of Own ATK': '% ATK', 'Percent of ATK per sec': '% ATK/s',
   'Percentage of Source ATK per second': '% ATK/s', 'Percent': '%', 'Seconds': 's',
   'Percent of Max HP': '% max HP', 'Percent of HP Lost': '% HP lost', 'Flat Value': '',
+  "Percent of Party's Average ATK": "% of party's average ATK", "Percent of Target's ATK": "% of target's ATK",
 };
 const short = (u: string) => UNIT_SHORT[u] ?? ' ' + u;
 
 /** Value shown in effect tables: the application's own value, else the effect's default (+ secondary stat). */
-export function valueText(a: Application, e: Effect | undefined): string {
+export function valueText(a: Pick<Application, 'valueOverride'>, e: Effect | undefined): string {
   const parts: string[] = [];
   const sign = e && e.mechanic === 'Stat Modifier' ? (direction(e) === 'Down' ? '−' : '+') : '';
   const v = a.valueOverride ?? e?.value ?? null;
