@@ -186,12 +186,12 @@ const teamData = JSON.stringify({
       <button type="button" id="lac-close" class="lac-x" aria-label="Close">×</button>
     </div>
     <p class="muted fine lac-sub" id="lac-sub"></p>
-    <label class="sr-only" for="lac-q">Search lacrimas</label>
-    <input id="lac-q" type="search" placeholder="Name, text or signature wizard" autocomplete="off" />
     <div class="selrow">
       <label for="lac-fx">Effect</label>
       <select id="lac-fx"><option value="">Any effect</option></select>
     </div>
+    <label class="sr-only" for="lac-q">Search lacrimas</label>
+    <input id="lac-q" type="search" placeholder="Filter by name or text" autocomplete="off" />
     <ul id="lac-list" class="lac-list"></ul>
     <p id="lac-none" class="muted" hidden>No lacrima matches.</p>
   </dialog>
@@ -492,7 +492,6 @@ const teamData = JSON.stringify({
       const top = el('div', 'lr-top');
       const name = el('span', 'heading nm', l.n);
       top.append(name, el('span', 'badge2', l.sg ? 'Signature' : 'Stat'));
-      if (l.i) { const k = el('a', 'badge2 warn', 'Known issue'); k.href = `${data.lacUrl}#${l.id}`; k.setAttribute('aria-label', `Known issue with ${l.n}: open on the Lacrimas page`); top.append(k); }
       li.append(top);
       if (l.sg) li.append(el('div', 'lr-sub', `Signature: ${l.sn}`));
       for (const r of l.r) {
