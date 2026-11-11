@@ -33,6 +33,8 @@ export interface Application {
   valueOverride: { amount: number; unit: string } | null;
   condition: string | null;
   requires: { families: string[]; match: string | null; subject?: string | null } | null;
+  /** Set when the effect grows with something on the team (e.g. allies of an attribute); the numbers are in the skill text. */
+  scaling?: Record<string, unknown> | null;
   gameText: string | null;
 }
 export interface CompanionApplication extends Pick<Application, 'id' | 'effect' | 'type' | 'target' | 'trigger' | 'chance' | 'durationSeconds' | 'valueOverride' | 'condition' | 'gameText'> {
@@ -416,6 +418,48 @@ export function lacrimaRows(l: Lacrima) {
     return [{ app, effect, label: fm ? fm.label : effect ? baseName(effect) : null, group: triggerGroup(app.trigger) }];
   });
 }
+
+// ---------- target groups and condition notes (shared by the Effect Finder and the team page) ----------
+/** Targets are grouped for filtering; each row still shows its exact wording. */
+export const TARGET_GROUPS = ['Single enemy', 'Multiple enemies', 'Self', 'Allies', 'Other'];
+export const targetGroup = (t: string | null) =>
+  !t ? 'Other'
+  : t === 'Single Enemy' ? 'Single enemy'
+  : /^(Each Target Hit|All Enemies|Enemies )/.test(t) ? 'Multiple enemies'
+  : t === 'Self' ? 'Self'
+  : /(Allies|Ally)$/.test(t) ? 'Allies'
+  : 'Other';
+/** What an effect needs before it applies: a status on the enemy, else the recorded condition text; null when unconditional. */
+export const needNote = (a: Pick<Application, 'requires' | 'condition'>) =>
+  a.requires?.families?.length ? `Needs ${a.requires.families.join(' or ')} ${a.requires.subject === 'Target Hit' ? 'on each enemy hit' : 'on the target'}` : a.condition ?? null;
+
+// ---------- short codes for the team page URL ----------
+/** 32-bit FNV-1a: tiny, dependency-free, and gives the same answer at build time and in the browser. */
+export function fnv1a(s: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return h >>> 0;
+}
+export const CODE_LENGTH = 4;
+/**
+ * A record's short code, derived from its kind and slug (no registry to maintain). Units and lacrimas
+ * have separate code spaces, because the team page URL always knows which one it is reading.
+ */
+export const shortCode = (kind: 'unit' | 'lacrima', id: string) =>
+  (fnv1a(`${kind}:${id}`) % 36 ** CODE_LENGTH).toString(36).padStart(CODE_LENGTH, '0');
+/** code -> id for one kind. Throws, naming both records, if two share a code, so a clash fails the build instead of breaking links. */
+function codeTable(kind: 'unit' | 'lacrima', ids: string[]) {
+  const byCode = new Map<string, string>();
+  for (const id of ids) {
+    const code = shortCode(kind, id);
+    const other = byCode.get(code);
+    if (other) throw new Error(`Team page short-code clash: ${kind} '${other}' and '${id}' both derive the code '${code}'. Change CODE_LENGTH or the hash before publishing, since changing codes later breaks shared team links.`);
+    byCode.set(code, id);
+  }
+  return byCode;
+}
+export const unitByCode = codeTable('unit', units.map((u) => u.id));
+export const lacrimaByCode = codeTable('lacrima', lacrimas.map((l) => l.id));
 
 export const tierRank = (t: string | null) => (t ? TIER_ORDER.indexOf(t) : 9);
 export const initials = (name: string) =>

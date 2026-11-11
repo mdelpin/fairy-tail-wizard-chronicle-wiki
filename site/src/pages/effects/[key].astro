@@ -5,6 +5,7 @@ import MagicCircle from '../../components/MagicCircle.astro';
 import Kanji from '../../components/Kanji.astro';
 import {
   buildFinderIndex, buildCounterIndex, familyBlurb, families, raritiesIn, effects, WIKI_CREDIT, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
+  TARGET_GROUPS, targetGroup, needNote,
   type FamilyMeta, type Match, type LacrimaMatch, type CompanionMatch, type Unit, type Skill, type Application,
 } from '../../lib/data';
 
@@ -50,20 +51,10 @@ const showStats = !!(famRec?.definition && famRec.affectedStats.length);
 const raritiesPresent = raritiesIn(cards.map((c) => c.unit));
 const attrsPresent = ATTR_ORDER.filter((x) => cards.some((c) => c.unit.attribute === x));
 const rolesPresent = ROLES.filter((x) => cards.some((c) => c.unit.role === x));
-// Targets are grouped for filtering; each row still shows its exact wording
-const TARGET_GROUPS = ['Single enemy', 'Multiple enemies', 'Self', 'Allies', 'Other'];
-const targetGroup = (t: string | null) =>
-  !t ? 'Other'
-  : t === 'Single Enemy' ? 'Single enemy'
-  : /^(Each Target Hit|All Enemies|Enemies )/.test(t) ? 'Multiple enemies'
-  : t === 'Self' ? 'Self'
-  : /(Allies|Ally)$/.test(t) ? 'Allies'
-  : 'Other';
+// Targets are grouped for filtering (TARGET_GROUPS and targetGroup live in lib/data.ts, shared with the team page); each row still shows its exact wording
 const targetsPresent = TARGET_GROUPS.filter((g) => cards.some((c) => c.rows.some((r) => targetGroup(r.app.target) === g)));
 // Reliability, best first: 0 no condition and no chance; 1 needs a status on the enemy; 2 a chance to proc; 3 any other condition
 const reliability = (a: Application) => (a.condition ? 3 : a.chance != null ? 2 : a.requires ? 1 : 0);
-const needNote = (a: Application) =>
-  a.requires?.families?.length ? `Needs ${a.requires.families.join(' or ')} ${a.requires.subject === 'Target Hit' ? 'on each enemy hit' : 'on the target'}` : a.condition ?? null;
 const kindsPresent = new Set(cards.flatMap((c) => c.rows.map((r) => r.skill.kind)));
 const showSkillFilter = kindsPresent.has('Ultimate') && kindsPresent.size > 1;
 
