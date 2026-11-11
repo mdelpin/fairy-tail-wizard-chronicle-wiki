@@ -1,0 +1,513 @@
+---
+import Base from '../../layouts/Base.astro';
+import Kanji from '../../components/Kanji.astro';
+import Pennant from '../../components/Pennant.astro';
+import {
+  units, applications, effects, familyKey, GROUPS, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TARGET_GROUPS, TIER_ORDER, raritiesIn,
+  url, initials, portraits, roleIcon, shortCode, targetGroup, needNote,
+} from '../../lib/data';
+
+/** A team is six wizards plus a leader. */
+const MAX_TEAM = 7;
+
+// One entry per effect page of the Effect Finder that any wizard provides; rows point into this list.
+const fxIndex = new Map<string, number>();
+const fxList: { k: string; l: string; g: string }[] = [];
+// Per wizard (keyed by short code): one compact row per effect it applies:
+// [effect index, target group index, exact target wording, skill kind index, condition note, has scaling,
+//  tier, repeat seconds, duration seconds, chance percent, skill name]
+type Row = (string | number | null)[];
+const rowsByCode: Record<string, Row[]> = {};
+const fxByUnit = new Map<string, string[]>();
+for (const u of units) {
+  const seen = new Set<string>();
+  const rows: Row[] = [];
+  for (const skill of u.skills) for (const id of skill.applications) {
+    const app = applications.get(id); if (!app) continue;
+    const effect = app.effect ? effects.get(app.effect) : undefined;
+    const fm = effect && familyKey(effect); if (!fm) continue;
+    let i = fxIndex.get(fm.key);
+    if (i === undefined) { i = fxList.length; fxIndex.set(fm.key, i); fxList.push({ k: fm.key, l: fm.label, g: fm.group }); }
+    const row: Row = [
+      i, TARGET_GROUPS.indexOf(targetGroup(app.target)), app.target ?? '', KIND_ORDER.indexOf(skill.kind), needNote(app) ?? '', app.scaling ? 1 : 0,
+      effect.tier ?? '', app.trigger?.everySeconds || null, app.durationSeconds ?? null, app.chance != null ? Math.round(app.chance * 100) : null, skill.name ?? skill.kind,
+    ];
+    const sig = JSON.stringify(row);
+    if (seen.has(sig)) continue;
+    seen.add(sig); rows.push(row);
+  }
+  rowsByCode[shortCode('unit', u.id)] = rows;
+  fxByUnit.set(u.id, [...new Set(rows.map((r) => fxList[r[0] as number].k))]);
+}
+// Effect chooser: only effects some wizard provides, in the Effect Finder's groups
+const effectOptions = GROUPS.map(([g]) => ({ group: g, items: fxList.filter((f) => f.g === g).sort((a, b) => a.l.localeCompare(b.l)) })).filter((g) => g.items.length);
+
+const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, targets: TARGET_GROUPS, kinds: KIND_ORDER, tiers: TIER_ORDER, rows: rowsByCode }).replace(/</g, '\\u003c');
+---
+<Base title="Team Overview" section="team" description="Pick up to seven wizards and see which effects they provide together, and who provides them. A reference view: it does not rank or recommend teams.">
+  <div class="wrap">
+    <div class="head">
+      <Pennant width={34} star />
+      <div>
+        <h1>Team Overview</h1>
+        <p class="muted">Pick up to {MAX_TEAM} wizards and see which effects they provide together, and who provides them. It shows what is recorded; it does not rank or recommend teams.</p>
+      </div>
+    </div>
+
+    <section class="panel pad" aria-labelledby="sel-h">
+      <div class="bar">
+        <h2 id="sel-h">Selection <span class="count" id="count" aria-live="polite">0 of {MAX_TEAM}</span></h2>
+        <button type="button" class="link" id="clear-team" hidden>Clear selection</button>
+      </div>
+      <p class="muted hint" id="pins-empty">No wizards picked yet. Choose an effect or filter the roster below, then add wizards.</p>
+      <ul class="pins" id="pins" aria-label="Picked wizards"></ul>
+    </section>
+
+    <section class="panel pad summary" id="summary" aria-labelledby="sum-h">
+      <h2 id="sum-h">What the selection provides</h2>
+      <p class="muted hint" id="sum-empty">Pick wizards to see their effects here.</p>
+      <div id="sum"></div>
+      <p class="fine">Effects are shown as recorded for each wizard's skills. Conditions are listed as written and are not checked against the rest of the team. Basic damage and transformations are not listed. Lacrimas are not included yet. Your picks are kept in the page address: bookmark or share it to keep them.</p>
+    </section>
+
+    <div class="section-title"><h2>Wizards</h2><p><span id="shown">{units.length}</span> of {units.length}</p></div>
+    <div class="filters panel">
+      <div class="selrow">
+        <label for="f-fx">Effect</label>
+        <select id="f-fx">
+          <option value="">Choose an effect…</option>
+          {effectOptions.map((g) => <optgroup label={g.group}>{g.items.map((f) => <option value={f.k}>{f.l}</option>)}</optgroup>)}
+        </select>
+      </div>
+      <div class="row" id="r-tier" role="group" aria-label="Tier" hidden>
+        <span class="lbl">Tier</span>
+        <button type="button" class="pill" data-filter="tier" data-value="" aria-pressed="true">All</button>
+        {TIER_ORDER.map((t) => <button type="button" class="pill" data-filter="tier" data-value={t} aria-pressed="false">{t}</button>)}
+      </div>
+      <div class="row" id="r-target" role="group" aria-label="Target" hidden>
+        <span class="lbl">Target</span>
+        <button type="button" class="pill" data-filter="target" data-value="" aria-pressed="true">All</button>
+        {TARGET_GROUPS.map((t) => <button type="button" class="pill" data-filter="target" data-value={t} aria-pressed="false">{t}</button>)}
+      </div>
+      <div class="row" id="r-sort" role="group" aria-label="Sort" hidden>
+        <span class="lbl">Sort</span>
+        <button type="button" class="pill" data-filter="sort" data-value="tier" aria-pressed="true">Tier</button>
+        <button type="button" class="pill" data-filter="sort" data-value="fastest" aria-pressed="false">Fastest</button>
+      </div>
+      <label class="sr-only" for="f-q">Filter by name</label>
+      <input id="f-q" type="search" placeholder="Filter by name" />
+      {raritiesIn(units).length > 1 && (
+        <div class="row" role="group" aria-label="Rarity">
+          <span class="lbl">Rarity</span>
+          <button type="button" class="pill" data-filter="rarity" data-value="" aria-pressed="true">All</button>
+          {raritiesIn(units).map((r) => <button type="button" class="pill" data-filter="rarity" data-value={r} aria-pressed="false">{r}</button>)}
+        </div>
+      )}
+      <div class="row" role="group" aria-label="Attribute">
+        <span class="lbl">Attribute</span>
+        <button type="button" class="pill" data-filter="attr" data-value="" aria-pressed="true">All</button>
+        {ATTR_ORDER.map((a) => (
+          <button type="button" class="pill" data-filter="attr" data-value={a} aria-pressed="false">
+            <Kanji attr={a} size={22} />{a}
+          </button>
+        ))}
+      </div>
+      <div class="row" role="group" aria-label="Role">
+        <span class="lbl">Role</span>
+        <button type="button" class="pill" data-filter="role" data-value="" aria-pressed="true">All</button>
+        {ROLES.map((r) => <button type="button" class="pill" data-filter="role" data-value={r} aria-pressed="false"><img class="ric" src={roleIcon(r)} alt="" width="24" height="24" />{r}</button>)}
+      </div>
+      <p class="muted fine" id="active" hidden><button type="button" class="link clear">Clear filters</button></p>
+    </div>
+
+    <ul class="roster" id="roster">
+      {units.map((u) => (
+        <li data-code={shortCode('unit', u.id)} data-id={u.id} data-name={u.name} data-attr={u.attribute} data-role={u.role} data-rarity={u.rarity}
+            data-color={ATTR[u.attribute].color} data-search={`${u.name} ${u.identity ?? ''}`.toLowerCase()}
+            data-href={url(`characters/${u.id}/`)} data-thumb={portraits.has(u.id) ? url(`portraits/${u.id}.webp`) : ''}>
+          <button type="button" class="pick" aria-pressed="false" style={`--c:${ATTR[u.attribute].color}`}>
+            <span class="thumb">
+              {portraits.has(u.id)
+                ? <img src={url(`portraits/${u.id}.webp`)} alt="" loading="lazy" width="96" height="96" />
+                : <span class="ph heading">{initials(u.name)}</span>}
+            </span>
+            <span class="who">
+              <span class="heading nm">{u.name}</span>
+              <span class="meta"><Kanji attr={u.attribute} size={18} />{u.attribute} · {u.role}{u.rarity ? ` · ${u.rarity}` : ''}</span>
+            </span>
+            <span class="act" aria-hidden="true">Add</span>
+          </button>
+          <a class="open" href={url(`characters/${u.id}/`)} aria-label={`Open ${u.name}'s page`}>↗</a>
+        </li>
+      ))}
+    </ul>
+    <p id="none" class="muted" hidden>No wizards match. <button type="button" class="link clear">Clear filters</button></p>
+  </div>
+
+  <div class="dock" id="dock" hidden>
+    <span id="dock-count">0 of {MAX_TEAM}</span>
+    <a href="#summary" class="dock-link">Summary ↑</a>
+  </div>
+
+  <script type="application/json" id="team-data" set:html={teamData}></script>
+</Base>
+
+<script>
+  // [effect, target group, target wording, skill kind, condition note, scaling, tier, repeat sec, duration sec, chance %, skill name]
+  type Row = [number, number, string, number, string, number, string, number | null, number | null, number | null, string];
+  interface TeamData { max: number; fx: { k: string; l: string; g: string }[]; groups: [string, string][]; targets: string[]; kinds: string[]; tiers: string[]; rows: Record<string, Row[]>; }
+  const data = JSON.parse(document.getElementById('team-data')!.textContent!) as TeamData;
+  const MAX = data.max;
+  const el = <K extends keyof HTMLElementTagNameMap>(tag: K, cls?: string, text?: string) => {
+    const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e;
+  };
+
+  const rosterEl = document.getElementById('roster')!;
+  const items = [...document.querySelectorAll<HTMLLIElement>('#roster li')];
+  const byCode = new Map(items.map((li) => [li.dataset.code!, li]));
+  const fxIndex = new Map(data.fx.map((f, i) => [f.k, i]));
+  const params = new URLSearchParams(location.search);
+
+  // ---- selection. The address carries codes only: t=code,code,... and l=leader code. A code may later grow ":lacrima.lacrima" without breaking old links.
+  const team: string[] = [];
+  for (const entry of (params.get('t') ?? '').split(',')) {
+    const code = entry.split(':')[0];
+    if (byCode.has(code) && !team.includes(code) && team.length < MAX) team.push(code);
+  }
+  let leader: string | null = team.includes(params.get('l') ?? '') ? params.get('l') : null;
+
+  // ---- roster filters
+  const q = document.getElementById('f-q') as HTMLInputElement;
+  const fxSel = document.getElementById('f-fx') as HTMLSelectElement;
+  const pills = [...document.querySelectorAll<HTMLButtonElement>('.pill')];
+  const state: Record<string, string | null> = {
+    rarity: params.get('rarity'), attr: params.get('attr'), role: params.get('role'),
+    tier: params.get('tier'), target: params.get('target'), sort: params.get('sort') === 'fastest' ? 'fastest' : 'tier',
+  };
+  q.value = params.get('q') ?? '';
+  fxSel.value = params.get('fx') ?? '';
+  if (fxSel.value !== (params.get('fx') ?? '')) fxSel.value = '';
+
+  function writeUrl() {
+    const p = new URLSearchParams();
+    if (q.value.trim()) p.set('q', q.value.trim());
+    if (state.rarity) p.set('rarity', state.rarity);
+    if (state.attr) p.set('attr', state.attr);
+    if (state.role) p.set('role', state.role);
+    if (fxSel.value) {
+      p.set('fx', fxSel.value);
+      if (state.tier) p.set('tier', state.tier);
+      if (state.target) p.set('target', state.target);
+      if (state.sort === 'fastest') p.set('sort', 'fastest');
+    }
+    if (team.length) p.set('t', team.join(','));
+    if (leader) p.set('l', leader);
+    const s = p.toString().replace(/%2C/g, ',');
+    history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
+  }
+
+  // ---- effect-first: who provides the chosen effect, and how
+  const rowsFor = (code: string, fi: number) => (data.rows[code] ?? []).filter((r) => r[0] === fi);
+  const showRows = (code: string, fi: number) => rowsFor(code, fi).filter((r) => (!state.tier || r[6] === state.tier) && (!state.target || data.targets[r[1]] === state.target));
+  const allRowsFor = (fi: number) => Object.values(data.rows).flat().filter((r) => r[0] === fi);
+
+  /** Tier and Target chips appear only for what the chosen effect really has (as on the Effect Finder). */
+  function syncChips(fi: number | undefined) {
+    const rows = fi === undefined ? [] : allRowsFor(fi);
+    const tiers = new Set(rows.map((r) => r[6]));
+    const targets = new Set(rows.map((r) => data.targets[r[1]]));
+    if (state.tier && !tiers.has(state.tier)) state.tier = null;
+    if (state.target && !targets.has(state.target)) state.target = null;
+    const tierRow = document.getElementById('r-tier')!, targetRow = document.getElementById('r-target')!;
+    tierRow.hidden = tiers.size < 2; targetRow.hidden = targets.size < 2;
+    document.getElementById('r-sort')!.hidden = fi === undefined;
+    for (const p of pills) {
+      if (p.dataset.filter === 'tier' && p.dataset.value) p.hidden = !tiers.has(p.dataset.value);
+      if (p.dataset.filter === 'target' && p.dataset.value) p.hidden = !targets.has(p.dataset.value);
+    }
+  }
+
+  function provRows(rows: Row[], fi: number) {
+    const box = el('div', 'prov');
+    for (const r of rows) {
+      const row = el('div', 'prow');
+      const l1 = el('div', 'pl1');
+      l1.append(el('span', `kind kind-${data.kinds[r[3]]}`, data.kinds[r[3]]), el('span', 'psk', r[10]));
+      const l2 = el('div', 'pl2');
+      const facts = [r[2], r[7] ? `every ${r[7]} sec` : null, r[8] != null ? `${r[8]} sec` : null, r[9] != null ? `${r[9]}%` : null].filter(Boolean).join(' · ');
+      if (r[6]) l2.append(el('span', `tier tier-${r[6]}`, r[6]));
+      l2.append(el('strong', undefined, data.fx[fi].l), el('span', 'pfacts', facts));
+      row.append(l1, l2);
+      if (r[4]) row.append(el('div', 'pnote', r[4]));
+      if (r[5]) row.append(el('div', 'pnote', 'Scales: see the skill text'));
+      box.append(row);
+    }
+    return box;
+  }
+
+  /** Order for the chosen effect: Tier = best tier among the rows shown; Fastest = shortest repeat time (none sorts last). Ties by name. */
+  function orderKey(rows: Row[]) {
+    if (state.sort === 'fastest') { const v = rows.map((r) => r[7]).filter((x): x is number => x != null); return v.length ? Math.min(...v) : Infinity; }
+    return Math.min(...rows.map((r) => (r[6] ? data.tiers.indexOf(r[6]) : 9)));
+  }
+
+  function renderRoster() {
+    const fi = fxSel.value ? fxIndex.get(fxSel.value) : undefined;
+    syncChips(fi);
+    rosterEl.classList.toggle('fx', fi !== undefined);
+    const text = q.value.trim().toLowerCase();
+    const visible: { li: HTMLLIElement; key: number }[] = [];
+    for (const li of items) {
+      li.querySelector('.prov')?.remove();
+      const rows = fi === undefined ? [] : showRows(li.dataset.code!, fi);
+      const ok = (!text || li.dataset.search!.includes(text)) &&
+        (!state.rarity || li.dataset.rarity === state.rarity) && (!state.attr || li.dataset.attr === state.attr) && (!state.role || li.dataset.role === state.role) &&
+        (fi === undefined || rows.length > 0);
+      li.hidden = !ok;
+      if (ok) { visible.push({ li, key: fi === undefined ? 0 : orderKey(rows) }); if (fi !== undefined) li.append(provRows(rows, fi)); }
+    }
+    if (fi !== undefined) visible.sort((a, b) => (a.key === b.key ? a.li.dataset.name!.localeCompare(b.li.dataset.name!) : a.key < b.key ? -1 : 1));
+    const shownSet = new Set(visible.map((v) => v.li));
+    // unfiltered: the original A to Z order; with an effect: its sort order, hidden wizards last
+    rosterEl.append(...(fi === undefined ? items : [...visible.map((v) => v.li), ...items.filter((li) => !shownSet.has(li))]));
+    for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
+    document.getElementById('shown')!.textContent = String(visible.length);
+    document.getElementById('none')!.hidden = visible.length > 0;
+    document.getElementById('active')!.hidden = ![text, state.rarity, state.attr, state.role, fxSel.value].some(Boolean);
+    renderPickState();
+  }
+
+  /** Add/Picked/Full on every row. Kept apart from renderRoster so picking never reorders the list or drops keyboard focus. */
+  function renderPickState() {
+    for (const li of items) {
+      const picked = team.includes(li.dataset.code!);
+      const btn = li.querySelector<HTMLButtonElement>('.pick')!;
+      const full = !picked && team.length >= MAX;
+      btn.setAttribute('aria-pressed', String(picked));
+      btn.disabled = full;
+      btn.setAttribute('aria-label', `${picked ? 'Remove' : 'Add'} ${li.dataset.name}${full ? ' (team is full)' : ''}`);
+      btn.querySelector('.act')!.textContent = picked ? 'Picked ✓' : full ? 'Full' : 'Add';
+    }
+  }
+
+  function renderPins() {
+    const list = document.getElementById('pins')!;
+    list.replaceChildren(...team.map((code) => {
+      const li = byCode.get(code)!;
+      const row = el('li', 'pin');
+      row.style.setProperty('--c', li.dataset.color!);
+      const thumb = el('span', 'pin-thumb');
+      if (li.dataset.thumb) { const img = el('img'); img.src = li.dataset.thumb; img.alt = ''; img.width = 40; img.height = 40; thumb.append(img); } else thumb.textContent = li.dataset.name!.split(' ').slice(-2).map((w) => w[0]).join('');
+      const who = el('span', 'pin-who');
+      const a = el('a', 'pin-name', li.dataset.name!); a.href = li.dataset.href!;
+      who.append(a, el('span', 'pin-meta', `${li.dataset.attr} · ${li.dataset.role}`));
+      const lead = el('button', 'tag', 'Leader'); lead.type = 'button';
+      lead.setAttribute('aria-pressed', String(leader === code));
+      lead.setAttribute('aria-label', `${leader === code ? 'Remove leader tag from' : 'Tag as leader:'} ${li.dataset.name}`);
+      lead.addEventListener('click', () => { leader = leader === code ? null : code; pickChanged(); });
+      const rm = el('button', 'rm', '×'); rm.type = 'button'; rm.setAttribute('aria-label', `Remove ${li.dataset.name}`);
+      rm.addEventListener('click', () => toggle(code));
+      row.append(thumb, who, lead, rm);
+      return row;
+    }));
+    const text = `${team.length} of ${MAX}`;
+    document.getElementById('count')!.textContent = text;
+    document.getElementById('dock-count')!.textContent = text;
+    document.getElementById('pins-empty')!.hidden = team.length > 0;
+    document.getElementById('clear-team')!.hidden = team.length === 0;
+    document.getElementById('dock')!.hidden = team.length === 0;
+  }
+
+  // ---- union summary: effect -> target group -> wizards. Counts and facts only; nothing is scored or ranked.
+  interface Entry { code: string; targets: Set<string>; kinds: Set<number>; notes: Set<string>; scaling: boolean }
+  function renderSummary() {
+    const out = document.getElementById('sum')!;
+    const byFx = new Map<number, Map<number, Map<string, Entry>>>();
+    for (const code of team) for (const [fi, gi, target, ki, note, scaling] of data.rows[code] ?? []) {
+      const g = (byFx.get(fi) ?? byFx.set(fi, new Map()).get(fi)!);
+      const w = (g.get(gi) ?? g.set(gi, new Map()).get(gi)!);
+      const e = w.get(code) ?? w.set(code, { code, targets: new Set(), kinds: new Set(), notes: new Set(), scaling: false }).get(code)!;
+      if (target) e.targets.add(target);
+      if (ki >= 0) e.kinds.add(ki);
+      if (note) e.notes.add(note);
+      if (scaling) e.scaling = true;
+    }
+    document.getElementById('sum-empty')!.hidden = team.length > 0;
+    if (team.length && !byFx.size) { out.replaceChildren(el('p', 'muted hint', 'No effects are recorded for the picked wizards yet.')); return; }
+    const sections: HTMLElement[] = [];
+    for (const [gname, blurb] of data.groups) {
+      const fis = [...byFx.keys()].filter((fi) => data.fx[fi].g === gname).sort((a, b) => data.fx[a].l.localeCompare(data.fx[b].l));
+      if (!fis.length) continue;
+      const sec = el('section', 'grp');
+      const h = el('h3', 'heading', gname); h.append(el('span', 'muted', ' ' + blurb));
+      sec.append(h);
+      for (const fi of fis) {
+        const groups = byFx.get(fi)!;
+        const all = new Set<string>(); for (const w of groups.values()) for (const c of w.keys()) all.add(c);
+        const det = el('details', 'fx');
+        const sum = el('summary');
+        const split = [...groups.keys()].sort((a, b) => a - b).map((gi) => `${data.targets[gi]} ${groups.get(gi)!.size}`).join(' · ');
+        sum.append(el('span', 'fx-name', data.fx[fi].l), el('span', 'fx-n', `${all.size} ${all.size === 1 ? 'wizard' : 'wizards'}`), el('span', 'fx-split', split));
+        det.append(sum);
+        for (const gi of [...groups.keys()].sort((a, b) => a - b)) {
+          const tg = el('div', 'tg'); tg.append(el('h4', undefined, data.targets[gi]));
+          const ul = el('ul');
+          for (const e of groups.get(gi)!.values()) {
+            const li = byCode.get(e.code)!;
+            const item = el('li');
+            const a = el('a', 'u', li.dataset.name!); a.href = li.dataset.href!;
+            item.append(a);
+            if (leader === e.code) item.append(el('span', 'badge', 'Leader'));
+            const how = [[...e.targets].join(', '), [...e.kinds].sort().map((k) => data.kinds[k]).join(', ')].filter(Boolean).join(' · ');
+            if (how) item.append(el('span', 'how', how));
+            for (const n of e.notes) item.append(el('span', 'cond', n));
+            if (e.scaling) item.append(el('span', 'cond', 'Scales: see the skill text'));
+            ul.append(item);
+          }
+          tg.append(ul); det.append(tg);
+        }
+        sec.append(det);
+      }
+      sections.push(sec);
+    }
+    out.replaceChildren(...sections);
+  }
+
+  /** A filter changed: rebuild the roster. */
+  function update() { renderRoster(); renderPins(); renderSummary(); writeUrl(); }
+  /** The team changed: leave the roster order and provider rows alone, refresh button states, pins and summary. */
+  function pickChanged() { renderPickState(); renderPins(); renderSummary(); writeUrl(); }
+  function toggle(code: string) {
+    const i = team.indexOf(code);
+    if (i >= 0) { team.splice(i, 1); if (leader === code) leader = null; }
+    else if (team.length < MAX) team.push(code);
+    pickChanged();
+  }
+
+  for (const li of items) li.querySelector('.pick')!.addEventListener('click', () => toggle(li.dataset.code!));
+  document.getElementById('clear-team')!.addEventListener('click', () => { team.length = 0; leader = null; pickChanged(); });
+  // Clear filters resets everything except Sort, as on the Effect Finder
+  document.querySelectorAll('.clear').forEach((b) => b.addEventListener('click', () => {
+    q.value = ''; fxSel.value = ''; state.rarity = state.attr = state.role = state.tier = state.target = null; update(); q.focus();
+  }));
+  for (const p of pills) p.addEventListener('click', () => {
+    const f = p.dataset.filter!;
+    state[f] = f === 'sort' ? (p.dataset.value || 'tier') : (p.dataset.value || null);
+    update();
+  });
+  q.addEventListener('input', update);
+  fxSel.addEventListener('change', () => { state.tier = state.target = null; update(); });
+  update();
+</script>
+
+<style>
+  .head { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .head :global(svg) { flex: none; margin-top: 4px; }
+  .head h1 { font-size: 42px; line-height: 1; }
+  .head p { margin: 6px 0 0; max-width: 62ch; }
+  .pad { padding: 18px 20px; margin-bottom: 18px; }
+  .bar { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  h2 { font-size: 24px; }
+  .count { font: 600 14px var(--mono); color: var(--muted); margin-left: 8px; }
+  .hint { margin: 10px 0 0; }
+  .fine { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+  .link { padding: 0; border: 0; background: none; color: var(--crimson); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+  .link:hover { color: var(--crimson-dark); }
+
+  .section-title { margin-top: 36px; }
+  .filters { padding: 18px; border-width: 2px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 3px 0 var(--brass-dark); }
+  .filters input[type='search'] { height: 46px; padding: 0 18px; border-radius: 999px; border: 2px solid var(--line); background: #fff; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .row[hidden], .pill[hidden] { display: none; }
+  .lbl { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); }
+  .pill { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 14px 0 8px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+  .pill:not(:has(.kanji, .ric)) { padding-left: 14px; }
+  .pill:has(.ric) { padding-left: 7px; gap: 6px; }
+  .ric { width: 24px; height: 24px; flex: none; }
+  .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
+  .selrow { display: flex; align-items: center; gap: 8px; }
+  .selrow label { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); flex: none; }
+  .selrow select { flex: 1; min-width: 0; max-width: 420px; height: 46px; padding: 0 12px; border-radius: 12px; border: 2px solid var(--line); background: #fff; color: var(--ink); font-weight: 600; }
+
+  .roster { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 10px; align-items: start; }
+  .roster.fx { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+  .roster li { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; }
+  .roster li[hidden] { display: none; }
+  .pick { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 8px 12px 8px 8px; text-align: left; background: #fff; border: 2px solid var(--line); border-left: 6px solid var(--c); border-radius: 14px; color: var(--ink); font: inherit; cursor: pointer; }
+  .pick:hover:not(:disabled) { border-color: var(--brass); border-left-color: var(--c); }
+  .pick[aria-pressed='true'] { background: #FFF6E0; border-color: var(--crimson); border-left-color: var(--c); }
+  .pick:disabled { opacity: .55; cursor: not-allowed; }
+  .thumb { width: 52px; height: 52px; flex: none; border-radius: 12px; overflow: hidden; background: rgba(0,0,0,.05); display: flex; align-items: center; justify-content: center; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .ph { font-size: 20px; color: var(--c); opacity: .7; }
+  .who { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 3px; }
+  .nm { font-size: 17px; line-height: 1.15; }
+  .meta { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+  .act { flex: none; padding: 6px 12px; border-radius: 999px; background: var(--cream); border: 1px solid var(--line); font: 600 12px var(--body); }
+  .pick[aria-pressed='true'] .act { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
+  .open { flex: none; width: 40px; display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 2px solid var(--line); background: #fff; color: var(--muted); font-size: 16px; text-decoration: none; }
+  .open:hover { text-decoration: none; border-color: var(--brass); color: var(--crimson); }
+
+  .dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; display: none; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 18px; background: var(--timber); color: var(--cream); border-top: 3px solid var(--crimson); font: 600 14px var(--mono); }
+  .dock-link { color: #F3D27A; font: 600 14px var(--body); }
+
+  @media (max-width: 600px) {
+    .head h1 { font-size: 34px; }
+    .pad { padding: 16px; }
+    .roster, .roster.fx { grid-template-columns: minmax(0, 1fr); }
+    .row { flex-wrap: nowrap; overflow-x: auto; gap: 6px; margin: 0 -16px; padding: 2px 16px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .row::-webkit-scrollbar { display: none; }
+    .lbl { flex: none; width: 64px; position: sticky; left: -16px; z-index: 1; align-self: stretch; display: flex; align-items: center; background: var(--panel); box-shadow: 8px 0 8px -4px var(--panel); }
+    .pill { flex: none; min-height: 34px; padding: 0 14px 0 8px; }
+    .pill:not(:has(.kanji, .ric)) { padding-left: 14px; }
+    .selrow label { width: 64px; }
+    .dock:not([hidden]) { display: flex; }
+  }
+</style>
+
+<style is:global>
+  /* rows built by the script (no Astro scope attribute), so they are styled by id */
+  #pins { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+  #pins .pin { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #fff; border: 2px solid var(--line); border-left: 6px solid var(--c); border-radius: 14px; }
+  #pins .pin-thumb { width: 40px; height: 40px; flex: none; border-radius: 10px; overflow: hidden; background: rgba(0,0,0,.05); display: flex; align-items: center; justify-content: center; font: 400 14px var(--heading); color: var(--c); }
+  #pins .pin-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  #pins .pin-who { min-width: 0; flex: 1; display: flex; flex-direction: column; line-height: 1.25; }
+  #pins .pin-name { font: 400 16px var(--heading); color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #pins .pin-meta { font-size: 12px; color: var(--muted); }
+  #pins .tag { min-height: 34px; padding: 0 12px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 12px var(--body); cursor: pointer; }
+  #pins .tag[aria-pressed='true'] { background: var(--brass); border-color: var(--brass-dark); color: var(--ink); }
+  #pins .rm { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--line); background: #fff; color: var(--muted); font: 600 18px/1 var(--body); cursor: pointer; }
+  #pins .rm:hover { color: var(--crimson); border-color: var(--crimson); }
+  #sum .grp { margin-top: 18px; }
+  #sum .grp h3 { font-size: 19px; }
+  #sum .grp h3 .muted { font: 400 13px var(--body); }
+  #sum .fx { margin-top: 8px; background: #fff; border: 2px solid var(--line); border-radius: 14px; }
+  #sum .fx[open] { border-color: var(--brass); }
+  #sum .fx summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 14px; cursor: pointer; list-style: none; }
+  #sum .fx summary::-webkit-details-marker { display: none; }
+  #sum .fx summary::before { content: '▸'; color: var(--muted); }
+  #sum .fx[open] summary::before { content: '▾'; }
+  #sum .fx-name { font-weight: 700; }
+  #sum .fx-n { font: 600 12px var(--mono); color: var(--muted); }
+  #sum .fx-split { font-size: 13px; color: var(--muted); }
+  #sum .tg { padding: 0 14px 10px 30px; }
+  #sum .tg h4 { margin: 8px 0 4px; font: 700 12px var(--body); letter-spacing: .06em; text-transform: uppercase; color: var(--timber); }
+  #sum .tg ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  #sum .tg li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: 14px; }
+  #sum .u { font-weight: 600; }
+  #sum .how { color: var(--muted); font-size: 13px; }
+  #sum .cond { flex-basis: 100%; font-size: 13px; color: var(--crimson-dark); }
+  #sum .badge { padding: 1px 8px; border-radius: 999px; background: var(--brass); font: 700 11px var(--body); color: var(--ink); }
+  /* how each wizard provides the chosen effect */
+  #roster .prov { flex: 0 0 100%; display: flex; flex-direction: column; gap: 6px; padding: 0 4px 4px 14px; }
+  #roster .prow { padding: 8px 12px; background: #FBF6EC; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; }
+  #roster .pl1, #roster .pl2 { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+  #roster .pl2 { margin-top: 5px; }
+  #roster .psk { font-weight: 600; color: var(--ink-2); }
+  #roster .pfacts { color: var(--muted); }
+  #roster .pnote { margin-top: 4px; color: var(--crimson-dark); }
+  @media (max-width: 600px) {
+    #pins { grid-template-columns: minmax(0, 1fr); }
+    .site-footer { padding-bottom: 52px; }
+  }
+</style>

@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Pennant from '../components/Pennant.astro';
 import { url, WIKI_CREDIT, companions } from '../lib/data';
-interface Props { title: string; description?: string; section?: 'characters' | 'companions' | 'enemies' | 'events' | 'lacrimas' | 'effects' | 'banners' | 'search' | 'home'; }
+interface Props { title: string; description?: string; section?: 'characters' | 'companions' | 'enemies' | 'events' | 'lacrimas' | 'effects' | 'team' | 'banners' | 'search' | 'home'; }
 const { title, description = 'Unofficial reference for FAIRY TAIL Wizard Chronicle: wizards, skills, lacrimas and every effect they apply.', section = 'home' } = Astro.props;
 // Absolute URLs for link previews (Discord, social sites) and search engines.
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -52,6 +52,7 @@ const fullTitle = section === 'home' ? 'Fairy Tail Wizard Chronicle — Unoffici
         <a href={url('enemies/')} aria-current={section === 'enemies' ? 'page' : undefined}>Enemies</a>
         <a href={url('lacrimas/')} aria-current={section === 'lacrimas' ? 'page' : undefined}>Lacrimas</a>
         <a href={url('effects/')} aria-current={section === 'effects' ? 'page' : undefined}>Effect Finder</a>
+        <a href={url('team/')} aria-current={section === 'team' ? 'page' : undefined}>Team</a>
         <a href={url('banners/')} aria-current={section === 'banners' ? 'page' : undefined}>Banners</a>
         <a href={url('events/')} aria-current={section === 'events' ? 'page' : undefined}>Events</a>
       </nav>
