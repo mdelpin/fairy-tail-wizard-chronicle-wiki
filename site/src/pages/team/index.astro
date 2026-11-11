@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Kanji from '../../components/Kanji.astro';
 import Pennant from '../../components/Pennant.astro';
 import {
-  units, applications, effects, familyKey, GROUPS, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TARGET_GROUPS, raritiesIn,
+  units, applications, effects, familyKey, GROUPS, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TARGET_GROUPS, TIER_ORDER, raritiesIn,
   url, initials, portraits, roleIcon, shortCode, targetGroup, needNote,
 } from '../../lib/data';
 
@@ -14,19 +14,24 @@ const MAX_TEAM = 7;
 const fxIndex = new Map<string, number>();
 const fxList: { k: string; l: string; g: string }[] = [];
 // Per wizard (keyed by short code): one compact row per effect it applies:
-// [effect index, target group index, exact target wording, skill kind index, condition note, has scaling]
-const rowsByCode: Record<string, (string | number)[][]> = {};
+// [effect index, target group index, exact target wording, skill kind index, condition note, has scaling,
+//  tier, repeat seconds, duration seconds, chance percent, skill name]
+type Row = (string | number | null)[];
+const rowsByCode: Record<string, Row[]> = {};
 const fxByUnit = new Map<string, string[]>();
 for (const u of units) {
   const seen = new Set<string>();
-  const rows: (string | number)[][] = [];
+  const rows: Row[] = [];
   for (const skill of u.skills) for (const id of skill.applications) {
     const app = applications.get(id); if (!app) continue;
     const effect = app.effect ? effects.get(app.effect) : undefined;
     const fm = effect && familyKey(effect); if (!fm) continue;
     let i = fxIndex.get(fm.key);
     if (i === undefined) { i = fxList.length; fxIndex.set(fm.key, i); fxList.push({ k: fm.key, l: fm.label, g: fm.group }); }
-    const row = [i, TARGET_GROUPS.indexOf(targetGroup(app.target)), app.target ?? '', KIND_ORDER.indexOf(skill.kind), needNote(app) ?? '', app.scaling ? 1 : 0];
+    const row: Row = [
+      i, TARGET_GROUPS.indexOf(targetGroup(app.target)), app.target ?? '', KIND_ORDER.indexOf(skill.kind), needNote(app) ?? '', app.scaling ? 1 : 0,
+      effect.tier ?? '', app.trigger?.everySeconds || null, app.durationSeconds ?? null, app.chance != null ? Math.round(app.chance * 100) : null, skill.name ?? skill.kind,
+    ];
     const sig = JSON.stringify(row);
     if (seen.has(sig)) continue;
     seen.add(sig); rows.push(row);
@@ -34,10 +39,10 @@ for (const u of units) {
   rowsByCode[shortCode('unit', u.id)] = rows;
   fxByUnit.set(u.id, [...new Set(rows.map((r) => fxList[r[0] as number].k))]);
 }
-// Effect filter: only effects some wizard provides, in the Effect Finder's groups
+// Effect chooser: only effects some wizard provides, in the Effect Finder's groups
 const effectOptions = GROUPS.map(([g]) => ({ group: g, items: fxList.filter((f) => f.g === g).sort((a, b) => a.l.localeCompare(b.l)) })).filter((g) => g.items.length);
 
-const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, targets: TARGET_GROUPS, kinds: KIND_ORDER, rows: rowsByCode }).replace(/</g, '\\u003c');
+const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, targets: TARGET_GROUPS, kinds: KIND_ORDER, tiers: TIER_ORDER, rows: rowsByCode }).replace(/</g, '\\u003c');
 ---
 <Base title="Team Overview" section="team" description="Pick up to seven wizards and see which effects they provide together, and who provides them. A reference view: it does not rank or recommend teams.">
   <div class="wrap">
@@ -54,7 +59,7 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
         <h2 id="sel-h">Selection <span class="count" id="count" aria-live="polite">0 of {MAX_TEAM}</span></h2>
         <button type="button" class="link" id="clear-team" hidden>Clear selection</button>
       </div>
-      <p class="muted hint" id="pins-empty">No wizards picked yet. Add some from the roster below.</p>
+      <p class="muted hint" id="pins-empty">No wizards picked yet. Choose an effect or filter the roster below, then add wizards.</p>
       <ul class="pins" id="pins" aria-label="Picked wizards"></ul>
     </section>
 
@@ -67,6 +72,28 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
 
     <div class="section-title"><h2>Wizards</h2><p><span id="shown">{units.length}</span> of {units.length}</p></div>
     <div class="filters panel">
+      <div class="selrow">
+        <label for="f-fx">Effect</label>
+        <select id="f-fx">
+          <option value="">Choose an effect…</option>
+          {effectOptions.map((g) => <optgroup label={g.group}>{g.items.map((f) => <option value={f.k}>{f.l}</option>)}</optgroup>)}
+        </select>
+      </div>
+      <div class="row" id="r-tier" role="group" aria-label="Tier" hidden>
+        <span class="lbl">Tier</span>
+        <button type="button" class="pill" data-filter="tier" data-value="" aria-pressed="true">All</button>
+        {TIER_ORDER.map((t) => <button type="button" class="pill" data-filter="tier" data-value={t} aria-pressed="false">{t}</button>)}
+      </div>
+      <div class="row" id="r-target" role="group" aria-label="Target" hidden>
+        <span class="lbl">Target</span>
+        <button type="button" class="pill" data-filter="target" data-value="" aria-pressed="true">All</button>
+        {TARGET_GROUPS.map((t) => <button type="button" class="pill" data-filter="target" data-value={t} aria-pressed="false">{t}</button>)}
+      </div>
+      <div class="row" id="r-sort" role="group" aria-label="Sort" hidden>
+        <span class="lbl">Sort</span>
+        <button type="button" class="pill" data-filter="sort" data-value="tier" aria-pressed="true">Tier</button>
+        <button type="button" class="pill" data-filter="sort" data-value="fastest" aria-pressed="false">Fastest</button>
+      </div>
       <label class="sr-only" for="f-q">Filter by name</label>
       <input id="f-q" type="search" placeholder="Filter by name" />
       {raritiesIn(units).length > 1 && (
@@ -90,20 +117,13 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
         <button type="button" class="pill" data-filter="role" data-value="" aria-pressed="true">All</button>
         {ROLES.map((r) => <button type="button" class="pill" data-filter="role" data-value={r} aria-pressed="false"><img class="ric" src={roleIcon(r)} alt="" width="24" height="24" />{r}</button>)}
       </div>
-      <div class="selrow">
-        <label for="f-fx">Provides</label>
-        <select id="f-fx">
-          <option value="">Any effect</option>
-          {effectOptions.map((g) => <optgroup label={g.group}>{g.items.map((f) => <option value={f.k}>{f.l}</option>)}</optgroup>)}
-        </select>
-      </div>
       <p class="muted fine" id="active" hidden><button type="button" class="link clear">Clear filters</button></p>
     </div>
 
     <ul class="roster" id="roster">
       {units.map((u) => (
         <li data-code={shortCode('unit', u.id)} data-id={u.id} data-name={u.name} data-attr={u.attribute} data-role={u.role} data-rarity={u.rarity}
-            data-color={ATTR[u.attribute].color} data-search={`${u.name} ${u.identity ?? ''}`.toLowerCase()} data-fx={(fxByUnit.get(u.id) ?? []).join(' ')}
+            data-color={ATTR[u.attribute].color} data-search={`${u.name} ${u.identity ?? ''}`.toLowerCase()}
             data-href={url(`characters/${u.id}/`)} data-thumb={portraits.has(u.id) ? url(`portraits/${u.id}.webp`) : ''}>
           <button type="button" class="pick" aria-pressed="false" style={`--c:${ATTR[u.attribute].color}`}>
             <span class="thumb">
@@ -133,16 +153,19 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
 </Base>
 
 <script>
-  type Row = [number, number, string, number, string, number];
-  interface TeamData { max: number; fx: { k: string; l: string; g: string }[]; groups: [string, string][]; targets: string[]; kinds: string[]; rows: Record<string, Row[]>; }
+  // [effect, target group, target wording, skill kind, condition note, scaling, tier, repeat sec, duration sec, chance %, skill name]
+  type Row = [number, number, string, number, string, number, string, number | null, number | null, number | null, string];
+  interface TeamData { max: number; fx: { k: string; l: string; g: string }[]; groups: [string, string][]; targets: string[]; kinds: string[]; tiers: string[]; rows: Record<string, Row[]>; }
   const data = JSON.parse(document.getElementById('team-data')!.textContent!) as TeamData;
   const MAX = data.max;
   const el = <K extends keyof HTMLElementTagNameMap>(tag: K, cls?: string, text?: string) => {
     const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e;
   };
 
+  const rosterEl = document.getElementById('roster')!;
   const items = [...document.querySelectorAll<HTMLLIElement>('#roster li')];
   const byCode = new Map(items.map((li) => [li.dataset.code!, li]));
+  const fxIndex = new Map(data.fx.map((f, i) => [f.k, i]));
   const params = new URLSearchParams(location.search);
 
   // ---- selection. The address carries codes only: t=code,code,... and l=leader code. A code may later grow ":lacrima.lacrima" without breaking old links.
@@ -157,7 +180,10 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
   const q = document.getElementById('f-q') as HTMLInputElement;
   const fxSel = document.getElementById('f-fx') as HTMLSelectElement;
   const pills = [...document.querySelectorAll<HTMLButtonElement>('.pill')];
-  const state: Record<string, string | null> = { rarity: params.get('rarity'), attr: params.get('attr'), role: params.get('role') };
+  const state: Record<string, string | null> = {
+    rarity: params.get('rarity'), attr: params.get('attr'), role: params.get('role'),
+    tier: params.get('tier'), target: params.get('target'), sort: params.get('sort') === 'fastest' ? 'fastest' : 'tier',
+  };
   q.value = params.get('q') ?? '';
   fxSel.value = params.get('fx') ?? '';
   if (fxSel.value !== (params.get('fx') ?? '')) fxSel.value = '';
@@ -168,21 +194,92 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
     if (state.rarity) p.set('rarity', state.rarity);
     if (state.attr) p.set('attr', state.attr);
     if (state.role) p.set('role', state.role);
-    if (fxSel.value) p.set('fx', fxSel.value);
+    if (fxSel.value) {
+      p.set('fx', fxSel.value);
+      if (state.tier) p.set('tier', state.tier);
+      if (state.target) p.set('target', state.target);
+      if (state.sort === 'fastest') p.set('sort', 'fastest');
+    }
     if (team.length) p.set('t', team.join(','));
     if (leader) p.set('l', leader);
     const s = p.toString().replace(/%2C/g, ',');
     history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
   }
 
+  // ---- effect-first: who provides the chosen effect, and how
+  const rowsFor = (code: string, fi: number) => (data.rows[code] ?? []).filter((r) => r[0] === fi);
+  const showRows = (code: string, fi: number) => rowsFor(code, fi).filter((r) => (!state.tier || r[6] === state.tier) && (!state.target || data.targets[r[1]] === state.target));
+  const allRowsFor = (fi: number) => Object.values(data.rows).flat().filter((r) => r[0] === fi);
+
+  /** Tier and Target chips appear only for what the chosen effect really has (as on the Effect Finder). */
+  function syncChips(fi: number | undefined) {
+    const rows = fi === undefined ? [] : allRowsFor(fi);
+    const tiers = new Set(rows.map((r) => r[6]));
+    const targets = new Set(rows.map((r) => data.targets[r[1]]));
+    if (state.tier && !tiers.has(state.tier)) state.tier = null;
+    if (state.target && !targets.has(state.target)) state.target = null;
+    const tierRow = document.getElementById('r-tier')!, targetRow = document.getElementById('r-target')!;
+    tierRow.hidden = tiers.size < 2; targetRow.hidden = targets.size < 2;
+    document.getElementById('r-sort')!.hidden = fi === undefined;
+    for (const p of pills) {
+      if (p.dataset.filter === 'tier' && p.dataset.value) p.hidden = !tiers.has(p.dataset.value);
+      if (p.dataset.filter === 'target' && p.dataset.value) p.hidden = !targets.has(p.dataset.value);
+    }
+  }
+
+  function provRows(rows: Row[], fi: number) {
+    const box = el('div', 'prov');
+    for (const r of rows) {
+      const row = el('div', 'prow');
+      const l1 = el('div', 'pl1');
+      l1.append(el('span', `kind kind-${data.kinds[r[3]]}`, data.kinds[r[3]]), el('span', 'psk', r[10]));
+      const l2 = el('div', 'pl2');
+      const facts = [r[2], r[7] ? `every ${r[7]} sec` : null, r[8] != null ? `${r[8]} sec` : null, r[9] != null ? `${r[9]}%` : null].filter(Boolean).join(' · ');
+      if (r[6]) l2.append(el('span', `tier tier-${r[6]}`, r[6]));
+      l2.append(el('strong', undefined, data.fx[fi].l), el('span', 'pfacts', facts));
+      row.append(l1, l2);
+      if (r[4]) row.append(el('div', 'pnote', r[4]));
+      if (r[5]) row.append(el('div', 'pnote', 'Scales: see the skill text'));
+      box.append(row);
+    }
+    return box;
+  }
+
+  /** Order for the chosen effect: Tier = best tier among the rows shown; Fastest = shortest repeat time (none sorts last). Ties by name. */
+  function orderKey(rows: Row[]) {
+    if (state.sort === 'fastest') { const v = rows.map((r) => r[7]).filter((x): x is number => x != null); return v.length ? Math.min(...v) : Infinity; }
+    return Math.min(...rows.map((r) => (r[6] ? data.tiers.indexOf(r[6]) : 9)));
+  }
+
   function renderRoster() {
+    const fi = fxSel.value ? fxIndex.get(fxSel.value) : undefined;
+    syncChips(fi);
+    rosterEl.classList.toggle('fx', fi !== undefined);
     const text = q.value.trim().toLowerCase();
-    let n = 0;
+    const visible: { li: HTMLLIElement; key: number }[] = [];
     for (const li of items) {
+      li.querySelector('.prov')?.remove();
+      const rows = fi === undefined ? [] : showRows(li.dataset.code!, fi);
       const ok = (!text || li.dataset.search!.includes(text)) &&
         (!state.rarity || li.dataset.rarity === state.rarity) && (!state.attr || li.dataset.attr === state.attr) && (!state.role || li.dataset.role === state.role) &&
-        (!fxSel.value || li.dataset.fx!.split(' ').includes(fxSel.value));
-      li.hidden = !ok; if (ok) n++;
+        (fi === undefined || rows.length > 0);
+      li.hidden = !ok;
+      if (ok) { visible.push({ li, key: fi === undefined ? 0 : orderKey(rows) }); if (fi !== undefined) li.append(provRows(rows, fi)); }
+    }
+    if (fi !== undefined) visible.sort((a, b) => (a.key === b.key ? a.li.dataset.name!.localeCompare(b.li.dataset.name!) : a.key < b.key ? -1 : 1));
+    const shownSet = new Set(visible.map((v) => v.li));
+    // unfiltered: the original A to Z order; with an effect: its sort order, hidden wizards last
+    rosterEl.append(...(fi === undefined ? items : [...visible.map((v) => v.li), ...items.filter((li) => !shownSet.has(li))]));
+    for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
+    document.getElementById('shown')!.textContent = String(visible.length);
+    document.getElementById('none')!.hidden = visible.length > 0;
+    document.getElementById('active')!.hidden = ![text, state.rarity, state.attr, state.role, fxSel.value].some(Boolean);
+    renderPickState();
+  }
+
+  /** Add/Picked/Full on every row. Kept apart from renderRoster so picking never reorders the list or drops keyboard focus. */
+  function renderPickState() {
+    for (const li of items) {
       const picked = team.includes(li.dataset.code!);
       const btn = li.querySelector<HTMLButtonElement>('.pick')!;
       const full = !picked && team.length >= MAX;
@@ -191,10 +288,6 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
       btn.setAttribute('aria-label', `${picked ? 'Remove' : 'Add'} ${li.dataset.name}${full ? ' (team is full)' : ''}`);
       btn.querySelector('.act')!.textContent = picked ? 'Picked ✓' : full ? 'Full' : 'Add';
     }
-    for (const p of pills) p.setAttribute('aria-pressed', String((state[p.dataset.filter!] ?? '') === p.dataset.value));
-    document.getElementById('shown')!.textContent = String(n);
-    document.getElementById('none')!.hidden = n > 0;
-    document.getElementById('active')!.hidden = ![text, state.rarity, state.attr, state.role, fxSel.value].some(Boolean);
   }
 
   function renderPins() {
@@ -211,7 +304,7 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
       const lead = el('button', 'tag', 'Leader'); lead.type = 'button';
       lead.setAttribute('aria-pressed', String(leader === code));
       lead.setAttribute('aria-label', `${leader === code ? 'Remove leader tag from' : 'Tag as leader:'} ${li.dataset.name}`);
-      lead.addEventListener('click', () => { leader = leader === code ? null : code; update(); });
+      lead.addEventListener('click', () => { leader = leader === code ? null : code; pickChanged(); });
       const rm = el('button', 'rm', '×'); rm.type = 'button'; rm.setAttribute('aria-label', `Remove ${li.dataset.name}`);
       rm.addEventListener('click', () => toggle(code));
       row.append(thumb, who, lead, rm);
@@ -280,22 +373,30 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
     out.replaceChildren(...sections);
   }
 
+  /** A filter changed: rebuild the roster. */
   function update() { renderRoster(); renderPins(); renderSummary(); writeUrl(); }
+  /** The team changed: leave the roster order and provider rows alone, refresh button states, pins and summary. */
+  function pickChanged() { renderPickState(); renderPins(); renderSummary(); writeUrl(); }
   function toggle(code: string) {
     const i = team.indexOf(code);
     if (i >= 0) { team.splice(i, 1); if (leader === code) leader = null; }
     else if (team.length < MAX) team.push(code);
-    update();
+    pickChanged();
   }
 
   for (const li of items) li.querySelector('.pick')!.addEventListener('click', () => toggle(li.dataset.code!));
-  document.getElementById('clear-team')!.addEventListener('click', () => { team.length = 0; leader = null; update(); });
+  document.getElementById('clear-team')!.addEventListener('click', () => { team.length = 0; leader = null; pickChanged(); });
+  // Clear filters resets everything except Sort, as on the Effect Finder
   document.querySelectorAll('.clear').forEach((b) => b.addEventListener('click', () => {
-    q.value = ''; fxSel.value = ''; state.rarity = state.attr = state.role = null; update(); q.focus();
+    q.value = ''; fxSel.value = ''; state.rarity = state.attr = state.role = state.tier = state.target = null; update(); q.focus();
   }));
-  for (const p of pills) p.addEventListener('click', () => { state[p.dataset.filter!] = p.dataset.value || null; update(); });
+  for (const p of pills) p.addEventListener('click', () => {
+    const f = p.dataset.filter!;
+    state[f] = f === 'sort' ? (p.dataset.value || 'tier') : (p.dataset.value || null);
+    update();
+  });
   q.addEventListener('input', update);
-  fxSel.addEventListener('change', update);
+  fxSel.addEventListener('change', () => { state.tier = state.target = null; update(); });
   update();
 </script>
 
@@ -317,6 +418,7 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
   .filters { padding: 18px; border-width: 2px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 3px 0 var(--brass-dark); }
   .filters input[type='search'] { height: 46px; padding: 0 18px; border-radius: 999px; border: 2px solid var(--line); background: #fff; }
   .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .row[hidden], .pill[hidden] { display: none; }
   .lbl { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); }
   .pill { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 14px 0 8px; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
   .pill:not(:has(.kanji, .ric)) { padding-left: 14px; }
@@ -325,10 +427,11 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
   .pill[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
   .selrow { display: flex; align-items: center; gap: 8px; }
   .selrow label { width: 80px; font-size: 13px; font-weight: 700; color: var(--timber); flex: none; }
-  .selrow select { flex: 1; min-width: 0; max-width: 360px; height: 42px; padding: 0 12px; border-radius: 12px; border: 2px solid var(--line); background: #fff; color: var(--ink); }
+  .selrow select { flex: 1; min-width: 0; max-width: 420px; height: 46px; padding: 0 12px; border-radius: 12px; border: 2px solid var(--line); background: #fff; color: var(--ink); font-weight: 600; }
 
-  .roster { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 10px; }
-  .roster li { display: flex; align-items: stretch; gap: 6px; }
+  .roster { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 10px; align-items: start; }
+  .roster.fx { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+  .roster li { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; }
   .roster li[hidden] { display: none; }
   .pick { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 8px 12px 8px 8px; text-align: left; background: #fff; border: 2px solid var(--line); border-left: 6px solid var(--c); border-radius: 14px; color: var(--ink); font: inherit; cursor: pointer; }
   .pick:hover:not(:disabled) { border-color: var(--brass); border-left-color: var(--c); }
@@ -351,7 +454,7 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
   @media (max-width: 600px) {
     .head h1 { font-size: 34px; }
     .pad { padding: 16px; }
-    .roster { grid-template-columns: minmax(0, 1fr); }
+    .roster, .roster.fx { grid-template-columns: minmax(0, 1fr); }
     .row { flex-wrap: nowrap; overflow-x: auto; gap: 6px; margin: 0 -16px; padding: 2px 16px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .row::-webkit-scrollbar { display: none; }
     .lbl { flex: none; width: 64px; position: sticky; left: -16px; z-index: 1; align-self: stretch; display: flex; align-items: center; background: var(--panel); box-shadow: 8px 0 8px -4px var(--panel); }
@@ -395,6 +498,14 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
   #sum .how { color: var(--muted); font-size: 13px; }
   #sum .cond { flex-basis: 100%; font-size: 13px; color: var(--crimson-dark); }
   #sum .badge { padding: 1px 8px; border-radius: 999px; background: var(--brass); font: 700 11px var(--body); color: var(--ink); }
+  /* how each wizard provides the chosen effect */
+  #roster .prov { flex: 0 0 100%; display: flex; flex-direction: column; gap: 6px; padding: 0 4px 4px 14px; }
+  #roster .prow { padding: 8px 12px; background: #FBF6EC; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; }
+  #roster .pl1, #roster .pl2 { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+  #roster .pl2 { margin-top: 5px; }
+  #roster .psk { font-weight: 600; color: var(--ink-2); }
+  #roster .pfacts { color: var(--muted); }
+  #roster .pnote { margin-top: 4px; color: var(--crimson-dark); }
   @media (max-width: 600px) {
     #pins { grid-template-columns: minmax(0, 1fr); }
     .site-footer { padding-bottom: 52px; }
