@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Kanji from '../../components/Kanji.astro';
 import Pennant from '../../components/Pennant.astro';
 import {
-  units, applications, effects, familyKey, GROUPS, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TARGET_GROUPS, TIER_ORDER, raritiesIn,
+  units, unitById, lacrimas, lacrimaRows, applications, effects, familyKey, GROUPS, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TARGET_GROUPS, TIER_ORDER, raritiesIn,
   url, initials, portraits, roleIcon, shortCode, targetGroup, needNote,
 } from '../../lib/data';
 
@@ -42,7 +42,38 @@ for (const u of units) {
 // Effect chooser: only effects some wizard provides, in the Effect Finder's groups
 const effectOptions = GROUPS.map(([g]) => ({ group: g, items: fxList.filter((f) => f.g === g).sort((a, b) => a.l.localeCompare(b.l)) })).filter((g) => g.items.length);
 
-const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, targets: TARGET_GROUPS, kinds: KIND_ORDER, tiers: TIER_ORDER, rows: rowsByCode }).replace(/</g, '\\u003c');
+/** A wizard carries up to five lacrimas (the in-game cap at 10 stars). */
+const MAX_LACRIMAS = 5;
+// Lacrimas, keyed by short code. Rows use the wizard row shape, with kind -1 and the trigger wording in the last slot.
+// Effects only lacrimas provide are appended to fxList after the effect chooser was built, so the wizard chooser never offers them.
+interface LacData { n: string; id: string; sg: number; s: string; sn: string; i: number; t: string; r: Row[] }
+const lacByCode: Record<string, LacData> = {};
+for (const l of lacrimas) {
+  const rows: Row[] = [];
+  const seen = new Set<string>();
+  for (const { app, effect } of lacrimaRows(l)) {
+    const fm = effect && familyKey(effect); if (!fm || !effect) continue;
+    let i = fxIndex.get(fm.key);
+    if (i === undefined) { i = fxList.length; fxIndex.set(fm.key, i); fxList.push({ k: fm.key, l: fm.label, g: fm.group }); }
+    const row: Row = [
+      i, TARGET_GROUPS.indexOf(targetGroup(app.target)), app.target ?? '', -1, needNote(app) ?? '', app.scaling ? 1 : 0,
+      effect.tier ?? '', app.trigger?.everySeconds || null, app.durationSeconds ?? null, app.chance != null ? Math.round(app.chance * 100) : null, app.trigger?.raw ?? '',
+    ];
+    const sig = JSON.stringify(row);
+    if (!seen.has(sig)) { seen.add(sig); rows.push(row); }
+  }
+  const owner = l.signatureFor ? unitById.get(l.signatureFor) : undefined;
+  lacByCode[shortCode('lacrima', l.id)] = {
+    n: l.name, id: l.id, sg: l.kind === 'signature' ? 1 : 0, s: owner ? shortCode('unit', owner.id) : '', sn: owner?.name ?? '', i: l.issues?.length ? 1 : 0,
+    t: [l.gameText ?? '', owner?.name ?? ''].join(' ').toLowerCase(), r: rows,
+  };
+}
+const lacOrder = lacrimas.map((l) => shortCode('lacrima', l.id)).sort((a, b) => lacByCode[a].n.localeCompare(lacByCode[b].n));
+
+const teamData = JSON.stringify({
+  max: MAX_TEAM, maxLac: MAX_LACRIMAS, fx: fxList, groups: GROUPS, targets: TARGET_GROUPS, kinds: KIND_ORDER, tiers: TIER_ORDER,
+  rows: rowsByCode, lac: lacByCode, lacOrder, lacUrl: url('lacrimas/'),
+}).replace(/</g, '\\u003c');
 ---
 <Base title="Team Overview" section="team" description="Pick up to seven wizards and see which effects they provide together, and who provides them. A reference view: it does not rank or recommend teams.">
   <div class="wrap">
@@ -67,7 +98,7 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
       <h2 id="sum-h">What the selection provides</h2>
       <p class="muted hint" id="sum-empty">Pick wizards to see their effects here.</p>
       <div id="sum"></div>
-      <p class="fine">Effects are shown as recorded for each wizard's skills. Conditions are listed as written and are not checked against the rest of the team. Basic damage and transformations are not listed. Lacrimas are not included yet. Your picks are kept in the page address: bookmark or share it to keep them.</p>
+      <p class="fine">Effects are shown as recorded for each wizard's skills. Conditions are listed as written and are not checked against the rest of the team. Basic damage and transformations are not listed. Lacrima effects are listed under the wizard wearing them. Your picks are kept in the page address: bookmark or share it to keep them.</p>
     </section>
 
     <div class="section-title"><h2>Wizards</h2><p><span id="shown">{units.length}</span> of {units.length}</p></div>
@@ -149,13 +180,30 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
     <a href="#summary" class="dock-link">Summary ↑</a>
   </div>
 
+  <dialog id="lac-dlg" aria-labelledby="lac-h">
+    <div class="lac-top">
+      <h2 id="lac-h" class="heading">Lacrimas</h2>
+      <button type="button" id="lac-close" class="lac-x" aria-label="Close">×</button>
+    </div>
+    <p class="muted fine lac-sub" id="lac-sub"></p>
+    <label class="sr-only" for="lac-q">Search lacrimas</label>
+    <input id="lac-q" type="search" placeholder="Name, text or signature wizard" autocomplete="off" />
+    <div class="selrow">
+      <label for="lac-fx">Effect</label>
+      <select id="lac-fx"><option value="">Any effect</option></select>
+    </div>
+    <ul id="lac-list" class="lac-list"></ul>
+    <p id="lac-none" class="muted" hidden>No lacrima matches.</p>
+  </dialog>
+
   <script type="application/json" id="team-data" set:html={teamData}></script>
 </Base>
 
 <script>
   // [effect, target group, target wording, skill kind, condition note, scaling, tier, repeat sec, duration sec, chance %, skill name]
   type Row = [number, number, string, number, string, number, string, number | null, number | null, number | null, string];
-  interface TeamData { max: number; fx: { k: string; l: string; g: string }[]; groups: [string, string][]; targets: string[]; kinds: string[]; tiers: string[]; rows: Record<string, Row[]>; }
+  interface LacData { n: string; id: string; sg: number; s: string; sn: string; i: number; t: string; r: Row[] }
+  interface TeamData { max: number; maxLac: number; lac: Record<string, LacData>; lacOrder: string[]; lacUrl: string; fx: { k: string; l: string; g: string }[]; groups: [string, string][]; targets: string[]; kinds: string[]; tiers: string[]; rows: Record<string, Row[]>; }
   const data = JSON.parse(document.getElementById('team-data')!.textContent!) as TeamData;
   const MAX = data.max;
   const el = <K extends keyof HTMLElementTagNameMap>(tag: K, cls?: string, text?: string) => {
@@ -170,9 +218,19 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
 
   // ---- selection. The address carries codes only: t=code,code,... and l=leader code. A code may later grow ":lacrima.lacrima" without breaking old links.
   const team: string[] = [];
+  /** wizard code -> equipped lacrima codes, in order. A signature lacrima can sit on one wizard only; a stat lacrima can repeat. */
+  const loadout: Record<string, string[]> = {};
+  const MAXL = data.maxLac;
+  const sigHolder = (lc: string) => team.find((w) => (loadout[w] ?? []).includes(lc));
   for (const entry of (params.get('t') ?? '').split(',')) {
-    const code = entry.split(':')[0];
-    if (byCode.has(code) && !team.includes(code) && team.length < MAX) team.push(code);
+    const [code, lacs] = entry.split(':');
+    if (!byCode.has(code) || team.includes(code) || team.length >= MAX) continue;
+    team.push(code);
+    for (const lc of (lacs ?? '').split('.')) {
+      const l = data.lac[lc];
+      if (!l || (loadout[code] ?? []).length >= MAXL || (l.sg && sigHolder(lc))) continue;
+      (loadout[code] ??= []).push(lc);
+    }
   }
   let leader: string | null = team.includes(params.get('l') ?? '') ? params.get('l') : null;
 
@@ -200,9 +258,9 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
       if (state.target) p.set('target', state.target);
       if (state.sort === 'fastest') p.set('sort', 'fastest');
     }
-    if (team.length) p.set('t', team.join(','));
+    if (team.length) p.set('t', team.map((c) => (loadout[c]?.length ? `${c}:${loadout[c].join('.')}` : c)).join(','));
     if (leader) p.set('l', leader);
-    const s = p.toString().replace(/%2C/g, ',');
+    const s = p.toString().replace(/%2C/g, ',').replace(/%3A/g, ':');
     history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
   }
 
@@ -308,6 +366,21 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
       const rm = el('button', 'rm', '×'); rm.type = 'button'; rm.setAttribute('aria-label', `Remove ${li.dataset.name}`);
       rm.addEventListener('click', () => toggle(code));
       row.append(thumb, who, lead, rm);
+      const lacs = loadout[code] ?? [];
+      const line = el('div', 'pin-lac');
+      const open = el('button', 'lacbtn', `Lacrimas ${lacs.length}/${MAXL}`); open.type = 'button';
+      open.dataset.lac = code;
+      open.setAttribute('aria-label', `Choose lacrimas for ${li.dataset.name} (${lacs.length} of ${MAXL})`);
+      open.addEventListener('click', () => openLacrimas(code));
+      line.append(open);
+      lacs.forEach((lc) => {
+        const chip = el('span', 'chip');
+        chip.append(el('span', undefined, data.lac[lc].n));
+        const x = el('button', undefined, '×'); x.type = 'button'; x.setAttribute('aria-label', `Remove ${data.lac[lc].n} from ${li.dataset.name}`);
+        x.addEventListener('click', () => { unequip(code, lc); pickChanged(); });
+        chip.append(x); line.append(chip);
+      });
+      row.append(line);
       return row;
     }));
     const text = `${team.length} of ${MAX}`;
@@ -319,18 +392,27 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
   }
 
   // ---- union summary: effect -> target group -> wizards. Counts and facts only; nothing is scored or ranked.
-  interface Entry { code: string; targets: Set<string>; kinds: Set<number>; notes: Set<string>; scaling: boolean }
+  interface Entry { code: string; targets: Set<string>; kinds: Set<number>; notes: Set<string>; scaling: boolean; via: Map<string, { n: number; trig: string }> }
   function renderSummary() {
     const out = document.getElementById('sum')!;
     const byFx = new Map<number, Map<number, Map<string, Entry>>>();
-    for (const code of team) for (const [fi, gi, target, ki, note, scaling] of data.rows[code] ?? []) {
-      const g = (byFx.get(fi) ?? byFx.set(fi, new Map()).get(fi)!);
-      const w = (g.get(gi) ?? g.set(gi, new Map()).get(gi)!);
-      const e = w.get(code) ?? w.set(code, { code, targets: new Set(), kinds: new Set(), notes: new Set(), scaling: false }).get(code)!;
-      if (target) e.targets.add(target);
-      if (ki >= 0) e.kinds.add(ki);
-      if (note) e.notes.add(note);
-      if (scaling) e.scaling = true;
+    // a wizard's own rows, then each equipped lacrima's rows; a lacrima's "Self" is the wizard wearing it
+    for (const code of team) {
+      const sources: [Row, string | null][] = [
+        ...(data.rows[code] ?? []).map((r): [Row, null] => [r, null]),
+        ...[...new Set(loadout[code] ?? [])].flatMap((lc) => data.lac[lc].r.map((r): [Row, string] => [r, lc])),
+      ];
+      for (const [r, lc] of sources) {
+        const [fi, gi, target, ki, note, scaling] = r;
+        const g = (byFx.get(fi) ?? byFx.set(fi, new Map()).get(fi)!);
+        const w = (g.get(gi) ?? g.set(gi, new Map()).get(gi)!);
+        const e = w.get(code) ?? w.set(code, { code, targets: new Set(), kinds: new Set(), notes: new Set(), scaling: false, via: new Map() }).get(code)!;
+        if (lc) e.via.set(lc, { n: (loadout[code] ?? []).filter((x) => x === lc).length, trig: r[10] });
+        if (target) e.targets.add(target);
+        if (ki >= 0) e.kinds.add(ki);
+        if (note) e.notes.add(note);
+        if (scaling) e.scaling = true;
+      }
     }
     document.getElementById('sum-empty')!.hidden = team.length > 0;
     if (team.length && !byFx.size) { out.replaceChildren(el('p', 'muted hint', 'No effects are recorded for the picked wizards yet.')); return; }
@@ -360,6 +442,7 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
             if (leader === e.code) item.append(el('span', 'badge', 'Leader'));
             const how = [[...e.targets].join(', '), [...e.kinds].sort().map((k) => data.kinds[k]).join(', ')].filter(Boolean).join(' · ');
             if (how) item.append(el('span', 'how', how));
+            for (const [lc, v] of e.via) item.append(el('span', 'how via', `Lacrima: ${data.lac[lc].n}${v.n > 1 ? ` ×${v.n}` : ''}${v.trig ? ` (${v.trig})` : ''}`));
             for (const n of e.notes) item.append(el('span', 'cond', n));
             if (e.scaling) item.append(el('span', 'cond', 'Scales: see the skill text'));
             ul.append(item);
@@ -373,19 +456,125 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
     out.replaceChildren(...sections);
   }
 
+  // ---- lacrima picker (one dialog, reused for whichever wizard opened it)
+  const dlg = document.getElementById('lac-dlg') as HTMLDialogElement;
+  const lacList = document.getElementById('lac-list')!;
+  const lacQ = document.getElementById('lac-q') as HTMLInputElement;
+  const lacFx = document.getElementById('lac-fx') as HTMLSelectElement;
+  let lacFor: string | null = null;
+  let lacBuilt = false;
+  const nameOf = (code: string) => byCode.get(code)?.dataset.name ?? '';
+
+  function equip(w: string, lc: string) {
+    const l = (loadout[w] ??= []);
+    if (l.length >= MAXL || (data.lac[lc].sg && sigHolder(lc))) return;
+    l.push(lc);
+  }
+  function unequip(w: string, lc: string) {
+    const l = loadout[w] ?? []; const i = l.lastIndexOf(lc);
+    if (i >= 0) l.splice(i, 1);
+    if (!l.length) delete loadout[w];
+  }
+
+  function buildLacrimas() {
+    lacBuilt = true;
+    const fis = new Set(data.lacOrder.flatMap((c) => data.lac[c].r.map((r) => r[0])));
+    for (const [gname] of data.groups) {
+      const items = [...fis].filter((fi) => data.fx[fi].g === gname).sort((a, b) => data.fx[a].l.localeCompare(data.fx[b].l));
+      if (!items.length) continue;
+      const og = document.createElement('optgroup'); og.label = gname;
+      for (const fi of items) { const o = document.createElement('option'); o.value = String(fi); o.textContent = data.fx[fi].l; og.append(o); }
+      lacFx.append(og);
+    }
+    lacList.replaceChildren(...data.lacOrder.map((code) => {
+      const l = data.lac[code];
+      const li = el('li', 'lr'); li.dataset.code = code;
+      const top = el('div', 'lr-top');
+      const name = el('span', 'heading nm', l.n);
+      top.append(name, el('span', 'badge2', l.sg ? 'Signature' : 'Stat'));
+      if (l.i) { const k = el('a', 'badge2 warn', 'Known issue'); k.href = `${data.lacUrl}#${l.id}`; k.setAttribute('aria-label', `Known issue with ${l.n}: open on the Lacrimas page`); top.append(k); }
+      li.append(top);
+      if (l.sg) li.append(el('div', 'lr-sub', `Signature: ${l.sn}`));
+      for (const r of l.r) {
+        const facts = [r[2], r[10] || null, r[7] ? `every ${r[7]} sec` : null, r[8] != null ? `${r[8]} sec` : null, r[9] != null ? `${r[9]}%` : null].filter(Boolean).join(' · ');
+        const line = el('div', 'lr-fx');
+        if (r[6]) line.append(el('span', `tier tier-${r[6]}`, r[6]));
+        line.append(el('strong', undefined, data.fx[r[0]].l), el('span', 'pfacts', facts));
+        li.append(line);
+        if (r[4]) li.append(el('div', 'pnote', r[4]));
+      }
+      const acts = el('div', 'lr-act');
+      const add = el('button', 'lr-add', 'Add'); add.type = 'button';
+      add.addEventListener('click', () => lacToggle(code));
+      const minus = el('button', 'lr-minus', 'Remove'); minus.type = 'button';
+      minus.addEventListener('click', () => { if (lacFor) { unequip(lacFor, code); pickChanged(); lacRefresh(); } });
+      acts.append(add, minus); li.append(acts);
+      return li;
+    }));
+  }
+
+  function lacToggle(code: string) {
+    if (!lacFor) return;
+    if (data.lac[code].sg && (loadout[lacFor] ?? []).includes(code)) unequip(lacFor, code); else equip(lacFor, code);
+    pickChanged(); lacRefresh();
+  }
+
+  /** Filter rows and set each row's button for the wizard being edited. Focus stays where it is. */
+  function lacRefresh() {
+    if (!lacFor) return;
+    const mine = loadout[lacFor] ?? [];
+    document.getElementById('lac-sub')!.textContent = `${nameOf(lacFor)} · ${mine.length} of ${MAXL} slots used. A signature lacrima can go on one wizard in the team; stat lacrimas can repeat.`;
+    const text = lacQ.value.trim().toLowerCase(); const fx = lacFx.value === '' ? -1 : Number(lacFx.value);
+    let shown = 0;
+    for (const li of lacList.children as unknown as HTMLElement[]) {
+      const code = li.dataset.code!; const l = data.lac[code];
+      const ok = (!text || (l.n.toLowerCase() + ' ' + l.t).includes(text)) && (fx < 0 || l.r.some((r) => r[0] === fx));
+      li.hidden = !ok; if (ok) shown++;
+      const n = mine.filter((c) => c === code).length;
+      const holder = l.sg ? sigHolder(code) : undefined;
+      const add = li.querySelector<HTMLButtonElement>('.lr-add')!, minus = li.querySelector<HTMLButtonElement>('.lr-minus')!;
+      const elsewhere = holder && holder !== lacFor;
+      const full = mine.length >= MAXL && n === 0;
+      add.textContent = elsewhere ? `On ${nameOf(holder!)}` : l.sg ? (n ? 'Equipped ✓' : full ? 'Full' : 'Equip') : full ? 'Full' : n ? `Add another (${n})` : 'Add';
+      add.disabled = !!elsewhere || (!l.sg && mine.length >= MAXL) || (l.sg && full);
+      add.setAttribute('aria-pressed', String(n > 0));
+      add.setAttribute('aria-label', `${add.textContent} ${l.n}`);
+      minus.hidden = !(n > 0 && !l.sg);
+      li.classList.toggle('on', n > 0);
+    }
+    document.getElementById('lac-none')!.hidden = shown > 0;
+  }
+
+  function openLacrimas(code: string) {
+    if (!lacBuilt) buildLacrimas();
+    lacFor = code; lacQ.value = ''; lacFx.value = '';
+    (document.getElementById('lac-h') as HTMLElement).textContent = `Lacrimas for ${nameOf(code)}`;
+    lacRefresh();
+    dlg.showModal();
+    lacList.scrollTop = 0; dlg.scrollTop = 0;
+  }
+  dlg.addEventListener('close', () => {
+    const back = lacFor; lacFor = null;
+    if (back) document.querySelector<HTMLButtonElement>(`#pins [data-lac="${back}"]`)?.focus();
+  });
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  document.getElementById('lac-close')!.addEventListener('click', () => dlg.close());
+  lacQ.addEventListener('input', lacRefresh);
+  lacFx.addEventListener('change', lacRefresh);
+
   /** A filter changed: rebuild the roster. */
   function update() { renderRoster(); renderPins(); renderSummary(); writeUrl(); }
   /** The team changed: leave the roster order and provider rows alone, refresh button states, pins and summary. */
   function pickChanged() { renderPickState(); renderPins(); renderSummary(); writeUrl(); }
   function toggle(code: string) {
     const i = team.indexOf(code);
-    if (i >= 0) { team.splice(i, 1); if (leader === code) leader = null; }
+    if (i >= 0) { team.splice(i, 1); delete loadout[code]; if (leader === code) leader = null; }
     else if (team.length < MAX) team.push(code);
     pickChanged();
   }
 
   for (const li of items) li.querySelector('.pick')!.addEventListener('click', () => toggle(li.dataset.code!));
-  document.getElementById('clear-team')!.addEventListener('click', () => { team.length = 0; leader = null; pickChanged(); });
+  document.getElementById('clear-team')!.addEventListener('click', () => { team.length = 0; leader = null; for (const k of Object.keys(loadout)) delete loadout[k]; pickChanged(); });
   // Clear filters resets everything except Sort, as on the Effect Finder
   document.querySelectorAll('.clear').forEach((b) => b.addEventListener('click', () => {
     q.value = ''; fxSel.value = ''; state.rarity = state.attr = state.role = state.tier = state.target = null; update(); q.focus();
@@ -498,6 +687,47 @@ const teamData = JSON.stringify({ max: MAX_TEAM, fx: fxList, groups: GROUPS, tar
   #sum .how { color: var(--muted); font-size: 13px; }
   #sum .cond { flex-basis: 100%; font-size: 13px; color: var(--crimson-dark); }
   #sum .badge { padding: 1px 8px; border-radius: 999px; background: var(--brass); font: 700 11px var(--body); color: var(--ink); }
+  /* lacrimas on each pin */
+  #pins .pin { flex-wrap: wrap; }
+  #pins .pin-lac { flex: 0 0 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-top: 2px; }
+  #pins .lacbtn { min-height: 32px; padding: 0 12px; border-radius: 999px; border: 2px solid var(--line); background: var(--cream); color: var(--ink); font: 600 12px var(--body); cursor: pointer; }
+  #pins .lacbtn:hover { border-color: var(--brass); }
+  #pins .chip { display: inline-flex; align-items: center; gap: 2px; max-width: 100%; padding: 2px 4px 2px 10px; border-radius: 999px; background: #FBF6EC; border: 1px solid var(--line); font-size: 12px; }
+  #pins .chip button { width: 24px; height: 24px; border: 0; border-radius: 50%; background: none; color: var(--muted); font: 600 15px/1 var(--body); cursor: pointer; }
+  #pins .chip button:hover { color: var(--crimson); }
+  #sum .via { flex-basis: 100%; color: var(--timber); }
+  /* lacrima dialog */
+  #lac-dlg { width: min(640px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 16px 18px; border: 3px solid var(--brass-dark); border-radius: 16px; background: var(--panel, #fff); color: var(--ink); overflow: auto; }
+  #lac-dlg::backdrop { background: rgba(40, 25, 15, .55); }
+  #lac-dlg[open] { display: flex; flex-direction: column; gap: 10px; }
+  #lac-dlg .lac-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  #lac-dlg h2 { font-size: 22px; margin: 0; }
+  #lac-dlg .lac-x { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--line); background: #fff; font: 600 22px/1 var(--body); cursor: pointer; }
+  #lac-dlg .lac-sub { margin: 0; }
+  #lac-dlg input[type='search'] { height: 44px; padding: 0 16px; border-radius: 999px; border: 2px solid var(--line); background: #fff; }
+  #lac-dlg .selrow { display: flex; align-items: center; gap: 8px; }
+  #lac-dlg .selrow label { width: 64px; flex: none; font-size: 13px; font-weight: 700; color: var(--timber); }
+  #lac-dlg .selrow select { flex: 1; min-width: 0; height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid var(--line); background: #fff; font-weight: 600; }
+  #lac-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  #lac-list .lr { padding: 10px 12px; background: #fff; border: 2px solid var(--line); border-radius: 12px; font-size: 13px; }
+  #lac-list .lr[hidden] { display: none; }
+  #lac-list .lr.on { border-color: var(--crimson); background: #FFF6E0; }
+  #lac-list .lr-top { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+  #lac-list .nm { font-size: 16px; }
+  #lac-list .badge2 { padding: 1px 8px; border-radius: 999px; background: var(--cream); border: 1px solid var(--line); font: 700 11px var(--body); color: var(--timber); text-decoration: none; }
+  #lac-list .badge2.warn { background: #FBE3D8; border-color: var(--crimson); color: var(--crimson-dark); }
+  #lac-list .lr-sub { color: var(--muted); margin-top: 2px; }
+  #lac-list .lr-fx { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 5px; }
+  #lac-list .pfacts { color: var(--muted); }
+  #lac-list .pnote { margin-top: 3px; color: var(--crimson-dark); }
+  #lac-list .lr-act { display: flex; gap: 8px; margin-top: 8px; }
+  #lac-list .lr-act button { min-height: 38px; padding: 0 16px; border-radius: 999px; border: 2px solid var(--line); background: var(--cream); color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+  #lac-list .lr-act .lr-add[aria-pressed='true'] { background: var(--crimson); border-color: #EBD9B4; color: var(--cream); }
+  #lac-list .lr-act button:disabled { opacity: .55; cursor: not-allowed; }
+  #lac-list .lr-act button[hidden] { display: none; }
+  @media (max-width: 600px) {
+    #lac-dlg { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; border-radius: 0; border-width: 0; padding: 14px 14px 24px; }
+  }
   /* how each wizard provides the chosen effect */
   #roster .prov { flex: 0 0 100%; display: flex; flex-direction: column; gap: 6px; padding: 0 4px 4px 14px; }
   #roster .prow { padding: 8px 12px; background: #FBF6EC; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; }
