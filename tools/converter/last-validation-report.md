@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 112 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 30 live game issues. 102 issues in 7 categories.
+156 units, 115 lacrimas, 112 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 33 live game issues. 101 issues in 7 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -64,9 +64,10 @@
 - yukino-agria
 - zancrow
 
-## Live game issues (30)
+## Live game issues (33)
 
 - Issue 'Academy Capricorn Skill: English description is cut off before the second effect and the duration' → Academy Capricorn — Skill
+- Issue 'Aera Frosch Skill: Critical Damage Decrease mistranslation' → Aera Frosch — Skill
 - Issue 'Aquarius Skill: English description is cut off before the second effect' → Aquarius — Skill
 - Issue 'Aries Skill: English description is cut off before the second effect' → Aries — Skill
 - Issue 'Aries Skill: English name is Aquametria, Japanese name is Wool Bomb' → Aries — Skill
@@ -79,6 +80,7 @@
 - Issue 'First Dream Laxus Ultimate: English says Accuracy Increase on enemies, Japanese says Down' → First Dream Laxus — Ultimate
 - Issue 'Grandeeney Skill: English description is cut off before the last effect and the duration' → Grandeeney — Skill
 - Issue 'Gray -Ice Devil Slayer Mage- Normal: Freeze chance is 15% in English, 10% in Japanese' → Gray -Ice Devil Slayer Mage- — Normal
+- Issue 'Holy Night Juvia Normal: Japanese text shows Bind on hit' → Holy Night Juvia — Normal
 - Issue 'Jellal Fernandes Ultimate: English says Evasion and Critical Defense Increase on the target, Japanese says Down' → Jellal Fernandes — Ultimate
 - Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration' → Mercphobia — Skill
 - Issue 'Minerva Lacrima: English says it triggers on a critical hit, Japanese says a normal skill hit (20%)' → ✨ Minerva Lacrima
@@ -88,6 +90,7 @@
 - Issue 'Pure White Oath Lyra Skill: English description is cut off before the second effect' → Pure White Oath Lyra — Skill
 - Issue 'Rock'n Magic Virgo Skill: English description is cut off before the third effect and the duration' → Rock'n Magic Virgo — Skill
 - Issue 'Selene Skill: English description is cut off before the last effect' → Selene — Skill
+- Issue 'Shagotte Skill: English description is cut off before Critical Rate Increase' → Shagotte — Skill
 - Issue 'Skiadrum Skill: English description is cut off before the second effect' → Skiadrum — Skill
 - Issue 'Swayed by the Evening Breeze Gildarts Normal: Lv.3 damage is 130% in English, 160% in Japanese' → Swayed by the Evening Breeze Gildarts — Normal
 - Issue 'Swaying in the Summer Night Lisanna Lacrima: text does not match effect' → ✨ Swaying in the Summer Night Lisanna Lacrima
@@ -97,15 +100,11 @@
 - Issue 'Virgo Skill: English description is cut off before the second effect' → Virgo — Skill
 - Issue 'White Gift Leo Skill: English description is cut off before the second effect and the duration' → White Gift Leo — Skill
 
-## Owned step unknown (the page shows the start value only) (8)
+## Owned step unknown (the page shows the start value only) (4)
 
-- Companion 'Acnologia'
-- Companion 'Aera Frosch'
-- Companion 'Aera Lector'
 - Companion 'Aries'
 - Companion 'Cyberpunk Frosch'
 - Companion 'Dorma Anim Black Sky'
-- Companion 'Irene -Dragon Form-'
 - Companion 'Skiadrum'
 
 ## Banner covers (2)

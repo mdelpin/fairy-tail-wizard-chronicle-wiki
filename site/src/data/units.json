@@ -8141,9 +8141,9 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
-     "Lv1": "Deals 100% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [High] Critical Rate Increase.",
-     "Lv2": "Deals 120% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [High] Critical Rate Increase.",
-     "Lv3": "Deals 150% ATK damage to the target. After hitting, 20% chance to grant yourself for 3s: [High] Critical Rate Increase."
+     "Lv1": "Deals 100% ATK damage to the target. After the attack hits, has a 10% chance to inflict Bind on the target for 2 seconds.",
+     "Lv2": "Deals 120% ATK damage to the target. After the attack hits, has a 10% chance to inflict Bind on the target for 2 seconds.",
+     "Lv3": "Deals 150% ATK damage to the target. After the attack hits, has a 10% chance to inflict Bind on the target for 2 seconds."
     },
     "levelTable": [
      {
@@ -8161,22 +8161,28 @@
      {
       "level": "3",
       "trigger": "Normal Skill Hit",
-      "target": "Self",
-      "effect": "Critical Rate Increase",
-      "tier": "High",
-      "chance": "20%",
-      "duration": "3 sec",
+      "target": "Single Enemy",
+      "effect": "Bind",
+      "tier": null,
+      "chance": "10%",
+      "duration": "2 sec",
       "value": null,
       "condition": null,
       "notes": null
      }
     ],
     "icon": 5,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The previous description listed a 20% chance to grant self [High] Critical Rate Increase for 3 seconds. The Japanese client shows a 10% chance to inflict Bind on the target for 2 seconds at all three levels. The wiki follows the Japanese skill text."
+     }
+    ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
-     "high-critical-rate-increase-self-20-3-sec"
+     "bind-single-enemy-10-2-sec"
     ]
    },
    {

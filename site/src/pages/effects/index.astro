@@ -23,7 +23,13 @@ const groups = GROUPS.map(([title, blurb]) => ({
     <section class="panel intro">
       <MagicCircle size={480} style="right:-80px;top:50%;transform:translateY(-50%)" />
       <div class="intro-body">
-        <div class="title"><Pennant width={34} star /><h1>Effect Finder</h1><Info><p><strong>Needs</strong> lists skills that only trigger extra effects when the target already has that effect, such as Burn, Paralysis or Bleed.</p></Info></div>
+        <div class="title">
+          <Pennant width={34} star /><h1>Effect Finder</h1>
+          <Info>
+            <p>Corrected effect values follow the Japanese in-game tooltips.</p>
+            <p><strong>Needs</strong> lists skills that only trigger extra effects when the target already has that effect, such as Burn, Paralysis or Bleed.</p>
+          </Info>
+        </div>
         <label class="sr-only" for="eq">Find an effect</label>
         <input id="eq" type="search" placeholder="Find an effect" autocomplete="off" />
         {present.length > 1 && (
