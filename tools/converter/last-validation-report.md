@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 112 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 30 live game issues. 102 issues in 7 categories.
+156 units, 115 lacrimas, 112 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 30 live game issues. 98 issues in 7 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -97,15 +97,11 @@
 - Issue 'Virgo Skill: English description is cut off before the second effect' → Virgo — Skill
 - Issue 'White Gift Leo Skill: English description is cut off before the second effect and the duration' → White Gift Leo — Skill
 
-## Owned step unknown (the page shows the start value only) (8)
+## Owned step unknown (the page shows the start value only) (4)
 
-- Companion 'Acnologia'
-- Companion 'Aera Frosch'
-- Companion 'Aera Lector'
 - Companion 'Aries'
 - Companion 'Cyberpunk Frosch'
 - Companion 'Dorma Anim Black Sky'
-- Companion 'Irene -Dragon Form-'
 - Companion 'Skiadrum'
 
 ## Banner covers (2)
