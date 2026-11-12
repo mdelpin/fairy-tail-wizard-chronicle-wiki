@@ -55,11 +55,13 @@
   ],
   "ownedStat": "ATK",
   "ownedStart": 100,
-  "ownedStep": null,
+  "ownedStep": 100,
   "stepConfirmed": null,
   "levelTextSource": "in-game",
   "gameText": {
-   "Lv1": "Every 15 sec, deals damage to all enemies equal to 500% of the party's average ATK. Additionally, for 5 sec, inflicts Darkness, [Top] Burn, and Heal Block on the targets."
+   "Lv1": "Every 15 sec, deals damage to all enemies equal to 500% of the party's average ATK. Additionally, for 5 sec, inflicts Darkness, [Top] Burn, and Heal Block on the targets.",
+   "Lv2": "Every 15 sec, deals damage to all enemies equal to 600% of the party's average ATK. Additionally, for 6 sec, inflicts Darkness, [Top] Burn, and Heal Block on the targets.",
+   "Lv3": "Every 15 sec, deals damage to all enemies equal to 700% of the party's average ATK. Additionally, for 7 sec, inflicts Darkness, [Top] Burn, and Heal Block on the targets."
   },
   "issues": [],
   "applications": [
@@ -119,11 +121,13 @@
   ],
   "ownedStat": "ATK",
   "ownedStart": 100,
-  "ownedStep": null,
+  "ownedStep": 100,
   "stepConfirmed": null,
   "levelTextSource": "in-game",
   "gameText": {
-   "Lv1": "Every 6 sec, inflicts on all enemies for 2 sec, [Top] ATK Decrease and [Top] Critical Damage Decrease."
+   "Lv1": "Every 6 sec, inflicts on all enemies for 2 sec, [Top] ATK Decrease and [Top] Critical Damage Decrease.",
+   "Lv2": "Every 6 sec, inflicts on all enemies for 3 sec, [Top] ATK Decrease and [Top] Critical Damage Decrease.",
+   "Lv3": "Every 6 sec, inflicts on all enemies for 4 sec, [Top] ATK Decrease and [Top] Critical Damage Decrease."
   },
   "issues": [],
   "applications": [
@@ -181,11 +185,13 @@
   ],
   "ownedStat": "HP",
   "ownedStart": 100,
-  "ownedStep": null,
+  "ownedStep": 100,
   "stepConfirmed": null,
   "levelTextSource": "in-game",
   "gameText": {
-   "Lv1": "Every 6 sec, inflicts all enemies with [Top] Evasion Decrease and [Top] Critical Rate Decrease for 2 sec."
+   "Lv1": "Every 6 sec, inflicts all enemies with [Top] Evasion Decrease and [Top] Critical Rate Decrease for 2 sec.",
+   "Lv2": "Every 6 sec, inflicts all enemies with [Top] Evasion Decrease and [Top] Critical Rate Decrease for 3 sec.",
+   "Lv3": "Every 6 sec, inflicts all enemies with [Top] Evasion Decrease and [Top] Critical Rate Decrease for 4 sec."
   },
   "issues": [],
   "applications": [
@@ -679,7 +685,9 @@
   "stepConfirmed": null,
   "levelTextSource": "in-game",
   "gameText": {
-   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also inflicts all enemies with [Top] DEF Decrease and Heal Block for 3 sec."
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also inflicts all enemies with [Top] DEF Decrease and Heal Block for 3 sec.",
+   "Lv2": "Every 12 sec, deals damage equal to 400% of all allies' average ATK to all enemies. Also inflicts all enemies with [Top] DEF Decrease and Heal Block for 4 sec.",
+   "Lv3": "Every 12 sec, deals damage equal to 500% of all allies' average ATK to all enemies. Also inflicts all enemies with [Top] DEF Decrease and Heal Block for 5 sec."
   },
   "issues": [],
   "applications": [
@@ -808,11 +816,13 @@
   ],
   "ownedStat": "HP",
   "ownedStart": 100,
-  "ownedStep": null,
+  "ownedStep": 100,
   "stepConfirmed": null,
   "levelTextSource": "in-game",
   "gameText": {
-   "Lv1": "Every 15 sec, deals damage equal to 450% of the average ATK of all allies to all enemies.\nAdditionally inflicts Silence and Heal Block on the targets for 5 sec."
+   "Lv1": "Every 15 sec, deals damage equal to 450% of the average ATK of all allies to all enemies.\nAdditionally inflicts Silence and Heal Block on the targets for 5 sec.",
+   "Lv2": "Every 15 sec, deals damage equal to 550% of the average ATK of all allies to all enemies.\nAdditionally inflicts Silence and Heal Block on the targets for 6 sec.",
+   "Lv3": "Every 15 sec, deals damage equal to 650% of the average ATK of all allies to all enemies.\nAdditionally inflicts Silence and Heal Block on the targets for 7 sec."
   },
   "issues": [],
   "applications": [
@@ -1041,12 +1051,14 @@
   "stepConfirmed": null,
   "levelTextSource": "Corrected from Japanese text",
   "gameText": {
-   "Lv1": "Every 12 sec, deals damage equal to 300% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 3 sec."
+   "Lv1": "Every 12 sec, deals damage equal to 300% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 3 sec.",
+   "Lv2": "Every 12 sec, deals damage equal to 400% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 4 sec.",
+   "Lv3": "Every 12 sec, deals damage equal to 500% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 5 sec."
   },
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the text says the skill grants all allies \"[Top] Continuous Heal, [Top] Critical Rate Increase, and\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill grants [Top] Continuous Heal, [Top] Critical Rate Increase and [Top] ATK Increase for 3 sec. The wiki records all three effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game at every skill level. On the card, the text says the skill grants all allies \"[Top] Continuous Heal, [Top] Critical Rate Increase, and\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill grants [Top] Continuous Heal, [Top] Critical Rate Increase and [Top] ATK Increase for 3 sec at Lv.1. The wiki records all three effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese. Lv.2 and Lv.3 are built from the Lv.1 text using the percentages in the game; their 4 and 5 sec durations follow the pattern of other cards and are not read directly."
    }
   ],
   "applications": [
@@ -1109,7 +1121,9 @@
   "stepConfirmed": null,
   "levelTextSource": "in-game",
   "gameText": {
-   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also grants all allies [Top] DEF Increase and Action Block Barrier for 3 sec."
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies' average ATK to all enemies. Also grants all allies [Top] DEF Increase and Action Block Barrier for 3 sec.",
+   "Lv2": "Every 12 sec, deals damage equal to 400% of all allies' average ATK to all enemies. Also grants all allies [Top] DEF Increase and Action Block Barrier for 4 sec.",
+   "Lv3": "Every 12 sec, deals damage equal to 500% of all allies' average ATK to all enemies. Also grants all allies [Top] DEF Increase and Action Block Barrier for 5 sec."
   },
   "issues": [],
   "applications": [
@@ -1415,7 +1429,9 @@
   "stepConfirmed": null,
   "levelTextSource": "Corrected from Japanese text",
   "gameText": {
-   "Lv1": "Every 6 seconds, restores HP of the ally with the lowest HP by 550% of the average ATK of all allies, and grants all allies for 2 seconds: [Top] ATK Increase and"
+   "Lv1": "Every 6 seconds, restores HP of the ally with the lowest HP by 550% of the average ATK of all allies, and grants all allies for 2 seconds: [Top] ATK Increase and [Top] Critical Rate Increase.",
+   "Lv2": "Every 6 seconds, restores HP of the ally with the lowest HP by 600% of the average ATK of all allies, and grants all allies for 3 seconds: [Top] ATK Increase and [Top] Critical Rate Increase.",
+   "Lv3": "Every 6 seconds, restores HP of the ally with the lowest HP by 650% of the average ATK of all allies, and grants all allies for 4 seconds: [Top] ATK Increase and [Top] Critical Rate Increase."
   },
   "issues": [
    {
@@ -1513,7 +1529,9 @@
   "stepConfirmed": null,
   "levelTextSource": "in-game",
   "gameText": {
-   "Lv1": "Every 6 sec., grants all allies [Top] Critical Resistance Increase and [High] Continuous Heal for 2 sec."
+   "Lv1": "Every 6 sec., grants all allies [Top] Critical Resistance Increase and [High] Continuous Heal for 2 sec.",
+   "Lv2": "Every 6 sec., grants all allies [Top] Critical Resistance Increase and [High] Continuous Heal for 3 sec.",
+   "Lv3": "Every 6 sec., grants all allies [Top] Critical Resistance Increase and [High] Continuous Heal for 4 sec."
   },
   "issues": [],
   "applications": [
@@ -1613,12 +1631,14 @@
   "stepConfirmed": null,
   "levelTextSource": "Corrected from Japanese text",
   "gameText": {
-   "Lv1": "Deals 300% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 3 seconds."
+   "Lv1": "Deals 300% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 3 seconds.",
+   "Lv2": "Deals 400% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 4 seconds.",
+   "Lv3": "Deals 500% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 5 seconds."
   },
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the text says the skill \"grants all allies [Top] ATK Increase and\" and then stops, so the second effect and the duration do not appear. The Japanese text says the skill grants [Top] ATK Increase and [Top] Shield for 3 sec. The wiki records both effects. The damage (300% of the party's average ATK every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game at every skill level. On the card, the text says the skill \"grants all allies [Top] ATK Increase and\" and then stops, so the second effect and the duration do not appear. The Japanese text says the skill grants [Top] ATK Increase and [Top] Shield for 3 sec at Lv.1. The wiki records both effects. The damage (300% of the party's average ATK every 12 sec) matches the Japanese. Lv.2 and Lv.3 are built from the Lv.1 text using the percentages in the game; their 4 and 5 sec durations follow the pattern of other cards and are not read directly."
    }
   ],
   "applications": [

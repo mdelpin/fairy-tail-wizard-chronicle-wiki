@@ -698,7 +698,7 @@
   "name": "Lucy Lacrima",
   "kind": "signature",
   "signatureFor": "lucy-heartfilia",
-  "gameText": "After a Normal Skill hits, has a 20% chance to inflict Silence and Top DEF Down on the target for 3 sec. The Top tier applies to DEF Down; Silence is untiered.",
+  "gameText": "After a normal skill hits, has a 20% chance to inflict on the target for 3 sec, Silence and [Top] DEF Down.",
   "notes": null,
   "applications": [
    "silence-single-enemy-20-3-sec",
