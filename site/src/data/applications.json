@@ -1138,6 +1138,27 @@
   "gameText": null
  },
  {
+  "id": "blind-each-target-hit-every-10-sec-7-sec",
+  "source": "unit",
+  "effect": "blind",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 7,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "blind-each-target-hit-every-11-sec-50-5-sec",
   "source": "unit",
   "effect": "blind",
@@ -1724,6 +1745,35 @@
   "condition": null,
   "requires": null,
   "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-enemies-in-range-every-10-sec-950-of-own-atk-scales-per-heart-ally",
+  "source": "unit",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "Enemies in Range",
+  "trigger": {
+   "events": [],
+   "everySeconds": 10,
+   "raw": "Every 10 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 950,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Effect Value",
+   "increasePerUnit": 50,
+   "increaseValueUnit": "Percent",
+   "scalingBasis": "Heart Ally",
+   "maximumNumberOfIncreases": 7,
+   "maximumResult": 350
+  },
   "gameText": null
  },
  {
@@ -4533,6 +4583,28 @@
   "gameText": null
  },
  {
+  "id": "high-atk-increase-all-allies-30-3-sec",
+  "source": "unit",
+  "effect": "high-atk-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [
+    "normal attack",
+    "after attack hits"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Attack, After Attack Hits"
+  },
+  "chance": 0.3,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "high-atk-increase-brave-allies-4-sec",
   "source": "unit",
   "effect": "high-atk-increase",
@@ -5864,6 +5936,28 @@
   "gameText": "After the attack hits, there is a 30% chance to inflict [High] Critical Rate Decrease on the target for 3 sec"
  },
  {
+  "id": "high-critical-rate-increase-all-allies-30-3-sec",
+  "source": "unit",
+  "effect": "high-critical-rate-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [
+    "normal attack",
+    "after attack hits"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Attack, After Attack Hits"
+  },
+  "chance": 0.3,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "high-critical-rate-increase-brave-allies-critical-hit-3-sec",
   "source": "unit",
   "effect": "high-critical-rate-increase",
@@ -6856,7 +6950,7 @@
   "gameText": null
  },
  {
-  "id": "high-freeze-each-target-hit-20-2-sec",
+  "id": "high-freeze-each-target-hit-20-4-sec",
   "source": "unit",
   "effect": "high-freeze",
   "type": "Inflicts",
@@ -7003,6 +7097,27 @@
   },
   "chance": null,
   "durationSeconds": 7,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-paralysis-all-enemies-while-on-the-field",
+  "source": "unit",
+  "effect": "high-paralysis",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -9145,6 +9260,27 @@
   "gameText": null
  },
  {
+  "id": "silence-single-enemy-20-2-sec",
+  "source": "unit",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "Single Enemy",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.2,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "silence-single-enemy-20-4-sec",
   "source": "unit",
   "effect": "silence",
@@ -9421,6 +9557,27 @@
   },
   "chance": null,
   "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-decrease-all-enemies-while-on-the-field",
+  "source": "unit",
+  "effect": "top-atk-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -10442,6 +10599,34 @@
   "gameText": null
  },
  {
+  "id": "top-accuracy-increase-all-allies-every-10-sec-5-sec-extended-per-heart-ally",
+  "source": "unit",
+  "effect": "top-accuracy-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Duration",
+   "increasePerUnit": 0.5,
+   "increaseValueUnit": "Seconds",
+   "scalingBasis": "Heart Ally",
+   "maximumNumberOfIncreases": 6,
+   "maximumResult": 3
+  },
+  "gameText": null
+ },
+ {
   "id": "top-accuracy-increase-all-allies-every-5-sec-5-sec",
   "source": "unit",
   "effect": "top-accuracy-increase",
@@ -10604,6 +10789,27 @@
   "requires": null,
   "scaling": null,
   "gameText": "Every 8 sec... After the attack hits, there is a 50% chance to inflict on the target for 5 sec [Top] Bleed."
+ },
+ {
+  "id": "top-bleed-all-enemies-critical-hit-5-sec",
+  "source": "unit",
+  "effect": "top-bleed",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "critical hit"
+   ],
+   "everySeconds": null,
+   "raw": "Critical Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
  },
  {
   "id": "top-bleed-each-target-hit-every-10-sec-40-5-sec",
@@ -10985,6 +11191,27 @@
   "gameText": null
  },
  {
+  "id": "top-burn-each-target-hit-every-10-sec-7-sec",
+  "source": "unit",
+  "effect": "top-burn",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 7,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-burn-each-target-hit-every-11-sec-5-sec",
   "source": "unit",
   "effect": "top-burn",
@@ -11171,6 +11398,34 @@
   "condition": null,
   "requires": null,
   "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-continuous-heal-all-allies-every-10-sec-5-sec-extended-per-heart-ally",
+  "source": "unit",
+  "effect": "top-continuous-heal",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Duration",
+   "increasePerUnit": 0.5,
+   "increaseValueUnit": "Seconds",
+   "scalingBasis": "Heart Ally",
+   "maximumNumberOfIncreases": 6,
+   "maximumResult": 3
+  },
   "gameText": null
  },
  {
@@ -11402,6 +11657,27 @@
   "gameText": null
  },
  {
+  "id": "top-critical-damage-decrease-single-enemy-30-3-sec",
+  "source": "unit",
+  "effect": "top-critical-damage-decrease",
+  "type": "Inflicts",
+  "target": "Single Enemy",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.3,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-critical-damage-increase-all-allies-20-5-sec",
   "source": "unit",
   "effect": "top-critical-damage-increase",
@@ -11447,6 +11723,34 @@
    "scalingBasis": "Technique Ally",
    "maximumNumberOfIncreases": 7,
    "maximumResult": 3.5
+  },
+  "gameText": null
+ },
+ {
+  "id": "top-critical-damage-increase-all-allies-every-10-sec-5-sec-extended-per-heart-ally",
+  "source": "unit",
+  "effect": "top-critical-damage-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Duration",
+   "increasePerUnit": 0.5,
+   "increaseValueUnit": "Seconds",
+   "scalingBasis": "Heart Ally",
+   "maximumNumberOfIncreases": 6,
+   "maximumResult": 3
   },
   "gameText": null
  },
@@ -11770,6 +12074,27 @@
   },
   "chance": null,
   "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-defense-decrease-all-enemies-critical-hit-5-sec",
+  "source": "unit",
+  "effect": "top-critical-defense-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "critical hit"
+   ],
+   "everySeconds": null,
+   "raw": "Critical Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -13367,6 +13692,25 @@
   "gameText": null
  },
  {
+  "id": "top-critical-resistance-increase-all-allies-every-11-sec-5-sec",
+  "source": "unit",
+  "effect": "top-critical-resistance-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 11,
+   "raw": "Every 11 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-critical-resistance-increase-brave-allies-critical-hit-5-sec",
   "source": "unit",
   "effect": "top-critical-resistance-increase",
@@ -13463,6 +13807,27 @@
   },
   "chance": null,
   "durationSeconds": 7,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-decrease-all-enemies-while-on-the-field",
+  "source": "unit",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -14434,6 +14799,27 @@
    "timing": "After Attack Hits",
    "state": "Present"
   },
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-evasion-decrease-all-enemies-while-on-the-field",
+  "source": "unit",
+  "effect": "top-evasion-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
   "scaling": null,
   "gameText": null
  },
@@ -15751,6 +16137,27 @@
   "gameText": null
  },
  {
+  "id": "high-atk-decrease-all-enemies-while-on-the-field",
+  "source": "lacrima",
+  "effect": "high-atk-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "high-bleed-all-enemies-start-of-battle-5-sec",
   "source": "lacrima",
   "effect": "high-bleed",
@@ -15952,6 +16359,27 @@
   },
   "chance": null,
   "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-critical-rate-decrease-all-enemies-while-on-the-field",
+  "source": "lacrima",
+  "effect": "high-critical-rate-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -18129,6 +18557,27 @@
   },
   "chance": null,
   "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-paralysis-all-enemies-start-of-battle-5-sec",
+  "source": "lacrima",
+  "effect": "top-paralysis",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "start of battle"
+   ],
+   "everySeconds": null,
+   "raw": "Start of Battle"
+  },
+  "chance": null,
+  "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,
   "requires": null,

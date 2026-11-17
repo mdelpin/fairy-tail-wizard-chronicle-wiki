@@ -1,6 +1,6 @@
 # Validation report
 
-156 units, 115 lacrimas, 112 effects in 29 families, 823 effect applications, 54 banners, 58 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 33 live game issues. 101 issues in 7 categories.
+158 units, 117 lacrimas, 112 effects in 29 families, 843 effect applications, 56 banners, 60 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 33 live game issues. 102 issues in 7 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -73,6 +73,7 @@
 - Issue 'Aries Skill: English name is Aquametria, Japanese name is Wool Bomb' → Aries — Skill
 - Issue 'Blazing Beach Vacation Laxus Ultimate: healing drops at Lv.3 (750% / 850% / 750%)' → Blazing Beach Vacation Laxus — Ultimate
 - Issue 'Dark Mage Zeref Normal: English omits the Bind and lists lower damage than Japanese' → Dark Mage Zeref — Normal
+- Issue 'Egg Hunt Irene Ultimate: English says Critical Defense Increase, Japanese says Critical Resistance Increase' → Egg Hunt Irene — Ultimate
 - Issue 'Emperor Spriggan Zeref Normal: English says Ranged, Japanese says Melee' → Emperor Spriggan Zeref — Normal
 - Issue 'First Dream Aquarius Skill: English description is cut off before the second effect' → First Dream Aquarius — Skill
 - Issue 'First Dream Aquarius Skill: English name is Aquametria, the regular Aquarius's skill name' → First Dream Aquarius — Skill
@@ -80,7 +81,6 @@
 - Issue 'First Dream Laxus Ultimate: English says Accuracy Increase on enemies, Japanese says Down' → First Dream Laxus — Ultimate
 - Issue 'Grandeeney Skill: English description is cut off before the last effect and the duration' → Grandeeney — Skill
 - Issue 'Gray -Ice Devil Slayer Mage- Normal: Freeze chance is 15% in English, 10% in Japanese' → Gray -Ice Devil Slayer Mage- — Normal
-- Issue 'Holy Night Juvia Normal: Japanese text shows Bind on hit' → Holy Night Juvia — Normal
 - Issue 'Jellal Fernandes Ultimate: English says Evasion and Critical Defense Increase on the target, Japanese says Down' → Jellal Fernandes — Ultimate
 - Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration' → Mercphobia — Skill
 - Issue 'Minerva Lacrima: English says it triggers on a critical hit, Japanese says a normal skill hit (20%)' → ✨ Minerva Lacrima
@@ -107,10 +107,11 @@
 - Companion 'Dorma Anim Black Sky'
 - Companion 'Skiadrum'
 
-## Banner covers (2)
+## Banner covers (3)
 
 - 'pickup-dark-mage-zeref': 794x1060 is not close to 16:9 (the card crops it to fit)
 - 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
+- Banner 'Fairy Collection Selectable Pickup Gacha': no cover image (event banner)
 
 ## Effect families without a Mechanic (shown without one on the site) (1)
 

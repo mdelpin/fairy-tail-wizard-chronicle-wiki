@@ -991,6 +991,31 @@
   ]
  },
  {
+  "id": "pajama-party-lisanna-lacrima",
+  "name": "Pajama Party! Lisanna Lacrima",
+  "kind": "signature",
+  "signatureFor": "pajama-party-lisanna",
+  "gameText": "While on the field, inflicts [High] ATK Decrease and [High] Critical Rate Decrease and [Low] Accuracy Decrease on all enemies.",
+  "notes": null,
+  "applications": [
+   "high-atk-decrease-all-enemies-while-on-the-field",
+   "high-critical-rate-decrease-all-enemies-while-on-the-field",
+   "low-accuracy-decrease-all-enemies-while-on-the-field"
+  ]
+ },
+ {
+  "id": "pajama-party-mirajane-lacrima",
+  "name": "Pajama Party! Mirajane Lacrima",
+  "kind": "signature",
+  "signatureFor": "pajama-party-mirajane",
+  "gameText": "At the start of battle, inflicts [Top] Paralysis and Heal Block on all enemies for 5 sec.",
+  "notes": null,
+  "applications": [
+   "top-paralysis-all-enemies-start-of-battle-5-sec",
+   "heal-block-all-enemies-start-of-battle-5-sec"
+  ]
+ },
+ {
   "id": "parallel-world-mystogan-lacrima",
   "name": "Parallel World Mystogan Lacrima",
   "kind": "signature",
