@@ -760,5 +760,30 @@
   "units": [],
   "companions": [],
   "cover": "guild-launch-sp-technique-limited-gacha-banner.webp"
+ },
+ {
+  "id": "pajama-party-dreaming-girls",
+  "name": "Pajama Party! Dreaming Girls",
+  "type": "Regular",
+  "start": "2026-11-13",
+  "end": "2026-11-27",
+  "dateSource": "Confirmed",
+  "units": [
+   "pajama-party-mirajane",
+   "pajama-party-lisanna"
+  ],
+  "companions": [],
+  "cover": null
+ },
+ {
+  "id": "fairy-collection-selectable-pickup-gacha",
+  "name": "Fairy Collection Selectable Pickup Gacha",
+  "type": "Pickup",
+  "start": "2026-11-16",
+  "end": "2026-11-23",
+  "dateSource": "Confirmed",
+  "units": [],
+  "companions": [],
+  "cover": null
  }
 ]

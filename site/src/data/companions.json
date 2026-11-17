@@ -1056,12 +1056,14 @@
   "stepConfirmed": null,
   "levelTextSource": "Corrected from Japanese text",
   "gameText": {
-   "Lv1": "Every 12 sec, deals damage equal to 300% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 3 sec."
+   "Lv1": "Every 12 sec, deals damage equal to 300% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 3 sec.",
+   "Lv2": "Every 12 sec, deals damage equal to 400% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 4 sec.",
+   "Lv3": "Every 12 sec, deals damage equal to 500% of the average ATK of all allies to all enemies. Grants all allies [Top] Continuous Heal, [Top] Critical Rate Increase, and [Top] ATK Increase for 5 sec."
   },
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the text says the skill grants all allies \"[Top] Continuous Heal, [Top] Critical Rate Increase, and\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill grants [Top] Continuous Heal, [Top] Critical Rate Increase and [Top] ATK Increase for 3 sec. The wiki records all three effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game at every skill level. On the card, the text says the skill grants all allies \"[Top] Continuous Heal, [Top] Critical Rate Increase, and\" and then stops, so the third effect and the duration do not appear. The Japanese text says the skill grants [Top] Continuous Heal, [Top] Critical Rate Increase and [Top] ATK Increase for 3 sec at Lv.1. The wiki records all three effects. The damage (300% of the allies' average ATK every 12 sec) matches the Japanese. Lv.2 and Lv.3 are built from the Lv.1 text using the percentages in the game; their 4 and 5 sec durations follow the pattern of other cards and are not read directly."
    }
   ],
   "applications": [
@@ -1640,12 +1642,14 @@
   "stepConfirmed": null,
   "levelTextSource": "Corrected from Japanese text",
   "gameText": {
-   "Lv1": "Deals 300% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 3 seconds."
+   "Lv1": "Deals 300% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 3 seconds.",
+   "Lv2": "Deals 400% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 4 seconds.",
+   "Lv3": "Deals 500% of the party's average ATK as damage to all enemies every 12 seconds. Additionally grants all allies [Top] ATK Increase and [Top] Shield for 5 seconds."
   },
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the card, the text says the skill \"grants all allies [Top] ATK Increase and\" and then stops, so the second effect and the duration do not appear. The Japanese text says the skill grants [Top] ATK Increase and [Top] Shield for 3 sec. The wiki records both effects. The damage (300% of the party's average ATK every 12 sec) matches the Japanese."
+    "note": "The English description is cut off in the game at every skill level. On the card, the text says the skill \"grants all allies [Top] ATK Increase and\" and then stops, so the second effect and the duration do not appear. The Japanese text says the skill grants [Top] ATK Increase and [Top] Shield for 3 sec at Lv.1. The wiki records both effects. The damage (300% of the party's average ATK every 12 sec) matches the Japanese. Lv.2 and Lv.3 are built from the Lv.1 text using the percentages in the game; their 4 and 5 sec durations follow the pattern of other cards and are not read directly."
    }
   ],
   "applications": [

@@ -1878,8 +1878,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 120% of ATK to the target. After the attack hits, has a 30% chance to inflict on the target for 3s: [High] Burn.",
      "Lv2": "Deals damage equal to 140% of ATK to the target. After the attack hits, has a 30% chance to inflict on the target for 3s: [High] Burn.",
@@ -1896,7 +1896,7 @@
       "duration": null,
       "value": "170% ATK",
       "condition": null,
-      "notes": "Ranged"
+      "notes": "Melee"
      },
      {
       "level": "3",
@@ -1912,7 +1912,7 @@
      }
     ],
     "icon": 2,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
@@ -3930,8 +3930,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 100% of ATK to the target. After the attack hits, there is a 20% chance to inflict Silence on the target for 2 sec.",
      "Lv2": "Deals damage equal to 120% of ATK to the target. After the attack hits, there is a 20% chance to inflict Silence on the target for 2 sec.",
@@ -3949,13 +3949,26 @@
       "value": "150% ATK",
       "condition": null,
       "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Silence",
+      "tier": null,
+      "chance": "20%",
+      "duration": "2 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
      }
     ],
     "icon": 4,
     "levelTextSource": "In game",
     "notes": null,
     "applications": [
-     "damage-single-enemy-normal-attack-150-of-own-atk"
+     "damage-single-enemy-normal-attack-150-of-own-atk",
+     "silence-single-enemy-20-2-sec"
     ]
    },
    {
@@ -4019,9 +4032,9 @@
     "name": "Command T Ultra Expand",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Deals damage equal to 600% of ATK to all enemies every 9 sec. After the attack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 3 sec.",
-     "Lv2": "Deals damage equal to 700% of ATK to all enemies every 9 sec. After the attack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 4 sec.",
-     "Lv3": "Deals damage equal to 800% of ATK to all enemies every 9 sec. After the attack hits, there is a 40% chance for each target to inflict Silence and [Top] ATK Decrease for 5 sec."
+     "Lv1": "Deals damage equal to 600% of ATK to all enemies every 9 sec. After the attack hits, each target hit has a 40% chance to receive both Silence and [Top] ATK Decrease for 3 sec.",
+     "Lv2": "Deals damage equal to 700% of ATK to all enemies every 9 sec. After the attack hits, each target hit has a 40% chance to receive both Silence and [Top] ATK Decrease for 4 sec.",
+     "Lv3": "Deals damage equal to 800% of ATK to all enemies every 9 sec. After the attack hits, each target hit has a 40% chance to receive both Silence and [Top] ATK Decrease for 5 sec."
     },
     "levelTable": [
      {
@@ -4193,9 +4206,9 @@
     "name": "Resurrection Egg",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Every 11 sec, restores HP of all allies by 750% of the caster's ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Defense Increase to targets for 3 sec and removes all debuffs from all allies.",
-     "Lv2": "Every 11 sec, restores HP of all allies by 850% of the caster's ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Defense Increase to targets for 4 sec and removes all debuffs from all allies.",
-     "Lv3": "Every 11 sec, restores HP of all allies by 950% of the caster's ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Defense Increase to targets for 5 sec and removes all debuffs from all allies."
+     "Lv1": "Every 11 sec, restores HP of all allies by 750% of the caster's ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Resistance Increase to targets for 3 sec and removes all debuffs from all allies.",
+     "Lv2": "Every 11 sec, restores HP of all allies by 850% of the caster's ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Resistance Increase to targets for 4 sec and removes all debuffs from all allies.",
+     "Lv3": "Every 11 sec, restores HP of all allies by 950% of the caster's ATK. Additionally grants [Top] Continuous Heal and [Top] Critical Resistance Increase to targets for 5 sec and removes all debuffs from all allies."
     },
     "levelTable": [
      {
@@ -4226,7 +4239,7 @@
       "level": "3",
       "trigger": "Every 11 sec",
       "target": "All Allies",
-      "effect": "Critical Defense Increase",
+      "effect": "Critical Resistance Increase",
       "tier": "Top",
       "chance": null,
       "duration": "5 sec",
@@ -4248,13 +4261,19 @@
      }
     ],
     "icon": 18,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "At all three levels, the English description of Resurrection Egg lists [Top] Critical Defense Increase. The Japanese description lists [Top] Critical Resistance Up (【最上級】クリティカル耐性アップ), and its tooltip says Critical Resistance increases by 30%. The wiki records [Top] Critical Resistance Increase for 3, 4, or 5 seconds at Lv.1, Lv.2, or Lv.3."
+     }
+    ],
     "applications": [
+     "remove-all-debuffs-all-allies-every-11-sec",
      "heal-all-allies-every-11-sec-950-of-own-atk",
-     "top-continuous-heal-all-allies-every-11-sec-5-sec",
-     "top-critical-defense-increase-all-allies-every-11-sec-5-sec",
-     "remove-all-debuffs-all-allies-every-11-sec"
+     "top-critical-resistance-increase-all-allies-every-11-sec-5-sec",
+     "top-continuous-heal-all-allies-every-11-sec-5-sec"
     ]
    }
   ]
@@ -8174,12 +8193,6 @@
     "icon": 5,
     "levelTextSource": "Corrected from Japanese text",
     "notes": null,
-    "issues": [
-     {
-      "problemType": "Mistranslation",
-      "note": "The previous description listed a 20% chance to grant self [High] Critical Rate Increase for 3 seconds. The Japanese client shows a 10% chance to inflict Bind on the target for 2 seconds at all three levels. The wiki follows the Japanese skill text."
-     }
-    ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "bind-single-enemy-10-2-sec"
@@ -8871,8 +8884,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 140% of ATK to the target. After hitting, has a 30% chance to inflict [Top] Burn on the target for 3 sec.",
      "Lv2": "Deals damage equal to 160% of ATK to the target. After hitting, has a 30% chance to inflict [Top] Burn on the target for 3 sec.",
@@ -8889,7 +8902,7 @@
       "duration": null,
       "value": "190% ATK",
       "condition": null,
-      "notes": "Ranged"
+      "notes": "Melee"
      },
      {
       "level": "3",
@@ -8905,7 +8918,7 @@
      }
     ],
     "icon": 1,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
@@ -10762,8 +10775,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 110% of ATK as damage to the target. If a critical hit occurs, grants allies of the Skill attribute [Top] Critical Damage Increase for 3 seconds.",
      "Lv2": "Deals 130% of ATK as damage to the target. If a critical hit occurs, grants allies of the Skill attribute [Top] Critical Damage Increase for 3 seconds.",
@@ -11992,7 +12005,7 @@
     "notes": null,
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-700-of-own-atk",
-     "high-freeze-each-target-hit-20-2-sec"
+     "high-freeze-each-target-hit-20-4-sec"
     ]
    }
   ]
@@ -13940,8 +13953,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 140% of ATK to the target. When a Critical Hit occurs, grants self [Top] ATK Increase, [Top] DEF Increase, and [Top] Critical Rate Increase for 3 sec.",
      "Lv2": "Deals damage equal to 160% of ATK to the target. When a Critical Hit occurs, grants self [Top] ATK Increase, [Top] DEF Increase, and [Top] Critical Rate Increase for 3 sec.",
@@ -15369,8 +15382,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 120% of ATK to the target. When a Critical hit occurs, applies the following to Heart-type allies for 3 seconds: [High] ATK Increase, [High] Critical Rate Increase.",
      "Lv2": "Deals damage equal to 140% of ATK to the target. When a Critical hit occurs, applies the following to Heart-type allies for 3 seconds: [High] ATK Increase, [High] Critical Rate Increase.",
@@ -15415,7 +15428,7 @@
      }
     ],
     "icon": 4,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
@@ -16918,6 +16931,419 @@
      "damage-enemies-in-target-area-every-10-sec-950-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-40-5-sec",
      "top-burn-each-target-hit-every-10-sec-40-5-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pajama-party-lisanna",
+  "name": "Pajama Party! Lisanna",
+  "identity": "Lisanna Strauss",
+  "collection": "Pajama Party! Dreaming Girls",
+  "rarity": "UR",
+  "collectionBonusStat": "HP",
+  "newForm": false,
+  "debutBanner": "pajama-party-dreaming-girls",
+  "availableFrom": "2026-11-15",
+  "bannerArt": "pajama-party-lisanna.webp",
+  "attribute": "Heart",
+  "role": "Ranged",
+  "portrait": "Pajama Party! Lisanna.png",
+  "card": "pajama-party-lisanna.webp",
+  "signatureLacrima": "pajama-party-lisanna-lacrima",
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 120% ATK damage to the target. After the attack hits, has a 30% chance to grant all allies [High] Critical Rate Increase and [High] ATK Increase for 3 sec.",
+     "Lv2": "Deals 140% ATK damage to the target. After the attack hits, has a 30% chance to grant all allies [High] Critical Rate Increase and [High] ATK Increase for 3 sec.",
+     "Lv3": "Deals 170% ATK damage to the target. After the attack hits, has a 30% chance to grant all allies [High] Critical Rate Increase and [High] ATK Increase for 3 sec."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "170% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "Critical Rate Increase",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "ATK Increase",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 8,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-170-of-own-atk",
+     "high-critical-rate-increase-all-allies-30-3-sec",
+     "high-atk-increase-all-allies-30-3-sec"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Go to Sleep Already!",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "When a critical hit occurs, inflicts [Top] ATK Decrease and [Top] Critical DEF Decrease and [Top] Bleed on all enemies for 3 sec.",
+     "Lv2": "When a critical hit occurs, inflicts [Top] ATK Decrease and [Top] Critical DEF Decrease and [Top] Bleed on all enemies for 4 sec.",
+     "Lv3": "When a critical hit occurs, inflicts [Top] ATK Decrease and [Top] Critical DEF Decrease and [Top] Bleed on all enemies for 5 sec."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "All Enemies",
+      "effect": "ATK Decrease",
+      "tier": "Top",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "All Enemies",
+      "effect": "Critical Defense Decrease",
+      "tier": "Top",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Critical Hit",
+      "target": "All Enemies",
+      "effect": "Bleed",
+      "tier": "Top",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "top-atk-decrease-all-enemies-critical-hit-5-sec",
+     "top-critical-defense-decrease-all-enemies-critical-hit-5-sec",
+     "top-bleed-all-enemies-critical-hit-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "So fluffy...!?",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deals 750% ATK damage to targets within range. Increases damage by 50% for each Heart-type ally (up to 350%). After the attack hits, grants all allies [Top] Critical Damage Increase and [Top] Accuracy Increase, [Top] Continuous Healing for 3 sec. Extends the duration of these additional effects by 0.5 sec for each Heart-type ally (up to 3 sec).",
+     "Lv2": "Every 10 sec, deals 850% ATK damage to targets within range. Increases damage by 50% for each Heart-type ally (up to 350%). After the attack hits, grants all allies [Top] Critical Damage Increase and [Top] Accuracy Increase, [Top] Continuous Healing for 4 sec. Extends the duration of these additional effects by 0.5 sec for each Heart-type ally (up to 3 sec).",
+     "Lv3": "Every 10 sec, deals 950% ATK damage to targets within range. Increases damage by 50% for each Heart-type ally (up to 350%). After the attack hits, grants all allies [Top] Critical Damage Increase and [Top] Accuracy Increase, [Top] Continuous Healing for 5 sec. Extends the duration of these additional effects by 0.5 sec for each Heart-type ally (up to 3 sec)."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Enemies in Range",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "950% ATK",
+      "condition": null,
+      "notes": "+50% per Heart ally (max +350%)"
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "Critical Damage Increase",
+      "tier": "Top",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "+0.5 sec per Heart ally (max +3 sec)"
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "Accuracy Increase",
+      "tier": "Top",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "+0.5 sec per Heart ally (max +3 sec)"
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "All Allies",
+      "effect": "Continuous Heal",
+      "tier": "Top",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "+0.5 sec per Heart ally (max +3 sec)"
+     }
+    ],
+    "icon": 44,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-enemies-in-range-every-10-sec-950-of-own-atk-scales-per-heart-ally",
+     "top-critical-damage-increase-all-allies-every-10-sec-5-sec-extended-per-heart-ally",
+     "top-accuracy-increase-all-allies-every-10-sec-5-sec-extended-per-heart-ally",
+     "top-continuous-heal-all-allies-every-10-sec-5-sec-extended-per-heart-ally"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pajama-party-mirajane",
+  "name": "Pajama Party! Mirajane",
+  "identity": "Mirajane Strauss",
+  "collection": "Pajama Party! Dreaming Girls",
+  "rarity": "UR",
+  "collectionBonusStat": "ATK",
+  "newForm": false,
+  "debutBanner": "pajama-party-dreaming-girls",
+  "availableFrom": "2026-11-13",
+  "bannerArt": "pajama-party-mirajane.webp",
+  "attribute": "Mind",
+  "role": "Disrupt",
+  "portrait": "Pajama Pary! Mirajane.png",
+  "card": "pajama-party-mirajane.webp",
+  "signatureLacrima": "pajama-party-mirajane-lacrima",
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 110% ATK damage to the target. After the attack hits, has a 30% chance to inflict [Top] Critical Damage Decrease and [Top] ATK Decrease, [High] Bleed on the target for 3 sec.",
+     "Lv2": "Deals 130% ATK damage to the target. After the attack hits, has a 30% chance to inflict [Top] Critical Damage Decrease and [Top] ATK Decrease, [High] Bleed on the target for 3 sec.",
+     "Lv3": "Deals 160% ATK damage to the target. After the attack hits, has a 30% chance to inflict [Top] Critical Damage Decrease and [Top] ATK Decrease, [High] Bleed on the target for 3 sec."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "160% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Critical Damage Decrease",
+      "tier": "Top",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "ATK Decrease",
+      "tier": "Top",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Single Enemy",
+      "effect": "Bleed",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 7,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-160-of-own-atk",
+     "top-critical-damage-decrease-single-enemy-30-3-sec",
+     "top-atk-decrease-single-enemy-30-3-sec",
+     "high-bleed-single-enemy-30-3-sec"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Overwhelming Drowsiness",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "While on the field, inflicts [Top] DEF Decrease and [High] ATK Decrease and [High] Evasion Rate Decrease and [High] Paralysis on all enemies.",
+     "Lv2": "While on the field, inflicts [Top] DEF Decrease and [Top] ATK Decrease and [High] Evasion Rate Decrease and [High] Paralysis on all enemies.",
+     "Lv3": "While on the field, inflicts [Top] DEF Decrease and [Top] ATK Decrease and [Top] Evasion Rate Decrease and [High] Paralysis on all enemies."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "While on the Field",
+      "target": "All Enemies",
+      "effect": "DEF Decrease",
+      "tier": "Top",
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "While on the Field",
+      "target": "All Enemies",
+      "effect": "ATK Decrease",
+      "tier": "Top",
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "While on the Field",
+      "target": "All Enemies",
+      "effect": "Evasion Decrease",
+      "tier": "Top",
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "While on the Field",
+      "target": "All Enemies",
+      "effect": "Paralysis",
+      "tier": "High",
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 10,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "top-atk-decrease-all-enemies-while-on-the-field",
+     "top-evasion-decrease-all-enemies-while-on-the-field",
+     "high-paralysis-all-enemies-while-on-the-field",
+     "top-def-decrease-all-enemies-while-on-the-field"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Zzz...",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deals 700% ATK damage to all enemies. After the attack hits, inflicts Blind and [Top] Burn on the target for 5 sec.",
+     "Lv2": "Every 10 sec, deals 800% ATK damage to all enemies. After the attack hits, inflicts Blind and [Top] Burn on the target for 6 sec.",
+     "Lv3": "Every 10 sec, deals 900% ATK damage to all enemies. After the attack hits, inflicts Blind and [Top] Burn on the target for 7 sec."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "All Enemies",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "900% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Each Target Hit",
+      "effect": "Blind",
+      "tier": null,
+      "chance": null,
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Each Target Hit",
+      "effect": "Burn",
+      "tier": "Top",
+      "chance": null,
+      "duration": "7 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 43,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-all-enemies-every-10-sec-750-of-own-atk",
+     "blind-each-target-hit-every-10-sec-7-sec",
+     "top-burn-each-target-hit-every-10-sec-7-sec"
     ]
    }
   ]
