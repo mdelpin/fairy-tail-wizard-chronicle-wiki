@@ -19213,21 +19213,6 @@
   "gameText": null
  },
  {
-  "id": "top-atk-decrease-all-enemies-every-6-sec-2-sec-2",
-  "source": "companion",
-  "effect": null,
-  "type": null,
-  "target": null,
-  "trigger": null,
-  "chance": null,
-  "durationSeconds": null,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "top-atk-decrease-all-enemies-every-6-sec-3-sec",
   "source": "companion",
   "effect": "top-atk-decrease",

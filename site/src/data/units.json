@@ -17341,9 +17341,9 @@
     "levelTextSource": "In game",
     "notes": null,
     "applications": [
-     "damage-all-enemies-every-10-sec-750-of-own-atk",
      "blind-each-target-hit-every-10-sec-7-sec",
-     "top-burn-each-target-hit-every-10-sec-7-sec"
+     "top-burn-each-target-hit-every-10-sec-7-sec",
+     "damage-all-enemies-every-10-sec-900-of-own-atk"
     ]
    }
   ]

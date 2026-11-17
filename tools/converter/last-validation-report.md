@@ -1,6 +1,6 @@
 # Validation report
 
-158 units, 117 lacrimas, 112 effects in 29 families, 843 effect applications, 56 banners, 60 banner arts, 49 companions, 68 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 33 live game issues. 111 issues in 11 categories.
+158 units, 117 lacrimas, 112 effects in 29 families, 843 effect applications, 56 banners, 60 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 33 live game issues. 103 issues in 7 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -100,13 +100,6 @@
 - Issue 'Virgo Skill: English description is cut off before the second effect' → Virgo — Skill
 - Issue 'White Gift Leo Skill: English description is cut off before the second effect and the duration' → White Gift Leo — Skill
 
-## Missing required values (4)
-
-- CompanionEffectApplication 'Top ATK Decrease → All Enemies – Every 6 sec / 2 sec': activationInterval is empty
-- CompanionEffectApplication 'Top ATK Decrease → All Enemies – Every 6 sec / 2 sec': applicationType is empty
-- CompanionEffectApplication 'Top ATK Decrease → All Enemies – Every 6 sec / 2 sec': effect is empty
-- CompanionEffectApplication 'Top ATK Decrease → All Enemies – Every 6 sec / 2 sec': target is empty
-
 ## Owned step unknown (the page shows the start value only) (4)
 
 - Companion 'Aries'
@@ -121,22 +114,9 @@
 - 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
 - Banner 'Fairy Collection Selectable Pickup Gacha': no cover image (event banner)
 
-## Portraits added (new wizards; check they look right) (2)
-
-- pajama-party-lisanna
-- pajama-party-mirajane
-
-## Duplicate titles with different data (1)
-
-- CompanionEffectApplications: 'Top ATK Decrease → All Enemies – Every 6 sec / 2 sec' / 'Top ATK Decrease → All Enemies – Every 6 sec / 2 sec'
-
 ## Effect families without a Mechanic (shown without one on the site) (1)
 
 - Transformation
-
-## Companion applications no skill links to (1)
-
-- 'Top ATK Decrease → All Enemies – Every 6 sec / 2 sec'
 
 ## Companion skills without effects (placeholder skills are expected here) (1)
 
