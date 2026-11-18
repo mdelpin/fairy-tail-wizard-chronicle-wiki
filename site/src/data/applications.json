@@ -524,30 +524,6 @@
   "gameText": "If the attack hits a target afflicted with \"Bleed\", deals an additional 350% of ATK as damage."
  },
  {
-  "id": "advance-special-skill-gauge-current-special-skill-gauge-20-0-7-sec",
-  "source": "unit",
-  "effect": "advance-special-skill-gauge",
-  "type": "Provides",
-  "target": "Self",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": 0.2,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 0.7,
-   "unit": "Seconds"
-  },
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-10-0-7-sec",
   "source": "unit",
   "effect": "advance-ultimate-skill-gauge",
@@ -597,30 +573,6 @@
  },
  {
   "id": "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-30-0-7-sec",
-  "source": "unit",
-  "effect": "advance-ultimate-skill-gauge",
-  "type": "Provides",
-  "target": "Current Ultimate Skill Gauge",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": 0.3,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 0.7,
-   "unit": "Seconds"
-  },
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-30-0-7-sec-2",
   "source": "unit",
   "effect": "advance-ultimate-skill-gauge",
   "type": "Provides",
@@ -11880,27 +11832,6 @@
   },
   "chance": null,
   "durationSeconds": null,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "top-critical-damage-increase-mind-allies-3-sec",
-  "source": "unit",
-  "effect": "top-critical-damage-increase",
-  "type": "Provides",
-  "target": "Mind Allies",
-  "trigger": {
-   "events": [
-    "critical hit"
-   ],
-   "everySeconds": null,
-   "raw": "Critical Hit"
-  },
-  "chance": null,
-  "durationSeconds": 3,
   "valueOverride": null,
   "condition": null,
   "requires": null,

@@ -1339,14 +1339,14 @@
     "issues": [
      {
       "problemType": "Mistranslation",
-      "note": "The recorded English description of Peaceful Sunset names the Special Skill Gauge at all three levels. The Japanese description names the Ultimate Skill Gauge and gives an advance of 0.5, 0.6, or 0.7 seconds at Lv.1, Lv.2, or Lv.3. The wiki records the Ultimate Skill Gauge."
+      "note": "The English description of Peaceful Sunset says it advances the Special Skill Gauge by 0.5, 0.6, or 0.7 seconds at Lv.1, Lv.2, or Lv.3. The Japanese description names the Ultimate Skill Gauge (必殺スキルゲージ) with the same advance at each level. The wiki records the Ultimate Skill Gauge."
      }
     ],
     "applications": [
      "top-shield-all-allies-30-5-sec",
      "top-atk-increase-all-allies-30-5-sec",
      "top-accuracy-increase-all-allies-30-5-sec",
-     "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-30-0-7-sec-2"
+     "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-30-0-7-sec"
     ]
    },
    {
@@ -1748,7 +1748,7 @@
     "issues": [
      {
       "problemType": "Mistranslation",
-      "note": "The recorded English description of Block Lucy’s Normal attack lists [Top] Critical Rate Increase at all three levels. The Japanese description lists [High] Critical Rate Increase for Mind allies for 3 seconds on a critical hit. The wiki records the [High] tier."
+      "note": "The English description of Block Lucy's Normal attack lists [Top] Critical Rate Increase at all three levels, granted for 3 seconds to INT-attribute allies on a critical hit. The Japanese description lists [High] Critical Rate Increase. The wiki records the [High] tier."
      }
     ],
     "applications": [
@@ -3666,7 +3666,11 @@
     "issues": [
      {
       "problemType": "Missing Data",
-      "note": "The English text lists damage of 90% / 100% / 120% of ATK and does not mention a Bind at any level. The Japanese text (黒魔道士 ゼレフ) says 100% / 120% / 150% of ATK, with a 10% chance to inflict Bind for 2 sec at every level. The wiki records the Japanese values."
+      "note": "The English text does not mention a Bind at any level. The Japanese text (黒魔道士 ゼレフ) says the skill has a 10% chance to inflict Bind for 2 sec at every level. The wiki records the Bind."
+     },
+     {
+      "problemType": "Value Anomaly",
+      "note": "The English text lists damage of 90% / 100% / 120% of ATK. The Japanese text (黒魔道士 ゼレフ) says 100% / 120% / 150% of ATK. The wiki records the Japanese values."
      }
     ],
     "applications": [
@@ -4210,7 +4214,7 @@
     "issues": [
      {
       "problemType": "Mistranslation",
-      "note": "The recorded English description of Spring Enchant says it advances the current Special Skill Gauge. Japanese names the current Ultimate Skill Gauge (必殺スキルゲージ). Both describe a 30% chance on a Normal Skill hit, 3/4/5 seconds of teamwide Top DEF Increase and Action Block Barrier, and a 0.5/0.6/0.7-second gauge advance at Lv.1/2/3."
+      "note": "The English description of Spring Enchant says it advances the current Special Skill Gauge. The Japanese description names the current Ultimate Skill Gauge (必殺スキルゲージ). Both describe a 30% chance on a Normal Skill hit, 3/4/5 seconds of teamwide Top DEF Increase and Action Block Barrier, and a 0.5/0.6/0.7-second gauge advance at Lv.1/2/3."
      }
     ],
     "applications": [
@@ -4607,12 +4611,6 @@
     "icon": 4,
     "levelTextSource": "Corrected from Japanese text",
     "notes": null,
-    "issues": [
-     {
-      "problemType": "Mistranslation",
-      "note": "The English skill name reads \"Normal Attack (Ranged)\". The Japanese text (皇帝スプリガンゼレフ) reads 通常攻撃（近距離）, which is Normal Attack (Melee). The damage (140% / 160% / 190% of ATK) and the effects match in both. The wiki records Melee."
-     }
-    ],
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
      "heal-self-30-600-of-own-atk",
@@ -9524,7 +9522,7 @@
     "issues": [
      {
       "problemType": "Mistranslation",
-      "note": "The recorded English text lists Top Critical Damage Increase on a critical hit at all three levels. The Japanese text lists High Critical Damage Increase. Both descriptions grant the buff to Mind (INT) allies for 3 seconds alongside High ATK Increase."
+      "note": "The English description lists [Top] Critical Damage Increase on a critical hit at all three levels. The Japanese description lists [High] Critical Damage Increase. Both grant the buff to INT-type allies for 3 seconds alongside [High] ATK Increase. The wiki records the [High] tier."
      }
     ],
     "applications": [
@@ -18343,7 +18341,7 @@
     "issues": [
      {
       "problemType": "Value Anomaly",
-      "note": "The recorded English description lists Lv.3 Normal Attack damage as 170% of ATK. The Japanese description shows 160%. Lv.1 and Lv.2 match at 110% and 130%. Both descriptions show a 30% chance on hit to heal Juvia for 700% of her ATK and grant High Shield for 3 seconds. The wiki records 160% at Lv.3."
+      "note": "The English description lists Lv.3 Normal Attack damage as 170% of ATK. The Japanese description shows 160%. Lv.1 and Lv.2 match at 110% and 130%. Both descriptions show a 30% chance after the attack hits to restore HP by 700% of ATK and grant [High] Shield for 3 seconds. The wiki records 160% at Lv.3."
      }
     ],
     "applications": [
@@ -23874,7 +23872,7 @@
     "issues": [
      {
       "problemType": "Mistranslation",
-      "note": "The recorded English description of Black Rose of the Iron Dragon says it reduces the target’s charged Special Skill Gauge. Japanese names the target’s Ultimate Skill Gauge (必殺スキルゲージ). Both describe a 50% chance per target hit to apply Top Bleed for 3/4/5 seconds and rewind the gauge by 0.5/0.6/0.7 seconds at Lv.1/2/3."
+      "note": "The English description of Black Rose of the Iron Dragon says it reduces the target's charged Special Skill Gauge. The Japanese description names the target's Ultimate Skill Gauge (必殺スキルゲージ). Both describe a 50% chance per target hit to apply Top Bleed for 3/4/5 seconds and rewind the gauge by 0.5/0.6/0.7 seconds at Lv.1/2/3."
      }
     ],
     "applications": [

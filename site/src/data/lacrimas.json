@@ -1232,7 +1232,7 @@
   "issues": [
    {
     "problemType": "Missing Data",
-    "note": "The recorded English description says the Lacrima applies Silence and [Mid] ATK Down to all enemies every 5 seconds. The Japanese description specifies that both effects last 2 seconds. The wiki records the duration for both effects."
+    "note": "The English description says the Lacrima inflicts Silence and [Mid] ATK Down on all enemies every 5 seconds, with no duration. The Japanese description specifies that both effects last 2 seconds. The wiki records the 2-second duration for both effects."
    }
   ]
  },
@@ -1371,7 +1371,7 @@
   "issues": [
    {
     "problemType": "Mistranslation",
-    "note": "The recorded English description says the Lacrima rewinds the target’s Special Skill Gauge. The Japanese description names the Ultimate Skill Gauge (必殺スキルゲージ). Both give a 0.5-second rewind when a Normal Skill hits a Frozen target."
+    "note": "The English description says that after a normal skill hits, if the target is inflicted with Freeze, the Lacrima reduces the target's charged Special Skill Gauge by 0.5 seconds. The Japanese description names the Ultimate Skill Gauge (必殺スキルゲージ). Both give a 0.5-second rewind when a Normal Skill hits a Frozen target."
    }
   ]
  }

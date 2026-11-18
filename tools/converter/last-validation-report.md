@@ -1,6 +1,6 @@
 # Validation report
 
-158 units, 117 lacrimas, 112 effects in 29 families, 844 effect applications, 56 banners, 60 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 42 live game issues. 117 issues in 11 categories.
+158 units, 117 lacrimas, 112 effects in 29 families, 841 effect applications, 56 banners, 60 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 42 live game issues. 112 issues in 8 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -71,13 +71,13 @@
 - Issue 'Aquarius Skill: English description is cut off before the second effect' → Aquarius — Skill
 - Issue 'Aries Skill: English description is cut off before the second effect' → Aries — Skill
 - Issue 'Aries Skill: English name is Aquametria, Japanese name is Wool Bomb' → Aries — Skill
-- Issue 'Blazing Beach Vacation Laxus Special: Special Skill Gauge in recorded English, Ultimate Skill Gauge in Japanese' → Blazing Beach Vacation Laxus — Special
+- Issue 'Blazing Beach Vacation Laxus Special: English says Special Skill Gauge, Japanese says Ultimate Skill Gauge' → Blazing Beach Vacation Laxus — Special
 - Issue 'Blazing Beach Vacation Laxus Ultimate: healing drops at Lv.3 (750% / 850% / 750%)' → Blazing Beach Vacation Laxus — Ultimate
-- Issue 'Block Lucy Normal: [Top] Critical Rate Increase in recorded English, [High] in Japanese' → Block Lucy — Normal
-- Issue 'Dark Mage Zeref Normal: English omits the Bind and lists lower damage than Japanese' → Dark Mage Zeref — Normal
+- Issue 'Block Lucy Normal: English lists [Top] Critical Rate Increase, Japanese lists [High]' → Block Lucy — Normal
+- Issue 'Dark Mage Zeref Normal: English does not mention the Bind, Japanese lists a 10% Bind for 2 sec' → Dark Mage Zeref — Normal
+- Issue 'Dark Mage Zeref Normal: English lists 90% / 100% / 120% damage, Japanese lists 100% / 120% / 150%' → Dark Mage Zeref — Normal
 - Issue 'Egg Hunt Irene Special: English says Special Skill Gauge, Japanese says Ultimate Skill Gauge' → Egg Hunt Irene — Special
 - Issue 'Egg Hunt Irene Ultimate: English says Critical Defense Increase, Japanese says Critical Resistance Increase' → Egg Hunt Irene — Ultimate
-- Issue 'Emperor Spriggan Zeref Normal: English says Ranged, Japanese says Melee' → Emperor Spriggan Zeref — Normal
 - Issue 'First Dream Aquarius Skill: English description is cut off before the second effect' → First Dream Aquarius — Skill
 - Issue 'First Dream Aquarius Skill: English name is Aquametria, the regular Aquarius's skill name' → First Dream Aquarius — Skill
 - Issue 'First Dream Laxus Special: Lv.2 text describes a different effect' → First Dream Laxus — Special
@@ -93,7 +93,7 @@
 - Issue 'Natsu Dragion Ultimate: damage drops at Lv.3 (600% / 700% / 600%)' → Natsu Dragion — Ultimate
 - Issue 'Otherworld Adventure Gemini Skill: English description is cut off before the third effect and the duration' → Otherworld Adventure Gemini — Skill
 - Issue 'Pure White Oath Lyra Skill: English description is cut off before the second effect' → Pure White Oath Lyra — Skill
-- Issue 'Rock'n Magic Juvia Normal: Lv.3 damage is 170% in recorded English, 160% in Japanese' → Rock'n Magic Juvia — Normal
+- Issue 'Rock'n Magic Juvia Normal: Lv.3 damage is 170% in English, 160% in Japanese' → Rock'n Magic Juvia — Normal
 - Issue 'Rock'n Magic Virgo Skill: English description is cut off before the third effect and the duration' → Rock'n Magic Virgo — Skill
 - Issue 'Selene Skill: English description is cut off before the last effect' → Selene — Skill
 - Issue 'Shagotte Skill: English description is cut off before Critical Rate Increase' → Shagotte — Skill
@@ -121,20 +121,6 @@
 - 'pajama-party-dreaming-girls': image file 'Pajama Party! Event Banner.jpg' is not in the export
 - 'pickup-dark-mage-zeref': 794x1060 is not close to 16:9 (the card crops it to fit)
 - 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
-
-## Orphans (2)
-
-- EffectApplication 'Advance Special Skill Gauge → Current Special Skill Gauge – 20% / 0.7 sec' is linked to no character
-- EffectApplication 'Top Critical Damage Increase → Mind Allies – 3 sec' is linked to no character
-
-## Effect applications no skill links to (2)
-
-- 'Advance Special Skill Gauge → Current Special Skill Gauge – 20% / 0.7 sec' (characters: none)
-- 'Top Critical Damage Increase → Mind Allies – 3 sec' (characters: none)
-
-## Same record entered twice (merge into one shared record) (1)
-
-- EffectApplications: 'Advance Ultimate Skill Gauge → Current Ultimate Skill Gauge – 30% / 0.7 sec' / 'Advance Ultimate Skill Gauge → Current Ultimate Skill Gauge – 30% / 0.7 sec'
 
 ## Effect families without a Mechanic (shown without one on the site) (1)
 
