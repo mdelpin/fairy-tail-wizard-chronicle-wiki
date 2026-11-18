@@ -524,30 +524,6 @@
   "gameText": "If the attack hits a target afflicted with \"Bleed\", deals an additional 350% of ATK as damage."
  },
  {
-  "id": "advance-special-skill-gauge-all-allies-30-0-7-sec",
-  "source": "unit",
-  "effect": "advance-special-skill-gauge",
-  "type": "Provides",
-  "target": "All Allies",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": 0.3,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 0.7,
-   "unit": "Seconds"
-  },
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "advance-special-skill-gauge-current-special-skill-gauge-20-0-7-sec",
   "source": "unit",
   "effect": "advance-special-skill-gauge",
@@ -609,6 +585,54 @@
    "raw": "Normal Skill Hit"
   },
   "chance": 0.2,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 0.7,
+   "unit": "Seconds"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-30-0-7-sec",
+  "source": "unit",
+  "effect": "advance-ultimate-skill-gauge",
+  "type": "Provides",
+  "target": "Current Ultimate Skill Gauge",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.3,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 0.7,
+   "unit": "Seconds"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-30-0-7-sec-2",
+  "source": "unit",
+  "effect": "advance-ultimate-skill-gauge",
+  "type": "Provides",
+  "target": "Current Ultimate Skill Gauge",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.3,
   "durationSeconds": null,
   "valueOverride": {
    "amount": 0.7,
@@ -740,7 +764,7 @@
    ],
    "match": "Any",
    "subject": "Target",
-   "timing": "At Attack Hit",
+   "timing": "After Attack Hits",
    "state": "Present"
   },
   "scaling": null,
@@ -902,6 +926,27 @@
   "gameText": null
  },
  {
+  "id": "bind-each-target-hit-every-11-sec-30-5-sec",
+  "source": "unit",
+  "effect": "bind",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 11,
+   "raw": "Every 11 sec, After Attack Hits"
+  },
+  "chance": 0.3,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "bind-each-target-hit-every-8-sec-50-5-sec",
   "source": "unit",
   "effect": "bind",
@@ -1042,27 +1087,6 @@
   },
   "chance": 0.5,
   "durationSeconds": 4,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "bindeach-target-hit-every-11-sec-30-5-sec",
-  "source": "unit",
-  "effect": "bind",
-  "type": "Inflicts",
-  "target": "Each Target Hit",
-  "trigger": {
-   "events": [
-    "after attack hits"
-   ],
-   "everySeconds": 11,
-   "raw": "Every 11 sec, After Attack Hits"
-  },
-  "chance": 0.3,
-  "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -1306,7 +1330,7 @@
   "gameText": null
  },
  {
-  "id": "damage-all-enemies-every-10-sec-1000-of-own-atk",
+  "id": "damage-all-enemies-every-10-sec-1000-of-own-atk-scales-per-mind-ally",
   "source": "unit",
   "effect": "damage",
   "type": "Inflicts",
@@ -1324,7 +1348,14 @@
   },
   "condition": null,
   "requires": null,
-  "scaling": null,
+  "scaling": {
+   "scalingAttribute": "Effect Value",
+   "increasePerUnit": 50,
+   "increaseValueUnit": "Percent",
+   "scalingBasis": "Mind Ally",
+   "maximumNumberOfIncreases": 7,
+   "maximumResult": 350
+  },
   "gameText": null
  },
  {
@@ -3824,7 +3855,7 @@
     "Bind"
    ],
    "match": "Any",
-   "subject": "Target Hit",
+   "subject": "Target",
    "timing": "After Attack Hits",
    "state": "Present"
   },
@@ -5984,6 +6015,27 @@
   "effect": "high-critical-rate-increase",
   "type": "Provides",
   "target": "Heart Allies",
+  "trigger": {
+   "events": [
+    "critical hit"
+   ],
+   "everySeconds": null,
+   "raw": "Critical Hit"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-critical-rate-increase-mind-allies-3-sec",
+  "source": "unit",
+  "effect": "high-critical-rate-increase",
+  "type": "Provides",
+  "target": "Mind Allies",
   "trigger": {
    "events": [
     "critical hit"
@@ -8683,30 +8735,6 @@
   "gameText": null
  },
  {
-  "id": "push-back-special-skill-gauge-each-target-hit-every-10-sec-50-0-7-sec",
-  "source": "unit",
-  "effect": "push-back-special-skill-gauge",
-  "type": "Inflicts",
-  "target": "Each Target Hit",
-  "trigger": {
-   "events": [
-    "after attack hits"
-   ],
-   "everySeconds": 10,
-   "raw": "Every 10 sec, After Attack Hits"
-  },
-  "chance": 0.5,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 0.7,
-   "unit": "Seconds"
-  },
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "push-back-ultimate-skill-gauge-each-target-hit-every-10-sec-1-2-sec",
   "source": "unit",
   "effect": "push-back-ultimate-skill-gauge",
@@ -8723,6 +8751,30 @@
   "durationSeconds": null,
   "valueOverride": {
    "amount": 1.2,
+   "unit": "Seconds"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "push-back-ultimate-skill-gauge-each-target-hit-every-10-sec-50-0-7-sec",
+  "source": "unit",
+  "effect": "push-back-ultimate-skill-gauge",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": 0.5,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 0.7,
    "unit": "Seconds"
   },
   "condition": null,
@@ -9019,10 +9071,10 @@
   "target": "Each Target Hit",
   "trigger": {
    "events": [
-    "normal skill hit"
+    "special skill hit"
    ],
    "everySeconds": null,
-   "raw": "Normal Skill Hit"
+   "raw": "Special Skill Hit"
   },
   "chance": 0.5,
   "durationSeconds": 5,
@@ -10044,27 +10096,6 @@
   "gameText": null
  },
  {
-  "id": "top-atk-increase-all-allies-50-5-sec",
-  "source": "unit",
-  "effect": "top-atk-increase",
-  "type": "Provides",
-  "target": "All Allies",
-  "trigger": {
-   "events": [
-    "after attack hits"
-   ],
-   "everySeconds": 9,
-   "raw": "Every 9 sec, After Attack Hits"
-  },
-  "chance": 0.5,
-  "durationSeconds": 5,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "top-atk-increase-all-allies-every-10-sec-5-sec-extended-per-heart-ally",
   "source": "unit",
   "effect": "top-atk-increase",
@@ -10196,6 +10227,27 @@
    "maximumNumberOfIncreases": 6,
    "maximumResult": 3
   },
+  "gameText": null
+ },
+ {
+  "id": "top-atk-increase-all-allies-every-9-sec-50-per-ally-5-sec",
+  "source": "unit",
+  "effect": "top-atk-increase",
+  "type": "Provides",
+  "target": "All Allies",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 9,
+   "raw": "Every 9 sec, After Attack Hits"
+  },
+  "chance": 0.5,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
   "gameText": null
  },
  {
@@ -13134,27 +13186,6 @@
   "gameText": null
  },
  {
-  "id": "top-critical-rate-increase-mind-allies-3-sec",
-  "source": "unit",
-  "effect": "top-critical-rate-increase",
-  "type": "Provides",
-  "target": "Mind Allies",
-  "trigger": {
-   "events": [
-    "critical hit"
-   ],
-   "everySeconds": null,
-   "raw": "Critical Hit"
-  },
-  "chance": null,
-  "durationSeconds": 3,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "top-critical-rate-increase-mind-allies-every-5-sec-5-sec",
   "source": "unit",
   "effect": "top-critical-rate-increase",
@@ -14430,27 +14461,6 @@
   "gameText": null
  },
  {
-  "id": "top-def-increase-self-30-3-sec",
-  "source": "unit",
-  "effect": "top-def-increase",
-  "type": "Provides",
-  "target": "Self",
-  "trigger": {
-   "events": [
-    "normal skill hit"
-   ],
-   "everySeconds": null,
-   "raw": "Normal Skill Hit"
-  },
-  "chance": 0.3,
-  "durationSeconds": 3,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "top-def-increase-self-every-5-sec",
   "source": "unit",
   "effect": "top-def-increase",
@@ -14646,6 +14656,27 @@
   },
   "chance": null,
   "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-increase-self-30-3-sec",
+  "source": "unit",
+  "effect": "top-def-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.3,
+  "durationSeconds": 3,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -15533,7 +15564,7 @@
   "gameText": null
  },
  {
-  "id": "top-shield-all-allies-every-9-sec-50-5-sec",
+  "id": "top-shield-all-allies-every-9-sec-50-per-ally-5-sec",
   "source": "unit",
   "effect": "top-shield",
   "type": "Provides",
@@ -16826,7 +16857,7 @@
   "gameText": null
  },
  {
-  "id": "mid-atk-decrease-all-enemies-every-5-sec",
+  "id": "mid-atk-decrease-all-enemies-every-5-sec-2-sec",
   "source": "lacrima",
   "effect": "mid-atk-decrease",
   "type": "Inflicts",
@@ -16837,7 +16868,7 @@
    "raw": "Every 5 sec"
   },
   "chance": null,
-  "durationSeconds": null,
+  "durationSeconds": 2,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -16890,7 +16921,7 @@
   "id": "mid-atk-increase-all-allies-start-of-battle-3-sec",
   "source": "lacrima",
   "effect": "mid-atk-increase",
-  "type": null,
+  "type": "Provides",
   "target": "All Allies",
   "trigger": {
    "events": [
@@ -17654,7 +17685,7 @@
  {
   "id": "push-back-special-skill-gauge-single-enemy-burn-0-5-sec",
   "source": "lacrima",
-  "effect": "push-back-special-skill-gauge",
+  "effect": "push-back-ultimate-skill-gauge",
   "type": "Inflicts",
   "target": "Single Enemy",
   "trigger": {
@@ -17684,9 +17715,9 @@
   "gameText": null
  },
  {
-  "id": "push-back-special-skill-gauge-single-enemy-freeze-0-5-sec",
+  "id": "push-back-ultimate-skill-gauge-single-enemy-freeze-0-5-sec",
   "source": "lacrima",
-  "effect": "push-back-special-skill-gauge",
+  "effect": "push-back-ultimate-skill-gauge",
   "type": "Inflicts",
   "target": "Single Enemy",
   "trigger": {
@@ -17737,7 +17768,7 @@
   "gameText": null
  },
  {
-  "id": "silence-all-enemies-every-5-sec",
+  "id": "silence-all-enemies-every-5-sec-2-sec",
   "source": "lacrima",
   "effect": "silence",
   "type": "Inflicts",
@@ -17748,7 +17779,7 @@
    "raw": "Every 5 sec"
   },
   "chance": null,
-  "durationSeconds": null,
+  "durationSeconds": 2,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -18648,7 +18679,7 @@
   "gameText": null
  },
  {
-  "id": "top-shield-all-allies-when-attacked-20-3-sec",
+  "id": "top-shield-all-allies-when-attacked-20-per-ally-3-sec",
   "source": "lacrima",
   "effect": "top-shield",
   "type": "Provides",

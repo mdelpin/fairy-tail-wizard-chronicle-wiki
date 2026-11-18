@@ -382,7 +382,7 @@
   "gameText": "When receiving an attack, has a 20% chance to grant each ally for 3 seconds: [Top] Shield.",
   "notes": null,
   "applications": [
-   "top-shield-all-allies-when-attacked-20-3-sec"
+   "top-shield-all-allies-when-attacked-20-per-ally-3-sec"
   ]
  },
  {
@@ -913,7 +913,7 @@
   "name": "Natsu Dragion Lacrima",
   "kind": "signature",
   "signatureFor": "natsu-dragion",
-  "gameText": "If the target is afflicted with Burn after a normal skill hits, reduces the target's accumulated Special Skill gauge by 0.5 seconds.",
+  "gameText": "After a Normal Skill hits, if the target is affected by Burn, rewinds the target’s accumulated Ultimate Skill Gauge by 0.5 seconds.",
   "notes": null,
   "applications": [
    "push-back-special-skill-gauge-single-enemy-burn-0-5-sec"
@@ -1223,11 +1223,17 @@
   "name": "Swaying in the Summer Night Cana Lacrima",
   "kind": "signature",
   "signatureFor": "swaying-in-the-summer-night-cana",
-  "gameText": "Every 5 sec, inflicts all enemies with Silence and [Mid] ATK Down.",
+  "gameText": "Every 5 sec, inflicts Silence and [Mid] ATK Down on all enemies for 2 sec.",
   "notes": null,
   "applications": [
-   "mid-atk-decrease-all-enemies-every-5-sec",
-   "silence-all-enemies-every-5-sec"
+   "mid-atk-decrease-all-enemies-every-5-sec-2-sec",
+   "silence-all-enemies-every-5-sec-2-sec"
+  ],
+  "issues": [
+   {
+    "problemType": "Missing Data",
+    "note": "The recorded English description says the Lacrima applies Silence and [Mid] ATK Down to all enemies every 5 seconds. The Japanese description specifies that both effects last 2 seconds. The wiki records the duration for both effects."
+   }
   ]
  },
  {
@@ -1357,10 +1363,16 @@
   "name": "White Gift Gray Lacrima",
   "kind": "signature",
   "signatureFor": "white-gift-gray",
-  "gameText": "After a normal skill hits, if the target is inflicted with Freeze, reduces the target's charged Special Skill Gauge by 0.5 seconds.",
+  "gameText": "After a Normal Skill hits, if the target is Frozen, rewinds the target’s accumulated Ultimate Skill Gauge by 0.5 seconds.",
   "notes": null,
   "applications": [
-   "push-back-special-skill-gauge-single-enemy-freeze-0-5-sec"
+   "push-back-ultimate-skill-gauge-single-enemy-freeze-0-5-sec"
+  ],
+  "issues": [
+   {
+    "problemType": "Mistranslation",
+    "note": "The recorded English description says the Lacrima rewinds the target’s Special Skill Gauge. The Japanese description names the Ultimate Skill Gauge (必殺スキルゲージ). Both give a 0.5-second rewind when a Normal Skill hits a Frozen target."
+   }
   ]
  }
 ]

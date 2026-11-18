@@ -18,8 +18,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deal 100% ATK damage to the target. On hit, there is a 30% chance to grant yourself [High] Critical Rate Increase for 3s.",
      "Lv2": "Deal 120% ATK damage to the target. On hit, there is a 30% chance to grant yourself [High] Critical Rate Increase for 3s.",
@@ -36,7 +36,7 @@
       "duration": null,
       "value": "150% ATK",
       "condition": null,
-      "notes": "Ranged"
+      "notes": "Melee"
      },
      {
       "level": "3",
@@ -52,7 +52,7 @@
      }
     ],
     "icon": 1,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
@@ -1279,9 +1279,9 @@
     "name": "Peaceful Sunset",
     "attackRange": null,
     "gameText": {
-     "Lv1": "After a normal skill hits, has a 30% chance to grant all allies for 3 sec. [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase, and advances the Special Skill Gauge by 0.5 sec.",
-     "Lv2": "After a normal skill hits, has a 30% chance to grant all allies for 4 sec. [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase, and advances the Special Skill Gauge by 0.6 sec.",
-     "Lv3": "After a normal skill hits, has a 30% chance to grant all allies for 5 sec. [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase, and advances the Special Skill Gauge by 0.7 sec."
+     "Lv1": "After a normal skill hits, there is a 30% chance to grant all allies [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase for 3 sec and advance the current Ultimate Skill Gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, there is a 30% chance to grant all allies [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase for 4 sec and advance the current Ultimate Skill Gauge by 0.6 sec.",
+     "Lv3": "After a normal skill hits, there is a 30% chance to grant all allies [Top] Shield, [Top] ATK Increase, and [Top] Accuracy Increase for 5 sec and advance the current Ultimate Skill Gauge by 0.7 sec."
     },
     "levelTable": [
      {
@@ -1323,10 +1323,10 @@
      {
       "level": "3",
       "trigger": "Normal Skill Hit",
-      "target": "All Allies",
-      "effect": "Advance Special Skill Gauge",
+      "target": "Current Ultimate Skill Gauge",
+      "effect": "Advance Ultimate Skill Gauge",
       "tier": null,
-      "chance": null,
+      "chance": "30%",
       "duration": null,
       "value": "0.7 sec",
       "condition": null,
@@ -1334,13 +1334,19 @@
      }
     ],
     "icon": 9,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The recorded English description of Peaceful Sunset names the Special Skill Gauge at all three levels. The Japanese description names the Ultimate Skill Gauge and gives an advance of 0.5, 0.6, or 0.7 seconds at Lv.1, Lv.2, or Lv.3. The wiki records the Ultimate Skill Gauge."
+     }
+    ],
     "applications": [
      "top-shield-all-allies-30-5-sec",
      "top-atk-increase-all-allies-30-5-sec",
      "top-accuracy-increase-all-allies-30-5-sec",
-     "advance-special-skill-gauge-all-allies-30-0-7-sec"
+     "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-30-0-7-sec-2"
     ]
    },
    {
@@ -1465,8 +1471,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 100% of ATK to the target. After the attack hits, has a 30% chance to grant self [High] DEF Increase, [High] Critical Resistance Increase, and [High] Critical DEF Increase for 3 sec.",
      "Lv2": "Deals damage equal to 120% of ATK to the target. After the attack hits, has a 30% chance to grant self [High] DEF Increase, [High] Critical Resistance Increase, and [High] Critical DEF Increase for 3 sec.",
@@ -1483,7 +1489,7 @@
       "duration": null,
       "value": "150% ATK",
       "condition": null,
-      "notes": "Ranged"
+      "notes": "Melee"
      },
      {
       "level": "3",
@@ -1523,7 +1529,7 @@
      }
     ],
     "icon": 1,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
@@ -1694,9 +1700,9 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
-     "Lv1": "Deals damage equal to 120% of ATK to the target. On critical hit, grants allies with INT attribute for 3s: [Top] Critical Rate Increase and [High] Accuracy Increase.",
-     "Lv2": "Deals damage equal to 140% of ATK to the target. On critical hit, grants allies with INT attribute for 3s: [Top] Critical Rate Increase and [High] Accuracy Increase.",
-     "Lv3": "Deals damage equal to 170% of ATK to the target. On critical hit, grants allies with INT attribute for 3s: [Top] Critical Rate Increase and [High] Accuracy Increase."
+     "Lv1": "Deals damage equal to 120% of ATK to the target. On critical hit, grants allies with INT attribute for 3s: [High] Critical Rate Increase and [High] Accuracy Increase.",
+     "Lv2": "Deals damage equal to 140% of ATK to the target. On critical hit, grants allies with INT attribute for 3s: [High] Critical Rate Increase and [High] Accuracy Increase.",
+     "Lv3": "Deals damage equal to 170% of ATK to the target. On critical hit, grants allies with INT attribute for 3s: [High] Critical Rate Increase and [High] Accuracy Increase."
     },
     "levelTable": [
      {
@@ -1716,7 +1722,7 @@
       "trigger": "Critical Hit",
       "target": "Mind Allies",
       "effect": "Critical Rate Increase",
-      "tier": "Top",
+      "tier": "High",
       "chance": null,
       "duration": "3 sec",
       "value": null,
@@ -1737,11 +1743,17 @@
      }
     ],
     "icon": 7,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The recorded English description of Block Lucy’s Normal attack lists [Top] Critical Rate Increase at all three levels. The Japanese description lists [High] Critical Rate Increase for Mind allies for 3 seconds on a critical hit. The wiki records the [High] tier."
+     }
+    ],
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
-     "top-critical-rate-increase-mind-allies-3-sec",
+     "high-critical-rate-increase-mind-allies-3-sec",
      "high-accuracy-increase-mind-allies-3-sec"
     ]
    },
@@ -3257,7 +3269,7 @@
       "chance": null,
       "duration": null,
       "value": "0.7 sec",
-      "condition": null,
+      "condition": "Target is Blind",
       "notes": null
      }
     ],
@@ -3332,8 +3344,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deal 110% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase.",
      "Lv2": "Deal 130% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase.",
@@ -3350,7 +3362,7 @@
       "duration": null,
       "value": "160% ATK",
       "condition": null,
-      "notes": "Ranged Attack"
+      "notes": "Melee Attack"
      },
      {
       "level": "3",
@@ -3366,7 +3378,7 @@
      }
     ],
     "icon": 2,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-160-of-own-atk",
@@ -4150,9 +4162,9 @@
     "name": "Spring Enchant",
     "attackRange": null,
     "gameText": {
-     "Lv1": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 3 sec, and advance the current Special Skill Gauge by 0.5 sec.",
-     "Lv2": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 4 sec, and advance the current Special Skill Gauge by 0.6 sec.",
-     "Lv3": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 5 sec, and advance the current Special Skill Gauge by 0.7 sec."
+     "Lv1": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 3 sec, and advance the current Ultimate Skill Gauge by 0.5 sec.",
+     "Lv2": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 4 sec, and advance the current Ultimate Skill Gauge by 0.6 sec.",
+     "Lv3": "After a normal skill hits, there is a 30% chance to grant all allies [Top] DEF Increase and Action Block Barrier for 5 sec, and advance the current Ultimate Skill Gauge by 0.7 sec."
     },
     "levelTable": [
      {
@@ -4182,8 +4194,8 @@
      {
       "level": "3",
       "trigger": "Normal Skill Hit",
-      "target": "All Allies",
-      "effect": "Advance Special Skill Gauge",
+      "target": "Current Ultimate Skill Gauge",
+      "effect": "Advance Ultimate Skill Gauge",
       "tier": null,
       "chance": "30%",
       "duration": null,
@@ -4193,12 +4205,18 @@
      }
     ],
     "icon": 9,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The recorded English description of Spring Enchant says it advances the current Special Skill Gauge. Japanese names the current Ultimate Skill Gauge (必殺スキルゲージ). Both describe a 30% chance on a Normal Skill hit, 3/4/5 seconds of teamwide Top DEF Increase and Action Block Barrier, and a 0.5/0.6/0.7-second gauge advance at Lv.1/2/3."
+     }
+    ],
     "applications": [
      "top-def-increase-all-allies-30-5-sec",
      "action-block-barrier-all-allies-30-5-sec",
-     "advance-special-skill-gauge-all-allies-30-0-7-sec"
+     "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-30-0-7-sec"
     ]
    },
    {
@@ -4559,7 +4577,7 @@
       "duration": null,
       "value": "190% ATK",
       "condition": null,
-      "notes": "Ranged"
+      "notes": null
      },
      {
       "level": "3",
@@ -4587,7 +4605,7 @@
      }
     ],
     "icon": 4,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "issues": [
      {
@@ -4882,8 +4900,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 120% ATK damage to the target. After the attack hits, there is a 30% chance to grant yourself for 3s [High] ATK Increase.",
      "Lv2": "Deals 140% ATK damage to the target. After the attack hits, there is a 30% chance to grant yourself for 3s [High] ATK Increase.",
@@ -4900,7 +4918,7 @@
       "duration": null,
       "value": "170% ATK",
       "condition": null,
-      "notes": "Ranged"
+      "notes": "Melee"
      },
      {
       "level": "3",
@@ -4916,7 +4934,7 @@
      }
     ],
     "icon": 4,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
@@ -5230,8 +5248,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 95% ATK damage to the target. After the attack hits, has a 30% chance to grant self for 3 seconds: [High] DEF Increase and [High] Critical Defense Increase.",
      "Lv2": "Deals 110% ATK damage to the target. After the attack hits, has a 30% chance to grant self for 3 seconds: [High] DEF Increase and [High] Critical Defense Increase.",
@@ -5276,7 +5294,7 @@
      }
     ],
     "icon": 4,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-130-of-own-atk",
@@ -5388,7 +5406,7 @@
      {
       "level": "3",
       "trigger": "After Attack Hits",
-      "target": "All Allies",
+      "target": "Each Ally",
       "effect": "ATK Increase",
       "tier": "Top",
       "chance": "50%",
@@ -5400,7 +5418,7 @@
      {
       "level": "3",
       "trigger": "After Attack Hits",
-      "target": "All Allies",
+      "target": "Each Ally",
       "effect": "Shield",
       "tier": "Top",
       "chance": "50%",
@@ -5418,8 +5436,8 @@
      "top-shield-self-every-9-sec-7-sec",
      "top-atk-increase-self-every-9-sec-7-sec",
      "top-def-increase-self-every-9-sec-7-sec",
-     "top-shield-all-allies-every-9-sec-50-5-sec",
-     "top-atk-increase-all-allies-50-5-sec"
+     "top-shield-all-allies-every-9-sec-50-per-ally-5-sec",
+     "top-atk-increase-all-allies-every-9-sec-50-per-ally-5-sec"
     ]
    }
   ]
@@ -6189,7 +6207,7 @@
       "notes": null
      }
     ],
-    "icon": 3,
+    "icon": 7,
     "levelTextSource": "In game",
     "notes": null,
     "applications": [
@@ -6516,7 +6534,7 @@
     "levelTextSource": "In game",
     "notes": null,
     "applications": [
-     "damage-all-enemies-every-10-sec-1000-of-own-atk",
+     "damage-all-enemies-every-10-sec-1000-of-own-atk-scales-per-mind-ally",
      "silence-each-target-hit-every-10-sec-5-sec",
      "top-bleed-each-target-hit-every-10-sec-5-sec",
      "top-def-decrease-each-target-hit-every-10-sec-5-sec",
@@ -6544,8 +6562,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 100% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Bleed to the target for 3 seconds.",
      "Lv2": "Deals damage equal to 120% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Bleed to the target for 3 seconds.",
@@ -6578,12 +6596,11 @@
      }
     ],
     "icon": 1,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
-     "high-bleed-single-enemy-20-3-sec",
-     "top-bleed-each-target-hit-every-10-sec-5-sec"
+     "high-bleed-single-enemy-20-3-sec"
     ]
    },
    {
@@ -6680,8 +6697,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 95% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Paralysis to the target for 3 seconds.",
      "Lv2": "Deals damage equal to 110% of ATK to the target. After an attack hits, with a 20% chance, applies [High] Paralysis to the target for 3 seconds",
@@ -8193,6 +8210,12 @@
     "icon": 5,
     "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The English description says that after hitting, there is a 20% chance to grant the user [High] Critical Rate Increase for 3 seconds. The Japanese text shows a 10% chance to inflict Bind on the target for 2 seconds. The damage values (100%, 120%, and 150% of ATK at Lv.1, Lv.2, and Lv.3) match, and the Japanese effect is the same at all three levels. The wiki follows the Japanese skill text."
+     }
+    ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "bind-single-enemy-10-2-sec"
@@ -8281,7 +8304,7 @@
     "notes": null,
     "applications": [
      "damage-enemies-in-target-area-every-11-sec-800-of-own-atk",
-     "bindeach-target-hit-every-11-sec-30-5-sec"
+     "bind-each-target-hit-every-11-sec-30-5-sec"
     ]
    }
   ]
@@ -8562,8 +8585,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 120% ATK damage to the target. If a critical hit occurs, grants all allies for 3 seconds: [High] ATK Increase.",
      "Lv2": "Deals 140% ATK damage to the target. If a critical hit occurs, grants all allies for 3 seconds: [High] ATK Increase.",
@@ -9453,9 +9476,9 @@
     "name": "Normal Attack (Ranged)",
     "attackRange": "Ranged",
     "gameText": {
-     "Lv1": "Deals damage equal to 100% of ATK to the target. When a Critical Hit occurs, grants INT-type allies for 3 seconds [High] ATK Increase and [Top] Critical Damage Increase.",
-     "Lv2": "Deals damage equal to 120% of ATK to the target. When a Critical Hit occurs, grants INT-type allies for 3 seconds [High] ATK Increase and [Top] Critical Damage Increase.",
-     "Lv3": "Deals damage equal to 150% of ATK to the target. When a Critical Hit occurs, grants INT-type allies for 3 seconds [High] ATK Increase and [Top] Critical Damage Increase."
+     "Lv1": "Deals damage equal to 100% of ATK to the target. On a critical hit, grants Mind (INT) allies [High] ATK Increase and [High] Critical Damage Increase for 3 seconds.",
+     "Lv2": "Deals damage equal to 120% of ATK to the target. On a critical hit, grants Mind (INT) allies [High] ATK Increase and [High] Critical Damage Increase for 3 seconds.",
+     "Lv3": "Deals damage equal to 150% of ATK to the target. On a critical hit, grants Mind (INT) allies [High] ATK Increase and [High] Critical Damage Increase for 3 seconds."
     },
     "levelTable": [
      {
@@ -9487,7 +9510,7 @@
       "trigger": "Critical Hit",
       "target": "Mind Allies",
       "effect": "Critical Damage Increase",
-      "tier": "Top",
+      "tier": "High",
       "chance": null,
       "duration": "3 sec",
       "value": null,
@@ -9496,12 +9519,18 @@
      }
     ],
     "icon": 7,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The recorded English text lists Top Critical Damage Increase on a critical hit at all three levels. The Japanese text lists High Critical Damage Increase. Both descriptions grant the buff to Mind (INT) allies for 3 seconds alongside High ATK Increase."
+     }
+    ],
     "applications": [
      "damage-single-enemy-normal-attack-150-of-own-atk",
      "high-atk-increase-mind-allies-critical-hit-3-sec",
-     "top-critical-damage-increase-mind-allies-3-sec"
+     "high-critical-damage-increase-mind-allies-critical-hit-3-sec"
     ]
    },
    {
@@ -16019,8 +16048,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 110% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 700% of ATK and grants Critical Shield for 3 sec.",
      "Lv2": "Deals 130% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 700% of ATK and grants Critical Shield for 3 sec.",
@@ -16232,8 +16261,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deal 110% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase.",
      "Lv2": "Deal 130% ATK damage to the target. After the attack hits, there is a 20% chance to grant yourself for 3 seconds, [High] Critical Rate Increase.",
@@ -16326,7 +16355,7 @@
     "applications": [
      "top-critical-damage-increase-self-20-5-sec",
      "top-shield-self-20-5-sec",
-     "advance-special-skill-gauge-current-special-skill-gauge-20-0-7-sec"
+     "advance-ultimate-skill-gauge-current-ultimate-skill-gauge-20-0-7-sec"
     ]
    },
    {
@@ -16406,8 +16435,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 95% of ATK to the target. On hit, has a 20% chance to grant self for 3 sec: [High] DEF Increase.",
      "Lv2": "Deals damage equal to 110% of ATK to the target. On hit, has a 20% chance to grant self for 3 sec: [High] DEF Increase.",
@@ -17367,8 +17396,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 140% ATK damage to the target. After the attack hits, has a 20% chance to restore own HP by 700% of ATK and grants [Top] Shield for 3 sec.",
      "Lv2": "Deals 160% ATK damage to the target. After the attack hits, has a 20% chance to restore own HP by 700% of ATK and grants [Top] Shield for 3 sec.",
@@ -17780,8 +17809,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 120% of ATK to the target. When a critical hit occurs, grants Wisdom allies for 3 sec, [Mid] ATK Increase and [Mid] Critical Rate Increase, [Mid] DEF Increase.",
      "Lv2": "Deals damage equal to 140% of ATK to the target. When a critical hit occurs, grants Wisdom allies for 3 sec, [Mid] ATK Increase and [Mid] Critical Rate Increase, [Mid] DEF Increase.",
@@ -17798,7 +17827,7 @@
       "duration": null,
       "value": "170% ATK",
       "condition": null,
-      "notes": "Ranged"
+      "notes": "Melee"
      },
      {
       "level": "3",
@@ -17838,7 +17867,7 @@
      }
     ],
     "icon": 3,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-170-of-own-atk",
@@ -18263,12 +18292,12 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 110% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 700% of ATK and grants [High] Shield for 3 sec.",
      "Lv2": "Deals 130% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 700% of ATK and grants [High] Shield for 3 sec.",
-     "Lv3": "Deals 170% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 700% of ATK and grants [High] Shield for 3 sec."
+     "Lv3": "Deals 160% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 700% of ATK and grants [High] Shield for 3 sec."
     },
     "levelTable": [
      {
@@ -18279,7 +18308,7 @@
       "tier": null,
       "chance": null,
       "duration": null,
-      "value": "170% ATK",
+      "value": "160% ATK",
       "condition": null,
       "notes": null
      },
@@ -18309,10 +18338,16 @@
      }
     ],
     "icon": 3,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Value Anomaly",
+      "note": "The recorded English description lists Lv.3 Normal Attack damage as 170% of ATK. The Japanese description shows 160%. Lv.1 and Lv.2 match at 110% and 130%. Both descriptions show a 30% chance on hit to heal Juvia for 700% of her ATK and grant High Shield for 3 seconds. The wiki records 160% at Lv.3."
+     }
+    ],
     "applications": [
-     "damage-single-enemy-normal-attack-170-of-own-atk",
+     "damage-single-enemy-normal-attack-160-of-own-atk",
      "heal-self-30-700-of-own-atk",
      "high-shield-self-30-3-sec"
     ]
@@ -20335,8 +20370,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 140% of ATK to the target. After hitting, has a 30% chance to inflict [Top] Bleed on the target for 3 sec.",
      "Lv2": "Deals damage equal to 160% of ATK to the target. After hitting, has a 30% chance to inflict [Top] Bleed on the target for 3 sec.",
@@ -20353,7 +20388,7 @@
       "duration": null,
       "value": "190% ATK",
       "condition": null,
-      "notes": "Ranged"
+      "notes": "Melee"
      },
      {
       "level": "3",
@@ -20369,7 +20404,7 @@
      }
     ],
     "icon": 2,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
@@ -20902,8 +20937,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals damage equal to 140% of ATK to the target. After the attack hits, has a 30% chance to inflict the target with Silence, [High] ATK Decrease, and [Low] Accuracy Decrease for 3 sec.",
      "Lv2": "Deals damage equal to 160% of ATK to the target. After the attack hits, has a 30% chance to inflict the target with Silence, [High] ATK Decrease, and [Low] Accuracy Decrease for 3 sec.",
@@ -20920,7 +20955,7 @@
       "duration": null,
       "value": "190%",
       "condition": null,
-      "notes": "Ranged"
+      "notes": "Melee"
      },
      {
       "level": "3",
@@ -20960,7 +20995,7 @@
      }
     ],
     "icon": 4,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
@@ -21064,8 +21099,8 @@
       "trigger": "After Attack Hits",
       "target": "Each Target Hit",
       "effect": "ATK Decrease",
-      "tier": null,
-      "chance": "Top",
+      "tier": "Top",
+      "chance": null,
       "duration": "5 sec",
       "value": null,
       "condition": null,
@@ -22131,8 +22166,8 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack (Ranged)",
-    "attackRange": "Ranged",
+    "name": "Normal Attack (Melee)",
+    "attackRange": "Melee",
     "gameText": {
      "Lv1": "Deals 140% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 600% of ATK and grants Critical Shield for 3 sec.",
      "Lv2": "Deals 160% ATK damage to the target. After the attack hits, has a 30% chance to restore own HP by 600% of ATK and grants Critical Shield for 3 sec.",
@@ -22177,7 +22212,7 @@
      }
     ],
     "icon": 3,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
     "applications": [
      "damage-single-enemy-normal-attack-190-of-own-atk",
@@ -22315,7 +22350,7 @@
     ],
     "icon": 44,
     "levelTextSource": "In game",
-    "notes": null,
+    "notes": "The Japanese tooltip puts buff removal in the same sentence as the 50% per-target chance for Bind and Top DEF Decrease. Whether buff removal shares that roll remains unverified in combat.",
     "applications": [
      "damage-all-enemies-every-8-sec-1050-of-own-atk",
      "bind-each-target-hit-every-8-sec-50-5-sec",
@@ -22517,10 +22552,10 @@
     "levelTextSource": "In game",
     "notes": null,
     "applications": [
-     "damage-enemies-in-range-every-10-sec-950-of-own-atk",
      "silence-each-target-hit-every-10-sec-60-5-sec",
      "top-bleed-each-target-hit-every-10-sec-60-5-sec",
-     "top-evasion-decrease-each-target-hit-every-10-sec-60-5-sec"
+     "top-evasion-decrease-each-target-hit-every-10-sec-60-5-sec",
+     "damage-enemies-in-range-every-10-sec-950-of-own-atk-scales-per-heart-ally"
     ]
    }
   ]
@@ -23791,9 +23826,9 @@
     "name": "Black Rose of the Iron Dragon",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Deals 650% of ATK as damage to enemies within range every 10 seconds. After an attack hits, has a 50% chance per target to inflict [Top] Bleed for 3 seconds and reduce the target's charged Special Skill Gauge by 0.5 seconds.",
-     "Lv2": "Deals 750% of ATK as damage to enemies within range every 10 seconds. After an attack hits, has a 50% chance per target to inflict [Top] Bleed for 4 seconds and reduce the target's charged Special Skill Gauge by 0.6 seconds.",
-     "Lv3": "Deals 850% of ATK as damage to enemies within range every 10 seconds. After an attack hits, has a 50% chance per target to inflict [Top] Bleed for 5 seconds and reduce the target's charged Special Skill Gauge by 0.7 seconds."
+     "Lv1": "Deals 650% of ATK as damage to enemies within range every 10 seconds. After an attack hits, has a 50% chance per target to inflict [Top] Bleed for 3 seconds and reduce the target's accumulated Ultimate Skill Gauge by 0.5 seconds.",
+     "Lv2": "Deals 750% of ATK as damage to enemies within range every 10 seconds. After an attack hits, has a 50% chance per target to inflict [Top] Bleed for 4 seconds and reduce the target's accumulated Ultimate Skill Gauge by 0.6 seconds.",
+     "Lv3": "Deals 850% of ATK as damage to enemies within range every 10 seconds. After an attack hits, has a 50% chance per target to inflict [Top] Bleed for 5 seconds and reduce the target's accumulated Ultimate Skill Gauge by 0.7 seconds."
     },
     "levelTable": [
      {
@@ -23824,7 +23859,7 @@
       "level": "3",
       "trigger": "After Attack Hits",
       "target": "Each Target Hit",
-      "effect": "Push Back Special Skill Gauge",
+      "effect": "Push Back Ultimate Skill Gauge",
       "tier": null,
       "chance": "50%",
       "duration": null,
@@ -23834,12 +23869,18 @@
      }
     ],
     "icon": 44,
-    "levelTextSource": "In game",
+    "levelTextSource": "Corrected from Japanese text",
     "notes": null,
+    "issues": [
+     {
+      "problemType": "Mistranslation",
+      "note": "The recorded English description of Black Rose of the Iron Dragon says it reduces the target’s charged Special Skill Gauge. Japanese names the target’s Ultimate Skill Gauge (必殺スキルゲージ). Both describe a 50% chance per target hit to apply Top Bleed for 3/4/5 seconds and rewind the gauge by 0.5/0.6/0.7 seconds at Lv.1/2/3."
+     }
+    ],
     "applications": [
      "damage-enemies-in-range-every-10-sec-850-of-own-atk",
      "top-bleed-each-target-hit-every-10-sec-50-5-sec",
-     "push-back-special-skill-gauge-each-target-hit-every-10-sec-50-0-7-sec"
+     "push-back-ultimate-skill-gauge-each-target-hit-every-10-sec-50-0-7-sec"
     ]
    }
   ]
