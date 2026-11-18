@@ -1447,7 +1447,7 @@
   "issues": [
    {
     "problemType": "Truncated Text",
-    "note": "The English description is cut off in the game. On the Exceed's card, the text ends after \"grants all allies for 2 seconds: [Top] ATK Increase and\", so the second effect does not appear. The Japanese text says the skill grants all allies [Top] ATK Increase and [Top] Critical Rate Increase for 2 sec. The wiki records both effects. The heal (550% of all allies' average ATK on the ally with the lowest HP, every 6 sec) and the 2 sec duration match the Japanese."
+    "note": "The English description is cut off in the game at every skill level. On the Exceed's card, the text ends after \"grants all allies for 2 seconds: [Top] ATK Increase and\", so the second effect does not appear. The Japanese text says the skill grants all allies [Top] ATK Increase and [Top] Critical Rate Increase for 2 sec at Lv.1. The wiki records both effects. The heal (550% of all allies' average ATK on the ally with the lowest HP, every 6 sec) and the 2 sec duration match the Japanese. Lv.2 and Lv.3 are built from the Lv.1 text using the percentages and durations shown in the game."
    }
   ],
   "applications": [
