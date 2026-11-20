@@ -243,7 +243,13 @@
   "gameText": "When you are incapacitated, apply to all enemies for 3 seconds Silence",
   "notes": null,
   "applications": [
-   "silence-all-enemies-when-incapacitated-3-sec"
+   "silence-all-enemies-when-defeated-3-sec"
+  ],
+  "issues": [
+   {
+    "problemType": "Mistranslation",
+    "note": "The English descriptions of the Ignia and Bunny Yukino Lacrimas trigger \"when incapacitated\", while other lacrimas with the same trigger, such as Block Natsu, say \"when defeated\". The Japanese text uses the same phrase in all three (戦闘不能になると), so these are one trigger with two English renderings."
+   }
   ]
  },
  {
@@ -567,7 +573,13 @@
   "gameText": "When incapacitated, inflicts [Top] Burn on all enemies for 2 sec.",
   "notes": null,
   "applications": [
-   "top-burn-all-enemies-when-incapacitated-2-sec"
+   "top-burn-all-enemies-when-defeated-2-sec"
+  ],
+  "issues": [
+   {
+    "problemType": "Mistranslation",
+    "note": "The English descriptions of the Ignia and Bunny Yukino Lacrimas trigger \"when incapacitated\", while other lacrimas with the same trigger, such as Block Natsu, say \"when defeated\". The Japanese text uses the same phrase in all three (戦闘不能になると), so these are one trigger with two English renderings."
+   }
   ]
  },
  {

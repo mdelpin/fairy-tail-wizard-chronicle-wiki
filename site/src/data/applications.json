@@ -14733,7 +14733,7 @@
   "condition": null,
   "requires": null,
   "scaling": null,
-  "gameText": "Every 7 sec, for 3 sec, grant Technique allies [Top] DEF Increase"
+  "gameText": "Every 7 sec, for 5 sec, grant Technique allies [Top] DEF Increase."
  },
  {
   "id": "top-evasion-decrease-all-enemies-every-10-sec-burning-5-sec",
@@ -17760,27 +17760,6 @@
   "gameText": null
  },
  {
-  "id": "silence-all-enemies-when-incapacitated-3-sec",
-  "source": "lacrima",
-  "effect": "silence",
-  "type": "Inflicts",
-  "target": "All Enemies",
-  "trigger": {
-   "events": [
-    "when incapacitated"
-   ],
-   "everySeconds": null,
-   "raw": "When Incapacitated"
-  },
-  "chance": null,
-  "durationSeconds": 3,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "silence-attacker-20-2-sec",
   "source": "lacrima",
   "effect": "silence",
@@ -18052,6 +18031,27 @@
   "gameText": null
  },
  {
+  "id": "top-burn-all-enemies-when-defeated-2-sec",
+  "source": "lacrima",
+  "effect": "top-burn",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "when defeated"
+   ],
+   "everySeconds": null,
+   "raw": "When Defeated"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-burn-all-enemies-when-defeated-3-sec",
   "source": "lacrima",
   "effect": "top-burn",
@@ -18066,27 +18066,6 @@
   },
   "chance": null,
   "durationSeconds": 3,
-  "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "top-burn-all-enemies-when-incapacitated-2-sec",
-  "source": "lacrima",
-  "effect": "top-burn",
-  "type": "Inflicts",
-  "target": "All Enemies",
-  "trigger": {
-   "events": [
-    "when incapacitated"
-   ],
-   "everySeconds": null,
-   "raw": "When Incapacitated"
-  },
-  "chance": null,
-  "durationSeconds": 2,
   "valueOverride": null,
   "condition": null,
   "requires": null,
