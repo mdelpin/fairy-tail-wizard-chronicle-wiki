@@ -1,6 +1,6 @@
 # Validation report
 
-158 units, 117 lacrimas, 112 effects in 29 families, 841 effect applications, 56 banners, 60 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 42 live game issues. 112 issues in 8 categories.
+158 units, 117 lacrimas, 112 effects in 29 families, 840 effect applications, 56 banners, 60 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 42 live game issues. 111 issues in 8 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -116,9 +116,8 @@
 - Companion 'Dorma Anim Black Sky'
 - Companion 'Skiadrum'
 
-## Banner covers (3)
+## Banner covers (2)
 
-- 'pajama-party-dreaming-girls': image file 'Pajama Party! Event Banner.jpg' is not in the export
 - 'pickup-dark-mage-zeref': 794x1060 is not close to 16:9 (the card crops it to fit)
 - 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
 
