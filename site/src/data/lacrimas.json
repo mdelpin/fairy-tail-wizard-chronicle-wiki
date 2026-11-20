@@ -241,9 +241,9 @@
   "kind": "signature",
   "signatureFor": "bunny-yukino",
   "gameText": "When you are incapacitated, apply to all enemies for 3 seconds Silence",
-  "notes": null,
+  "notes": "The English text here says \"incapacitated\". Other lacrimas with the same trigger, such as Block Natsu, say \"defeated\". The Japanese uses the same phrase (戦闘不能になると) in all of them, so the wiki lists this trigger as When Defeated.",
   "applications": [
-   "silence-all-enemies-when-incapacitated-3-sec"
+   "silence-all-enemies-when-defeated-3-sec"
   ]
  },
  {
@@ -565,9 +565,9 @@
   "kind": "signature",
   "signatureFor": "ignia",
   "gameText": "When incapacitated, inflicts [Top] Burn on all enemies for 2 sec.",
-  "notes": null,
+  "notes": "The English text here says \"incapacitated\". Other lacrimas with the same trigger, such as Block Natsu, say \"defeated\". The Japanese uses the same phrase (戦闘不能になると) in all of them, so the wiki lists this trigger as When Defeated.",
   "applications": [
-   "top-burn-all-enemies-when-incapacitated-2-sec"
+   "top-burn-all-enemies-when-defeated-2-sec"
   ]
  },
  {
