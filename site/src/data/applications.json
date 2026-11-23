@@ -19952,7 +19952,7 @@
   "gameText": null
  },
  {
-  "id": "action-impairment-barrier-self-constant",
+  "id": "action-block-barrier-self-constant",
   "source": "enemy",
   "effect": "action-block-barrier",
   "type": "Provides",
@@ -19973,7 +19973,7 @@
   "gameText": null
  },
  {
-  "id": "action-impairment-barrier-self-every-4-sec-2-sec",
+  "id": "action-block-barrier-self-every-4-sec-2-sec",
   "source": "enemy",
   "effect": "action-block-barrier",
   "type": "Provides",
@@ -20049,6 +20049,25 @@
   "gameText": null
  },
  {
+  "id": "bind-all-enemies-every-7-sec-20-3-sec",
+  "source": "enemy",
+  "effect": "bind",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
+  },
+  "chance": 0.2,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "critical-shield-self-constant",
   "source": "enemy",
   "effect": "critical-shield",
@@ -20064,6 +20083,24 @@
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-350-of-own-atk",
+  "source": "enemy",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": null,
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 350,
+   "unit": "Percent of Own ATK"
+  },
   "condition": null,
   "requires": null,
   "scaling": null,
@@ -20138,6 +20175,48 @@
   "durationSeconds": null,
   "valueOverride": {
    "amount": 650,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-normal-attack-110-of-own-atk",
+  "source": "enemy",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "normal attack"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Attack"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 110,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-400-0f-own-atk",
+  "source": "enemy",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": null,
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 400,
    "unit": "Percent of Own ATK"
   },
   "condition": null,
@@ -20242,6 +20321,30 @@
   "gameText": null
  },
  {
+  "id": "damage-single-enemy-normal-attack-110-of-own-atk",
+  "source": "enemy",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "Single Enemy",
+  "trigger": {
+   "events": [
+    "normal attack"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Attack"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 110,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "damage-single-enemy-normal-attack-150-of-own-atk-2",
   "source": "enemy",
   "effect": "damage",
@@ -20327,11 +20430,113 @@
   "gameText": null
  },
  {
+  "id": "silence-brave-allies-3-sec",
+  "source": "enemy",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "Brave Allies",
+  "trigger": null,
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "silence-heart-allies-3-sec",
+  "source": "enemy",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "Heart Allies",
+  "trigger": null,
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "silence-mind-allies-3-sec",
+  "source": "enemy",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "Mind Allies",
+  "trigger": null,
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "silence-technique-allies-15-3-sec",
+  "source": "enemy",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "Technique Allies",
+  "trigger": null,
+  "chance": 0.15,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-atk-decrease-each-target-hit-after-attack-hits-3-sec",
   "source": "enemy",
   "effect": "top-atk-decrease",
   "type": "Inflicts",
   "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": null,
+   "raw": "After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-increase-self-20-3-sec-2",
+  "source": "enemy",
+  "effect": "top-atk-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.2,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-atk-increase-self-after-attack-hits-3-sec",
+  "source": "enemy",
+  "effect": "top-atk-increase",
+  "type": "Provides",
+  "target": "Self",
   "trigger": {
    "events": [
     "after attack hits"
@@ -20388,6 +20593,46 @@
   "gameText": null
  },
  {
+  "id": "top-atk-increase-self-every-7-sec-3-sec",
+  "source": "enemy",
+  "effect": "top-atk-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-accuracy-increase-self-after-attack-hits-3-sec",
+  "source": "enemy",
+  "effect": "top-accuracy-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": null,
+   "raw": "After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-accuracy-increase-self-every-5-sec-3-sec",
   "source": "enemy",
   "effect": "top-accuracy-increase",
@@ -20400,6 +20645,21 @@
   },
   "chance": null,
   "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-bleed-all-enemies-20",
+  "source": "enemy",
+  "effect": "top-bleed",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": null,
+  "chance": 0.2,
+  "durationSeconds": null,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -20609,6 +20869,25 @@
   "gameText": null
  },
  {
+  "id": "top-critical-rate-increase-self-every-4-sec-2-sec",
+  "source": "enemy",
+  "effect": "top-critical-rate-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [],
+   "everySeconds": 4,
+   "raw": "Every 4 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-critical-resistance-increase-self-every-4-sec-2-sec",
   "source": "enemy",
   "effect": "top-critical-resistance-increase",
@@ -20682,6 +20961,27 @@
   },
   "chance": null,
   "durationSeconds": 4,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-def-increase-self-20-3-sec",
+  "source": "enemy",
+  "effect": "top-def-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.2,
+  "durationSeconds": 3,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -20792,6 +21092,27 @@
   "gameText": null
  },
  {
+  "id": "top-shield-self-after-attack-hits-3-sec",
+  "source": "enemy",
+  "effect": "top-shield",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": null,
+   "raw": "After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-shield-self-every-4-sec-2-sec",
   "source": "enemy",
   "effect": "top-shield",
@@ -20804,6 +21125,25 @@
   },
   "chance": null,
   "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-shield-self-every-7-sec-3-sec",
+  "source": "enemy",
+  "effect": "top-shield",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
   "valueOverride": null,
   "condition": null,
   "requires": null,

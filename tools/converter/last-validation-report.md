@@ -1,6 +1,6 @@
 # Validation report
 
-158 units, 117 lacrimas, 112 effects in 29 families, 840 effect applications, 56 banners, 60 banner arts, 49 companions, 67 companion effect applications, 7 enemies, 27 enemy skills, 42 enemy effect applications, 1 events, 42 live game issues. 111 issues in 8 categories.
+158 units, 117 lacrimas, 112 effects in 29 families, 840 effect applications, 56 banners, 60 banner arts, 50 companions, 67 companion effect applications, 12 enemies, 46 enemy skills, 60 enemy effect applications, 1 events, 42 live game issues. 117 issues in 9 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -109,12 +109,21 @@
 - Issue 'White Gift Gray Lacrima: English says Special Skill Gauge, Japanese says Ultimate Skill Gauge' → ✨ White Gift Gray Lacrima
 - Issue 'White Gift Leo Skill: English description is cut off before the second effect and the duration' → White Gift Leo — Skill
 
-## Owned step unknown (the page shows the start value only) (4)
+## Owned step unknown (the page shows the start value only) (5)
 
 - Companion 'Aries'
 - Companion 'Cyberpunk Frosch'
 - Companion 'Dorma Anim Black Sky'
+- Companion 'Pajama Party! Aries'
 - Companion 'Skiadrum'
+
+## Missing required values (5)
+
+- EnemyEffectApplication 'Silence → Brave Allies – 3 sec': activationInterval is empty
+- EnemyEffectApplication 'Silence → Heart Allies – 3 sec': activationInterval is empty
+- EnemyEffectApplication 'Silence → Mind Allies – 3 sec': activationInterval is empty
+- EnemyEffectApplication 'Silence → Technique Allies – 15% / 3 sec': activationInterval is empty
+- EnemyEffectApplication 'Top Bleed → All Enemies – 20%': activationInterval is empty
 
 ## Banner covers (2)
 
