@@ -772,7 +772,9 @@
    "pajama-party-mirajane",
    "pajama-party-lisanna"
   ],
-  "companions": [],
+  "companions": [
+   "pajama-party-aries"
+  ],
   "cover": "pajama-party-dreaming-girls-banner.webp"
  },
  {

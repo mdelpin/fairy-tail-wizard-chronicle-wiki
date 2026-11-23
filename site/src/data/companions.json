@@ -1074,6 +1074,38 @@
   ]
  },
  {
+  "id": "pajama-party-aries",
+  "name": "Pajama Party! Aries",
+  "type": "Celestial Spirit",
+  "rarity": "UR",
+  "image": "pajama-party-aries.webp",
+  "identity": "Aries",
+  "introducedOn": "2026-11-20",
+  "introducedVia": "Event",
+  "introducedBanner": "pajama-party-dreaming-girls",
+  "skillName": "Sleepy Wool",
+  "skillLevelFromStars": [
+   0,
+   1,
+   7
+  ],
+  "ownedStat": "DEF",
+  "ownedStart": 100,
+  "ownedStep": null,
+  "stepConfirmed": null,
+  "levelTextSource": "in-game",
+  "gameText": {
+   "Lv1": "Every 12 sec, deals damage equal to 300% of all allies average ATK to all enemies. Grants all allies [Top] ATK Increase and [Top] Accuracy Increase, [Top] Shield for 3 sec."
+  },
+  "issues": [],
+  "applications": [
+   "damage-all-enemies-every-12-sec-300-of-party-s-average-atk",
+   "top-atk-increase-all-allies-every-12-sec-3-sec",
+   "top-accuracy-increase-all-allies-every-12-sec-3-sec",
+   "top-shield-all-allies-every-12-sec-3-sec"
+  ]
+ },
+ {
   "id": "panther-lily",
   "name": "Panther Lily",
   "type": "Exceed",

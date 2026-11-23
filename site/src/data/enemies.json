@@ -1,5 +1,56 @@
 [
  {
+  "id": "celestial-king",
+  "name": "Celestial King",
+  "type": "Trial",
+  "role": "Boss",
+  "image": "celestial-king.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 110% ATK damage to the target area.",
+    "applications": [
+     "damage-enemies-in-target-area-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Galaxia Charge",
+    "icon": 9,
+    "gameText": "Every 7s grants yourself for 3s: [Top] ATK Increase, [Top] Critical Rate Increase, [Top] Critical Damage Increase.",
+    "applications": [
+     "top-atk-increase-self-every-7-sec-3-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Meteor Raid",
+    "icon": 32,
+    "gameText": "Deals 350% ATK damage to all enemies. Additionally, has a 20% chance to inflct [Top] Bleed.",
+    "applications": [
+     "damage-all-enemies-350-of-own-atk",
+     "top-bleed-all-enemies-20"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Action-inhibiting barrier",
+    "icon": 16,
+    "gameText": "Always grants yourself Action Inhibit Barrier",
+    "applications": [
+     "action-block-barrier-self-constant"
+    ]
+   }
+  ]
+ },
+ {
   "id": "deliora",
   "name": "Deliora",
   "type": "Raid",
@@ -31,7 +82,7 @@
     "applications": [
      "top-atk-increase-self-constant-2",
      "top-def-increase-self-constant",
-     "action-impairment-barrier-self-constant",
+     "action-block-barrier-self-constant",
      "critical-shield-self-constant"
     ]
    },
@@ -63,11 +114,62 @@
   ]
  },
  {
+  "id": "dorma-anim",
+  "name": "Dorma Anim",
+  "type": "Trial",
+  "role": "Boss",
+  "image": "dorma-anim.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 110% ATK damage to the target area.",
+    "applications": [
+     "damage-enemies-in-target-area-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Magic Absorption",
+    "icon": 9,
+    "gameText": "After normal skill hit, 20% chance for 3s of [Top] ATK Increase and [Top] DEF Increase.",
+    "applications": [
+     "top-atk-increase-self-20-3-sec-2",
+     "top-def-increase-self-20-3-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Dragon Rider Diffusion Cannon",
+    "icon": 22,
+    "gameText": "Deals 350% ATK damage to all enemies.",
+    "applications": [
+     "damage-all-enemies-350-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Action-inhibiting barrier",
+    "icon": 16,
+    "gameText": "Always grant yourself Action Inhibit Barrier",
+    "applications": [
+     "action-block-barrier-self-constant"
+    ]
+   }
+  ]
+ },
+ {
   "id": "dorma-anim-black-sky",
   "name": "Dorma Anim Black Sky",
   "type": "Event Hard Challenge",
   "role": "Boss",
-  "image": null,
+  "image": "dorma-anim-black-sky.webp",
   "goldenImage": null,
   "defeatPoints": null,
   "goldenDefeatPoints": null,
@@ -92,7 +194,7 @@
      "top-atk-increase-self-every-4-sec-2-sec",
      "top-critical-resistance-increase-self-every-4-sec-2-sec",
      "top-def-increase-self-every-4-sec-2-sec",
-     "action-impairment-barrier-self-every-4-sec-2-sec"
+     "action-block-barrier-self-every-4-sec-2-sec"
     ]
    },
    {
@@ -249,7 +351,7 @@
     "applications": [
      "top-atk-increase-self-every-4-sec-2-sec",
      "top-def-increase-self-every-4-sec-2-sec",
-     "action-impairment-barrier-self-every-4-sec-2-sec"
+     "action-block-barrier-self-every-4-sec-2-sec"
     ]
    },
    {
@@ -306,7 +408,7 @@
     "applications": [
      "top-atk-increase-self-every-4-sec-2-sec",
      "top-critical-damage-increase-self-every-4-sec-2-sec",
-     "action-impairment-barrier-self-every-4-sec-2-sec"
+     "action-block-barrier-self-every-4-sec-2-sec"
     ]
    },
    {
@@ -364,7 +466,7 @@
     "applications": [
      "top-atk-increase-self-every-4-sec-2-sec",
      "top-shield-self-every-4-sec-2-sec",
-     "action-impairment-barrier-self-every-4-sec-2-sec"
+     "action-block-barrier-self-every-4-sec-2-sec"
     ]
    },
    {
@@ -387,6 +489,158 @@
     "applications": [
      "top-burn-all-enemies-every-6-sec-25-3-sec",
      "bind-all-enemies-every-6-sec-25-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "master-hades",
+  "name": "Master Hades",
+  "type": "Trial",
+  "role": "Boss",
+  "image": "master-hades.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal attack",
+    "icon": 41,
+    "gameText": "Deals 110% ATK damage to the target area",
+    "applications": [
+     "damage-enemies-in-target-area-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The absolute demonic intimidation",
+    "icon": 11,
+    "gameText": "Every 7s, 20% chance to inflict Bind for 3s on all enemies",
+    "applications": [
+     "bind-all-enemies-every-7-sec-20-3-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Amaterasu Hyakushiki",
+    "icon": 30,
+    "gameText": "Deals 350% ATK damage to all enemies",
+    "applications": [
+     "damage-all-enemies-350-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Action-inhibiting barrier",
+    "icon": 16,
+    "gameText": "Always grant yourself Action Inhibit Barrier",
+    "applications": [
+     "action-block-barrier-self-constant"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "motherglare",
+  "name": "Motherglare",
+  "type": "Trial",
+  "role": "Boss",
+  "image": "motherglare.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 43,
+    "gameText": "Deals 110% ATK damage to all enemies.",
+    "applications": [
+     "damage-all-enemies-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The Power of the Diamond Dragon",
+    "icon": 9,
+    "gameText": "Every 7s, grants yourself for 3s: [Top] ATK Increase and [Top] Shield.",
+    "applications": [
+     "top-atk-increase-self-every-7-sec-3-sec",
+     "top-shield-self-every-7-sec-3-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "The Roar of the Adamantite Dragon",
+    "icon": 36,
+    "gameText": "Deals 400% ATK damage to all enemies. Additionally inflicts Silence for 3s on non-Skill characters, and has a 15% chance to inflict it for 3 s on Skill Characters.",
+    "applications": [
+     "damage-all-enemies-400-0f-own-atk",
+     "silence-mind-allies-3-sec",
+     "silence-heart-allies-3-sec",
+     "silence-technique-allies-15-3-sec",
+     "silence-brave-allies-3-sec"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Action-inhibiting barrier",
+    "icon": 16,
+    "gameText": "Always grants yourself Action Inhibit Barrier.",
+    "applications": [
+     "action-block-barrier-self-constant"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pajama-party-aries",
+  "name": "Pajama Party! Aries",
+  "type": "Event Hard Challenge",
+  "role": "Boss",
+  "image": "pajama-party-aries.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 31,
+    "gameText": "Deals 110% ATK damage to the target.",
+    "applications": [
+     "damage-single-enemy-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Power of Aries",
+    "icon": 16,
+    "gameText": "Every 4 sec, grants self [Top] Critical Rate Increase and [Top] Critical Damage Increase, [Top] DEF Increase, Action Impairment Barrier for 2 sec",
+    "applications": [
+     "top-critical-rate-increase-self-every-4-sec-2-sec",
+     "top-critical-damage-increase-self-every-4-sec-2-sec",
+     "top-def-increase-self-every-4-sec-2-sec",
+     "action-block-barrier-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Sleepy Wool",
+    "icon": 44,
+    "gameText": "Deals 550% ATK damage to all enemies. After the attack hits, grants self [Top] ATK Increase and [Top] Accuracy Increase, [Top] Shield for 3 sec.",
+    "applications": [
+     "damage-all-enemies-550-of-own-atk",
+     "top-atk-increase-self-after-attack-hits-3-sec",
+     "top-accuracy-increase-self-after-attack-hits-3-sec",
+     "top-shield-self-after-attack-hits-3-sec"
     ]
    }
   ]
