@@ -26,7 +26,9 @@
     "icon": 9,
     "gameText": "Every 7s grants yourself for 3s: [Top] ATK Increase, [Top] Critical Rate Increase, [Top] Critical Damage Increase.",
     "applications": [
-     "top-atk-increase-self-every-7-sec-3-sec"
+     "top-atk-increase-self-every-7-sec-3-sec",
+     "top-critical-rate-increase-self-every-7-sec-3-sec",
+     "top-critical-damage-increase-self-every-7-sec-3-sec"
     ]
    },
    {

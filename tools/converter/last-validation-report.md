@@ -1,6 +1,6 @@
 # Validation report
 
-158 units, 117 lacrimas, 112 effects in 29 families, 840 effect applications, 56 banners, 60 banner arts, 50 companions, 67 companion effect applications, 12 enemies, 46 enemy skills, 60 enemy effect applications, 1 events, 42 live game issues. 117 issues in 9 categories.
+158 units, 117 lacrimas, 112 effects in 29 families, 840 effect applications, 56 banners, 60 banner arts, 50 companions, 67 companion effect applications, 12 enemies, 46 enemy skills, 62 enemy effect applications, 1 events, 42 live game issues. 117 issues in 9 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 

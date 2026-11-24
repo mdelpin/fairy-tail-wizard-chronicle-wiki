@@ -20848,6 +20848,25 @@
   "gameText": null
  },
  {
+  "id": "top-critical-damage-increase-self-every-7-sec-3-sec",
+  "source": "enemy",
+  "effect": "top-critical-damage-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-critical-defense-decrease-each-target-hit-after-attack-hits-3-sec",
   "source": "enemy",
   "effect": "top-critical-defense-decrease",
@@ -20881,6 +20900,25 @@
   },
   "chance": null,
   "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-critical-rate-increase-self-every-7-sec-3-sec",
+  "source": "enemy",
+  "effect": "top-critical-rate-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
   "valueOverride": null,
   "condition": null,
   "requires": null,
