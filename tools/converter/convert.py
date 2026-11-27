@@ -339,7 +339,8 @@ def main(root, out, slugs_path=None, public_dir=None):
         ch = companion_number(f, "chance", where, required=False) if source in ("companion", "enemy") else f.get("chance")
         if ch is not None and not (0 < float(ch) <= 1):
             issue("Values out of range", f"{where}: chance {ch} is not between 0 and 1")
-        cond = f.get("condition", f.get("conditions"))
+        # renamed 'Other Condition' in Capacities (Nov 2026); older exports call it condition(s)
+        cond = f.get("otherCondition", f.get("condition", f.get("conditions")))
         app = {
             "id": sl, "source": source, "effect": eff_slug.get(eff) if eff else None,
             "type": clean(f.get("applicationType")), "target": clean(f.get("target")),

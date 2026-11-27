@@ -1276,7 +1276,7 @@
   "chance": null,
   "durationSeconds": 5,
   "valueOverride": null,
-  "condition": null,
+  "condition": "Own HP ≤ 50%; once only",
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -4484,7 +4484,7 @@
    "amount": 1500,
    "unit": "Percent of Own ATK"
   },
-  "condition": null,
+  "condition": "Own HP ≤ 50%; once only",
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -7407,7 +7407,7 @@
   "chance": null,
   "durationSeconds": 7,
   "valueOverride": null,
-  "condition": null,
+  "condition": "Invincible: While [[Giant]]",
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -9601,7 +9601,7 @@
   "chance": null,
   "durationSeconds": 7,
   "valueOverride": null,
-  "condition": null,
+  "condition": "On [[Giant]] activation",
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -10601,7 +10601,7 @@
   "chance": null,
   "durationSeconds": 5,
   "valueOverride": null,
-  "condition": null,
+  "condition": "Own HP ≤ 50%; once only",
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -11245,7 +11245,7 @@
   "chance": 0.5,
   "durationSeconds": 5,
   "valueOverride": null,
-  "condition": null,
+  "condition": "Requires Deadly Predation to trigger (20% chance after a Normal Skill hit).",
   "requires": null,
   "scaling": null,
   "gameText": "After the attack hits, there is a 50% chance to inflict for 5 sec [Top] Bleed on each target."
@@ -14914,7 +14914,7 @@
   "chance": null,
   "durationSeconds": 5,
   "valueOverride": null,
-  "condition": null,
+  "condition": "Own HP ≤ 50%; once only",
   "requires": null,
   "scaling": null,
   "gameText": null
