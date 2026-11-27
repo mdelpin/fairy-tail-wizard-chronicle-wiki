@@ -101,8 +101,12 @@ def level_texts(body):
 def parse_levels(body, where):
     """Skill page text: '**Lv.N**' paragraphs + one table in the standard layout."""
     texts = {}
-    for m in re.finditer(r"\*\*Lv\.(\d)\*\*\s*\n+(.*?)(?=\n\s*\n|\Z)", body, re.S):
-        texts[f"Lv{m.group(1)}"] = m.group(2).strip()
+    level_blocks = re.finditer(
+        r"^\*\*Lv\.(\d)\*\*[ \t]*\n(.*?)(?=^(?:\*\*Lv\.\d+\*\*|[ \t]*\||#{1,6}[ \t]|---[ \t]*$)|\Z)",
+        body, re.M | re.S,
+    )
+    for level in level_blocks:
+        texts[f"Lv{level.group(1)}"] = level.group(2).strip()
     rows, header = [], None
     for line in body.splitlines():
         if not line.strip().startswith("|"):
