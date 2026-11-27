@@ -1,5 +1,61 @@
 [
  {
+  "id": "atlas-flame",
+  "name": "Atlas Flame",
+  "type": "Trial",
+  "role": "Boss",
+  "image": "atlas-flame.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal attack",
+    "icon": 43,
+    "gameText": "Deals 110% ATK damage to all enemies.",
+    "applications": [
+     "damage-all-enemies-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Power of the Infernal Dragon",
+    "icon": 9,
+    "gameText": "Every 7s, grants yourself for 3 s: [Top] ATK Increase, [Top] Accuracy Increase, [Top] Critical Rate Increase.",
+    "applications": [
+     "top-atk-increase-self-every-7-sec-3-sec",
+     "top-accuracy-increase-self-every-7-sec-3-sec",
+     "top-critical-rate-increase-self-every-7-sec-3-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Roar of Hellfire",
+    "icon": 36,
+    "gameText": "Every 8s, deals 400% ATK damage to all enemies. Additionally inflicts [Top] Burn for 5s on non-Heart characters, and has a 30% chance to inflict it for 5s on Heart characters.",
+    "applications": [
+     "damage-all-enemies-every-8-sec-400-of-own-atk",
+     "top-burn-brave-allies-every-8-sec-5-sec",
+     "top-burn-mind-allies-every-8-sec-5-sec",
+     "top-burn-technique-allies-every-8-sec-5-sec",
+     "top-burn-heart-allies-every-8-sec-30-5-sec"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Action-inhibiting barrier",
+    "icon": 16,
+    "gameText": "Always grants yourself Action Inhibit Barrier.",
+    "applications": [
+     "action-block-barrier-self-constant"
+    ]
+   }
+  ]
+ },
+ {
   "id": "celestial-king",
   "name": "Celestial King",
   "type": "Trial",
@@ -13,7 +69,7 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack",
+    "name": "Normal attack",
     "icon": 41,
     "gameText": "Deals 110% ATK damage to the target area.",
     "applications": [
@@ -35,17 +91,17 @@
     "kind": "Ultimate",
     "name": "Meteor Raid",
     "icon": 32,
-    "gameText": "Deals 350% ATK damage to all enemies. Additionally, has a 20% chance to inflct [Top] Bleed.",
+    "gameText": "Every 8s, deals 350% ATK damage to all enemies. Additionally, has a 20% chance to inflict [Top] Bleed.",
     "applications": [
-     "damage-all-enemies-350-of-own-atk",
-     "top-bleed-all-enemies-20"
+     "damage-all-enemies-every-8-sec-350-of-own-atk",
+     "top-bleed-all-enemies-every-8-sec-20"
     ]
    },
    {
     "kind": "Additional",
     "name": "Action-inhibiting barrier",
     "icon": 16,
-    "gameText": "Always grants yourself Action Inhibit Barrier",
+    "gameText": "Always grants yourself Action Inhibit Barrier.",
     "applications": [
      "action-block-barrier-self-constant"
     ]
@@ -129,7 +185,7 @@
   "skills": [
    {
     "kind": "Normal",
-    "name": "Normal Attack",
+    "name": "Normal attack",
     "icon": 41,
     "gameText": "Deals 110% ATK damage to the target area.",
     "applications": [
@@ -150,16 +206,16 @@
     "kind": "Ultimate",
     "name": "Dragon Rider Diffusion Cannon",
     "icon": 22,
-    "gameText": "Deals 350% ATK damage to all enemies.",
+    "gameText": "Every 7s, deals 350% ATK damage to all enemies.",
     "applications": [
-     "damage-all-enemies-350-of-own-atk"
+     "damage-all-enemies-every-7-sec-350-of-own-atk"
     ]
    },
    {
     "kind": "Additional",
     "name": "Action-inhibiting barrier",
     "icon": 16,
-    "gameText": "Always grant yourself Action Inhibit Barrier",
+    "gameText": "Always grants yourself Action Inhibit Barrier.",
     "applications": [
      "action-block-barrier-self-constant"
     ]
@@ -205,7 +261,7 @@
     "icon": 42,
     "gameText": "Deals 550% ATK Damage to all enemies. After the attack hits, inflicts on the target for 3 sec: [Top] Burn and [Top] ATK Decrease and [Top] Critical Damage Decrease as additional effects.",
     "applications": [
-     "damage-all-enemies-550-of-own-atk",
+     "damage-all-enemies-every-15-sec-550-of-own-atk",
      "top-burn-each-target-hit-after-attack-hits-3-sec",
      "top-atk-decrease-each-target-hit-after-attack-hits-3-sec",
      "top-critical-damage-decrease-each-target-hit-after-attack-hits-3-sec"
@@ -419,7 +475,7 @@
     "icon": 44,
     "gameText": "Deals 550% ATK damage to all enemies. After the attack hits, inflicts [Top] Paralysis, and [Top] Critical Damage Decrease, [Top] Critical DEF Decrease on the target for 3 sec.",
     "applications": [
-     "damage-all-enemies-550-of-own-atk",
+     "damage-all-enemies-every-15-sec-550-of-own-atk",
      "top-paralysis-each-target-hit-after-attack-hits-3-sec",
      "top-critical-damage-decrease-each-target-hit-after-attack-hits-3-sec",
      "top-critical-defense-decrease-each-target-hit-after-attack-hits-3-sec"
@@ -511,7 +567,7 @@
     "kind": "Normal",
     "name": "Normal attack",
     "icon": 41,
-    "gameText": "Deals 110% ATK damage to the target area",
+    "gameText": "Deals 110% ATK damage to the target area.",
     "applications": [
      "damage-enemies-in-target-area-normal-attack-110-of-own-atk"
     ]
@@ -520,7 +576,7 @@
     "kind": "Special",
     "name": "The absolute demonic intimidation",
     "icon": 11,
-    "gameText": "Every 7s, 20% chance to inflict Bind for 3s on all enemies",
+    "gameText": "Every 7s, 20% chance to inflict Bind for 3s on all enemies.",
     "applications": [
      "bind-all-enemies-every-7-sec-20-3-sec"
     ]
@@ -529,16 +585,16 @@
     "kind": "Ultimate",
     "name": "Amaterasu Hyakushiki",
     "icon": 30,
-    "gameText": "Deals 350% ATK damage to all enemies",
+    "gameText": "Every 7s, deals 350% ATK damage to all enemies.",
     "applications": [
-     "damage-all-enemies-350-of-own-atk"
+     "damage-all-enemies-every-7-sec-350-of-own-atk"
     ]
    },
    {
     "kind": "Additional",
     "name": "Action-inhibiting barrier",
     "icon": 16,
-    "gameText": "Always grant yourself Action Inhibit Barrier",
+    "gameText": "Always grants yourself Action Inhibit Barrier.",
     "applications": [
      "action-block-barrier-self-constant"
     ]
@@ -582,7 +638,7 @@
     "icon": 36,
     "gameText": "Deals 400% ATK damage to all enemies. Additionally inflicts Silence for 3s on non-Skill characters, and has a 15% chance to inflict it for 3 s on Skill Characters.",
     "applications": [
-     "damage-all-enemies-400-0f-own-atk",
+     "damage-all-enemies-400-of-own-atk",
      "silence-mind-allies-3-sec",
      "silence-heart-allies-3-sec",
      "silence-technique-allies-15-3-sec",
@@ -639,10 +695,57 @@
     "icon": 44,
     "gameText": "Deals 550% ATK damage to all enemies. After the attack hits, grants self [Top] ATK Increase and [Top] Accuracy Increase, [Top] Shield for 3 sec.",
     "applications": [
-     "damage-all-enemies-550-of-own-atk",
+     "damage-all-enemies-every-15-sec-550-of-own-atk",
      "top-atk-increase-self-after-attack-hits-3-sec",
      "top-accuracy-increase-self-after-attack-hits-3-sec",
      "top-shield-self-after-attack-hits-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "what-are-friends-for-happy",
+  "name": "What Are Friends For Happy",
+  "type": "Grand Battle",
+  "role": "Boss",
+  "image": "what-are-friends-for-happy.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 150% ATK damage to the target",
+    "applications": [
+     "damage-single-enemy-normal-attack-150-of-own-atk-2"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Boundless Energy",
+    "icon": 35,
+    "gameText": "Every 4 sec, grants self the following effects for 2 sec: [Top] ATK Increase, [Top] Critical Resistance Increase, [Top] DEF Increase, and Action Impairment Barrier.",
+    "applications": [
+     "top-atk-increase-self-every-4-sec-2-sec",
+     "top-critical-resistance-increase-self-every-4-sec-2-sec",
+     "top-def-increase-self-every-4-sec-2-sec",
+     "action-block-barrier-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Cat Fire Dragon's Roar",
+    "icon": 36,
+    "gameText": "Deals 550% ATK damage to all enemies. After the attack hits, inflicts [Top] Bleed and [Top] Paralysis, [Top] DEF Decrease on the target for 3 sec.",
+    "applications": [
+     "damage-all-enemies-every-15-sec-550-of-own-atk",
+     "top-bleed-each-target-hit-every-15-sec-3-sec",
+     "top-paralysis-each-target-hit-every-15-sec-3-sec",
+     "top-def-decrease-each-target-hit-every-15-sec-3-sec"
     ]
    }
   ]

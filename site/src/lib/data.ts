@@ -23,6 +23,8 @@ export interface EffectFamily {
   affectedStats: string[];
   /** Families this one counters / is countered by, as entered in Capacities (the two sides stay in sync there). */
   counters: string[]; counteredBy: string[];
+  /** Softer relations: a Shield absorbs part of the damage (mitigates); a Heal restores the HP lost (offsets). */
+  mitigates: string[]; mitigatedBy: string[]; offsets: string[]; offsetBy: string[];
   /** 'Debuffs' or 'Buffs' for the Remove All families; null otherwise. */
   removes: string | null;
 }
@@ -200,7 +202,8 @@ export const skillIcon = (_u: Unit, s: Skill) => (s.icon ? url(`icons/skill/${St
 export const KIND_ORDER = ['Normal', 'Special', 'Ultimate'];
 
 // ---------- effects ----------
-export const TIER_ORDER = ['Top', 'High', 'Mid', 'Low'];
+// Super (超級) ranks above Top (最上級); first seen on Natsu -Fire Dragon King Mode-
+export const TIER_ORDER = ['Super', 'Top', 'High', 'Mid', 'Low'];
 
 /** "Top Burn" -> "Burn"; "High ATK Increase" -> "ATK Increase" */
 export function baseName(e: Effect): string {
@@ -356,7 +359,37 @@ export function buildCounterIndex() {
     push(counters, c, { key: tm.key, label: tm.label });
   }
   for (const m of [counteredBy, counters]) for (const l of m.values()) l.sort((a, b) => a.label.localeCompare(b.label));
-  return { counteredBy, counters };
+  return { counteredBy, counters, mitigation: pairIndex('mitigates', 'mitigatedBy'), offset: pairIndex('offsets', 'offsetBy') };
+}
+
+/**
+ * A plain two-sided family relation (Mitigates / Mitigated By, Offsets / Offset By), per finder page.
+ * Read from both sides so a link entered on only one side still shows. `does`: what this page acts on;
+ * `by`: what acts on this page.
+ */
+function pairIndex(fwd: 'mitigates' | 'offsets', back: 'mitigatedBy' | 'offsetBy') {
+  const metas = new Map<string, FamilyMeta>();
+  for (const e of effects.values()) { const fm = familyKey(e); if (fm) metas.set(fm.key, fm); }
+  const pagesOf = new Map<string, FamilyMeta[]>();
+  for (const m of metas.values()) (pagesOf.get(m.family) ?? pagesOf.set(m.family, []).get(m.family)!).push(m);
+  const edges = new Set<string>();
+  const add = (a: FamilyMeta, t: FamilyMeta) => { if (a.key !== t.key) edges.add(`${a.key}>${t.key}`); };
+  for (const f of families.values()) {
+    const mine = pagesOf.get(f.name) ?? [];
+    for (const name of f[fwd] ?? []) for (const a of mine) for (const t of pagesOf.get(name) ?? []) add(a, t);
+    for (const name of f[back] ?? []) for (const t of mine) for (const a of pagesOf.get(name) ?? []) add(a, t);
+  }
+  const does = new Map<string, CounterLink[]>();
+  const by = new Map<string, CounterLink[]>();
+  const push = (m: Map<string, CounterLink[]>, k: string, l: CounterLink) => (m.get(k) ?? m.set(k, []).get(k)!).push(l);
+  for (const edge of edges) {
+    const [a, t] = edge.split('>');
+    const am = metas.get(a)!, tm = metas.get(t)!;
+    push(by, t, { key: am.key, label: am.label });
+    push(does, a, { key: tm.key, label: tm.label });
+  }
+  for (const m of [does, by]) for (const l of m.values()) l.sort((x, y) => x.label.localeCompare(y.label));
+  return { does, by };
 }
 
 export interface Match { unit: Unit; skill: Skill; app: Application; effect: Effect }

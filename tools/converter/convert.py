@@ -33,6 +33,7 @@ MAX_COMPANION_STARS = 11
 # Same for every Dragon, Exceed and Celestial Spirit: Lv.2 at star 1, Lv.3 at red star 2 (star 7).
 COMPANION_LEVEL_STARS = [0, 1, 7]
 COMPANION_TYPES = ["Dragon", "Exceed", "Celestial Spirit"]
+HELD_BACK = "Not published yet (entry incomplete; published once filled in)"
 
 issues = collections.defaultdict(list)  # category -> [message]
 
@@ -100,8 +101,12 @@ def level_texts(body):
 def parse_levels(body, where):
     """Skill page text: '**Lv.N**' paragraphs + one table in the standard layout."""
     texts = {}
-    for m in re.finditer(r"\*\*Lv\.(\d)\*\*\s*\n+(.*?)(?=\n\s*\n|\Z)", body, re.S):
-        texts[f"Lv{m.group(1)}"] = m.group(2).strip()
+    level_blocks = re.finditer(
+        r"^\*\*Lv\.(\d)\*\*[ \t]*\n(.*?)(?=^(?:\*\*Lv\.\d+\*\*|[ \t]*\||#{1,6}[ \t]|---[ \t]*$)|\Z)",
+        body, re.M | re.S,
+    )
+    for level in level_blocks:
+        texts[f"Lv{level.group(1)}"] = level.group(2).strip()
     rows, header = [], None
     for line in body.splitlines():
         if not line.strip().startswith("|"):
@@ -283,6 +288,9 @@ def main(root, out, slugs_path=None, public_dir=None):
             "counters": [fam_name[s] for s in ref(f.get("counters"), "EffectFamilies", where, "counters", many=True)],
             "counteredBy": [fam_name[s] for s in ref(f.get("counteredBy"), "EffectFamilies", where,
                                                      "counteredBy", many=True)],
+            # softer than countering: a Shield absorbs some damage (mitigates), a Heal restores HP lost (offsets)
+            **{p: [fam_name[s] for s in ref(f.get(p), "EffectFamilies", where, p, many=True)]
+               for p in ("mitigates", "mitigatedBy", "offsets", "offsetBy")},
             "removes": clean(f.get("removes")),
         })
     fam_by_stem = {stem: next(x for x in families_out if x["name"] == fam_name[stem]) for stem in FAM}
@@ -534,6 +542,11 @@ def main(root, out, slugs_path=None, public_dir=None):
         f = r["fm"]
         name = clean(f.get("title")) or stem
         where = f"Companion '{name}'"
+        # A companion entered ahead of release stays unpublished (and off its banner) until it has a type and rarity.
+        held = [p for p in ("companionType", "rarity") if not clean(f.get(p))]
+        if held:
+            issue(HELD_BACK, f"{where}: no {' or '.join(held)} yet")
+            continue
         slug = slug_for("companion", stem, name)
         companion_slug[stem] = slug
 
@@ -629,6 +642,12 @@ def main(root, out, slugs_path=None, public_dir=None):
             issue("Skipped records", f"Character '{t}' (file '{stem}'): no rarity or attribute, treated as a template")
             continue
         where = f"Character '{t}'"
+        # A wizard entered ahead of release (kit not yet confirmed in the Japanese client) stays unpublished
+        # until it has an attribute and skills; it is left off its banner too and published by a later export.
+        held = [p for p, v in (("attribute", f.get("attribute")), ("skills", links(f.get("skills")))) if not v]
+        if held:
+            issue(HELD_BACK, f"{where}: no {' or '.join(held)} yet")
+            continue
         for prop in ["identity", "collection", "rarity", "attribute", "class", "coverImage"]:
             if not f.get(prop):
                 issue("Missing required values", f"{where}: {prop} is empty")
@@ -734,7 +753,8 @@ def main(root, out, slugs_path=None, public_dir=None):
             if debut_of.get(uid) != ban_slug[stem]:
                 issue("Debut banners", f"{where} lists '{uid}', whose Debut Banner is '{debut_of.get(uid)}'")
         companion_ids = list(dict.fromkeys(companion_slug[c] for c in
-                             ref(f.get("companions"), "Companions", where, "companions", many=True)))
+                             ref(f.get("companions"), "Companions", where, "companions", many=True)
+                             if c in companion_slug))
         for cid in companion_ids:
             if introduction_of[cid] != ban_slug[stem]:
                 issue("Companion banners", f"{where} lists '{cid}', whose introducedBanner is '{introduction_of[cid]}'")
