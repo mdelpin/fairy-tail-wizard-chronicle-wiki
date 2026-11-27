@@ -1276,7 +1276,7 @@
   "chance": null,
   "durationSeconds": 5,
   "valueOverride": null,
-  "condition": "Own HP ≤ 50%; once only",
+  "condition": null,
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -1305,6 +1305,35 @@
    "increasePerUnit": 50,
    "increaseValueUnit": "Percent",
    "scalingBasis": "Mind Ally",
+   "maximumNumberOfIncreases": 7,
+   "maximumResult": 350
+  },
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-10-sec-1050-of-own-atk-scales-per-technique-ally",
+  "source": "unit",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 10,
+   "raw": "Every 10 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 1050,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Effect Value",
+   "increasePerUnit": 50,
+   "increaseValueUnit": "Percent",
+   "scalingBasis": "Technique Ally",
    "maximumNumberOfIncreases": 7,
    "maximumResult": 350
   },
@@ -4455,7 +4484,7 @@
    "amount": 1500,
    "unit": "Percent of Own ATK"
   },
-  "condition": "Own HP ≤ 50%; once only",
+  "condition": null,
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -5213,7 +5242,7 @@
   "gameText": null
  },
  {
-  "id": "high-burn-each-target-hit-every-10-sec-40-5-sec-duration-scales-per-brave-ally",
+  "id": "high-burn-each-target-hit-every-10-sec-40-5-sec-extended-per-brave-ally",
   "source": "unit",
   "effect": "high-burn",
   "type": "Inflicts",
@@ -6975,7 +7004,7 @@
   "gameText": null
  },
  {
-  "id": "high-freeze-each-target-hit-every-10-sec-40-5-sec-duration-scales-per-brave-ally",
+  "id": "high-freeze-each-target-hit-every-10-sec-40-5-sec-extended-per-brave-ally",
   "source": "unit",
   "effect": "high-freeze",
   "type": "Inflicts",
@@ -7146,6 +7175,36 @@
   "valueOverride": null,
   "condition": null,
   "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-paralysis-enemies-around-target-burn-or-bleed-5-sec",
+  "source": "unit",
+  "effect": "high-paralysis",
+  "type": "Inflicts",
+  "target": "Enemies Around Target",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": {
+   "families": [
+    "Burn",
+    "Bleed"
+   ],
+   "match": "Any",
+   "subject": "Target",
+   "timing": "After Attack Hits",
+   "state": "Present"
+  },
   "scaling": null,
   "gameText": null
  },
@@ -7348,7 +7407,7 @@
   "chance": null,
   "durationSeconds": 7,
   "valueOverride": null,
-  "condition": "Invincible: While [[Giant]]",
+  "condition": null,
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -9079,6 +9138,34 @@
   "gameText": null
  },
  {
+  "id": "silence-each-target-hit-every-10-sec-50-5-sec-extended-per-technique-ally",
+  "source": "unit",
+  "effect": "silence",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": 0.5,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Duration",
+   "increasePerUnit": 0.5,
+   "increaseValueUnit": "Seconds",
+   "scalingBasis": "Technique Ally",
+   "maximumNumberOfIncreases": 6,
+   "maximumResult": 3
+  },
+  "gameText": null
+ },
+ {
   "id": "silence-each-target-hit-every-10-sec-60-5-sec",
   "source": "unit",
   "effect": "silence",
@@ -9411,6 +9498,94 @@
   "gameText": null
  },
  {
+  "id": "super-burn-each-target-hit-every-10-sec-50-5-sec-extended-per-technique-ally",
+  "source": "unit",
+  "effect": "super-burn",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": 0.5,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Duration",
+   "increasePerUnit": 0.5,
+   "increaseValueUnit": "Seconds",
+   "scalingBasis": "Technique Ally",
+   "maximumNumberOfIncreases": 6,
+   "maximumResult": 3
+  },
+  "gameText": null
+ },
+ {
+  "id": "super-critical-defense-decrease-enemies-around-target-burn-or-bleed-5-sec",
+  "source": "unit",
+  "effect": "super-critical-defense-decrease",
+  "type": "Inflicts",
+  "target": "Enemies Around Target",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": {
+   "families": [
+    "Burn",
+    "Bleed"
+   ],
+   "match": "Any",
+   "subject": "Target",
+   "timing": "After Attack Hits",
+   "state": "Present"
+  },
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "super-critical-resistance-decrease-enemies-around-target-burn-or-bleed-5-sec",
+  "source": "unit",
+  "effect": "super-critical-resistance-decrease",
+  "type": "Inflicts",
+  "target": "Enemies Around Target",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": {
+   "families": [
+    "Burn",
+    "Bleed"
+   ],
+   "match": "Any",
+   "subject": "Target",
+   "timing": "After Attack Hits",
+   "state": "Present"
+  },
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "taunt-all-enemies-giant-activation-7-sec",
   "source": "unit",
   "effect": "taunt",
@@ -9426,7 +9601,7 @@
   "chance": null,
   "durationSeconds": 7,
   "valueOverride": null,
-  "condition": "On [[Giant]] activation",
+  "condition": null,
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -10426,7 +10601,7 @@
   "chance": null,
   "durationSeconds": 5,
   "valueOverride": null,
-  "condition": "Own HP ≤ 50%; once only",
+  "condition": null,
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -10575,7 +10750,7 @@
   "gameText": null
  },
  {
-  "id": "top-accuracy-increase-all-allies-30-5-sec-duration-scales-per-technique-ally",
+  "id": "top-accuracy-increase-all-allies-30-5-sec-extended-per-technique-ally",
   "source": "unit",
   "effect": "top-accuracy-increase",
   "type": "Provides",
@@ -10879,6 +11054,34 @@
   "gameText": "After a successful hit, has a 50% chance to inflict for 5 sec [Top] Bleed on each target for 5 seconds"
  },
  {
+  "id": "top-bleed-each-target-hit-every-10-sec-50-5-sec-extended-per-technique-ally",
+  "source": "unit",
+  "effect": "top-bleed",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": 0.5,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Duration",
+   "increasePerUnit": 0.5,
+   "increaseValueUnit": "Seconds",
+   "scalingBasis": "Technique Ally",
+   "maximumNumberOfIncreases": 6,
+   "maximumResult": 3
+  },
+  "gameText": null
+ },
+ {
   "id": "top-bleed-each-target-hit-every-10-sec-60-5-sec",
   "source": "unit",
   "effect": "top-bleed",
@@ -11042,7 +11245,7 @@
   "chance": 0.5,
   "durationSeconds": 5,
   "valueOverride": null,
-  "condition": "Requires Deadly Predation to trigger (20% chance after a Normal Skill hit).",
+  "condition": null,
   "requires": null,
   "scaling": null,
   "gameText": "After the attack hits, there is a 50% chance to inflict for 5 sec [Top] Bleed on each target."
@@ -12214,7 +12417,7 @@
   "gameText": "Increases the duration of the additional effects by 0.5 sec for each Mind Ally (up to 3 sec)"
  },
  {
-  "id": "top-critical-defense-decrease-each-target-hit-every-10-sec-40-5-sec-duration-scales-per-brave-ally",
+  "id": "top-critical-defense-decrease-each-target-hit-every-10-sec-40-5-sec-extended-per-brave-ally",
   "source": "unit",
   "effect": "top-critical-defense-decrease",
   "type": "Inflicts",
@@ -14711,7 +14914,7 @@
   "chance": null,
   "durationSeconds": 5,
   "valueOverride": null,
-  "condition": "Own HP ≤ 50%; once only",
+  "condition": null,
   "requires": null,
   "scaling": null,
   "gameText": null
@@ -16181,6 +16384,27 @@
   "gameText": null
  },
  {
+  "id": "high-burn-all-enemies-start-of-battle-5-sec",
+  "source": "lacrima",
+  "effect": "high-burn",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "start of battle"
+   ],
+   "everySeconds": null,
+   "raw": "Start of Battle"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "high-burn-all-enemies-start-of-battle-6-sec",
   "source": "lacrima",
   "effect": "high-burn",
@@ -16391,6 +16615,27 @@
   "gameText": null
  },
  {
+  "id": "high-critical-resistance-decrease-all-enemies-start-of-battle-5-sec",
+  "source": "lacrima",
+  "effect": "high-critical-resistance-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "start of battle"
+   ],
+   "everySeconds": null,
+   "raw": "Start of Battle"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "high-def-decrease-all-enemies-while-on-the-field-2",
   "source": "lacrima",
   "effect": "high-def-decrease",
@@ -16487,6 +16732,27 @@
   },
   "chance": 0.3,
   "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-evasion-decrease-all-enemies-start-of-battle-5-sec",
+  "source": "lacrima",
+  "effect": "high-evasion-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "start of battle"
+   ],
+   "everySeconds": null,
+   "raw": "Start of Battle"
+  },
+  "chance": null,
+  "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -20089,7 +20355,7 @@
   "gameText": null
  },
  {
-  "id": "damage-all-enemies-350-of-own-atk",
+  "id": "damage-all-enemies-400-of-own-atk",
   "source": "enemy",
   "effect": "damage",
   "type": "Inflicts",
@@ -20098,7 +20364,7 @@
   "chance": null,
   "durationSeconds": null,
   "valueOverride": {
-   "amount": 350,
+   "amount": 400,
    "unit": "Percent of Own ATK"
   },
   "condition": null,
@@ -20161,6 +20427,72 @@
   "gameText": null
  },
  {
+  "id": "damage-all-enemies-every-7-sec-350-of-own-atk",
+  "source": "enemy",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 350,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-8-sec-350-of-own-atk",
+  "source": "enemy",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 350,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-8-sec-400-of-own-atk",
+  "source": "enemy",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 400,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "damage-all-enemies-every-8-sec-650-of-own-atk",
   "source": "enemy",
   "effect": "damage",
@@ -20199,24 +20531,6 @@
   "durationSeconds": null,
   "valueOverride": {
    "amount": 110,
-   "unit": "Percent of Own ATK"
-  },
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "damage-all-enemies-400-0f-own-atk",
-  "source": "enemy",
-  "effect": "damage",
-  "type": "Inflicts",
-  "target": "All Enemies",
-  "trigger": null,
-  "chance": null,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 400,
    "unit": "Percent of Own ATK"
   },
   "condition": null,
@@ -20652,14 +20966,18 @@
   "gameText": null
  },
  {
-  "id": "top-bleed-all-enemies-20",
+  "id": "top-accuracy-increase-self-every-7-sec-3-sec",
   "source": "enemy",
-  "effect": "top-bleed",
-  "type": "Inflicts",
-  "target": "All Enemies",
-  "trigger": null,
-  "chance": 0.2,
-  "durationSeconds": null,
+  "effect": "top-accuracy-increase",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -20679,6 +20997,25 @@
   },
   "chance": 0.3,
   "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-bleed-all-enemies-every-8-sec-20",
+  "source": "enemy",
+  "effect": "top-bleed",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": 0.2,
+  "durationSeconds": null,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -20726,6 +21063,25 @@
   "gameText": null
  },
  {
+  "id": "top-burn-brave-allies-every-8-sec-5-sec",
+  "source": "enemy",
+  "effect": "top-burn",
+  "type": "Inflicts",
+  "target": "Brave Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-burn-each-target-hit-after-attack-hits-3-sec",
   "source": "enemy",
   "effect": "top-burn",
@@ -20761,6 +21117,63 @@
   },
   "chance": null,
   "durationSeconds": 4,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-burn-heart-allies-every-8-sec-30-5-sec",
+  "source": "enemy",
+  "effect": "top-burn",
+  "type": "Inflicts",
+  "target": "Heart Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": 0.3,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-burn-mind-allies-every-8-sec-5-sec",
+  "source": "enemy",
+  "effect": "top-burn",
+  "type": "Inflicts",
+  "target": "Mind Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-burn-technique-allies-every-8-sec-5-sec",
+  "source": "enemy",
+  "effect": "top-burn",
+  "type": "Inflicts",
+  "target": "Technique Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": null,
+  "durationSeconds": 5,
   "valueOverride": null,
   "condition": null,
   "requires": null,

@@ -897,6 +897,19 @@
   ]
  },
  {
+  "id": "natsu-fire-dragon-king-mode-lacrima",
+  "name": "Natsu -Fire Dragon King Mode- Lacrima",
+  "kind": "signature",
+  "signatureFor": "natsu-fire-dragon-king-mode",
+  "gameText": "At the start of battle, inflicts [High] Burn and [High] Critical Resistance Decrease, [High] Evasion Rate Decrease on all enemies for 5 sec.",
+  "notes": null,
+  "applications": [
+   "high-burn-all-enemies-start-of-battle-5-sec",
+   "high-critical-resistance-decrease-all-enemies-start-of-battle-5-sec",
+   "high-evasion-decrease-all-enemies-start-of-battle-5-sec"
+  ]
+ },
+ {
   "id": "natsu-lightning-fire-dragon-mode-lacrima",
   "name": "Natsu -Lightning Fire Dragon Mode- Lacrima",
   "kind": "signature",

@@ -787,5 +787,18 @@
   "units": [],
   "companions": [],
   "cover": "fairy-collection-selectable-pickup.webp"
+ },
+ {
+  "id": "what-friends-are-for-i",
+  "name": "What Friends Are For I",
+  "type": "Regular",
+  "start": "2026-11-27",
+  "end": "2026-12-11",
+  "dateSource": "Confirmed",
+  "units": [
+   "natsu-fire-dragon-king-mode"
+  ],
+  "companions": [],
+  "cover": "what-friends-are-for-i-banner.webp"
  }
 ]

@@ -189,8 +189,7 @@
   ],
   "counters": [],
   "counteredBy": [
-   "Invincible",
-   "Shield"
+   "Invincible"
   ],
   "removes": null
  },
@@ -325,9 +324,7 @@
   "definition": "Negates a set amount of damage",
   "mechanic": "Mitigation",
   "affectedStats": [],
-  "counters": [
-   "Damage"
-  ],
+  "counters": [],
   "counteredBy": [],
   "removes": null
  },

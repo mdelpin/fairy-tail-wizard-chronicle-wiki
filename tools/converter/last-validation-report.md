@@ -1,6 +1,6 @@
 # Validation report
 
-158 units, 117 lacrimas, 112 effects in 29 families, 840 effect applications, 56 banners, 60 banner arts, 50 companions, 67 companion effect applications, 12 enemies, 46 enemy skills, 62 enemy effect applications, 1 events, 42 live game issues. 117 issues in 9 categories.
+159 units, 118 lacrimas, 116 effects in 29 families, 850 effect applications, 57 banners, 61 banner arts, 50 companions, 67 companion effect applications, 13 enemies, 50 enemy skills, 69 enemy effect applications, 1 events, 47 live game issues. 133 issues in 14 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -64,18 +64,22 @@
 - yukino-agria
 - zancrow
 
-## Live game issues (42)
+## Live game issues (47)
 
 - Issue 'Academy Capricorn Skill: English description is cut off before the second effect and the duration' → Academy Capricorn — Skill
 - Issue 'Aera Frosch Skill: Critical Damage Decrease mistranslation' → Aera Frosch — Skill
 - Issue 'Aquarius Skill: English description is cut off before the second effect' → Aquarius — Skill
 - Issue 'Aries Skill: English description is cut off before the second effect' → Aries — Skill
 - Issue 'Aries Skill: English name is Aquametria, Japanese name is Wool Bomb' → Aries — Skill
+- Issue 'Atlas Flame Ultimate: English omits the 8-second interval' → Atlas Flame — Ultimate Skill
 - Issue 'Blazing Beach Vacation Laxus Special: English says Special Skill Gauge, Japanese says Ultimate Skill Gauge' → Blazing Beach Vacation Laxus — Special
 - Issue 'Blazing Beach Vacation Laxus Ultimate: healing drops at Lv.3 (750% / 850% / 750%)' → Blazing Beach Vacation Laxus — Ultimate
 - Issue 'Block Lucy Normal: English lists [Top] Critical Rate Increase, Japanese lists [High]' → Block Lucy — Normal
+- Issue 'Celestial King Ultimate: English name is Meteor Raid, Japanese name is Meteor Blade' → Celestial King — Ultimate Skill
+- Issue 'Celestial King Ultimate: English omits the 8-second interval' → Celestial King — Ultimate Skill
 - Issue 'Dark Mage Zeref Normal: English does not mention the Bind, Japanese lists a 10% Bind for 2 sec' → Dark Mage Zeref — Normal
 - Issue 'Dark Mage Zeref Normal: English lists 90% / 100% / 120% damage, Japanese lists 100% / 120% / 150%' → Dark Mage Zeref — Normal
+- Issue 'Dorma Anim Ultimate: English omits the 7-second interval' → Dorma Anim — Ultimate Skill
 - Issue 'Egg Hunt Irene Special: English says Special Skill Gauge, Japanese says Ultimate Skill Gauge' → Egg Hunt Irene — Special
 - Issue 'Egg Hunt Irene Ultimate: English says Critical Defense Increase, Japanese says Critical Resistance Increase' → Egg Hunt Irene — Ultimate
 - Issue 'First Dream Aquarius Skill: English description is cut off before the second effect' → First Dream Aquarius — Skill
@@ -87,6 +91,7 @@
 - Issue 'Holy Night Juvia Normal: English text lists Critical Rate Increase, Japanese text shows Bind' → Holy Night Juvia — Normal
 - Issue 'Jellal Fernandes Normal: English lists Top Critical Damage Increase, Japanese lists High' → Jellal Fernandes — Normal
 - Issue 'Jellal Fernandes Ultimate: English says Evasion and Critical Defense Increase on the target, Japanese says Down' → Jellal Fernandes — Ultimate
+- Issue 'Master Hades Ultimate: English omits the 7-second interval' → Master Hades — Ultimate Skill
 - Issue 'Mercphobia Skill: English description is cut off before the last effect and the duration' → Mercphobia — Skill
 - Issue 'Minerva Lacrima: English says it triggers on a critical hit, Japanese says a normal skill hit (20%)' → ✨ Minerva Lacrima
 - Issue 'Mirajane -Satan Soul- Normal: English says Evasion Increase, Japanese says Accuracy Increase' → Mirajane -Satan Soul- — Normal
@@ -109,6 +114,14 @@
 - Issue 'White Gift Gray Lacrima: English says Special Skill Gauge, Japanese says Ultimate Skill Gauge' → ✨ White Gift Gray Lacrima
 - Issue 'White Gift Leo Skill: English description is cut off before the second effect and the duration' → White Gift Leo — Skill
 
+## Live issues the site cannot show yet (no notice slot for enemy skills) (5)
+
+- Issue 'Atlas Flame Ultimate: English omits the 8-second interval'
+- Issue 'Celestial King Ultimate: English name is Meteor Raid, Japanese name is Meteor Blade'
+- Issue 'Celestial King Ultimate: English omits the 8-second interval'
+- Issue 'Dorma Anim Ultimate: English omits the 7-second interval'
+- Issue 'Master Hades Ultimate: English omits the 7-second interval'
+
 ## Owned step unknown (the page shows the start value only) (5)
 
 - Companion 'Aries'
@@ -117,18 +130,32 @@
 - Companion 'Pajama Party! Aries'
 - Companion 'Skiadrum'
 
-## Missing required values (5)
+## Missing required values (4)
 
 - EnemyEffectApplication 'Silence → Brave Allies – 3 sec': activationInterval is empty
 - EnemyEffectApplication 'Silence → Heart Allies – 3 sec': activationInterval is empty
 - EnemyEffectApplication 'Silence → Mind Allies – 3 sec': activationInterval is empty
 - EnemyEffectApplication 'Silence → Technique Allies – 15% / 3 sec': activationInterval is empty
-- EnemyEffectApplication 'Top Bleed → All Enemies – 20%': activationInterval is empty
+
+## Not published yet (entry incomplete; published once filled in) (3)
+
+- Character 'Erza -Red-Black Twin Blades-': no attribute or skills yet
+- Character 'Lucy -Aquarius Form-': no attribute or skills yet
+- Companion 'What Friends Are For Happy': no companionType or rarity yet
 
 ## Banner covers (2)
 
 - 'pickup-dark-mage-zeref': 794x1060 is not close to 16:9 (the card crops it to fit)
 - 'pickup-mavis-vermillion': 900x1200 is not close to 16:9 (the card crops it to fit)
+
+## Near-duplicate values (typo or inconsistent spelling?) (2)
+
+- Effect title: 'Super Critical Defense Decrease' vs 'Top Critical Defense Decrease'
+- Effect title: 'Super Critical Resistance Decrease' vs 'Top Critical Resistance Decrease'
+
+## Titles containing a non-breaking space (handled by the converter; worth cleaning eventually) (1)
+
+- BannerArts: 2 titles
 
 ## Effect families without a Mechanic (shown without one on the site) (1)
 
@@ -145,4 +172,8 @@
 ## Event date sources need review (1)
 
 - Event 'Guild Raid – Deliora': Dates from the in-game Guild Raid notice: November 5, 2026 at 06:00 – November 13, 2026 at 05:59 UTC, equivalent to November 5 at 15:00 – November 13 at 14:59 JST. Deliora is the featured boss. The official @madochro_en launch post, dated November 5, instead states an end of November 12 at 14:59 JST; the preview post visible in the supplied X screenshot gives the same earlier end. The date properties follow the in-game notice; the conflicting end dates remain unresolved.
+
+## Portraits added (new wizards; check they look right) (1)
+
+- natsu-fire-dragon-king-mode
 

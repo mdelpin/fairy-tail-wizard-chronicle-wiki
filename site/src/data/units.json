@@ -14099,7 +14099,7 @@
     "notes": null,
     "applications": [
      "top-critical-damage-increase-all-allies-30-5-sec",
-     "top-accuracy-increase-all-allies-30-5-sec-duration-scales-per-technique-ally",
+     "top-accuracy-increase-all-allies-30-5-sec-extended-per-technique-ally",
      "mid-shield-all-allies-30-5-sec"
     ]
    },
@@ -15386,6 +15386,219 @@
     "applications": [
      "damage-enemies-in-target-area-every-8-sec-850-of-own-atk",
      "top-burn-each-target-hit-every-8-sec-10-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "natsu-fire-dragon-king-mode",
+  "name": "Natsu -Fire Dragon King Mode-",
+  "identity": "Natsu Dragneel",
+  "collection": "What Friends Are For I",
+  "rarity": "UR",
+  "collectionBonusStat": "ATK",
+  "newForm": false,
+  "debutBanner": "what-friends-are-for-i",
+  "availableFrom": "2026-11-27",
+  "bannerArt": "natsu-fire-dragon-king-mode.webp",
+  "attribute": "Technique",
+  "role": "Ranged",
+  "portrait": "Natsu -Fire Dragon King Mode-.png",
+  "card": "natsu-fire-dragon-king-mode.webp",
+  "signatureLacrima": "natsu-fire-dragon-king-mode-lacrima",
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 130% ATK damage to the target. After the attack hits, has a 30% chance to grant all allies [High] Critical Damage Increase and [High] ATK Increase, [High] Accuracy Increase for 3 sec.",
+     "Lv2": "Deals 150% ATK damage to the target. After the attack hits, has a 30% chance to grant all allies [High] Critical Damage Increase and [High] ATK Increase, [High] Accuracy Increase for 3 sec.",
+     "Lv3": "Deals 180% ATK damage to the target. After the attack hits, has a 30% chance to grant all allies [High] Critical Damage Increase and [High] ATK Increase, [High] Accuracy Increase for 3 sec."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "180% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "All Allies",
+      "effect": "Critical Damage Increase",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "All Allies",
+      "effect": "ATK Increase",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "All Allies",
+      "effect": "Accuracy Increase",
+      "tier": "High",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 6,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-180-of-own-atk",
+     "high-critical-damage-increase-all-allies-30-3-sec",
+     "high-atk-increase-all-allies-30-3-sec",
+     "high-accuracy-increase-all-allies-30-3-sec"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Fire Dragon King's Fighting Spirit",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "After a Normal Skill hits, if enemies within the target's range are affected by Burn or Bleed, inflicts [Super] Critical DEF Decrease and [Super] Critical Resistance Decrease, [High] Paralysis on each affected enemy for 3 sec.",
+     "Lv2": "After a Normal Skill hits, if enemies within the target's range are affected by Burn or Bleed, inflicts [Super] Critical DEF Decrease and [Super] Critical Resistance Decrease, [High] Paralysis on each affected enemy for 4 sec.",
+     "Lv3": "After a Normal Skill hits, if enemies within the target's range are affected by Burn or Bleed, inflicts [Super] Critical DEF Decrease and [Super] Critical Resistance Decrease, [High] Paralysis on each affected enemy for 5 sec."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Enemies Around Target",
+      "effect": "Critical Defense Decrease",
+      "tier": "Super",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": "Target has Burn or Bleed",
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Enemies Around Target",
+      "effect": "Critical Resistance Decrease",
+      "tier": "Super",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": "Target has Burn or Bleed",
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Enemies Around Target",
+      "effect": "Paralysis",
+      "tier": "High",
+      "chance": null,
+      "duration": "5 sec",
+      "value": null,
+      "condition": "Target has Burn or Bleed",
+      "notes": null
+     }
+    ],
+    "icon": 21,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "super-critical-defense-decrease-enemies-around-target-burn-or-bleed-5-sec",
+     "super-critical-resistance-decrease-enemies-around-target-burn-or-bleed-5-sec",
+     "high-paralysis-enemies-around-target-burn-or-bleed-5-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Fire Dragon King's Destruction Fist",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deals 850% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)",
+     "Lv2": "Every 10 sec, deals 950% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)",
+     "Lv3": "Every 10 sec, deals 1050% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)"
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "All Enemies",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "1050% ATK",
+      "condition": null,
+      "notes": "+50% damage per Technique-type ally (up to 350%)"
+     },
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Each Target Hit",
+      "effect": "Burn",
+      "tier": "Super",
+      "chance": "50%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "+0.5 sec per Technique-type ally (up to 3 sec)"
+     },
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Each Target Hit",
+      "effect": "Bleed",
+      "tier": "Top",
+      "chance": "50%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "+0.5 sec per Technique-type ally (up to 3 sec)"
+     },
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Each Target Hit",
+      "effect": "Silence",
+      "tier": null,
+      "chance": "50%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "+0.5 sec per Technique-type ally (up to 3 sec)"
+     }
+    ],
+    "icon": 22,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-all-enemies-every-10-sec-1050-of-own-atk-scales-per-technique-ally",
+     "super-burn-each-target-hit-every-10-sec-50-5-sec-extended-per-technique-ally",
+     "top-bleed-each-target-hit-every-10-sec-50-5-sec-extended-per-technique-ally",
+     "silence-each-target-hit-every-10-sec-50-5-sec-extended-per-technique-ally"
     ]
    }
   ]
@@ -18696,9 +18909,9 @@
     "notes": null,
     "applications": [
      "damage-enemies-in-range-every-10-sec-950-of-own-atk",
-     "top-critical-defense-decrease-each-target-hit-every-10-sec-40-5-sec-duration-scales-per-brave-ally",
-     "high-burn-each-target-hit-every-10-sec-40-5-sec-duration-scales-per-brave-ally",
-     "high-freeze-each-target-hit-every-10-sec-40-5-sec-duration-scales-per-brave-ally"
+     "top-critical-defense-decrease-each-target-hit-every-10-sec-40-5-sec-extended-per-brave-ally",
+     "high-burn-each-target-hit-every-10-sec-40-5-sec-extended-per-brave-ally",
+     "high-freeze-each-target-hit-every-10-sec-40-5-sec-extended-per-brave-ally"
     ]
    }
   ]
