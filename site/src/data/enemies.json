@@ -261,7 +261,7 @@
     "icon": 42,
     "gameText": "Deals 550% ATK Damage to all enemies. After the attack hits, inflicts on the target for 3 sec: [Top] Burn and [Top] ATK Decrease and [Top] Critical Damage Decrease as additional effects.",
     "applications": [
-     "damage-all-enemies-550-of-own-atk",
+     "damage-all-enemies-every-15-sec-550-of-own-atk",
      "top-burn-each-target-hit-after-attack-hits-3-sec",
      "top-atk-decrease-each-target-hit-after-attack-hits-3-sec",
      "top-critical-damage-decrease-each-target-hit-after-attack-hits-3-sec"
@@ -475,7 +475,7 @@
     "icon": 44,
     "gameText": "Deals 550% ATK damage to all enemies. After the attack hits, inflicts [Top] Paralysis, and [Top] Critical Damage Decrease, [Top] Critical DEF Decrease on the target for 3 sec.",
     "applications": [
-     "damage-all-enemies-550-of-own-atk",
+     "damage-all-enemies-every-15-sec-550-of-own-atk",
      "top-paralysis-each-target-hit-after-attack-hits-3-sec",
      "top-critical-damage-decrease-each-target-hit-after-attack-hits-3-sec",
      "top-critical-defense-decrease-each-target-hit-after-attack-hits-3-sec"
@@ -695,10 +695,57 @@
     "icon": 44,
     "gameText": "Deals 550% ATK damage to all enemies. After the attack hits, grants self [Top] ATK Increase and [Top] Accuracy Increase, [Top] Shield for 3 sec.",
     "applications": [
-     "damage-all-enemies-550-of-own-atk",
+     "damage-all-enemies-every-15-sec-550-of-own-atk",
      "top-atk-increase-self-after-attack-hits-3-sec",
      "top-accuracy-increase-self-after-attack-hits-3-sec",
      "top-shield-self-after-attack-hits-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "what-are-friends-for-happy",
+  "name": "What Are Friends For Happy",
+  "type": "Grand Battle",
+  "role": "Boss",
+  "image": "what-are-friends-for-happy.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack",
+    "icon": 41,
+    "gameText": "Deals 150% ATK damage to the target",
+    "applications": [
+     "damage-single-enemy-normal-attack-150-of-own-atk-2"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Boundless Energy",
+    "icon": 35,
+    "gameText": "Every 4 sec, grants self the following effects for 2 sec: [Top] ATK Increase, [Top] Critical Resistance Increase, [Top] DEF Increase, and Action Impairment Barrier.",
+    "applications": [
+     "top-atk-increase-self-every-4-sec-2-sec",
+     "top-critical-resistance-increase-self-every-4-sec-2-sec",
+     "top-def-increase-self-every-4-sec-2-sec",
+     "action-block-barrier-self-every-4-sec-2-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Cat Fire Dragon's Roar",
+    "icon": 36,
+    "gameText": "Deals 550% ATK damage to all enemies. After the attack hits, inflicts [Top] Bleed and [Top] Paralysis, [Top] DEF Decrease on the target for 3 sec.",
+    "applications": [
+     "damage-all-enemies-every-15-sec-550-of-own-atk",
+     "top-bleed-each-target-hit-every-15-sec-3-sec",
+     "top-paralysis-each-target-hit-every-15-sec-3-sec",
+     "top-def-decrease-each-target-hit-every-15-sec-3-sec"
     ]
    }
   ]

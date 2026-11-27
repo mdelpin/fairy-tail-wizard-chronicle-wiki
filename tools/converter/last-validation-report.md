@@ -1,6 +1,6 @@
 # Validation report
 
-159 units, 118 lacrimas, 116 effects in 29 families, 850 effect applications, 57 banners, 61 banner arts, 50 companions, 67 companion effect applications, 13 enemies, 50 enemy skills, 69 enemy effect applications, 1 events, 47 live game issues. 133 issues in 14 categories.
+159 units, 118 lacrimas, 116 effects in 29 families, 850 effect applications, 57 banners, 61 banner arts, 50 companions, 67 companion effect applications, 14 enemies, 53 enemy skills, 72 enemy effect applications, 1 events, 47 live game issues. 132 issues in 13 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -172,8 +172,4 @@
 ## Event date sources need review (1)
 
 - Event 'Guild Raid – Deliora': Dates from the in-game Guild Raid notice: November 5, 2026 at 06:00 – November 13, 2026 at 05:59 UTC, equivalent to November 5 at 15:00 – November 13 at 14:59 JST. Deliora is the featured boss. The official @madochro_en launch post, dated November 5, instead states an end of November 12 at 14:59 JST; the preview post visible in the supplied X screenshot gives the same earlier end. The date properties follow the in-game notice; the conflicting end dates remain unresolved.
-
-## Portraits added (new wizards; check they look right) (1)
-
-- natsu-fire-dragon-king-mode
 

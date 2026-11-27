@@ -15537,9 +15537,9 @@
     "name": "Fire Dragon King's Destruction Fist",
     "attackRange": null,
     "gameText": {
-     "Lv1": "Every 10 sec, deals 850% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)",
-     "Lv2": "Every 10 sec, deals 950% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)",
-     "Lv3": "Every 10 sec, deals 1050% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)"
+     "Lv1": "Every 10 sec, deals 850% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)\n\nAfter the attack hits, has a 50% chance per target to inflict [Super] Burn and [Top] Bleed, Silence for 3 sec. Extends the duration of these additional effects by 0.5 sec for each Technique-type ally (up to 3 sec).",
+     "Lv2": "Every 10 sec, deals 950% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)\n\nAfter the attack hits, has a 50% chance per target to inflict [Super] Burn and [Top] Bleed, Silence for 4 sec. Extends the duration of these additional effects by 0.5 sec for each Technique-type ally (up to 3 sec).",
+     "Lv3": "Every 10 sec, deals 1050% ATK damage to all enemies. Increases damage by 50% for each Technique-type ally (up to 350%)\n\nAfter the attack hits, has a 50% chance per target to inflict [Super] Burn and [Top] Bleed, Silence for 5 sec. Extends the duration of these additional effects by 0.5 sec for each Technique-type ally (up to 3 sec)."
     },
     "levelTable": [
      {

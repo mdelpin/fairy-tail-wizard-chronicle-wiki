@@ -20391,24 +20391,6 @@
   "gameText": null
  },
  {
-  "id": "damage-all-enemies-550-of-own-atk",
-  "source": "enemy",
-  "effect": "damage",
-  "type": "Inflicts",
-  "target": "All Enemies",
-  "trigger": null,
-  "chance": null,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 550,
-   "unit": "Percent of Own ATK"
-  },
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
   "id": "damage-all-enemies-600-of-own-atk",
   "source": "enemy",
   "effect": "damage",
@@ -20419,6 +20401,28 @@
   "durationSeconds": null,
   "valueOverride": {
    "amount": 600,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-all-enemies-every-15-sec-550-of-own-atk",
+  "source": "enemy",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 15,
+   "raw": "Every 15 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 550,
    "unit": "Percent of Own ATK"
   },
   "condition": null,
@@ -21044,6 +21048,27 @@
   "gameText": null
  },
  {
+  "id": "top-bleed-each-target-hit-every-15-sec-3-sec",
+  "source": "enemy",
+  "effect": "top-bleed",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 15,
+   "raw": "Every 15 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-burn-all-enemies-every-6-sec-25-3-sec",
   "source": "enemy",
   "effect": "top-burn",
@@ -21398,6 +21423,27 @@
   "gameText": null
  },
  {
+  "id": "top-def-decrease-each-target-hit-every-15-sec-3-sec",
+  "source": "enemy",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 15,
+   "raw": "Every 15 sec, After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-def-decrease-each-target-hit-every-8-sec-4-sec",
   "source": "enemy",
   "effect": "top-def-decrease",
@@ -21491,6 +21537,27 @@
    ],
    "everySeconds": null,
    "raw": "After Attack Hits"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-paralysis-each-target-hit-every-15-sec-3-sec",
+  "source": "enemy",
+  "effect": "top-paralysis",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 15,
+   "raw": "Every 15 sec, After Attack Hits"
   },
   "chance": null,
   "durationSeconds": 3,
