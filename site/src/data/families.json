@@ -9,6 +9,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -21,6 +25,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -36,6 +44,10 @@
    "Blind"
   ],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -49,6 +61,10 @@
    "Action Block Barrier",
    "Remove All Debuffs"
   ],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -62,6 +78,15 @@
   "counters": [],
   "counteredBy": [
    "Remove All Debuffs"
+  ],
+  "mitigates": [],
+  "mitigatedBy": [
+   "Shield"
+  ],
+  "offsets": [],
+  "offsetBy": [
+   "Heal",
+   "Continuous Heal"
   ],
   "removes": null
  },
@@ -78,6 +103,10 @@
    "Remove All Debuffs",
    "Action Block Barrier"
   ],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -93,6 +122,15 @@
   "counteredBy": [
    "Remove All Debuffs"
   ],
+  "mitigates": [],
+  "mitigatedBy": [
+   "Shield"
+  ],
+  "offsets": [],
+  "offsetBy": [
+   "Continuous Heal",
+   "Heal"
+  ],
   "removes": null
  },
  {
@@ -107,6 +145,15 @@
   "counteredBy": [
    "Heal Block"
   ],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [
+   "Paralysis",
+   "Burn",
+   "Bleed",
+   "Damage"
+  ],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -119,6 +166,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -131,6 +182,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -143,6 +198,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -155,6 +214,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -165,6 +228,10 @@
   "affectedStats": [],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -177,6 +244,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -191,6 +262,15 @@
   "counteredBy": [
    "Invincible"
   ],
+  "mitigates": [],
+  "mitigatedBy": [
+   "Shield"
+  ],
+  "offsets": [],
+  "offsetBy": [
+   "Heal",
+   "Continuous Heal"
+  ],
   "removes": null
  },
  {
@@ -203,6 +283,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -215,6 +299,10 @@
   ],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -230,6 +318,10 @@
    "Action Block Barrier",
    "Remove All Debuffs"
   ],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -244,6 +336,15 @@
   "counteredBy": [
    "Heal Block"
   ],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [
+   "Paralysis",
+   "Burn",
+   "Bleed",
+   "Damage"
+  ],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -259,6 +360,10 @@
   "counteredBy": [
    "Remove All Debuffs"
   ],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -271,6 +376,10 @@
    "Damage"
   ],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -286,6 +395,15 @@
   "counteredBy": [
    "Remove All Debuffs"
   ],
+  "mitigates": [],
+  "mitigatedBy": [
+   "Shield"
+  ],
+  "offsets": [],
+  "offsetBy": [
+   "Heal",
+   "Continuous Heal"
+  ],
   "removes": null
  },
  {
@@ -296,6 +414,10 @@
   "affectedStats": [],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": "Buffs"
  },
  {
@@ -316,6 +438,10 @@
    "Taunt"
   ],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": "Debuffs"
  },
  {
@@ -326,6 +452,15 @@
   "affectedStats": [],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [
+   "Paralysis",
+   "Burn",
+   "Bleed",
+   "Damage"
+  ],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -339,6 +474,10 @@
    "Remove All Debuffs",
    "Action Block Barrier"
   ],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -349,6 +488,10 @@
   "affectedStats": [],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -361,6 +504,10 @@
   "counteredBy": [
    "Remove All Debuffs"
   ],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  },
  {
@@ -371,6 +518,10 @@
   "affectedStats": [],
   "counters": [],
   "counteredBy": [],
+  "mitigates": [],
+  "mitigatedBy": [],
+  "offsets": [],
+  "offsetBy": [],
   "removes": null
  }
 ]

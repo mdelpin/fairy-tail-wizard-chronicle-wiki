@@ -6,7 +6,7 @@ import Kanji from '../../components/Kanji.astro';
 import {
   buildFinderIndex, buildCounterIndex, familyBlurb, families, raritiesIn, effects, WIKI_CREDIT, ATTR, ATTR_ORDER, ROLES, KIND_ORDER, TIER_ORDER, url, portraits, initials, tierRank,
   TARGET_GROUPS, targetGroup, needNote,
-  type FamilyMeta, type Match, type LacrimaMatch, type CompanionMatch, type Unit, type Skill, type Application,
+  type FamilyMeta, type Match, type LacrimaMatch, type CompanionMatch, type Unit, type Skill, type Application, type CounterLink,
 } from '../../lib/data';
 
 export function getStaticPaths() {
@@ -22,6 +22,12 @@ const { m, applies, lac, companions, needs } = Astro.props as {
   m: FamilyMeta; applies: Match[]; lac: LacrimaMatch[]; companions: CompanionMatch[];
   needs: { unit: Unit; skill: Skill; app: Application }[];
 };
+// Counters first (fully stops it), then the softer relations: Mitigated (absorbed in part), Offset (HP restored)
+const relRows = ([
+  ['Countered by', counterIdx.counteredBy.get(m.key)], ['Counters', counterIdx.counters.get(m.key)],
+  ['Mitigated by', counterIdx.mitigation.by.get(m.key)], ['Mitigates', counterIdx.mitigation.does.get(m.key)],
+  ['Offset by', counterIdx.offset.by.get(m.key)], ['Offsets', counterIdx.offset.does.get(m.key)],
+] as [string, CounterLink[] | undefined][]).filter((r): r is [string, CounterLink[]] => !!r[1]?.length);
 
 // Group matches per unit, strongest tier first
 const byUnit = new Map<string, { unit: Unit; rows: Match[] }>();
@@ -108,16 +114,12 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
       </div>
     </section>
 
-    {(counterIdx.counteredBy.has(m.key) || counterIdx.counters.has(m.key)) && (
-      <section class="counters" aria-label="Counters">
-        {counterIdx.counteredBy.has(m.key) && (
-          <div class="crow"><span class="clbl">Countered by</span>
-            <span class="clist">{counterIdx.counteredBy.get(m.key)!.map((c) => <a class="chip" href={url(`effects/${c.key}/`)}>{c.label}</a>)}</span></div>
-        )}
-        {counterIdx.counters.has(m.key) && (
-          <div class="crow"><span class="clbl">Counters</span>
-            <span class="clist">{counterIdx.counters.get(m.key)!.map((c) => <a class="chip" href={url(`effects/${c.key}/`)}>{c.label}</a>)}</span></div>
-        )}
+    {relRows.length > 0 && (
+      <section class="counters" aria-label="Counters and other interactions">
+        {relRows.map(([label, list]) => (
+          <div class="crow"><span class="clbl">{label}</span>
+            <span class="clist">{list.map((c) => <a class="chip" href={url(`effects/${c.key}/`)}>{c.label}</a>)}</span></div>
+        ))}
       </section>
     )}
 

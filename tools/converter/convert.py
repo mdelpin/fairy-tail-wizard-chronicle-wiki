@@ -284,6 +284,9 @@ def main(root, out, slugs_path=None, public_dir=None):
             "counters": [fam_name[s] for s in ref(f.get("counters"), "EffectFamilies", where, "counters", many=True)],
             "counteredBy": [fam_name[s] for s in ref(f.get("counteredBy"), "EffectFamilies", where,
                                                      "counteredBy", many=True)],
+            # softer than countering: a Shield absorbs some damage (mitigates), a Heal restores HP lost (offsets)
+            **{p: [fam_name[s] for s in ref(f.get(p), "EffectFamilies", where, p, many=True)]
+               for p in ("mitigates", "mitigatedBy", "offsets", "offsetBy")},
             "removes": clean(f.get("removes")),
         })
     fam_by_stem = {stem: next(x for x in families_out if x["name"] == fam_name[stem]) for stem in FAM}
