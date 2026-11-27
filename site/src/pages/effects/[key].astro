@@ -62,7 +62,7 @@ const facts = (a: Application) => [a.target, a.trigger?.everySeconds ? `every ${
 // Highlight "[Tier] Name" mentions of this effect in game text
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const fam = m.family.replace(/^Critical /, 'Crit(?:ical)? ');
-const rx = new RegExp(`(\\[(?:Top|High|Mid|Low)\\]\\s*(?:${fam}|${esc(m.family)})[^,.\\]]*)`, 'gi');
+const rx = new RegExp(`(\\[(?:Super|Top|High|Mid|Low)\\]\\s*(?:${fam}|${esc(m.family)})[^,.\\]]*)`, 'gi');
 const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }));
 ---
 <Base title={m.label} section="effects" description={`Wizards, lacrimas and companions in FAIRY TAIL Wizard Chronicle that apply ${m.label}.`}>
@@ -334,7 +334,7 @@ const segs = (t: string) => t.split(rx).map((s, i) => ({ s, hit: i % 2 === 1 }))
   .ladder { flex: 1 1 380px; display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; }
   .rung { padding: 12px; border-radius: 14px; background: #FBEBD5; color: var(--ink); display: flex; flex-direction: column; gap: 4px; }
   .rung-plain { background: #FFF3E0; border: 2px solid var(--brass); }
-  .rung-Top { background: #FFF3E0; border: 2px solid var(--brass); }
+  .rung-Super, .rung-Top { background: #FFF3E0; border: 2px solid var(--brass); }
   .rung .t { font: 700 12px var(--mono); text-transform: uppercase; color: var(--ember); }
   .rung .v { font-size: 13px; line-height: 1.35; }
   .lac-more { margin: -4px 0 12px; font-size: 14px; font-weight: 600; }

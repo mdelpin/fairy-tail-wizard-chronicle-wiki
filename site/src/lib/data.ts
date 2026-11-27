@@ -200,7 +200,8 @@ export const skillIcon = (_u: Unit, s: Skill) => (s.icon ? url(`icons/skill/${St
 export const KIND_ORDER = ['Normal', 'Special', 'Ultimate'];
 
 // ---------- effects ----------
-export const TIER_ORDER = ['Top', 'High', 'Mid', 'Low'];
+// Super (超級) ranks above Top (最上級); first seen on Natsu -Fire Dragon King Mode-
+export const TIER_ORDER = ['Super', 'Top', 'High', 'Mid', 'Low'];
 
 /** "Top Burn" -> "Burn"; "High ATK Increase" -> "ATK Increase" */
 export function baseName(e: Effect): string {
