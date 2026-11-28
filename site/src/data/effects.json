@@ -1321,6 +1321,18 @@
   "gameText": "Ultimate skill gauge stops during the effect"
  },
  {
+  "id": "super-atk-decrease",
+  "name": "Super ATK Decrease",
+  "family": "ATK",
+  "direction": "Down",
+  "tier": "Super",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": null,
+  "secondary": null,
+  "gameText": null
+ },
+ {
   "id": "super-burn",
   "name": "Super Burn",
   "family": "Burn",
@@ -1368,6 +1380,30 @@
   "gameText": "Critical Resistance decreases by 35%"
  },
  {
+  "id": "super-def-decrease",
+  "name": "Super DEF Decrease",
+  "family": "DEF",
+  "direction": "Down",
+  "tier": "Super",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": null,
+  "secondary": null,
+  "gameText": null
+ },
+ {
+  "id": "super-evasion-decrease",
+  "name": "Super Evasion Decrease",
+  "family": "Evasion",
+  "direction": "Down",
+  "tier": "Super",
+  "polarity": "Harmful",
+  "mechanic": "Stat Modifier",
+  "value": null,
+  "secondary": null,
+  "gameText": null
+ },
+ {
   "id": "super-freeze",
   "name": "Super Freeze",
   "family": "Freeze",
@@ -1383,6 +1419,18 @@
    "unit": "Percent"
   },
   "gameText": "Cannot act + Critical DEF -55%"
+ },
+ {
+  "id": "super-paralysis",
+  "name": "Super Paralysis",
+  "family": "Paralysis",
+  "direction": null,
+  "tier": "Super",
+  "polarity": "Harmful",
+  "mechanic": "Damage Over Time",
+  "value": null,
+  "secondary": null,
+  "gameText": null
  },
  {
   "id": "taunt",

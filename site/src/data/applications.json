@@ -983,6 +983,27 @@
   "gameText": null
  },
  {
+  "id": "bind-single-enemy-30-3-sec",
+  "source": "unit",
+  "effect": "bind",
+  "type": "Inflicts",
+  "target": "Single Enemy",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.3,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "bind-single-enemy-every-11-sec-50-5-sec",
   "source": "unit",
   "effect": "bind",
@@ -1669,6 +1690,35 @@
   "condition": null,
   "requires": null,
   "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "damage-enemies-in-range-950-of-own-atk-scales-per-mind-ally",
+  "source": "unit",
+  "effect": "damage",
+  "type": "Inflicts",
+  "target": "Enemies in Range",
+  "trigger": {
+   "events": [],
+   "everySeconds": 10,
+   "raw": "Every 10 sec"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": {
+   "amount": 950,
+   "unit": "Percent of Own ATK"
+  },
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Effect Value",
+   "increasePerUnit": 50,
+   "increaseValueUnit": "Percent",
+   "scalingBasis": "Mind Ally",
+   "maximumNumberOfIncreases": 7,
+   "maximumResult": 350
+  },
   "gameText": null
  },
  {
@@ -4602,11 +4652,10 @@
   "target": "All Allies",
   "trigger": {
    "events": [
-    "normal attack",
-    "after attack hits"
+    "normal skill hit"
    ],
    "everySeconds": null,
-   "raw": "Normal Attack, After Attack Hits"
+   "raw": "Normal Skill Hit"
   },
   "chance": 0.3,
   "durationSeconds": 3,
@@ -5235,6 +5284,27 @@
   },
   "chance": null,
   "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-burn-all-enemies-while-on-the-field",
+  "source": "unit",
+  "effect": "high-burn",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -5955,11 +6025,10 @@
   "target": "All Allies",
   "trigger": {
    "events": [
-    "normal attack",
-    "after attack hits"
+    "normal skill hit"
    ],
    "everySeconds": null,
-   "raw": "Normal Attack, After Attack Hits"
+   "raw": "Normal Skill Hit"
   },
   "chance": 0.3,
   "durationSeconds": 3,
@@ -9498,6 +9567,27 @@
   "gameText": null
  },
  {
+  "id": "super-atk-decrease-all-enemies-while-on-the-field",
+  "source": "unit",
+  "effect": "super-atk-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "super-burn-each-target-hit-every-10-sec-50-5-sec-extended-per-technique-ally",
   "source": "unit",
   "effect": "super-burn",
@@ -9583,6 +9673,104 @@
    "state": "Present"
   },
   "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "super-def-decrease-all-enemies-while-on-the-field",
+  "source": "unit",
+  "effect": "super-def-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "super-evasion-decrease-all-enemies-while-on-the-field",
+  "source": "unit",
+  "effect": "super-evasion-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [
+    "while on the field"
+   ],
+   "everySeconds": null,
+   "raw": "While on the Field"
+  },
+  "chance": null,
+  "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "super-freeze-each-target-hit-every-10-sec-50-5-sec-extended-per-mind-ally",
+  "source": "unit",
+  "effect": "super-freeze",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": 0.5,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Duration",
+   "increasePerUnit": 0.5,
+   "increaseValueUnit": "Seconds",
+   "scalingBasis": "Mind Ally",
+   "maximumNumberOfIncreases": 6,
+   "maximumResult": 3
+  },
+  "gameText": null
+ },
+ {
+  "id": "super-paralysis-each-target-hit-every-10-sec-50-5-sec-extended-per-mind-ally",
+  "source": "unit",
+  "effect": "super-paralysis",
+  "type": "Inflicts",
+  "target": "Each Target Hit",
+  "trigger": {
+   "events": [
+    "after attack hits"
+   ],
+   "everySeconds": 10,
+   "raw": "Every 10 sec, After Attack Hits"
+  },
+  "chance": 0.5,
+  "durationSeconds": 5,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": {
+   "scalingAttribute": "Duration",
+   "increasePerUnit": 0.5,
+   "increaseValueUnit": "Seconds",
+   "scalingBasis": "Mind Ally",
+   "maximumNumberOfIncreases": 6,
+   "maximumResult": 3
+  },
   "gameText": null
  },
  {
@@ -14502,6 +14690,27 @@
   "gameText": null
  },
  {
+  "id": "top-def-decrease-single-enemy-30-3-sec",
+  "source": "unit",
+  "effect": "top-def-decrease",
+  "type": "Inflicts",
+  "target": "Single Enemy",
+  "trigger": {
+   "events": [
+    "normal skill hit"
+   ],
+   "everySeconds": null,
+   "raw": "Normal Skill Hit"
+  },
+  "chance": 0.3,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "top-def-decrease-single-enemy-30-5-sec",
   "source": "unit",
   "effect": "top-def-decrease",
@@ -15871,7 +16080,13 @@
   "effect": "accuracy-up-ii",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -15886,7 +16101,13 @@
   "effect": "accuracy-up-i",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16030,7 +16251,13 @@
   "effect": "critical-damage-up-i",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16045,7 +16272,13 @@
   "effect": "critical-damage-up-ii",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16060,7 +16293,13 @@
   "effect": "critical-defense-up-i",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16075,7 +16314,13 @@
   "effect": "critical-defense-up-ii",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16090,7 +16335,13 @@
   "effect": "critical-rate-up-i",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16105,7 +16356,13 @@
   "effect": "critical-rate-up-ii",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16120,7 +16377,13 @@
   "effect": "critical-resistance-up-i",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16135,7 +16398,13 @@
   "effect": "critical-resistance-up-ii",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16150,7 +16419,13 @@
   "effect": "evasion-rate-up-i",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16165,7 +16440,13 @@
   "effect": "evasion-rate-up-ii",
   "type": "Provides",
   "target": "Self",
-  "trigger": null,
+  "trigger": {
+   "events": [
+    "constant"
+   ],
+   "everySeconds": null,
+   "raw": "Constant"
+  },
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
@@ -16531,6 +16812,25 @@
   "gameText": null
  },
  {
+  "id": "high-critical-rate-decrease-all-enemies-every-5-sec-2-sec",
+  "source": "lacrima",
+  "effect": "high-critical-rate-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 5,
+   "raw": "Every 5 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "high-critical-rate-decrease-all-enemies-start-of-battle-5-sec",
   "source": "lacrima",
   "effect": "high-critical-rate-decrease",
@@ -16650,6 +16950,25 @@
   },
   "chance": null,
   "durationSeconds": null,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "high-def-decrease-all-enemies-every-5-sec-2-sec",
+  "source": "lacrima",
+  "effect": "high-def-decrease",
+  "type": "Inflicts",
+  "target": "All Enemies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 5,
+   "raw": "Every 5 sec"
+  },
+  "chance": null,
+  "durationSeconds": 2,
   "valueOverride": null,
   "condition": null,
   "requires": null,
@@ -20334,6 +20653,82 @@
   "gameText": null
  },
  {
+  "id": "bind-brave-allies-every-8-sec-3-sec",
+  "source": "enemy",
+  "effect": "bind",
+  "type": "Inflicts",
+  "target": "Brave Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "bind-heart-allies-every-8-sec-3-sec",
+  "source": "enemy",
+  "effect": "bind",
+  "type": "Inflicts",
+  "target": "Heart Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "bind-mind-allies-every-8-sec-15-3-sec",
+  "source": "enemy",
+  "effect": "bind",
+  "type": "Inflicts",
+  "target": "Mind Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": 0.15,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "bind-technique-allies-every-8-sec-3-sec",
+  "source": "enemy",
+  "effect": "bind",
+  "type": "Inflicts",
+  "target": "Technique Allies",
+  "trigger": {
+   "events": [],
+   "everySeconds": 8,
+   "raw": "Every 8 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
   "id": "critical-shield-self-constant",
   "source": "enemy",
   "effect": "critical-shield",
@@ -20349,24 +20744,6 @@
   "chance": null,
   "durationSeconds": null,
   "valueOverride": null,
-  "condition": null,
-  "requires": null,
-  "scaling": null,
-  "gameText": null
- },
- {
-  "id": "damage-all-enemies-400-of-own-atk",
-  "source": "enemy",
-  "effect": "damage",
-  "type": "Inflicts",
-  "target": "All Enemies",
-  "trigger": null,
-  "chance": null,
-  "durationSeconds": null,
-  "valueOverride": {
-   "amount": 400,
-   "unit": "Percent of Own ATK"
-  },
   "condition": null,
   "requires": null,
   "scaling": null,
@@ -21215,6 +21592,25 @@
    "events": [],
    "everySeconds": 5,
    "raw": "Every 5 sec"
+  },
+  "chance": null,
+  "durationSeconds": 3,
+  "valueOverride": null,
+  "condition": null,
+  "requires": null,
+  "scaling": null,
+  "gameText": null
+ },
+ {
+  "id": "top-continuous-heal-self-every-7-sec-3-sec",
+  "source": "enemy",
+  "effect": "top-continuous-heal",
+  "type": "Provides",
+  "target": "Self",
+  "trigger": {
+   "events": [],
+   "everySeconds": 7,
+   "raw": "Every 7 sec"
   },
   "chance": null,
   "durationSeconds": 3,

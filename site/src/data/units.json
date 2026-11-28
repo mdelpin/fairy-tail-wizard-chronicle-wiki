@@ -11337,6 +11337,232 @@
   ]
  },
  {
+  "id": "lucy-aquarius-form",
+  "name": "Lucy -Aquarius Form-",
+  "identity": "Lucy Heartfilia",
+  "collection": "What Friends Are For I",
+  "rarity": "UR",
+  "collectionBonusStat": "DEF",
+  "newForm": false,
+  "debutBanner": "what-friends-are-for-i",
+  "availableFrom": "2026-11-28",
+  "bannerArt": "lucy-aquarius-form.webp",
+  "attribute": "Mind",
+  "role": "Disrupt",
+  "portrait": "Lucy -Aquarius Form-.png",
+  "card": "lucy-aquarius-form.webp",
+  "signatureLacrima": "lucy-aquarius-form-lacrima",
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal Attack (Ranged)",
+    "attackRange": "Ranged",
+    "gameText": {
+     "Lv1": "Deals 120% ATK damage to the target. After the attack hits, has a 30% chance to inflict [Top] ATK Decrease and [Top] DEF Decrease, Bind on the target for 3 sec.",
+     "Lv2": "Deals 140% ATK damage to the target. After the attack hits, has a 30% chance to inflict [Top] ATK Decrease and [Top] DEF Decrease, Bind on the target for 3 sec.",
+     "Lv3": "Deals 170% ATK damage to the target. After the attack hits, has a 30% chance to inflict [Top] ATK Decrease and [Top] DEF Decrease, Bind on the target for 3 sec."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Attack",
+      "target": "Single Enemy",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "170% ATK",
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "ATK Decrease",
+      "tier": "Top",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "DEF Decrease",
+      "tier": "Top",
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "Normal Skill Hit",
+      "target": "Single Enemy",
+      "effect": "Bind",
+      "tier": null,
+      "chance": "30%",
+      "duration": "3 sec",
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 7,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-single-enemy-normal-attack-170-of-own-atk",
+     "top-atk-decrease-single-enemy-30-3-sec",
+     "top-def-decrease-single-enemy-30-3-sec",
+     "bind-single-enemy-30-3-sec"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "Overwhelming Torrent",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "While on the field, inflicts [Super] ATK Decrease and [Top] DEF Decrease, [Top] Evasion Rate Decrease, [High] Burn on all enemies.",
+     "Lv2": "While on the field, inflicts [Super] ATK Decrease and [Super] DEF Decrease, [Top] Evasion Rate Decrease, [High] Burn on all enemies.",
+     "Lv3": "While on the field, inflicts [Super] ATK Decrease and [Super] DEF Decrease, [Super] Evasion Rate Decrease, [High] Burn on all enemies."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "While on the Field",
+      "target": "All Enemies",
+      "effect": "ATK Decrease",
+      "tier": "Super",
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "While on the Field",
+      "target": "All Enemies",
+      "effect": "DEF Decrease",
+      "tier": "Super",
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "While on the Field",
+      "target": "All Enemies",
+      "effect": "Evasion Decrease",
+      "tier": "Super",
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": null
+     },
+     {
+      "level": "3",
+      "trigger": "While on the Field",
+      "target": "All Enemies",
+      "effect": "Burn",
+      "tier": "High",
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": null
+     }
+    ],
+    "icon": 25,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "super-atk-decrease-all-enemies-while-on-the-field",
+     "super-def-decrease-all-enemies-while-on-the-field",
+     "super-evasion-decrease-all-enemies-while-on-the-field",
+     "high-burn-all-enemies-while-on-the-field"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "Aqua Metria",
+    "attackRange": null,
+    "gameText": {
+     "Lv1": "Every 10 sec, deals 750% ATK damage to targets within range. Increases damage by 50% for each Intelligence-type ally (up to 350%).\n\nAfter the attack hits, has a 50% chance per target to inflict [Super] Freeze and [Super] Paralysis for 3 sec, and removes all buffs from the target. Extends the duration of these additional effects by 0.5 sec for each Intelligence-type ally (up to 3 sec).",
+     "Lv2": "Every 10 sec, deals 850% ATK damage to targets within range. Increases damage by 50% for each Intelligence-type ally (up to 350%).\n\nAfter the attack hits, has a 50% chance per target to inflict [Super] Freeze and [Super] Paralysis for 4 sec, and removes all buffs from the target. Extends the duration of these additional effects by 0.5 sec for each Intelligence-type ally (up to 3 sec).",
+     "Lv3": "Every 10 sec, deals 950% ATK damage to targets within range. Increases damage by 50% for each Intelligence-type ally (up to 350%).\n\nAfter the attack hits, has a 50% chance per target to inflict [Super] Freeze and [Super] Paralysis for 5 sec, and removes all buffs from the target. Extends the duration of these additional effects by 0.5 sec for each Intelligence-type ally (up to 3 sec)."
+    },
+    "levelTable": [
+     {
+      "level": "3",
+      "trigger": "Every 10 sec",
+      "target": "Enemies in Target Area",
+      "effect": "Damage",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": "950% ATK",
+      "condition": null,
+      "notes": "Damage increases by 50% per Intelligence-type ally (up to 350%)."
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Each Target Hit",
+      "effect": "Freeze",
+      "tier": "Super",
+      "chance": "50%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "Duration increases by 0.5 sec per Intelligence-type ally (up to 3 extra sec)."
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Each Target Hit",
+      "effect": "Paralysis",
+      "tier": "Super",
+      "chance": "50%",
+      "duration": "5 sec",
+      "value": null,
+      "condition": null,
+      "notes": "Duration increases by 0.5 sec per Intelligence-type ally (up to 3 extra sec)."
+     },
+     {
+      "level": "3",
+      "trigger": "After Attack Hits",
+      "target": "Each Target Hit",
+      "effect": "Remove All Buffs",
+      "tier": null,
+      "chance": null,
+      "duration": null,
+      "value": null,
+      "condition": null,
+      "notes": "The English text does not explicitly say whether buff removal shares the 50% chance."
+     }
+    ],
+    "icon": 26,
+    "levelTextSource": "In game",
+    "notes": null,
+    "applications": [
+     "damage-enemies-in-range-950-of-own-atk-scales-per-mind-ally",
+     "super-freeze-each-target-hit-every-10-sec-50-5-sec-extended-per-mind-ally",
+     "super-paralysis-each-target-hit-every-10-sec-50-5-sec-extended-per-mind-ally",
+     "remove-all-buffs-each-target-hit-every-10-sec"
+    ]
+   }
+  ]
+ },
+ {
   "id": "lucy-leo-form",
   "name": "Lucy -Leo Form-",
   "identity": "Lucy Heartfilia",
