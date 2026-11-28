@@ -790,7 +790,8 @@
      "bind-brave-allies-every-8-sec-3-sec",
      "bind-mind-allies-every-8-sec-15-3-sec",
      "bind-technique-allies-every-8-sec-3-sec",
-     "bind-heart-allies-every-8-sec-3-sec"
+     "bind-heart-allies-every-8-sec-3-sec",
+     "damage-all-enemies-every-8-sec-400-of-own-atk"
     ]
    },
    {
