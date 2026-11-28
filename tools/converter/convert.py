@@ -785,6 +785,7 @@ def main(root, out, slugs_path=None, public_dir=None):
     # ---------- enemies and events (their applications never enter the wizard finder)
     enemy_slug = {s: slug_for("enemy", s, clean(r["fm"].get("title")) or s) for s, r in sorted(enemies_src.items())}
     event_slug = {s: slug_for("event", s, clean(r["fm"].get("title")) or s) for s, r in sorted(events_src.items())}
+    trial_names = {s: clean(r["fm"].get("title")) or s for s, r in data["Trials"].items()}
     enemy_apps = {s: application(s, r["fm"], "enemy", "EnemyEffectApplication")
                   for s, r in sorted(enemy_apps_src.items())}
     enemy_skills, used_enemy_apps, used_enemy_skills = {}, set(), set()
@@ -827,6 +828,7 @@ def main(root, out, slugs_path=None, public_dir=None):
             if stem not in skill_owners[s]:
                 issue("Enemy links", f"{where}: skill '{s}' does not name this enemy")
         enemy_events[stem] = ref(f.get("events"), "Events", where, "events", many=True)
+        trials = ref(f.get("trial"), "Trials", where, "trial", many=True)
         immune = ref(f.get("immuneTo"), "Effects", where, "immuneTo", many=True)
         for prop in ("type_", "role"):
             if not f.get(prop):
@@ -860,6 +862,7 @@ def main(root, out, slugs_path=None, public_dir=None):
             "image": None, "goldenImage": None, "defeatPoints": dp,
             "goldenDefeatPoints": gdp, "immuneTo": [eff_slug[e] for e in immune],
             "events": [event_slug[e] for e in enemy_events[stem]],
+            "trials": [trial_names[t] for t in trials],
             "skills": sorted([enemy_skills[s] for s in skills],
                              key=lambda s: enemy_kinds.index(s["kind"]) if s["kind"] in enemy_kinds else 99),
         })

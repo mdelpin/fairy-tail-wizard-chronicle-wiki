@@ -11,7 +11,7 @@ import yaml
 GAME_FOLDERS = ["Characters", "Skills", "Effects", "EffectFamilies", "Parameters", "EffectApplications",
                 "Lacrimas", "LacrimaEffectApplications",
                 "Banners", "BannerArts", "SkillIcons", "Companions", "CompanionSkills", "CompanionEffectApplications",
-                "Enemies", "EnemySkills", "EnemyEffectApplications", "Events", "Issues"]
+                "Enemies", "EnemySkills", "EnemyEffectApplications", "Events", "Trials", "Issues"]
 
 
 def read(path):
