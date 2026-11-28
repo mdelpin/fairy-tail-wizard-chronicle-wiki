@@ -10,6 +10,9 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [
+   "vs Dragon"
+  ],
   "skills": [
    {
     "kind": "Normal",
@@ -66,6 +69,9 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [
+   "Training with the Celestial King"
+  ],
   "skills": [
    {
     "kind": "Normal",
@@ -121,6 +127,7 @@
   "events": [
    "guild-raid-deliora"
   ],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -182,6 +189,9 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [
+   "Trial of Edolas"
+  ],
   "skills": [
    {
     "kind": "Normal",
@@ -233,6 +243,7 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -282,6 +293,7 @@
   "events": [
    "guild-raid-deliora"
   ],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -336,6 +348,7 @@
   "events": [
    "guild-raid-deliora"
   ],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -391,6 +404,7 @@
   "events": [
    "guild-raid-deliora"
   ],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -448,6 +462,7 @@
   "events": [
    "guild-raid-deliora"
   ],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -506,6 +521,7 @@
   "events": [
    "guild-raid-deliora"
   ],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -562,6 +578,9 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [
+   "vs Master Hades"
+  ],
   "skills": [
    {
     "kind": "Normal",
@@ -612,6 +631,9 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [
+   "vs Dragon"
+  ],
   "skills": [
    {
     "kind": "Normal",
@@ -667,6 +689,7 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -714,6 +737,7 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [],
   "skills": [
    {
     "kind": "Normal",
@@ -761,6 +785,9 @@
   "goldenDefeatPoints": null,
   "immuneTo": [],
   "events": [],
+  "trials": [
+   "vs Dragon"
+  ],
   "skills": [
    {
     "kind": "Normal",

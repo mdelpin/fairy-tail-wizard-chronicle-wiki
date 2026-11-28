@@ -120,7 +120,7 @@ export interface Enemy {
   defeatPoints: number | null;
   /** What the golden version of a minion gives, and its picture; null until one has been seen. */
   goldenDefeatPoints: number | null; goldenImage: string | null;
-  immuneTo: string[]; events: string[]; skills: EnemySkill[];
+  immuneTo: string[]; events: string[]; trials?: string[]; skills: EnemySkill[];
 }
 export interface GameEvent {
   id: string; name: string; type: string | null; start: string | null; end: string | null;
