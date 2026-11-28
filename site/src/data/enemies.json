@@ -638,7 +638,7 @@
     "icon": 36,
     "gameText": "Deals 400% ATK damage to all enemies. Additionally inflicts Silence for 3s on non-Skill characters, and has a 15% chance to inflict it for 3 s on Skill Characters.",
     "applications": [
-     "damage-all-enemies-400-of-own-atk",
+     "damage-all-enemies-every-8-sec-400-of-own-atk",
      "silence-mind-allies-3-sec",
      "silence-heart-allies-3-sec",
      "silence-technique-allies-15-3-sec",
@@ -705,7 +705,7 @@
  },
  {
   "id": "what-are-friends-for-happy",
-  "name": "What Are Friends For Happy",
+  "name": "What Friends Are For Happy",
   "type": "Grand Battle",
   "role": "Boss",
   "image": "what-are-friends-for-happy.webp",
@@ -746,6 +746,61 @@
      "top-bleed-each-target-hit-every-15-sec-3-sec",
      "top-paralysis-each-target-hit-every-15-sec-3-sec",
      "top-def-decrease-each-target-hit-every-15-sec-3-sec"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "zirconis",
+  "name": "Zirconis",
+  "type": "Trial",
+  "role": "Boss",
+  "image": "zirconis.webp",
+  "goldenImage": null,
+  "defeatPoints": null,
+  "goldenDefeatPoints": null,
+  "immuneTo": [],
+  "events": [],
+  "skills": [
+   {
+    "kind": "Normal",
+    "name": "Normal attack",
+    "icon": 43,
+    "gameText": "Deals 110% ATK damage to all enemies",
+    "applications": [
+     "damage-all-enemies-normal-attack-110-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Special",
+    "name": "The Power of the Jade Dragon",
+    "icon": 18,
+    "gameText": "Every 7s, grants yourself for 3s: [Top] ATK Increase and [Top] Regen.",
+    "applications": [
+     "top-atk-increase-self-every-7-sec-3-sec",
+     "top-continuous-heal-self-every-7-sec-3-sec"
+    ]
+   },
+   {
+    "kind": "Ultimate",
+    "name": "The Roar of Jade",
+    "icon": 36,
+    "gameText": "Every 8s, deals 400% ATK damage to all enemies. Additionally inflicts Bind for 3s on non-Mind characters, and has a 15% chance to inflict Bind for 3s on Mind characters.",
+    "applications": [
+     "bind-brave-allies-every-8-sec-3-sec",
+     "bind-mind-allies-every-8-sec-15-3-sec",
+     "bind-technique-allies-every-8-sec-3-sec",
+     "bind-heart-allies-every-8-sec-3-sec",
+     "damage-all-enemies-every-8-sec-400-of-own-atk"
+    ]
+   },
+   {
+    "kind": "Additional",
+    "name": "Action-inhibitiing barrier",
+    "icon": 16,
+    "gameText": "Always grants yourself Action Inhibit Barrier",
+    "applications": [
+     "action-block-barrier-self-constant"
     ]
    }
   ]

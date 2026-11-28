@@ -1,6 +1,6 @@
 # Validation report
 
-159 units, 118 lacrimas, 116 effects in 29 families, 850 effect applications, 57 banners, 61 banner arts, 50 companions, 67 companion effect applications, 14 enemies, 53 enemy skills, 72 enemy effect applications, 1 events, 47 live game issues. 132 issues in 13 categories.
+160 units, 119 lacrimas, 120 effects in 29 families, 861 effect applications, 57 banners, 62 banner arts, 50 companions, 67 companion effect applications, 15 enemies, 57 enemy skills, 76 enemy effect applications, 1 events, 48 live game issues. 137 issues in 13 categories.
 
 ## Release cards missing (no Debut Card linked) (59)
 
@@ -64,7 +64,7 @@
 - yukino-agria
 - zancrow
 
-## Live game issues (47)
+## Live game issues (48)
 
 - Issue 'Academy Capricorn Skill: English description is cut off before the second effect and the duration' → Academy Capricorn — Skill
 - Issue 'Aera Frosch Skill: Critical Damage Decrease mistranslation' → Aera Frosch — Skill
@@ -113,14 +113,16 @@
 - Issue 'White Gift Gajeel Ultimate: English says Special Skill Gauge, Japanese says Ultimate Skill Gauge' → White Gift Gajeel — Ultimate
 - Issue 'White Gift Gray Lacrima: English says Special Skill Gauge, Japanese says Ultimate Skill Gauge' → ✨ White Gift Gray Lacrima
 - Issue 'White Gift Leo Skill: English description is cut off before the second effect and the duration' → White Gift Leo — Skill
+- Issue 'Zirconis Ultimate: English omits the 8-second interval' → Zirconis — Ultimate Skill
 
-## Live issues the site cannot show yet (no notice slot for enemy skills) (5)
+## Live issues the site cannot show yet (no notice slot for enemy skills) (6)
 
 - Issue 'Atlas Flame Ultimate: English omits the 8-second interval'
 - Issue 'Celestial King Ultimate: English name is Meteor Raid, Japanese name is Meteor Blade'
 - Issue 'Celestial King Ultimate: English omits the 8-second interval'
 - Issue 'Dorma Anim Ultimate: English omits the 7-second interval'
 - Issue 'Master Hades Ultimate: English omits the 7-second interval'
+- Issue 'Zirconis Ultimate: English omits the 8-second interval'
 
 ## Owned step unknown (the page shows the start value only) (5)
 
@@ -130,6 +132,13 @@
 - Companion 'Pajama Party! Aries'
 - Companion 'Skiadrum'
 
+## Companion applications and skills disagree (4)
+
+- 'Damage → All Enemies – Every 15 sec / 450% of Party's Average ATK': What Friends Are For Happy is listed on the application only
+- 'Top Bleed → All Enemies – Every 15 sec / 5 sec': What Friends Are For Happy is listed on the application only
+- 'Top DEF Decrease → All Enemies – Every 15 sec / 5 sec': What Friends Are For Happy is listed on the application only
+- 'Top Paralysis → All Enemies – Every 15 sec / 5 sec': What Friends Are For Happy is listed on the application only
+
 ## Missing required values (4)
 
 - EnemyEffectApplication 'Silence → Brave Allies – 3 sec': activationInterval is empty
@@ -137,11 +146,15 @@
 - EnemyEffectApplication 'Silence → Mind Allies – 3 sec': activationInterval is empty
 - EnemyEffectApplication 'Silence → Technique Allies – 15% / 3 sec': activationInterval is empty
 
-## Not published yet (entry incomplete; published once filled in) (3)
+## Not published yet (entry incomplete; published once filled in) (2)
 
 - Character 'Erza -Red-Black Twin Blades-': no attribute or skills yet
-- Character 'Lucy -Aquarius Form-': no attribute or skills yet
-- Companion 'What Friends Are For Happy': no companionType or rarity yet
+- Companion 'What Friends Are For Happy': no companionType yet
+
+## Skipped records (2)
+
+- Character 'Dragon King Acnologia' (file 'Dragon King Acnologia'): no rarity or attribute, treated as a template
+- Character 'Unit Curation' (file 'Untitled'): no rarity or attribute, treated as a template
 
 ## Banner covers (2)
 
@@ -153,10 +166,6 @@
 - Effect title: 'Super Critical Defense Decrease' vs 'Top Critical Defense Decrease'
 - Effect title: 'Super Critical Resistance Decrease' vs 'Top Critical Resistance Decrease'
 
-## Titles containing a non-breaking space (handled by the converter; worth cleaning eventually) (1)
-
-- BannerArts: 2 titles
-
 ## Effect families without a Mechanic (shown without one on the site) (1)
 
 - Transformation
@@ -164,10 +173,6 @@
 ## Companion skills without effects (placeholder skills are expected here) (1)
 
 - Companion 'Twin Moon Halloween Aquarius'
-
-## Skipped records (1)
-
-- Character 'Unit Curation' (file 'Untitled'): no rarity or attribute, treated as a template
 
 ## Event date sources need review (1)
 

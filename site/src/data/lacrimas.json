@@ -671,6 +671,19 @@
   ]
  },
  {
+  "id": "lucy-aquarius-form-lacrima",
+  "name": "Lucy -Aquarius Form- Lacrima",
+  "kind": "signature",
+  "signatureFor": "lucy-aquarius-form",
+  "gameText": "Every 5 sec, inflicts Silence and [High] DEF Decrease, [High] Critical Rate Decrease on all enemies for 2 sec.",
+  "notes": null,
+  "applications": [
+   "silence-all-enemies-every-5-sec-2-sec",
+   "high-def-decrease-all-enemies-every-5-sec-2-sec",
+   "high-critical-rate-decrease-all-enemies-every-5-sec-2-sec"
+  ]
+ },
+ {
   "id": "lucy-leo-form-lacrima",
   "name": "Lucy -Leo Form- Lacrima",
   "kind": "signature",
